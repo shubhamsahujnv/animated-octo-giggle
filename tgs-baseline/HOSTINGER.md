@@ -8,13 +8,23 @@ or Cloud hosting, or a VPS) — plain shared hosting file upload will not work.
 
 | Setting         | Value            |
 | --------------- | ---------------- |
-| Node.js version | 22.x (22.12+)    |
+| Node.js version | 22.x (or 20.19+) |
 | Install command | `npm install`    |
 | Build command   | `npm run build`  |
 | Start command   | `npm start`      |
-| Entry file      | `.output/server/index.mjs` (if asked) |
+| Entry file      | `start.mjs` (if asked) |
 
 The server listens on the `PORT` environment variable, which Hostinger sets.
+
+## Preview on your own computer
+
+Opening `index.html` directly does not work: the blog pages are created by the
+server. Instead:
+
+1. Install Node.js 22 (LTS) from https://nodejs.org and restart the terminal.
+2. Check it with `node -v` — it must print v20.19 or higher (v22 recommended).
+3. In this folder run `npm install`, then `npm run build`, then `npm start`.
+4. Leave that terminal open and visit http://localhost:3000.
 
 ## Environment variables
 
