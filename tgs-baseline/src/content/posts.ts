@@ -13,6 +13,33 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: "how-a-clean-baseline-changes-the-carbon-conversation",
+    title: "How a clean baseline changes the carbon conversation",
+    dek: "A mid-sized manufacturer does not need a bigger team to cut emissions. It needs twelve months of numbers it can defend.",
+    author: "Ankita Patwa",
+    role: "Founder, TheGreensolve",
+    date: "2026-09-27",
+    readMins: 5,
+    tag: "Practice",
+    body: [
+      "Most decarbonisation conversations in a mid-sized plant start with a technology. A solar quote, a boiler retrofit, a new compressor. The honest starting point is quieter than that: a baseline you would be willing to show a reviewer, a banker or your largest customer without flinching.",
+      "A baseline is not a spreadsheet of estimates. It is a period of measured activity, twelve clean months at minimum, with every line tied to a source document and every assumption written down. When that exists, every later conversation gets shorter.",
+      "## Start with what the meter already knows",
+      "Electricity, gas and fuel are the easiest lines because someone is already paying for them. Pull the invoices, reconcile them to meter reads where you can, and record the units exactly as billed. A plant in Ohio will see therms and kWh; a plant in Pune will see kWh, diesel litres and furnace oil by the kilogram. Both are fine, as long as the unit and the source stay attached to the number.",
+      "For a metal parts or electroplating site, this first pass usually covers the large majority of Scope 1 and 2. Boilers, ovens, compressors, plating lines and HVAC all sit behind those meters. You do not need perfect submetering to begin; you need consistency.",
+      "> The first baseline is not about being right. It is about being able to show how you got the number.",
+      "## Scope 3 is a sequence, not a project",
+      "The mistake most teams make with Scope 3 is trying to close all fifteen categories in the first cycle. For manufacturers, purchased goods, upstream transport, waste and business travel carry most of the weight. Start there, use spend-based factors where you must, and label every line with its data quality: metered, invoiced, calculated, estimated or proxy.",
+      "That single label changes the review conversation. An assurer who can see which lines are measured and which are estimated spends their time in the right places, and you spend next year's budget the same way.",
+      "## What changes once the baseline exists",
+      "Three things happen quickly. First, reduction projects stop being opinions. A heat-recovery retrofit on one boiler can be priced against a measured fuel line, not a guess. Second, customer questionnaires stop being emergencies, because the inventory with evidence per line already exists. Third, credit screening becomes an afternoon exercise instead of a quarter of consulting, because the baseline is the first thing every methodology asks for.",
+      "> Companies do not lose carbon opportunities because they are small. They lose them because nobody wrote the numbers down.",
+      "## Keeping it alive",
+      "A baseline that is updated once a year is a report. A baseline that is updated monthly is a management tool. Routine capture, even a simple monthly entry per activity, keeps the inventory close enough to operations that anomalies show up while they are still cheap to fix.",
+      "The plants that move fastest are not the ones with the biggest budgets. They are the ones where the numbers are already in order when the opportunity arrives.",
+    ],
+  },
+  {
     slug: "carbon-credits-are-not-just-for-big-companies",
     title: "Carbon credits are not just for big companies",
     dek: "The smallest factory on the street can hold a credit-eligible project. Most of them never find out.",
@@ -113,36 +140,7 @@ export const POSTS: Post[] = [
   },
 ];
 
-export const DRAFT_POSTS: Post[] = [
-  {
-    slug: "test-draft-article-design",
-    title: "Test article: how a clean baseline changes the carbon conversation",
-    dek: "A mid-sized manufacturer does not need a bigger team to cut emissions. It needs twelve months of numbers it can defend.",
-    author: "Ankita Patwa",
-    role: "Founder, TheGreensolve",
-    date: "2026-09-27",
-    readMins: 5,
-    tag: "Practice",
-    draft: true,
-    body: [
-      "Most decarbonisation conversations in a mid-sized plant start with a technology. A solar quote, a boiler retrofit, a new compressor. The honest starting point is quieter than that: a baseline you would be willing to show a reviewer, a banker or your largest customer without flinching.",
-      "A baseline is not a spreadsheet of estimates. It is a period of measured activity, twelve clean months at minimum, with every line tied to a source document and every assumption written down. When that exists, every later conversation gets shorter.",
-      "## Start with what the meter already knows",
-      "Electricity, gas and fuel are the easiest lines because someone is already paying for them. Pull the invoices, reconcile them to meter reads where you can, and record the units exactly as billed. A plant in Ohio will see therms and kWh; a plant in Pune will see kWh, diesel litres and furnace oil by the kilogram. Both are fine, as long as the unit and the source stay attached to the number.",
-      "For a metal parts or electroplating site, this first pass usually covers the large majority of Scope 1 and 2. Boilers, ovens, compressors, plating lines and HVAC all sit behind those meters. You do not need perfect submetering to begin; you need consistency.",
-      "> The first baseline is not about being right. It is about being able to show how you got the number.",
-      "## Scope 3 is a sequence, not a project",
-      "The mistake most teams make with Scope 3 is trying to close all fifteen categories in the first cycle. For manufacturers, purchased goods, upstream transport, waste and business travel carry most of the weight. Start there, use spend-based factors where you must, and label every line with its data quality: metered, invoiced, calculated, estimated or proxy.",
-      "That single label changes the review conversation. An assurer who can see which lines are measured and which are estimated spends their time in the right places, and you spend next year's budget the same way.",
-      "## What changes once the baseline exists",
-      "Three things happen quickly. First, reduction projects stop being opinions. A heat-recovery retrofit on one boiler can be priced against a measured fuel line, not a guess. Second, customer questionnaires stop being emergencies, because the inventory with evidence per line already exists. Third, credit screening becomes an afternoon exercise instead of a quarter of consulting, because the baseline is the first thing every methodology asks for.",
-      "> Companies do not lose carbon opportunities because they are small. They lose them because nobody wrote the numbers down.",
-      "## Keeping it alive",
-      "A baseline that is updated once a year is a report. A baseline that is updated monthly is a management tool. Routine capture, even a simple monthly entry per activity, keeps the inventory close enough to operations that anomalies show up while they are still cheap to fix.",
-      "The plants that move fastest are not the ones with the biggest budgets. They are the ones where the numbers are already in order when the opportunity arrives.",
-    ],
-  },
-];
+export const DRAFT_POSTS: Post[] = [];
 
 export function postBySlug(slug: string) {
   return POSTS.find((p) => p.slug === slug) ?? DRAFT_POSTS.find((p) => p.slug === slug);
