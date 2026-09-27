@@ -1,0 +1,22 @@
+# TheGreensolve
+
+> TheGreensolve helps companies measure Scope 1, 2 and 3 emissions, organize supporting evidence, assess decarbonization projects and prepare inventories for expert review.
+
+## Main pages
+
+- [Baseline](https://thegreensolve.com/): Carbon intelligence platform for GHG inventory, baseline comparison, project screening, evidence collection and TGS review.
+- [The Baseline Journal](https://thegreensolve.com/blog): Practical carbon accounting, reporting and carbon-market guidance for small and mid-sized companies.
+- [Net-Low](https://thegreensolve.com/netlow): Employee sustainability engagement and activity reporting.
+
+## Journal articles
+
+- [How a clean baseline changes the carbon conversation](https://thegreensolve.com/blog/how-a-clean-baseline-changes-the-carbon-conversation)
+- [Carbon credits are not just for big companies](https://thegreensolve.com/blog/carbon-credits-are-not-just-for-big-companies)
+- [The UN just opened a door for N2O projects](https://thegreensolve.com/blog/un-article-6-4-n2o-methodology)
+- [What a bank buying removals tells the rest of us](https://thegreensolve.com/blog/what-jpmorgan-buying-removals-tells-smes)
+- [Scope 3 for manufacturers without a data team](https://thegreensolve.com/blog/scope-3-for-manufacturers-without-a-data-team)
+- [Reporting in India and the US: what actually differs](https://thegreensolve.com/blog/india-and-us-reporting-what-changes)
+
+## Contact
+
+- Email: info@thegreensolve.com
