@@ -6,7 +6,14 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Build a standalone Node.js server (.output/server/index.mjs) for Hostinger.
+// Inside Lovable's own build the preset is overridden and Cloudflare is still used.
+// renderer: false stops nitro from serving the root index.html for every URL;
+// it isn't in defineConfig's type but is passed through to nitro as-is.
+const nitro = { preset: "node-server", renderer: false };
+
 export default defineConfig({
+  nitro,
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
