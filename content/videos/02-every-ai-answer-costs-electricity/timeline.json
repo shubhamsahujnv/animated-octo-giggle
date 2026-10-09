@@ -1,0 +1,76 @@
+{
+  "duration": 44.686,
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0.35,
+      "end": 2.574,
+      "caption": "Every AI answer costs electricity."
+    },
+    {
+      "id": "chips",
+      "start": 2.874,
+      "end": 6.954,
+      "caption": "Behind every reply, powerful chips in a data centre are doing the work."
+    },
+    {
+      "id": "growth",
+      "start": 7.254,
+      "end": 12.997,
+      "caption": "The IEA expects global data centre electricity use to more than double by 2030."
+    },
+    {
+      "id": "ai30",
+      "start": 13.297,
+      "end": 18.547,
+      "caption": "Power use by AI-focused servers is projected to grow about 30% a year."
+    },
+    {
+      "id": "india",
+      "start": 18.847,
+      "end": 22.472,
+      "caption": "India is building its own AI computing capacity, fast."
+    },
+    {
+      "id": "turn",
+      "start": 22.772,
+      "end": 24.018,
+      "caption": "Here's the good news."
+    },
+    {
+      "id": "perwatt",
+      "start": 24.318,
+      "end": 28.184,
+      "caption": "Each new generation of chips does more work for every unit of energy."
+    },
+    {
+      "id": "models",
+      "start": 28.484,
+      "end": 32.702,
+      "caption": "Smaller, smarter models can answer many questions with far less computing."
+    },
+    {
+      "id": "clean",
+      "start": 33.002,
+      "end": 36.827,
+      "caption": "And when data centres run on clean power, every answer gets cleaner."
+    },
+    {
+      "id": "close",
+      "start": 37.127,
+      "end": 40.789,
+      "caption": "With India's solar and wind growing fast, AI can grow green."
+    },
+    {
+      "id": "end",
+      "start": 41.089,
+      "end": 42.786,
+      "caption": "Follow The Green Solve"
+    }
+  ],
+  "sources": [
+    "IEA, Energy and AI (2025): data centre electricity ~415 TWh (2024) to ~945 TWh (2030); accelerated-server electricity use growing ~30% a year (base case)",
+    "Government of India: IndiaAI Mission, ₹10,371.92 crore (2024)",
+    "MNRE: solar 164.6 GW, wind 58.1 GW installed as of 31 July 2026"
+  ]
+}

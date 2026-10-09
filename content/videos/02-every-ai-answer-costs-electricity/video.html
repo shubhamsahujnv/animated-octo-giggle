@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Video 02: Every AI answer costs electricity</title>
+<link rel="stylesheet" href="../../../brand/tgs.css">
+<link rel="stylesheet" href="../../../brand/motion.css">
+<style>
+  .chipgrid { position: absolute; left: 140px; top: 450px; width: 800px; display: grid; grid-template-columns: repeat(8, 1fr); gap: 20px; }
+  .chipgrid div { aspect-ratio: 1; border-radius: 14px; border: 4px solid rgba(216,202,195,.4); background: #013532; position: relative; }
+  .chipgrid div::after { content: ""; position: absolute; inset: 28%; border-radius: 6px; background: rgba(216,202,195,.25); }
+  .chipgrid div.on { border-color: var(--lime); }
+  .chipgrid div.on::after { background: var(--lime); }
+  .gen { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .gen .bolt { width: 120px; background: var(--lime); border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+  .gen b { font: 700 30px/1 var(--sans); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="frame">
+
+  <!-- 1 · HOOK -->
+  <div class="scene" id="hook">
+    <div class="head" style="top:180px;font-size:92px;line-height:1.1"><span id="hk1">Every AI answer</span><br><span id="hk2" class="ital lime">costs electricity.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="bubble">
+        <path d="M290 470 h500 a50 50 0 0 1 50 50 v240 a50 50 0 0 1 -50 50 H470 l-90 80 v-80 h-90 a50 50 0 0 1 -50 -50 V520 a50 50 0 0 1 50 -50z" fill="#FFFDF8"/>
+        <g id="dots" fill="#02403D"><circle id="d1" cx="460" cy="640" r="22"/><circle id="d2" cx="540" cy="640" r="22"/><circle id="d3" cx="620" cy="640" r="22"/></g>
+        <path id="hBolt" d="M565 520 L480 660 H545 L520 770 L615 615 H550 Z" fill="#E2FF4D" stroke="#02403D" stroke-width="8" stroke-linejoin="round"/>
+      </g>
+      <g id="sparkH" stroke="#E2FF4D" stroke-width="8" stroke-linecap="round"><path d="M540 420 v-40 M700 450 l28 -28 M380 450 l-28 -28 M880 640 h40 M200 640 h-40"/></g>
+    </svg>
+  </div>
+
+  <!-- 2 · CHIPS -->
+  <div class="scene" id="chips">
+    <div class="head"><span id="ch1">Behind every reply,</span><br><span id="ch2" class="ital lime">chips doing the work.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="traces" fill="none" stroke="#E2FF4D" stroke-width="5" stroke-linecap="round"></g>
+      <g id="bigChip">
+        <rect x="390" y="560" width="300" height="300" rx="26" fill="#013532" stroke="#E2FF4D" stroke-width="8"/>
+        <rect x="465" y="635" width="150" height="150" rx="14" fill="#E2FF4D"/>
+        <text x="540" y="725" text-anchor="middle" font-family="Libre Baskerville" font-weight="700" font-size="54" fill="#02403D">AI</text>
+        <g stroke="#D8CAC3" stroke-width="10" stroke-linecap="round">
+          <path d="M450 560 v-36 M510 560 v-36 M570 560 v-36 M630 560 v-36 M450 860 v36 M510 860 v36 M570 860 v36 M630 860 v36"/>
+          <path d="M390 620 h-36 M390 680 h-36 M390 740 h-36 M390 800 h-36 M690 620 h36 M690 680 h36 M690 740 h36 M690 800 h36"/>
+        </g>
+      </g>
+      <g id="heatC" fill="none" stroke="#D8CAC3" stroke-width="5" stroke-linecap="round" opacity=".7"></g>
+    </svg>
+  </div>
+
+  <!-- 3 · GROWTH -->
+  <div class="scene" id="growth">
+    <div class="kick" id="gr0">GLOBAL DATA CENTRE ELECTRICITY</div>
+    <div class="head" style="top:220px"><span id="gr1">More than</span> <span id="gr2" class="ital lime">double by 2030.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <line x1="140" y1="940" x2="940" y2="940" stroke="#D8CAC3" stroke-width="4"/>
+      <rect id="b24" x="210" y="734" width="260" height="206" rx="14" fill="#D8CAC3" style="transform-origin:50% 100%"/>
+      <rect id="b30" x="610" y="470" width="260" height="470" rx="14" fill="#E2FF4D" style="transform-origin:50% 100%"/>
+      <text id="n24" x="340" y="708" text-anchor="middle" font-family="Libre Baskerville" font-weight="700" font-size="64" fill="#FFFDF8">0</text>
+      <text id="n30" x="740" y="444" text-anchor="middle" font-family="Libre Baskerville" font-weight="700" font-size="70" fill="#E2FF4D">0</text>
+      <g font-family="Arial" font-weight="700" font-size="30" fill="#FFFDF8"><text x="340" y="985" text-anchor="middle">2024</text><text x="740" y="985" text-anchor="middle">2030</text></g>
+      <text id="twh" x="540" y="840" text-anchor="middle" font-family="Arial" font-size="28" fill="#D8CAC3">TWh</text>
+    </svg>
+    <div class="source">Source: IEA, Energy and AI (2025), base case</div>
+  </div>
+
+  <!-- 4 · AI 30% -->
+  <div class="scene" id="ai30">
+    <div class="head"><span id="ai1">AI servers' power use:</span><br><span id="ai2" class="ital lime">up ~30% a year.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <line x1="140" y1="960" x2="940" y2="960" stroke="#D8CAC3" stroke-width="4"/>
+      <g id="cBars"></g>
+      <path id="curve" fill="none" stroke="#E2FF4D" stroke-width="8" stroke-linecap="round"/>
+      <g id="badge"><rect x="160" y="430" width="300" height="110" rx="55" fill="#E2FF4D"/>
+        <text x="310" y="502" text-anchor="middle" font-family="Libre Baskerville" font-weight="700" font-size="52" fill="#02403D">+30%/yr</text></g>
+    </svg>
+    <div class="source">Source: IEA, Energy and AI (2025). Illustrative compounding</div>
+  </div>
+
+  <!-- 5 · INDIA -->
+  <div class="scene" id="india">
+    <div class="head"><span id="in1">India is building</span><br><span id="in2" class="ital lime">its own AI compute.</span></div>
+    <div class="chipgrid" id="cgrid"></div>
+    <div class="center serif" style="top:820px"><span id="inNum" style="font-size:84px;color:var(--lime)">₹10,372 cr</span>
+      <div id="inLbl" style="font:400 32px/1.3 var(--sans);color:rgba(255,253,248,.8);margin-top:10px">IndiaAI Mission (2024)</div></div>
+  </div>
+
+  <!-- 6 · TURN -->
+  <div class="scene" id="turn">
+    <div id="turnBg" class="layer" style="background:radial-gradient(circle at 50% 50%, rgba(226,255,77,.22), transparent 55%)"></div>
+    <div class="head" style="top:230px;font-size:96px"><span id="tn1">Here's the</span><br><span id="tn2" class="ital lime">good news.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="sparks" fill="#E2FF4D"></g>
+      <circle id="tnDisc" cx="540" cy="760" r="170" fill="#E2FF4D"/>
+      <path id="tnArrow" d="M540 860 V 680 M470 740 L540 670 L610 740" fill="none" stroke="#02403D" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <!-- 7 · PER WATT -->
+  <div class="scene" id="perwatt">
+    <div class="head"><span id="pw1">More work</span><br><span id="pw2" class="ital lime">per unit of energy.</span></div>
+    <div style="position:absolute;left:120px;right:120px;top:450px;height:470px;display:flex;align-items:flex-end;justify-content:space-around">
+      <div class="gen" id="g1"><div class="bolt" style="height:400px"></div><b>Older chips</b></div>
+      <div class="gen" id="g2"><div class="bolt" style="height:240px"></div><b>Newer</b></div>
+      <div class="gen" id="g3"><div class="bolt" style="height:120px"></div><b>Latest</b></div>
+    </div>
+    <div class="center" style="top:960px;font:400 30px/1.3 var(--sans);color:rgba(255,253,248,.75)" id="pwLbl">Energy needed for the same task (illustrative)</div>
+  </div>
+
+  <!-- 8 · MODELS -->
+  <div class="scene" id="models">
+    <div class="head"><span id="md1">Right-size</span> <span id="md2" class="ital lime">the model.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="mBig"><rect x="130" y="440" width="380" height="380" rx="30" fill="none" stroke="#D8CAC3" stroke-width="6"/>
+        <g fill="rgba(216,202,195,.35)"></g>
+        <text x="320" y="880" text-anchor="middle" font-family="Arial" font-weight="700" font-size="30" fill="#D8CAC3">Huge model</text></g>
+      <g id="mSmall"><rect x="660" y="560" width="200" height="200" rx="24" fill="#E2FF4D"/>
+        <text x="760" y="880" text-anchor="middle" font-family="Arial" font-weight="700" font-size="30" fill="#E2FF4D">Right-sized model</text></g>
+      <g id="mTick"><circle cx="760" cy="660" r="54" fill="#02403D"/><path d="M732 662 l20 20 l40 -44" fill="none" stroke="#E2FF4D" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <g id="mGrid" fill="#D8CAC3" opacity=".5"></g>
+    </svg>
+    <div class="center" style="top:940px;font:400 30px/1.3 var(--sans);color:rgba(255,253,248,.75)" id="mdLbl">Same answer, far less computing, for many everyday tasks</div>
+  </div>
+
+  <!-- 9 · CLEAN -->
+  <div class="scene" id="clean">
+    <div class="head"><span id="cl1">Plug AI into</span> <span id="cl2" class="ital lime">clean power.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="cSun"><circle cx="230" cy="520" r="70" fill="#E2FF4D"/>
+        <g id="cRays" stroke="#E2FF4D" stroke-width="8" stroke-linecap="round" style="transform-box:view-box;transform-origin:230px 520px"><path d="M230 410 v-28 M230 630 v28 M120 520 h-28 M340 520 h28 M152 442 l-20 -20 M308 598 l20 20 M152 598 l-20 20 M308 442 l20 -20"/></g></g>
+      <g id="cTurb"><rect x="845" y="470" width="14" height="330" fill="#FFFDF8"/>
+        <g id="cBlades" style="transform-box:view-box;transform-origin:852px 470px">
+          <path d="M852 470 L845 350 Q852 330 859 350 Z" fill="#FFFDF8"/><path d="M852 470 L845 350 Q852 330 859 350 Z" fill="#FFFDF8" transform="rotate(120 852 470)"/><path d="M852 470 L845 350 Q852 330 859 350 Z" fill="#FFFDF8" transform="rotate(240 852 470)"/>
+          <circle cx="852" cy="470" r="14" fill="#E2FF4D"/></g></g>
+      <path id="fl1" d="M290 560 C 380 620, 420 680, 450 720" fill="none" stroke="#E2FF4D" stroke-width="7" stroke-dasharray="12 14"/>
+      <path id="fl2" d="M845 640 C 760 670, 700 700, 640 730" fill="none" stroke="#E2FF4D" stroke-width="7" stroke-dasharray="12 14"/>
+      <g id="cChip"><rect x="430" y="700" width="220" height="220" rx="22" fill="#013532" stroke="#E2FF4D" stroke-width="7"/>
+        <rect x="485" y="755" width="110" height="110" rx="12" fill="#E2FF4D"/>
+        <path id="cLeaf" d="M540 845 C 505 825, 505 785, 540 765 C 575 785, 575 825, 540 845 Z" fill="#02403D"/></g>
+    </svg>
+  </div>
+
+  <!-- 10 · CLOSE -->
+  <div class="scene" id="close">
+    <div class="head"><span id="cs1">Smarter AI.</span><br><span id="cs2" class="ital lime">Cleaner power.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="cBubble"><path d="M290 470 h500 a50 50 0 0 1 50 50 v240 a50 50 0 0 1 -50 50 H470 l-90 80 v-80 h-90 a50 50 0 0 1 -50 -50 V520 a50 50 0 0 1 50 -50z" fill="#E2FF4D"/>
+        <path id="csLeaf" d="M540 780 C 450 730, 450 600, 540 540 C 630 600, 630 730, 540 780 Z" fill="#02403D"/>
+        <path d="M540 780 V 600" stroke="#E2FF4D" stroke-width="7"/></g>
+    </svg>
+  </div>
+
+  </div>
+
+  <!-- 11 · END CARD -->
+  <div class="scene" id="end">
+    <img id="endLogo" src="../../../brand/logo-dark-trimmed.png" alt="">
+    <div class="center serif" id="endT1">Follow <span class="ital">The Green Solve</span></div>
+    <div class="center" id="endT2">DATA CENTRES &amp; THE ENVIRONMENT · EP 02</div>
+    <div class="center" id="endT3"><span>Save this · Share with your team</span></div>
+    <div class="center" id="endSrc"></div>
+  </div>
+</div>
+
+<script src="../../../brand/motion.js"></script>
+<script>
+chrome();
+captions(/\d|electricity|clean|green|more|less|energy|good|double/i, ['hook']);
+
+// 1 · hook: chat bubble types, then the dots become a bolt
+{ const t = scene('hook');
+  A('#hk1', [{ opacity: 0, transform: 'translateY(-40px)' }, { opacity: 1, transform: 'none' }], 0, .45);
+  $('#hk1').style.display = $('#hk2').style.display = 'inline-block';
+  A('#hk2', [{ opacity: 0, transform: 'scale(1.5)' }, { opacity: 1, transform: 'scale(1)' }], .5, .5, { ease: BACK });
+  A('#bubble', [{ opacity: 0, transform: 'translateY(80px) scale(.8)' }, { opacity: 1, transform: 'none' }], .05, .5, { ease: BACK });
+  ['#d1', '#d2', '#d3'].forEach((d, i) => A(d, [{ transform: 'translateY(0)' }, { transform: 'translateY(-26px)' }], .3 + i * .12, .22, { it: 3, dir: 'alternate', fill: 'none' }));
+  A('#dots', [{ opacity: 1 }, { opacity: 0 }], .95, .1, { fill: 'forwards' });
+  A('#hBolt', [{ opacity: 0, transform: 'scale(0) rotate(-25deg)' }, { opacity: 1, transform: 'scale(1)' }], .95, .45, { ease: BACK });
+  A('#sparkH', [{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1.1)' }, { opacity: 0, transform: 'scale(1.3)' }], 1.0, .7, { fill: 'none' });
+  A('#hBolt', [{ opacity: 1 }, { opacity: .55 }, { opacity: 1 }], 1.5, .2, { it: 3, fill: 'none' });
+}
+// 2 · chips: a big AI chip with pulsing traces and rising heat
+{ const t = scene('chips');
+  words('#ch1', t); words('#ch2', t + .5);
+  scale0('#bigChip', t + .1, .7);
+  const tr = $('#traces'), paths = ['M354 620 H 200 V 480', 'M354 800 H 160 V 1000', 'M726 620 H 880 V 470', 'M726 800 H 920 V 1010', 'M510 896 V 1010 H 300', 'M630 896 V 1010 H 800'];
+  paths.forEach((d, i) => {
+    const p = document.createElementNS(NS, 'path'); p.setAttribute('d', d); p.setAttribute('stroke-dasharray', '600'); p.setAttribute('stroke-dashoffset', '600'); tr.appendChild(p);
+    draw(p, 600, t + .6 + i * .12, .7);
+    const c = document.createElementNS(NS, 'circle'); c.setAttribute('r', 12); c.setAttribute('fill', '#E2FF4D');
+    const end = d.split(' ').slice(-2); c.setAttribute('cx', end[0].replace(/[A-Z]/g, '') || 0);
+    tr.appendChild(c);
+  });
+  // place end-dots at each trace end using path geometry
+  [...tr.querySelectorAll('path')].forEach((p, i) => { const L = p.getTotalLength(), pt = p.getPointAtLength(L), c = tr.querySelectorAll('circle')[i];
+    c.setAttribute('cx', pt.x); c.setAttribute('cy', pt.y); scale0(c, t + 1.2 + i * .1, .4);
+    A(c, [{ opacity: 1 }, { opacity: .3 }], t + 1.8 + i * .15, .4, { it: Infinity, dir: 'alternate', fill: 'none' }); });
+  A('#bigChip rect:nth-child(2)', [{ opacity: 1 }, { opacity: .6 }], t + 1.5, .5, { it: Infinity, dir: 'alternate', fill: 'none' });
+  const hc = $('#heatC');
+  for (let i = 0; i < 5; i++) {
+    const p = document.createElementNS(NS, 'path'); const x = 450 + i * 45;
+    p.setAttribute('d', `M${x} 500 q 14 -24 0 -48 t 0 -48`); hc.appendChild(p);
+    A(p, [{ opacity: 0, transform: 'translateY(20px)' }, { opacity: .9, transform: 'translateY(-20px)' }, { opacity: 0, transform: 'translateY(-70px)' }], t + 1.4 + i * .2, 1.3, { fill: 'none', it: 2, ease: 'linear' });
+  }
+}
+// 3 · growth: 415 → 945 TWh
+{ const t = scene('growth');
+  fadeUp('#gr0', t); words('#gr1', t + .2); words('#gr2', t + .5);
+  A('#b24', [{ transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }], t + .4, .8, { ease: INOUT });
+  A('#b30', [{ transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }], t + 1.4, 1.4, { ease: INOUT });
+  counter('#n24', t + .4, .8, 415, (v) => Math.round(v));
+  counter('#n30', t + 1.4, 1.4, 945, (v) => '~' + Math.round(v));
+  fadeUp('#n24', t + .4, .3); fadeUp('#n30', t + 1.4, .3); fadeUp('#twh', t + 1); fadeUp('#growth .source', t + 1.5);
+  A('#b30', [{ transform: 'scaleY(1)' }, { transform: 'scaleY(1.03)' }, { transform: 'scaleY(1)' }], t + 2.9, .4, { fill: 'none' });
+}
+// 4 · ai30: compounding bars + curve
+{ const t = scene('ai30');
+  words('#ai1', t); words('#ai2', t + .5);
+  const g = $('#cBars'), pts = [];
+  for (let i = 0; i < 7; i++) {
+    const h = 110 * Math.pow(1.3, i), x = 180 + i * 108, y = 960 - h;
+    const r = document.createElementNS(NS, 'rect');
+    r.setAttribute('x', x); r.setAttribute('y', y); r.setAttribute('width', 76); r.setAttribute('height', h); r.setAttribute('rx', 10);
+    r.setAttribute('fill', i === 6 ? '#E2FF4D' : 'rgba(216,202,195,.45)'); r.style.transformOrigin = '50% 100%'; g.appendChild(r);
+    A(r, [{ transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }], t + .4 + i * .3, .6, { ease: BACK });
+    pts.push([x + 38, y - 24]);
+  }
+  const cv = $('#curve'); cv.setAttribute('d', 'M' + pts.map((p) => p.join(' ')).join(' L ')); const L = cv.getTotalLength();
+  cv.setAttribute('stroke-dasharray', L); cv.setAttribute('stroke-dashoffset', L);
+  draw(cv, L, t + .5, 2.4);
+  A('#badge', [{ opacity: 0, transform: 'scale(0) rotate(-8deg)' }, { opacity: 1, transform: 'scale(1)' }], t + 1.6, .6, { ease: BACK });
+  fadeUp('#ai30 .source', t + 1.8);
+}
+// 5 · india: chip grid lights up
+{ const t = scene('india');
+  words('#in1', t); words('#in2', t + .4);
+  const G = $('#cgrid');
+  for (let i = 0; i < 24; i++) {
+    const d = document.createElement('div'); G.appendChild(d);
+    A(d, [{ opacity: 0, transform: 'scale(.4)' }, { opacity: 1, transform: 'none' }], t + .1 + i * .03, .35, { ease: BACK });
+    A(d, [{ borderColor: 'rgba(216,202,195,.4)' }, { borderColor: '#E2FF4D' }], t + .9 + i * .08, .2);
+    const inner = document.createElement('i');
+    inner.style.cssText = 'position:absolute;inset:28%;border-radius:6px;background:#E2FF4D;opacity:0;z-index:1';
+    d.appendChild(inner);
+    A(inner, [{ opacity: 0 }, { opacity: 1 }], t + .9 + i * .08, .2);
+  }
+  popIn('#inNum', t + 1.6); fadeUp('#inLbl', t + 2);
+}
+// 6 · turn
+{ const t = scene('turn');
+  wipe(t - .55);
+  words('#tn1', t); words('#tn2', t + .3);
+  scale0('#tnDisc', t + .1, .6);
+  A('#tnArrow', [{ opacity: 0, transform: 'translateY(60px)' }, { opacity: 1, transform: 'none' }], t + .4, .5, { ease: BACK });
+  A('#turnBg', [{ opacity: 0 }, { opacity: 1 }], t, .8);
+  const sp = $('#sparks');
+  for (let i = 0; i < 14; i++) {
+    const a = i / 14 * Math.PI * 2, c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', 540 + Math.cos(a) * 240); c.setAttribute('cy', 760 + Math.sin(a) * 240); c.setAttribute('r', 7 + (i % 3) * 3); sp.appendChild(c);
+    A(c, [{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.4)' }], t + .3 + i * .04, .8, { fill: 'none' });
+  }
+}
+// 7 · per watt: energy per task shrinks across generations
+{ const t = scene('perwatt');
+  words('#pw1', t); words('#pw2', t + .4);
+  ['#g1', '#g2', '#g3'].forEach((g, i) => {
+    fadeUp(g, t + .3 + i * .5);
+    A(`${g} .bolt`, [{ transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }], t + .4 + i * .5, .6, { ease: INOUT });
+  });
+  A('#g3 .bolt', [{ transform: 'scaleY(1)' }, { transform: 'scaleY(1.15)' }, { transform: 'scaleY(1)' }], t + 2, .4, { fill: 'none' });
+  fadeUp('#pwLbl', t + 1.8);
+}
+// 8 · models: huge model vs right-sized model, same answer
+{ const t = scene('models');
+  words('#md1', t); words('#md2', t + .3);
+  const mg = $('#mGrid');
+  for (let r = 0; r < 6; r++) for (let c = 0; c < 6; c++) {
+    const q = document.createElementNS(NS, 'rect'); q.setAttribute('x', 160 + c * 56); q.setAttribute('y', 470 + r * 56); q.setAttribute('width', 42); q.setAttribute('height', 42); q.setAttribute('rx', 6); mg.appendChild(q);
+    A(q, [{ opacity: 0 }, { opacity: 1 }], t + .2 + (r * 6 + c) * .015, .2);
+    A(q, [{ opacity: 1 }, { opacity: .3 }], t + 1 + rnd(), .3, { it: Infinity, dir: 'alternate', fill: 'none' });
+  }
+  fadeUp('#mBig', t + .1);
+  scale0('#mSmall', t + .9);
+  scale0('#mTick', t + 1.5);
+  fadeUp('#mdLbl', t + 2);
+}
+// 9 · clean power feeding the chip
+{ const t = scene('clean');
+  words('#cl1', t); words('#cl2', t + .4);
+  scale0('#cSun', t + .2);
+  A('#cRays', [{ transform: 'rotate(0)' }, { transform: 'rotate(120deg)' }], t, 4, { ease: 'linear' });
+  A('#cTurb', [{ opacity: 0, transform: 'translateY(80px)' }, { opacity: 1, transform: 'none' }], t + .4, .6, { ease: BACK });
+  spin('#cBlades', t + .4, 1.4);
+  A('#cChip', [{ opacity: 0, transform: 'translateY(60px)' }, { opacity: 1, transform: 'none' }], t + .6, .6, { ease: BACK });
+  A('#fl1', [{ strokeDashoffset: 0, opacity: 1 }, { strokeDashoffset: -52, opacity: 1 }], t + 1.1, .5, { it: Infinity, ease: 'linear' });
+  A('#fl2', [{ strokeDashoffset: 0, opacity: 1 }, { strokeDashoffset: -52, opacity: 1 }], t + 1.3, .5, { it: Infinity, ease: 'linear' });
+  A('#cLeaf', [{ opacity: 0, transform: 'scale(0) rotate(-40deg)' }, { opacity: 1, transform: 'scale(1)' }], t + 1.9, .6, { ease: BACK });
+}
+// 10 · close: chat bubble with a leaf
+{ const t = scene('close');
+  words('#cs1', t); words('#cs2', t + .6);
+  A('#cBubble', [{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1)' }], t + .1, .6, { ease: BACK });
+  A('#csLeaf', [{ opacity: 0, transform: 'scale(0) rotate(-30deg)' }, { opacity: 1, transform: 'scale(1)' }], t + .7, .6, { ease: BACK });
+  A('#cBubble', [{ transform: 'translateY(0)' }, { transform: 'translateY(-14px)' }], t + 1.3, .8, { it: Infinity, dir: 'alternate', ease: 'ease-in-out', fill: 'none' });
+}
+endCard();
+finish();
+</script>
+</body>
+</html>

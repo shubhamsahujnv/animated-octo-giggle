@@ -60,9 +60,9 @@ The brand kit lives in [`brand/`](brand/). Read `brand/README.md` and `brand/TGS
 
 ## 7. Production pipeline (how content in `content/` is built)
 
-- Carousels: write `content/carousels/<nn-slug>/slides.html` (one `<section class="slide">` per slide, using `brand/tgs.css`), then
+- Carousels: write `content/carousels/<nn-slug>/slides.html` (one `<section class="slide">` per slide, using `brand/tgs.css` + shared layout `brand/carousel.css`), then
   `NODE_PATH=$(npm root -g) node tools/render-carousel.js content/carousels/<nn-slug>` → `png/slide-NN.png` + `carousel.pdf`.
-- Videos: write `script.json` (scenes + voiceover lines + sources) and `video.html` (motion graphics driven by `window.seek(t)`), then:
+- Videos: write `script.json` (scenes + voiceover lines + sources) and `video.html` (scenes inside `#frame`, built on the shared engine `brand/motion.css` + `brand/motion.js`: `chrome()`, `captions()`, `scene()`, `endCard()`, `finish()`; see `content/videos/02-*` for a template), then:
   1. `KOKORO_DIR=<dir with kokoro.onnx + voices.bin> python3 tools/make-voiceover.py <video dir>`: Indian-English female voice (`hf_beta`), writes `timeline.json`
   2. `python3 tools/make-music.py <video dir>`: original synthesised background music + SFX (optional `"music": {"lift": <scene id>, "impacts": [s]}` in script.json)
   3. `NODE_PATH=$(npm root -g) node tools/render-video.js <video dir>`: frames → `silent.mp4` (`--stills 1,5,9` for quick previews)

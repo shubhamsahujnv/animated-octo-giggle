@@ -1,0 +1,25 @@
+{
+  "title": "Every AI answer costs electricity",
+  "voice": "hf_beta",
+  "speed": 1.02,
+  "gap": 0.3,
+  "music": { "lift": "turn", "impacts": [1.0] },
+  "scenes": [
+    { "id": "hook",    "say": "Every A.I. answer costs electricity.",                                                                "caption": "Every AI answer costs electricity." },
+    { "id": "chips",   "say": "Behind every reply, powerful chips in a data centre are doing the work.",                             "caption": "Behind every reply, powerful chips in a data centre are doing the work." },
+    { "id": "growth",  "say": "The I.E.A. expects global data centre electricity use to more than double by twenty thirty.",          "caption": "The IEA expects global data centre electricity use to more than double by 2030." },
+    { "id": "ai30",    "say": "And power use by A.I.-focused servers is projected to grow about thirty percent a year.",            "caption": "Power use by AI-focused servers is projected to grow about 30% a year." },
+    { "id": "india",   "say": "India is building its own A.I. computing capacity, fast.",                                           "caption": "India is building its own AI computing capacity, fast." },
+    { "id": "turn",    "say": "Here's the good news.",                                                                               "caption": "Here's the good news." },
+    { "id": "perwatt", "say": "Each new generation of chips does more work for every unit of energy.",                              "caption": "Each new generation of chips does more work for every unit of energy." },
+    { "id": "models",  "say": "Smaller, smarter models can answer many questions with far less computing.",                         "caption": "Smaller, smarter models can answer many questions with far less computing." },
+    { "id": "clean",   "say": "And when data centres run on clean power, every answer gets cleaner.",                               "caption": "And when data centres run on clean power, every answer gets cleaner." },
+    { "id": "close",   "say": "With India's solar and wind growing fast, A.I. can grow green.",                                      "caption": "With India's solar and wind growing fast, AI can grow green." },
+    { "id": "end",     "say": "Follow The Green Solve for more.",                                                                    "caption": "Follow The Green Solve" }
+  ],
+  "sources": [
+    "IEA, Energy and AI (2025): data centre electricity ~415 TWh (2024) to ~945 TWh (2030); accelerated-server electricity use growing ~30% a year (base case)",
+    "Government of India: IndiaAI Mission, ₹10,371.92 crore (2024)",
+    "MNRE: solar 164.6 GW, wind 58.1 GW installed as of 31 July 2026"
+  ]
+}

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Carousel 04: The data centre efficiency score</title>
+<link rel="stylesheet" href="../../../brand/tgs.css">
+<link rel="stylesheet" href="../../../brand/carousel.css">
+<style>
+  .frac { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-top: 64px; background: var(--teal); color: var(--cream); border-radius: 30px; padding: 72px 40px; }
+  .frac .lbl { font: 700 64px/1 var(--serif); color: var(--lime); }
+  .frac .line { width: 80%; height: 5px; background: var(--taupe); border-radius: 3px; }
+  .frac .t { font: 700 42px/1.2 var(--sans); text-align: center; }
+  .frac .tsub { font-size: 28px; color: rgba(255,253,248,.75); margin-top: 8px; text-align: center; }
+  .scale { display: flex; flex-direction: column; gap: 48px; margin-top: 72px; }
+  .scale .r { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 26px; }
+  .scale .p { font: 700 72px/1 var(--serif); }
+  .scale .bar { display: flex; height: 110px; border-radius: 14px; overflow: hidden; }
+  .scale .it { background: var(--cream); color: var(--teal); display: flex; align-items: center; justify-content: center; font: 700 28px/1 var(--sans); }
+  .scale .ov { background: var(--lime); color: var(--teal); display: flex; align-items: center; justify-content: center; font: 700 28px/1 var(--sans); }
+  .lev { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 52px; }
+  .lev .card { padding: 50px 40px 56px; }
+  .lev .ttl { font-size: 36px; margin-top: 24px; }
+  .lev .sub { font-size: 26px; }
+  .met { display: flex; flex-direction: column; gap: 20px; margin-top: 52px; }
+  .met .card { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 30px; padding: 48px 44px; }
+  .met .k { font: 700 56px/1 var(--serif); color: var(--lime); }
+</style>
+</head>
+<body>
+
+<!-- 1 · HOOK -->
+<section class="slide dark">
+  <div class="kicker">Data centres &amp; the environment · 04</div>
+  <h1>One number tells you how much energy a data centre <em>wastes.</em></h1>
+  <svg viewBox="0 0 904 570" width="904" height="570" style="margin-top:56px">
+    <path d="M152 420 A300 300 0 0 1 752 420" fill="none" stroke="rgba(216,202,195,.25)" stroke-width="54" stroke-linecap="round"/>
+    <path d="M152 420 A300 300 0 0 1 452 120" fill="none" stroke="#E2FF4D" stroke-width="54" stroke-linecap="round"/>
+    <g font-family="Arial" font-size="28" font-weight="700" fill="#D8CAC3">
+      <text x="120" y="470" text-anchor="middle">1.0</text><text x="452" y="78" text-anchor="middle">1.5</text><text x="790" y="470" text-anchor="middle">2.0+</text>
+    </g>
+    <line x1="452" y1="420" x2="300" y2="200" stroke="#FFFDF8" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="452" cy="420" r="30" fill="#FFFDF8"/>
+    <text x="452" y="556" text-anchor="middle" font-family="Libre Baskerville" font-style="italic" font-size="40" fill="#E2FF4D">Power Usage Effectiveness</text>
+  </svg>
+  <div class="footer"><span>SWIPE &nbsp;→</span><img src="../../../brand/logo-light-trimmed.png" alt="The Green Solve"></div>
+</section>
+
+<!-- 2 · WHAT IS PUE -->
+<section class="slide light">
+  <div class="kicker">Meet PUE</div>
+  <h2>Power Usage<br><em>Effectiveness.</em></h2>
+  <p class="lead">It compares the energy a whole data centre uses with the energy that actually reaches the computers.</p>
+  <div class="frac">
+    <div class="lbl">PUE =</div>
+    <div><div class="t">Total facility energy</div><div class="tsub">computers + cooling + lighting + power losses</div></div>
+    <div class="line"></div>
+    <div><div class="t">IT equipment energy</div><div class="tsub">servers, storage and network only</div></div>
+  </div>
+  <p style="font-size:34px;line-height:1.45;margin-top:56px;color:var(--mauve)">A perfect score is <b class="t">1.0</b>: every unit of power goes to computing.</p>
+  <div class="footer"><span>02 / 09</span><img src="../../../brand/logo-dark-trimmed.png" alt="The Green Solve"></div>
+</section>
+
+<!-- 3 · READING THE SCORE -->
+<section class="slide dark">
+  <div class="kicker">Reading the score</div>
+  <h2>Lower is better.<br><em>Much better.</em></h2>
+  <div class="scale">
+    <div class="r"><div class="p">2.0</div><div class="bar"><div class="it" style="width:50%">Computing</div><div class="ov" style="width:50%">Overhead</div></div></div>
+    <div class="r"><div class="p">1.5</div><div class="bar" style="width:75%"><div class="it" style="width:66.7%">Computing</div><div class="ov" style="width:33.3%">Overhead</div></div></div>
+    <div class="r"><div class="p" style="color:var(--lime)">1.1</div><div class="bar" style="width:55%"><div class="it" style="width:91%">Computing</div><div class="ov" style="width:9%"></div></div></div>
+  </div>
+  <div class="note" style="margin-top:72px;font-size:32px">At <b>2.0</b>, every unit of power for computing needs <b>one more</b> for cooling and losses. At <b>1.1</b>, it needs just <b>a tenth</b>.</div>
+  <div class="footer"><span>03 / 09</span><img src="../../../brand/logo-light-trimmed.png" alt="The Green Solve"></div>
+</section>
+
+<!-- 4 · GLOBAL AVERAGE -->
+<section class="slide light">
+  <div class="kicker">The global picture</div>
+  <h2>The world average is<br><em>stuck above 1.5.</em></h2>
+  <svg viewBox="0 0 904 440" width="904" height="500" style="margin-top:56px" preserveAspectRatio="none">
+    <rect x="0" y="0" width="904" height="440" rx="24" fill="rgba(216,202,195,.35)"/>
+    <g font-family="Arial" font-size="24" fill="#665458"><text x="40" y="96">2.0</text><text x="40" y="226">1.5</text><text x="40" y="356">1.0</text></g>
+    <g stroke="#D8CAC3" stroke-width="2"><line x1="100" y1="88" x2="860" y2="88"/><line x1="100" y1="218" x2="860" y2="218"/><line x1="100" y1="348" x2="860" y2="348"/></g>
+    <path d="M120 196 L 240 200 L 360 198 L 480 202 L 600 200 L 720 203 L 840 204" fill="none" stroke="#02403D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#02403D"><circle cx="120" cy="196" r="9"/><circle cx="840" cy="204" r="11"/></g>
+    <path d="M120 322 L 840 322" stroke="#E2FF4D" stroke-width="8" stroke-dasharray="4 16" stroke-linecap="round"/>
+    <text x="840" y="300" text-anchor="end" font-family="Arial" font-weight="700" font-size="26" fill="#02403D">Best-in-class ≈ 1.1</text>
+    <g font-family="Arial" font-size="24" fill="#665458"><text x="120" y="410" text-anchor="middle">2019</text><text x="840" y="410" text-anchor="middle">2025</text></g>
+  </svg>
+  <p style="font-size:31px;line-height:1.45;margin-top:40px;color:var(--mauve)">Average PUE has barely moved in <b class="t">six years</b>, held back by older buildings and hot climates. The most efficient large facilities report figures close to 1.1.</p>
+  <div class="source"><b>Source:</b> Uptime Institute, Global Data Center Survey 2025 (weighted average PUE above 1.5). Chart is illustrative of the flat trend.</div>
+  <div class="footer"><span>04 / 09</span><img src="../../../brand/logo-dark-trimmed.png" alt="The Green Solve"></div>
+</section>
+
+<!-- 5 · INDIA -->
+<section class="slide stone">
+  <div class="kicker">The India challenge</div>
+  <h2>Heat and humidity<br>make it <em>harder here.</em></h2>
+  <div style="display:flex;flex-direction:column;gap:20px;margin-top:56px">
+    <div class="card row" style="background:var(--cream);padding:56px 44px">
+      <svg viewBox="0 0 90 90" width="90" height="90"><circle cx="45" cy="45" r="18" fill="#02403D"/><g stroke="#02403D" stroke-width="6" stroke-linecap="round"><path d="M45 6v12M45 72v12M6 45h12M72 45h12M17 17l9 9M64 64l9 9M17 73l9-9M64 26l9-9"/></g></svg>
+      <div><div class="ttl" style="font-size:38px">Hot summers</div><div class="sub">Cooling systems work harder for more of the year</div></div></div>
+    <div class="card row" style="background:var(--cream);padding:56px 44px">
+      <svg viewBox="0 0 90 90" width="90" height="90"><path d="M45 8 c0 0-28 34-28 52 a28 28 0 0 0 56 0 c0-18-28-52-28-52z" fill="#02403D"/></svg>
+      <div><div class="ttl" style="font-size:38px">Humid coasts</div><div class="sub">Mumbai and Chennai, India's biggest hubs, are coastal and humid</div></div></div>
+    <div class="card row" style="background:var(--teal);padding:56px 44px;color:var(--cream)">
+      <svg viewBox="0 0 90 90" width="90" height="90"><path d="M20 70 L45 20 L70 70 Z" fill="none" stroke="#E2FF4D" stroke-width="6" stroke-linejoin="round"/><path d="M45 40v14" stroke="#E2FF4D" stroke-width="6" stroke-linecap="round"/><circle cx="45" cy="62" r="4" fill="#E2FF4D"/></svg>
+      <div><div class="ttl" style="font-size:38px">So design matters more</div><div class="sub" style="color:rgba(255,253,248,.82)">Smart engineering can close the gap with cooler countries</div></div></div>
+  </div>
+  <div class="footer"><span>05 / 09</span><img src="../../../brand/logo-dark-trimmed.png" alt="The Green Solve"></div>
+</section>
+
+<!-- 6 · LEVERS -->
+<section class="slide light">
+  <div class="kicker">The hopeful part</div>
+  <h2>Four proven ways to<br><em>bring PUE down.</em></h2>
+  <div class="lev">
+    <div class="card teal"><svg viewBox="0 0 80 80" width="80" height="80"><g fill="none" stroke="#E2FF4D" stroke-width="5"><rect x="6" y="14" width="24" height="52" rx="4"/><rect x="50" y="14" width="24" height="52" rx="4"/></g><path d="M34 40h12" stroke="#E2FF4D" stroke-width="5"/><path d="M40 20v40" stroke="#D8CAC3" stroke-width="3" stroke-dasharray="4 6"/></svg>
+      <div class="ttl">Contain the airflow</div><div class="sub">Separate hot and cold aisles so cool air isn't wasted</div></div>
+    <div class="card teal"><svg viewBox="0 0 80 80" width="80" height="80"><g fill="none" stroke="#E2FF4D" stroke-width="5"><rect x="30" y="6" width="20" height="50" rx="10"/><circle cx="40" cy="62" r="13"/></g><rect x="36" y="28" width="8" height="30" fill="#E2FF4D"/></svg>
+      <div class="ttl">Run a little warmer</div><div class="sub">Raise temperature setpoints within safe equipment limits</div></div>
+    <div class="card teal"><svg viewBox="0 0 80 80" width="80" height="80"><path d="M40 6 c0 0-22 28-22 42 a22 22 0 0 0 44 0 c0-14-22-42-22-42z" fill="none" stroke="#E2FF4D" stroke-width="5"/><path d="M30 50 a10 10 0 0 0 10 10" stroke="#E2FF4D" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+      <div class="ttl">Cool with liquid</div><div class="sub">Direct liquid cooling handles dense AI racks efficiently</div></div>
+    <div class="card teal"><svg viewBox="0 0 80 80" width="80" height="80"><path d="M46 6 L18 46 H38 L32 74 L62 32 H42 Z" fill="none" stroke="#E2FF4D" stroke-width="5" stroke-linejoin="round"/></svg>
+      <div class="ttl">Cut power losses</div><div class="sub">Efficient UPS and power systems waste less energy</div></div>
+  </div>
+  <div class="footer"><span>06 / 09</span><img src="../../../brand/logo-dark-trimmed.png" alt="The Green Solve"></div>
+</section>
+
+<!-- 7 · BEYOND PUE -->
+<section class="slide dark">
+  <div class="kicker">The honest caveat</div>
+  <h2>PUE isn't the<br><em>whole story.</em></h2>
+  <p class="lead">A data centre can be very efficient and still run on coal power, or use a lot of water. Look at three numbers together.</p>
+  <div class="met">
+    <div class="card" style="background:rgba(216,202,195,.12);border:2px solid rgba(216,202,195,.35);color:var(--cream)"><div class="k">PUE</div><div><div class="ttl" style="font-size:36px">Energy efficiency</div><div class="sub" style="color:rgba(255,253,248,.8)">How much power is overhead</div></div></div>
+    <div class="card" style="background:rgba(216,202,195,.12);border:2px solid rgba(216,202,195,.35);color:var(--cream)"><div class="k">WUE</div><div><div class="ttl" style="font-size:36px">Water efficiency</div><div class="sub" style="color:rgba(255,253,248,.8)">Litres of water per unit of IT energy</div></div></div>
+    <div class="card" style="background:var(--lime);color:var(--teal)"><div class="k" style="color:var(--teal)">RE%</div><div><div class="ttl" style="font-size:36px">Renewable share</div><div class="sub" style="color:var(--teal)">How much of the electricity is clean</div></div></div>
+  </div>
+  <div class="footer"><span>07 / 09</span><img src="../../../brand/logo-light-trimmed.png" alt="The Green Solve"></div>
+</section>
+
+<!-- 8 · FOR BUYERS -->
+<section class="slide light">
+  <div class="kicker">For sustainability teams</div>
+  <h2>Put these numbers<br><em>in every contract.</em></h2>
+  <div style="display:flex;flex-direction:column;gap:18px;margin-top:52px">
+    <div class="card white row" style="padding:52px 42px"><svg viewBox="0 0 44 44" width="56" height="56"><circle cx="22" cy="22" r="21" fill="#E2FF4D"/><path d="M12 23 l7 7 13-15" fill="none" stroke="#02403D" stroke-width="4" stroke-linecap="round"/></svg><div class="ttl" style="font-size:36px">Annual PUE, measured, not designed</div></div>
+    <div class="card white row" style="padding:52px 42px"><svg viewBox="0 0 44 44" width="56" height="56"><circle cx="22" cy="22" r="21" fill="#E2FF4D"/><path d="M12 23 l7 7 13-15" fill="none" stroke="#02403D" stroke-width="4" stroke-linecap="round"/></svg><div class="ttl" style="font-size:36px">Water use and water source</div></div>
+    <div class="card white row" style="padding:52px 42px"><svg viewBox="0 0 44 44" width="56" height="56"><circle cx="22" cy="22" r="21" fill="#E2FF4D"/><path d="M12 23 l7 7 13-15" fill="none" stroke="#02403D" stroke-width="4" stroke-linecap="round"/></svg><div class="ttl" style="font-size:36px">Share of renewable electricity</div></div>
+    <div class="card white row" style="padding:52px 42px"><svg viewBox="0 0 44 44" width="56" height="56"><circle cx="22" cy="22" r="21" fill="#E2FF4D"/><path d="M12 23 l7 7 13-15" fill="none" stroke="#02403D" stroke-width="4" stroke-linecap="round"/></svg><div class="ttl" style="font-size:36px">A plan to improve all three</div></div>
+  </div>
+  <div class="footer"><span>08 / 09</span><img src="../../../brand/logo-dark-trimmed.png" alt="The Green Solve"></div>
+</section>
+
+<!-- 9 · CTA -->
+<section class="slide dark">
+  <div class="kicker">The takeaway</div>
+  <h2 style="font-size:76px">What gets measured<br>gets improved.<br><em>Start with PUE.<br>Don't stop there.</em></h2>
+  <div style="margin-top:72px;background:var(--cream);border-radius:28px;padding:48px 52px;color:var(--teal)">
+    <div style="font:600 22px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mauve)">Next in this series</div>
+    <div style="font:700 44px/1.3 var(--serif);margin-top:20px">Can India's cloud run on India's sunshine?</div>
+  </div>
+  <div style="display:flex;gap:18px;margin-top:48px">
+    <span class="pill" style="background:transparent;color:var(--cream);border:2px solid var(--taupe)">Save</span>
+    <span class="pill" style="background:transparent;color:var(--cream);border:2px solid var(--taupe)">Share</span>
+    <span class="pill">Follow The Green Solve</span>
+  </div>
+  <img src="../../../brand/logo-light-trimmed.png" alt="The Green Solve" style="position:absolute;right:88px;bottom:72px;height:150px">
+  <div class="footer"><span>09 / 09</span><span></span></div>
+</section>
+
+</body>
+</html>
