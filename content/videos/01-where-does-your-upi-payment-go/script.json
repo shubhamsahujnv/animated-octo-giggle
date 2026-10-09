@@ -1,0 +1,24 @@
+{
+  "title": "Where does your UPI payment go?",
+  "voice": "hf_beta",
+  "speed": 1.04,
+  "gap": 0.28,
+  "scenes": [
+    { "id": "hook",      "say": "You tap to pay. Ten rupees for chai. Done in one second.",                                            "caption": "You tap to pay. ₹10 for chai. Done in one second." },
+    { "id": "question",  "say": "But where did that payment actually go?",                                                             "caption": "But where did that payment actually go?" },
+    { "id": "reveal",    "say": "Not into the sky. Into a data centre.",                                                               "caption": "Not into the sky. Into a data centre." },
+    { "id": "inside",    "say": "A building full of servers, running twenty-four hours a day, storing and processing your digital life.", "caption": "A building full of servers, running 24×7, storing and processing your digital life." },
+    { "id": "everything","say": "Your reels. Your cricket streams. Even your A.I. chats.",                                             "caption": "Your reels. Your cricket streams. Even your AI chats." },
+    { "id": "upi",       "say": "In September twenty twenty-six alone, India made over twenty-four billion U.P.I. payments.",          "caption": "In September 2026 alone, India made over 24 billion UPI payments." },
+    { "id": "power",     "say": "And data centres already use about one and a half percent of the world's electricity.",               "caption": "Data centres already use about 1.5% of the world's electricity." },
+    { "id": "india",     "say": "India is building more of them, fast. Mumbai, Chennai, Delhi, Bengaluru.",                            "caption": "India is building more of them, fast." },
+    { "id": "hope",      "say": "The good news? Over half of India's installed power capacity is now non-fossil.",                     "caption": "The good news? Over half of India's installed power capacity is now non-fossil." },
+    { "id": "close",     "say": "Power the cloud with clean energy, and India's digital boom can be a green one.",                     "caption": "Power the cloud with clean energy, and India's digital boom can be a green one." },
+    { "id": "end",       "say": "Follow The Green Solve for more.",                                                                    "caption": "Follow The Green Solve" }
+  ],
+  "sources": [
+    "NPCI: UPI monthly statistics, September 2026 (24.07 bn transactions)",
+    "IEA: Energy and AI (2025), data centres ≈1.5% of global electricity in 2024",
+    "MNRE: non-fossil installed capacity 300.5 GW (>54%) as of 31 July 2026"
+  ]
+}

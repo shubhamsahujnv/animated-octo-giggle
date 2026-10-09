@@ -1,0 +1,15 @@
+{
+  "brand": "The Green Solve",
+  "colors": {
+    "Deep Teal": "#02403D",
+    "Lime": "#E2FF4D",
+    "Taupe": "#D8CAC3",
+    "Mauve": "#665458",
+    "Cream": "#FFFDF8"
+  },
+  "typography": {
+    "headings": "Libre Baskerville",
+    "body": "Helvetica Neue, Helvetica, Arial, sans-serif"
+  },
+  "source": "Website brand palette and project brand guidelines; checked 2026-10-09"
+}
