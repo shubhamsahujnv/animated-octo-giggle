@@ -6,8 +6,10 @@
 <link rel="stylesheet" href="../../../brand/tgs.css">
 <style>
   body { background: var(--teal); }
-  #stage { width: 1080px; height: 1350px; position: relative; overflow: hidden; background: var(--teal); color: var(--cream); }
+  #stage { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: var(--teal); color: var(--cream); }
   .layer { position: absolute; inset: 0; }
+  /* 1080×1350 composition centred in the 1080×1920 frame; captions sit above the Reels UI zone */
+  #frame { position: absolute; left: 0; top: 215px; width: 1080px; height: 1350px; transform: scale(1.08); transform-origin: 50% 0; }
   .scene { position: absolute; inset: 0; opacity: 0; }
   .serif { font-family: var(--serif); font-weight: 700; }
   .ital { font-family: var(--serif); font-style: italic; font-weight: 400; }
@@ -20,25 +22,26 @@
   svg [transform] { transform-box: view-box; transform-origin: 0 0; }
 
   #bgGrid { position: absolute; inset: -80px; background-image: radial-gradient(rgba(216,202,195,.16) 2px, transparent 2.5px); background-size: 54px 54px; }
-  #glow { position: absolute; width: 1200px; height: 1200px; left: -60px; top: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(226,255,77,.10), transparent 60%); }
-  #progress { position: absolute; left: 56px; right: 56px; top: 48px; height: 6px; background: rgba(216,202,195,.25); border-radius: 3px; overflow: hidden; }
+  #glow { position: absolute; width: 1400px; height: 1400px; left: -160px; top: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(226,255,77,.10), transparent 60%); }
+  #progress { position: absolute; left: 60px; right: 60px; top: 80px; height: 6px; background: rgba(216,202,195,.25); border-radius: 3px; overflow: hidden; }
   #progress i { display: block; height: 100%; width: 100%; background: var(--lime); transform-origin: left; }
-  #brandTag { position: absolute; left: 56px; top: 80px; display: flex; align-items: center; gap: 16px; font: 600 20px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: rgba(255,253,248,.75); }
-  #brandTag img { height: 44px; }
+  #brandTag { position: absolute; left: 60px; top: 122px; display: flex; align-items: center; gap: 18px; font: 600 22px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: rgba(255,253,248,.75); }
+  #brandTag img { height: 52px; }
 
-  #captions { position: absolute; left: 60px; right: 60px; top: 1088px; height: 200px; }
+  #captions { position: absolute; left: 60px; right: 60px; top: 1440px; height: 240px; }
   .cap { position: absolute; inset: 0; display: flex; align-items: flex-start; justify-content: center; text-align: center; opacity: 0; }
-  .cap p { font: 700 42px/1.3 var(--sans); color: var(--cream); max-width: 960px; }
+  .cap p { font: 700 46px/1.3 var(--sans); color: var(--cream); max-width: 960px; }
   .cap span { opacity: .38; }
   .source { position: absolute; left: 60px; right: 60px; top: 1030px; text-align: center; font: 400 21px/1.3 var(--sans); color: rgba(255,253,248,.6); }
 
-  .wipe { position: absolute; top: -200px; height: 1800px; width: 1400px; left: -2400px; background: var(--lime); transform: skewX(-12deg); }
+  .wipe { position: absolute; top: -200px; height: 2400px; width: 1500px; left: -2600px; background: var(--lime); transform: skewX(-12deg); }
   .card { background: var(--cream); color: var(--teal); border-radius: 30px; }
 </style>
 </head>
 <body>
 <div id="stage">
   <div class="layer"><div id="bgGrid"></div><div id="glow"></div><div id="particles" class="layer"></div></div>
+  <div id="frame">
 
   <!-- 1 · HOOK -->
   <div class="scene" id="hook">
@@ -212,13 +215,15 @@
     </svg>
   </div>
 
+  </div>
+
   <!-- 11 · END CARD -->
   <div class="scene" id="end" style="background:var(--cream);color:var(--teal)">
-    <img id="endLogo" src="../../../brand/logo-dark-trimmed.png" style="position:absolute;left:370px;top:260px;width:340px">
-    <div class="center serif" style="top:580px;font-size:62px" id="endT1">Follow <span class="ital">The Green Solve</span></div>
-    <div class="center" style="top:680px;font:600 26px/1 var(--sans);letter-spacing:.18em;color:var(--mauve)" id="endT2">DATA CENTRES &amp; THE ENVIRONMENT · EP 01</div>
-    <div class="center" style="top:770px" id="endT3"><span style="display:inline-block;background:var(--teal);color:var(--lime);font:700 32px/1 var(--sans);padding:24px 42px;border-radius:999px">Save this · Share with your team</span></div>
-    <div id="endSrc" class="center" style="top:1150px;font:400 21px/1.5 var(--sans);color:var(--mauve);padding:0 90px"></div>
+    <img id="endLogo" src="../../../brand/logo-dark-trimmed.png" style="position:absolute;left:330px;top:520px;width:420px">
+    <div class="center serif" style="top:910px;font-size:68px" id="endT1">Follow <span class="ital">The Green Solve</span></div>
+    <div class="center" style="top:1020px;font:600 28px/1 var(--sans);letter-spacing:.18em;color:var(--mauve)" id="endT2">DATA CENTRES &amp; THE ENVIRONMENT · EP 01</div>
+    <div class="center" style="top:1120px" id="endT3"><span style="display:inline-block;background:var(--teal);color:var(--lime);font:700 34px/1 var(--sans);padding:26px 46px;border-radius:999px">Save this · Share with your team</span></div>
+    <div id="endSrc" class="center" style="top:1500px;font:400 22px/1.5 var(--sans);color:var(--mauve);padding:0 90px"></div>
   </div>
 
   <div id="captions"></div>
@@ -257,7 +262,7 @@ function scene(id) {
 function counter(el, t, d, to, fmt) {
   hooks.push((now) => { const p = Math.min(1, Math.max(0, (now - t) / d)); el.textContent = fmt(to * (1 - Math.pow(1 - p, 3))); });
 }
-function wipe(el, t) { A(el, [{ transform: 'skewX(-12deg) translateX(0)' }, { transform: 'skewX(-12deg) translateX(4200px)' }], t, .7, { ease: INOUT }); }
+function wipe(el, t) { A(el, [{ transform: 'skewX(-12deg) translateX(0)' }, { transform: 'skewX(-12deg) translateX(4800px)' }], t, .7, { ease: INOUT }); }
 
 // ---------- chrome ----------
 A('#progress i', [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], 0, TL.duration, { ease: 'linear' });
@@ -267,9 +272,9 @@ A('#chrome', [{ opacity: 1 }, { opacity: 0 }], S.end.start - .4, .4, { fill: 'fo
 const P = $('#particles');
 for (let i = 0; i < 22; i++) {
   const d = document.createElement('i'), sz = 4 + rnd() * 8;
-  d.style.cssText = `position:absolute;left:${rnd() * 1080}px;top:${1350 + rnd() * 150}px;width:${sz}px;height:${sz}px;border-radius:50%;background:${rnd() > .6 ? '#E2FF4D' : '#D8CAC3'};opacity:${.2 + rnd() * .35}`;
+  d.style.cssText = `position:absolute;left:${rnd() * 1080}px;top:${1920 + rnd() * 150}px;width:${sz}px;height:${sz}px;border-radius:50%;background:${rnd() > .6 ? '#E2FF4D' : '#D8CAC3'};opacity:${.2 + rnd() * .35}`;
   P.appendChild(d);
-  A(d, [{ transform: 'translateY(0)' }, { transform: `translateY(-${1600 + rnd() * 200}px)` }], -rnd() * 14, 10 + rnd() * 8, { it: Infinity, ease: 'linear' });
+  A(d, [{ transform: 'translateY(0)' }, { transform: `translateY(-${2200 + rnd() * 200}px)` }], -rnd() * 14, 10 + rnd() * 8, { it: Infinity, ease: 'linear' });
 }
 
 // ---------- captions (word-by-word highlight) ----------
@@ -302,9 +307,9 @@ TL.scenes.forEach((s, i) => {
   const R = $('#rain');
   for (let i = 0; i < 18; i++) {
     const d = document.createElement('div'); const h = 24 + rnd() * 30;
-    d.style.cssText = `position:absolute;left:${rnd() * 1080}px;top:-80px;width:6px;height:${h}px;border-radius:3px;background:${rnd() > .5 ? '#E2FF4D' : '#D8CAC3'};opacity:.35`;
+    d.style.cssText = `position:absolute;left:${rnd() * 1080}px;top:-330px;width:6px;height:${h}px;border-radius:3px;background:${rnd() > .5 ? '#E2FF4D' : '#D8CAC3'};opacity:.35`;
     R.appendChild(d);
-    A(d, [{ transform: 'translateY(0)' }, { transform: 'translateY(1500px)' }], rnd() * 1.4, 1 + rnd() * .6, { fill: 'none', ease: 'cubic-bezier(.5,0,1,1)' });
+    A(d, [{ transform: 'translateY(0)' }, { transform: 'translateY(2100px)' }], rnd() * 1.4, 1 + rnd() * .6, { fill: 'none', ease: 'cubic-bezier(.5,0,1,1)' });
   }
 }
 // ---------- 2 · heat ----------

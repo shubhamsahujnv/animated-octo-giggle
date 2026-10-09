@@ -44,7 +44,7 @@ The brand kit lives in [`brand/`](brand/). Read `brand/README.md` and `brand/TGS
 ## 5. Formats
 
 - **Carousels:** 1080×1350 px (4:5), exported as PNG slides plus one PDF (for LinkedIn document posts). Cover slide with hook, one idea per slide, source line on stat slides, closing slide with logo and CTA.
-- **Reels/videos:** 1080×1350 px (4:5, same frame as carousels; works in Instagram feed/Reels and LinkedIn), 30 fps, MP4 (H.264 + AAC), 30–60 s. Strong hook line in the first 2 seconds, motion-graphic style, Indian-English female voiceover, low background music ducked under the voice, burned-in captions, logo end card.
+- **Reels/videos:** 1080×1920 px (9:16), 30 fps, MP4 (H.264 + AAC), 30–60 s. Strong hook line in the first 2 seconds, motion-graphic style, Indian-English female voiceover, low background music ducked under the voice, burned-in captions, logo end card. Keep text and key visuals out of the bottom ~260 px and top ~180 px (Instagram/LinkedIn interface zones); captions sit around y 1440–1680.
 - Every carousel cover and every video opening must carry a hook: a short, surprising, fact-backed line (e.g. "The internet is thirsty."), not a topic label.
 - Keep examples professional and brand-appropriate. Avoid casual street-life or trivial purchase scenarios (e.g. chai-stall payments) and don't repeat the same example across pieces; each carousel and video gets its own topic and angle.
 - Use only assets we create ourselves or that are licensed for reuse (original SVG/PNG graphics, synthesised music). No unlicensed stock, music or third-party logos.

@@ -1,8 +1,8 @@
 # Video 01: The internet is thirsty
 
-**File:** `the-internet-is-thirsty.mp4` (1080×1350, 30 fps, 47 s, -14 LUFS). **Cover:** `cover.jpg`.
+**File:** `the-internet-is-thirsty.mp4` (1080×1920, 30 fps, 47 s, -14 LUFS). **Cover:** `cover.jpg`.
 **Hook (first second):** "The internet is thirsty."
-**Post on:** Instagram (feed video/Reel) and LinkedIn (native video).
+**Post on:** Instagram Reels and LinkedIn (native vertical video).
 **Audio:** Indian-English female voiceover (Kokoro TTS, `hf_beta`) and an original synthesised background track with SFX. No third-party music.
 
 ## Instagram caption
