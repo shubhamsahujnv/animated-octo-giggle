@@ -1,0 +1,73 @@
+{
+  "title": "The internet is thirsty",
+  "voice": "hf_beta",
+  "speed": 1.02,
+  "gap": 0.3,
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "The internet is thirsty.",
+      "caption": "The internet is thirsty."
+    },
+    {
+      "id": "heat",
+      "say": "Every data centre runs thousands of servers, day and night. And almost all that power turns into heat.",
+      "caption": "Every data centre runs thousands of servers, day and night. Almost all that power turns into heat."
+    },
+    {
+      "id": "water",
+      "say": "To keep them from overheating, many data centres cool down with water.",
+      "caption": "To keep them from overheating, many data centres cool down with water."
+    },
+    {
+      "id": "stat",
+      "say": "In India, a 2025 study found up to fifty data centres in regions facing extremely high water stress.",
+      "caption": "A 2025 study found up to 50 Indian data centres in regions of extremely high water stress."
+    },
+    {
+      "id": "cities",
+      "say": "Chennai. Mumbai. Bengaluru. Cities where every drop already counts.",
+      "caption": "Chennai. Mumbai. Bengaluru. Cities where every drop already counts."
+    },
+    {
+      "id": "turn",
+      "say": "Here's the good news. Smarter cooling is already here.",
+      "caption": "Here's the good news: smarter cooling is already here."
+    },
+    {
+      "id": "recycle",
+      "say": "Treated wastewater, instead of fresh drinking water.",
+      "caption": "Treated wastewater, instead of fresh drinking water."
+    },
+    {
+      "id": "lowwater",
+      "say": "Air-cooled and closed-loop systems that need far less water.",
+      "caption": "Air-cooled and closed-loop systems that need far less water."
+    },
+    {
+      "id": "policy",
+      "say": "And India's energy efficiency guidelines already recommend treated water for cooling.",
+      "caption": "India's energy efficiency guidelines already recommend treated water for cooling."
+    },
+    {
+      "id": "close",
+      "say": "Cool smarter, and India's digital growth doesn't have to cost its water.",
+      "caption": "Cool smarter, and India's digital growth doesn't have to cost its water."
+    },
+    {
+      "id": "end",
+      "say": "Follow The Green Solve for more.",
+      "caption": "Follow The Green Solve"
+    }
+  ],
+  "sources": [
+    "Planet Tracker (2025), as reported by Climate Fact Checks: up to 50 Indian data centres in extremely high water-stress regions",
+    "Bureau of Energy Efficiency (2023) cooling guidelines: treated water recommended for cooling-tower make-up"
+  ],
+  "music": {
+    "lift": "turn",
+    "impacts": [
+      0.7
+    ]
+  }
+}

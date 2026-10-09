@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Video 01: The internet is thirsty</title>
+<link rel="stylesheet" href="../../../brand/tgs.css">
+<style>
+  body { background: var(--teal); }
+  #stage { width: 1080px; height: 1350px; position: relative; overflow: hidden; background: var(--teal); color: var(--cream); }
+  .layer { position: absolute; inset: 0; }
+  .scene { position: absolute; inset: 0; opacity: 0; }
+  .serif { font-family: var(--serif); font-weight: 700; }
+  .ital { font-family: var(--serif); font-style: italic; font-weight: 400; }
+  .lime { color: var(--lime); }
+  .center { position: absolute; left: 0; right: 0; text-align: center; }
+  .head { position: absolute; left: 60px; right: 60px; top: 170px; text-align: center; font-family: var(--serif); font-weight: 700; font-size: 72px; line-height: 1.14; }
+  .kick { position: absolute; left: 0; right: 0; top: 168px; text-align: center; font: 600 28px/1 var(--sans); letter-spacing: .2em; color: var(--lime); }
+  svg { overflow: visible; }
+  svg * { transform-box: fill-box; transform-origin: center; }
+  svg [transform] { transform-box: view-box; transform-origin: 0 0; }
+
+  #bgGrid { position: absolute; inset: -80px; background-image: radial-gradient(rgba(216,202,195,.16) 2px, transparent 2.5px); background-size: 54px 54px; }
+  #glow { position: absolute; width: 1200px; height: 1200px; left: -60px; top: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(226,255,77,.10), transparent 60%); }
+  #progress { position: absolute; left: 56px; right: 56px; top: 48px; height: 6px; background: rgba(216,202,195,.25); border-radius: 3px; overflow: hidden; }
+  #progress i { display: block; height: 100%; width: 100%; background: var(--lime); transform-origin: left; }
+  #brandTag { position: absolute; left: 56px; top: 80px; display: flex; align-items: center; gap: 16px; font: 600 20px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: rgba(255,253,248,.75); }
+  #brandTag img { height: 44px; }
+
+  #captions { position: absolute; left: 60px; right: 60px; top: 1088px; height: 200px; }
+  .cap { position: absolute; inset: 0; display: flex; align-items: flex-start; justify-content: center; text-align: center; opacity: 0; }
+  .cap p { font: 700 42px/1.3 var(--sans); color: var(--cream); max-width: 960px; }
+  .cap span { opacity: .38; }
+  .source { position: absolute; left: 60px; right: 60px; top: 1030px; text-align: center; font: 400 21px/1.3 var(--sans); color: rgba(255,253,248,.6); }
+
+  .wipe { position: absolute; top: -200px; height: 1800px; width: 1400px; left: -2400px; background: var(--lime); transform: skewX(-12deg); }
+  .card { background: var(--cream); color: var(--teal); border-radius: 30px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="layer"><div id="bgGrid"></div><div id="glow"></div><div id="particles" class="layer"></div></div>
+
+  <!-- 1 · HOOK -->
+  <div class="scene" id="hook">
+    <div id="rain" class="layer"></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="ripples" fill="none" stroke="#E2FF4D">
+        <ellipse id="rp1" cx="540" cy="930" rx="150" ry="34" stroke-width="5" opacity="0"/>
+        <ellipse id="rp2" cx="540" cy="930" rx="150" ry="34" stroke-width="4" opacity="0"/>
+        <ellipse id="rp3" cx="540" cy="930" rx="150" ry="34" stroke-width="3" opacity="0"/>
+      </g>
+      <g id="drop">
+        <path d="M540 420 C 540 420, 380 610, 380 730 a160 160 0 0 0 320 0 C 700 610, 540 420, 540 420Z" fill="#E2FF4D"/>
+        <g fill="none" stroke="#02403D" stroke-width="16" stroke-linecap="round">
+          <path id="wf1" d="M470 726 a100 100 0 0 1 140 0"/><path id="wf2" d="M497 758 a60 60 0 0 1 86 0"/>
+        </g>
+        <circle cx="540" cy="796" r="14" fill="#02403D"/>
+      </g>
+    </svg>
+    <div class="head" style="top:180px;font-size:96px;line-height:1.08"><span id="hk1">The internet</span><br><span id="hk2" class="ital lime">is thirsty.</span></div>
+  </div>
+
+  <!-- 2 · HEAT -->
+  <div class="scene" id="heat">
+    <div class="head"><span id="ht1">Servers turn power</span><br><span id="ht2" class="ital lime">into heat.</span></div>
+    <div id="racks" style="position:absolute;left:150px;top:520px;display:flex;gap:26px"></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="waves" fill="none" stroke="#E2FF4D" stroke-width="5" stroke-linecap="round"></g>
+      <g id="thermo">
+        <rect x="868" y="520" width="56" height="380" rx="28" fill="none" stroke="#D8CAC3" stroke-width="5"/>
+        <circle cx="896" cy="930" r="48" fill="#E2FF4D"/>
+        <rect id="merc" x="882" y="540" width="28" height="370" rx="14" fill="#E2FF4D" style="transform-origin:50% 100%"/>
+      </g>
+    </svg>
+    <style>
+      .rack { width: 180px; height: 470px; background: #013532; border: 4px solid rgba(216,202,195,.45); border-radius: 16px; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; }
+      .unit { height: 40px; border-radius: 8px; background: rgba(216,202,195,.14); display: flex; align-items: center; padding: 0 12px; gap: 10px; }
+      .unit b { width: 11px; height: 11px; border-radius: 50%; background: var(--lime); }
+      .unit i { flex: 1; height: 5px; border-radius: 3px; background: rgba(216,202,195,.35); }
+    </style>
+  </div>
+
+  <!-- 3 · WATER COOLING -->
+  <div class="scene" id="water">
+    <div class="head"><span id="wt1">Many cool down</span><br><span id="wt2" class="ital lime">with water.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="tower"><rect x="150" y="620" width="260" height="340" rx="12" fill="#FFFDF8"/>
+        <rect x="150" y="590" width="260" height="44" rx="10" fill="#D8CAC3"/>
+        <g stroke="#D8CAC3" stroke-width="6"><path d="M180 700 H380 M180 740 H380 M180 780 H380 M180 820 H380 M180 860 H380 M180 900 H380"/></g>
+        <circle cx="280" cy="590" r="54" fill="#02403D" stroke="#FFFDF8" stroke-width="8"/>
+        <g id="twFan" fill="#E2FF4D" style="transform-box:view-box;transform-origin:280px 590px"><path d="M280 590 L270 548 Q280 538 290 548 Z"/><path d="M280 590 L322 580 Q332 590 322 600 Z"/><path d="M280 590 L290 632 Q280 642 270 632 Z"/><path d="M280 590 L238 600 Q228 590 238 580 Z"/></g></g>
+      <g id="steam" fill="#D8CAC3"></g>
+      <g id="dcb"><rect x="640" y="660" width="320" height="300" rx="10" fill="#FFFDF8"/>
+        <g fill="#02403D"><rect x="672" y="710" width="70" height="210" rx="6"/><rect x="765" y="710" width="70" height="210" rx="6"/><rect x="858" y="710" width="70" height="210" rx="6"/></g></g>
+      <path id="pipeA" d="M410 880 H 640" stroke="#D8CAC3" stroke-width="22" stroke-linecap="round" fill="none"/>
+      <path id="pipeB" d="M640 780 H 380" stroke="#D8CAC3" stroke-width="22" stroke-linecap="round" fill="none"/>
+      <path id="flowA" d="M410 880 H 640" stroke="#E2FF4D" stroke-width="10" stroke-linecap="round" stroke-dasharray="4 26" fill="none"/>
+      <path id="flowB" d="M640 780 H 380" stroke="#E2FF4D" stroke-width="10" stroke-linecap="round" stroke-dasharray="4 26" fill="none"/>
+      <line x1="100" y1="960" x2="1000" y2="960" stroke="#D8CAC3" stroke-width="4"/>
+      <g id="wdrop"><path d="M520 560 c0 0-46 54-46 88 a46 46 0 0 0 92 0 c0-34-46-88-46-88z" fill="#E2FF4D"/></g>
+    </svg>
+  </div>
+
+  <!-- 4 · STAT -->
+  <div class="scene" id="stat">
+    <div class="kick" id="st0">INDIA · 2025 STUDY</div>
+    <div class="center serif" style="top:215px"><span style="font-size:52px" id="stUp">Up to</span>
+      <div id="stNum" style="font-size:230px;line-height:1;color:var(--lime)">0</div>
+      <div id="stLbl" style="font-size:46px;line-height:1.25;margin-top:6px">data centres in regions of<br><span class="ital lime">extremely high water stress</span></div></div>
+    <div id="dropGrid" style="position:absolute;left:215px;top:750px;width:650px;display:grid;grid-template-columns:repeat(10,1fr);gap:10px 0;justify-items:center"></div>
+    <div class="source" id="stSrc">Source: Planet Tracker (2025), via Climate Fact Checks</div>
+  </div>
+
+  <!-- 5 · CITIES -->
+  <div class="scene" id="cities">
+    <div class="head"><span id="ct1">Where every drop</span><br><span id="ct2" class="ital lime">already counts.</span></div>
+    <div style="position:absolute;left:70px;right:70px;top:500px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div class="card city" id="cy1"><svg viewBox="0 0 120 150" width="120" height="150"><path d="M60 8 c-30 0-50 23-50 48 0 36 50 84 50 84 s50-48 50-84 c0-25-20-48-50-48z" fill="#02403D"/><path d="M60 34 c0 0-18 22-18 34 a18 18 0 0 0 36 0 c0-12-18-34-18-34z" fill="#E2FF4D"/></svg><span>Chennai</span></div>
+      <div class="card city" id="cy2"><svg viewBox="0 0 120 150" width="120" height="150"><path d="M60 8 c-30 0-50 23-50 48 0 36 50 84 50 84 s50-48 50-84 c0-25-20-48-50-48z" fill="#02403D"/><path d="M60 34 c0 0-18 22-18 34 a18 18 0 0 0 36 0 c0-12-18-34-18-34z" fill="#E2FF4D"/></svg><span>Mumbai</span></div>
+      <div class="card city" id="cy3"><svg viewBox="0 0 120 150" width="120" height="150"><path d="M60 8 c-30 0-50 23-50 48 0 36 50 84 50 84 s50-48 50-84 c0-25-20-48-50-48z" fill="#02403D"/><path d="M60 34 c0 0-18 22-18 34 a18 18 0 0 0 36 0 c0-12-18-34-18-34z" fill="#E2FF4D"/></svg><span>Bengaluru</span></div>
+    </div>
+    <div class="center" style="top:900px;font:400 30px/1.4 var(--sans);color:rgba(255,253,248,.8)" id="ct3">Three of India's biggest data centre hubs</div>
+    <style>
+      .city { height: 340px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
+      .city span { font: 700 40px/1 var(--serif); }
+    </style>
+  </div>
+
+  <!-- 6 · TURN -->
+  <div class="scene" id="turn">
+    <div id="turnBg" class="layer" style="background:radial-gradient(circle at 50% 52%, rgba(226,255,77,.2), transparent 55%)"></div>
+    <div class="kick" id="tn0">HERE'S THE GOOD NEWS</div>
+    <div class="head" style="top:230px"><span id="tn1">Smarter cooling is</span><br><span id="tn2" class="ital lime">already here.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="sparks" fill="#E2FF4D"></g>
+      <circle id="tnDisc" cx="540" cy="720" r="190" fill="#E2FF4D"/>
+      <g id="flake" stroke="#02403D" stroke-width="14" stroke-linecap="round" fill="none">
+        <path d="M540 590 V850 M427 655 L653 785 M427 785 L653 655"/>
+        <path d="M510 610 l30 28 30-28 M510 830 l30-28 30 28 M445 690 l40-6 -14-38 M635 750 l-40 6 14 38 M445 750 l40 6 -14 38 M635 690 l-40-6 14-38"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- 7 · RECYCLE -->
+  <div class="scene" id="recycle">
+    <div class="head"><span id="rc1">Reuse it.</span><br><span id="rc2" class="ital lime">Don't drain it.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="loop" fill="none" stroke="#E2FF4D" stroke-width="18" stroke-linecap="round">
+        <path d="M540 470 a220 220 0 0 1 190 110"/><path d="M730 830 a220 220 0 0 1 -190 110"/><path d="M350 830 a220 220 0 0 1 0 -220"/>
+        <path d="M708 548 l28 40 -48 6" stroke-width="16"/><path d="M582 952 l-44 -12 26 -38" stroke-width="16"/><path d="M332 580 l26 -40 22 44" stroke-width="16"/>
+      </g>
+      <g id="rcDrop"><path d="M540 560 c0 0-110 130-110 210 a110 110 0 0 0 220 0 c0-80-110-210-110-210z" fill="#FFFDF8"/>
+        <path d="M486 790 a54 54 0 0 0 54 54" fill="none" stroke="#02403D" stroke-width="12" stroke-linecap="round"/></g>
+    </svg>
+    <div style="position:absolute;left:80px;right:80px;top:985px;display:flex;justify-content:center;gap:20px">
+      <span class="tag" id="tg1" style="background:var(--lime);color:var(--teal)">✓ Treated wastewater</span>
+      <span class="tag" id="tg2" style="border:2px solid rgba(216,202,195,.5);color:rgba(255,253,248,.7);text-decoration:line-through">Fresh drinking water</span>
+    </div>
+    <style>.tag { font: 700 30px/1 var(--sans); padding: 18px 26px; border-radius: 999px; }</style>
+  </div>
+
+  <!-- 8 · LOW WATER -->
+  <div class="scene" id="lowwater">
+    <div class="head"><span id="lw1">Cooling that sips,</span><br><span id="lw2" class="ital lime">not gulps.</span></div>
+    <div style="position:absolute;left:70px;right:70px;top:470px;display:grid;grid-template-columns:1fr 1fr;gap:26px">
+      <div class="card opt" id="op1">
+        <svg viewBox="0 0 220 220" width="220" height="220"><circle cx="110" cy="110" r="100" fill="#02403D"/>
+          <g id="fan" fill="#E2FF4D" style="transform-box:view-box;transform-origin:110px 110px"><path d="M110 110 C 92 60, 108 26, 132 32 C 142 58, 128 92, 110 110Z"/><path d="M110 110 C 92 60, 108 26, 132 32 C 142 58, 128 92, 110 110Z" transform="rotate(90 110 110)"/><path d="M110 110 C 92 60, 108 26, 132 32 C 142 58, 128 92, 110 110Z" transform="rotate(180 110 110)"/><path d="M110 110 C 92 60, 108 26, 132 32 C 142 58, 128 92, 110 110Z" transform="rotate(270 110 110)"/></g>
+          <circle cx="110" cy="110" r="14" fill="#FFFDF8"/></svg>
+        <b>Air-cooled</b><span>Uses outside air and chillers instead of evaporating water</span></div>
+      <div class="card opt" id="op2">
+        <svg viewBox="0 0 220 220" width="220" height="220"><rect x="10" y="10" width="200" height="200" rx="100" fill="#02403D"/>
+          <rect x="45" y="60" width="130" height="100" rx="50" fill="none" stroke="#D8CAC3" stroke-width="12"/>
+          <rect id="loopDots" x="45" y="60" width="130" height="100" rx="50" fill="none" stroke="#E2FF4D" stroke-width="12" stroke-linecap="round" stroke-dasharray="2 34"/></svg>
+        <b>Closed-loop</b><span>The same water circulates again and again</span></div>
+    </div>
+    <style>
+      .opt { padding: 46px 34px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; height: 520px; }
+      .opt b { font: 700 42px/1.1 var(--serif); margin-top: 10px; }
+      .opt span { font: 400 27px/1.35 var(--sans); color: var(--mauve); }
+    </style>
+  </div>
+
+  <!-- 9 · POLICY -->
+  <div class="scene" id="policy">
+    <div class="head"><span id="pl1">Policy is already</span><br><span id="pl2" class="ital lime">on board.</span></div>
+    <div class="card" id="doc" style="position:absolute;left:190px;width:700px;top:470px;height:500px;padding:50px 54px">
+      <div style="font:600 22px/1 var(--sans);letter-spacing:.16em;color:var(--mauve)">BUREAU OF ENERGY EFFICIENCY · 2023</div>
+      <div style="font:700 44px/1.2 var(--serif);margin-top:20px">Cooling guidelines</div>
+      <div style="height:3px;background:var(--taupe);margin:30px 0"></div>
+      <div class="li" id="li1"><svg viewBox="0 0 40 40" width="44" height="44"><circle cx="20" cy="20" r="19" fill="#E2FF4D"/><path class="tick" d="M11 21 l6 6 12-13" fill="none" stroke="#02403D" stroke-width="4" stroke-linecap="round" stroke-dasharray="30" stroke-dashoffset="30"/></svg><span>Use <b>treated water</b> for cooling-tower make-up</span></div>
+      <div class="li" id="li2"><svg viewBox="0 0 40 40" width="44" height="44"><circle cx="20" cy="20" r="19" fill="#E2FF4D"/><path class="tick" d="M11 21 l6 6 12-13" fill="none" stroke="#02403D" stroke-width="4" stroke-linecap="round" stroke-dasharray="30" stroke-dashoffset="30"/></svg><span>Cut dependence on <b>fresh water</b></span></div>
+    </div>
+    <div class="source" style="top:1000px">Source: Bureau of Energy Efficiency (2023) cooling guidelines</div>
+    <style>
+      .li { display: flex; align-items: center; gap: 24px; margin-bottom: 30px; font: 400 32px/1.35 var(--sans); }
+      .li svg { flex: none; }
+    </style>
+  </div>
+
+  <!-- 10 · CLOSE -->
+  <div class="scene" id="close">
+    <div class="head"><span id="cl1">Cool smarter.</span><br><span id="cl2" class="ital lime">Save water.</span></div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <g id="cBldg"><rect x="300" y="620" width="480" height="340" rx="10" fill="#FFFDF8"/>
+        <g fill="#02403D"><rect x="338" y="676" width="88" height="244" rx="6"/><rect x="446" y="676" width="88" height="244" rx="6"/><rect x="554" y="676" width="88" height="244" rx="6"/><rect x="662" y="676" width="88" height="244" rx="6"/></g></g>
+      <g id="solar" fill="#013532" stroke="#E2FF4D" stroke-width="4">
+        <path d="M318 612 L356 556 H 480 L 442 612 Z"/><path d="M480 612 L518 556 H 642 L 604 612 Z"/><path d="M642 612 L680 556 H 790 L 768 612 Z"/></g>
+      <line x1="120" y1="960" x2="960" y2="960" stroke="#D8CAC3" stroke-width="4"/>
+      <g id="cDrop"><path d="M200 700 c0 0-54 64-54 104 a54 54 0 0 0 108 0 c0-40-54-104-54-104z" fill="#E2FF4D"/></g>
+      <g id="cLeaf"><path d="M880 880 C 820 846, 820 766, 880 724 C 940 766, 940 846, 880 880 Z" fill="#E2FF4D"/><path d="M880 880 V 750" stroke="#02403D" stroke-width="5"/></g>
+    </svg>
+  </div>
+
+  <!-- 11 · END CARD -->
+  <div class="scene" id="end" style="background:var(--cream);color:var(--teal)">
+    <img id="endLogo" src="../../../brand/logo-dark-trimmed.png" style="position:absolute;left:370px;top:260px;width:340px">
+    <div class="center serif" style="top:580px;font-size:62px" id="endT1">Follow <span class="ital">The Green Solve</span></div>
+    <div class="center" style="top:680px;font:600 26px/1 var(--sans);letter-spacing:.18em;color:var(--mauve)" id="endT2">DATA CENTRES &amp; THE ENVIRONMENT · EP 01</div>
+    <div class="center" style="top:770px" id="endT3"><span style="display:inline-block;background:var(--teal);color:var(--lime);font:700 32px/1 var(--sans);padding:24px 42px;border-radius:999px">Save this · Share with your team</span></div>
+    <div id="endSrc" class="center" style="top:1150px;font:400 21px/1.5 var(--sans);color:var(--mauve);padding:0 90px"></div>
+  </div>
+
+  <div id="captions"></div>
+  <div id="chrome" class="layer">
+    <div id="progress"><i></i></div>
+    <div id="brandTag"><img src="../../../brand/logo-light-trimmed.png" alt=""><span>Data centres &amp; the environment</span></div>
+  </div>
+  <div class="wipe" id="wipe1"></div>
+</div>
+
+<script>
+const TL = window.TL;
+const S = Object.fromEntries(TL.scenes.map((s, i) => [s.id, { ...s, next: (TL.scenes[i + 1] || { start: TL.duration }).start }]));
+const $ = (q) => document.querySelector(q);
+const NS = 'http://www.w3.org/2000/svg';
+const EASE = 'cubic-bezier(.2,.8,.2,1)', BACK = 'cubic-bezier(.34,1.56,.64,1)', INOUT = 'cubic-bezier(.65,0,.35,1)';
+const hooks = [];
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+// entrance anims fill backwards (hidden before start); exits fill forwards only
+function A(el, kf, t, d, o = {}) {
+  if (typeof el === 'string') el = $(el);
+  return el.animate(kf, { delay: t * 1000, duration: d * 1000, fill: o.fill || 'both', easing: o.ease || EASE, iterations: o.it || 1, direction: o.dir || 'normal' });
+}
+const popIn  = (el, t, d = .55) => A(el, [{ opacity: 0, transform: 'translateY(50px) scale(.92)' }, { opacity: 1, transform: 'none' }], t, d, { ease: BACK });
+const fadeUp = (el, t, d = .6)  => A(el, [{ opacity: 0, transform: 'translateY(36px)' }, { opacity: 1, transform: 'none' }], t, d);
+const scale0 = (el, t, d = .6)  => A(el, [{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }], t, d, { ease: BACK });
+const words = (el, t) => { el = $(el); el.style.display = 'inline-block'; popIn(el, t); };
+
+function scene(id) {
+  const s = S[id], t0 = id === 'hook' ? 0 : Math.max(0, s.start - .2), t1 = s.next - .12;
+  A('#' + id, [{ opacity: 0 }, { opacity: 1 }], t0, id === 'hook' ? .01 : .35);
+  if (id !== 'end') A('#' + id, [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'scale(1.05)' }], t1 - .3, .3, { fill: 'forwards', ease: 'ease-in' });
+  return id === 'hook' ? 0 : s.start;
+}
+function counter(el, t, d, to, fmt) {
+  hooks.push((now) => { const p = Math.min(1, Math.max(0, (now - t) / d)); el.textContent = fmt(to * (1 - Math.pow(1 - p, 3))); });
+}
+function wipe(el, t) { A(el, [{ transform: 'skewX(-12deg) translateX(0)' }, { transform: 'skewX(-12deg) translateX(4200px)' }], t, .7, { ease: INOUT }); }
+
+// ---------- chrome ----------
+A('#progress i', [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], 0, TL.duration, { ease: 'linear' });
+A('#bgGrid', [{ transform: 'translate(0,0)' }, { transform: 'translate(54px,108px)' }], 0, 6, { it: Infinity, ease: 'linear' });
+A('#glow', [{ transform: 'translate(0,0) scale(1)' }, { transform: 'translate(-120px,140px) scale(1.15)' }], 0, 9, { it: Infinity, dir: 'alternate', ease: 'ease-in-out' });
+A('#chrome', [{ opacity: 1 }, { opacity: 0 }], S.end.start - .4, .4, { fill: 'forwards' });
+const P = $('#particles');
+for (let i = 0; i < 22; i++) {
+  const d = document.createElement('i'), sz = 4 + rnd() * 8;
+  d.style.cssText = `position:absolute;left:${rnd() * 1080}px;top:${1350 + rnd() * 150}px;width:${sz}px;height:${sz}px;border-radius:50%;background:${rnd() > .6 ? '#E2FF4D' : '#D8CAC3'};opacity:${.2 + rnd() * .35}`;
+  P.appendChild(d);
+  A(d, [{ transform: 'translateY(0)' }, { transform: `translateY(-${1600 + rnd() * 200}px)` }], -rnd() * 14, 10 + rnd() * 8, { it: Infinity, ease: 'linear' });
+}
+
+// ---------- captions (word-by-word highlight) ----------
+TL.scenes.forEach((s, i) => {
+  if (s.id === 'end' || s.id === 'hook') return;   // hook headline is the caption itself
+  const box = document.createElement('div'); box.className = 'cap';
+  const p = document.createElement('p'); box.appendChild(p); $('#captions').appendChild(box);
+  const total = s.caption.length; let acc = 0;
+  s.caption.split(' ').forEach((w) => {
+    const sp = document.createElement('span'); sp.textContent = w + ' '; p.appendChild(sp);
+    const wt = s.start + (acc / total) * (s.end - s.start); acc += w.length + 1;
+    const hl = /\d|water|heat|treated|drop|smarter|less|good/i.test(w);
+    A(sp, [{ opacity: .38, color: '#FFFDF8' }, { opacity: 1, color: hl ? '#E2FF4D' : '#FFFDF8' }], wt, .12, { fill: 'forwards' });
+  });
+  const nxt = (TL.scenes[i + 1] || { start: TL.duration }).start;
+  A(box, [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], s.start - .1, .25);
+  A(box, [{ opacity: 1 }, { opacity: 0 }], nxt - .15, .15, { fill: 'forwards' });
+});
+
+// ---------- 1 · hook ----------
+{ const t = scene('hook');
+  A('#hk1', [{ opacity: 0, transform: 'translateY(-40px)' }, { opacity: 1, transform: 'none' }], 0, .45);
+  $('#hk1').style.display = $('#hk2').style.display = 'inline-block';
+  A('#hk2', [{ opacity: 0, transform: 'scale(1.6)' }, { opacity: 1, transform: 'scale(1)' }], .55, .5, { ease: BACK });
+  A('#drop', [{ opacity: 0, transform: 'translateY(-160px) scale(.3)' }, { opacity: 1, transform: 'translateY(0) scale(1)' }], .05, .65, { ease: 'cubic-bezier(.5,0,.75,0)' });
+  A('#drop', [{ transform: 'scale(1,1)' }, { transform: 'scale(1.12,.86)' }, { transform: 'scale(.96,1.05)' }, { transform: 'scale(1,1)' }], .7, .5, { fill: 'none' });
+  ['#rp1', '#rp2', '#rp3'].forEach((r, i) => A(r, [{ opacity: .9, transform: 'scale(.6)' }, { opacity: 0, transform: `scale(${2.2 + i * .6})` }], .72 + i * .18, 1.1, { fill: 'none' }));
+  A('#wf1', [{ opacity: .3 }, { opacity: 1 }], 1.0, .25, { it: 4, dir: 'alternate', fill: 'none' });
+  A('#wf2', [{ opacity: .3 }, { opacity: 1 }], 1.1, .25, { it: 4, dir: 'alternate', fill: 'none' });
+  const R = $('#rain');
+  for (let i = 0; i < 18; i++) {
+    const d = document.createElement('div'); const h = 24 + rnd() * 30;
+    d.style.cssText = `position:absolute;left:${rnd() * 1080}px;top:-80px;width:6px;height:${h}px;border-radius:3px;background:${rnd() > .5 ? '#E2FF4D' : '#D8CAC3'};opacity:.35`;
+    R.appendChild(d);
+    A(d, [{ transform: 'translateY(0)' }, { transform: 'translateY(1500px)' }], rnd() * 1.4, 1 + rnd() * .6, { fill: 'none', ease: 'cubic-bezier(.5,0,1,1)' });
+  }
+}
+// ---------- 2 · heat ----------
+{ const t = scene('heat');
+  words('#ht1', t); words('#ht2', t + .4);
+  const R = $('#racks');
+  for (let r = 0; r < 3; r++) {
+    const rack = document.createElement('div'); rack.className = 'rack'; R.appendChild(rack);
+    A(rack, [{ opacity: 0, transform: 'translateY(100px)' }, { opacity: 1, transform: 'none' }], t + .1 + r * .12, .6, { ease: BACK });
+    for (let u = 0; u < 9; u++) {
+      const un = document.createElement('div'); un.className = 'unit'; un.innerHTML = '<b></b><i></i>'; rack.appendChild(un);
+      A(un.firstChild, [{ opacity: .2 }, { opacity: 1 }], t + .5 + rnd(), .2 + rnd() * .5, { it: Infinity, dir: 'alternate', ease: 'steps(2)' });
+      A(un.lastChild, [{ transform: 'scaleX(.3)', transformOrigin: 'left' }, { transform: 'scaleX(1)', transformOrigin: 'left' }], t + .4 + rnd() * .6, .5 + rnd() * .8, { it: Infinity, dir: 'alternate' });
+    }
+  }
+  const W = $('#waves');
+  for (let i = 0; i < 9; i++) {
+    const x = 200 + (i % 3) * 206 + (i > 2 ? 40 : 0) * (i % 2);
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('d', `M${x} 500 q 18 -28 0 -56 t 0 -56 t 0 -56`); W.appendChild(p);
+    A(p, [{ opacity: 0, transform: 'translateY(30px)' }, { opacity: .9, transform: 'translateY(-20px)' }, { opacity: 0, transform: 'translateY(-90px)' }], t + 1.2 + (i % 3) * .3 + Math.floor(i / 3) * .9, 1.4, { fill: 'none', it: 3, ease: 'linear' });
+  }
+  A('#thermo', [{ opacity: 0, transform: 'translateX(80px)' }, { opacity: 1, transform: 'none' }], t + .4, .5);
+  A('#merc', [{ transform: 'scaleY(.12)' }, { transform: 'scaleY(1)' }], t + .8, 4.2, { ease: INOUT });
+}
+// ---------- 3 · water ----------
+{ const t = scene('water');
+  words('#wt1', t); words('#wt2', t + .4);
+  A('#tower', [{ opacity: 0, transform: 'translateY(80px)' }, { opacity: 1, transform: 'none' }], t + .1, .6, { ease: BACK });
+  A('#dcb', [{ opacity: 0, transform: 'translateY(80px)' }, { opacity: 1, transform: 'none' }], t + .3, .6, { ease: BACK });
+  ['#pipeA', '#pipeB'].forEach((p, i) => A(p, [{ opacity: 0 }, { opacity: 1 }], t + .7 + i * .1, .3));
+  A('#flowA', [{ strokeDashoffset: 0, opacity: 1 }, { strokeDashoffset: -60, opacity: 1 }], t + .9, .45, { it: Infinity, ease: 'linear' });
+  A('#flowB', [{ strokeDashoffset: 0, opacity: 1 }, { strokeDashoffset: -60, opacity: 1 }], t + 1.0, .45, { it: Infinity, ease: 'linear' });
+  A('#twFan', [{ transform: 'rotate(0)' }, { transform: 'rotate(360deg)' }], t, .8, { it: Infinity, ease: 'linear' });
+  A('#wdrop', [{ opacity: 0, transform: 'translateY(-200px)' }, { opacity: 1, transform: 'none' }], t + 1.1, .6, { ease: BACK });
+  A('#wdrop', [{ transform: 'translateY(0)' }, { transform: 'translateY(-16px)' }], t + 1.8, .6, { it: Infinity, dir: 'alternate', ease: 'ease-in-out' });
+  const st = $('#steam');
+  for (let i = 0; i < 8; i++) {
+    const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', 240 + rnd() * 80); c.setAttribute('cy', 520); c.setAttribute('r', 22 + rnd() * 22); st.appendChild(c);
+    A(c, [{ opacity: 0, transform: 'translateY(0) scale(.5)' }, { opacity: .7, transform: 'translateY(-60px) scale(1)' }, { opacity: 0, transform: 'translateY(-180px) scale(1.6)' }], t + .8 + i * .35, 1.6, { fill: 'none', it: 2, ease: 'linear' });
+  }
+}
+// ---------- 4 · stat ----------
+{ const t = scene('stat');
+  fadeUp('#st0', t); popIn('#stUp', t + .1); scale0('#stNum', t + .2);
+  counter($('#stNum'), t + .3, 2.2, 50, (v) => Math.round(v));
+  fadeUp('#stLbl', t + .7); fadeUp('#stSrc', t + 1.5);
+  const G = $('#dropGrid');
+  for (let i = 0; i < 50; i++) {
+    const s = document.createElementNS(NS, 'svg'); s.setAttribute('viewBox', '0 0 40 52'); s.setAttribute('width', 33); s.setAttribute('height', 43);
+    s.innerHTML = '<path d="M20 2 c0 0-18 22-18 34 a18 18 0 0 0 36 0 c0-12-18-34-18-34z" fill="#E2FF4D"/>';
+    G.appendChild(s);
+    A(s, [{ opacity: 0, transform: 'translateY(-30px) scale(.4)' }, { opacity: 1, transform: 'none' }], t + .3 + i * .044, .4, { ease: BACK });
+  }
+  A('#stNum', [{ transform: 'scale(1)' }, { transform: 'scale(1.08)' }, { transform: 'scale(1)' }], t + 2.5, .4, { fill: 'none' });
+}
+// ---------- 5 · cities ----------
+{ const t = scene('cities');
+  words('#ct1', t); words('#ct2', t + .4);
+  [1, 2, 3].forEach((i) => {
+    A('#cy' + i, [{ opacity: 0, transform: 'translateY(90px) scale(.9)' }, { opacity: 1, transform: 'none' }], t + [0, .7, 1.4][i - 1], .55, { ease: BACK });
+    A(`#cy${i} svg`, [{ transform: 'translateY(0)' }, { transform: 'translateY(-14px)' }], t + .6 + i * .2, .5, { it: Infinity, dir: 'alternate', ease: 'ease-in-out' });
+  });
+  fadeUp('#ct3', t + 2.0);
+}
+// ---------- 6 · turn ----------
+{ const t = scene('turn');
+  wipe('#wipe1', t - .55);
+  fadeUp('#tn0', t); words('#tn1', t + .9); words('#tn2', t + 1.3);
+  scale0('#tnDisc', t + .2, .7);
+  A('#flake', [{ opacity: 0, transform: 'rotate(-120deg) scale(.3)' }, { opacity: 1, transform: 'rotate(0) scale(1)' }], t + .4, .8, { ease: BACK });
+  A('#flake', [{ transform: 'rotate(0)' }, { transform: 'rotate(60deg)' }], t + 1.2, 2.2, { fill: 'none', ease: 'ease-in-out' });
+  A('#turnBg', [{ opacity: 0 }, { opacity: 1 }], t + .2, 1);
+  const sp = $('#sparks');
+  for (let i = 0; i < 14; i++) {
+    const a = i / 14 * Math.PI * 2, c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', 540 + Math.cos(a) * 250); c.setAttribute('cy', 720 + Math.sin(a) * 250); c.setAttribute('r', 7 + (i % 3) * 3); sp.appendChild(c);
+    A(c, [{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.4)' }], t + .5 + i * .05, .9, { fill: 'none' });
+  }
+}
+// ---------- 7 · recycle ----------
+{ const t = scene('recycle');
+  words('#rc1', t); words('#rc2', t + .4);
+  scale0('#rcDrop', t + .1);
+  A('#loop', [{ opacity: 0, transform: 'rotate(-90deg) scale(.6)' }, { opacity: 1, transform: 'rotate(0) scale(1)' }], t + .2, .7, { ease: BACK });
+  A('#loop', [{ transform: 'rotate(0)' }, { transform: 'rotate(360deg)' }], t + .9, 4, { it: Infinity, ease: 'linear', fill: 'none' });
+  popIn('#tg1', t + .9); popIn('#tg2', t + 1.4);
+}
+// ---------- 8 · low water ----------
+{ const t = scene('lowwater');
+  words('#lw1', t); words('#lw2', t + .4);
+  popIn('#op1', t + .2); popIn('#op2', t + .8);
+  A('#fan', [{ transform: 'rotate(0)' }, { transform: 'rotate(360deg)' }], t, .9, { it: Infinity, ease: 'linear' });
+  A('#loopDots', [{ strokeDashoffset: 0 }, { strokeDashoffset: -72 }], t, .7, { it: Infinity, ease: 'linear' });
+}
+// ---------- 9 · policy ----------
+{ const t = scene('policy');
+  words('#pl1', t); words('#pl2', t + .4);
+  A('#doc', [{ opacity: 0, transform: 'translateY(120px) rotate(-4deg)' }, { opacity: 1, transform: 'none' }], t + .1, .7, { ease: BACK });
+  fadeUp('#li1', t + .9); fadeUp('#li2', t + 1.6);
+  A('#li1 .tick', [{ strokeDashoffset: 30 }, { strokeDashoffset: 0 }], t + 1.2, .35);
+  A('#li2 .tick', [{ strokeDashoffset: 30 }, { strokeDashoffset: 0 }], t + 1.9, .35);
+  fadeUp('#policy .source', t + 1.5);
+}
+// ---------- 10 · close ----------
+{ const t = scene('close');
+  words('#cl1', t); words('#cl2', t + .6);
+  A('#cBldg', [{ opacity: 0, transform: 'translateY(80px)' }, { opacity: 1, transform: 'none' }], t, .6);
+  [1, 2, 3].forEach((i) => A(`#solar path:nth-child(${i})`, [{ opacity: 0, transform: 'translateY(-60px)' }, { opacity: 1, transform: 'none' }], t + .5 + i * .15, .45, { ease: BACK }));
+  A('#cDrop', [{ opacity: 0, transform: 'translateY(-260px)' }, { opacity: 1, transform: 'none' }], t + .9, .6, { ease: BACK });
+  A('#cLeaf', [{ opacity: 0, transform: 'scale(0) rotate(-40deg)' }, { opacity: 1, transform: 'scale(1)' }], t + 1.3, .7, { ease: BACK });
+  A('#cLeaf', [{ transform: 'rotate(0)' }, { transform: 'rotate(6deg)' }], t + 2.0, .8, { it: Infinity, dir: 'alternate', ease: 'ease-in-out', fill: 'none' });
+}
+// ---------- 11 · end ----------
+{ const t = scene('end');
+  A('#end', [{ clipPath: 'circle(0% at 50% 45%)' }, { clipPath: 'circle(150% at 50% 45%)' }], t - .2, .7, { ease: INOUT });
+  A('#endLogo', [{ opacity: 0, transform: 'translateY(30px)' }, { opacity: 1, transform: 'none' }], t + .3, .7);
+  fadeUp('#endT1', t + .6); fadeUp('#endT2', t + .8); popIn('#endT3', t + 1.1);
+  $('#endSrc').innerHTML = '<b>Sources:</b> ' + TL.sources.join(' · ');
+  fadeUp('#endSrc', t + 1.2);
+}
+
+const anims = document.getAnimations();
+anims.forEach((a) => a.pause());
+window.seek = (t) => { const ms = t * 1000; anims.forEach((a) => (a.currentTime = ms)); hooks.forEach((h) => h(t)); };
+window.seek(0);
+window.READY = true;
+</script>
+</body>
+</html>

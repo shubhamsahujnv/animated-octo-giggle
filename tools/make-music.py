@@ -1,7 +1,8 @@
 """Synthesise an original, royalty-free background track + transition SFX for a video.
 
 Hopeful I–V–vi–IV progression with pad, pluck arpeggio, sub bass and a soft beat that
-builds through the video; whooshes on scene changes. Timing comes from timeline.json.
+builds through the video; whooshes on scene changes. Timing comes from timeline.json;
+optional script.json "music": {"lift": <scene id>, "impacts": [seconds]}.
 Usage: python3 tools/make-music.py content/videos/<dir>   -> music.wav (44.1 kHz stereo)
 Requires numpy + scipy.
 """
@@ -40,12 +41,13 @@ def env(n, a, r):
 def main():
     vdir = sys.argv[1]
     tl = json.load(open(os.path.join(vdir, 'timeline.json')))
+    cfg = json.load(open(os.path.join(vdir, 'script.json'))).get('music', {})
     T = tl['duration']; N = int(T * SR) + SR
     S = {s['id']: s for s in tl['scenes']}
-    beat_in = S['question']['start']           # drums enter after the hook
-    hats_in = S['upi']['start']                # energy lift at the big number
-    lift = S['hope']['start']                  # brighter section for the hopeful turn
-    end = S['end']['start']
+    beat_in = tl['scenes'][1]['start']                         # drums enter after the hook
+    lift = S[cfg['lift']]['start'] if 'lift' in cfg else T * .55   # brighter section for the hopeful turn
+    hats_in = (beat_in + lift) / 2                             # hats add energy midway
+    end = tl['scenes'][-1]['start']
 
     pad = np.zeros(N); pl = np.zeros(N); bass = np.zeros(N); drums = np.zeros(N); sfx = np.zeros(N)
     # D major: D  A  Bm  G   (I V vi IV), 2 bars each
@@ -91,11 +93,13 @@ def main():
         sweep = np.concatenate([bp(x[i:i + 2205], 300 + 3000 * (i / n), 600 + 6000 * (i / n)) for i in range(0, n, 2205)])
         sweep *= np.sin(np.linspace(0, np.pi, len(sweep))) ** 2
         add(sfx, sweep * .5, s['start'] - .45)
-    tap = 1.6
-    n = int(.05 * SR); add(sfx, hp(rng.standard_normal(n), 2000) * np.exp(-np.arange(n) / SR * 120) * .6, tap)
-    for i, note in enumerate((81, 88)):            # A5 -> E6 "paid" chime
-        s = tone(midi(note), .7, harm=(1, .2)) * np.exp(-np.arange(int(.7 * SR)) / SR * 5)
-        add(sfx, s * .35, 2.0 + i * .12)
+    for hit in cfg.get('impacts', []):             # soft low impact + shimmer, e.g. an object landing
+        n = int(.6 * SR); tt = np.arange(n) / SR
+        boom = np.sin(2 * np.pi * np.cumsum(70 + 60 * np.exp(-tt * 20)) / SR) * np.exp(-tt * 6)
+        add(sfx, boom * .7, hit)
+        for i, note in enumerate((86, 93)):
+            s = tone(midi(note), .8, harm=(1, .2)) * np.exp(-np.arange(int(.8 * SR)) / SR * 5)
+            add(sfx, s * .22, hit + .05 + i * .1)
     # riser into the hopeful section
     n = int(1.5 * SR); x = rng.standard_normal(n)
     riser = np.concatenate([bp(x[i:i + 2205], 200 + 4000 * (i / n) ** 2, 400 + 9000 * (i / n) ** 2) for i in range(0, n, 2205)])

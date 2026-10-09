@@ -1,0 +1,75 @@
+{
+  "duration": 47.348,
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0.35,
+      "end": 1.78,
+      "caption": "The internet is thirsty."
+    },
+    {
+      "id": "heat",
+      "start": 2.08,
+      "end": 7.98,
+      "caption": "Every data centre runs thousands of servers, day and night. Almost all that power turns into heat."
+    },
+    {
+      "id": "water",
+      "start": 8.28,
+      "end": 12.182,
+      "caption": "To keep them from overheating, many data centres cool down with water."
+    },
+    {
+      "id": "stat",
+      "start": 12.482,
+      "end": 20.008,
+      "caption": "A 2025 study found up to 50 Indian data centres in regions of extremely high water stress."
+    },
+    {
+      "id": "cities",
+      "start": 20.308,
+      "end": 24.265,
+      "caption": "Chennai. Mumbai. Bengaluru. Cities where every drop already counts."
+    },
+    {
+      "id": "turn",
+      "start": 24.565,
+      "end": 27.414,
+      "caption": "Here's the good news: smarter cooling is already here."
+    },
+    {
+      "id": "recycle",
+      "start": 27.714,
+      "end": 30.372,
+      "caption": "Treated wastewater, instead of fresh drinking water."
+    },
+    {
+      "id": "lowwater",
+      "start": 30.672,
+      "end": 33.948,
+      "caption": "Air-cooled and closed-loop systems that need far less water."
+    },
+    {
+      "id": "policy",
+      "start": 34.248,
+      "end": 39.122,
+      "caption": "India's energy efficiency guidelines already recommend treated water for cooling."
+    },
+    {
+      "id": "close",
+      "start": 39.422,
+      "end": 43.451,
+      "caption": "Cool smarter, and India's digital growth doesn't have to cost its water."
+    },
+    {
+      "id": "end",
+      "start": 43.751,
+      "end": 45.448,
+      "caption": "Follow The Green Solve"
+    }
+  ],
+  "sources": [
+    "Planet Tracker (2025), as reported by Climate Fact Checks: up to 50 Indian data centres in extremely high water-stress regions",
+    "Bureau of Energy Efficiency (2023) cooling guidelines: treated water recommended for cooling-tower make-up"
+  ]
+}
