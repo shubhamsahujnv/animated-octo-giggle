@@ -9,21 +9,36 @@
 
 Every AI answer costs electricity. ⚡
 
-Behind each reply, powerful chips in a data centre do the work. The IEA expects global data centre electricity use to more than double by 2030, with AI the biggest reason.
+Each time you ask an AI tool a question, powerful chips in a data centre do the work. The IEA expects global data centre electricity use to more than double by 2030, with AI as the biggest driver.
 
-Here's the good news: newer chips do more work per unit of energy, right-sized models need far less computing, and clean power makes every answer cleaner. With India's solar and wind growing fast, AI can grow green. 🌱
+Here's the good news 👇
+✅ Newer chips do more work for every unit of energy
+✅ Smaller, right-sized models answer many questions with far less computing
+✅ Clean power makes every answer cleaner
 
-#AI #ArtificialIntelligence #DataCentres #CleanEnergy #Sustainability #India #GreenTech #TheGreenSolve
+And with India's solar and wind capacity growing at record pace, AI can grow green. 🌱
+
+💬 How many times a day do you use AI tools?
+🔁 Share this with a friend who loves AI.
+
+#AI #ArtificialIntelligence #DataCentres #CleanEnergy #RenewableEnergy #GreenTech #SustainableTech #DigitalIndia #IndiaClimate #TheGreenSolve
 
 ## LinkedIn caption
 
-Every AI answer costs electricity, and the total is growing fast.
+Every AI answer costs electricity, and the total is rising fast.
 
-The IEA projects global data centre electricity use to rise from ~415 TWh (2024) to ~945 TWh (2030), with electricity use by AI-focused (accelerated) servers growing around 30% a year in its base case. India is building its own AI compute too, through the ₹10,372 crore IndiaAI Mission.
+The IEA projects global data centre electricity use to grow from about 415 TWh in 2024 to about 945 TWh by 2030. In its base case, electricity use by AI-focused (accelerated) servers grows around 30% a year. India is building its own AI compute too, through the ₹10,372 crore IndiaAI Mission.
 
-Three levers can bend the curve: more efficient chips, right-sized models for everyday tasks, and clean power, which India is adding at record pace.
+Three levers can bend the curve:
+→ Efficiency: each new chip generation does more work per unit of energy
+→ Right-sizing: smaller models handle many everyday tasks with far less computing
+→ Clean power: India added a record 55 GW of clean capacity in FY 2025–26 (MNRE)
 
-#AI #DataCentres #EnergyTransition #Sustainability #India #ESG
+For organisations scaling AI, the energy footprint of that compute is becoming a material ESG question. Is it on your agenda?
+
+Sources: IEA, Energy and AI (2025); Government of India, IndiaAI Mission (2024); MNRE (2026).
+
+#AI #DataCentres #EnergyTransition #ESG #Sustainability
 
 ## Voiceover script
 

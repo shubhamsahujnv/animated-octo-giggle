@@ -186,28 +186,40 @@ Three questions for your cloud provider: what share of your power in India is re
 
 The internet is thirsty. 💧
 
-Servers run day and night, and almost all that power turns into heat. Many data centres cool down with water, and in India a 2025 study found up to 50 data centres in regions of extremely high water stress.
+Every reel you watch and every file you save lives on servers that run day and night, and almost all the electricity they use turns into heat. Many data centres use water to keep that heat in check.
 
-Here's the good news: treated wastewater, air-cooled and closed-loop systems, and national guidelines that back them. Cool smarter, and India's digital growth doesn't have to cost its water. 🌱
+In India, that matters: a 2025 study found up to 50 data centres in regions facing extremely high water stress, including hubs like Chennai and Mumbai.
 
-Save this and share it with someone in tech or sustainability.
+The good news? Smarter cooling already exists 👇
+✅ Treated wastewater instead of fresh water
+✅ Air-cooled and closed-loop systems that need far less water
+✅ National guidelines that recommend treated water for cooling
 
-#DataCentres #WaterConservation #Sustainability #IndiaClimate #ClimateAction #GreenTech #WaterStress #CleanTech #TheGreenSolve
+Cool smarter, and India's digital growth doesn't have to cost its water. 🌱
+
+💬 Did you know data centres use water? Tell us in the comments.
+🔁 Share this with someone in tech or sustainability.
+
+#DataCentres #WaterConservation #WaterStress #SustainableTech #GreenTech #IndiaClimate #ClimateActionIndia #Chennai #Mumbai #Sustainability #TheGreenSolve
 
 ## LinkedIn caption
 
-The internet is thirsty, and in India that matters.
+The internet is thirsty, and in India that is a planning problem worth solving now.
 
-Data centres turn almost all of their electricity into heat, and many rely on water to remove it. A 2025 Planet Tracker analysis (reported by Climate Fact Checks) found up to 50 Indian data centres sit in regions of extremely high water stress, including major hubs like Chennai and Mumbai.
+Data centres convert almost all of the electricity they use into heat, and many rely on water to remove it. A 2025 Planet Tracker analysis (reported by Climate Fact Checks) found up to 50 Indian data centres located in regions of extremely high water stress, including major hubs such as Chennai and Mumbai.
 
-The solutions already exist:
-• Treated wastewater instead of fresh water
-• Air-cooled and closed-loop cooling that need far less water
-• BEE's 2023 cooling guidelines, which recommend treated water for cooling-tower make-up
+The solutions are proven and available today:
+→ Treated wastewater instead of fresh water for cooling
+→ Air-cooled and closed-loop systems that need far less water
+→ The Bureau of Energy Efficiency's 2023 cooling guidelines, which recommend treated water for cooling-tower make-up
 
-As India's data centre capacity grows, water-wise cooling should be a baseline design choice, not an afterthought.
+As India's data centre capacity grows, water-wise cooling should be a baseline design requirement, not an afterthought.
 
-#DataCentres #Water #Sustainability #India #ESG #Infrastructure
+For sustainability and procurement teams: are you asking your data centre and cloud providers about water use and water source?
+
+Sources: Planet Tracker (2025) via Climate Fact Checks; Bureau of Energy Efficiency (2023).
+
+#DataCentres #WaterStewardship #Sustainability #ESG #India
 
 
 ---
@@ -223,19 +235,34 @@ As India's data centre capacity grows, water-wise cooling should be a baseline d
 
 Every AI answer costs electricity. ⚡
 
-Behind each reply, powerful chips in a data centre do the work. The IEA expects global data centre electricity use to more than double by 2030, with AI the biggest reason.
+Each time you ask an AI tool a question, powerful chips in a data centre do the work. The IEA expects global data centre electricity use to more than double by 2030, with AI as the biggest driver.
 
-Here's the good news: newer chips do more work per unit of energy, right-sized models need far less computing, and clean power makes every answer cleaner. With India's solar and wind growing fast, AI can grow green. 🌱
+Here's the good news 👇
+✅ Newer chips do more work for every unit of energy
+✅ Smaller, right-sized models answer many questions with far less computing
+✅ Clean power makes every answer cleaner
 
-#AI #ArtificialIntelligence #DataCentres #CleanEnergy #Sustainability #India #GreenTech #TheGreenSolve
+And with India's solar and wind capacity growing at record pace, AI can grow green. 🌱
+
+💬 How many times a day do you use AI tools?
+🔁 Share this with a friend who loves AI.
+
+#AI #ArtificialIntelligence #DataCentres #CleanEnergy #RenewableEnergy #GreenTech #SustainableTech #DigitalIndia #IndiaClimate #TheGreenSolve
 
 ## LinkedIn caption
 
-Every AI answer costs electricity, and the total is growing fast.
+Every AI answer costs electricity, and the total is rising fast.
 
-The IEA projects global data centre electricity use to rise from ~415 TWh (2024) to ~945 TWh (2030), with electricity use by AI-focused (accelerated) servers growing around 30% a year in its base case. India is building its own AI compute too, through the ₹10,372 crore IndiaAI Mission.
+The IEA projects global data centre electricity use to grow from about 415 TWh in 2024 to about 945 TWh by 2030. In its base case, electricity use by AI-focused (accelerated) servers grows around 30% a year. India is building its own AI compute too, through the ₹10,372 crore IndiaAI Mission.
 
-Three levers can bend the curve: more efficient chips, right-sized models for everyday tasks, and clean power, which India is adding at record pace.
+Three levers can bend the curve:
+→ Efficiency: each new chip generation does more work per unit of energy
+→ Right-sizing: smaller models handle many everyday tasks with far less computing
+→ Clean power: India added a record 55 GW of clean capacity in FY 2025–26 (MNRE)
 
-#AI #DataCentres #EnergyTransition #Sustainability #India #ESG
+For organisations scaling AI, the energy footprint of that compute is becoming a material ESG question. Is it on your agenda?
+
+Sources: IEA, Energy and AI (2025); Government of India, IndiaAI Mission (2024); MNRE (2026).
+
+#AI #DataCentres #EnergyTransition #ESG #Sustainability
 

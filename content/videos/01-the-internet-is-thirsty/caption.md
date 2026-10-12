@@ -9,28 +9,40 @@
 
 The internet is thirsty. 💧
 
-Servers run day and night, and almost all that power turns into heat. Many data centres cool down with water, and in India a 2025 study found up to 50 data centres in regions of extremely high water stress.
+Every reel you watch and every file you save lives on servers that run day and night, and almost all the electricity they use turns into heat. Many data centres use water to keep that heat in check.
 
-Here's the good news: treated wastewater, air-cooled and closed-loop systems, and national guidelines that back them. Cool smarter, and India's digital growth doesn't have to cost its water. 🌱
+In India, that matters: a 2025 study found up to 50 data centres in regions facing extremely high water stress, including hubs like Chennai and Mumbai.
 
-Save this and share it with someone in tech or sustainability.
+The good news? Smarter cooling already exists 👇
+✅ Treated wastewater instead of fresh water
+✅ Air-cooled and closed-loop systems that need far less water
+✅ National guidelines that recommend treated water for cooling
 
-#DataCentres #WaterConservation #Sustainability #IndiaClimate #ClimateAction #GreenTech #WaterStress #CleanTech #TheGreenSolve
+Cool smarter, and India's digital growth doesn't have to cost its water. 🌱
+
+💬 Did you know data centres use water? Tell us in the comments.
+🔁 Share this with someone in tech or sustainability.
+
+#DataCentres #WaterConservation #WaterStress #SustainableTech #GreenTech #IndiaClimate #ClimateActionIndia #Chennai #Mumbai #Sustainability #TheGreenSolve
 
 ## LinkedIn caption
 
-The internet is thirsty, and in India that matters.
+The internet is thirsty, and in India that is a planning problem worth solving now.
 
-Data centres turn almost all of their electricity into heat, and many rely on water to remove it. A 2025 Planet Tracker analysis (reported by Climate Fact Checks) found up to 50 Indian data centres sit in regions of extremely high water stress, including major hubs like Chennai and Mumbai.
+Data centres convert almost all of the electricity they use into heat, and many rely on water to remove it. A 2025 Planet Tracker analysis (reported by Climate Fact Checks) found up to 50 Indian data centres located in regions of extremely high water stress, including major hubs such as Chennai and Mumbai.
 
-The solutions already exist:
-• Treated wastewater instead of fresh water
-• Air-cooled and closed-loop cooling that need far less water
-• BEE's 2023 cooling guidelines, which recommend treated water for cooling-tower make-up
+The solutions are proven and available today:
+→ Treated wastewater instead of fresh water for cooling
+→ Air-cooled and closed-loop systems that need far less water
+→ The Bureau of Energy Efficiency's 2023 cooling guidelines, which recommend treated water for cooling-tower make-up
 
-As India's data centre capacity grows, water-wise cooling should be a baseline design choice, not an afterthought.
+As India's data centre capacity grows, water-wise cooling should be a baseline design requirement, not an afterthought.
 
-#DataCentres #Water #Sustainability #India #ESG #Infrastructure
+For sustainability and procurement teams: are you asking your data centre and cloud providers about water use and water source?
+
+Sources: Planet Tracker (2025) via Climate Fact Checks; Bureau of Energy Efficiency (2023).
+
+#DataCentres #WaterStewardship #Sustainability #ESG #India
 
 ## Voiceover script
 
