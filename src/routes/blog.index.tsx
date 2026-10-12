@@ -95,7 +95,7 @@ function BlogIndex() {
             </a>
             <a
               href="#write"
-              className="tgs-btn border-primary-foreground/40 text-primary-foreground"
+              className="tgs-btn tgs-btn-on-dark"
             >
               Contribute an article
             </a>

@@ -338,6 +338,19 @@
     font-size: 0.75rem;
   }
 
+  /* Outline button for use on bg-primary sections */
+  .tgs-btn-on-dark {
+    background-color: transparent;
+    border-color: var(--color-primary-foreground);
+    color: var(--color-primary-foreground);
+    box-shadow: 3px 3px 0 var(--color-accent);
+  }
+
+  .tgs-btn-on-dark:hover {
+    background-color: var(--color-primary-foreground);
+    color: var(--color-primary);
+  }
+
   /* Prevent horizontal overflow on small screens */
   @media (max-width: 640px) {
     .netlow-shell table {

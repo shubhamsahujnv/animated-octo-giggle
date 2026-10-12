@@ -285,7 +285,7 @@ function Article() {
                 </a>
                 <a
                   href="mailto:info@thegreensolve.com?subject=TGS%20carbon%20strategy%20conversation"
-                  className="tgs-btn border-primary-foreground/40 text-primary-foreground"
+                  className="tgs-btn tgs-btn-on-dark"
                 >
                   Talk to TGS
                 </a>
