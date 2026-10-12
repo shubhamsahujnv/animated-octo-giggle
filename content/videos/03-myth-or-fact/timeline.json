@@ -1,0 +1,64 @@
+{
+  "duration": 57.269,
+  "scenes": [
+    {
+      "id": "intro",
+      "start": 0.35,
+      "end": 3.699,
+      "caption": "Okay, quick game. Myth or fact? Data centres edition."
+    },
+    {
+      "id": "m1q",
+      "start": 4.149,
+      "end": 6.812,
+      "caption": "\"Data centres don't really use water.\""
+    },
+    {
+      "id": "m1a",
+      "start": 7.312,
+      "end": 20.478,
+      "caption": "Hmm, no. That's a myth. Servers turn almost all their power into heat, and many data centres cool down with water. A 2025 study found up to 50 Indian data centres in extremely water-stressed areas."
+    },
+    {
+      "id": "m2q",
+      "start": 21.028,
+      "end": 24.62,
+      "caption": "\"Okay, but they use most of the world's electricity, right?\""
+    },
+    {
+      "id": "m2a",
+      "start": 25.12,
+      "end": 33.402,
+      "caption": "Not quite. About 1.5% in 2024. But here's the thing: the IEA says it could more than double by 2030."
+    },
+    {
+      "id": "m3q",
+      "start": 33.952,
+      "end": 37.075,
+      "caption": "\"Fine. But India's power is mostly clean now.\""
+    },
+    {
+      "id": "m3a",
+      "start": 37.575,
+      "end": 46.22,
+      "caption": "Half true! Over half of India's power capacity is non-fossil now. But coal still makes most of the electricity we actually use."
+    },
+    {
+      "id": "close",
+      "start": 46.82,
+      "end": 53.116,
+      "caption": "So, the good news? The fixes are real. Cleaner power, smarter cooling, less water. We just have to choose them."
+    },
+    {
+      "id": "end",
+      "start": 53.566,
+      "end": 55.319,
+      "caption": "Follow The Green Solve"
+    }
+  ],
+  "sources": [
+    "Planet Tracker (2025), as reported by Climate Fact Checks: up to 50 Indian data centres in extremely high water-stress regions",
+    "IEA, Energy and AI (2025): data centres ~1.5% of global electricity in 2024; ~945 TWh projected by 2030",
+    "MNRE: non-fossil sources over 54% of installed capacity (31 July 2026)"
+  ]
+}

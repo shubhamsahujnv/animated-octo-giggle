@@ -2,7 +2,8 @@
 
 Hopeful I–V–vi–IV progression with pad, pluck arpeggio, sub bass and a soft beat that
 builds through the video; whooshes on scene changes. Timing comes from timeline.json;
-optional script.json "music": {"lift": <scene id>, "impacts": [seconds]}.
+optional script.json "music": {"lift": <scene id>, "impacts": [seconds | {"scene": id, "at": s}],
+"drums": false (softer, acoustic-feel bed), "level": 1.0 (music gain)}.
 Usage: python3 tools/make-music.py content/videos/<dir>   -> music.wav (44.1 kHz stereo)
 Requires numpy + scipy.
 """
@@ -74,7 +75,7 @@ def main():
         t += dur; ci += 1
 
     # drums: soft kick on 1 & 3 after the hook, offbeat hats after the UPI scene
-    k_t = beat_in
+    k_t = beat_in if cfg.get('drums', True) else T + 99
     while k_t < end + bar:
         n = int(.35 * SR); tt = np.arange(n) / SR
         f = 45 + 75 * np.exp(-tt * 30)
@@ -94,6 +95,8 @@ def main():
         sweep *= np.sin(np.linspace(0, np.pi, len(sweep))) ** 2
         add(sfx, sweep * .5, s['start'] - .45)
     for hit in cfg.get('impacts', []):             # soft low impact + shimmer, e.g. an object landing
+        if isinstance(hit, dict):
+            hit = S[hit['scene']]['start'] + hit.get('at', 0)
         n = int(.6 * SR); tt = np.arange(n) / SR
         boom = np.sin(2 * np.pi * np.cumsum(70 + 60 * np.exp(-tt * 20)) / SR) * np.exp(-tt * 6)
         add(sfx, boom * .7, hit)
@@ -109,7 +112,7 @@ def main():
     pad = lp(pad, 2500) * .05
     pl = lp(pl, 5000) * .09
     bass = lp(bass, 300) * .22
-    mix = pad + pl + bass + drums * .45
+    mix = (pad + pl + bass + drums * .45) * cfg.get('level', 1.0)
     # fade in quickly, fade out over the end card tail
     t_all = np.arange(N) / SR
     fade = np.clip(t_all / .4, 0, 1) * np.clip((T + .2 - t_all) / 2.0, 0, 1)

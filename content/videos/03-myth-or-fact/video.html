@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Video 03: Myth or Fact? Data centres edition</title>
+<link rel="stylesheet" href="../../../brand/tgs.css">
+<link rel="stylesheet" href="../../../brand/motion.css">
+<style>
+  .bubble { position: absolute; left: 90px; right: 90px; background: var(--cream); color: var(--teal); border-radius: 40px; padding: 60px 56px 64px; }
+  .bubble::after { content: ""; position: absolute; left: 110px; bottom: -44px; border: 26px solid transparent; border-top: 30px solid var(--cream); border-left: 34px solid var(--cream); }
+  .bubble .who { font: 600 26px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--mauve); }
+  .bubble .q { font: 700 64px/1.18 var(--serif); margin-top: 22px; }
+  .bubble .q::before { content: "\201C"; color: var(--mauve); }
+  .bubble .q::after { content: "\201D"; color: var(--mauve); }
+  .bubble.small { padding: 36px 44px 56px; border-radius: 30px; }
+  .bubble.small .q { font-size: 40px; margin-top: 12px; }
+  .bubble.small .who { font-size: 20px; }
+  .bubble.small::after { display: none; }
+  .stamp { position: absolute; right: 70px; padding: 18px 34px; border: 7px solid var(--teal); border-radius: 14px; background: var(--lime); color: var(--teal);
+           font: 700 54px/1 var(--serif); letter-spacing: .04em; transform: rotate(-8deg); box-shadow: 0 10px 0 rgba(1,53,50,.5); }
+  .panel { position: absolute; left: 90px; right: 90px; top: 540px; height: 450px; border-radius: 34px; border: 3px solid rgba(216,202,195,.35); background: rgba(1,53,50,.6); }
+  .tick { display: flex; align-items: center; gap: 30px; font: 700 50px/1.1 var(--serif); }
+  .tick svg { flex: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="frame">
+
+  <!-- intro -->
+  <div class="scene" id="intro">
+    <div class="kick" id="inK" style="top:230px">DATA CENTRES EDITION</div>
+    <div class="center serif" style="top:330px;font-size:150px;line-height:1">
+      <div id="inMyth" style="color:var(--taupe)">Myth</div>
+      <div id="inOr" class="ital" style="font-size:70px;margin:26px 0;color:var(--cream)">or</div>
+      <div id="inFact" class="lime">Fact?</div>
+    </div>
+    <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="position:absolute;left:0;top:0">
+      <rect id="tgTrack" x="400" y="870" width="280" height="120" rx="60" fill="rgba(216,202,195,.25)" stroke="#D8CAC3" stroke-width="4"/>
+      <circle id="tgKnob" cx="460" cy="930" r="46" fill="#E2FF4D"/>
+    </svg>
+  </div>
+
+  </div>
+
+  <!-- end card -->
+  <div class="scene" id="end">
+    <img id="endLogo" src="../../../brand/logo-dark-trimmed.png" alt="">
+    <div class="center serif" id="endT1">Follow <span class="ital">The Green Solve</span></div>
+    <div class="center" id="endT2">DATA CENTRES &amp; THE ENVIRONMENT · EP 03</div>
+    <div class="center" id="endT3"><span>Which myth surprised you? Comment below</span></div>
+    <div class="center" id="endSrc"></div>
+  </div>
+</div>
+
+<script src="../../../brand/motion.js"></script>
+<script>
+// ---- the three myth/answer pairs, built from data ----
+const MYTHS = [
+  { q: "Data centres don't really use water.", verdict: 'MYTH', panel: 'water' },
+  { q: "They use most of the world's electricity.", verdict: 'NOT QUITE', panel: 'power' },
+  { q: "India's power is mostly clean now.", verdict: 'HALF TRUE', panel: 'grid' },
+];
+const PANELS = {
+  water: `<div class="center serif" style="top:40px"><span style="font-size:44px">Up to</span> <span class="pnum lime" style="font-size:150px">0</span></div>
+    <div class="drops" style="position:absolute;left:70px;right:70px;top:230px;display:grid;grid-template-columns:repeat(10,1fr);gap:10px 0;justify-items:center"></div>
+    <div class="center" style="top:350px;font:400 30px/1.3 var(--sans);color:rgba(255,253,248,.85)">Indian data centres in extremely water-stressed areas</div>`,
+  power: `<svg viewBox="0 0 900 430" width="900" height="430" style="position:absolute;left:0;top:0">
+      <circle cx="230" cy="215" r="140" fill="none" stroke="rgba(216,202,195,.25)" stroke-width="44"/>
+      <circle class="parc" cx="230" cy="215" r="140" fill="none" stroke="#E2FF4D" stroke-width="44" stroke-dasharray="880" stroke-dashoffset="880" style="transform:rotate(-90deg)"/>
+      <text class="pnum" x="230" y="235" text-anchor="middle" font-family="Libre Baskerville" font-weight="700" font-size="64" fill="#FFFDF8">0%</text>
+      <text x="230" y="400" text-anchor="middle" font-family="Arial" font-size="26" fill="#D8CAC3">of world electricity, 2024</text>
+      <g class="dbl"><rect x="470" y="140" width="380" height="150" rx="75" fill="#E2FF4D"/>
+        <text x="660" y="200" text-anchor="middle" font-family="Libre Baskerville" font-weight="700" font-size="46" fill="#02403D">2× by 2030</text>
+        <text x="660" y="246" text-anchor="middle" font-family="Arial" font-size="24" fill="#02403D">could more than double</text></g>
+    </svg>`,
+  grid: `<div style="position:absolute;left:60px;right:60px;top:40px;display:flex;flex-direction:column;gap:36px">
+      <div><div style="font:600 28px/1 var(--sans);color:var(--taupe);margin-bottom:18px">Installed power capacity</div>
+        <div style="height:70px;border-radius:16px;background:rgba(216,202,195,.2);overflow:hidden;display:flex"><i class="gb1" style="display:block;width:54%;background:var(--lime);transform-origin:left"></i></div>
+        <div style="font:700 34px/1 var(--serif);color:var(--lime);margin-top:14px">54%+ non-fossil</div></div>
+      <div><div style="font:600 28px/1 var(--sans);color:var(--taupe);margin-bottom:18px">Electricity actually generated</div>
+        <div style="height:70px;border-radius:16px;background:rgba(216,202,195,.2);overflow:hidden;display:flex"><i class="gb2" style="display:block;width:72%;background:var(--taupe);transform-origin:left"></i></div>
+        <div style="font:700 34px/1 var(--serif);color:var(--cream);margin-top:14px">Coal still the biggest share</div></div>
+    </div>`,
+};
+const SRC = { water: 'Source: Planet Tracker (2025), via Climate Fact Checks', power: 'Source: IEA, Energy and AI (2025)', grid: 'Source: MNRE, 31 July 2026 (capacity). Generation bar illustrative' };
+const frame = $('#frame');
+const STAMP_TOP = 400;
+MYTHS.forEach((m, i) => {
+  const n = i + 1;
+  frame.insertAdjacentHTML('beforeend', `
+  <div class="scene" id="m${n}q">
+    <div class="kick">MYTH OR FACT? · ${n}/3</div>
+    <div class="bubble" id="bq${n}" style="top:360px"><div class="who">You've probably heard</div><div class="q">${m.q}</div></div>
+    <div class="center" style="top:860px;font:700 120px/1 var(--serif);color:rgba(226,255,77,.9)" id="qm${n}">?</div>
+  </div>
+  <div class="scene" id="m${n}a">
+    <div class="kick">MYTH OR FACT? · ${n}/3</div>
+    <div class="bubble small" style="top:240px"><div class="who">You've probably heard</div><div class="q">${m.q}</div></div>
+    <div class="stamp" id="st${n}" style="top:${STAMP_TOP}px">${m.verdict}</div>
+    <div class="panel" id="pn${n}">${PANELS[m.panel]}</div>
+    <div class="source" id="src${n}">${SRC[m.panel]}</div>
+  </div>`);
+});
+frame.insertAdjacentHTML('beforeend', `
+  <div class="scene" id="close">
+    <div class="kick" id="clK">THE GOOD NEWS</div>
+    <div class="head" style="top:240px"><span id="cl1">The fixes</span> <span id="cl2" class="ital lime">are real.</span></div>
+    <div style="position:absolute;left:150px;right:120px;top:500px;display:flex;flex-direction:column;gap:56px">
+      ${['Cleaner power', 'Smarter cooling', 'Less water'].map((t, i) => `<div class="tick" id="tk${i}"><svg viewBox="0 0 90 90" width="90" height="90"><circle cx="45" cy="45" r="44" fill="#E2FF4D"/><path class="tkp" d="M24 46 l14 14 l28 -30" fill="none" stroke="#02403D" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="70" stroke-dashoffset="70"/></svg>${t}</div>`).join('')}
+    </div>
+  </div>`);
+
+chrome();
+captions(/\d|myth|half|true|quite|water|clean|cleaner|smarter|less|good|double|coal/i, ['intro', 'm1q', 'm2q', 'm3q']);
+
+// intro: "Myth or Fact?" with a toggle that flips
+{ const t = scene('intro');
+  A('#inMyth', [{ opacity: 0, transform: 'translateX(-200px)' }, { opacity: 1, transform: 'none' }], .05, .5, { ease: BACK });
+  A('#inOr', [{ opacity: 0 }, { opacity: 1 }], .5, .3);
+  A('#inFact', [{ opacity: 0, transform: 'translateX(200px)' }, { opacity: 1, transform: 'none' }], .7, .5, { ease: BACK });
+  fadeUp('#inK', 1.2);
+  A('#tgTrack', [{ opacity: 0 }, { opacity: 1 }], .9, .3); A('#tgKnob', [{ opacity: 0 }, { opacity: 1 }], .9, .3);
+  A('#tgKnob', [{ transform: 'translateX(0)' }, { transform: 'translateX(160px)' }], 1.3, .45, { it: 4, dir: 'alternate', ease: INOUT, fill: 'none' });
+  A('#inMyth', [{ transform: 'scale(1)' }, { transform: 'scale(1.06)' }, { transform: 'scale(1)' }], 1.3, .45, { it: 2, fill: 'none' });
+}
+// myth pairs
+MYTHS.forEach((m, i) => {
+  const n = i + 1;
+  { const t = scene(`m${n}q`);
+    A(`#bq${n}`, [{ opacity: 0, transform: 'translateY(80px) scale(.9)' }, { opacity: 1, transform: 'none' }], t - .1, .55, { ease: BACK });
+    A(`#qm${n}`, [{ opacity: 0, transform: 'scale(0) rotate(-20deg)' }, { opacity: 1, transform: 'scale(1)' }], t + .6, .5, { ease: BACK });
+    A(`#qm${n}`, [{ transform: 'rotate(-8deg)' }, { transform: 'rotate(8deg)' }], t + 1.1, .5, { it: Infinity, dir: 'alternate', ease: 'ease-in-out', fill: 'none' });
+  }
+  { const t = scene(`m${n}a`), sid = `#st${n}`;
+    A(sid, [{ opacity: 0, transform: 'rotate(-8deg) scale(2.6)' }, { opacity: 1, transform: 'rotate(-8deg) scale(1)' }], t + .02, .28, { ease: 'cubic-bezier(.5,0,.75,0)' });
+    A(sid, [{ transform: 'rotate(-8deg) scale(1)' }, { transform: 'rotate(-8deg) scale(1.08)' }, { transform: 'rotate(-8deg) scale(1)' }], t + .32, .3, { fill: 'none' });
+    A(`#m${n}a .bubble`, [{ transform: 'translateX(0)' }, { transform: 'translateX(-10px)' }, { transform: 'translateX(10px)' }, { transform: 'translateX(0)' }], t + .3, .25, { fill: 'none' });
+    fadeUp(`#pn${n}`, t + .6); fadeUp(`#src${n}`, t + 1.4);
+    const pn = $(`#pn${n}`);
+    if (m.panel === 'water') {
+      counter(pn.querySelector('.pnum'), t + .8, 1.6, 50, (v) => Math.round(v));
+      const G = pn.querySelector('.drops');
+      for (let k = 0; k < 20; k++) {
+        const s = document.createElementNS(NS, 'svg'); s.setAttribute('viewBox', '0 0 40 52'); s.setAttribute('width', 34); s.setAttribute('height', 44);
+        s.innerHTML = '<path d="M20 2 c0 0-18 22-18 34 a18 18 0 0 0 36 0 c0-12-18-34-18-34z" fill="#E2FF4D"/>'; G.appendChild(s);
+        A(s, [{ opacity: 0, transform: 'translateY(-30px) scale(.4)' }, { opacity: 1, transform: 'none' }], t + .9 + k * .06, .35, { ease: BACK });
+      }
+    } else if (m.panel === 'power') {
+      A(pn.querySelector('.parc'), [{ strokeDashoffset: 880 }, { strokeDashoffset: 880 * (1 - .015) }], t + .9, 1.2, { ease: INOUT });
+      A(pn.querySelector('.parc'), [{ strokeWidth: 44 }, { strokeWidth: 64 }, { strokeWidth: 44 }], t + 2.1, .5, { fill: 'none' });
+      counter(pn.querySelector('.pnum'), t + .9, 1.4, 1.5, (v) => v.toFixed(1) + '%');
+      A(pn.querySelector('.dbl'), [{ opacity: 0, transform: 'scale(.4)' }, { opacity: 1, transform: 'scale(1)' }], S[`m${n}a`].start + 4.2, .55, { ease: BACK });
+    } else {
+      A(pn.querySelector('.gb1'), [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], t + .9, 1.1, { ease: INOUT });
+      A(pn.querySelector('.gb2'), [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], S[`m${n}a`].start + 4.4, 1.1, { ease: INOUT });
+    }
+  }
+});
+// close
+{ const t = scene('close');
+  fadeUp('#clK', t); words('#cl1', t + .2); words('#cl2', t + .5);
+  [0, 1, 2].forEach((i) => {
+    const at = t + 1.3 + i * .75;
+    A(`#tk${i}`, [{ opacity: 0, transform: 'translateX(-80px)' }, { opacity: 1, transform: 'none' }], at, .5, { ease: BACK });
+    A(`#tk${i} .tkp`, [{ strokeDashoffset: 70 }, { strokeDashoffset: 0 }], at + .25, .35);
+  });
+}
+endCard();
+finish();
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{
+  "title": "Myth or Fact? Data centres edition",
+  "voice": "hf_beta",
+  "speed": 0.98,
+  "gap": 0.35,
+  "humanize": true,
+  "music": {
+    "lift": "close",
+    "drums": false,
+    "impacts": [
+      {
+        "scene": "m1a",
+        "at": 0.05
+      },
+      {
+        "scene": "m2a",
+        "at": 0.05
+      },
+      {
+        "scene": "m3a",
+        "at": 0.05
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "id": "intro",
+      "say": "Okay, quick game. Myth, or fact? Data centres edition.",
+      "caption": "Okay, quick game. Myth or fact? Data centres edition.",
+      "gap": 0.45
+    },
+    {
+      "id": "m1q",
+      "say": "Data centres don't really use water.",
+      "voice": "hf_alpha",
+      "speed": 0.95,
+      "caption": "\"Data centres don't really use water.\"",
+      "gap": 0.5
+    },
+    {
+      "id": "m1a",
+      "say": "Hmm, no. That's a myth. Servers turn almost all their power into heat, and a lot of data centres use water to cool down. In India, a 2025 study found up to fifty of them in areas with extremely high water stress.",
+      "caption": "Hmm, no. That's a myth. Servers turn almost all their power into heat, and many data centres cool down with water. A 2025 study found up to 50 Indian data centres in extremely water-stressed areas.",
+      "breath": true,
+      "gap": 0.55
+    },
+    {
+      "id": "m2q",
+      "say": "Okay, but they use most of the world's electricity, right?",
+      "voice": "hf_alpha",
+      "speed": 0.96,
+      "caption": "\"Okay, but they use most of the world's electricity, right?\"",
+      "gap": 0.5
+    },
+    {
+      "id": "m2a",
+      "say": "Not quite. It was about one and a half percent in 2024. But here's the thing. The I.E.A. says it could more than double by twenty thirty.",
+      "caption": "Not quite. About 1.5% in 2024. But here's the thing: the IEA says it could more than double by 2030.",
+      "breath": true,
+      "gap": 0.55
+    },
+    {
+      "id": "m3q",
+      "say": "Fine. But India's power is mostly clean now.",
+      "voice": "hf_alpha",
+      "speed": 0.96,
+      "caption": "\"Fine. But India's power is mostly clean now.\"",
+      "gap": 0.5
+    },
+    {
+      "id": "m3a",
+      "say": "Half true! Over half of India's power capacity is non-fossil now, which is huge. But coal still makes most of the electricity we actually use.",
+      "caption": "Half true! Over half of India's power capacity is non-fossil now. But coal still makes most of the electricity we actually use.",
+      "breath": true,
+      "gap": 0.6
+    },
+    {
+      "id": "close",
+      "say": "So, the good news? The fixes are real. Cleaner power, smarter cooling, less water. We just have to choose them.",
+      "caption": "So, the good news? The fixes are real. Cleaner power, smarter cooling, less water. We just have to choose them.",
+      "breath": true,
+      "gap": 0.45
+    },
+    {
+      "id": "end",
+      "say": "Follow The Green Solve for more.",
+      "caption": "Follow The Green Solve"
+    }
+  ],
+  "sources": [
+    "Planet Tracker (2025), as reported by Climate Fact Checks: up to 50 Indian data centres in extremely high water-stress regions",
+    "IEA, Energy and AI (2025): data centres ~1.5% of global electricity in 2024; ~945 TWh projected by 2030",
+    "MNRE: non-fossil sources over 54% of installed capacity (31 July 2026)"
+  ]
+}

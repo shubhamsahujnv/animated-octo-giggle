@@ -68,4 +68,5 @@ The brand kit lives in [`brand/`](brand/). Read `brand/README.md` and `brand/TGS
   3. `NODE_PATH=$(npm root -g) node tools/render-video.js <video dir>`: frames → `silent.mp4` (`--stills 1,5,9` for quick previews)
   4. `tools/mix-audio.sh <video dir> <name>.mp4`: ducked music, -14 LUFS, final MP4
 - Check the voiceover with a speech-recognition round trip; add pronunciation fixes to `LEXICON` in `tools/make-voiceover.py`.
+- For a more natural, less AI-sounding read: set `"humanize": true` in script.json (room warmth, pace drift), give lines their own `speed`/`gap`, add `"breath": true` before longer lines, write conversational lines (contractions, "Hmm, no.", "Here's the thing."), and use a second voice (`hf_alpha`) for dialogue. Use a softer bed with `"drums": false` and mix music at 0.3 (`tools/mix-audio.sh <dir> <name>.mp4 0.3`). See `content/videos/03-myth-or-fact`.
 - Each piece gets a `caption.md` with Instagram and LinkedIn captions, hashtags and sources.

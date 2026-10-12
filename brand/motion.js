@@ -59,20 +59,36 @@ function chrome() {
 }
 
 // captions with word-by-word highlight; words matching `hl` turn lime. Skips scenes in `skip`.
-function captions(hl, skip = []) {
+// Long captions are split at sentence/comma breaks into chunks of <= `max` characters (about 3 lines),
+// each shown for its share of the line's speaking time.
+function captions(hl, skip = [], max = 84) {
+  const chunk = (text) => {
+    const parts = text.match(/[^.!?,:]+[.!?,:]*\s*/g) || [text], out = [];
+    let cur = '';
+    parts.forEach((p) => { if ((cur + p).trim().length > max && cur) { out.push(cur.trim()); cur = p; } else cur += p; });
+    if (cur.trim()) out.push(cur.trim());
+    return out;
+  };
   TL.scenes.forEach((s, i) => {
     if (skip.includes(s.id) || i === TL.scenes.length - 1) return;
-    const box = document.createElement('div'); box.className = 'cap';
-    const p = document.createElement('p'); box.appendChild(p); $('#captions').appendChild(box);
-    const total = s.caption.length; let acc = 0;
-    s.caption.split(' ').forEach((w) => {
-      const sp = document.createElement('span'); sp.textContent = w + ' '; p.appendChild(sp);
-      const wt = s.start + (acc / total) * (s.end - s.start); acc += w.length + 1;
-      A(sp, [{ opacity: .38, color: '#FFFDF8' }, { opacity: 1, color: hl.test(w) ? '#E2FF4D' : '#FFFDF8' }], wt, .12, { fill: 'forwards' });
-    });
     const nxt = (TL.scenes[i + 1] || { start: TL.duration }).start;
-    A(box, [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], s.start - .1, .25);
-    A(box, [{ opacity: 1 }, { opacity: 0 }], nxt - .15, .15, { fill: 'forwards' });
+    const pieces = chunk(s.caption), total = s.caption.length;
+    let acc = 0;
+    pieces.forEach((piece, k) => {
+      const t0 = s.start + (acc / total) * (s.end - s.start);
+      const t1 = k === pieces.length - 1 ? nxt : s.start + ((acc + piece.length + 1) / total) * (s.end - s.start);
+      const box = document.createElement('div'); box.className = 'cap';
+      const p = document.createElement('p'); box.appendChild(p); $('#captions').appendChild(box);
+      let a2 = 0;
+      piece.split(' ').forEach((w) => {
+        const sp = document.createElement('span'); sp.textContent = w + ' '; p.appendChild(sp);
+        const wt = t0 + (a2 / piece.length) * (t1 - t0 - (k === pieces.length - 1 ? nxt - s.end : 0)); a2 += w.length + 1;
+        A(sp, [{ opacity: .38, color: '#FFFDF8' }, { opacity: 1, color: hl.test(w) ? '#E2FF4D' : '#FFFDF8' }], wt, .12, { fill: 'forwards' });
+      });
+      A(box, [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], t0 - .1, .25);
+      A(box, [{ opacity: 1 }, { opacity: 0 }], t1 - .15, .15, { fill: 'forwards' });
+      acc += piece.length + 1;
+    });
   });
 }
 
