@@ -93,10 +93,7 @@ function BlogIndex() {
             <a href="#latest" className="tgs-btn tgs-btn-primary bg-accent text-accent-foreground">
               Read the latest
             </a>
-            <a
-              href="#write"
-              className="tgs-btn tgs-btn-on-dark"
-            >
+            <a href="#write" className="tgs-btn tgs-btn-on-dark">
               Contribute an article
             </a>
           </div>
