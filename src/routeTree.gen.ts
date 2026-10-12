@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as AuthenticatedNetlowRouteImport } from './routes/_authenticated/netlow'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -24,6 +25,8 @@ import { Route as AuthenticatedNetlowLogRouteImport } from './routes/_authentica
 import { Route as AuthenticatedNetlowReportsRouteImport } from './routes/_authenticated/netlow.reports'
 import { Route as AuthenticatedNetlowReviewRouteImport } from './routes/_authenticated/netlow.review'
 import { Route as ApiPublicBaselineInsightsRouteImport } from './routes/api/public/baseline-insights'
+import { Route as BlogAuthorsIndexRouteImport } from './routes/blog.authors.index'
+import { Route as BlogAuthorsSlugRouteImport } from './routes/blog.authors.$slug'
 import { Route as ApiPublicHooksNetlowIngestRouteImport } from './routes/api/public/hooks/netlow-ingest'
 
 const IndexRoute = IndexRouteImport.update({
@@ -38,6 +41,11 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedNetlowRoute = AuthenticatedNetlowRouteImport.update({
@@ -108,6 +116,16 @@ const ApiPublicBaselineInsightsRoute =
     path: '/api/public/baseline-insights',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogAuthorsIndexRoute = BlogAuthorsIndexRouteImport.update({
+  id: '/blog/authors/',
+  path: '/blog/authors/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogAuthorsSlugRoute = BlogAuthorsSlugRouteImport.update({
+  id: '/blog/authors/$slug',
+  path: '/blog/authors/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicHooksNetlowIngestRoute =
   ApiPublicHooksNetlowIngestRouteImport.update({
     id: '/api/public/hooks/netlow-ingest',
@@ -118,6 +136,7 @@ const ApiPublicHooksNetlowIngestRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/netlow': typeof AuthenticatedNetlowRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -129,12 +148,15 @@ export interface FileRoutesByFullPath {
   '/netlow/reports': typeof AuthenticatedNetlowReportsRoute
   '/netlow/review': typeof AuthenticatedNetlowReviewRoute
   '/api/public/baseline-insights': typeof ApiPublicBaselineInsightsRoute
+  '/blog/authors/$slug': typeof BlogAuthorsSlugRoute
   '/netlow/': typeof AuthenticatedNetlowIndexRoute
+  '/blog/authors/': typeof BlogAuthorsIndexRoute
   '/api/public/hooks/netlow-ingest': typeof ApiPublicHooksNetlowIngestRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
   '/netlow/challenges': typeof AuthenticatedNetlowChallengesRoute
@@ -145,7 +167,9 @@ export interface FileRoutesByTo {
   '/netlow/reports': typeof AuthenticatedNetlowReportsRoute
   '/netlow/review': typeof AuthenticatedNetlowReviewRoute
   '/api/public/baseline-insights': typeof ApiPublicBaselineInsightsRoute
+  '/blog/authors/$slug': typeof BlogAuthorsSlugRoute
   '/netlow': typeof AuthenticatedNetlowIndexRoute
+  '/blog/authors': typeof BlogAuthorsIndexRoute
   '/api/public/hooks/netlow-ingest': typeof ApiPublicHooksNetlowIngestRoute
 }
 export interface FileRoutesById {
@@ -153,6 +177,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/_authenticated/netlow': typeof AuthenticatedNetlowRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -164,7 +189,9 @@ export interface FileRoutesById {
   '/_authenticated/netlow/reports': typeof AuthenticatedNetlowReportsRoute
   '/_authenticated/netlow/review': typeof AuthenticatedNetlowReviewRoute
   '/api/public/baseline-insights': typeof ApiPublicBaselineInsightsRoute
+  '/blog/authors/$slug': typeof BlogAuthorsSlugRoute
   '/_authenticated/netlow/': typeof AuthenticatedNetlowIndexRoute
+  '/blog/authors/': typeof BlogAuthorsIndexRoute
   '/api/public/hooks/netlow-ingest': typeof ApiPublicHooksNetlowIngestRoute
 }
 export interface FileRouteTypes {
@@ -172,6 +199,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/sitemap.xml'
     | '/netlow'
     | '/blog/$slug'
     | '/blog/'
@@ -183,12 +211,15 @@ export interface FileRouteTypes {
     | '/netlow/reports'
     | '/netlow/review'
     | '/api/public/baseline-insights'
+    | '/blog/authors/$slug'
     | '/netlow/'
+    | '/blog/authors/'
     | '/api/public/hooks/netlow-ingest'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/auth'
+    | '/sitemap.xml'
     | '/blog/$slug'
     | '/blog'
     | '/netlow/challenges'
@@ -199,13 +230,16 @@ export interface FileRouteTypes {
     | '/netlow/reports'
     | '/netlow/review'
     | '/api/public/baseline-insights'
+    | '/blog/authors/$slug'
     | '/netlow'
+    | '/blog/authors'
     | '/api/public/hooks/netlow-ingest'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/sitemap.xml'
     | '/_authenticated/netlow'
     | '/blog/$slug'
     | '/blog/'
@@ -217,7 +251,9 @@ export interface FileRouteTypes {
     | '/_authenticated/netlow/reports'
     | '/_authenticated/netlow/review'
     | '/api/public/baseline-insights'
+    | '/blog/authors/$slug'
     | '/_authenticated/netlow/'
+    | '/blog/authors/'
     | '/api/public/hooks/netlow-ingest'
   fileRoutesById: FileRoutesById
 }
@@ -225,9 +261,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiPublicBaselineInsightsRoute: typeof ApiPublicBaselineInsightsRoute
+  BlogAuthorsSlugRoute: typeof BlogAuthorsSlugRoute
+  BlogAuthorsIndexRoute: typeof BlogAuthorsIndexRoute
   ApiPublicHooksNetlowIngestRoute: typeof ApiPublicHooksNetlowIngestRoute
 }
 
@@ -252,6 +291,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/netlow': {
@@ -338,6 +384,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicBaselineInsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/authors/': {
+      id: '/blog/authors/'
+      path: '/blog/authors'
+      fullPath: '/blog/authors/'
+      preLoaderRoute: typeof BlogAuthorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/authors/$slug': {
+      id: '/blog/authors/$slug'
+      path: '/blog/authors/$slug'
+      fullPath: '/blog/authors/$slug'
+      preLoaderRoute: typeof BlogAuthorsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/hooks/netlow-ingest': {
       id: '/api/public/hooks/netlow-ingest'
       path: '/api/public/hooks/netlow-ingest'
@@ -388,9 +448,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiPublicBaselineInsightsRoute: ApiPublicBaselineInsightsRoute,
+  BlogAuthorsSlugRoute: BlogAuthorsSlugRoute,
+  BlogAuthorsIndexRoute: BlogAuthorsIndexRoute,
   ApiPublicHooksNetlowIngestRoute: ApiPublicHooksNetlowIngestRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,29 +1,47 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { AUTHORS } from "../content/authors";
-import { POSTS } from "../content/posts";
+import { AuthorAvatar } from "../components/author-avatar";
+import { FaqList } from "../components/faq-list";
+import { SiteFooter, SiteHeader } from "../components/site-chrome";
+import { AUTHOR_LIST, authorByName } from "../content/authors";
+import { JOURNAL_FAQS, POSTS, SITE, postsByAuthor, type Post } from "../content/posts";
+import { blog, breadcrumbs, faqPage, graph, organization, website } from "../lib/schema";
+
+const PAGE_URL = `${SITE}/blog`;
+const TITLE = "The Baseline Journal — carbon field notes by TGS";
+const DESCRIPTION =
+  "Field notes on carbon accounting, credit eligibility and reporting for SMEs, written by TheGreensolve and invited contributors from industry.";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "The Baseline Journal — carbon field notes by TGS" },
-      {
-        name: "description",
-        content:
-          "Field notes on carbon accounting, credit eligibility and reporting for SMEs, written by TheGreensolve and invited contributors from industry.",
-      },
-      { property: "og:title", content: "The Baseline Journal — carbon field notes by TGS" },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
       {
         property: "og:description",
         content:
           "Practical carbon writing for small and mid-sized manufacturers. Read the notes, or write one with us.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://tgs-baseline.lovable.app/blog" },
-      { property: "og:image", content: "https://tgs-baseline.lovable.app/og-image.jpg" },
+      { property: "og:url", content: PAGE_URL },
+      { property: "og:image", content: `${SITE}/og-image.jpg` },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://tgs-baseline.lovable.app/og-image.jpg" },
+      { name: "twitter:image", content: `${SITE}/og-image.jpg` },
+      {
+        "script:ld+json": graph(
+          organization(),
+          website(),
+          blog(POSTS),
+          breadcrumbs([
+            ["Home", `${SITE}/`],
+            ["Blog", PAGE_URL],
+          ]),
+          faqPage(JOURNAL_FAQS, PAGE_URL),
+        ),
+      },
     ],
+    links: [{ rel: "canonical", href: PAGE_URL }],
   }),
   component: BlogIndex,
 });
@@ -37,29 +55,26 @@ function fmt(d: string) {
   });
 }
 
+function Byline({ post }: { post: Post }) {
+  const author = authorByName(post.author);
+  return (
+    <Link
+      to="/blog/authors/$slug"
+      params={{ slug: author.slug }}
+      className="relative z-10 underline decoration-2 underline-offset-4 hover:text-primary"
+    >
+      {post.author}
+    </Link>
+  );
+}
+
 function BlogIndex() {
   const featured = POSTS[0]!;
   const rest = POSTS.slice(1);
-  const ankita = AUTHORS["Ankita Patwa"];
-  const ankitaPosts = POSTS.filter((post) => post.author === "Ankita Patwa");
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="border-b-2 border-foreground/10 bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-5 py-4">
-          <a href="/" className="font-display text-sm font-bold tracking-tight">
-            Baseline <span className="opacity-70">by TheGreensolve</span>
-          </a>
-          <nav className="flex items-center gap-4 text-sm font-semibold">
-            <a href="/" className="opacity-80 hover:opacity-100">Platform</a>
-            <Link to="/blog" className="opacity-80 hover:opacity-100">Blog</Link>
-            <a href="/netlow" className="opacity-80 hover:opacity-100">Net-Low</a>
-            <a href="#write" className="rounded-full bg-accent px-3 py-1.5 text-accent-foreground">
-              Write with us
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-5xl px-5 pb-14 pt-10">
@@ -78,7 +93,10 @@ function BlogIndex() {
             <a href="#latest" className="tgs-btn tgs-btn-primary bg-accent text-accent-foreground">
               Read the latest
             </a>
-            <a href="#write" className="tgs-btn border-primary-foreground/40 text-primary-foreground">
+            <a
+              href="#write"
+              className="tgs-btn border-primary-foreground/40 text-primary-foreground"
+            >
               Contribute an article
             </a>
           </div>
@@ -97,22 +115,18 @@ function BlogIndex() {
             className="absolute inset-0 rounded-2xl"
           />
           <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            <span className="rounded-full bg-accent px-2.5 py-1 text-accent-foreground">Featured</span>
+            <span className="rounded-full bg-accent px-2.5 py-1 text-accent-foreground">
+              Featured
+            </span>
             <span>{featured.tag}</span>
-            <span>{fmt(featured.date)}</span>
+            <time dateTime={featured.date}>{fmt(featured.date)}</time>
             <span>{featured.readMins} min</span>
           </div>
           <h2 className="tgs-h1 mt-4 text-balance group-hover:underline">{featured.title}</h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">{featured.dek}</p>
           <p className="mt-5 text-sm font-semibold">
-            {featured.author === "Ankita Patwa" ? (
-              <a
-                href="#author-ankita-patwa"
-                className="relative z-10 underline decoration-2 underline-offset-4 hover:text-primary"
-              >
-                {featured.author}
-              </a>
-            ) : featured.author} <span className="font-normal text-muted-foreground">· {featured.role}</span>
+            <Byline post={featured} />{" "}
+            <span className="font-normal text-muted-foreground">· {featured.role}</span>
           </p>
         </article>
 
@@ -136,93 +150,71 @@ function BlogIndex() {
               <h3 className="tgs-h2 mt-3 text-balance group-hover:underline">{p.title}</h3>
               <p className="mt-2 flex-1 text-sm text-muted-foreground">{p.dek}</p>
               <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {p.author === "Ankita Patwa" ? (
-                  <a
-                    href="#author-ankita-patwa"
-                    className="relative z-10 underline decoration-2 underline-offset-4 hover:text-primary"
-                  >
-                    {p.author}
-                  </a>
-                ) : p.author} · {fmt(p.date)}
+                <Byline post={p} /> · <time dateTime={p.date}>{fmt(p.date)}</time>
               </p>
             </article>
           ))}
         </div>
 
-        {ankita ? (
-          <section
-            id="author-ankita-patwa"
-            className="mt-16 scroll-mt-6 rounded-2xl border-2 border-foreground/15 bg-card p-6 sm:p-9"
-          >
-            <div className="font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              About the author
-            </div>
-            <div className="mt-5 grid gap-7 sm:grid-cols-[8rem_minmax(0,1fr)] sm:items-start">
-              <img
-                src={ankita.image}
-                alt="Ankita Patwa"
-                className="h-28 w-28 rounded-full border-2 border-foreground object-cover sm:h-32 sm:w-32"
-              />
-              <div className="min-w-0">
-                <h2 className="tgs-h2">{ankita.name}</h2>
-                <p className="mt-1 font-display text-sm font-bold text-primary">{ankita.role}</p>
-                <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">
-                  {ankita.description}
-                </p>
-                <a
-                  href={ankita.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex font-semibold underline decoration-2 underline-offset-4 hover:text-primary"
+        <section id="authors" aria-labelledby="authors-heading" className="mt-16 scroll-mt-6">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <h2 id="authors-heading" className="tgs-h2">
+              Who writes the journal
+            </h2>
+            <Link
+              to="/blog/authors"
+              className="text-sm font-semibold underline decoration-2 underline-offset-4 hover:text-primary"
+            >
+              All authors →
+            </Link>
+          </div>
+          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+            {AUTHOR_LIST.map((author) => {
+              const count = postsByAuthor(author.name).length;
+              return (
+                <article
+                  key={author.slug}
+                  className="group relative flex gap-5 rounded-2xl border-2 border-foreground/15 bg-card p-6 transition hover:-translate-y-0.5 hover:border-foreground/40"
                 >
-                  View LinkedIn profile ↗
-                </a>
-              </div>
-            </div>
-
-            <div className="mt-7 border-t-2 border-foreground/10 pt-6">
-              <h3 className="font-display text-base font-bold">
-                {ankitaPosts.length} {ankitaPosts.length === 1 ? "article" : "articles"} by Ankita
-              </h3>
-              <ul className="mt-3 grid gap-2">
-                {ankitaPosts.map((post) => (
-                  <li key={post.slug}>
-                    <Link
-                      to="/blog/$slug"
-                      params={{ slug: post.slug }}
-                      className="font-semibold underline decoration-2 underline-offset-4 hover:text-primary"
-                    >
-                      {post.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        ) : null}
+                  <Link
+                    to="/blog/authors/$slug"
+                    params={{ slug: author.slug }}
+                    aria-label={`About ${author.name}`}
+                    className="absolute inset-0 rounded-2xl"
+                  />
+                  <AuthorAvatar author={author} className="size-16 text-lg" />
+                  <div className="min-w-0">
+                    <h3 className="font-display text-lg font-bold group-hover:underline">
+                      {author.name}
+                    </h3>
+                    <p className="text-sm font-semibold text-primary">{author.role}</p>
+                    <p className="mt-2 line-clamp-3 text-sm leading-6 text-muted-foreground">
+                      {author.description}
+                    </p>
+                    <p className="mt-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                      {count} {count === 1 ? "article" : "articles"}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
 
         <ContributePanel />
+
+        <section aria-labelledby="journal-faq" className="mt-16">
+          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            Quick answers
+          </p>
+          <h2 id="journal-faq" className="tgs-h1 mt-2">
+            Frequently asked questions
+          </h2>
+          <FaqList faqs={JOURNAL_FAQS} />
+        </section>
       </main>
 
-      <footer className="border-t-2 border-foreground/10 bg-primary px-5 py-10 text-primary-foreground">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-end justify-between gap-4">
-          <div>
-            <div className="font-display text-lg font-bold">The Baseline Journal</div>
-            <p className="mt-1 max-w-md text-sm opacity-80">
-              Published by TheGreensolve. Carbon intelligence for manufacturers, from Scope 1–3
-              accounting to verified credit workflows.
-            </p>
-          </div>
-          <div className="text-sm">
-            <div className="font-mono text-xs uppercase tracking-widest opacity-70">Send inquiries here</div>
-            <a className="underline" href="mailto:info@thegreensolve.com">info@thegreensolve.com</a>
-          </div>
-        </div>
-        <nav aria-label="Journal footer links" className="mx-auto mt-7 flex max-w-5xl gap-5 border-t border-primary-foreground/20 pt-5 text-sm font-semibold">
-          <a className="underline underline-offset-4" href="/">Platform</a>
-          <Link className="underline underline-offset-4" to="/blog">Blog</Link>
-        </nav>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
@@ -259,7 +251,9 @@ function ContributePanel() {
       <span className="inline-block rounded-full bg-accent px-3 py-1 font-mono text-xs font-semibold uppercase tracking-widest text-accent-foreground">
         Invited voices
       </span>
-      <h2 style={{ color: "inherit" }} className="tgs-h1 mt-4 text-balance">Write one piece. Reach the people building it.</h2>
+      <h2 style={{ color: "inherit" }} className="tgs-h1 mt-4 text-balance">
+        Write one piece. Reach the people building it.
+      </h2>
       <p className="mt-3 max-w-2xl opacity-90">
         The journal is invite-based. We publish plant managers, sustainability leads, auditors,
         financiers and founders who have done the thing they are writing about. Send the draft or
@@ -289,26 +283,49 @@ function ContributePanel() {
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <label className="text-sm font-semibold">
             Your name
-            <input className="tgs-input mt-1" value={name} onChange={(e) => setName(e.target.value)} placeholder="Priya Menon" />
+            <input
+              className="tgs-input mt-1"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Priya Menon"
+            />
           </label>
           <label className="text-sm font-semibold">
             Company and role
-            <input className="tgs-input mt-1" value={org} onChange={(e) => setOrg(e.target.value)} placeholder="Head of EHS, Nexa Components" />
+            <input
+              className="tgs-input mt-1"
+              value={org}
+              onChange={(e) => setOrg(e.target.value)}
+              placeholder="Head of EHS, Nexa Components"
+            />
           </label>
           <label className="text-sm font-semibold sm:col-span-2">
             Working title
-            <input className="tgs-input mt-1" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="What our first Scope 3 inventory got wrong" />
+            <input
+              className="tgs-input mt-1"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="What our first Scope 3 inventory got wrong"
+            />
           </label>
           <label className="text-sm font-semibold sm:col-span-2">
             The argument in three lines
-            <textarea className="tgs-input mt-1 min-h-28" value={angle} onChange={(e) => setAngle(e.target.value)} placeholder="What you learned, what it cost, what you would tell someone starting today." />
+            <textarea
+              className="tgs-input mt-1 min-h-28"
+              value={angle}
+              onChange={(e) => setAngle(e.target.value)}
+              placeholder="What you learned, what it cost, what you would tell someone starting today."
+            />
           </label>
         </div>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <a className="tgs-btn tgs-btn-primary" href={mailto()}>
             Prepare the email
           </a>
-          <a className="tgs-btn" href="mailto:info@thegreensolve.com?subject=Baseline%20Journal%20contributor%20invite">
+          <a
+            className="tgs-btn"
+            href="mailto:info@thegreensolve.com?subject=Baseline%20Journal%20contributor%20invite"
+          >
             Request a contributor invite
           </a>
         </div>

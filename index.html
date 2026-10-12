@@ -15,6 +15,7 @@
 <link rel="canonical" href="https://tgs-baseline.lovable.app/">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/favicon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://thegreensolve.com/#organization","name":"TheGreensolve","alternateName":"TGS","url":"https://thegreensolve.com/","logo":{"@type":"ImageObject","url":"https://thegreensolve.com/images/tgs-logo.png"},"email":"info@thegreensolve.com","sameAs":["https://www.linkedin.com/company/the-green-solve/"]},{"@type":"WebSite","@id":"https://thegreensolve.com/#website","url":"https://thegreensolve.com/","name":"Baseline by TheGreensolve","publisher":{"@id":"https://thegreensolve.com/#organization"},"inLanguage":"en"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -1264,6 +1265,17 @@
     .home-section-title{font-size:28px;}
     .section-head h2{font-size:24px;}
   }
+
+  /* Blog link in header + five-column footer */
+  .header-blog{
+    display:inline-flex; align-items:center; padding:5px 12px; border:2px solid var(--ink); border-radius:2px;
+    background:var(--surface); color:var(--ink); font-family:'Space Grotesk',Helvetica,sans-serif;
+    font-size:13px; font-weight:700; line-height:1.2; text-decoration:none; white-space:nowrap;
+  }
+  .header-blog:hover,.header-blog:focus-visible{background:var(--accent-soft-strong); color:var(--ink);}
+  @media(min-width:761px){
+    .footer-grid{grid-template-columns:minmax(200px,1.3fr) repeat(4,minmax(110px,1fr)); gap:32px;}
+  }
 </style>
 
 </head>
@@ -1315,7 +1327,8 @@
           </div>
         </div>
         <div class="header-right">
-          <span class="asof">IN · US &nbsp;·&nbsp; reviewed Aug 2026 &nbsp;·&nbsp; <a href="/blog">Blog</a> &nbsp;·&nbsp; <a href="/netlow">Net-Low</a> &nbsp;·&nbsp; <a href="#" id="gate-signout">Sign in</a></span>
+          <a class="header-blog" href="/blog">Blog</a>
+          <span class="asof">IN · US &nbsp;·&nbsp; reviewed Aug 2026 &nbsp;·&nbsp; <a href="/netlow">Net-Low</a> &nbsp;·&nbsp; <a href="#" id="gate-signout">Sign in</a></span>
         </div>
       </div>
       <div class="tabs-wrap" id="tabsWrap">
@@ -2621,7 +2634,15 @@
           <button class="footer-link" data-goto="new">Add a project</button>
           <button class="footer-link" data-goto="credits">Credit opportunities</button>
           <a class="footer-link" href="/netlow">Net-Low</a>
-          <a class="footer-link" href="/blog">Blog</a>
+        </div>
+      </nav>
+      <nav aria-label="Blog footer links">
+        <h2 class="footer-heading">Blog</h2>
+        <div class="footer-links">
+          <a class="footer-link" href="/blog">The Baseline Journal</a>
+          <a class="footer-link" href="/blog#latest">Latest article</a>
+          <a class="footer-link" href="/blog/authors">Authors</a>
+          <a class="footer-link" href="/blog#write">Write for us</a>
         </div>
       </nav>
       <nav aria-label="Company footer links">
