@@ -1,5 +1,9 @@
 # Lynkk — Chrome Web Store fields, paste-ready
 
+> **⚠️ SUPERSEDED by `10-store-listing-MEMORY-PASTE.md`.** This version leads with the capability
+> (`AI Meeting Notes & Recorder`). Per team direction, the live listing leads with
+> `conversation memory platform`. Kept as the fallback if that positioning is reversed.
+
 Copy each block into the matching field in the Developer Dashboard. Nothing here needs editing
 before it goes live. Optional additions you may want to make are listed at the end, *outside*
 the paste blocks.
