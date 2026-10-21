@@ -1,5 +1,9 @@
 # Lynkk — Rewritten Chrome Web Store Listing (Sales-Rep Focus)
 
+> **⚠️ SUPERSEDED by `08-store-listing-final.md`.** This version predates the
+> conversation-memory positioning and still uses "AI Note Taker" as an identity claim in the
+> Name. Kept for the reasoning trail — the research in §4–§6 still holds — but paste from `08`.
+
 Copy-paste ready. Character counts verified against Chrome Web Store field limits.
 Claims marked **[VERIFY]** must be confirmed true before publishing — remove rather than risk
 a policy rejection or a refund request.

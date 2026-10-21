@@ -3,8 +3,8 @@
 **Date:** 2026-10-21
 **Page:** `lynkk.ai/chrome-extension`
 **Data source:** Ubersuggest MCP connector, live US (locId 2840)
-**Not to be confused with:** `02-rewritten-listing.md` — that is the Chrome **Web Store** listing.
-This is the page on **your own site** that ranks in Google and drives installs.
+**Not to be confused with:** `08-store-listing-final.md` — that is the Chrome **Web Store**
+listing. This is the page on **your own site** that ranks in Google and drives installs to it.
 
 ---
 
