@@ -8,14 +8,12 @@ a policy rejection or a refund request.
 
 ## 1. Extension Name — limit 75 characters
 
-> **Revised against live Ubersuggest data.** The first draft led with `Sales Calls` in the Name.
-> That term returns **0/mo**. The Name now bids on `ai meeting note taker` (3,600/mo, SD 44) and
-> the platform cluster (~2,700/mo combined); the sales framing moves to the Summary and body,
-> where it converts instead of chasing traffic that doesn't exist.
-
-> **Second revision (research pass 2).** `zoom meeting recorder` tested at **2,900/mo, SD 17** —
-> the best volume-to-difficulty term found in either pass. The Name now carries the recorder
-> cluster alongside the head term. Full reasoning and exact-match trade-offs in
+> **Revision history.** The first draft led with `Sales Calls` — that term returns **0/mo**, so
+> it is gone from the Name. Research pass 2 then found `zoom meeting recorder` at **2,900/mo,
+> SD 17**, the best volume-to-difficulty term in either pass. The Name now bids on
+> `ai meeting note taker` (3,600/mo, SD 44), the recorder cluster and the platform cluster
+> (~2,700/mo combined); the sales framing lives in the Summary and body, where it converts
+> instead of chasing traffic that doesn't exist. Exact-match trade-offs:
 > `03-expanded-keywords.md` §5.
 
 ### ✅ Recommended
@@ -29,7 +27,6 @@ Lynkk: AI Meeting Note Taker, Recorder for Google Meet, Zoom & Teams
 - `meeting recorder` (1,900 / SD 32) and the adjacent `zoom meeting recorder` (2,900 / **SD 17**)
   now sit in the highest-weighted field. Note this is partial, not exact-phrase, coverage of
   `zoom meeting recorder` — see §5 of the expanded doc for the exact-match alternative.
-
 - Brand first — protects branded search and reads as a product, not a keyword string.
 - `AI Meeting Note Taker` = **3,600/mo, SD 44**, and it contains the 27,100/mo head term
   `ai note taker` as a substring, so you bid on both with one phrase.
@@ -37,7 +34,8 @@ Lynkk: AI Meeting Note Taker, Recorder for Google Meet, Zoom & Teams
   `microsoft teams ai note taker` (590, **SD 26**), `ai note taker for teams` (590, SD 29),
   `google meet ai note taker` (590, SD 40), `ai note taker for zoom` (480, SD 33).
 - First ~45 characters show in store search cards:
-  `Lynkk: AI Meeting Note Taker for Google M…` — head term fully inside the visible window.
+  `Lynkk: AI Meeting Note Taker, Recorder for Go…` — the head term and `Recorder` both land
+  inside the visible window; the platform names fall outside it but still count for ranking.
 
 ### Alternatives (A/B these — the Name field is editable)
 
@@ -49,8 +47,10 @@ Lynkk: AI Meeting Note Taker, Recorder for Google Meet, Zoom & Teams
 | `Lynkk: AI Meeting Note Taker — No Bot Joins Your Sales Calls` | 60 | Objection + sales. Strongest differentiation, drops platform volume. |
 | `Lynkk: AI Note Taker for Google Meet, Zoom & Teams \| No Bot Joins` | 65 | Platform-led, uses the bare head term. |
 
-Test the recommended one against the 67-char `— No Bot` variant. Those two have genuinely
-different theories and the data will separate them.
+A/B the recommended name against the 68-char exact-phrase variant first — they differ only in
+whether `zoom meeting recorder` appears contiguously, which is the one open question the data
+can't settle. The `— No Bot` variant is the third test, trading the recorder cluster for the
+objection.
 
 ## 2. Summary / Short Description — limit 132 characters
 
@@ -76,8 +76,9 @@ Previous version (**130 / 132**), still valid if the follow-up claim doesn't hol
 For sales reps: AI meeting notes on Google Meet, Zoom & Teams. No bot joins your call. Get summaries, action items and next steps.
 ```
 
-**Original 130-char rationale:** Opens with the audience, carries the head term and all three
-platforms, then lands the objection that differentiates Lynkk.
+That fallback opens with the audience, carries the head term and all three platforms, then
+lands the objection that differentiates Lynkk. Either version is safe to ship; the choice turns
+only on the [VERIFY] above.
 
 > **[VERIFY]** Earlier drafts ended on "paste into your CRM." Keep that tail only if output is
 > genuinely copyable into a CRM note; `crm notes` carries a **$36.29 CPC**, so the concept is
