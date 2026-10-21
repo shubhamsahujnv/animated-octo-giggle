@@ -1,223 +1,250 @@
 # Lynkk — Chrome Web Store Keyword Research (Sales-Rep Positioning)
 
 **Date:** 2026-10-21
+**Data source:** Ubersuggest MCP connector, account `marketing@lynkk.ai` (tier1)
 **Target listing:** https://chromewebstore.google.com/detail/lynkk/dmnbcgdjlekmcllcobbdpfoibchblecl
 **Repositioning:** general meeting recorder → **tool for salespeople** (AE / SDR / AM / founder-led sales)
 
----
-
-## 0. Method note — read this first
-
-Ubersuggest could not be queried from this environment (login-gated tool, and outbound
-access to `app.neilpatel.com` is blocked by the network policy). **No volume or SEO-difficulty
-figures below are real — the columns are deliberately empty.**
-
-What *is* evidence-based: every head term and modifier below was taken from live Chrome Web
-Store listings and ranking pages in this exact category (Tactiq, Fireflies, Scribbl, Notta,
-Noty.ai, Bluedot, tl;dv, LexaNote, RecordMeeting). Those are competitors who have already paid
-for this research — their title and summary fields are the keyword set that works.
-
-### How to fill this in (15 minutes in Ubersuggest)
-
-1. Ubersuggest → **Keyword Overview → Bulk** (up to 100 keywords per run).
-2. Paste the list in §5 (it is pre-formatted, one keyword per line, no commentary).
-3. Set location **United States**, then re-run for **India** and **United Kingdom** if those
-   are real markets for Lynkk — Chrome Web Store ranking is per-locale.
-4. Export CSV, paste `Volume` / `SD` / `CPC` into the tables below.
-5. Re-sort by **Volume ÷ SD**. If that re-sort contradicts my priority column, trust the data,
-   not me — with one exception noted in §3.
-
-A second free cross-check worth doing: type each head term into the **Chrome Web Store search
-box itself** and record the autocomplete suggestions. Store autocomplete reflects in-store
-intent, which is what actually matters here and which Ubersuggest (a Google-web tool) does not
-measure. Google-web volume is a proxy, not the target metric.
+All volume / SD / CPC figures below are live Ubersuggest data, US (locId 2840) unless marked
+India (2356) or UK (2826).
 
 ---
 
-## 1. Where the current listing stands
+## 0. Headline finding — and a correction to the first draft
 
-| Field | Current | Chars used | Limit | Verdict |
-|---|---|---|---|---|
-| Name | `Lynkk` | 5 | 75 | **Critical failure.** 70 characters of the single highest-weighted ranking field left empty. Brand-only names rank only for the brand — and "Lynkk" collides with a Bengaluru branding firm, a crypto account on X, plus near-misses Lynki, Linnk AI, LynkSurf, SalesLynk. |
-| Summary | general meeting-recorder phrasing | — | 132 | Second-highest-weighted field; carries no sales-intent term. |
-| Description | feature/privacy-led | — | 16,000 | Leads with mechanics (tab audio, channels, no bot) instead of the buyer's outcome. Privacy is the *proof*, not the *hook*. |
-| Category | — | — | — | Verify it is **Workflow & Planning** or **Productivity**. Sales tools in the wrong category lose category-browse traffic entirely. |
-| Installs | ~4 | — | — | See §6 — this, not copy, is the real ceiling. |
+**The sales-qualified keyword cluster has effectively zero search volume.** Every variation
+returns 0–30/mo:
 
-**One-line diagnosis:** the listing is invisible for every term a salesperson would type,
-because it bids on none of them.
-
----
-
-## 2. Intent map — how a salesperson actually searches
-
-A rep in the Chrome Web Store is in one of four states. Keyword choice follows the state.
-
-| Intent state | What they type | Lynkk's answer |
+| Keyword | Volume | SD |
 |---|---|---|
-| **Job-to-be-done** | "ai note taker", "meeting notes" | Core category entry. Highest volume, highest competition. |
-| **Platform-bound** | "google meet recorder", "zoom notes extension" | Lynkk supports all three — must be named explicitly. |
-| **Objection-led** (strongest for Lynkk) | "no bot note taker", "meeting recorder without bot" | **Lynkk's structural advantage.** A bot named "Lynkk Notetaker" appearing in a prospect's call is a live deal risk; reps search this phrase specifically. |
-| **Outcome-led** | "sales call notes", "crm notes automatically", "follow up email after call" | Where the sales repositioning earns traffic competitors don't chase. |
+| ai note taker for sales | **0** | 4 |
+| sales ai note taker | **0** | 4 |
+| ai note taker for sales calls | **0** | 4 |
+| best ai note taker for sales calls | **0** | 4 |
+| sales call recorder | **0** | 12 |
+| sales meeting notes ai | **0** | 4 |
+| ai that writes crm notes automatically | **0** | 4 |
+| sales call notes | 10 | 17 |
+| sales meeting notes | 30 | 38 |
+| crm notes | 90 | 17 (CPC **$36.29**) |
 
-The objection-led and outcome-led columns are the whole strategy. Lynkk cannot outrank
-Fireflies on "ai meeting notes" at 4 installs. It can own "no bot" + "sales call" long-tails,
-where competitors are generic and install counts are low.
+My first draft recommended putting `sales call notes` in the extension **Name**. **That was
+wrong** — the data says it would spend the store's highest-weighted field on a 10/mo term. The
+corrected recommendation is in §3.
 
----
+### What this means strategically (it is not bad news)
 
-## 3. Primary keyword set
+Salespeople don't search "ai note taker for sales." They search **"ai note taker"** and then
+judge from the listing whether it fits their job. So the two jobs separate cleanly:
 
-Priority = my recommendation from SERP evidence. Fill Volume/SD from Ubersuggest.
+- **Name + Summary → bid on volume terms.** Head term, platform names, bot-free objection.
+- **Description + screenshots → sell to the rep.** This is where the sales repositioning earns
+  its keep, as *conversion*, not as traffic.
+- **Site / blog → where sales keywords live.** See the Bluedot proof in §5.
 
-| # | Keyword | Intent | Priority | Volume | SD | Place in |
-|---|---|---|---|---|---|---|
-| 1 | ai note taker | Job | **P0** | | | Name, Summary, Desc ¶1 |
-| 2 | sales call notes | Outcome | **P0** | | | Name, Summary, Desc ¶1 |
-| 3 | no bot note taker | Objection | **P0** | | | Summary, Desc ¶1, FAQ |
-| 4 | google meet recorder | Platform | **P0** | | | Name, Desc platform block |
-| 5 | ai notetaker for sales | Outcome | **P1** | | | Desc H1 block |
-| 6 | meeting recorder without bot | Objection | **P1** | | | Desc, FAQ |
-| 7 | sales call recorder | Job | **P1** | | | Desc, screenshot caption |
-| 8 | zoom meeting notes extension | Platform | **P1** | | | Desc platform block |
-| 9 | microsoft teams note taker | Platform | **P1** | | | Desc platform block |
-| 10 | ai meeting summary | Job | **P1** | | | Desc feature block |
-| 11 | discovery call notes | Outcome | **P2** | | | Desc use-case block |
-| 12 | crm notes automation | Outcome | **P2** | | | Desc use-case block |
-| 13 | sales meeting transcription | Job | **P2** | | | Desc |
-| 14 | follow up email after sales call | Outcome | **P2** | | | Desc use-case block |
-| 15 | call notes for account executives | Persona | **P2** | | | Desc use-case block |
-
-**The one case to override the data:** keep #3 and #6 at P0 even if Ubersuggest returns low
-volume. Google-web volume under-measures in-store objection searches, the competitive field is
-thin, and these are the only terms where a 4-install extension can rank page 1 this quarter.
-Low volume you can win beats high volume you cannot.
-
-## 4. Long-tail set (description body + FAQ)
-
-Low individual volume, but these are what a 4-install listing can realistically rank for, and
-they double as FAQ headings (which Chrome Web Store indexes as body text).
-
-| Keyword | Use as |
-|---|---|
-| how to record a sales call without a bot | FAQ heading |
-| ai note taker that doesn't join the meeting | FAQ heading |
-| record google meet without anyone knowing — **DO NOT USE** | see §7 |
-| sales call summary generator | Desc feature line |
-| note taker for sdr | Use-case bullet |
-| account executive productivity tools | Use-case bullet |
-| client call notes chrome extension | Desc |
-| record zoom call in browser | Platform line |
-| meeting notes without recording bot | FAQ |
-| ai notes for sales discovery calls | Use-case bullet |
-| what did the prospect commit to | Q&A feature line |
-| sales call action items | Feature line |
-
-## 5. Paste-ready list for Ubersuggest Bulk
-
-```
-ai note taker
-ai notetaker
-sales call notes
-sales call recorder
-sales call summary
-no bot note taker
-note taker without bot
-meeting recorder without bot
-ai note taker no bot
-google meet recorder
-google meet note taker
-google meet transcription
-zoom meeting notes
-zoom notes extension
-record zoom call in browser
-microsoft teams note taker
-teams meeting notes
-ai meeting notes
-ai meeting summary
-meeting notes chrome extension
-meeting transcription chrome extension
-ai notetaker for sales
-note taker for sales calls
-sales meeting transcription
-discovery call notes
-discovery call summary
-crm notes automation
-automatic crm notes
-follow up email after sales call
-sales follow up automation
-note taker for sdr
-sdr productivity tools
-account executive tools
-account executive productivity
-client call notes
-customer call notes
-sales call action items
-call notes software
-ai sales assistant chrome extension
-sales call analysis
-conversation intelligence
-revenue intelligence
-sales call coaching
-call recording for sales teams
-ai notes google meet zoom teams
-meeting assistant chrome extension
-free ai note taker
-best ai note taker for sales
-fathom alternative
-fireflies alternative
-tactiq alternative
-tldv alternative
-gong alternative
-otter ai alternative
-```
-
-54 terms — one bulk run. Add `site:chromewebstore.google.com` competitor names to Ubersuggest's
-**Traffic Analyzer** on the competitor *websites* (tldv.io, bluedothq.com, tactiq.io) to see
-which of these they already rank for; that tells you which ones are genuinely winnable.
+Your repositioning decision stands. It just belongs in the conversion layer, not the keyword
+layer.
 
 ---
 
-## 6. The uncomfortable part: SEO is not Lynkk's binding constraint
+## 1. Where the volume actually is
 
-Chrome Web Store ranking weights **install count, rating volume, and uninstall rate** heavily —
-arguably above keyword relevance. At **~4 installs and v0.1.1**, perfect copy moves Lynkk from
-"unfindable" to "findable but unconvincing." The copy rewrite is necessary and cheap; it is not
-sufficient.
+### Head terms
 
-Run these in parallel or the rewrite underperforms:
+| Keyword | Volume | SD | CPC | Intent |
+|---|---|---|---|---|
+| ai note taker | **27,100** | 48 | $13.60 | Transactional |
+| ai meeting note taker | **3,600** | 44 | $16.26 | Informational |
+| free ai note taker | 2,400 | 43 | $11.84 | Transactional |
+| best ai note taker | 1,900 | 36 | $5.68 | — |
+| ai note taker free | 1,600 | 58 | $11.65 | Transactional |
+| ai meeting notes | 1,000 | 41 | $15.18 | Informational |
+| ai note taker app | 880 | 32 | $10.67 | Transactional |
+| best ai meeting note taker | 720 | 40 | $13.15 | Informational |
 
-1. **Get to 25+ installs and 5+ reviews.** Hand-recruit from one niche (e.g. SaaS SDR
-   communities, founder-led-sales Slacks). Reviews are the single strongest conversion *and*
-   ranking lever in the store.
-2. **Ship a version every 2–3 weeks.** "Last updated" is visible and weighted; a stale
-   0.1.x signals abandonment to both the algorithm and the buyer.
-3. **Screenshots do the converting.** 1280×800, five of them, each with a text overlay carrying
-   a keyword (captions in §3 of the copy doc). Most reps decide from image 1 and never read the
-   description.
-4. **Align lynkk.ai with the same keyword set.** Store listings inherit authority from external
-   links and brand search. If the site says "meeting notes" and the listing says "sales call
-   notes," both dilute.
-5. **Fix the brand-collision problem.** "Lynkk" alone competes with unrelated entities. This is
-   exactly why the name field must carry descriptors — it is also your defence in branded
-   search.
+`ai meeting note taker` at **3,600 / SD 44** is the single biggest term I missed in the first
+draft, and it is the best head-term target: 7× the volume of `ai meeting notes` at comparable
+difficulty.
 
-## 7. Compliance guardrails (do not skip)
+### Platform cluster — the best volume-to-difficulty ratios on the board
 
-Chrome Web Store rejects or removes listings for these, and in this category rejection is common:
+| Keyword | Volume | SD | CPC |
+|---|---|---|---|
+| microsoft teams ai note taker | 590 | **26** | $13.73 |
+| ai note taker for teams | 590 | 29 | $19.27 |
+| teams ai note taker | 590 | 28 | $14.53 |
+| google meet ai note taker | 590 | 40 | $21.91 |
+| ai note taker for zoom | 480 | 33 | $20.41 |
+| zoom ai note taker | 390 | 33 | $13.50 |
+| ai note taker for meetings | 390 | 38 | $21.56 |
+| ai note taker for google meet | 210 | 39 | **$29.73** |
+| ai note taker for microsoft teams | 110 | **19** | $17.02 |
+| best ai note taker for microsoft teams | 50 | **21** | $29.32 |
+| ms teams ai note taker | 90 | **26** | $19.70 |
 
-- **No keyword stuffing.** Repeating "ai note taker" eight times violates the Spam and
-  Placement in the Store policy. Each keyword appears in the rewrite 1–3 times, in natural
-  sentences. Keep it that way.
-- **No "record without anyone knowing" / stealth framing.** I listed it in §4 only to mark it
-  as forbidden. It invites removal, and for a sales tool it is a legal exposure for your users —
-  two-party-consent jurisdictions require disclosure. Lynkk should say the opposite: tell reps
-  to announce recording.
-- **No unverifiable metrics.** "Saves 5 hours a week," "trusted by 10,000 reps" — don't ship
-  these at 4 installs.
-- **No competitor names in the Name or Summary field.** "Fathom alternative" etc. are fine as
-  blog/web SEO targets, not in-store fields.
-- **Single-purpose rule.** Keep the description to recording + notes. Describing Lynkk as a
-  broad "AI sales assistant" risks a single-purpose rejection.
-- **[VERIFY] Privacy disclosures** must match actual data handling, including the mic
-  permission justification.
+**Teams is the soft underbelly** — SD 19–29 at 590 volume and ~$17–29 CPC. Those CPCs mean
+paying advertisers value this traffic highly, which is a strong proxy for buyer intent. Lynkk
+supports Teams and barely mentions it.
+
+### Objection cluster — real, but phrased differently than I guessed
+
+My guessed phrasings were dead; the actual ones are alive:
+
+| Keyword | Volume | SD |
+|---|---|---|
+| bot free ai note taker | **110** | 59 |
+| ai note taker that doesn't join meetings | **90** | 30 |
+| ai note taker without joining meeting | 30 | 61 |
+| best bot free ai note taker | 20 | 25 |
+| no bot note taker ❌ | 0 | 4 |
+| meeting recorder without bot ❌ | 0 | 4 |
+
+So the cluster is ~250/mo in aggregate and the winnable entry is
+**`ai note taker that doesn't join meetings` (90 / SD 30)**. Use the store's natural phrasing —
+"doesn't join," "bot free" — not "no bot."
+
+### Competitor-brand terms (for comparison/blog content, never in store fields)
+
+| Keyword | Volume | SD |
+|---|---|---|
+| otter ai note taker | 5,400 | 57 |
+| fathom ai note taker | 5,400 | 45 |
+| fireflies ai note taker | 4,400 | 63 |
+| granola ai note taker | 1,300 | 30 |
+| jamie ai note taker | 1,300 | **17** |
+| tactiq ai note taker | 1,000 | 35 |
+| bluedot ai note taker | 1,000 | 47 |
+
+`jamie ai note taker` at 1,300 / SD 17 is an unusually soft comparison target for a blog post.
+
+### India (locId 2356) — a tracked market in your project
+
+| Keyword | US vol / SD | India vol / SD |
+|---|---|---|
+| ai note taker | 27,100 / 48 | **1,900 / 61** |
+
+India is *harder* (SD 61 vs 48) at 1/14th the volume, and CPC collapses from $13.60 to $1.46.
+If the sales-rep ICP is US-based, concentrate there; India is not where this listing wins.
+
+---
+
+## 2. Intent map
+
+| Intent state | What they type | Volume | Lynkk's position |
+|---|---|---|---|
+| **Job-to-be-done** | ai note taker, ai meeting note taker | 27,100 / 3,600 | Must bid. Can't win page 1 yet at 4 installs, but the terms must be present to be eligible at all. |
+| **Platform-bound** | teams/meet/zoom ai note taker | ~2,700 combined | **Best ratio.** Teams especially (SD 19–29). |
+| **Objection-led** | bot free, doesn't join meetings | ~250 | **Winnable now.** Lynkk's structural advantage. |
+| **Outcome-led (sales)** | sales call notes, crm notes | ~130 | Near-zero traffic. **Conversion layer, not keyword layer.** |
+
+---
+
+## 3. Corrected priority set
+
+Ranked by what a 4-install listing can realistically win, factoring volume ÷ SD.
+
+| # | Keyword | Vol | SD | Priority | Place in |
+|---|---|---|---|---|---|
+| 1 | ai meeting note taker | 3,600 | 44 | **P0** | **Name**, Desc ¶1 |
+| 2 | ai note taker | 27,100 | 48 | **P0** | Name (contained in #1), Desc ¶1 |
+| 3 | microsoft teams ai note taker | 590 | 26 | **P0** | Name, Desc platform block |
+| 4 | ai note taker for teams | 590 | 29 | **P0** | Desc platform block |
+| 5 | google meet ai note taker | 590 | 40 | **P0** | Name, Desc platform block |
+| 6 | ai note taker for zoom | 480 | 33 | **P1** | Name, Desc platform block |
+| 7 | ai note taker that doesn't join meetings | 90 | 30 | **P1** | Summary, FAQ heading |
+| 8 | bot free ai note taker | 110 | 59 | **P1** | Desc ¶1, FAQ |
+| 9 | ai note taker app | 880 | 32 | **P1** | Desc |
+| 10 | free ai note taker | 2,400 | 43 | **P1** | Desc pricing block |
+| 11 | ai meeting notes | 1,000 | 41 | **P2** | Desc |
+| 12 | best ai meeting note taker | 720 | 40 | **P2** | Blog, not store |
+| 13 | ai note taker for meetings | 390 | 38 | **P2** | Desc |
+| 14 | crm notes | 90 | 17 | **P2** | Desc (CPC $36 = high intent) |
+| 15 | ai note taker extension | 20 | 27 | **P3** | Desc |
+
+**Terms to drop from the store fields entirely** (0 volume): `ai notetaker for sales`,
+`sales ai note taker`, `sales call recorder`, `no bot note taker`,
+`meeting recorder without bot`, `zoom meeting notes extension`, `discovery call notes`.
+Keep the *concepts* in the description as sales framing — just stop treating them as keywords.
+
+---
+
+## 4. Your Ubersuggest project needs rework
+
+Project `lynkk.ai` tracks 50 keywords. **Roughly a third are knowledge-management terms** —
+`knowledge management software`, `km software`, `knowledge base software`,
+`personal knowledge management apps`, `knowledge sharing software`,
+`managing software knowledge`, `knowledge database software`, `knowledge management tools`.
+
+Those match the old positioning (the project's business summary describes Lynkk as a knowledge
+graph platform), not the sales-rep repositioning. They're burning tracker slots.
+
+**Recommended changes** (you have 125 slots, 50 used — room to add without dropping):
+
+*Drop:* the eight KM terms above, `chat bot using ai`, `action items template`, `actions items`.
+
+*Add (US, locId 2840):* `ai meeting note taker`, `microsoft teams ai note taker`,
+`ai note taker for teams`, `google meet ai note taker`, `ai note taker for zoom`,
+`ai note taker that doesn't join meetings`, `bot free ai note taker`, `ai note taker app`,
+`free ai note taker`, `best ai meeting note taker`, `crm notes`, `ai note taker extension`.
+
+Also note the project's competitor set (fireflies, fathom, otter, avoma, tactiq) is tracked at
+**locId 2356 (India)** only. If the ICP is US, retrack those at 2840.
+
+One more mismatch worth raising: the project's business summary lists Jira integration, Slack
+and WhatsApp capture, in-person recording, a Mac app, 15+ languages and AES-256. **None of that
+belongs in the Chrome extension listing** — the store's single-purpose policy wants the listing
+scoped to what the extension does. Keep platform breadth on lynkk.ai, not in the listing.
+
+## 5. Proof the sales angle belongs in content, not store fields
+
+Bluedot ranks **#3 for `best ai meeting note taker` (720/mo, SD 40)** — and the ranking URL is
+`bluedothq.com/blog/ai-note-takers-for-sales`.
+
+That is the model, precisely: a **sales-angled article** ranking for a **generic head term**.
+The sales framing is the content's point of view; the generic term is what earns the traffic.
+
+Tactiq's organic footprint makes the same point from the other direction — their top pages are
+almost entirely `/tools/youtube-transcript` (110,000/mo for `youtube transcripts`). They win on
+a free adjacent tool, not on their core category term.
+
+**Blog targets for lynkk.ai, in priority order:**
+
+| Target keyword | Vol | SD | Angle |
+|---|---|---|---|
+| best ai meeting note taker | 720 | 40 | "…for sales teams" — mirror Bluedot directly |
+| jamie ai note taker | 1,300 | **17** | Comparison post; softest brand target found |
+| granola ai note taker | 1,300 | 30 | Comparison post |
+| ai note taker that doesn't join meetings | 90 | 30 | The objection, in full |
+| best ai note taker for microsoft teams | 50 | 21 | Teams is your soft underbelly |
+| crm notes | 90 | 17 | $36 CPC — highest commercial intent on the list |
+
+## 6. SEO is still not the binding constraint
+
+Chrome Web Store ranking weights **install count, rating volume and uninstall rate** heavily.
+At **~4 installs on v0.1.1**, perfect copy moves Lynkk from "unfindable" to "findable but
+unconvincing." Run in parallel:
+
+1. **25+ installs, 5+ reviews.** Hand-recruit from one niche.
+2. **Ship every 2–3 weeks.** "Last updated" is visible and weighted.
+3. **Five screenshots at 1280×800.** Most reps decide from image 1.
+4. **Align lynkk.ai to the same head terms**, with the sales angle as the editorial voice.
+5. **Fix brand collision.** "Lynkk" competes with a Bengaluru branding firm, a crypto account,
+   and near-misses Lynki / Linnk AI / LynkSurf / SalesLynk. Descriptors in the Name are your
+   defence.
+
+## 7. Compliance guardrails
+
+- **No keyword stuffing** — Spam and Placement policy. Each term appears 1–3 times in the
+  rewrite. Keep it there.
+- **No stealth framing.** Never "record without anyone knowing." Removal risk, and legal
+  exposure for your users in two-party-consent jurisdictions.
+- **No unverifiable metrics** at 4 installs.
+- **No competitor names in Name or Summary.** Brand comparisons are blog content only — note
+  that the 97% accuracy and 15+ languages claims in your project summary need substantiation
+  before they appear anywhere public.
+- **Single-purpose rule.** Scope the listing to recording + notes.
+
+## 8. Budget used
+
+14 of 150 daily reports; 2 of 250 monthly keyword-metric updates. No SERP refreshes were run
+(2 credits each) — say the word if you want live SERP pulls for the P0 terms.

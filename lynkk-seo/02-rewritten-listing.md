@@ -8,72 +8,77 @@ a policy rejection or a refund request.
 
 ## 1. Extension Name — limit 75 characters
 
+> **Revised against live Ubersuggest data.** The first draft led with `Sales Calls` in the Name.
+> That term returns **0/mo**. The Name now bids on `ai meeting note taker` (3,600/mo, SD 44) and
+> the platform cluster (~2,700/mo combined); the sales framing moves to the Summary and body,
+> where it converts instead of chasing traffic that doesn't exist.
+
 ### ✅ Recommended
 
 ```
-Lynkk: AI Note Taker for Sales Calls | Meet, Zoom, Teams
+Lynkk: AI Meeting Note Taker for Google Meet, Zoom & Teams
 ```
 
-**56 / 75 characters.** Why this one:
+**58 / 75 characters.** Why this one:
 
 - Brand first — protects branded search and reads as a product, not a keyword string.
-- `AI Note Taker` = the established category head term (it is the Wikipedia-level term for this
-  product class, and the phrase Tactiq, Fireflies, Scribbl and Notta all bid on).
-- `for Sales Calls` = the repositioning, and the qualifier that makes a crowded head term
-  winnable.
-- Three platform names capture platform-bound intent, which is a large share of in-store search.
-- First ~45 characters show in store search cards and in Google results: `Lynkk: AI Note Taker
-  for Sales Calls | Mee…` — every priority term lands inside the visible window.
+- `AI Meeting Note Taker` = **3,600/mo, SD 44**, and it contains the 27,100/mo head term
+  `ai note taker` as a substring, so you bid on both with one phrase.
+- The three platform names capture the best volume-to-difficulty terms on the board:
+  `microsoft teams ai note taker` (590, **SD 26**), `ai note taker for teams` (590, SD 29),
+  `google meet ai note taker` (590, SD 40), `ai note taker for zoom` (480, SD 33).
+- First ~45 characters show in store search cards:
+  `Lynkk: AI Meeting Note Taker for Google M…` — head term fully inside the visible window.
 
-### Alternatives (A/B these — the name field is editable)
+### Alternatives (A/B these — the Name field is editable)
 
 | Variant | Chars | Leans toward |
 |---|---|---|
-| `Lynkk: AI Sales Call Notes — No Bot Joins Your Meeting` | 54 | The objection. Strongest differentiation, less head-term volume. |
-| `Lynkk: AI Note Taker for Google Meet, Zoom & Teams Sales Calls` | 62 | Maximum platform coverage, weaker sales signal placement. |
-| `Lynkk: Sales Call Notes & AI Meeting Summaries for Reps` | 55 | Outcome-led, adds the `for Reps` persona token. |
+| `Lynkk: AI Meeting Note Taker for Google Meet, Zoom & Teams — No Bot` | 67 | Adds the objection. Best single option if you only ship one. |
+| `Lynkk: AI Meeting Note Taker — No Bot Joins Your Sales Calls` | 60 | Objection + sales. Strongest differentiation, drops platform volume. |
+| `Lynkk: AI Note Taker for Google Meet, Zoom & Teams \| No Bot Joins` | 65 | Platform-led, uses the bare head term. |
 
-Test the recommended one against the objection variant. Those two have genuinely different
-theories and the data will separate them.
-
----
+Test the recommended one against the 67-char `— No Bot` variant. Those two have genuinely
+different theories and the data will separate them.
 
 ## 2. Summary / Short Description — limit 132 characters
+
+> This is where the sales repositioning starts doing work. The Name captured the volume; the
+> Summary qualifies the reader.
 
 ### ✅ Recommended
 
 ```
-Record sales calls on Google Meet, Zoom & Teams — no bot joins. Get AI notes, next steps and recaps to paste into your CRM.
+For sales reps: AI meeting notes on Google Meet, Zoom & Teams. No bot joins your call. Get summaries, action items and next steps.
 ```
 
-**123 / 132 characters.** Carries four priority keywords plus the objection, and ends on the
-outcome a rep cares about.
+**130 / 132 characters.** Opens with the audience, carries the head term and all three
+platforms, then lands the objection that differentiates Lynkk.
 
-> **[VERIFY] before publishing:** "paste into your CRM" promises copyable output only, not an
-> integration — that wording is deliberate. If Lynkk has no CRM export at all, swap the tail
-> for `…and recaps ready for your follow-up.` Do not upgrade this to "syncs with your CRM"
-> unless a real integration exists.
+> **[VERIFY]** Earlier drafts ended on "paste into your CRM." Keep that tail only if output is
+> genuinely copyable into a CRM note; `crm notes` carries a **$36.29 CPC**, so the concept is
+> commercially valuable — but never upgrade the wording to "syncs with your CRM" without a real
+> integration.
 
 ### Alternatives
 
 | Variant | Chars |
 |---|---|
-| `AI note taker for sales calls. Nothing joins your meeting. Records Google Meet, Zoom & Teams, then writes your recap.` | 117 |
-| `Your AI sales call notes. One click on Meet, Zoom or Teams — no bot, no screen capture, just notes, tasks and next steps.` | 121 |
-| `Stop typing notes while your prospect talks. Lynkk records the call and hands you the summary and action items.` | 111 |
-
----
+| `AI meeting note taker for sales calls. No bot joins your meeting — records Google Meet, Zoom & Teams, then writes your recap.` | 125 |
+| `Close more deals, type fewer notes. AI meeting notes for Google Meet, Zoom & Teams, with no bot joining your prospect's call.` | 125 |
+| `Record sales calls on Google Meet, Zoom & Teams — no bot joins. Get AI notes, next steps and recaps to paste into your CRM.` | 123 |
 
 ## 3. Detailed Description — limit 16,000 characters
 
 Paste the block below verbatim. Structure rationale follows in §4.
 
 ```
-AI NOTE TAKER FOR SALES CALLS — NOTHING JOINS YOUR MEETING
+AI MEETING NOTE TAKER FOR SALES CALLS — NOTHING JOINS YOUR MEETING
 
-Lynkk records your sales calls on Google Meet, Zoom and Microsoft Teams and turns
-them into notes, next steps and answers you can ask for later. No bot appears in the
-participant list. No screen capture. One click, then you sell.
+Lynkk is a bot free AI meeting note taker for Google Meet, Zoom and Microsoft Teams.
+It records your sales calls and turns them into notes, next steps and answers you can
+ask for later. An AI note taker that doesn't join meetings: no bot in the participant
+list, no screen capture. One click, then you sell.
 
 Built for the people who live on calls: account executives, SDRs, account managers
 and founders running their own pipeline.
@@ -121,9 +126,9 @@ WHAT YOU GET FROM EVERY SALES CALL
 
 WORKS WHERE YOU SELL
 
-• Google Meet — AI meeting notes and call recording, no extension juggling
-• Zoom in the browser — sales call recorder for browser-based Zoom meetings
-• Microsoft Teams — Teams note taker for client and internal calls
+• Google Meet AI note taker — meeting notes and call recording, nothing to admit
+• AI note taker for Zoom — works with Zoom in the browser
+• Microsoft Teams AI note taker — an AI note taker for Teams client and internal calls
 
 
 FOR YOUR ROLE
@@ -162,7 +167,7 @@ call it builds more trust than it costs.
 
 PRICING
 
-Lynkk is free to start — the free plan is enough to use this extension.
+Lynkk is a free AI note taker to start — the free plan is enough to use this extension.
 Paid plans are available in-app when you need more. [VERIFY: state what the free
 plan actually includes — a call or minute limit here converts better than "free to
 start", and vague free claims draw refund complaints.]
@@ -175,7 +180,7 @@ Install Lynkk, sign in at lynkk.ai, and press Record on your next sales call.
 
 FREQUENTLY ASKED QUESTIONS
 
-How do I record a sales call without a bot joining?
+Is there an AI note taker that doesn't join meetings?
 Install Lynkk and press Record in the call tab. Lynkk captures audio from your own
 browser, so no participant is added and your prospect sees a normal meeting.
 
@@ -202,7 +207,7 @@ Is there a free plan?
 Yes. The free plan is enough to use this extension.
 ```
 
-**Length: approx. 5,400 characters of 16,000** — comfortably inside the limit with room for the
+**Length: approx. 5,500 characters of 16,000** — comfortably inside the limit with room for the
 sections you verify and expand.
 
 ---
@@ -211,10 +216,10 @@ sections you verify and expand.
 
 | Decision | Reason |
 |---|---|
-| Keyword-bearing first line, before any brand story | Chrome Web Store weights the opening of the description, and the first ~2 lines are the snippet shown in search. `AI note taker` + `sales calls` + the objection all land in sentence one. |
+| Keyword-bearing first line, before any brand story | Chrome Web Store weights the opening of the description, and the first ~2 lines are the snippet shown in search. `AI meeting note taker` (3,600/mo), `bot free ai note taker` (110/mo) and `doesn't join meetings` (90/mo) all land in the first three sentences. |
 | Benefit before mechanism | The original led with how recording works (tab audio, two channels, no bot). That is *proof*, and proof only matters after the reader wants the outcome. The mechanics now sit in the privacy block, where a skeptical buyer goes looking for them. |
-| "No bot" is the hook, not a footnote | For a salesperson this is not a privacy feature, it is a deal-risk feature. It is also the thinnest-competition keyword cluster Lynkk can rank for at its current install count. |
-| Role-by-role section | Captures persona long-tails (`note taker for sdr`, `account executive tools`) and lets a rep self-identify in two seconds. |
+| "No bot" is the hook, not a footnote | For a salesperson this is not a privacy feature, it is a deal-risk feature. It is also the winnable cluster: `ai note taker that doesn't join meetings` is 90/mo at SD 30, versus SD 44–48 for the head terms. Note the store's phrasing is "doesn't join" / "bot free" — `no bot note taker` itself is 0/mo. |
+| Role-by-role section | Pure conversion, not traffic — every sales-qualified keyword tested at 0–30/mo. It earns its place by letting a rep self-identify in two seconds, which is what moves install rate. |
 | FAQ section | Each heading is a long-tail query in natural question form — indexed as body text, and it pre-empts the objections that cause uninstalls. |
 | Keyword frequency held to 1–3 per term | Above that, the Spam and Placement policy applies. The density is deliberately restrained. |
 | Consent language included, stealth framing excluded | Protects the listing from removal and the user from legal exposure. Reframed as a trust-builder so it does not read as a warning label. |
@@ -252,3 +257,9 @@ entire differentiation.
 - [ ] lynkk.ai hero copy updated to the same keyword set (see research doc §6)
 - [ ] Version bumped and shipped — "last updated" is a visible ranking and trust signal
 - [ ] Review drive started: 25 installs / 5 reviews is the real near-term goal
+- [ ] Ubersuggest project cleaned up: drop the 8 knowledge-management terms, add the 12 P0/P1
+      terms, retrack competitors at locId 2840 if the ICP is US (see research doc §4)
+- [ ] Teams given equal billing with Meet — it is the softest cluster (SD 19–29 at 590/mo) and
+      is currently under-stated everywhere
+- [ ] Blog queue set from research doc §5, starting with "best AI meeting note taker for sales
+      teams" (720/mo, SD 40 — mirrors how Bluedot ranks #3)
