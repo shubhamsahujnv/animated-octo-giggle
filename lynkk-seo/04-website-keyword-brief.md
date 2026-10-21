@@ -154,11 +154,17 @@ searches. Both are viable — but one page cannot rank for both well. Suggested 
 | `/discovery-call` | discovery call | 4,400 / 25 | Rep |
 | `/discovery-call-template` | discovery call template | 50 / **14** | Rep — lead magnet |
 | `/for-revenue-teams` | conversation intelligence platform | 880 / 37 | Buying committee |
-| `/zoom-meeting-recorder` | zoom meeting recorder | 2,900 / **17** | Rep — converts to extension |
+| `/chrome-extension` *(copy in `07`)* | how to record a meeting on zoom | **9,900 / 13** | Rep — converts to install |
+| `/zoom-meeting-recorder` → fold into `/chrome-extension` | zoom meeting recorder | 2,900 / **17** | Rep — converts to extension |
 
-**Build order:** follow-up page first (highest volume ÷ difficulty by a wide margin), then
-discovery call, then the template as a lead magnet linking to both. Homepage head terms last —
-they need authority the domain doesn't have yet.
+**Build order, revised after pass 5:** the **`/chrome-extension` page first** — `how to record a
+meeting on zoom` is 9,900/mo at **SD 13**, the best ratio found anywhere in this engagement, and
+it converts straight to an install. Then the follow-up page (8,100 / SD 7), then discovery call,
+then the template as a lead magnet linking to both. Homepage head terms last — they need
+authority the domain doesn't have yet.
+
+Fold the planned `/zoom-meeting-recorder` page into `/chrome-extension` rather than building both;
+they'd compete for the same cluster.
 
 ---
 
