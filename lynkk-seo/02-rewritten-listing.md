@@ -13,13 +13,22 @@ a policy rejection or a refund request.
 > the platform cluster (~2,700/mo combined); the sales framing moves to the Summary and body,
 > where it converts instead of chasing traffic that doesn't exist.
 
+> **Second revision (research pass 2).** `zoom meeting recorder` tested at **2,900/mo, SD 17** —
+> the best volume-to-difficulty term found in either pass. The Name now carries the recorder
+> cluster alongside the head term. Full reasoning and exact-match trade-offs in
+> `03-expanded-keywords.md` §5.
+
 ### ✅ Recommended
 
 ```
-Lynkk: AI Meeting Note Taker for Google Meet, Zoom & Teams
+Lynkk: AI Meeting Note Taker, Recorder for Google Meet, Zoom & Teams
 ```
 
-**58 / 75 characters.** Why this one:
+**68 / 75 characters.** Why this one:
+
+- `meeting recorder` (1,900 / SD 32) and the adjacent `zoom meeting recorder` (2,900 / **SD 17**)
+  now sit in the highest-weighted field. Note this is partial, not exact-phrase, coverage of
+  `zoom meeting recorder` — see §5 of the expanded doc for the exact-match alternative.
 
 - Brand first — protects branded search and reads as a product, not a keyword string.
 - `AI Meeting Note Taker` = **3,600/mo, SD 44**, and it contains the 27,100/mo head term
@@ -34,7 +43,9 @@ Lynkk: AI Meeting Note Taker for Google Meet, Zoom & Teams
 
 | Variant | Chars | Leans toward |
 |---|---|---|
-| `Lynkk: AI Meeting Note Taker for Google Meet, Zoom & Teams — No Bot` | 67 | Adds the objection. Best single option if you only ship one. |
+| `Lynkk: AI Meeting Note Taker for Google Meet, Zoom & Teams` | 58 | Pass-1 recommendation. No recorder terms. |
+| `Lynkk: AI Meeting Note Taker & Zoom Meeting Recorder for Teams, Meet` | 68 | Exact-phrase `zoom meeting recorder`; "Google Meet" shortens to "Meet". |
+| `Lynkk: AI Meeting Note Taker for Google Meet, Zoom & Teams — No Bot` | 67 | Adds the objection instead of the recorder cluster. |
 | `Lynkk: AI Meeting Note Taker — No Bot Joins Your Sales Calls` | 60 | Objection + sales. Strongest differentiation, drops platform volume. |
 | `Lynkk: AI Note Taker for Google Meet, Zoom & Teams \| No Bot Joins` | 65 | Platform-led, uses the bare head term. |
 
@@ -49,10 +60,23 @@ different theories and the data will separate them.
 ### ✅ Recommended
 
 ```
+For sales reps: record Google Meet, Zoom & Teams with no bot joining. AI meeting notes, action items and follow-up email drafts.
+```
+
+**128 / 132 characters.** Revised to end on `follow-up email` — `follow up email to sales call`
+tested at **8,100/mo, SD 7**, the largest undefended term found and the one phrase that makes a
+rep recognise their own problem.
+
+> **[VERIFY]** Keep "follow-up email drafts" only if Lynkk drafts the email. If it produces a
+> summary the rep adapts, write "notes you can paste into your follow-up" instead.
+
+Previous version (**130 / 132**), still valid if the follow-up claim doesn't hold:
+
+```
 For sales reps: AI meeting notes on Google Meet, Zoom & Teams. No bot joins your call. Get summaries, action items and next steps.
 ```
 
-**130 / 132 characters.** Opens with the audience, carries the head term and all three
+**Original 130-char rationale:** Opens with the audience, carries the head term and all three
 platforms, then lands the objection that differentiates Lynkk.
 
 > **[VERIFY]** Earlier drafts ended on "paste into your CRM." Keep that tail only if output is
@@ -75,10 +99,11 @@ Paste the block below verbatim. Structure rationale follows in §4.
 ```
 AI MEETING NOTE TAKER FOR SALES CALLS — NOTHING JOINS YOUR MEETING
 
-Lynkk is a bot free AI meeting note taker for Google Meet, Zoom and Microsoft Teams.
-It records your sales calls and turns them into notes, next steps and answers you can
-ask for later. An AI note taker that doesn't join meetings: no bot in the participant
-list, no screen capture. One click, then you sell.
+Lynkk is a bot free AI meeting note taker and meeting recorder for Google Meet, Zoom
+and Microsoft Teams. This AI note taker Chrome extension records your sales calls and
+turns them into notes, next steps and answers you can ask for later. An AI note taker
+that doesn't join meetings: no bot in the participant list, no screen capture. One
+click, then you sell.
 
 Built for the people who live on calls: account executives, SDRs, account managers
 and founders running their own pipeline.
@@ -97,10 +122,10 @@ Typing notes during a discovery call costs you the follow-up question — the on
 surfaces the real pain. Lynkk captures the call so you can run the conversation,
 hold eye contact and actually sell.
 
-Your follow-up is written before you leave the call.
+Your follow-up email after the sales call is written before you leave it.
 Every call comes back as a clean summary with the commitments made and the tasks
-people took on, so your recap email and your CRM note are a copy-paste away instead
-of a 20-minute evening job.
+people took on, so your follow-up email and your CRM note are a copy-paste away
+instead of a 20-minute evening job.
 
 You can interrogate the call afterwards.
 Ask what the prospect said about budget, who the decision maker is, or which
@@ -117,8 +142,8 @@ HOW IT WORKS
 
 WHAT YOU GET FROM EVERY SALES CALL
 
-• AI call summary — what was discussed, decided and left open
-• Action items — the commitments, with who owns each one
+• AI meeting summary — what was discussed, decided and left open
+• Meeting action items — the commitments, with who owns each one
 • Ask-anything recall — put a question to the call and get an answer from the recording
 • Searchable call history — find that pricing objection from three weeks ago
 • Recaps you can paste straight into your CRM note or follow-up email
@@ -127,8 +152,9 @@ WHAT YOU GET FROM EVERY SALES CALL
 WORKS WHERE YOU SELL
 
 • Google Meet AI note taker — meeting notes and call recording, nothing to admit
-• AI note taker for Zoom — works with Zoom in the browser
-• Microsoft Teams AI note taker — an AI note taker for Teams client and internal calls
+• Zoom meeting recorder — AI note taker for Zoom, works with Zoom in the browser
+• Microsoft Teams AI note taker — note taker for Teams client and internal calls
+  [VERIFY] if the extension surfaces a transcript, add: "transcribe meeting in Teams"
 
 
 FOR YOUR ROLE
@@ -189,8 +215,8 @@ Not from a bot in the participant list — there isn't one. You should still tel
 them. Many jurisdictions require it, and it is the right way to run a call.
 
 Does Lynkk work with Zoom?
-Yes, for Zoom in the browser. Join the meeting in a browser tab rather than the
-desktop app and press Record.
+Yes, for Zoom in the browser. As a Zoom meeting recorder it captures the call from
+your browser tab — join in a tab rather than the desktop app and press Record.
 
 Does it record my screen or my other tabs?
 No. Audio only, and only the tab you pressed Record on.
@@ -207,7 +233,7 @@ Is there a free plan?
 Yes. The free plan is enough to use this extension.
 ```
 
-**Length: approx. 5,500 characters of 16,000** — comfortably inside the limit with room for the
+**Length: approx. 5,800 characters of 16,000** — comfortably inside the limit with room for the
 sections you verify and expand.
 
 ---
@@ -261,5 +287,11 @@ entire differentiation.
       terms, retrack competitors at locId 2840 if the ICP is US (see research doc §4)
 - [ ] Teams given equal billing with Meet — it is the softest cluster (SD 19–29 at 590/mo) and
       is currently under-stated everywhere
-- [ ] Blog queue set from research doc §5, starting with "best AI meeting note taker for sales
-      teams" (720/mo, SD 40 — mirrors how Bluedot ranks #3)
+- [ ] Blog queue set from `03-expanded-keywords.md` §7, starting with "follow up email to sales
+      call" (8,100/mo at **SD 7** — the largest undefended term found)
+- [ ] ⚠️ Resolve the lynkk.ai positioning contradiction: the site's only indexed page is
+      `/features/meeting-bot`, ranking for "zoom meeting bot", while this listing's hook is
+      "no bot joins". Decide and label before publishing (`03-expanded-keywords.md` §1b)
+- [ ] [VERIFY] Does the extension surface a transcript? If not, drop the transcription terms
+- [ ] [VERIFY] Does Lynkk draft the follow-up email, or only summarise? Summary wording depends
+      on the answer
