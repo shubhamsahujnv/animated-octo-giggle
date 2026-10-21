@@ -2,7 +2,9 @@
 
 **Date:** 2026-10-21
 **Page:** `lynkk-revenue-story.imsjwagh99.chatgpt.site` → recommended final home `lynkk.ai`
-**Positioning kept:** *"Your revenue team's memory"* (your existing title)
+**Positioning:** conversation memory platform — *"Your revenue team's memory"* (your existing
+title). **Revised 2026-10-21** per team direction that Lynkk is not a notetaker; see
+`06-positioning-vs-keywords.md` for the data behind the split.
 **Written from:** page title via Ubersuggest crawl, the business summary on your Ubersuggest
 project, and live keyword data. **The current page body was not available** — see §6 for what to
 check against the real page.
@@ -16,16 +18,21 @@ are marked **[VERIFY]** inline. Cut them rather than ship them unconfirmed.
 
 **Title tag** (60 char target):
 ```
-AI Meeting Note Taker for Sales Teams | Lynkk
+Conversation Memory & AI Meeting Notes for Sales | Lynkk
 ```
-45 characters. Leads with `ai meeting note taker` (3,600/mo, SD 44) and qualifies the audience.
+**56 characters.** Positioning first, discovery term second, audience third.
+
+Note the deliberate wording: **`ai meeting notes`** (1,000/mo, SD 41), *not* `ai note taker`.
+The latter is the category claim you're rejecting, and a visitor expecting a commodity notetaker
+bounces off a memory platform. "Notes" names a capability Lynkk has; "note taker" names a
+category Lynkk isn't. Same search cluster, honest either way — reasoning in `06` §4.
 
 **Meta description** (155 char target):
 ```
-Lynkk records your sales calls and remembers every commitment. Get AI meeting notes, action items and follow-ups — and ask what a prospect said later.
+Lynkk remembers every sales conversation. AI meeting notes, action items and follow-ups — then ask what any prospect said, months later.
 ```
-**150 characters.** (The longer "…said months later" variant runs to 157 and overruns the
-limit — this trimmed version is the one to use.)
+**135 characters.** Leads on memory, carries the discovery term, ends on the capability no
+notetaker has.
 
 **H1:**
 ```
@@ -45,9 +52,12 @@ HERO
 
 Your revenue team's memory
 
-Lynkk is an AI meeting note taker for sales teams. It records every call,
-writes the notes and action items, and remembers what your prospect said —
-so no commitment slips and no deal restarts from scratch.
+Lynkk remembers every conversation your team has. It records your calls,
+writes the notes and the action items, and connects what was said across
+months — so no commitment slips, no deal restarts from scratch, and nothing
+walks out the door when a rep does.
+
+Not a notetaker. A memory your whole revenue team can ask questions of.
 
 [ Start free ]   [ See how it works ]
 
@@ -94,9 +104,24 @@ the source linked.
 WHAT YOU GET
 ───────────────────────────────────────────────────────────────────
 
+Ask your whole call history a question
+Not search — answers. "What did Acme say about budget?" "Who signs off?"
+"What did we promise in the Q2 review?" Query months of conversations in
+plain language and get a cited answer grounded in what was actually said.
+
+A memory that connects across calls
+Lynkk links commitments, decisions and people across every conversation, so
+context carries forward instead of being rebuilt each time. When a rep
+leaves or an account changes hands, the history stays.
+
 AI meeting notes, written before you leave the call
 Every call comes back as a clean summary — what was discussed, what was
 decided, what's still open. Your CRM note is a paste, not a chore.
+
+Action items with an owner and a date
+Lynkk detects commitments as they're made and turns them into trackable
+tasks, each linked back to the moment in the conversation where it was
+promised.
 
 Your follow-up email after the sales call, drafted
 The commitments you made are already written down with owners and dates,
@@ -104,20 +129,6 @@ so the recap goes out while the call is still warm.
 [VERIFY] If Lynkk summarises rather than drafting the email itself, change
 to: "Your follow-up email after the sales call, half-written" and "…so the
 recap is a paste, not a rewrite."
-
-Action items with an owner and a date
-Lynkk detects commitments as they're made and turns them into trackable
-tasks, each linked back to the moment in the conversation where it was
-promised.
-
-Ask your whole call history a question
-Not search — answers. Query months of conversations in plain language and
-get a cited response grounded in what was actually said.
-
-Decisions that connect across calls
-Lynkk links commitments, decisions and people across every conversation, so
-context carries forward instead of being rebuilt each time someone new
-joins the account.
 
 Straight into the tools you already use
 Push decisions and action items into Jira and your workflow tools without
@@ -234,9 +245,12 @@ FAQ
 
 What is an AI meeting note taker?
 A tool that records a meeting and turns it into structured notes — a
-summary, the decisions and the action items — without anyone typing. Lynkk
-does this for sales calls and then keeps the result searchable, so you can
-ask about a conversation months later.
+summary, the decisions and the action items — without anyone typing.
+
+Lynkk does that, but it isn't where we stop. A notetaker gives you a
+document per meeting. Lynkk builds a memory across all of them: commitments,
+decisions and people connected over months, which you can ask questions of
+in plain language. The notes are the input, not the product.
 
 How does Lynkk help with the follow-up email after a sales call?
 Every commitment made on the call is captured with an owner and a date, so

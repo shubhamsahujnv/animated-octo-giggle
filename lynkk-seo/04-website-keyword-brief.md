@@ -4,7 +4,7 @@
 **Data source:** Ubersuggest MCP connector, account `marketing@lynkk.ai`
 **Target page:** `lynkk-revenue-story.imsjwagh99.chatgpt.site`
 **Current title (from crawl):** *"Lynkk — Your revenue team's memory"*
-**Status:** keyword base ready — awaiting current page copy to rewrite against
+**Status:** keyword base ready. Copy written in `05`; positioning revised in `06`.
 
 ---
 
@@ -149,7 +149,7 @@ searches. Both are viable — but one page cannot rank for both well. Suggested 
 
 | Page | Primary target | Vol / SD | Audience |
 |---|---|---|---|
-| **Homepage** | ai meeting note taker | 3,600 / 44 | Both — brand + category |
+| **Homepage** | ai meeting notes *(not `note taker` — see `06` §4)* | 1,000 / 41 | Both — brand + category |
 | `/follow-up-email-after-sales-call` | follow up email to sales call | **8,100 / 7** | Rep |
 | `/discovery-call` | discovery call | 4,400 / 25 | Rep |
 | `/discovery-call-template` | discovery call template | 50 / **14** | Rep — lead magnet |
