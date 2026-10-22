@@ -2,6 +2,8 @@
 
 **Reviewed:** `https://lynkk.ai/` — live site crawled 22 Oct 2026. Homepage, `/pricing`, `/security`, `/features/meeting-notes`, `/features/ask-your-meetings`, `/features/workspaces`.
 
+**Re-verified:** 22 Oct 2026, 19:15 UTC — every finding below was re-checked by string match against a fresh crawl of the homepage, `/pricing`, `/security`, `/faq`, `/features/meeting-notes` and `/integrations`. All nine stand. The re-check also corrected one error of my own, in §6 (language count).
+
 **Verdict:** the live site shipped a different and more complete product than the staging page I wrote from. **Nine factual claims in my draft are wrong.** Four would have been actively damaging if published. This file lists every one, what I changed, and what I'm recommending now.
 
 ---
@@ -80,6 +82,37 @@ A Pro feature: the same meeting rendered as Brief, Sales Call, General Meeting o
 
 ---
 
+## 2b. Verification record
+
+Re-checked 22 Oct 2026, 19:15 UTC by string match against a fresh crawl. Each row is the exact phrase searched for and where it was found.
+
+| # | Claim | Evidence phrase found live | Where |
+|---|---|---|---|
+| 1 | No CRM sync | "No CRM sync yet" | homepage |
+| 1 | Step 04 is Hand off, not Update CRM | "Hand off" | homepage |
+| 2 | Cue is visible on a screen share | "never hidden from screen shares" | homepage |
+| 2 | Cue is beta, Mac, by invite | "In beta in the Mac app, by invite" | homepage |
+| 3 | Pro is $15 | "$15 / month" | homepage, /pricing |
+| 3 | Pro yearly $117 | "117" | /pricing, /faq |
+| 3 | Free = first 5 hours of summaries | "first 5 hours of AI summaries" | homepage, /pricing, /faq |
+| 3 | Those 5 hours are a lifetime allowance | "life of your account, not per month" | /pricing |
+| 3 | Third tier is Enterprise | "Enterprise" | homepage, /pricing |
+| 3 | My "5 meetings per month" | **not found anywhere** | — |
+| 3 | My "$19" | **not found anywhere** | — |
+| 4 | SOC 2 is not claimed | "SOC 2" / "soc 2" — **not found anywhere** | — |
+| 5 | In-room capture is Mac app + browser | "the Mac app and the browser record conversations in the room" | homepage |
+| 5 | My "mobile recording" | **not found anywhere** | — |
+| 6 | Follow-ups are on request | "ready when you ask" | homepage |
+| 6 | You send it yourself | "send it yourself" | homepage |
+| 7 | Three names for one product | "Ask Lynkk" **and** "Conversational brain" | both on all 6 pages checked |
+| 8 | Tasks board exists | "Tasks board" | /pricing |
+| 9 | Summary Shapes exists | "Summary Shapes" | homepage, /pricing, /faq, /features/meeting-notes |
+| 11 | No AI training | "does not use your recordings" | /security, /faq |
+
+All nine findings stand. The re-check corrected one error of my own — see §6 on the language count.
+
+---
+
 ## 3. What my draft got right, and I've kept
 
 - **The H1 shipped unchanged** — *"Your revenue lives in your conversations. Don't lose it."* The revenue-team positioning is live, so the homepage structure in my draft was broadly correct.
@@ -113,6 +146,12 @@ A Pro feature: the same meeting rendered as Brief, Sales Call, General Meeting o
 
 Short list now — the live site answered most of what I'd flagged.
 
-- **Languages: 15 or 17?** The homepage meta description says 17 languages; the body and FAQ say 15+. Pick one.
+- **Languages: the live site gives three different numbers.** I had this partly wrong in the first version of this audit and a re-check corrected it. What the site actually says:
+  - `/features/meeting-notes`: *"13 languages besides Hinglish, with four more in beta"* — totals 17
+  - `/faq` and `/pricing`: *"17 languages, plus Hinglish and auto-detect"*
+  - homepage **meta description**: 17 languages
+  - homepage **body**: *"15+ languages"*, in four separate places
+
+  So **17 is the correct figure** and the homepage body is the stale one. `01-homepage.md` now says 17 throughout. Four instances to fix on the live homepage.
 - **Naming consistency for Ask Lynkk.** It appears as "Ask Lynkk", "Ask your meetings" (URL and page title) and "Conversational brain" (footer). Three names for one product splits brand recall and search signal.
 - **Customer stories.** Every story in my files still has `[NAME]`, `[TITLE]`, `[COMPANY]` blank. They need a real reference or the story comes out — I haven't written an invented customer quote, and the live site is equally careful, labelling all its product data "Illustrative". Worth keeping that discipline.

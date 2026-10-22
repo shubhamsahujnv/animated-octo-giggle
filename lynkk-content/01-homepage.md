@@ -33,7 +33,7 @@ The call ends. The opportunity shouldn't. Lynkk is conversation intelligence for
 
 **Start free** · See how it works
 
-No credit card · 15+ languages · Online + in person
+No credit card · 17 languages · Online + in person
 
 *Image alt text: Lynkk conversation intelligence software showing a connected account timeline for a sales team*
 
@@ -168,7 +168,7 @@ One connected workflow. Less admin between you and your next deal.
 
 **01 · Capture — Every call. Every language. Even offline.**
 Lynkk captures the conversation so you can stay in it. From the Mac app, the Chrome extension, the meeting bot or the room, every call becomes a note with its decisions and action items.
-`15+ languages` `Hinglish-native` `Online + offline`
+`17 languages` `Hinglish-native` `Online + offline`
 
 **02 · Connect — Your fifth call should start five calls ahead.**
 Every call with an account sits together. Search for an account and the whole story is there, and Ask Lynkk answers across it with the source behind every answer.
@@ -343,7 +343,7 @@ A note-taker's value is flat — same summary, nothing accumulates. Memory compo
 
 ### Speaks your language.
 
-English, Hindi, and the Hinglish in between. 15+ languages, for distributed teams and cross-border selling.
+English, Hindi, and the Hinglish in between. 17 languages, Hinglish included, for distributed teams and cross-border selling.
 
 > **Corrected.** My draft said in-person recording happens "from your phone". It's the Mac app and the browser. The "four ways in" framing is from the live site and is a better differentiator than I had — most competitors have one way in.
 
@@ -445,7 +445,7 @@ A notetaker helps you revisit a call. Lynkk connects your conversations, so you 
 Yes. Alongside Zoom, Google Meet and Microsoft Teams calls, the Mac app and the browser record conversations in the room. Your notes can include both online and offline conversations.
 
 **Can Lynkk handle Hindi and English in the same call?**
-Yes. Lynkk supports 15+ languages, including Hinglish, for conversations that move naturally between Hindi and English.
+Yes. Lynkk transcribes 17 languages, plus Hinglish and auto-detect, for conversations that move naturally between Hindi and English.
 
 **Can the customer see my Cue suggestions?**
 Only if you share your screen. Cue is a panel on your Mac, so it is not part of the call. It is never hidden from screen shares or recordings, so if you share your screen, it shows. Only text leaves your Mac, never a picture. Cue is in beta on Pro, by invite.
@@ -488,7 +488,7 @@ Free to start. No credit card. Your next deal, remembered.
 ## Build notes
 
 **Open items**
-- **Languages: 15 or 17?** The live homepage meta description says 17; the body and FAQ say 15+. Pick one and use it everywhere.
+- **Languages: the live site gives three different numbers.** `/features/meeting-notes` says "13 languages besides Hinglish, with four more in beta" — which totals 17. `/faq` and `/pricing` say "17 languages and Hinglish". The homepage **body** says "15+ languages" in four places, while the homepage **meta description** says 17. So 17 is correct and the homepage body is the stale one. This file now says 17 throughout; fix the four live instances.
 - **Naming for Ask Lynkk.** It appears as "Ask Lynkk", "Ask your meetings" (URL and title) and "Conversational brain" (footer). Three names for one product splits both brand recall and search signal.
 
 **Technical**

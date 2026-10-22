@@ -86,6 +86,16 @@ A user who assumes it resets monthly and discovers otherwise in week three feels
 
 **1. One keyword gap worth closing.** The twelve `/compare/` pages cover "lynkk vs X" intent. They don't cover the bigger half: **`gong competitors` — 320/mo, difficulty 14, $80.49 CPC.** That search results page is held entirely by numbered roundups ("11 Best Gong Alternatives", "Top 6 Gong competitors"), and sites at domain authority 10, 23 and 27 rank there. A 1-v-1 page won't win it. One roundup post that includes Lynkk honestly alongside the others is the best-value page left to write. Same pattern applies to `otter ai alternative` (480/mo, difficulty 34).
 
-**2. Resolve the language count.** Homepage meta says 17 languages; body, FAQ and pricing say 15+. One of them is out of date.
+**2. Resolve the language count — three different numbers are live right now.**
+
+| Where | What it says |
+|---|---|
+| `/features/meeting-notes` | "13 languages besides Hinglish, with four more in beta" → 17 |
+| `/faq` | "17 languages, plus Hinglish and auto-detect" |
+| `/pricing` | "17 languages and Hinglish" |
+| Homepage meta description | "17 languages" |
+| **Homepage body, 4 places** | **"15+ languages"** |
+
+**17 is correct. The homepage body is stale.** Fix those four instances: the hero sub-line, the Capture step, the "Speaks your language" card, and the FAQ answer. "15+" also undersells you — it reads as a hedge when the real number is specific and higher.
 
 **3. The homepage H2s still carry no searchable terms.** Thirteen of them, all brand poetry. The eyebrow-label fix in `01-homepage.md` needs no design change.
