@@ -124,4 +124,5 @@ Settle on five items: the four products plus Meeting Notes.
 From `SOURCE-CONFLICTS.md`, two of the three questions are still open:
 
 - **Is CRM sync on the roadmap?** Staging's footer says "Follow-ups & CRM" and its pricing table lists CRM sync. Live says no. If it's close, the copy can say "coming soon"; if it isn't, that footer label needs renaming.
-- **Which price is current, $15 or $19?** Every file says $15, from the live pricing page. Staging says $19. If $19 is the planned launch price, tell me and I'll change all five files.
+- **~~Which price is current?~~ ANSWERED 22 Oct: $19.** All five content files now say $19. Two knock-ons: the live `/pricing` page's H1 and title both carry "$15" and will need rewriting at launch, and there's no yearly figure — live offers $117/year against $15/month, which doesn't carry over. Add one if there is one.
+- **Is the rest of staging's pricing table also the new pricing?** Staging has Free at 5 meetings a month and a "Team, $39/seat, coming soon" tier. The files follow the shipped versions instead — unlimited notes on Free, Enterprise as the third tier — because Workspaces has already launched and cutting a live free tier is not a change to make on my assumption. See `SOURCE-CONFLICTS.md`.

@@ -21,7 +21,7 @@
 |---|---|---|---|
 | 1 | Step 04 is **"Update CRM"**; "CRM sync" listed as a Pro feature | **"No CRM sync yet. Copy any brief into Salesforce or HubSpot."** Step 04 is **"Hand off"** — Jira, Slack, copy to CRM | **Live** |
 | 2 | Free = **5 meetings per month** | Free = **unlimited notes, up to 2 hours each**, plus your first **5 hours of AI summaries** (lifetime, not monthly) | **Live** |
-| 3 | Pro = **$19 / month** | Pro = **$15 / month**, or $117 a year | **Live** |
+| 3 | Pro = **$19 / month** | Pro = **$15 / month**, or $117 a year | **Staging — confirmed by the client 22 Oct** |
 | 4 | **Team, $39 / seat, "coming soon"** | **Enterprise, custom price**, up to 10 seats — and shipped | **Live** |
 | 5 | CUE "is a **private assistant visible to you**" | Cue is **"never hidden from screen shares or recordings"** — deliberately so | **Live** |
 | 6 | In-person via **"mobile recording"** and phone | **The Mac app and the browser** record in the room | **Live** |
@@ -41,7 +41,16 @@ So the four product pages are the plan. This has a structural consequence the co
 Staging treats it as shipped; live says not yet. If it's close, the copy can say "coming soon" rather than going silent — but it cannot say it works. Right now every page says what live says.
 
 **3. Which pricing is current?**
-Live says $15 and I've used that throughout, since a live pricing page is normally the real one. But staging is newer work, so if $19 is the *planned* price, tell me and I'll change it — just don't publish both numbers at once on the same domain.
+**Answered 22 Oct: $19 is correct.** All files now say $19. The yearly price is removed rather than guessed — live offers $117/year against $15/month, which doesn't carry over to $19. Add a yearly figure if there is one.
+
+**Two parts of staging's pricing table are still unconfirmed, and I have not followed staging on either:**
+
+| | Staging | Live, shipped | What the files say |
+|---|---|---|---|
+| Free | 5 meetings per month | Unlimited notes up to 2 hours each, plus first 5 hours of AI summaries | **Live** |
+| Third tier | Team, $39/seat, "coming soon" | Enterprise, custom, up to 10 seats, shipped | **Live** |
+
+My reasoning: staging predates the Workspaces launch, so its "coming soon" tier is stale. And cutting a shipped free tier from unlimited notes down to 5 meetings a month is a takeaway from people already using it — not something to publish on my assumption. If the whole staging table is the new pricing and not just the Pro price, say so and I'll switch both.
 
 ---
 

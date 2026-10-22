@@ -34,7 +34,7 @@ Section headings (`## Hero`, `## FAQ`) are labels for the build, not copy. Bold 
 **`[TO CONFIRM]` items.** Four, all on the Cue page: Windows support, whether a manager sees a rep's Cue history, language coverage in beta, and the invite flow.
 
 **Facts this copy asserts, all taken from the live site:**
-- Pro is **$15/month** or $117/year. Free is unlimited notes up to 2 hours each, plus your first 5 hours of AI summaries — a **lifetime** allowance, not monthly. Third tier is Enterprise, custom, up to 10 seats.
+- Pro is **$19/month** — confirmed by the client 22 Oct as the launch price, replacing the $15 currently live. Free is unlimited notes up to 2 hours each, plus your first 5 hours of AI summaries — a **lifetime** allowance, not monthly. Third tier is Enterprise, custom, up to 10 seats. **The Free and Enterprise descriptions are as shipped, not as staging has them — see `SOURCE-CONFLICTS.md`.**
 - **No CRM sync.** Briefs copy into Salesforce or HubSpot; action items go to Jira.
 - **Cue is beta, Pro, Mac app, by invite**, and is visible on a screen share by design.
 - **17 languages** plus Hinglish and auto-detect.

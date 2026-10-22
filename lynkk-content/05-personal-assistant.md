@@ -165,7 +165,7 @@ A tool that helps with the whole meeting rather than just the notes — preparin
 Depends what you need. For tidy notes from one call, the simple note-takers are fine and cheap. If you need meetings to connect to each other and to an account, you need memory. That's what Lynkk is built for.
 
 **Is Ask Lynkk included on the free plan?**
-No. Free records, transcribes and searches every meeting, and summarises your first 5 hours. Ask Lynkk is on Pro, at $15 a month.
+No. Free records, transcribes and searches every meeting, and summarises your first 5 hours. Ask Lynkk is on Pro, at $19 a month.
 
 **Can it answer questions about meetings I wasn't in?**
 In a workspace, yes — within the access rules on each note.
@@ -184,7 +184,7 @@ Yes. The Mac app and the browser record conversations in the room, and those not
 
 **Start for free** · **Book a demo**
 
-Free to start. No credit card. Ask Lynkk is on Pro, $15 a month.
+Free to start. No credit card. Ask Lynkk is on Pro, $19 a month.
 
 **Related:** [Account Memory](/product/account-memory) · [AI sales assistant](/product/conversation-to-action) · [Cue live coaching](/product/cue)
 
@@ -194,7 +194,7 @@ Free to start. No credit card. Ask Lynkk is on Pro, $15 a month.
 
 **Facts corrected from staging**
 - Named the product **Ask Lynkk** and stated it's on Pro. Staging called it only "Personal assistant" and didn't say it was paid.
-- Pro is $15, not $19.
+- Pro is $19, confirmed by the client 22 Oct as the launch price.
 - Added Summary Shapes, the citation/source behaviour, and the workspace audit log — all shipped, none on staging.
 - In-room capture is the Mac app and browser, not mobile recording.
 - Removed "ask it by voice during a call": on the live site, live in-call help is Cue's job. If voice Q&A during a meeting does exist, tell me and I'll add it back.

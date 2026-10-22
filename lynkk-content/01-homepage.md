@@ -368,8 +368,8 @@ Record every meeting and keep all of it. No card, no time limit.
 
 **Get started free**
 
-**PRO — $15 / month** `Most popular`
-Billed monthly, or $117 a year. Unlimited summaries, and answers from everything you have recorded.
+**PRO — $19 / month** `Most popular`
+Unlimited summaries, and answers from everything you have recorded.
 - Everything in Free
 - Unlimited AI summaries
 - Ask Lynkk across all your notes
@@ -392,7 +392,11 @@ Lynkk for a team of up to 10 people, set up with us.
 
 Prices in US dollars. No card needed for Free. Cancel Pro any time.
 
-> **Rebuilt from the live pricing page.** My draft had Free at 5 meetings a month, Pro at $19 and a "Team $39, coming soon" tier. All three were wrong, and Workspaces has shipped. Note the free tier's real shape: the 5 hours of AI summaries is a **lifetime** allowance, not monthly — worth stating clearly so it doesn't feel like a bait-and-switch.
+> **Pro is $19 — confirmed by the client 22 Oct as the launch price**, replacing the $15 currently live. The yearly price has been removed rather than guessed; if there's a yearly equivalent of $19, add it.
+>
+> **Free and Enterprise are described as they're currently shipped**, not as staging has them. Staging says Free is "5 meetings per month" and the third tier is "Team, $39/seat, coming soon" — but Free is live today as unlimited notes, and Workspaces has already shipped, so staging's versions read as pre-launch drafts. Changing a shipped free tier from unlimited notes down to 5 meetings a month would also be a takeaway from existing users. **Confirm both.**
+>
+> Note the free tier's real shape: the 5 hours of AI summaries is a **lifetime** allowance, not monthly — worth stating clearly so it doesn't feel like a bait-and-switch.
 
 ---
 

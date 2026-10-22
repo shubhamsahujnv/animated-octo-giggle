@@ -66,7 +66,9 @@ Good page. The honesty about admin visibility — every note states whether admi
 
 Price in the title and H1 is the right call — it pre-qualifies and it earns the click from people comparing.
 
-**One change, and it matters:**
+**Price change at launch.** Pro moves to **$19** (confirmed 22 Oct). Both the H1 and the title tag hard-code "$15", so both need rewriting — and the $117/year figure is tied to the $15 price, so it needs replacing or removing. Putting the price in the title is the right call and worth keeping; just make sure it's the right number on launch day.
+
+**One further change, and it matters:**
 
 The 5 free hours of AI summaries is a **lifetime** allowance, not monthly. The page does explain this — *"over the life of your account, not per month. Deleting notes doesn't give hours back"* — but it's below the fold, under a heading that reads "After the 5 hours".
 
