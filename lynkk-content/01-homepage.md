@@ -12,7 +12,7 @@
 
 ## Announcement bar
 
-Cue `Beta` — help on your screen during the call. →
+Cue `Beta` · help on your screen during the call. →
 
 ---
 
@@ -29,7 +29,7 @@ Log in · **Start for free**
 
 # Your revenue lives in your conversations. Don't lose it.
 
-The call ends. The opportunity shouldn't. Lynkk is conversation intelligence for revenue teams — it remembers every customer conversation, online or in the room, and turns it into follow-ups, action items, and your next best move.
+The call ends. The opportunity shouldn't. Lynkk is conversation intelligence for revenue teams. It remembers every customer conversation, online or in the room, and turns it into follow-ups, action items, and your next best move.
 
 **Start free** · See how it works
 
@@ -56,7 +56,7 @@ Call summary · Action items (3) · Account memory
 Corvane wants to give its sales team a single source of customer context. Priya confirmed budget and a phased rollout, pending IT approval.
 
 `KEY DECISION` Start with a 15-person pilot. Commercials to follow IT review.
-`NEXT STEP` Send the security overview — Jamie Davis, due Friday.
+`NEXT STEP` Send the security overview · Jamie Davis, due Friday.
 
 *Ask anything about this conversation…*
 
@@ -116,7 +116,7 @@ Meet the memory your revenue team has been missing. ↓
 
 ## What is conversation intelligence?
 
-Conversation intelligence is software that records your customer conversations, understands what was said, and turns it into something useful — searchable notes, decisions, action items and answers you can ask for in plain language. Instead of a recording nobody rewatches, you get something you can act on.
+Conversation intelligence is software that records your customer conversations, understands what was said, and turns it into something useful: searchable notes, decisions, action items and answers you can ask for in plain language. Instead of a recording nobody rewatches, you get something you can act on.
 
 Most tools stop at one call. Lynkk connects every conversation to the account it belongs to, so your team's memory builds over time instead of resetting after each meeting.
 
@@ -132,10 +132,10 @@ Most tools stop at one call. Lynkk connects every conversation to the account it
 
 The budget from Tuesday. The objection from last month. The promise made in the hallway. Finally, your account has a memory.
 
-**Corvane Logistics — one account. The whole story.** `Active deal`
+**Corvane Logistics. One account, the whole story.** `Active deal`
 
 **Oct 06 · Discovery**
-"We have $30K set aside." — Priya Shah, VP of Engineering · `Budget identified`
+"We have $30K set aside." · Priya Shah, VP of Engineering · `Budget identified`
 
 **Oct 13 · Product demo**
 "Let's bring our IT team in." Security review enters the picture. · `New stakeholder`
@@ -145,7 +145,7 @@ The budget from Tuesday. The objection from last month. The promise made in the 
 
 People, decisions, and commitments. Connected.
 
-**Ask Lynkk** `Pro` — Corvane · 3 conversations
+**Ask Lynkk** `Pro` · Corvane · 3 conversations
 *"What did Corvane say about budget across our last 3 calls?"*
 
 > Grounded in 3 conversations. Corvane's budget moved from $30K to $50K as the scope became clearer. In the latest call, Priya said they could stretch to $50K for a phased rollout. That's still conditional on IT approval.
@@ -166,19 +166,19 @@ The more you talk, the more it connects. Context that compounds.
 
 One connected workflow. Less admin between you and your next deal.
 
-**01 · Capture — Every call. Every language. Even offline.**
+**01 · Capture. Every call, every language, even offline.**
 Lynkk captures the conversation so you can stay in it. From the Mac app, the Chrome extension, the meeting bot or the room, every call becomes a note with its decisions and action items.
 `17 languages` `Hinglish-native` `Online + offline`
 
-**02 · Connect — Your fifth call should start five calls ahead.**
+**02 · Connect. Your fifth call should start five calls ahead.**
 Every call with an account sits together. Search for an account and the whole story is there, and Ask Lynkk answers across it with the source behind every answer.
 `Multi-call answers` `Deal history` `Sources on every answer`
 
-**03 · Follow up — Follow up in 5 minutes, not 3 days.**
+**03 · Follow up. In 5 minutes, not 3 days.**
 Send the summary to everyone on the call straight from the note, or ask Lynkk to draft the follow-up. Either way it's grounded in what was said, and you send it yourself.
 `Conversation-grounded` `Ready to review` `You send it`
 
-**04 · Hand off — Next steps that land where work happens.**
+**04 · Hand off. Next steps that land where work happens.**
 Action items go to Jira with their owner and date, answers reach your team in Slack, and every brief is ready to copy into your CRM. Each one stays tied to the call it came from.
 `Jira` `Slack` `Copy to your CRM`
 
@@ -212,10 +212,10 @@ Cue sits at the top of your screen during the call. Ask it anything, or press �
 
 *In beta in the Mac app, on Pro, by invite.*
 
-**01 · Help with this moment** — Leave the box empty. Cue reads your screen and the call.
-**02 · Listen to the call** — It hears your microphone as Me and the call as Them.
-**03 · Modes, with your notes** — Sales, Support, Interview prep or your own, with notes you paste in.
-**04 · Visible, and private** — Never hidden from a screen share. Only text leaves your Mac, and nothing is saved unless you choose.
+**01 · Help with this moment.** Leave the box empty. Cue reads your screen and the call.
+**02 · Listen to the call.** It hears your microphone as Me and the call as Them.
+**03 · Modes, with your notes.** Sales, Support, Interview prep or your own, with notes you paste in.
+**04 · Visible, and private.** Never hidden from a screen share. Only text leaves your Mac, and nothing is saved unless you choose.
 
 One call on your screen. Every conversation in your corner.
 
@@ -233,10 +233,10 @@ One call on your screen. Every conversation in your corner.
 
 An assistant with the context to do more than answer. Turn what was discussed into the work that moves a deal forward.
 
-**01 · Follow-up** — *"Draft a follow-up to Priya."* Written from the call, with the numbers and the promises included. You copy it into your email and send it.
-**02 · Commitments** — *"What did I promise this week?"* Every promise you made, across every call, each with the moment you made it.
-**03 · Prep** — *"Help me prep for next week."* What changed, what's open and what to ask, for each customer you're about to see.
-**04 · Summary** — *"Create a deal summary."* The whole deal for your manager, every line linked to the call it came from.
+**01 · Follow-up.** *"Draft a follow-up to Priya."* Written from the call, with the numbers and the promises included. You copy it into your email and send it.
+**02 · Commitments.** *"What did I promise this week?"* Every promise you made, across every call, each with the moment you made it.
+**03 · Prep.** *"Help me prep for next week."* What changed, what's open and what to ask, for each customer you're about to see.
+**04 · Summary.** *"Create a deal summary."* The whole deal for your manager, every line linked to the call it came from.
 
 *Ask Lynkk is on Pro.*
 
@@ -250,10 +250,10 @@ An assistant with the context to do more than answer. Turn what was discussed in
 
 A sales call and a user interview shouldn't produce the same notes. Pick a shape and the summary reorganises around what matters.
 
-**Brief** — Key takeaways · Topics · Action items · Decisions
-**Sales Call** — Customer · Stakeholders · Pain points · Budget
-**General Meeting** — Overview · Discussion · Decisions · Action items
-**Customer Interview** — Goals · Pain points · Current workflow · Feature requests
+**Brief:** Key takeaways · Topics · Action items · Decisions
+**Sales Call:** Customer · Stakeholders · Pain points · Budget
+**General Meeting:** Overview · Discussion · Decisions · Action items
+**Customer Interview:** Goals · Pain points · Current workflow · Feature requests
 
 Switching never changes the transcript or the tasks.
 
@@ -267,15 +267,15 @@ Switching never changes the transcript or the tasks.
 
 ## A shared memory. A personal advantage.
 
-**For sales reps — Sell more. Type less.**
+**For sales reps. Sell more. Type less.**
 Stay present with your customer. Walk into every call with the context, and walk out with the follow-through handled.
 Prep with the whole story · Follow-ups ready to review · Less admin after every call · Cue answers mid-call (beta, Mac app)
 
-**For sales leaders — Know every deal, without the "quick update?"**
+**For sales leaders. Know every deal, without the "quick update?"**
 See what customers actually said. Coach from real moments, spot open risks, and understand how each deal has changed.
 Ground truth · Evidence for coaching · A clearer pipeline · Ask across the team
 
-**For RevOps — Clean notes. Connected systems. Less chasing.**
+**For RevOps. Clean notes, connected systems, less chasing.**
 Turn conversation signals into structured notes and work that lands in the right place.
 Consistent records via Summary Shapes · Calendar, Slack and Jira · Objections and commitments become owned action items · Every item links back to the call
 
@@ -289,15 +289,15 @@ Consistent records via Summary Shapes · Calendar, Slack and Jira · Objections 
 
 You focus on the relationship. Lynkk keeps the details moving.
 
-**09:00 AM — Walk in warm.**
+**09:00 AM. Walk in warm.**
 Open your account brief. Yesterday's blocker, last month's quote, today's next step. All there.
 *Less searching. More selling.*
 
-**02:00 PM — Stay in the conversation.**
+**02:00 PM. Stay in the conversation.**
 You listen to your customer. Cue answers when you ask, and Lynkk captures the commitments.
 *Present, not preoccupied.*
 
-**02:52 PM — Follow through, faster.**
+**02:52 PM. Follow through, faster.**
 The draft is ready when you ask. The action items have owners. Your next call has your full attention.
 *The momentum stays with you.*
 
@@ -311,9 +311,9 @@ The draft is ready when you ask. The action items have owners. Your next call ha
 
 Meet, remember, and move work forward across the tools your team already uses.
 
-**Capture** — Zoom · Google Meet · Microsoft Teams · Webex, WhatsApp and FaceTime via the Mac app · in the room
-**Workspace** — Google Calendar · Outlook Calendar · Slack
-**Workflows** — Jira · Custom MCP, any server by URL
+**Capture:** Zoom · Google Meet · Microsoft Teams · Webex, WhatsApp and FaceTime via the Mac app · in the room
+**Workspace:** Google Calendar · Outlook Calendar · Slack
+**Workflows:** Jira · Custom MCP, any server by URL
 
 **No CRM sync yet.** Copy any brief into Salesforce or HubSpot.
 
@@ -331,7 +331,7 @@ Meet, remember, and move work forward across the tools your team already uses.
 
 ### An AI note taker for in-person meetings, not just video calls.
 
-Site visits. Coffees. Trade show booths. The corridor conversation where the real objection finally comes out. Bot-based note-takers need a calendar invite and a video link. The Lynkk Mac app and the browser record the conversation in the room — and it lands in the same account memory as everything else.
+Site visits. Coffees. Trade show booths. The corridor conversation where the real objection finally comes out. Bot-based note-takers need a calendar invite and a video link. The Lynkk Mac app and the browser record the conversation in the room, and it lands in the same account memory as everything else.
 
 ### Four ways in. One list of notes.
 
@@ -339,7 +339,7 @@ The meeting bot for scheduled calls. The Mac app when a call starts unplanned. T
 
 ### Gets richer with every call.
 
-A note-taker's value is flat — same summary, nothing accumulates. Memory compounds. The tenth call knows the budget cycle, who actually decides, and the objection that's come up four times.
+A note-taker's value is flat. Same summary, nothing accumulates. Memory compounds. The tenth call knows the budget cycle, who actually decides, and the objection that's come up four times.
 
 ### Speaks your language.
 
@@ -357,7 +357,7 @@ English, Hindi, and the Hinglish in between. 17 languages, Hinglish included, fo
 
 `Monthly` · `Yearly — save 35%`
 
-**FREE — $0 forever**
+**FREE · $0 forever**
 Record every meeting and keep all of it. No card, no time limit.
 - Unlimited notes, up to 2 hours each
 - Your first 5 hours of AI summaries
@@ -368,7 +368,7 @@ Record every meeting and keep all of it. No card, no time limit.
 
 **Get started free**
 
-**PRO — $19 / month** `Most popular`
+**PRO · $19 / month** `Most popular`
 Unlimited summaries, and answers from everything you have recorded.
 - Everything in Free
 - Unlimited AI summaries
@@ -380,7 +380,7 @@ Unlimited summaries, and answers from everything you have recorded.
 
 **Upgrade to Pro**
 
-**ENTERPRISE — Custom**
+**ENTERPRISE · Custom**
 Lynkk for a team of up to 10 people, set up with us.
 - Pro for every member, up to 10
 - One bill for the whole team
@@ -408,7 +408,7 @@ Prices in US dollars. No card needed for Free. Cancel Pro any time.
 
 - **Lynkk doesn't train AI on your conversations.** Not your recordings, not your transcripts, not your notes.
 - **A bot everyone can see.** It only joins calls you send it to, appears in the call named after you, and leaves once it's the last one there.
-- **Clear rules on who sees a note.** On your own account, nobody else can open your notes unless you share them. In a workspace, every note says whether admins can see it — and any note can be marked Personal.
+- **Clear rules on who sees a note.** On your own account, nobody else can open your notes unless you share them. In a workspace, every note says whether admins can see it, and any note can be marked Personal.
 - **Your tools' sign-ins, locked separately.** Calendar, Jira and Slack access tokens are encrypted with AES-256-GCM, with keys kept outside the database.
 - **HTTPS everywhere**, and lynkk.ai tells browsers never to connect any other way.
 - **Everything is yours to take.** Export every note, transcript and recording as one zip, whenever you want.
@@ -427,9 +427,9 @@ Prices in US dollars. No card needed for Free. Cancel Pro any time.
 
 ## A little context. A better sales day.
 
-**01 · Sales playbook · 3 min read** — Walk into your next call with the whole story.
-**02 · Follow-through · 3 min read** — A follow-up that proves you were listening.
-**03 · Account intelligence · 3 min read** — Build an account memory your team can trust.
+**01 · Sales playbook · 3 min read.** Walk into your next call with the whole story.
+**02 · Follow-through · 3 min read.** A follow-up that proves you were listening.
+**03 · Account intelligence · 3 min read.** Build an account memory your team can trust.
 
 ---
 

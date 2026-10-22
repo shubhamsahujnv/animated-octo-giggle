@@ -33,7 +33,7 @@ The live site is far bigger than the staging one-pager. It has a real informatio
 ### Critical — would have been damaging
 
 **1. CRM updates. My draft claimed a feature that does not exist.**
-My copy said "Update CRM", "automated CRM updates", "CRM data entry automation", "CRM fields filled from the conversation", and a meta title reading *"Agentic AI Sales Assistant — Follow-ups & CRM Updates"*.
+My copy said "Update CRM", "automated CRM updates", "CRM data entry automation", "CRM fields filled from the conversation", and a meta title reading *"Agentic AI Sales Assistant: Follow-ups & CRM Updates"*.
 The live site states plainly: **"No CRM sync yet. Copy any brief into Salesforce or HubSpot."** Step 04 of the workflow is **"Hand off"** — Jira, Slack, and copy-to-CRM. Not sync.
 → Every CRM-sync claim removed. Step 04 renamed "Hand off". Added the honest line about copying briefs.
 

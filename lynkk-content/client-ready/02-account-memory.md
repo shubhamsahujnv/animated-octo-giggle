@@ -1,7 +1,7 @@
 # Account Memory
 
 **URL:** `/product/account-memory`
-**Meta title:** Account Intelligence Software — Every Conversation | Lynkk
+**Meta title:** Account Intelligence Software: Every Conversation | Lynkk
 **Meta description:** Account intelligence software that connects every call into one timeline. Ask what changed or what you promised, and get an answer with the moment it was said.
 
 ---
@@ -18,21 +18,19 @@ Lynkk is account intelligence software that connects every customer conversation
 
 ---
 
-## Customer story
+## The handover
 
-## "The deal didn't die. It changed hands."
+## The deal didn't die. It changed hands.
 
-[NAME] inherited the Corvane account in week two of a new job. The rep before had left. There was no handover — a CRM record with four lines in it and a note saying "good relationship".
+You inherit an account in week two of a new job. The rep who owned it has left, and there was no handover, just a CRM record with four lines in it and a note saying "good relationship".
 
 The old way: ask around, read what you can, then walk into a renewal and ask questions the customer has already answered twice. Buyers notice. It costs you trust before you've earned any.
 
-Instead, [NAME] opened the account the night before. Eight months of conversation history were already there. The $30K budget from October discovery. The IT team brought in after the demo. The stretch to $50K, pending approval. The security review nobody had logged.
+With an account memory, you open the account the night before. Eight months of conversation history are already there. The $30K budget from October discovery. The IT team brought in after the demo. The stretch to $50K, pending approval. The security review nobody logged.
 
-[NAME] opened the call where the last rep left off — on the security review.
+You pick up where the last rep left off: the security review.
 
-> "They thought I'd been on the account a year."
->
-> — [NAME], [TITLE], [COMPANY]
+*Illustrative scenario.*
 
 ---
 
@@ -40,7 +38,7 @@ Instead, [NAME] opened the account the night before. Eight months of conversatio
 
 ## What is account intelligence?
 
-Account intelligence means everything your company knows about one customer, held in a single current view — every conversation, every person, every commitment, every open issue. Instead of hunting through notes and asking colleagues, you open one page and see the whole relationship.
+Account intelligence means everything your company knows about one customer, held in a single current view: every conversation, every person, every commitment, every open issue. Instead of hunting through notes and asking colleagues, you open one page and see the whole relationship.
 
 Lynkk builds it as you talk. You don't fill anything in.
 
@@ -53,7 +51,7 @@ Lynkk builds it as you talk. You don't fill anything in.
 **Corvane Logistics** `Active deal`
 
 **Oct 06 · Discovery**
-"We have $30K set aside." — Priya Shah, VP of Engineering · `Budget identified`
+"We have $30K set aside." · Priya Shah, VP of Engineering · `Budget identified`
 
 **Oct 13 · Product demo**
 "Let's bring our IT team in." Security review enters the picture. · `New stakeholder`
@@ -73,11 +71,11 @@ People, decisions, and commitments. Connected.
 
 ## Ask a question, get the moment it was said.
 
-**Ask Lynkk** `Pro` — Corvane · 3 conversations
+**Ask Lynkk** `Pro` · Corvane · 3 conversations
 
 *"What did Corvane say about budget across our last 3 calls?"*
 
-> Grounded in 3 conversations. Corvane's budget moved from $30K to $50K as the scope became clearer. In the latest call, Priya said they could stretch to $50K for a phased rollout — still conditional on IT approval.
+> Grounded in 3 conversations. Corvane's budget moved from $30K to $50K as the scope became clearer. In the latest call, Priya said they could stretch to $50K for a phased rollout, still conditional on IT approval.
 >
 > **Your next move:** send the security overview before discussing the final proposal.
 
@@ -104,7 +102,7 @@ What you promised them. What they promised you. Each one with the moment it was 
 Budget identified. New stakeholder. Budget updated. The shape of the deal, not just the transcript.
 
 **Search that works across all of it.**
-Search an account name and every call sits together — including the ones whose title never mentioned it. Search is on the free plan, the same search Pro has.
+Search an account name and every call sits together, including the ones whose title never mentioned it. Search is on the free plan, the same search Pro has.
 
 ---
 
@@ -145,7 +143,7 @@ In a workspace, that extends across the team: a question can be answered from a 
 ## FAQ
 
 **What is account intelligence?**
-One current view of everything your company knows about a customer — conversations, people, commitments and open issues — gathered automatically rather than typed in.
+One current view of everything your company knows about a customer: conversations, people, commitments and open issues, gathered automatically rather than typed in.
 
 **What is account intelligence software?**
 Software that collects and organises everything your company knows about each customer account, so anyone on the team can see the full relationship history without asking around.
@@ -157,7 +155,7 @@ Your CRM holds what someone remembered to type. Account memory holds what was ac
 Not yet. Every brief is formatted to copy straight into Salesforce or HubSpot, and action items go to Jira automatically.
 
 **Does it work for B2B accounts with lots of stakeholders?**
-That's exactly the case it's built for. Multiple contacts, multiple colleagues on your side, conversations spread over months — one timeline.
+That's exactly the case it's built for. Multiple contacts, multiple colleagues on your side, conversations spread over months, all on one timeline.
 
 **What happens when a rep leaves?**
 The account keeps its memory. The next owner opens the page and has the full history.
@@ -182,7 +180,7 @@ Free to start. No credit card.
 ## Notes for build
 
 **To supply**
-- [NAME], [TITLE], [COMPANY] and the quote in the customer story.
+- Nothing. The handover story is written as an illustrative scenario and needs no customer reference.
 - CRM list for the FAQ.
 
 **Technical**

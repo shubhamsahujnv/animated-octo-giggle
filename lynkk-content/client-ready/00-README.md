@@ -1,4 +1,4 @@
-# Lynkk — website copy
+# Lynkk website copy
 
 Homepage and four product pages, ready to build.
 
@@ -25,7 +25,7 @@ Each file has the page's URL and meta tags at the top, then the copy section by 
 
 ## To supply before launch
 
-**Customer stories.** Each product page has a story with `[NAME]`, `[TITLE]` and `[COMPANY]` blank. These need a real customer reference, or the story should be removed. Nothing has been invented.
+**Customer stories.** Each product page opens with a scenario written in the second person and labelled illustrative. No customer names, titles or quotes are used, so nothing needs filling in and no testimonial has been invented. If real references become available later, these sections are the natural place for them.
 
 **CRM list.** Several places say "your CRM" without naming which. Buyers assume exclusion when a tool isn't listed.
 
@@ -37,19 +37,19 @@ Each file has the page's URL and meta tags at the top, then the copy section by 
 
 ## Three decisions still open
 
-**Is CRM sync on the roadmap?** The copy says what's true today — no sync, briefs copy into Salesforce or HubSpot, action items go to Jira. If sync is close, the pages can say "coming soon" instead.
+**Is CRM sync on the roadmap?** The copy says what's true today: no sync, briefs copy into Salesforce or HubSpot, action items go to Jira. If sync is close, the pages can say "coming soon" instead.
 
 **The Free plan and third tier.** The copy describes them as currently shipped: Free is unlimited notes up to two hours each plus the first five hours of AI summaries, and the third tier is Enterprise. The staging design showed Free at five meetings a month and a Team tier at $39 a seat marked coming soon. Confirm which is launching.
 
-**Product naming.** Two to settle: **Cue** or **CUE** (the copy uses Cue), and what to call the assistant — it's currently "Ask Lynkk" in the app, "Ask your meetings" in the URL and "Conversational brain" in the footer.
+**Product naming.** Two to settle: **Cue** or **CUE** (the copy uses Cue), and what to call the assistant, which is currently "Ask Lynkk" in the app, "Ask your meetings" in the URL and "Conversational brain" in the footer.
 
 ---
 
 ## Technical requirements
 
-- One H1 per page. Meta titles are under 60 characters, descriptions 150–158.
+- One H1 per page. Meta titles are under 60 characters, descriptions 150 to 158.
 - Schema: `Organization` and `WebSite` on the homepage; `SoftwareApplication`, `FAQPage` and `BreadcrumbList` on each product page; `Product` and `Offer` on the homepage pricing block.
-- `FAQPage` markup matters on all five pages — the FAQ answers are written at the length search engines pull for featured answers.
+- `FAQPage` markup matters on all five pages: the FAQ answers are written at the length search engines pull for featured answers.
 - Each product page links to the other three. Links are listed at the foot of each file.
 - Set `og:url` to the production URL, add `og:image` at 1200×630, and add a self-referencing canonical tag to every page.
 - Keep any staging domain set to `noindex`.
