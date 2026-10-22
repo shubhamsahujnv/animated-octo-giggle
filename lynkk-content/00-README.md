@@ -1,16 +1,20 @@
 # Lynkk website content — client delivery
 
-**Last reviewed against the live site:** 22 October 2026.
+**Source sites:** structure and narrative from `lynkk-revenue-story.imsjwagh99.chatgpt.site` (re-crawled 22 Oct 2026, unchanged). All product facts verified against live `lynkk.ai` the same day.
 
-Read `00-AUDIT-AND-CHANGELOG.md` first. The live site shipped a different and more complete product than the staging page the first draft was written from, and nine factual claims in that draft were wrong. The audit lists every one.
+**Read `SOURCE-CONFLICTS.md` first.** The two sites disagree on eight product facts, and three of those need your ruling.
 
 | File | What it is |
 |---|---|
-| `00-AUDIT-AND-CHANGELOG.md` | **Start here.** What changed on the live site, what was wrong in the first draft, what was fixed. |
-| `01-homepage.md` | Homepage, revised. All claims checked against the live site, `/pricing` and `/security`. |
-| `02-features-cue.md` | New page proposal for Cue, which currently has no page of its own. |
-| `03-live-page-amendments.md` | Surgical fixes to `/features/meeting-notes`, `/features/ask-your-meetings`, `/features/workspaces` and `/pricing`. No rewrites — those pages are good. |
-| `archive/` | The four original product-page drafts. They described pages that don't exist. Kept for reference; don't brief from them. |
+| `SOURCE-CONFLICTS.md` | **Start here.** Where staging and live disagree, which I used, and what needs your decision. |
+| `00-AUDIT-AND-CHANGELOG.md` | The full audit of the live site, with a verification record for every claim. |
+| `01-homepage.md` | Homepage — staging's section order, live-verified facts, plus four added sections. |
+| `02-account-memory.md` | Account Memory |
+| `03-conversation-to-action.md` | Conversation to Action |
+| `04-cue-live-coaching.md` | Cue Live Coaching |
+| `05-personal-assistant.md` | Personal Assistant |
+| `06-live-page-amendments.md` | Fixes to the live site's own pages, if staging doesn't ship. |
+| `archive/` | Superseded first drafts. Don't brief from them. |
 
 ---
 
@@ -18,24 +22,30 @@ Read `00-AUDIT-AND-CHANGELOG.md` first. The live site shipped a different and mo
 
 Each file has an SEO header, then the copy section by section in page order, then build notes.
 
-Section headings (`## Hero`, `## FAQ`) are labels for the build, not copy. Bold lines in caps are eyebrow labels that sit above the headline. Blocks in `>` quotes are notes to the team explaining a change — strip them before the copy goes to a developer.
+Section headings (`## Hero`, `## FAQ`) are labels for the build, not copy. Bold lines in caps are eyebrow labels that sit above the headline. Blocks in `>` quotes are notes to your team — strip them before the copy reaches a developer.
 
 ---
 
 ## Before anything goes live
 
-**Items in square brackets.** `[NAME]`, `[TITLE]`, `[COMPANY]` in the customer stories need a real reference or the story comes out. None has been invented. The live site is equally careful — it labels all its product data "Illustrative" — and that discipline is worth keeping.
+**Square brackets.** `[NAME]`, `[TITLE]`, `[COMPANY]` in the customer stories need a real reference or the story comes out. None has been invented — the live site is equally careful, labelling all its product data "Illustrative", and that discipline is worth keeping.
 
-**`[TO CONFIRM]` items.** Four left, all on the Cue page: Windows support, whether a manager can see a rep's Cue history, language coverage in beta, and the invite flow.
+**`[TO CONFIRM]` items.** Four, all on the Cue page: Windows support, whether a manager sees a rep's Cue history, language coverage in beta, and the invite flow.
 
-**Two factual inconsistencies on the live site:**
-- Languages: the homepage meta description says 17, the body and FAQ say 15+.
-- Ask Lynkk is called three different things — "Ask Lynkk", "Ask your meetings" and "Conversational brain".
+**Facts this copy asserts, all taken from the live site:**
+- Pro is **$15/month** or $117/year. Free is unlimited notes up to 2 hours each, plus your first 5 hours of AI summaries — a **lifetime** allowance, not monthly. Third tier is Enterprise, custom, up to 10 seats.
+- **No CRM sync.** Briefs copy into Salesforce or HubSpot; action items go to Jira.
+- **Cue is beta, Pro, Mac app, by invite**, and is visible on a screen share by design.
+- **17 languages** plus Hinglish and auto-detect.
+- In-room recording is the **Mac app and the browser**.
+- **No SOC 2** claim — the live security page lists only what Lynkk does today, and SOC 2 isn't on it.
+
+If any of those have changed since 22 October, tell me which and I'll update every file.
 
 ---
 
-## What these pages will and won't do
+## What this content will and won't do
 
-The copy targets keywords winnable at the domain's current authority. Terms in the 50–60 difficulty band — `conversation intelligence platform`, `ai meeting assistant`, `ai note taker` — are not primary targets anywhere, because the sites ranking for them have 30 to 90 times this domain's authority.
+The pages target keywords winnable at the domain's current authority — difficulty 5 to 38. Head terms in the 50–60 band (`conversation intelligence platform`, `ai meeting assistant`, `ai note taker`) are not primary targets anywhere, because the sites ranking for them have 30 to 90 times this domain's authority.
 
-Those head terms are reachable, but through roundup and guide content rather than product pages: the search results for them are held by listicles, and sites with domain authority as low as 10 rank there. The single best-value page left to write is a `gong competitors` roundup — 320 searches a month, difficulty 14, $80.49 cost per click. Details in `03-live-page-amendments.md`.
+Those terms are reachable through roundup and guide content rather than product pages: their search results are held by listicles, and sites with domain authority as low as 10 rank there. The best-value page still unwritten is a `gong competitors` roundup — 320 searches a month, difficulty 14, $80.49 per click. The live site's twelve `/compare/` pages cover "lynkk vs X" intent but not this.
