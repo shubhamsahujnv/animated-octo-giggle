@@ -34,8 +34,8 @@ Numbers 1, 3 and 5 are the ones that would have caused real problems: a feature 
 
 ## Three things only you can rule on
 
-**1. Is staging the next redesign, or a parked concept?**
-It matters for the four product pages. If staging ships, these four pages are the plan. If it's parked, the live site's three feature pages plus a Cue page is the plan, and `06-live-page-amendments.md` is the file to work from instead. I've written both so you're covered either way.
+**1. ~~Is staging the next redesign, or a parked concept?~~ ANSWERED 22 Oct: staging is the next redesign.**
+So the four product pages are the plan. This has a structural consequence the content alone doesn't cover — staging is one page, the live site is thirty-plus URLs, and staging's structure drops two live pages worth keeping. See `07-redesign-migration-plan.md`.
 
 **2. Is CRM sync on the roadmap?**
 Staging treats it as shipped; live says not yet. If it's close, the copy can say "coming soon" rather than going silent — but it cannot say it works. Right now every page says what live says.

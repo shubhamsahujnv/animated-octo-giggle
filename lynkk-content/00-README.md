@@ -13,7 +13,8 @@
 | `03-conversation-to-action.md` | Conversation to Action |
 | `04-cue-live-coaching.md` | Cue Live Coaching |
 | `05-personal-assistant.md` | Personal Assistant |
-| `06-live-page-amendments.md` | Fixes to the live site's own pages, if staging doesn't ship. |
+| `06-live-page-amendments.md` | Fixes to the two live pages the redesign keeps. |
+| `07-redesign-migration-plan.md` | **Confirmed: staging is the next redesign.** The URL structure, the redirect map and what not to delete. |
 | `archive/` | Superseded first drafts. Don't brief from them. |
 
 ---
