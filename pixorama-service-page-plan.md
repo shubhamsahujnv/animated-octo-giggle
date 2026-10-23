@@ -116,12 +116,15 @@ numbers. Pixorama's own homepage currently breaks that rule:
 
 | Stat | Problem |
 |---|---|
-| "Continents of active delivery" | Renders as a literal **0**. A visible zero in a credibility stat is worse than omitting it. |
+| **Eight `pstat` / `istat` figures** | All render **0** in the server HTML ("0+ Enterprise clients served since 2022", "0.00% Average SLA-backed uptime", "0× Median uplift in deployment frequency", "−0% Typical cloud run-cost reduction", and four more). Most likely scroll-animated counters populated client-side, so a browser may show real numbers — but Google and the AI crawlers the `robots.txt` deliberately welcomes see the zeros. Three of the labels are also measured claims needing a traceable source. |
 | **"4.9 / 5 — Average client rating"** | An aggregate rating with no source and **one** displayed testimonial. Not substantiable, and it must not be marked up as `AggregateRating` schema — unverifiable review markup risks a Google structured-data penalty. |
 | **"99.98% uptime — SLA-backed reliability"** | A hard figure with no stated measurement basis or SLA document. |
 
 These need either a verifiable source or removal. They are the same category of risk the Gushwork
 teardown flagged in Section 1 — claims a client cannot trace.
+
+Precise change list, including where each figure sits in the rendered markup:
+`service-pages/homepage-stat-fixes.md`.
 
 ---
 
