@@ -275,7 +275,7 @@ capability names. See `service-pages/README.md` for the volumes behind each choi
    or 301 them to the homepage. Right now they are indexable duplicates pointing elsewhere.
 2. **Add every real page to `sitemap.xml`**: `/services`, `/about`, `/contact` are all missing.
 3. **`/process` returns 404 but is not linked**: nav and footer use `/#method`. No action needed; noted so it is not mistaken for a broken link.
-4. **Fix the "0 continents of active delivery" counter.**
+4. **Resolve the eight homepage stats that render as zeros in the server HTML** (see §1 and `service-pages/homepage-stat-fixes.md`): server-render their real values, or remove them.
 5. **Unique title and meta description per page.** Four URLs currently share one title.
 6. `robots.txt` is already correctly open to every AI crawler: nothing to do, and it is an asset.
 

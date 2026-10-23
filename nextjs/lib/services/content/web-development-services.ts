@@ -192,7 +192,7 @@ export const webDevelopmentServices: ServiceContent = {
   },
 
   internalNotes: [
-    "Credibility prerequisite: Pixorama's own site currently has three orphan indexable URLs under a homepage canonical, no service pages, and a credibility counter rendering 0. Selling technical SEO and analytics from that position is a weak hand. Fix the site before this page ships.",
+    "Credibility prerequisite: Pixorama's own site currently has three orphan indexable URLs under a homepage canonical, no service pages, and eight homepage stats rendering as zeros in the server HTML. Selling technical SEO and analytics from that position is a weak hand. Fix the site before this page ships.",
     'Slug decided from Ubersuggest data: "digital growth web" has roughly zero demand; "web development services" is 5,400/mo, SD 36, commercial. The nav keeps the brand label "Digital Growth & Web".',
     "Thinnest supporting blog cluster of the five, because most existing web/SEO content is in the listicle format the strategy advises against. Worth filling with real buyer questions: site migration without losing traffic, catalogue SEO at scale, what AEO changes.",
   ],

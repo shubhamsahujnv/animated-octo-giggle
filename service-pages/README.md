@@ -55,7 +55,7 @@ From the audit, these break the pages regardless of copy quality:
 4. Split the homepage's 9-question `FAQPage` across these pages by topic. A question should live on
    one page only: duplicate `FAQPage` markup across pages competes with itself.
 5. `/process` returns 404 but is **not linked from anywhere** (nav uses `/#method`), no fix needed, listed so it is not mistaken for a broken link.
-6. Fix the "Continents of active delivery" counter rendering a literal `0`.
+6. Check the eight `pstat` / `istat` homepage stats, which render as zeros in the server HTML. Most likely counters animated client-side, so crawlers and AI assistants read the zeros. See `homepage-stat-fixes.md`.
 
 ## Shared components
 

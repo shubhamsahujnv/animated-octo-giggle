@@ -51,8 +51,8 @@ clients plus the only published testimonial Pixorama has.
 | **Handover** | Full ownership of the code and the content, documented |
 
 > **Internal note: credibility prerequisite.** Pixorama's own site currently has three indexable
-> URLs serving homepage content under a homepage canonical, five service pages missing entirely, a
-> 404 in the nav, and a credibility counter rendering `0`. Selling technical SEO and analytics from
+> URLs serving homepage content under a homepage canonical, five service pages missing entirely, and
+> eight homepage stats rendering as zeros in the server HTML. Selling technical SEO and analytics from
 > that position is a weak hand. Fix the site before this page ships; the audit in
 > `../pixorama-service-page-plan.md` lists every item.
 
