@@ -1,8 +1,8 @@
 # Account Memory
 
 **URL:** `/product/account-memory`
-**Meta title:** Account Intelligence Software: Every Conversation | Lynkk
-**Meta description:** Account intelligence software that connects every call into one timeline. Ask what changed or what you promised, and get an answer with the moment it was said.
+**Meta title:** Conversation Intelligence Platform: Every Call Connected | Lynkk
+**Meta description:** A conversation intelligence platform that connects every call into one account timeline. Ask what changed or what you promised, and get the moment it was said.
 
 ---
 
@@ -12,7 +12,7 @@
 
 # Every conversation. One connected memory.
 
-Lynkk is account intelligence software that connects every customer conversation into one living timeline. The budget from Tuesday. The objection from last month. The promise made in the hallway. Finally, your account has a memory.
+Lynkk is a conversation intelligence platform that connects every customer conversation into one living timeline. The budget from Tuesday. The objection from last month. The promise made in the hallway. Finally, your account has a memory.
 
 **Start for free** · Take the memory for a spin
 
@@ -36,9 +36,9 @@ You pick up where the last rep left off: the security review.
 
 ## What it means
 
-## What is account intelligence?
+## What is a conversation intelligence platform?
 
-Account intelligence means everything your company knows about one customer, held in a single current view: every conversation, every person, every commitment, every open issue. Instead of hunting through notes and asking colleagues, you open one page and see the whole relationship.
+A conversation intelligence platform records your customer conversations, understands what was said, and connects them to the account they belong to. Rather than a folder of separate recordings, you get one current view of the relationship: every conversation, every person, every commitment, every open issue.
 
 Lynkk builds it as you talk. You don't fill anything in.
 
@@ -63,7 +63,7 @@ Lynkk builds it as you talk. You don't fill anything in.
 
 People, decisions, and commitments. Connected.
 
-*Image alt: B2B account intelligence timeline showing budget, stakeholder and commitment changes across three sales calls*
+*Image alt: Conversation intelligence timeline showing budget, stakeholder and commitment changes across three sales calls*
 
 ---
 
@@ -108,11 +108,11 @@ Search an account name and every call sits together, including the ones whose ti
 
 ## Built for B2B
 
-## Built for B2B account intelligence
+## Conversation intelligence for complex B2B deals
 
 Enterprise deals aren't one conversation. They're fourteen, across nine months, with six stakeholders, four of your colleagues, and one person who quietly decides everything.
 
-B2B account intelligence means holding all of that in one place: who entered the deal and when, which objection keeps resurfacing, what the technical buyer needs that the economic buyer hasn't heard yet.
+Conversation intelligence that stops at a single call cannot help with that. Holding the whole thread in one place can: who entered the deal and when, which objection keeps resurfacing, what the technical buyer needs that the economic buyer hasn't heard yet.
 
 That's the case Lynkk is built for.
 
@@ -142,19 +142,16 @@ In a workspace, that extends across the team: a question can be answered from a 
 
 ## FAQ
 
-**What is account intelligence?**
-One current view of everything your company knows about a customer: conversations, people, commitments and open issues, gathered automatically rather than typed in.
-
-**What is account intelligence software?**
-Software that collects and organises everything your company knows about each customer account, so anyone on the team can see the full relationship history without asking around.
+**How is a conversation intelligence platform different from an AI note taker?**
+A note taker gives you a summary of one call. A conversation intelligence platform connects the calls to each other and to the account, so you can ask what changed across six of them and get one answer.
 
 **How is this different from my CRM?**
-Your CRM holds what someone remembered to type. Account memory holds what was actually said.
+Your CRM holds what someone remembered to type. Account Memory holds what was actually said.
 
 **Does Lynkk sync with my CRM?**
 Not yet. Every brief is formatted to copy straight into Salesforce or HubSpot, and action items go to Jira automatically.
 
-**Does it work for B2B accounts with lots of stakeholders?**
+**Does it work for B2B deals with lots of stakeholders?**
 That's exactly the case it's built for. Multiple contacts, multiple colleagues on your side, conversations spread over months, all on one timeline.
 
 **What happens when a rep leaves?**

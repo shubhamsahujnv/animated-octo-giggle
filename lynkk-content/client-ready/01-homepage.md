@@ -151,7 +151,7 @@ The more you talk, the more it connects. Context that compounds.
 
 → **Explore Account Memory**
 
-*Image alt: Account intelligence software showing a connected customer conversation timeline*
+*Image alt: Conversation intelligence platform showing a connected customer timeline across three calls*
 
 ---
 
@@ -410,7 +410,7 @@ Prices in US dollars. No card needed for Free. Cancel Pro any time.
 
 **01 · Sales playbook · 3 min read.** Walk into your next call with the whole story.
 **02 · Follow-through · 3 min read.** A follow-up that proves you were listening.
-**03 · Account intelligence · 3 min read.** Build an account memory your team can trust.
+**03 · Conversation intelligence · 3 min read.** Build an account memory your team can trust.
 
 ---
 
