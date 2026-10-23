@@ -84,15 +84,23 @@ export interface TargetKeyword {
 }
 
 export interface ServiceContent {
-  /** URL segment. Also the key used in the registry. */
+  /** URL segment. Also the key used in the registry. Must be the slugified
+   *  form of keywordPhrase — enforced by assertServiceContent(). */
   readonly slug: string;
-  /** Capability name as used in nav and footer. */
+
+  /** The buyer wording this page is built on: the slug in words, and the words
+   *  the title and H1 must open with. Distinct from navLabel because the two
+   *  serve different jobs — this one has to match how buyers search. */
+  readonly keywordPhrase: string;
+
+  /** Capability name as used in nav, footer and CTAs. Pixorama's own brand
+   *  language, which is not always what buyers type. */
   readonly navLabel: string;
   /** <title>. Keep under ~60 characters. */
   readonly title: string;
   readonly metaDescription: string;
-  /** Must open with the same words as navLabel — the strategy's slug/title/H1
-   *  rule. Enforced by assertServiceContent(). */
+  /** Must open with the same words as keywordPhrase — the strategy's
+   *  slug/title/H1 rule. Enforced by assertServiceContent(). */
   readonly h1: string;
   readonly eyebrow: string;
 
@@ -144,6 +152,18 @@ export interface ServiceContent {
 const WORD_MIN = 40;
 const WORD_MAX = 60;
 
+/**
+ * Slugify a keyword phrase. Ampersands are dropped rather than expanded, so
+ * "Product & Software Engineering" becomes "product-software-engineering"
+ * rather than "product-and-software-engineering".
+ */
+export const slugifyPhrase = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/&/g, " ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
 /** Normalise an ampersand-or-"and" heading for the opening-words comparison. */
 const headingKey = (s: string) =>
   s
@@ -168,15 +188,24 @@ export function assertServiceContent(c: ServiceContent): ServiceContent {
     );
   }
 
-  // Title and H1 must both open with the capability name.
-  const label = headingKey(c.navLabel);
+  // The slug must be the slugified keyword phrase, so the URL and the heading
+  // can never drift apart silently.
+  const expectedSlug = slugifyPhrase(c.keywordPhrase);
+  if (c.slug !== expectedSlug) {
+    throw new Error(
+      `${where}: slug must be the slugified keywordPhrase. Expected "${expectedSlug}" from "${c.keywordPhrase}".`,
+    );
+  }
+
+  // Title and H1 must both open with the keyword phrase.
+  const label = headingKey(c.keywordPhrase);
   for (const [field, value] of [
     ["h1", c.h1],
     ["title", c.title],
   ] as const) {
     if (!headingKey(value).startsWith(label)) {
       throw new Error(
-        `${where}: ${field} must open with "${c.navLabel}" (slug/title/H1 rule). Got: "${value}"`,
+        `${where}: ${field} must open with "${c.keywordPhrase}" (slug/title/H1 rule). Got: "${value}"`,
       );
     }
   }

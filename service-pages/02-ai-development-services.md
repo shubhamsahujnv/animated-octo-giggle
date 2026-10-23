@@ -1,15 +1,17 @@
 # AI & Data Intelligence
 
-**Slug:** `/services/ai-data-intelligence`
-**Canonical:** `https://pixoramagroup.com/services/ai-data-intelligence` (self-referencing)
+**Slug:** `/services/ai-development-services`
+**Canonical:** `https://pixoramagroup.com/services/ai-development-services` (self-referencing)
 
 **Title tag (56 chars):**
-`AI & Data Intelligence | Production AI | Pixorama`
+`AI Development Services | Production AI | Pixorama`
 
 **Meta description (157 chars):**
 `Production-grade AI on your own data: LLM copilots, RAG, agents and ML models with guardrails, evaluation and monitoring. We start from the outcome, not the demo.`
 
-**H1:** AI & Data Intelligence: Production AI on Your Own Data
+**Nav label (unchanged):** AI & Data Intelligence
+
+**H1:** AI Development Services: Production AI on Your Own Data
 
 ---
 
@@ -146,7 +148,7 @@ designed in from the start.
 ## Internal links
 
 - **Related services:** [Product & Software Engineering](/services/product-software-engineering) ·
-  [Cloud & Platform Engineering](/services/cloud-platform-engineering)
+  [Cloud & Platform Engineering](/services/cloud-engineering-services)
 - **Blog:** the five posts listed under Proof
 
 ---
@@ -158,7 +160,7 @@ designed in from the start.
 ### Form
 Name · Work email · Company · What you need · "How did you hear about us?"
 Button: **Send enquiry**
-Hidden: `page_url`, `referrer`, `utm_*`, `service=ai-data-intelligence`
+Hidden: `page_url`, `referrer`, `utm_*`, `service=ai-development-services`
 
 ### Recommended addition — the AI readiness assessment
 
@@ -182,10 +184,10 @@ available in this category and it feeds this page directly.
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://pixoramagroup.com/services/ai-data-intelligence#service",
+    "@id": "https://pixoramagroup.com/services/ai-development-services#service",
     "name": "AI & Data Intelligence",
     "serviceType": "AI and data engineering",
-    "url": "https://pixoramagroup.com/services/ai-data-intelligence",
+    "url": "https://pixoramagroup.com/services/ai-development-services",
     "description": "Pixorama builds production-grade AI on your own data: LLM assistants and copilots, retrieval-augmented generation, agents and machine-learning models, with guardrails, evaluation and monitoring.",
     "provider": { "@id": "https://pixoramagroup.com/#organization" },
     "areaServed": "Worldwide",
@@ -210,7 +212,7 @@ available in this category and it feeds this page directly.
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pixoramagroup.com" },
       { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://pixoramagroup.com/services" },
-      { "@type": "ListItem", "position": 3, "name": "AI & Data Intelligence", "item": "https://pixoramagroup.com/services/ai-data-intelligence" }
+      { "@type": "ListItem", "position": 3, "name": "AI & Data Intelligence", "item": "https://pixoramagroup.com/services/ai-development-services" }
     ]
   },
   {

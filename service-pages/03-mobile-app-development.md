@@ -161,7 +161,7 @@ Completely, including documentation, with handover designed in from the start.
 ## Internal links
 
 - **Related services:** [Product & Software Engineering](/services/product-software-engineering) ·
-  [AI & Data Intelligence](/services/ai-data-intelligence)
+  [AI & Data Intelligence](/services/ai-development-services)
 - **Blog:** the three posts listed under Proof
 
 ---

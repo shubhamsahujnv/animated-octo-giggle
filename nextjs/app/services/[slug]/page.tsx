@@ -71,7 +71,9 @@ function schemaFor(service: ServiceContent) {
       "@context": "https://schema.org",
       "@type": "Service",
       "@id": `${url}#service`,
-      name: service.navLabel,
+      // The keyword phrase, matching the H1. The breadcrumb below keeps the
+      // brand label, which is what the nav shows.
+      name: service.keywordPhrase,
       serviceType: service.serviceType,
       url,
       description: service.openingAnswer,

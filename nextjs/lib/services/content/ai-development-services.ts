@@ -1,16 +1,17 @@
 import { type ServiceContent, pending } from "../types";
 
-export const aiDataIntelligence: ServiceContent = {
-  slug: "ai-data-intelligence",
+export const aiDevelopmentServices: ServiceContent = {
+  slug: "ai-development-services",
+  keywordPhrase: "AI Development Services",
   navLabel: "AI & Data Intelligence",
-  title: "AI & Data Intelligence | Production AI | Pixorama",
+  title: "AI Development Services | Production AI | Pixorama",
   metaDescription:
-    "Production-grade AI on your own data: LLM copilots, RAG, agents and ML models with guardrails, evaluation and monitoring. Built from the outcome, not a demo.",
-  h1: "AI & Data Intelligence: Production AI on Your Own Data",
+    "AI development services on your own data: LLM copilots, RAG, agents and ML models with guardrails, evaluation and monitoring. From the outcome, not a demo.",
+  h1: "AI Development Services: Production AI on Your Own Data",
   eyebrow: "Capability",
 
   openingAnswer:
-    "AI & Data Intelligence is how Pixorama builds production-grade AI on your own data: LLM assistants and copilots, retrieval-augmented generation, agents and machine-learning models, each with guardrails, evaluation and monitoring. It is for enterprises and funded startups that need AI in production, not a demo. Pixorama starts from the outcome and the data.",
+    "AI Development Services from Pixorama build production-grade AI on your own data: LLM assistants and copilots, retrieval-augmented generation, agents and machine-learning models, each with guardrails, evaluation and monitoring. They are for enterprises and funded startups that need AI in production, not a demo. Pixorama starts from the outcome and the data.",
 
   proofLine: pending(
     "One-line proof with a number. Candidate: BVIVE (payment recovery platform), a financial services use case. Needs permission to name and one real metric.",
@@ -146,7 +147,7 @@ export const aiDataIntelligence: ServiceContent = {
     },
   ],
 
-  relatedServices: ["product-software-engineering", "cloud-platform-engineering"],
+  relatedServices: ["product-software-engineering", "cloud-engineering-services"],
   blogLinks: [
     { href: "/blog/what-is-rag-in-ai", label: "What is RAG in AI?" },
     { href: "/blog/rag-vs-fine-tuning", label: "RAG vs fine-tuning" },
@@ -178,7 +179,7 @@ export const aiDataIntelligence: ServiceContent = {
     "Strongest existing content cluster on the site. These posts are the realistic near-term source of AI-assistant citations, which the service page itself will not earn for several quarters.",
     'An unanswered FAQ belongs here once confirmed: whether client data is used to train a provider model. It is the first question every regulated buyer asks and the site answers it nowhere.',
     'Recommended addition: an interactive AI readiness assessment, entry point on this page. "ai readiness assessment" is 720/mo US and failed Gate 3 as a service page precisely because the intent wants a tool.',
-    'Slug decision, now verified against a live SERP (23 Oct 2026): "ai development services" is 2,900/mo US, SD 37, commercial intent, and its top 10 is vendor service pages — a clean Gate 3 pass. It beats "ai development company" (also 2,900/mo but SD 48) and dwarfs "ai data intelligence" (30/mo). Recommended slug: ai-development-services.',
+    'Slug decision, now verified against a live SERP (23 Oct 2026): "ai development services" is 2,900/mo US, SD 37, commercial intent, and its top 10 is vendor service pages — a clean Gate 3 pass. It beats "ai development company" (also 2,900/mo but SD 48) and dwarfs "ai data intelligence" (30/mo). Applied as the slug; the nav keeps the brand label "AI & Data Intelligence".',
     'RAG is a sub-service, not a separate page yet. Per the strategy\'s fold-in rule it belongs as an H2 section on this page now, and graduates to its own page only if rag-development-services clears the gates later.',
   ],
 };

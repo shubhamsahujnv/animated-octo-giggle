@@ -1,15 +1,17 @@
 # Cloud & Platform Engineering
 
-**Slug:** `/services/cloud-platform-engineering`
-**Canonical:** `https://pixoramagroup.com/services/cloud-platform-engineering` (self-referencing)
+**Slug:** `/services/cloud-engineering-services`
+**Canonical:** `https://pixoramagroup.com/services/cloud-engineering-services` (self-referencing)
 
 **Title tag (58 chars):**
-`Cloud & Platform Engineering | Senior-Led | Pixorama`
+`Cloud Engineering Services | Senior-Led | Pixorama`
 
 **Meta description (154 chars):**
 `Cloud platforms designed, built and operated by senior engineers. Landing zones, Kubernetes, CI/CD and IaC — production increment in the first fortnight.`
 
-**H1:** Cloud & Platform Engineering: Built to Be Handed Back to You
+**Nav label (unchanged):** Cloud & Platform Engineering
+
+**H1:** Cloud Engineering Services: Built to Be Handed Back to You
 
 > Slug, title and H1 all open with the same words — "Cloud & Platform Engineering". Do not let a CMS
 > or an AI rewrite drift the H1 away from the slug.
@@ -156,7 +158,7 @@ target architecture, and work to it incrementally rather than demanding a rewrit
 ## Internal links
 
 - **Related services:** [Product & Software Engineering](/services/product-software-engineering) ·
-  [AI & Data Intelligence](/services/ai-data-intelligence)
+  [AI & Data Intelligence](/services/ai-development-services)
 - **Blog:** the three posts listed under Proof
 
 ---
@@ -168,7 +170,7 @@ target architecture, and work to it incrementally rather than demanding a rewrit
 ### Form
 Name · Work email · Company · What you need · "How did you hear about us?"
 Button: **Send enquiry**
-Hidden: `page_url`, `referrer`, `utm_*`, `service=cloud-platform-engineering`
+Hidden: `page_url`, `referrer`, `utm_*`, `service=cloud-engineering-services`
 
 ---
 
@@ -185,10 +187,10 @@ Visible line: **Last updated: {date}** — rendered from the page's own modified
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://pixoramagroup.com/services/cloud-platform-engineering#service",
+    "@id": "https://pixoramagroup.com/services/cloud-engineering-services#service",
     "name": "Cloud & Platform Engineering",
     "serviceType": "Cloud platform engineering",
-    "url": "https://pixoramagroup.com/services/cloud-platform-engineering",
+    "url": "https://pixoramagroup.com/services/cloud-engineering-services",
     "description": "Pixorama designs, builds and operates cloud foundations: landing zones, Kubernetes platforms, CI/CD and infrastructure as code, with handover designed in from the start.",
     "provider": { "@id": "https://pixoramagroup.com/#organization" },
     "areaServed": "Worldwide",
@@ -213,7 +215,7 @@ Visible line: **Last updated: {date}** — rendered from the page's own modified
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pixoramagroup.com" },
       { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://pixoramagroup.com/services" },
-      { "@type": "ListItem", "position": 3, "name": "Cloud & Platform Engineering", "item": "https://pixoramagroup.com/services/cloud-platform-engineering" }
+      { "@type": "ListItem", "position": 3, "name": "Cloud & Platform Engineering", "item": "https://pixoramagroup.com/services/cloud-engineering-services" }
     ]
   },
   {

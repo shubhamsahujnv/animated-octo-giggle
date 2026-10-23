@@ -2,6 +2,7 @@ import { type ServiceContent, pending } from "../types";
 
 export const productSoftwareEngineering: ServiceContent = {
   slug: "product-software-engineering",
+  keywordPhrase: "Product & Software Engineering",
   navLabel: "Product & Software Engineering",
   title: "Product & Software Engineering | Senior-Led | Pixorama",
   metaDescription:
@@ -155,8 +156,8 @@ export const productSoftwareEngineering: ServiceContent = {
   ],
 
   relatedServices: [
-    "cloud-platform-engineering",
-    "ai-data-intelligence",
+    "cloud-engineering-services",
+    "ai-development-services",
     "mobile-app-development",
   ],
   blogLinks: [

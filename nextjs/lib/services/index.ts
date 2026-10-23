@@ -1,9 +1,9 @@
 import { assertServiceContent, type ServiceContent } from "./types";
-import { cloudPlatformEngineering } from "./content/cloud-platform-engineering";
-import { aiDataIntelligence } from "./content/ai-data-intelligence";
+import { cloudEngineeringServices } from "./content/cloud-engineering-services";
+import { aiDevelopmentServices } from "./content/ai-development-services";
 import { mobileAppDevelopment } from "./content/mobile-app-development";
 import { productSoftwareEngineering } from "./content/product-software-engineering";
-import { digitalGrowthWeb } from "./content/digital-growth-web";
+import { webDevelopmentServices } from "./content/web-development-services";
 
 /**
  * Registry of service pages, in the order they should appear in nav and footer.
@@ -14,14 +14,28 @@ import { digitalGrowthWeb } from "./content/digital-growth-web";
  * rather than reaching review.
  */
 export const SERVICES: readonly ServiceContent[] = [
-  cloudPlatformEngineering,
-  aiDataIntelligence,
+  cloudEngineeringServices,
+  aiDevelopmentServices,
   mobileAppDevelopment,
   productSoftwareEngineering,
-  digitalGrowthWeb,
+  webDevelopmentServices,
 ].map(assertServiceContent);
 
 const BY_SLUG = new Map(SERVICES.map((s) => [s.slug, s] as const));
+
+// Cross-page check, which assertServiceContent cannot do on its own: every
+// related-service slug must resolve. Without this a typo or a renamed slug
+// silently drops the link, because relatedServices() filters what it cannot
+// resolve.
+for (const service of SERVICES) {
+  for (const slug of service.relatedServices) {
+    if (!BY_SLUG.has(slug)) {
+      throw new Error(
+        `service "${service.slug}": relatedServices points at "${slug}", which is not a registered service.`,
+      );
+    }
+  }
+}
 
 export const getService = (slug: string): ServiceContent | undefined => BY_SLUG.get(slug);
 

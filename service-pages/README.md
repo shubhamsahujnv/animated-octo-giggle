@@ -4,11 +4,13 @@ Five drafts, one per real capability, built to Section 4 of the Service Page Str
 
 | File | Slug | Status |
 |---|---|---|
-| `01-cloud-platform-engineering.md` | `/services/cloud-platform-engineering` | Ready to implement, proof slots open |
-| `02-ai-data-intelligence.md` | `/services/ai-data-intelligence` | Ready to implement, proof slots open |
-| `03-mobile-app-development.md` | `/services/mobile-app-development` | Ready to implement, **no client reference exists** |
-| `04-product-software-engineering.md` | `/services/product-software-engineering` | Ready to implement, proof slots open |
-| `05-digital-growth-web.md` | `/services/digital-growth-web` | Ready to implement, proof slots open |
+| `01-cloud-engineering-services.md` | `/services/cloud-engineering-services` | Implemented, proof slots open |
+| `02-ai-development-services.md` | `/services/ai-development-services` | Implemented, proof slots open |
+| `03-mobile-app-development.md` | `/services/mobile-app-development` | Implemented, **no client reference exists** |
+| `04-product-software-engineering.md` | `/services/product-software-engineering` | Implemented, proof slots open |
+| `05-web-development-services.md` | `/services/web-development-services` | Implemented, proof slots open |
+
+Implemented as Next.js components in `../nextjs/`.
 
 ## Read this before implementing
 
@@ -133,23 +135,34 @@ where the brand naming actively costs demand.
 | Digital Growth & Web | "digital growth web" | **~0** | — | Brand-invented. No demand. |
 | | *alternative:* "web development services" | **5,400** | Commercial | SD 36. The phrase buyers actually use. |
 
-### Recommended slug changes
+### Slug changes — APPLIED
 
-Keep the **nav labels** as the capability names — they are good brand language. Change the **slugs
-and H1 openings** to the buyer wording on the three where it costs nothing and gains real optionality:
+Applied in `../nextjs/`. The **nav labels** stay the capability names — they are good brand
+language — while the **slugs, titles and H1s** use the buyer wording. The content model keeps these
+as two separate fields (`navLabel` and `keywordPhrase`) and the build asserts that the slug is the
+slugified keyword phrase and that the title and H1 open with it, so the two can never drift:
 
-| From | To |
-|---|---|
-| `/services/digital-growth-web` | `/services/web-development-services` |
-| `/services/cloud-platform-engineering` | `/services/cloud-engineering-services` |
+| From | To | Why |
+|---|---|---|
+| `/services/digital-growth-web` | `/services/web-development-services` | ~0/mo → 5,400/mo |
+| `/services/cloud-platform-engineering` | `/services/cloud-engineering-services` | 20/mo (definitions SERP) → 110/mo commercial |
 | `/services/ai-data-intelligence` | `/services/ai-development-services` — **verified 23 Oct 2026:** 2,900/mo US, SD 37, commercial, top 10 is vendor service pages (clean Gate 3 pass). Beats "ai development company" (2,900/mo but SD 48) and dwarfs "ai data intelligence" (30/mo). |
 
 Leave `/services/mobile-app-development` and `/services/product-software-engineering` as drafted —
 the first is already well-formed, and the second's buyer phrase ("custom software development
 company") is a head term better earned later than claimed now.
 
-**Decide this before launch.** Changing a slug after publication costs a redirect and resets the
-page's age, which is the main asset these pages are accumulating.
+These pages have never been published, so no redirects are needed. Were they live, each change
+would require a 301 — and would reset the page age that is the main asset they accumulate. That is
+why the decision was settled before launch rather than after.
+
+| Page | Slug / H1 open with | Nav and CTAs show |
+|---|---|---|
+| Cloud | Cloud Engineering Services | Cloud & Platform Engineering |
+| AI | AI Development Services | AI & Data Intelligence |
+| Mobile | Mobile App Development | Mobile App Development |
+| Product | Product & Software Engineering | Product & Software Engineering |
+| Web | Web Development Services | Digital Growth & Web |
 
 ### Growth-into targets (re-run the gates quarterly)
 
@@ -157,11 +170,11 @@ Each page should have a target keyword it is being aged toward, taken from the B
 
 | Page | Growth-into target | Vol/mo | Blocked on |
 |---|---|---|---|
-| AI & Data Intelligence | `rag-development-services` | 70 | Gate 2 (and Gate 4 at 8 exact-match) — cleanest Gate 3 pass found |
-| Cloud & Platform Engineering | `cloud-cost-optimization-services` | 140 | Gate 2 only; Gate 4 already borderline-passing at 3 |
+| AI Development Services | `rag-development-services` | 70 | Gate 2 (and Gate 4 at 8 exact-match) — cleanest Gate 3 pass found |
+| Cloud Engineering Services | `cloud-cost-optimization-services` | 140 | Gate 2 only; Gate 4 already borderline-passing at 3 |
 | Mobile App Development | `mobile-app-development-company` | 3,600 | Gate 2 — head term, long horizon |
 | Product & Software Engineering | `healthcare-` / `fintech-` / `logistics-software-development-company` | 480–720 | Gate 2; pick one industry per client answer §8.8, do not build all three |
-| Digital Growth & Web | `web-development-services` | 5,400 | Gate 2 — head term, long horizon |
+| Web Development Services | `web-development-services` (now its own slug) | 5,400 | Gate 2 — head term, long horizon |
 
 One target per page. **Do not create separate pages for these** — they are what the existing page
 grows into, and the strategy forbids synonym pages that compete with each other.

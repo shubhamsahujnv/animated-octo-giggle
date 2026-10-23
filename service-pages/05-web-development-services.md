@@ -1,15 +1,17 @@
 # Digital Growth & Web
 
-**Slug:** `/services/digital-growth-web`
-**Canonical:** `https://pixoramagroup.com/services/digital-growth-web` (self-referencing)
+**Slug:** `/services/web-development-services`
+**Canonical:** `https://pixoramagroup.com/services/web-development-services` (self-referencing)
 
 **Title tag (52 chars):**
-`Digital Growth & Web | Sites That Convert | Pixorama`
+`Web Development Services | Sites That Convert | Pixorama`
 
 **Meta description (152 chars):**
 `Marketing sites, product catalogues and commerce front-ends, plus the analytics and search work that makes them earn enquiries rather than just launch.`
 
-**H1:** Digital Growth & Web: Sites Built to Earn Enquiries
+**Nav label (unchanged):** Digital Growth & Web
+
+**H1:** Web Development Services: Sites Built to Earn Enquiries
 
 ---
 
@@ -152,7 +154,7 @@ months — anyone promising rankings on a fixed date is guessing.
 ## Internal links
 
 - **Related services:** [Product & Software Engineering](/services/product-software-engineering) ·
-  [AI & Data Intelligence](/services/ai-data-intelligence)
+  [AI & Data Intelligence](/services/ai-development-services)
 - **Also:** [Products](/products)
 
 ---
@@ -164,7 +166,7 @@ months — anyone promising rankings on a fixed date is guessing.
 ### Form
 Name · Work email · Company · What you need · "How did you hear about us?"
 Button: **Send enquiry**
-Hidden: `page_url`, `referrer`, `utm_*`, `service=digital-growth-web`
+Hidden: `page_url`, `referrer`, `utm_*`, `service=web-development-services`
 
 ---
 
@@ -181,10 +183,10 @@ Hidden: `page_url`, `referrer`, `utm_*`, `service=digital-growth-web`
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://pixoramagroup.com/services/digital-growth-web#service",
+    "@id": "https://pixoramagroup.com/services/web-development-services#service",
     "name": "Digital Growth & Web",
     "serviceType": "Web development and digital growth",
-    "url": "https://pixoramagroup.com/services/digital-growth-web",
+    "url": "https://pixoramagroup.com/services/web-development-services",
     "description": "Pixorama builds and grows the web surface of your business: marketing sites, product catalogues, commerce front-ends, and the analytics and search work that makes them earn enquiries.",
     "provider": { "@id": "https://pixoramagroup.com/#organization" },
     "areaServed": "Worldwide",
@@ -209,7 +211,7 @@ Hidden: `page_url`, `referrer`, `utm_*`, `service=digital-growth-web`
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pixoramagroup.com" },
       { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://pixoramagroup.com/services" },
-      { "@type": "ListItem", "position": 3, "name": "Digital Growth & Web", "item": "https://pixoramagroup.com/services/digital-growth-web" }
+      { "@type": "ListItem", "position": 3, "name": "Digital Growth & Web", "item": "https://pixoramagroup.com/services/web-development-services" }
     ]
   },
   {

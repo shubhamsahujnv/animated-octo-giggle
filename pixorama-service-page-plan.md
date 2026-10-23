@@ -226,15 +226,20 @@ Keep it to five — one per real capability. **Do not multiply by industry or ci
 
 | Slug | Title / H1 opens with | Links to |
 |---|---|---|
-| `/services/cloud-platform-engineering` | "Cloud & Platform Engineering" | `/services/product-software-engineering`, `/blog/cloud-cost-is-an-architecture-problem`, `/blog/cloud-migration-strategy-on-premise-to-cloud` |
-| `/services/ai-data-intelligence` | "AI & Data Intelligence" | `/blog/what-is-rag-in-ai`, `/blog/rag-vs-fine-tuning`, `/blog/how-to-build-an-ai-agent` |
+| `/services/cloud-engineering-services` | "Cloud Engineering Services" | `/services/product-software-engineering`, `/blog/cloud-cost-is-an-architecture-problem`, `/blog/cloud-migration-strategy-on-premise-to-cloud` |
+| `/services/ai-development-services` | "AI Development Services" | `/blog/what-is-rag-in-ai`, `/blog/rag-vs-fine-tuning`, `/blog/how-to-build-an-ai-agent` |
 | `/services/mobile-app-development` | "Mobile App Development" | `/blog/flutter-vs-react-native`, `/blog/mobile-app-development-cost-usa-australia` |
 | `/services/product-software-engineering` | "Product & Software Engineering" | `/blog/how-to-build-saas-product`, `/blog/legacy-application-modernization` |
-| `/services/digital-growth-web` | "Digital Growth & Web" | `/products` |
+| `/services/web-development-services` | "Web Development Services" | `/products` |
 
-Note the slug/title discipline from Section 4: slug = the service name, and title and H1 **open with
-the same words**, with the proof hook after — e.g. "Cloud & Platform Engineering: Senior-Only Squads,
-Handed Back to You". Not "We build AI-powered software that scales your business".
+Note the slug/title discipline from Section 4: slug = the keyword, and title and H1 **open with the
+same words**, with the proof hook after — e.g. "Cloud Engineering Services: Built to Be Handed Back
+to You". Not "We build AI-powered software that scales your business".
+
+**Slugs use buyer wording, nav keeps brand wording.** Three of the five capability names carry
+almost no search demand ("digital growth web" ~0/mo against 5,400 for "web development services"),
+so the slug, title and H1 use the phrase buyers type while the nav and CTAs keep Pixorama's own
+capability names. See `service-pages/README.md` for the volumes behind each choice.
 
 ### Per page, non-negotiable (Section 4)
 

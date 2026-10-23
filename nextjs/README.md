@@ -21,7 +21,12 @@ lib/services/
   types.ts                       Content model + build-time guards
   organization.ts                Shared Organization @id, engagement models
   index.ts                       Registry, lookup, related-service resolution
-  content/*.ts                   One file per page — all copy lives here
+  content/*.ts                   One file per page — all copy lives here:
+                                   cloud-engineering-services.ts
+                                   ai-development-services.ts
+                                   mobile-app-development.ts
+                                   product-software-engineering.ts
+                                   web-development-services.ts
 styles/services.css              New `svc` block only
 ```
 
@@ -53,14 +58,42 @@ rather than reaching review. It checks:
 | Rule | Check |
 |---|---|
 | Opening answer is 40–60 words | word count |
-| Title and H1 open with the capability name | normalised prefix match (`&` ≡ `and`) |
+| The slug is the slugified `keywordPhrase` | derived comparison |
+| Title and H1 open with the `keywordPhrase` | normalised prefix match (`&` ≡ `and`) |
 | Meta description under 160 characters | length |
 | `lastUpdated` is a real ISO date | format |
 | A page does not link to itself as "related" | membership |
 | A confirmed case study carries at least one metric | array length |
 
-Verified: all five pass; six seeded violations are each rejected with a specific
-message.
+The registry adds one check `assertServiceContent` cannot do alone: every
+`relatedServices` slug must resolve to a registered service. Without it a typo
+or a renamed slug silently drops the link, because `relatedServices()` filters
+what it cannot resolve.
+
+Verified: all five pass; **eight** seeded violations are each rejected with a
+specific message, and a deliberately broken related-slug fails at import.
+
+### Slug wording vs nav wording
+
+Three of the five capability names carry almost no search demand, so the model
+keeps two separate fields:
+
+| Field | Used for | Example |
+|---|---|---|
+| `keywordPhrase` | slug, title, H1, `Service.name` | "Web Development Services" |
+| `navLabel` | nav, footer, CTAs, breadcrumb, related lists | "Digital Growth & Web" |
+
+The build asserts the slug is the slugified `keywordPhrase` and that the title
+and H1 open with it, so a URL and its heading cannot drift apart. Buyers get the
+wording they search for; Pixorama keeps its own brand language on screen.
+
+| Slug | Nav label |
+|---|---|
+| `/services/cloud-engineering-services` | Cloud & Platform Engineering |
+| `/services/ai-development-services` | AI & Data Intelligence |
+| `/services/mobile-app-development` | Mobile App Development |
+| `/services/product-software-engineering` | Product & Software Engineering |
+| `/services/web-development-services` | Digital Growth & Web |
 
 **Styling reuses what exists.** The site is hand-written BEM — `wrap`,
 `section`, `head`, `eyebrow`, `lead`, `h2`, `gt`, `btn`, `btn--brand`, `arw`,
@@ -108,11 +141,10 @@ write arbitrary values into a lead record.
 5. **Point the footer's "Capabilities" column at the five pages.** All five
    entries currently link to `#capabilities` — five links to one anchor.
 6. **Point the nav's "Services" item at `/services`** instead of `/#capabilities`.
-7. **Decide the slug question** (`../service-pages/README.md` → Keyword map).
-   Two capability names carry almost no search demand: "digital growth web" is
-   ~0/mo against 5,400 for "web development services". Changing a slug after
-   publication costs a redirect and resets the page age these pages are mainly
-   accumulating, so decide now.
+7. ~~Decide the slug question.~~ **Done** — slugs use buyer wording, nav keeps
+   brand wording (see above). No redirects needed, since none of these pages has
+   been published. If any slug changes after launch it needs a 301, and it resets
+   the page age that is the main asset these pages accumulate.
 8. **Move the five `Service` entries off the homepage `OfferCatalog`** — they now
    live on the pages they describe. Leave `Organization` and `WebSite` on the
    homepage; the service pages reference `Organization` by `@id`.

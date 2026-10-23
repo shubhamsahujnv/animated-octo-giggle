@@ -1,16 +1,17 @@
 import { type ServiceContent, pending } from "../types";
 
-export const digitalGrowthWeb: ServiceContent = {
-  slug: "digital-growth-web",
+export const webDevelopmentServices: ServiceContent = {
+  slug: "web-development-services",
+  keywordPhrase: "Web Development Services",
   navLabel: "Digital Growth & Web",
-  title: "Digital Growth & Web | Sites That Convert | Pixorama",
+  title: "Web Development Services | Sites That Convert | Pixorama",
   metaDescription:
-    "Marketing sites, product catalogues and commerce front-ends, plus the analytics and search work that makes them earn enquiries rather than just launch.",
-  h1: "Digital Growth & Web: Sites Built to Earn Enquiries",
+    "Web development services: marketing sites, product catalogues and commerce front-ends, plus the analytics and search work that makes them earn enquiries.",
+  h1: "Web Development Services: Sites Built to Earn Enquiries",
   eyebrow: "Capability",
 
   openingAnswer:
-    "Digital Growth & Web is how Pixorama builds and grows the web surface of your business — marketing sites, product catalogues, commerce front-ends and the analytics and search work that makes them earn enquiries. It is for enterprises and funded startups that need a site to perform, not just launch.",
+    "Web Development Services from Pixorama build and grow the web surface of your business — marketing sites, product catalogues, commerce front-ends and the analytics and search work that makes them earn enquiries. They are for enterprises and funded startups that need a site to perform, not just launch.",
 
   proofLine: pending(
     "This page has the best available proof of the five. Wingwaves (website and product catalogue) and Amelia Downie (website and SEO) both match it, and the Amelia Downie testimonial is already public on the homepage. Needs permission to reference on this page plus one real metric each. Moving that testimonial here, where it is topically relevant, is the single cheapest proof improvement available across all five pages.",
@@ -138,7 +139,7 @@ export const digitalGrowthWeb: ServiceContent = {
     },
   ],
 
-  relatedServices: ["product-software-engineering", "ai-data-intelligence"],
+  relatedServices: ["product-software-engineering", "ai-development-services"],
   blogLinks: [
     {
       href: "/blog/how-to-choose-software-development-company",
@@ -161,12 +162,13 @@ export const digitalGrowthWeb: ServiceContent = {
     phrase: "web development services",
     volumePerMonth: 5400,
     market: "US",
-    blockedOn: "Gate 2 — head term, long horizon.",
+    blockedOn:
+      "Gate 2 — head term, long horizon. Now the page's own slug, so this is what it is aged toward rather than a phrase to migrate to later.",
   },
 
   internalNotes: [
     "Credibility prerequisite: Pixorama's own site currently has three orphan indexable URLs under a homepage canonical, no service pages, and a credibility counter rendering 0. Selling technical SEO and analytics from that position is a weak hand — fix the site before this page ships.",
-    'Slug alternative worth deciding before launch: "digital growth web" has roughly zero demand; "web development services" is 5,400/mo.',
+    'Slug decided from Ubersuggest data: "digital growth web" has roughly zero demand; "web development services" is 5,400/mo, SD 36, commercial. The nav keeps the brand label "Digital Growth & Web".',
     "Thinnest supporting blog cluster of the five, because most existing web/SEO content is in the listicle format the strategy advises against. Worth filling with real buyer questions: site migration without losing traffic, catalogue SEO at scale, what AEO changes.",
   ],
 };

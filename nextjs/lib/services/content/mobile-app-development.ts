@@ -2,6 +2,7 @@ import { type ServiceContent, pending } from "../types";
 
 export const mobileAppDevelopment: ServiceContent = {
   slug: "mobile-app-development",
+  keywordPhrase: "Mobile App Development",
   navLabel: "Mobile App Development",
   title: "Mobile App Development | iOS & Android | Pixorama",
   metaDescription:
@@ -127,7 +128,7 @@ export const mobileAppDevelopment: ServiceContent = {
     },
   ],
 
-  relatedServices: ["product-software-engineering", "ai-data-intelligence"],
+  relatedServices: ["product-software-engineering", "ai-development-services"],
   blogLinks: [
     { href: "/blog/flutter-vs-react-native", label: "Flutter vs React Native" },
     {

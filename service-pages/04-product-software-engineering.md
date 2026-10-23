@@ -151,8 +151,8 @@ than a body shop.
 
 This page is the hub of the cluster — link it from all four others.
 
-- **Related services:** [Cloud & Platform Engineering](/services/cloud-platform-engineering) ·
-  [AI & Data Intelligence](/services/ai-data-intelligence) ·
+- **Related services:** [Cloud & Platform Engineering](/services/cloud-engineering-services) ·
+  [AI & Data Intelligence](/services/ai-development-services) ·
   [Mobile App Development](/services/mobile-app-development)
 - **Blog:** the four posts listed under Proof
 

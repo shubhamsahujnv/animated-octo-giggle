@@ -1,16 +1,17 @@
 import { type ServiceContent, confirmed, pending } from "../types";
 
-export const cloudPlatformEngineering: ServiceContent = {
-  slug: "cloud-platform-engineering",
+export const cloudEngineeringServices: ServiceContent = {
+  slug: "cloud-engineering-services",
+  keywordPhrase: "Cloud Engineering Services",
   navLabel: "Cloud & Platform Engineering",
-  title: "Cloud & Platform Engineering | Senior-Led | Pixorama",
+  title: "Cloud Engineering Services | Senior-Led | Pixorama",
   metaDescription:
-    "Cloud platforms designed, built and operated by senior engineers. Landing zones, Kubernetes, CI/CD and IaC — production increment in the first fortnight.",
-  h1: "Cloud & Platform Engineering: Built to Be Handed Back to You",
+    "Cloud engineering services: landing zones, Kubernetes, CI/CD and infrastructure as code, built and operated by senior engineers. First increment in a fortnight.",
+  h1: "Cloud Engineering Services: Built to Be Handed Back to You",
   eyebrow: "Capability",
 
   openingAnswer:
-    "Cloud & Platform Engineering is how Pixorama designs, builds and operates the cloud foundations your product runs on — landing zones, Kubernetes platforms, CI/CD and infrastructure as code. It is for enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside the first fortnight, and you own the code, infrastructure and documentation outright.",
+    "Cloud Engineering Services from Pixorama design, build and operate the cloud foundations your product runs on — landing zones, Kubernetes platforms, CI/CD and infrastructure as code. They are for enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside the first fortnight, and you own the code, infrastructure and documentation outright.",
 
   proofLine: pending(
     'One-line proof with a number — e.g. "Gateways: platform support and development since {year}, {n} environments under management." Needs client permission and a real figure.',
@@ -138,7 +139,7 @@ export const cloudPlatformEngineering: ServiceContent = {
     },
   ],
 
-  relatedServices: ["product-software-engineering", "ai-data-intelligence"],
+  relatedServices: ["product-software-engineering", "ai-development-services"],
   blogLinks: [
     {
       href: "/blog/cloud-cost-is-an-architecture-problem",
@@ -167,7 +168,7 @@ export const cloudPlatformEngineering: ServiceContent = {
   },
 
   internalNotes: [
-    'Slug alternative worth deciding before launch: "cloud engineering services" is 110/mo with commercial intent, against 20/mo for "cloud platform engineering services" whose SERP is Microsoft/Google/AWS definitions (a Gate 3 fail).',
+    'Slug decided from Ubersuggest data: "cloud engineering services" is 110/mo with commercial intent, against 20/mo for "cloud platform engineering services" whose SERP is Microsoft/Google/AWS definitions (a Gate 3 fail). The nav keeps the brand label "Cloud & Platform Engineering".',
     'An unanswered FAQ belongs here once confirmed: which cloud providers, and any partner status. Do not claim a partnership that does not exist.',
   ],
 };
