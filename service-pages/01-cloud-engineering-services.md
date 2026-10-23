@@ -7,32 +7,32 @@
 `Cloud Engineering Services | Senior-Led | Pixorama`
 
 **Meta description (154 chars):**
-`Cloud platforms designed, built and operated by senior engineers. Landing zones, Kubernetes, CI/CD and IaC — production increment in the first fortnight.`
+`Cloud platforms designed, built and operated by senior engineers. Landing zones, Kubernetes, CI/CD and IaC: production increment in the first fortnight.`
 
 **Nav label (unchanged):** Cloud & Platform Engineering
 
 **H1:** Cloud Engineering Services: Built to Be Handed Back to You
 
-> Slug, title and H1 all open with the same words — "Cloud & Platform Engineering". Do not let a CMS
+> Slug, title and H1 all open with the same words, "Cloud & Platform Engineering". Do not let a CMS
 > or an AI rewrite drift the H1 away from the slug.
 
 ---
 
 ## Above the fold
 
-### Opening answer (55 words — for AI answers and featured snippets)
+### Opening answer (55 words, for AI answers and featured snippets)
 
 Cloud & Platform Engineering is how Pixorama designs, builds and operates the cloud foundations your
-product runs on — landing zones, Kubernetes platforms, CI/CD and infrastructure as code. It is for
+product runs on: landing zones, Kubernetes platforms, CI/CD and infrastructure as code. It is for
 enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside
 the first fortnight, and you own the code, infrastructure and documentation outright.
 
 ### Proof line
 
-**FILLED:** *Platform support and development for Gateways — live client work, not a capability claim.*
+**FILLED:** *Platform support and development for Gateways. Live client work, not a capability claim.*
 
 Factual and already public on the homepage. Carries no number, because no approved number exists
-yet — see the case study below.
+yet, see the case study below.
 
 ### Primary CTA
 
@@ -47,7 +47,7 @@ yet — see the case study below.
 | **Landing zones & foundations** | Multi-account or multi-subscription structure, network topology, identity, baseline guardrails |
 | **Kubernetes & runtime platforms** | Cluster design, workload onboarding, autoscaling, service networking |
 | **CI/CD & delivery** | Pipeline design, environment promotion, release automation, a hardened delivery pipeline |
-| **Infrastructure as code** | Everything reproducible from source — no hand-built environments |
+| **Infrastructure as code** | Everything reproducible from source, no hand-built environments |
 | **Observability & cost** | Metrics, logs, traces, alerting, and cost visibility built in rather than retrofitted |
 | **Security & compliance posture** | Zero-trust architecture, automated evidence collection, SOC 2 and ISO 27001 *readiness* as a continuous by-product of how we build |
 | **Migration** | On-premise to cloud, or cloud to cloud, with a rollback path at every step |
@@ -64,7 +64,7 @@ yet — see the case study below.
 
 | Model | Fits when |
 |---|---|
-| **Outcome-based project** | Scope is clear — a migration, a landing zone, a platform build. Milestone-based commercials. |
+| **Outcome-based project** | Scope is clear: a migration, a landing zone, a platform build. Milestone-based commercials. |
 | **Dedicated squad** | Platform work is continuous and embedded in your roadmap |
 | **Specialist augmentation** | You need one critical capability your team lacks |
 | **Advisory & architecture** | You need a review, a target architecture, or a second opinion before committing |
@@ -73,18 +73,18 @@ yet — see the case study below.
 
 ## Proof
 
-### Filled — already published by Pixorama
+### Filled: already published by Pixorama
 
 | Client | Work |
 |---|---|
 | **Gateways** | Platform support and development |
 
-### Still pending — needs Pixorama
+### Still pending, needs Pixorama
 
-`[CONFIRM: a metric for Gateways — cost reduction, deployment frequency, incident reduction or
+`[CONFIRM: a metric for Gateways, cost reduction, deployment frequency, incident reduction or
 uptime. The client roster above names the engagement; without a number it is not yet a case study.]`
 
-`[CONFIRM: named engineer with credentials — the "senior-only" claim is currently unevidenced
+`[CONFIRM: named engineer with credentials, the "senior-only" claim is currently unevidenced
 anywhere on the site, and for regulated-sector buyers this is the gap that costs deals.]`
 
 **Supporting reading (publish-ready now, no confirmation needed):**
@@ -100,14 +100,14 @@ The site currently says only that engagements are "scoped and priced to the outc
 pricing signal, and its absence is a known drop-off point for this buyer. Until a band is approved,
 publish the honest version:
 
-- **Scope** — a single landing zone versus a multi-region platform
-- **Estate size** — how many workloads, accounts and environments move
-- **Compliance load** — the evidence and controls your sector requires
-- **Starting state** — reproducible infrastructure already, or hand-built environments
-- **Model** — fixed-scope project with milestone commercials, versus an embedded squad
+- **Scope**, a single landing zone versus a multi-region platform
+- **Estate size**, how many workloads, accounts and environments move
+- **Compliance load**, the evidence and controls your sector requires
+- **Starting state**, reproducible infrastructure already, or hand-built environments
+- **Model**, fixed-scope project with milestone commercials, versus an embedded squad
 
 `[CONFIRM: starting price or typical engagement band. A range beats silence; the strategy accepts
-"a range, a starting price, or what drives cost" — this section is the third option, and the first
+"a range, a starting price, or what drives cost", this section is the third option, and the first
 two convert better.]`
 
 ### Mid-page CTA
@@ -126,11 +126,11 @@ two convert better.]`
 
 ## Who it's not for
 
-- Single-server or static-site hosting — the engagement model is heavier than the need
+- Single-server or static-site hosting, where the engagement model is heavier than the need
 - Teams wanting a body shop staffed by junior engineers billed by the hour
 - Teams wanting a platform run as a permanent black box; handover is designed in, not optional
 
-> This section pre-qualifies. It will reduce raw enquiries and raise the qualified share — which is
+> This section pre-qualifies. It will reduce raw enquiries and raise the qualified share, which is
 > the number being reported.
 
 ---
@@ -154,10 +154,10 @@ designed in from the start. There is no lock-in by obscurity.
 
 **Which cloud providers do you work with?**
 `[CONFIRM: AWS / Azure / GCP, and any partner status. Do not claim a partnership that does not
-exist — but if one does exist, it is a trust signal currently missing from the site.]`
+exist, but if one does exist, it is a trust signal currently missing from the site.]`
 
 **Can you take over a platform someone else built?**
-Yes. Advisory and architecture reviews exist for exactly this — we assess what is there, agree a
+Yes. Advisory and architecture reviews exist for exactly this. We assess what is there, agree a
 target architecture, and work to it incrementally rather than demanding a rewrite.
 
 ---
@@ -172,7 +172,7 @@ target architecture, and work to it incrementally rather than demanding a rewrit
 
 ## Closing CTA
 
-**Let's talk** — form directly below.
+**Let's talk**, form directly below.
 
 ### Form
 Name · Work email · Company · What you need · "How did you hear about us?"
@@ -183,7 +183,7 @@ Hidden: `page_url`, `referrer`, `utm_*`, `service=cloud-engineering-services`
 
 ## Freshness
 
-Visible line: **Last updated: {date}** — rendered from the page's own modified date, not hardcoded.
+Visible line: **Last updated: {date}**, rendered from the page's own modified date, not hardcoded.
 
 ---
 
@@ -254,5 +254,5 @@ Visible line: **Last updated: {date}** — rendered from the page's own modified
 ]
 ```
 
-> `Review` / `AggregateRating` deliberately omitted — permitted only when the reviews are real and
+> `Review` / `AggregateRating` deliberately omitted: permitted only when the reviews are real and
 > shown on the page. Add once the Clutch reviews from Step 5b.1 exist.

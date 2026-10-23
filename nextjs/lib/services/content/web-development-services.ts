@@ -13,18 +13,18 @@ export const webDevelopmentServices: ServiceContent = {
   eyebrow: "Capability",
 
   openingAnswer:
-    "Web Development Services from Pixorama build and grow the web surface of your business — marketing sites, product catalogues, commerce front-ends and the analytics and search work that makes them earn enquiries. They are for enterprises and funded startups that need a site to perform, not just launch.",
+    "Web Development Services from Pixorama build and grow the web surface of your business: marketing sites, product catalogues, commerce front-ends and the analytics and search work that makes them earn enquiries. They are for enterprises and funded startups that need a site to perform, not just launch.",
 
   proofLine: confirmed(
-    "Website and product catalogue for Wingwaves, and website and SEO for Amelia Downie — in her own words below.",
+    "Website and product catalogue for Wingwaves, and website and SEO for Amelia Downie, in her own words below.",
   ),
   proofLineFallback:
-    "Built to be measured — technical SEO, analytics and attribution are part of the same engagement.",
+    "Built to be measured: technical SEO, analytics and attribution are part of the same engagement.",
 
   included: [
     {
       label: "Marketing sites",
-      detail: "Fast, accessible, measurable — built on a stack your team can edit.",
+      detail: "Fast, accessible and measurable, built on a stack your team can edit.",
     },
     {
       label: "Product catalogues",
@@ -59,7 +59,7 @@ export const webDevelopmentServices: ServiceContent = {
 
   timelines: [
     "Production increment inside the first fortnight, senior-led from day one.",
-    "Search and growth work compounds over months, not weeks — we say so rather than imply otherwise.",
+    "Search and growth work compounds over months, not weeks. We say so rather than imply otherwise.",
   ],
 
   engagementModels: [
@@ -68,7 +68,7 @@ export const webDevelopmentServices: ServiceContent = {
       fits: "A defined site or catalogue build. Milestone-based commercials.",
     },
     { model: "Dedicated squad", fits: "Continuous growth work." },
-    { model: "Specialist augmentation", fits: "A single capability — search, analytics, front-end." },
+    { model: "Specialist augmentation", fits: "A single capability: search, analytics, front-end." },
     { model: "Advisory & architecture", fits: "An audit of an existing site." },
   ],
 
@@ -96,7 +96,7 @@ export const webDevelopmentServices: ServiceContent = {
   }),
 
   caseStudy: pending(
-    "Wingwaves — website and product catalogue. Permission plus a metric: catalogue size, load time improvement, conversion or enquiry change. And Amelia Downie — website and SEO; the testimonial is already public, so add a metric (rankings, traffic, enquiries) and move the quote onto this page.",
+    "Wingwaves, website and product catalogue. Permission plus a metric: catalogue size, load time improvement, conversion or enquiry change. And Amelia Downie: website and SEO; the testimonial is already public, so add a metric (rankings, traffic, enquiries) and move the quote onto this page.",
   ),
   namedExpert: pending("Named web/search specialist with credentials."),
 
@@ -137,14 +137,14 @@ export const webDevelopmentServices: ServiceContent = {
   ],
   notForWho: [
     "Anyone wanting a template site at template prices",
-    "Anyone wanting ranking guarantees — nobody can give them honestly",
+    "Anyone wanting ranking guarantees; nobody can give them honestly",
     "Teams wanting volume content production disconnected from a service they actually sell",
   ],
 
   faq: [
     {
       q: "Do you do SEO as well as build the site?",
-      a: "Yes — technical SEO, content structure and analytics are part of the same engagement. A site that launches and cannot be found has not finished.",
+      a: "Yes. Technical SEO, content structure and analytics are part of the same engagement. A site that launches and cannot be found has not finished.",
     },
     {
       q: "What is AI answer readiness, and do we need it?",
@@ -160,7 +160,7 @@ export const webDevelopmentServices: ServiceContent = {
     },
     {
       q: "How long before we see results?",
-      a: "Build work ships in the first fortnight and continues in short cycles. Search results compound over months — anyone promising rankings on a fixed date is guessing.",
+      a: "Build work ships in the first fortnight and continues in short cycles. Search results compound over months. Anyone promising rankings on a fixed date is guessing.",
     },
   ],
 
@@ -174,7 +174,7 @@ export const webDevelopmentServices: ServiceContent = {
       href: "/blog/best-seo-agencies-australia",
       label: "Best SEO agencies Australia",
       flagged:
-        "Self-nominating listicle targeting a zero-volume phrase. Per the strategy, stop expanding this format — either repoint it at a question buyers actually ask, or leave it unlinked.",
+        "Self-nominating listicle targeting a zero-volume phrase. Per the strategy, stop expanding this format: either repoint it at a question buyers actually ask, or leave it unlinked.",
     },
   ],
 
@@ -188,11 +188,11 @@ export const webDevelopmentServices: ServiceContent = {
     volumePerMonth: 5400,
     market: "US",
     blockedOn:
-      "Gate 2 — head term, long horizon. Now the page's own slug, so this is what it is aged toward rather than a phrase to migrate to later.",
+      "Gate 2, head term, long horizon. Now the page's own slug, so this is what it is aged toward rather than a phrase to migrate to later.",
   },
 
   internalNotes: [
-    "Credibility prerequisite: Pixorama's own site currently has three orphan indexable URLs under a homepage canonical, no service pages, and a credibility counter rendering 0. Selling technical SEO and analytics from that position is a weak hand — fix the site before this page ships.",
+    "Credibility prerequisite: Pixorama's own site currently has three orphan indexable URLs under a homepage canonical, no service pages, and a credibility counter rendering 0. Selling technical SEO and analytics from that position is a weak hand. Fix the site before this page ships.",
     'Slug decided from Ubersuggest data: "digital growth web" has roughly zero demand; "web development services" is 5,400/mo, SD 36, commercial. The nav keeps the brand label "Digital Growth & Web".',
     "Thinnest supporting blog cluster of the five, because most existing web/SEO content is in the listicle format the strategy advises against. Worth filling with real buyer questions: site migration without losing traffic, catalogue SEO at scale, what AEO changes.",
   ],

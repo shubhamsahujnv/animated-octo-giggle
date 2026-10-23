@@ -13,12 +13,12 @@ export const cloudEngineeringServices: ServiceContent = {
   eyebrow: "Capability",
 
   openingAnswer:
-    "Cloud Engineering Services from Pixorama design, build and operate the cloud foundations your product runs on — landing zones, Kubernetes platforms, CI/CD and infrastructure as code. They are for enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside the first fortnight, and you own the code, infrastructure and documentation outright.",
+    "Cloud Engineering Services from Pixorama design, build and operate the cloud foundations your product runs on: landing zones, Kubernetes platforms, CI/CD and infrastructure as code. They are for enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside the first fortnight, and you own the code, infrastructure and documentation outright.",
 
   // Factual and already public. Carries no number, because no approved number
-  // exists yet — see caseStudy, still pending.
+  // exists yet; see caseStudy, still pending.
   proofLine: confirmed(
-    "Platform support and development for Gateways — live client work, not a capability claim.",
+    "Platform support and development for Gateways. Live client work, not a capability claim.",
   ),
   proofLineFallback: "Senior-led from day one, with no ramp-up tax.",
 
@@ -39,7 +39,7 @@ export const cloudEngineeringServices: ServiceContent = {
     },
     {
       label: "Infrastructure as code",
-      detail: "Everything reproducible from source — no hand-built environments.",
+      detail: "Everything reproducible from source; no hand-built environments.",
     },
     {
       label: "Observability & cost",
@@ -71,7 +71,7 @@ export const cloudEngineeringServices: ServiceContent = {
     {
       model: "Outcome-based project",
       fits:
-        "Scope is clear — a migration, a landing zone, a platform build. Milestone-based commercials.",
+        "Scope is clear: a migration, a landing zone, a platform build. Milestone-based commercials.",
     },
     {
       model: "Dedicated squad",
@@ -101,7 +101,7 @@ export const cloudEngineeringServices: ServiceContent = {
   ),
 
   caseStudy: pending(
-    "Named case study with numbers. Candidate: Gateways (platform support and development). Needs permission to name plus at least one real metric — cost reduction, deployment frequency, incident reduction or uptime.",
+    "Named case study with numbers. Candidate: Gateways (platform support and development). Needs permission to name plus at least one real metric: cost reduction, deployment frequency, incident reduction or uptime.",
   ),
   namedExpert: pending(
     'Named engineer with credentials. The "senior-only" claim is currently unevidenced anywhere on the site, and for regulated-sector buyers this is the gap that costs deals.',
@@ -121,7 +121,7 @@ export const cloudEngineeringServices: ServiceContent = {
     },
   ],
   priceBand: pending(
-    "Starting price or typical engagement band. A range beats silence — the strategy accepts a range, a starting price, or what drives cost, and the first two convert better.",
+    "Starting price or typical engagement band. A range beats silence. The strategy accepts a range, a starting price, or what drives cost, and the first two convert better.",
   ),
 
   forWho: [
@@ -131,7 +131,7 @@ export const cloudEngineeringServices: ServiceContent = {
     "Teams who want the platform handed back, running, to their own engineers",
   ],
   notForWho: [
-    "Single-server or static-site hosting — the engagement model is heavier than the need",
+    "Single-server or static-site hosting, where the engagement model is heavier than the need",
     "Teams wanting a body shop staffed by junior engineers billed by the hour",
     "Teams wanting a platform run as a permanent black box; handover is designed in, not optional",
   ],

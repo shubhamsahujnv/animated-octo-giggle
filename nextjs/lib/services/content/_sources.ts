@@ -4,8 +4,8 @@
  *
  * These describe claims Pixorama already publishes about itself and its
  * clients. Reusing the same wording on a service page is the same claim in a
- * new location, not a new one. Anything beyond this wording — a metric, a
- * logo in a new context, a named individual — needs explicit client sign-off.
+ * new location, not a new one. Anything beyond this wording (a metric, a
+ * logo in a new context, a named individual) needs explicit client sign-off.
  */
 
 export const HOMEPAGE_LOGOWALL =

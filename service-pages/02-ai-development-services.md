@@ -27,10 +27,10 @@ production, not a demo. Pixorama starts from the outcome and the data.
 ### Proof line
 
 `[CONFIRM: no public engagement is identifiable as AI work. BVIVE is published as a "payment
-recovery platform", not as an AI build — listing it here would imply work the public record does not
+recovery platform", not as an AI build: listing it here would imply work the public record does not
 support. Confirm whether any client engagement involved AI, and whether it can be named.]`
 
-Fallback: *We start from the outcome and the data, not the demo — so what ships is safe and measurable.*
+Fallback: *We start from the outcome and the data, not the demo, so what ships is safe and measurable.*
 
 ### Primary CTA
 
@@ -45,15 +45,15 @@ Fallback: *We start from the outcome and the data, not the demo — so what ship
 | **LLM assistants & copilots** | In-product assistants grounded in your own content and permissions |
 | **Retrieval-augmented generation (RAG)** | Retrieval pipelines, chunking and indexing strategy, grounding, citation of sources |
 | **AI agents** | Scoped, tool-using agents with human checkpoints where the stakes require them |
-| **Machine-learning models** | Where a model beats a prompt — forecasting, scoring, classification |
+| **Machine-learning models** | Where a model beats a prompt, forecasting, scoring, classification |
 | **Guardrails** | Input and output filtering, permission-aware retrieval, refusal behaviour, audit trails |
-| **Evaluation** | An evaluation set before launch, and regression evaluation on every change — not vibes |
+| **Evaluation** | An evaluation set before launch, and regression evaluation on every change, not vibes |
 | **Monitoring** | Live quality, cost and latency monitoring, with alerting on drift |
 | **Data foundations** | The pipelines and data quality work the AI actually depends on |
 
 ### Timelines
 
-- **Production increment inside the first fortnight** — typically a narrow, evaluable slice rather
+- **Production increment inside the first fortnight**, typically a narrow, evaluable slice rather
   than a broad demo.
 - Then short cycles, with the evaluation set growing alongside the feature.
 - `[CONFIRM: typical duration for a first production RAG assistant]`
@@ -62,7 +62,7 @@ Fallback: *We start from the outcome and the data, not the demo — so what ship
 
 Same four models as every Pixorama engagement: **outcome-based project** (milestone commercials),
 **dedicated squad**, **specialist augmentation**, **advisory & architecture**. Advisory is the common
-entry point here — an AI readiness and feasibility review before committing budget.
+entry point here, an AI readiness and feasibility review before committing budget.
 
 ---
 
@@ -75,7 +75,7 @@ entry point here — an AI readiness and feasibility review before committing bu
 manual review reduction). If BVIVE did involve AI work, say so and it moves onto this page.]`
 
 `[CONFIRM: named AI/ML engineer with credentials. Highest-value proof slot on the site for this
-service — regulated-sector AI buyers buy the people.]`
+service: regulated-sector AI buyers buy the people.]`
 
 **Supporting reading (publish-ready now):**
 - [What is RAG in AI?](/blog/what-is-rag-in-ai)
@@ -84,7 +84,7 @@ service — regulated-sector AI buyers buy the people.]`
 - [How to build an AI agent](/blog/how-to-build-an-ai-agent)
 - [AI agents for business: use cases](/blog/ai-agents-for-business-use-cases)
 
-> This is the strongest existing content cluster on the site. Link it prominently — these posts are
+> This is the strongest existing content cluster on the site. Link it prominently, these posts are
 > the realistic near-term source of AI-assistant citations, which the service page itself will not
 > earn for several quarters.
 
@@ -92,12 +92,12 @@ service — regulated-sector AI buyers buy the people.]`
 
 ## What drives cost
 
-- **Data readiness** — clean, accessible, permissioned data, or work needed before any AI is useful
-- **Scope** — one grounded assistant versus a multi-workflow agent system
-- **Accuracy bar** — the evaluation and guardrail work scales with the consequence of being wrong
-- **Integration surface** — how many systems the AI must read from and write to
-- **Compliance load** — audit, retention and explainability requirements in your sector
-- **Run cost** — inference and retrieval cost, which we design against rather than discover later
+- **Data readiness**: clean, accessible, permissioned data, or work needed before any AI is useful
+- **Scope**, one grounded assistant versus a multi-workflow agent system
+- **Accuracy bar**, the evaluation and guardrail work scales with the consequence of being wrong
+- **Integration surface**, how many systems the AI must read from and write to
+- **Compliance load**, audit, retention and explainability requirements in your sector
+- **Run cost**, inference and retrieval cost, which we design against rather than discover later
 
 `[CONFIRM: starting price or typical band for an AI engagement]`
 
@@ -117,7 +117,7 @@ service — regulated-sector AI buyers buy the people.]`
 ## Who it's not for
 
 - Teams wanting a demo or a proof-of-concept with no route to production
-- Teams with no usable data yet — we would be doing data engineering, and would say so
+- Teams with no usable data yet; we would be doing data engineering, and would say so
 - Anyone wanting AI added because it is expected, with no outcome attached
 
 ---
@@ -130,7 +130,7 @@ retrieval-augmented generation, agents and machine-learning models, all with gua
 and monitoring. We start from the outcome and the data, not the demo, so what ships is safe and
 measurable.
 
-**RAG or fine-tuning — which do we need?**
+**RAG or fine-tuning: which do we need?**
 Usually RAG first. It grounds answers in your current content, cites sources, and updates when your
 data updates. Fine-tuning earns its place for form and behaviour, rarely for knowledge.
 See [RAG vs fine-tuning](/blog/rag-vs-fine-tuning).
@@ -144,7 +144,7 @@ set that runs on every change. The goal is a system whose failure modes are know
 buyer asks, and the site does not currently answer it anywhere.]`
 
 **Do we own the AI system you build?**
-Completely — code, infrastructure, prompts, evaluation sets and documentation, with handover
+Completely: code, infrastructure, prompts, evaluation sets and documentation, with handover
 designed in from the start.
 
 ---
@@ -159,25 +159,25 @@ designed in from the start.
 
 ## Closing CTA
 
-**Let's talk** — form below.
+**Let's talk**, form below.
 
 ### Form
 Name · Work email · Company · What you need · "How did you hear about us?"
 Button: **Send enquiry**
 Hidden: `page_url`, `referrer`, `utm_*`, `service=ai-development-services`
 
-### Recommended addition — the AI readiness assessment
+### Recommended addition, the AI readiness assessment
 
 Per Step 5b.4: build an interactive **AI readiness assessment** and place its entry point on this
 page. "ai readiness assessment" is 720/mo in the US and failed Gate 3 as a service page precisely
-because the intent wants a *tool* — a DA 48 firm holds #2 with one. It is the best lead magnet
+because the intent wants a *tool*, a DA 48 firm holds #2 with one. It is the best lead magnet
 available in this category and it feeds this page directly.
 
 ---
 
 ## Freshness
 
-**Last updated: {date}** — and keep current-year facts current; this page dates fastest of the five.
+**Last updated: {date}**, and keep current-year facts current; this page dates fastest of the five.
 
 ---
 
@@ -230,7 +230,7 @@ available in this category and it feeds this page directly.
       },
       {
         "@type": "Question",
-        "name": "RAG or fine-tuning — which do we need?",
+        "name": "RAG or fine-tuning: which do we need?",
         "acceptedAnswer": { "@type": "Answer", "text": "Usually RAG first. It grounds answers in your current content, cites sources, and updates when your data updates. Fine-tuning earns its place for form and behaviour, rarely for knowledge." }
       },
       {
@@ -241,7 +241,7 @@ available in this category and it feeds this page directly.
       {
         "@type": "Question",
         "name": "Do we own the AI system you build?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Completely — code, infrastructure, prompts, evaluation sets and documentation, with handover designed in from the start." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Completely: code, infrastructure, prompts, evaluation sets and documentation, with handover designed in from the start." }
       }
     ]
   }

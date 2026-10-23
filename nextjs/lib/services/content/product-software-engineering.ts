@@ -13,14 +13,14 @@ export const productSoftwareEngineering: ServiceContent = {
   eyebrow: "Capability",
 
   openingAnswer:
-    "Product & Software Engineering is how Pixorama turns an idea or a stalled roadmap into shipped, scalable software you own — MVPs, SaaS platforms, legacy modernisation and the engineering controls that keep velocity safe. It is for enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside the first fortnight.",
+    "Product & Software Engineering is how Pixorama turns an idea or a stalled roadmap into shipped, scalable software you own: MVPs, SaaS platforms, legacy modernisation and the engineering controls that keep velocity safe. It is for enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside the first fortnight.",
 
-  // Three named, already-published engagements. No numbers yet — see caseStudy.
+  // Three named, already-published engagements. No numbers yet; see caseStudy.
   proofLine: confirmed(
     "Platforms shipped for BVIVE, Gateways and New Zealand Gateway.",
   ),
   proofLineFallback:
-    "Senior-led from day one, with no ramp-up tax — and full ownership of the code at the end.",
+    "Senior-led from day one, with no ramp-up tax, and full ownership of the code at the end.",
 
   included: [
     {
@@ -35,7 +35,7 @@ export const productSoftwareEngineering: ServiceContent = {
     {
       label: "Legacy modernisation",
       detail:
-        "Incremental replacement with a working system at every step — not a big-bang rewrite.",
+        "Incremental replacement with a working system at every step, not a big-bang rewrite.",
     },
     {
       label: "API & integration work",
@@ -71,7 +71,7 @@ export const productSoftwareEngineering: ServiceContent = {
     {
       model: "Outcome-based project",
       fits:
-        "A defined build — an MVP, a platform, a modernisation phase. Milestone-based commercials.",
+        "A defined build: an MVP, a platform, a modernisation phase. Milestone-based commercials.",
     },
     {
       model: "Dedicated squad",
@@ -111,7 +111,7 @@ export const productSoftwareEngineering: ServiceContent = {
   ),
 
   caseStudy: pending(
-    "Named case study with numbers. Candidates: New Zealand Gateway (education platform), Gateways (platform support and development), BVIVE (payment recovery platform). At least one needs permission to name with a real metric — time to launch, throughput, cost per transaction, or incident reduction.",
+    "Named case study with numbers. Candidates: New Zealand Gateway (education platform), Gateways (platform support and development), BVIVE (payment recovery platform). At least one needs permission to name with a real metric: time to launch, throughput, cost per transaction, or incident reduction.",
   ),
   namedExpert: pending(
     'Named engineers with credentials. The entire pitch is "senior-only teams, outcomes not hours" and no engineer is named anywhere on the site. This is the highest-value unfilled slot across all five pages.',
@@ -153,7 +153,7 @@ export const productSoftwareEngineering: ServiceContent = {
   ],
   notForWho: [
     "Teams wanting hourly junior capacity billed by the seat",
-    "Anyone wanting a fixed price for a scope that has not been defined — we would scope it first",
+    "Anyone wanting a fixed price for a scope that has not been defined; we would scope it first",
     "Teams wanting a permanent outsourced black box; handover is designed in, not optional",
   ],
 
@@ -172,7 +172,7 @@ export const productSoftwareEngineering: ServiceContent = {
     },
     {
       q: "Can you modernise a legacy system without stopping delivery?",
-      a: "That is the default approach — incremental replacement with a working system at every step, rather than a big-bang rewrite.",
+      a: "That is the default approach: incremental replacement with a working system at every step, rather than a big-bang rewrite.",
     },
     {
       q: "Where is Pixorama based, and do you work remotely?",
@@ -211,11 +211,11 @@ export const productSoftwareEngineering: ServiceContent = {
     volumePerMonth: 720,
     market: "US",
     blockedOn:
-      "Gate 2. Pick one industry once the client confirms which sectors they want leads for — do not build all three.",
+      "Gate 2. Pick one industry once the client confirms which sectors they want leads for. Do not build all three.",
   },
 
   internalNotes: [
-    "This page is the hub of the cluster — link it from all four others.",
+    "This page is the hub of the cluster. Link it from all four others.",
     '"product engineering services" is 320/mo but navigational intent, so it is a weak target. The long-term home is "custom software development company" (2,900/mo), a head term better earned later than claimed now.',
   ],
 };

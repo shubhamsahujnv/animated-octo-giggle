@@ -11,13 +11,13 @@ export const mobileAppDevelopment: ServiceContent = {
   eyebrow: "Capability",
 
   openingAnswer:
-    "Mobile App Development is how Pixorama takes a mobile product from written specification to a signed build in both app stores — native in Swift and Kotlin, or cross-platform in React Native or Flutter. It is for enterprises and funded startups shipping to iOS and Android. Every app ships offline-first, with proper tablet layouts.",
+    "Mobile App Development is how Pixorama takes a mobile product from written specification to a signed build in both app stores: native in Swift and Kotlin, or cross-platform in React Native or Flutter. It is for enterprises and funded startups shipping to iOS and Android. Every app ships offline-first, with proper tablet layouts.",
 
   proofLine: pending(
     "No existing client reference covers mobile. The five clients named on the site are platform, education, web and SEO work. Confirm whether there is a shipped mobile app Pixorama can name, or app store listings it can point to. If not, this page should lead on the engineering specifics, which are concrete and differentiating, rather than on a proof claim it cannot support.",
   ),
   proofLineFallback:
-    "From written specification to a signed build in both stores — laid out properly for tablets rather than stretched.",
+    "From written specification to a signed build in both stores, laid out properly for tablets rather than stretched.",
 
   included: [
     { label: "Native builds", detail: "Swift for iOS, Kotlin for Android, where platform depth matters." },
@@ -48,7 +48,7 @@ export const mobileAppDevelopment: ServiceContent = {
 
   timelines: [
     "Production increment inside the first fortnight, senior-led from day one.",
-    "Store review time sits with Apple and Google — we plan around it rather than promise through it.",
+    "Store review time sits with Apple and Google, so we plan around it rather than promise through it.",
   ],
 
   engagementModels: [
@@ -118,7 +118,7 @@ export const mobileAppDevelopment: ServiceContent = {
     },
     {
       q: "Should we go native or cross-platform?",
-      a: "Native when you need platform depth — heavy device APIs or demanding performance. Cross-platform when the feature set is shared and one codebase is the faster, cheaper route. We make the recommendation against your actual feature list, not a house preference.",
+      a: "Native when you need platform depth: heavy device APIs or demanding performance. Cross-platform when the feature set is shared and one codebase is the faster, cheaper route. We make the recommendation against your actual feature list, not a house preference.",
     },
     {
       q: "Can you take over an existing app?",
@@ -126,7 +126,7 @@ export const mobileAppDevelopment: ServiceContent = {
     },
     {
       q: "Do you handle App Store and Play Store submission?",
-      a: "Yes — signed builds, store listings, review handling and release management. Store review times themselves sit with Apple and Google.",
+      a: "Yes: signed builds, store listings, review handling and release management. Store review times themselves sit with Apple and Google.",
     },
     {
       q: "Do we own the code and signing assets?",
@@ -156,10 +156,10 @@ export const mobileAppDevelopment: ServiceContent = {
     phrase: "mobile app development company",
     volumePerMonth: 3600,
     market: "US",
-    blockedOn: "Gate 2 — head term, long horizon. The slug already sits inside the phrase.",
+    blockedOn: "Gate 2, head term, long horizon. The slug already sits inside the phrase.",
   },
 
   internalNotes: [
-    "The cost post is the strongest asset for this page — link it from the pricing section too, since it is the question this buyer arrives with and Pixorama has already answered it in public.",
+    "The cost post is the strongest asset for this page. Link it from the pricing section too, since it is the question this buyer arrives with and Pixorama has already answered it in public.",
   ],
 };

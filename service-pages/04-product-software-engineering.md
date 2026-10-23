@@ -18,7 +18,7 @@
 ### Opening answer (52 words)
 
 Product & Software Engineering is how Pixorama turns an idea or a stalled roadmap into shipped,
-scalable software you own — MVPs, SaaS platforms, legacy modernisation and the engineering controls
+scalable software you own: MVPs, SaaS platforms, legacy modernisation and the engineering controls
 that keep velocity safe. It is for enterprises and funded startups in regulated sectors. Pixorama
 ships a production increment inside the first fortnight.
 
@@ -26,7 +26,7 @@ ships a production increment inside the first fortnight.
 
 **FILLED:** *Platforms shipped for BVIVE, Gateways and New Zealand Gateway.*
 
-Three named, already-published engagements. No numbers yet — see the case study below.
+Three named, already-published engagements. No numbers yet, see the case study below.
 
 ### Primary CTA
 
@@ -40,7 +40,7 @@ Three named, already-published engagements. No numbers yet — see the case stud
 |---|---|
 | **MVP builds** | A narrow, real product in front of real users, built to be extended rather than thrown away |
 | **SaaS platforms** | Multi-tenancy, billing, roles and permissions, admin tooling |
-| **Legacy modernisation** | Incremental replacement with a working system at every step — not a big-bang rewrite |
+| **Legacy modernisation** | Incremental replacement with a working system at every step, not a big-bang rewrite |
 | **API & integration work** | The integration surface that usually decides whether a platform ships on time |
 | **Engineering controls** | Testing, CI, review and release practice that keep speed from breaking things |
 | **Security by design** | Zero-trust architecture and a hardened delivery pipeline, with SOC 2 and ISO 27001 *readiness* as a by-product |
@@ -57,7 +57,7 @@ Three named, already-published engagements. No numbers yet — see the case stud
 
 | Model | Fits when |
 |---|---|
-| **Outcome-based project** | A defined build — an MVP, a platform, a modernisation phase. Milestone-based commercials. |
+| **Outcome-based project** | A defined build: an MVP, a platform, a modernisation phase. Milestone-based commercials. |
 | **Dedicated squad** | A continuous roadmap needing embedded senior capacity |
 | **Specialist augmentation** | One critical capability missing from an otherwise capable team |
 | **Advisory & architecture** | A review, a target architecture, or a second opinion before committing budget |
@@ -66,7 +66,7 @@ Three named, already-published engagements. No numbers yet — see the case stud
 
 ## Proof
 
-### Filled — already published by Pixorama
+### Filled: already published by Pixorama
 
 | Client | Work |
 |---|---|
@@ -74,9 +74,9 @@ Three named, already-published engagements. No numbers yet — see the case stud
 | **Gateways** | Platform support and development |
 | **New Zealand Gateway** | Education platform |
 
-### Still pending — needs Pixorama
+### Still pending, needs Pixorama
 
-`[CONFIRM: at least one metric against one of the three above — time to launch, throughput, cost per
+`[CONFIRM: at least one metric against one of the three above, time to launch, throughput, cost per
 transaction, or incident reduction. The names are public; the numbers are not.]`
 
 `[CONFIRM: named engineers with credentials. The entire pitch is "senior-only teams, outcomes not
@@ -93,12 +93,12 @@ all five pages.]`
 
 ## What drives cost
 
-- **Scope and stage** — a first MVP versus a platform replacing a system in production
-- **Integration surface** — how many existing systems must be read from and written to
-- **Compliance load** — the controls and evidence your sector requires
-- **Starting state** — a clean build, or a legacy estate to work around safely
-- **Model** — fixed-scope project with milestone commercials, versus an embedded squad
-- **Handover depth** — how much documentation and enablement your own team needs
+- **Scope and stage**, a first MVP versus a platform replacing a system in production
+- **Integration surface**, how many existing systems must be read from and written to
+- **Compliance load**, the controls and evidence your sector requires
+- **Starting state**, a clean build, or a legacy estate to work around safely
+- **Model**, fixed-scope project with milestone commercials, versus an embedded squad
+- **Handover depth**, how much documentation and enablement your own team needs
 
 `[CONFIRM: starting price or typical engagement band]`
 
@@ -120,7 +120,7 @@ all five pages.]`
 ## Who it's not for
 
 - Teams wanting hourly junior capacity billed by the seat
-- Anyone wanting a fixed price for a scope that has not been defined — we would scope it first
+- Anyone wanting a fixed price for a scope that has not been defined; we would scope it first
 - Teams wanting a permanent outsourced black box; handover is designed in, not optional
 
 ---
@@ -143,7 +143,7 @@ eCommerce, logistics and mobility, SaaS and technology, public sector, energy an
 education. Our discovery process gets us productive in a new domain quickly.
 
 **Can you modernise a legacy system without stopping delivery?**
-That is the default approach — incremental replacement with a working system at every step, rather
+That is the default approach: incremental replacement with a working system at every step, rather
 than a big-bang rewrite. See
 [Legacy application modernization](/blog/legacy-application-modernization).
 
@@ -156,7 +156,7 @@ than a body shop.
 
 ## Internal links
 
-This page is the hub of the cluster — link it from all four others.
+This page is the hub of the cluster: link it from all four others.
 
 - **Related services:** [Cloud & Platform Engineering](/services/cloud-engineering-services) ·
   [AI & Data Intelligence](/services/ai-development-services) ·
@@ -167,7 +167,7 @@ This page is the hub of the cluster — link it from all four others.
 
 ## Closing CTA
 
-**Let's talk** — form below.
+**Let's talk**, form below.
 
 ### Form
 Name · Work email · Company · What you need · "How did you hear about us?"
@@ -242,7 +242,7 @@ Hidden: `page_url`, `referrer`, `utm_*`, `service=product-software-engineering`
       {
         "@type": "Question",
         "name": "Can you modernise a legacy system without stopping delivery?",
-        "acceptedAnswer": { "@type": "Answer", "text": "That is the default approach — incremental replacement with a working system at every step, rather than a big-bang rewrite." }
+        "acceptedAnswer": { "@type": "Answer", "text": "That is the default approach: incremental replacement with a working system at every step, rather than a big-bang rewrite." }
       },
       {
         "@type": "Question",

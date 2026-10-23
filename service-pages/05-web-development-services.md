@@ -19,15 +19,14 @@
 
 ### Opening answer (49 words)
 
-Digital Growth & Web is how Pixorama builds and grows the web surface of your business — marketing
+Digital Growth & Web is how Pixorama builds and grows the web surface of your business, marketing
 sites, product catalogues, commerce front-ends and the analytics and search work that makes them
 earn enquiries. It is for enterprises and funded startups that need a site to perform, not just
 launch.
 
 ### Proof line
 
-**FILLED:** *Website and product catalogue for Wingwaves, and website and SEO for Amelia Downie —
-in her own words below.*
+**FILLED:** *Website and product catalogue for Wingwaves, and website and SEO for Amelia Downie, in her own words below.*
 
 **This page has the best proof of the five**, and it is now live in the components: two named
 clients plus the only published testimonial Pixorama has.
@@ -42,7 +41,7 @@ clients plus the only published testimonial Pixorama has.
 
 | | |
 |---|---|
-| **Marketing sites** | Fast, accessible, measurable — built on a stack your team can edit |
+| **Marketing sites** | Fast, accessible, measurable, built on a stack your team can edit |
 | **Product catalogues** | Structured catalogue data, search and filtering that works at scale |
 | **Commerce front-ends** | Storefront build and integration with your commerce and payment stack |
 | **Technical SEO** | Crawlability, indexation, canonicals, sitemaps, structured data, Core Web Vitals |
@@ -51,7 +50,7 @@ clients plus the only published testimonial Pixorama has.
 | **Analytics & attribution** | GA4 set up properly, conversion events, source capture, AI-referral channels |
 | **Handover** | Full ownership of the code and the content, documented |
 
-> **Internal note — credibility prerequisite.** Pixorama's own site currently has three indexable
+> **Internal note: credibility prerequisite.** Pixorama's own site currently has three indexable
 > URLs serving homepage content under a homepage canonical, five service pages missing entirely, a
 > 404 in the nav, and a credibility counter rendering `0`. Selling technical SEO and analytics from
 > that position is a weak hand. Fix the site before this page ships; the audit in
@@ -60,7 +59,7 @@ clients plus the only published testimonial Pixorama has.
 ### Timelines
 
 - **Production increment inside the first fortnight**, senior-led from day one.
-- Search and growth work compounds over months, not weeks — say so plainly on the page.
+- Search and growth work compounds over months, not weeks: say so plainly on the page.
 - `[CONFIRM: typical duration for a marketing site build, and for a catalogue build]`
 
 ### Engagement models
@@ -73,7 +72,7 @@ audit of an existing site.
 
 ## Proof
 
-### Filled — already published by Pixorama
+### Filled: already published by Pixorama
 
 | Client | Work |
 |---|---|
@@ -86,33 +85,33 @@ audit of an existing site.
 > knowledgeable, and trustworthy throughout the process. I would confidently recommend their
 > services to anyone looking to improve their online presence.
 >
-> — **Amelia Downie**, Land Healing Practitioner · ameliadownie.com.au
+> **Amelia Downie**, Land Healing Practitioner · ameliadownie.com.au
 
-### Still pending — needs Pixorama
+### Still pending: needs Pixorama
 
-`[CONFIRM: a metric for either engagement — catalogue size, load time improvement, rankings, traffic
+`[CONFIRM: a metric for either engagement, catalogue size, load time improvement, rankings, traffic
 or enquiry change. The names and the quote are public; no number is.]`
 
 **Supporting reading:**
-- [Best SEO agencies Australia](/blog/best-seo-agencies-australia) — `[REVIEW: this is a
+- [Best SEO agencies Australia](/blog/best-seo-agencies-australia), `[REVIEW: this is a
   self-nominating listicle targeting a zero-volume phrase. Per the strategy, stop expanding this
   format. Either repoint it at a question buyers actually ask, or leave it unlinked from this page.]`
 - [How to choose a software development company](/blog/how-to-choose-software-development-company)
 
 > This page has the thinnest supporting blog cluster, because most of the existing web/SEO content is
 > in the listicle format the strategy advises against. A genuine gap worth filling with buyer
-> questions — site migration without losing traffic, catalogue SEO at scale, what AEO changes.
+> questions: site migration without losing traffic, catalogue SEO at scale, what AEO changes.
 
 ---
 
 ## What drives cost
 
 - **Page and template count**, and how much is bespoke versus systematised
-- **Catalogue size and data quality** — clean structured product data, or data work first
-- **Commerce integration** — which platform, and how many systems it must talk to
-- **Content** — written and ready, or produced as part of the engagement
-- **Migration** — replacing a live site carries redirect and indexation work a new build does not
-- **Ongoing growth work** — a build, versus a build plus a continuing growth engagement
+- **Catalogue size and data quality**: clean structured product data, or data work first
+- **Commerce integration**, which platform, and how many systems it must talk to
+- **Content**, written and ready, or produced as part of the engagement
+- **Migration**, replacing a live site carries redirect and indexation work a new build does not
+- **Ongoing growth work**, a build, versus a build plus a continuing growth engagement
 
 `[CONFIRM: starting price or typical band]`
 
@@ -132,7 +131,7 @@ or enquiry change. The names and the quote are public; no number is.]`
 ## Who it's not for
 
 - Anyone wanting a template site at template prices
-- Anyone wanting ranking guarantees — nobody can give them honestly
+- Anyone wanting ranking guarantees; nobody can give them honestly
 - Teams wanting volume content production disconnected from a service they actually sell
 
 ---
@@ -140,7 +139,7 @@ or enquiry change. The names and the quote are public; no number is.]`
 ## FAQ
 
 **Do you do SEO as well as build the site?**
-Yes — technical SEO, content structure and analytics are part of the same engagement. A site that
+Yes. Technical SEO, content structure and analytics are part of the same engagement. A site that
 launches and cannot be found has not finished.
 
 **What is AI answer readiness, and do we need it?**
@@ -158,7 +157,7 @@ There is no lock-in by obscurity.
 
 **How long before we see results?**
 Build work ships in the first fortnight and continues in short cycles. Search results compound over
-months — anyone promising rankings on a fixed date is guessing.
+months. Anyone promising rankings on a fixed date is guessing.
 
 ---
 
@@ -172,7 +171,7 @@ months — anyone promising rankings on a fixed date is guessing.
 
 ## Closing CTA
 
-**Let's talk** — form below.
+**Let's talk**, form below.
 
 ### Form
 Name · Work email · Company · What you need · "How did you hear about us?"
@@ -232,7 +231,7 @@ Hidden: `page_url`, `referrer`, `utm_*`, `service=web-development-services`
       {
         "@type": "Question",
         "name": "Do you do SEO as well as build the site?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes — technical SEO, content structure and analytics are part of the same engagement. A site that launches and cannot be found has not finished." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Technical SEO, content structure and analytics are part of the same engagement. A site that launches and cannot be found has not finished." }
       },
       {
         "@type": "Question",

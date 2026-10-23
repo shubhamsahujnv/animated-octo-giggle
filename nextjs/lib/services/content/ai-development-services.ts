@@ -17,7 +17,7 @@ export const aiDevelopmentServices: ServiceContent = {
     "One-line proof with a number. Candidate: BVIVE (payment recovery platform), a financial services use case. Needs permission to name and one real metric.",
   ),
   proofLineFallback:
-    "We start from the outcome and the data, not the demo — so what ships is safe and measurable.",
+    "We start from the outcome and the data, not the demo, so what ships is safe and measurable.",
 
   included: [
     {
@@ -36,7 +36,7 @@ export const aiDevelopmentServices: ServiceContent = {
     },
     {
       label: "Machine-learning models",
-      detail: "Where a model beats a prompt — forecasting, scoring, classification.",
+      detail: "Where a model beats a prompt: forecasting, scoring, classification.",
     },
     {
       label: "Guardrails",
@@ -46,7 +46,7 @@ export const aiDevelopmentServices: ServiceContent = {
     {
       label: "Evaluation",
       detail:
-        "An evaluation set before launch, and regression evaluation on every change — not vibes.",
+        "An evaluation set before launch, and regression evaluation on every change. Not vibes.",
     },
     {
       label: "Monitoring",
@@ -59,7 +59,7 @@ export const aiDevelopmentServices: ServiceContent = {
   ],
 
   timelines: [
-    "Production increment inside the first fortnight — typically a narrow, evaluable slice rather than a broad demo.",
+    "Production increment inside the first fortnight, typically a narrow, evaluable slice rather than a broad demo.",
     "Then short cycles, with the evaluation set growing alongside the feature.",
   ],
 
@@ -76,12 +76,12 @@ export const aiDevelopmentServices: ServiceContent = {
     {
       model: "Advisory & architecture",
       fits:
-        "The common entry point here — an AI readiness and feasibility review before committing budget.",
+        "The common entry point here: an AI readiness and feasibility review before committing budget.",
     },
   ],
 
   // Deliberately empty. BVIVE is published as a "payment recovery platform",
-  // not as an AI engagement — listing it here would imply an AI build that the
+  // not as an AI engagement. Listing it here would imply an AI build that the
   // public record does not support.
   clientRoster: [],
 
@@ -90,10 +90,10 @@ export const aiDevelopmentServices: ServiceContent = {
   ),
 
   caseStudy: pending(
-    "Named case study with numbers. Candidate: BVIVE, payment recovery platform. Needs permission to name plus a real metric — recovery rate, volume processed, or manual review reduction.",
+    "Named case study with numbers. Candidate: BVIVE, payment recovery platform. Needs permission to name plus a real metric: recovery rate, volume processed, or manual review reduction.",
   ),
   namedExpert: pending(
-    "Named AI/ML engineer with credentials. Highest-value proof slot on the site for this service — regulated-sector AI buyers buy the people.",
+    "Named AI/ML engineer with credentials. Highest-value proof slot on the site for this service: regulated-sector AI buyers buy the people.",
   ),
 
   costDrivers: [
@@ -133,7 +133,7 @@ export const aiDevelopmentServices: ServiceContent = {
   ],
   notForWho: [
     "Teams wanting a demo or a proof-of-concept with no route to production",
-    "Teams with no usable data yet — we would be doing data engineering, and would say so",
+    "Teams with no usable data yet; we would be doing data engineering, and would say so",
     "Anyone wanting AI added because it is expected, with no outcome attached",
   ],
 
@@ -143,7 +143,7 @@ export const aiDevelopmentServices: ServiceContent = {
       a: "Yes. We build production-grade AI on top of your data: LLM assistants and copilots, retrieval-augmented generation, agents and machine-learning models, all with guardrails, evaluation and monitoring. We start from the outcome and the data, not the demo, so what ships is safe and measurable.",
     },
     {
-      q: "RAG or fine-tuning — which do we need?",
+      q: "RAG or fine-tuning: which do we need?",
       a: "Usually RAG first. It grounds answers in your current content, cites sources, and updates when your data updates. Fine-tuning earns its place for form and behaviour, rarely for knowledge.",
     },
     {
@@ -152,7 +152,7 @@ export const aiDevelopmentServices: ServiceContent = {
     },
     {
       q: "Do we own the AI system you build?",
-      a: "Completely — code, infrastructure, prompts, evaluation sets and documentation, with handover designed in from the start.",
+      a: "Completely: code, infrastructure, prompts, evaluation sets and documentation, with handover designed in from the start.",
     },
   ],
 
@@ -181,14 +181,14 @@ export const aiDevelopmentServices: ServiceContent = {
     volumePerMonth: 70,
     market: "US",
     blockedOn:
-      "Gate 2, and Gate 4 at 8 exact-match pages. Cleanest Gate 3 pass found — all ten results are vendor service pages.",
+      "Gate 2, and Gate 4 at 8 exact-match pages. Cleanest Gate 3 pass found: all ten results are vendor service pages.",
   },
 
   internalNotes: [
     "Strongest existing content cluster on the site. These posts are the realistic near-term source of AI-assistant citations, which the service page itself will not earn for several quarters.",
     'An unanswered FAQ belongs here once confirmed: whether client data is used to train a provider model. It is the first question every regulated buyer asks and the site answers it nowhere.',
     'Recommended addition: an interactive AI readiness assessment, entry point on this page. "ai readiness assessment" is 720/mo US and failed Gate 3 as a service page precisely because the intent wants a tool.',
-    'Slug decision, now verified against a live SERP (23 Oct 2026): "ai development services" is 2,900/mo US, SD 37, commercial intent, and its top 10 is vendor service pages — a clean Gate 3 pass. It beats "ai development company" (also 2,900/mo but SD 48) and dwarfs "ai data intelligence" (30/mo). Applied as the slug; the nav keeps the brand label "AI & Data Intelligence".',
+    'Slug decision, now verified against a live SERP (23 Oct 2026): "ai development services" is 2,900/mo US, SD 37, commercial intent, and its top 10 is vendor service pages, a clean Gate 3 pass. It beats "ai development company" (also 2,900/mo but SD 48) and dwarfs "ai data intelligence" (30/mo). Applied as the slug; the nav keeps the brand label "AI & Data Intelligence".',
     'RAG is a sub-service, not a separate page yet. Per the strategy\'s fold-in rule it belongs as an H2 section on this page now, and graduates to its own page only if rag-development-services clears the gates later.',
   ],
 };
