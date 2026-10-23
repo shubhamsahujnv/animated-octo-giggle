@@ -1,0 +1,173 @@
+import { type ServiceContent, confirmed, pending } from "../types";
+
+export const cloudPlatformEngineering: ServiceContent = {
+  slug: "cloud-platform-engineering",
+  navLabel: "Cloud & Platform Engineering",
+  title: "Cloud & Platform Engineering | Senior-Led | Pixorama",
+  metaDescription:
+    "Cloud platforms designed, built and operated by senior engineers. Landing zones, Kubernetes, CI/CD and IaC — production increment in the first fortnight.",
+  h1: "Cloud & Platform Engineering: Built to Be Handed Back to You",
+  eyebrow: "Capability",
+
+  openingAnswer:
+    "Cloud & Platform Engineering is how Pixorama designs, builds and operates the cloud foundations your product runs on — landing zones, Kubernetes platforms, CI/CD and infrastructure as code. It is for enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside the first fortnight, and you own the code, infrastructure and documentation outright.",
+
+  proofLine: pending(
+    'One-line proof with a number — e.g. "Gateways: platform support and development since {year}, {n} environments under management." Needs client permission and a real figure.',
+  ),
+  proofLineFallback: "Senior-led from day one, with no ramp-up tax.",
+
+  included: [
+    {
+      label: "Landing zones & foundations",
+      detail:
+        "Multi-account or multi-subscription structure, network topology, identity, baseline guardrails.",
+    },
+    {
+      label: "Kubernetes & runtime platforms",
+      detail: "Cluster design, workload onboarding, autoscaling, service networking.",
+    },
+    {
+      label: "CI/CD & delivery",
+      detail:
+        "Pipeline design, environment promotion, release automation, a hardened delivery pipeline.",
+    },
+    {
+      label: "Infrastructure as code",
+      detail: "Everything reproducible from source — no hand-built environments.",
+    },
+    {
+      label: "Observability & cost",
+      detail:
+        "Metrics, logs, traces, alerting and cost visibility built in rather than retrofitted.",
+    },
+    {
+      label: "Security & compliance posture",
+      detail:
+        "Zero-trust architecture, automated evidence collection, and SOC 2 and ISO 27001 readiness as a continuous by-product of how we build.",
+    },
+    {
+      label: "Migration",
+      detail: "On-premise to cloud, or cloud to cloud, with a rollback path at every step.",
+    },
+    {
+      label: "Handover",
+      detail:
+        "Code, infrastructure and documentation, with handover designed in from the start.",
+    },
+  ],
+
+  timelines: [
+    "Production increment inside the first fortnight. Senior-led from day one, no ramp-up tax.",
+    "Then short, continuous delivery cycles with the engineering controls that keep velocity from breaking things.",
+  ],
+
+  engagementModels: [
+    {
+      model: "Outcome-based project",
+      fits:
+        "Scope is clear — a migration, a landing zone, a platform build. Milestone-based commercials.",
+    },
+    {
+      model: "Dedicated squad",
+      fits: "Platform work is continuous and embedded in your roadmap.",
+    },
+    {
+      model: "Specialist augmentation",
+      fits: "You need one critical capability your team lacks.",
+    },
+    {
+      model: "Advisory & architecture",
+      fits:
+        "You need a review, a target architecture, or a second opinion before committing.",
+    },
+  ],
+
+  caseStudy: pending(
+    "Named case study with numbers. Candidate: Gateways (platform support and development). Needs permission to name plus at least one real metric — cost reduction, deployment frequency, incident reduction or uptime.",
+  ),
+  namedExpert: pending(
+    'Named engineer with credentials. The "senior-only" claim is currently unevidenced anywhere on the site, and for regulated-sector buyers this is the gap that costs deals.',
+  ),
+
+  costDrivers: [
+    { label: "Scope", detail: "A single landing zone versus a multi-region platform." },
+    { label: "Estate size", detail: "How many workloads, accounts and environments move." },
+    { label: "Compliance load", detail: "The evidence and controls your sector requires." },
+    {
+      label: "Starting state",
+      detail: "Reproducible infrastructure already, or hand-built environments.",
+    },
+    {
+      label: "Model",
+      detail: "Fixed-scope project with milestone commercials, versus an embedded squad.",
+    },
+  ],
+  priceBand: pending(
+    "Starting price or typical engagement band. A range beats silence — the strategy accepts a range, a starting price, or what drives cost, and the first two convert better.",
+  ),
+
+  forWho: [
+    "Enterprises and funded startups in financial services, healthcare and life sciences, logistics and mobility, public sector, energy and utilities",
+    "Teams whose cloud spend is rising faster than their delivery speed",
+    "Teams who need SOC 2 or ISO 27001 readiness without stalling the roadmap",
+    "Teams who want the platform handed back, running, to their own engineers",
+  ],
+  notForWho: [
+    "Single-server or static-site hosting — the engagement model is heavier than the need",
+    "Teams wanting a body shop staffed by junior engineers billed by the hour",
+    "Teams wanting a platform run as a permanent black box; handover is designed in, not optional",
+  ],
+
+  faq: [
+    {
+      q: "How do you keep software secure and compliant?",
+      a: "Security is engineered in, not bolted on. We use zero-trust architecture, automate evidence collection, and harden the delivery pipeline so SOC 2 and ISO 27001 readiness becomes continuous rather than an end-of-cycle scramble.",
+    },
+    {
+      q: "How quickly can you start delivering?",
+      a: "Engagements are senior-led from day one with no ramp-up tax. We ship a production increment inside the first fortnight, then keep shipping in short cycles.",
+    },
+    {
+      q: "Do we own the code and the infrastructure?",
+      a: "Completely. You get full ownership of the code, infrastructure and documentation, with handover designed in from the start. There is no lock-in by obscurity.",
+    },
+    {
+      q: "Can you take over a platform someone else built?",
+      a: "Yes. Advisory and architecture reviews exist for exactly this. We assess what is there, agree a target architecture, and work to it incrementally rather than demanding a rewrite.",
+    },
+  ],
+
+  relatedServices: ["product-software-engineering", "ai-data-intelligence"],
+  blogLinks: [
+    {
+      href: "/blog/cloud-cost-is-an-architecture-problem",
+      label: "Cloud cost is an architecture problem",
+    },
+    {
+      href: "/blog/cloud-migration-strategy-on-premise-to-cloud",
+      label: "Cloud migration strategy: on-premise to cloud",
+    },
+    {
+      href: "/blog/zero-trust-without-stopping-delivery",
+      label: "Zero trust without stopping delivery",
+    },
+  ],
+
+  lastUpdated: "2026-10-23",
+
+  serviceType: "Cloud platform engineering",
+  audienceType: "Enterprises and funded startups in regulated sectors",
+
+  targetKeyword: {
+    phrase: "cloud cost optimization services",
+    volumePerMonth: 140,
+    market: "US",
+    blockedOn: "Gate 2 only; Gate 4 already borderline-passing at 3 exact-match pages.",
+  },
+
+  internalNotes: [
+    'Slug alternative worth deciding before launch: "cloud engineering services" is 110/mo with commercial intent, against 20/mo for "cloud platform engineering services" whose SERP is Microsoft/Google/AWS definitions (a Gate 3 fail).',
+    'An unanswered FAQ belongs here once confirmed: which cloud providers, and any partner status. Do not claim a partnership that does not exist.',
+  ],
+};

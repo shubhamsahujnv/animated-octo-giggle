@@ -50,10 +50,12 @@ Per Section 5b: **do not lower the gates to fill a list.**
 | `/services` | 200 | *Pixorama · We build AI-powered software…* | `https://pixoramagroup.com` | Serves homepage; cannot rank |
 | `/about` | 200 | same as homepage | `https://pixoramagroup.com` | Serves homepage; cannot rank |
 | `/contact` | 200 | same as homepage | `https://pixoramagroup.com` | Serves homepage; cannot rank |
-| `/process` | 404 | — | — | Linked in nav/footer |
+| `/process` | 404 | — | — | **Not linked anywhere** — nav points to `/#method`. Harmless. |
 
-Three URLs are indexable (`robots: index, follow`) but canonicalised away. This is the single
-biggest structural defect on the site.
+Three URLs are indexable (`robots: index, follow`) but canonicalised away, and **none of them is
+linked from the nav or footer** — the nav uses homepage anchors (`/#capabilities`, `/#method`,
+`/#company`, `/#contact`). They are orphan routes. This is the single biggest structural defect on
+the site: duplicate indexable content, and no real URL for any service.
 
 ### Visibility
 
@@ -257,7 +259,7 @@ Handed Back to You". Not "We build AI-powered software that scales your business
 1. **Give `/services`, `/about`, `/contact` their own content, titles and self-referencing canonicals**,
    or 301 them to the homepage. Right now they are indexable duplicates pointing elsewhere.
 2. **Add every real page to `sitemap.xml`** — `/services`, `/about`, `/contact` are all missing.
-3. **Fix or remove the `/process` nav and footer links** (404).
+3. **`/process` returns 404 but is not linked** — nav and footer use `/#method`. No action needed; noted so it is not mistaken for a broken link.
 4. **Fix the "0 continents of active delivery" counter.**
 5. **Unique title and meta description per page.** Four URLs currently share one title.
 6. `robots.txt` is already correctly open to every AI crawler — nothing to do, and it is an asset.

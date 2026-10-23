@@ -36,13 +36,18 @@ held certification. The drafts keep that wording exactly. Do not upgrade it to "
 From the audit — these break the pages regardless of copy quality:
 
 1. `/services`, `/about` and `/contact` currently serve homepage content and canonicalise to
-   `https://pixoramagroup.com`. Each new page needs its **own self-referencing canonical**.
+   `https://pixoramagroup.com`, and are linked from nowhere (nav uses homepage anchors). Either
+   build them out or remove them. Each new page needs its **own self-referencing canonical**.
+7. **Point the footer's "Capabilities" column at the new pages.** All five entries currently link to
+   `#capabilities`. They are the natural entry points, and today they are five links to one anchor.
+8. **Point the nav's "Services" item at `/services`** once that page lists the five, instead of
+   `/#capabilities`.
 2. Add all five pages to `sitemap.xml`.
 3. Move the five `Service` entries out of the homepage `OfferCatalog` onto the pages they describe.
    Leave `Organization` and `WebSite` on the homepage.
 4. Split the homepage's 9-question `FAQPage` across these pages by topic. A question should live on
    one page only — duplicate `FAQPage` markup across pages competes with itself.
-5. Fix or remove the `/process` nav and footer link (currently 404).
+5. `/process` returns 404 but is **not linked from anywhere** (nav uses `/#method`) — no fix needed, listed so it is not mistaken for a broken link.
 6. Fix the "Continents of active delivery" counter rendering a literal `0`.
 
 ## Shared components
