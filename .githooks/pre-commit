@@ -1,0 +1,4 @@
+#!/bin/sh
+# Em dash guardrail: refuse a commit whose staged content contains an em dash.
+# Enabled with: git config core.hooksPath .githooks
+exec python3 "$(git rev-parse --show-toplevel)/scripts/check_em_dash.py" --staged
