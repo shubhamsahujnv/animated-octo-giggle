@@ -91,6 +91,56 @@
   margin-top: 32px;
 }
 
+/* Proof — client roster (names + work, no numbers) */
+.svc__roster {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px 28px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.svc__roster-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line, rgba(128, 128, 128, 0.22));
+}
+
+.svc__roster-client {
+  font-weight: 700;
+}
+
+.svc__roster-work {
+  font-size: 0.9375rem;
+  opacity: 0.78;
+}
+
+.svc__testimonial {
+  margin: 36px 0 0;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--line, rgba(128, 128, 128, 0.22));
+  max-width: 68ch;
+}
+
+.svc__testimonial blockquote {
+  margin: 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--brand, #5b2be8);
+}
+
+.svc__testimonial figcaption {
+  margin-top: 14px;
+  font-size: 0.9375rem;
+}
+
+.svc__testimonial-site {
+  opacity: 0.7;
+}
+
 /* Proof */
 .svc__case {
   padding: 24px;

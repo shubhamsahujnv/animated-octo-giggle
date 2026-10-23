@@ -24,10 +24,9 @@ ships a production increment inside the first fortnight.
 
 ### Proof line
 
-`[CONFIRM: one-line proof with a number. Strongest candidates — New Zealand Gateway (education
-platform) or Gateways (platform support and development). Needs permission plus a real figure.]`
+**FILLED:** *Platforms shipped for BVIVE, Gateways and New Zealand Gateway.*
 
-Fallback: *Senior-led from day one, with no ramp-up tax — and full ownership of the code at the end.*
+Three named, already-published engagements. No numbers yet — see the case study below.
 
 ### Primary CTA
 
@@ -67,10 +66,18 @@ Fallback: *Senior-led from day one, with no ramp-up tax — and full ownership o
 
 ## Proof
 
-`[CONFIRM: named case study with numbers. Candidates — New Zealand Gateway (education platform),
-Gateways (platform support and development), BVIVE (payment recovery platform). At least one needs
-permission to name with a real metric: time to launch, throughput, cost per transaction, incident
-reduction.]`
+### Filled — already published by Pixorama
+
+| Client | Work |
+|---|---|
+| **BVIVE** | Payment recovery platform |
+| **Gateways** | Platform support and development |
+| **New Zealand Gateway** | Education platform |
+
+### Still pending — needs Pixorama
+
+`[CONFIRM: at least one metric against one of the three above — time to launch, throughput, cost per
+transaction, or incident reduction. The names are public; the numbers are not.]`
 
 `[CONFIRM: named engineers with credentials. The entire pitch is "senior-only teams, outcomes not
 hours" and no engineer is named anywhere on the site. This is the highest-value unfilled slot across

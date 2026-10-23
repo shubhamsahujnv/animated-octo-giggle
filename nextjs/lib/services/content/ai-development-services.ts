@@ -80,6 +80,15 @@ export const aiDevelopmentServices: ServiceContent = {
     },
   ],
 
+  // Deliberately empty. BVIVE is published as a "payment recovery platform",
+  // not as an AI engagement — listing it here would imply an AI build that the
+  // public record does not support.
+  clientRoster: [],
+
+  testimonial: pending(
+    "No published testimonial covers AI work.",
+  ),
+
   caseStudy: pending(
     "Named case study with numbers. Candidate: BVIVE, payment recovery platform. Needs permission to name plus a real metric — recovery rate, volume processed, or manual review reduction.",
   ),

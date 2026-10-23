@@ -84,6 +84,9 @@ team needs one mobile capability. **Advisory & architecture** for a review of an
 
 ## Proof
 
+> **Client roster is deliberately empty on this page** — none of the five publicly named clients is
+> a mobile engagement. This is the finding, not an oversight.
+
 `[CONFIRM: any named mobile engagement, app store listing, or client willing to be referenced.]`
 `[CONFIRM: named mobile engineer with credentials.]`
 

@@ -46,6 +46,28 @@ export interface CaseStudy {
   readonly quote?: { readonly text: string; readonly attribution: string };
 }
 
+/**
+ * A client Pixorama already names publicly, with the work described in its own
+ * words. This is weaker proof than a case study — no numbers — but it is real,
+ * already published, and costs nothing to confirm.
+ *
+ * `source` records where the claim is already live, so provenance stays
+ * traceable and nobody has to re-litigate whether it was approved.
+ */
+export interface RosterEntry {
+  readonly client: string;
+  readonly work: string;
+  readonly source: string;
+}
+
+export interface Testimonial {
+  readonly quote: string;
+  readonly attribution: string;
+  readonly role?: string;
+  readonly site?: string;
+  readonly source: string;
+}
+
 export interface NamedExpert {
   readonly name: string;
   readonly role: string;
@@ -116,6 +138,15 @@ export interface ServiceContent {
   readonly included: readonly LabelledItem[];
   readonly timelines: readonly string[];
   readonly engagementModels: readonly EngagementModel[];
+
+  /** Clients already named publicly, relevant to this service. Not a Slot:
+   *  these are published facts, each carrying its own `source`. Empty is
+   *  legitimate — it means no public engagement covers this service. */
+  readonly clientRoster: readonly RosterEntry[];
+
+  /** A real, already-published quote. Pending until one exists for this
+   *  service — never paraphrased or composed. */
+  readonly testimonial: Slot<Testimonial>;
 
   readonly caseStudy: Slot<CaseStudy>;
   readonly namedExpert: Slot<NamedExpert>;
@@ -221,6 +252,20 @@ export function assertServiceContent(c: ServiceContent): ServiceContent {
   }
 
   if (c.faq.length === 0) throw new Error(`${where}: needs at least one FAQ entry.`);
+
+  // A roster entry without provenance is an unsourced claim about a real third
+  // party, which is the thing this model exists to prevent.
+  for (const entry of c.clientRoster) {
+    if (!entry.client.trim() || !entry.work.trim() || !entry.source.trim()) {
+      throw new Error(
+        `${where}: every clientRoster entry needs a client, the work, and a source.`,
+      );
+    }
+  }
+
+  if (isConfirmed(c.testimonial) && !c.testimonial.value.source.trim()) {
+    throw new Error(`${where}: a confirmed testimonial must record where it is published.`);
+  }
 
   if (c.relatedServices.includes(c.slug)) {
     throw new Error(`${where}: relatedServices must not include itself.`);

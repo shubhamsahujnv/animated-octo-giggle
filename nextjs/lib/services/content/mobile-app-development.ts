@@ -64,6 +64,12 @@ export const mobileAppDevelopment: ServiceContent = {
     { model: "Advisory & architecture", fits: "A review of an existing app." },
   ],
 
+  // Empty, and this is the finding rather than an oversight: none of the five
+  // publicly named clients is a mobile engagement.
+  clientRoster: [],
+
+  testimonial: pending("No published testimonial covers mobile work."),
+
   caseStudy: pending(
     "Any named mobile engagement, app store listing, or client willing to be referenced. This page has the weakest proof position of the five.",
   ),

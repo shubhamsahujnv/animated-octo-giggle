@@ -1,5 +1,7 @@
 import { type ServiceContent, confirmed, pending } from "../types";
 
+import { HOMEPAGE_ROSTER, HOMEPAGE_LOGOWALL } from "./_sources";
+
 export const cloudEngineeringServices: ServiceContent = {
   slug: "cloud-engineering-services",
   keywordPhrase: "Cloud Engineering Services",
@@ -13,8 +15,10 @@ export const cloudEngineeringServices: ServiceContent = {
   openingAnswer:
     "Cloud Engineering Services from Pixorama design, build and operate the cloud foundations your product runs on — landing zones, Kubernetes platforms, CI/CD and infrastructure as code. They are for enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside the first fortnight, and you own the code, infrastructure and documentation outright.",
 
-  proofLine: pending(
-    'One-line proof with a number — e.g. "Gateways: platform support and development since {year}, {n} environments under management." Needs client permission and a real figure.',
+  // Factual and already public. Carries no number, because no approved number
+  // exists yet — see caseStudy, still pending.
+  proofLine: confirmed(
+    "Platform support and development for Gateways — live client work, not a capability claim.",
   ),
   proofLineFallback: "Senior-led from day one, with no ramp-up tax.",
 
@@ -83,6 +87,18 @@ export const cloudEngineeringServices: ServiceContent = {
         "You need a review, a target architecture, or a second opinion before committing.",
     },
   ],
+
+  clientRoster: [
+    {
+      client: "Gateways",
+      work: "Platform support and development",
+      source: HOMEPAGE_LOGOWALL,
+    },
+  ],
+
+  testimonial: pending(
+    "No published testimonial covers platform or cloud work. The only public quote is from Amelia Downie about website and SEO, which belongs on the web development page.",
+  ),
 
   caseStudy: pending(
     "Named case study with numbers. Candidate: Gateways (platform support and development). Needs permission to name plus at least one real metric — cost reduction, deployment frequency, incident reduction or uptime.",

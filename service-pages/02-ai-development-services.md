@@ -26,8 +26,9 @@ production, not a demo. Pixorama starts from the outcome and the data.
 
 ### Proof line
 
-`[CONFIRM: one-line proof with a number. Candidate — BVIVE (payment recovery platform), a financial
-services use case. Needs permission to name and one real metric.]`
+`[CONFIRM: no public engagement is identifiable as AI work. BVIVE is published as a "payment
+recovery platform", not as an AI build — listing it here would imply work the public record does not
+support. Confirm whether any client engagement involved AI, and whether it can be named.]`
 
 Fallback: *We start from the outcome and the data, not the demo — so what ships is safe and measurable.*
 
@@ -67,8 +68,11 @@ entry point here — an AI readiness and feasibility review before committing bu
 
 ## Proof
 
-`[CONFIRM: named case study with numbers. Candidate — BVIVE, payment recovery platform. Required:
-permission to name plus a real metric (recovery rate, volume processed, manual review reduction).]`
+> **Client roster is deliberately empty on this page.** None of the five publicly named clients is
+> published as an AI engagement.
+
+`[CONFIRM: any AI engagement that can be named, plus a real metric (recovery rate, volume processed,
+manual review reduction). If BVIVE did involve AI work, say so and it moves onto this page.]`
 
 `[CONFIRM: named AI/ML engineer with credentials. Highest-value proof slot on the site for this
 service — regulated-sector AI buyers buy the people.]`

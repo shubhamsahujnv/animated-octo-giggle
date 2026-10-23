@@ -26,14 +26,11 @@ launch.
 
 ### Proof line
 
-**This page has the best available proof of the five.** Two named clients already match it, and one
-has a published testimonial:
+**FILLED:** *Website and product catalogue for Wingwaves, and website and SEO for Amelia Downie —
+in her own words below.*
 
-`[CONFIRM: Wingwaves (website and product catalogue) and Amelia Downie (website and SEO — testimonial
-already on the homepage). Needs permission to reference on this page, plus one real metric each.]`
-
-> The Amelia Downie testimonial is already public on the homepage. Moving it onto this page, where it
-> is topically relevant, is the single cheapest proof improvement available across all five drafts.
+**This page has the best proof of the five**, and it is now live in the components: two named
+clients plus the only published testimonial Pixorama has.
 
 ### Primary CTA
 
@@ -76,11 +73,25 @@ audit of an existing site.
 
 ## Proof
 
-`[CONFIRM: Wingwaves — website and product catalogue. Permission plus a metric: catalogue size,
-load time improvement, conversion or enquiry change.]`
+### Filled — already published by Pixorama
 
-`[CONFIRM: Amelia Downie — website and SEO. The testimonial is already public; add a metric
-(rankings, traffic, enquiries) and move the quote onto this page.]`
+| Client | Work |
+|---|---|
+| **Wingwaves** | Website and product catalogue |
+| **Amelia Downie** | Website and SEO |
+
+**Testimonial, verbatim from the homepage:**
+
+> I engaged Pixorama to build my website and undertake SEO work. I found them to be professional,
+> knowledgeable, and trustworthy throughout the process. I would confidently recommend their
+> services to anyone looking to improve their online presence.
+>
+> — **Amelia Downie**, Land Healing Practitioner · ameliadownie.com.au
+
+### Still pending — needs Pixorama
+
+`[CONFIRM: a metric for either engagement — catalogue size, load time improvement, rankings, traffic
+or enquiry change. The names and the quote are public; no number is.]`
 
 **Supporting reading:**
 - [Best SEO agencies Australia](/blog/best-seo-agencies-australia) — `[REVIEW: this is a

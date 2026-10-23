@@ -107,7 +107,35 @@ export function ServicePage({ service }: { service: ServiceContent }) {
         <div className="wrap">
           <SectionHead eyebrow="Proof" heading="Evidence, not adjectives" />
 
-          <div className="reveal" style={delay(1)}>
+          {/* Clients already named publicly. Real, sourced, and carrying no
+              numbers — which is why the case-study slot below stays separate. */}
+          {service.clientRoster.length > 0 ? (
+            <ul className="reveal svc__roster" style={delay(1)}>
+              {service.clientRoster.map((entry) => (
+                <li className="svc__roster-item" key={entry.client}>
+                  <span className="svc__roster-client">{entry.client}</span>
+                  <span className="svc__roster-work">{entry.work}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+
+          <PendingSlot slot={service.testimonial} label="testimonial">
+            {(t) => (
+              <figure className="reveal svc__testimonial" style={delay(2)}>
+                <blockquote>
+                  <p>{t.quote}</p>
+                </blockquote>
+                <figcaption>
+                  <strong>{t.attribution}</strong>
+                  {t.role ? <span>, {t.role}</span> : null}
+                  {t.site ? <span className="svc__testimonial-site"> · {t.site}</span> : null}
+                </figcaption>
+              </figure>
+            )}
+          </PendingSlot>
+
+          <div className="reveal" style={delay(3)}>
             <PendingSlot slot={service.caseStudy} label="case study">
               {(study) => (
                 <article className="svc__case">

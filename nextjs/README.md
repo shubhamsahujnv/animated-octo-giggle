@@ -42,13 +42,55 @@ which a non-developer can review in one place, and the layout cannot drift
 between pages.
 
 **Unconfirmed proof cannot render.** Every proof point — case study, named
-expert, price band, above-the-fold proof line — is a `Slot`, which is either
-`confirmed` or `pending`. A pending slot renders `null` in production and a loud
-dashed marker in development. This is the strategy's rule ("no unconfirmed
-client logos, numbers or certifications") made mechanical: a page can ship with
-a proof slot removed, never with one invented. **All 20 proof slots are
-currently pending** — 4 on each of the 5 pages — so today these pages render
-their fallback lines and no proof. Filling them is the client-question work in
+expert, price band, testimonial, above-the-fold proof line — is a `Slot`, which
+is either `confirmed` or `pending`. A pending slot renders `null` in production
+and a loud dashed marker in development. This is the strategy's rule ("no
+unconfirmed client logos, numbers or certifications") made mechanical: a page
+can ship with a proof slot removed, never with one invented.
+
+**Current state: 4 of 25 proof slots filled**, entirely from material Pixorama
+already publishes about itself. Nothing was inferred or composed.
+
+| Page | Proof line | Clients named | Quote | Case study | Expert | Price |
+|---|---|---|---|---|---|---|
+| Cloud Engineering Services | filled | 1 | — | — | — | — |
+| AI Development Services | — | 0 | — | — | — | — |
+| Mobile App Development | — | 0 | — | — | — | — |
+| Product & Software Engineering | filled | 3 | — | — | — | — |
+| Web Development Services | filled | 2 | **filled** | — | — | — |
+
+What was filled, and why it was safe to fill:
+
+- **Client roster** — the five clients Pixorama already names on its homepage,
+  with the work in its own published wording, mapped to the service each
+  belongs to. Reusing the same claim in a new location is not a new claim. Every
+  entry carries a `source` recording where it is already live, and the build
+  rejects an entry without one.
+- **One testimonial** — the Amelia Downie quote, verbatim from the homepage, on
+  the web development page where it is topically relevant. Not paraphrased, not
+  trimmed for punch.
+- **Three proof lines** — factual and number-free, e.g. "Platforms shipped for
+  BVIVE, Gateways and New Zealand Gateway."
+
+What is still pending, and why it cannot be filled without Pixorama:
+
+- **Case studies (5)** — no approved metric exists for any engagement. The
+  `CaseStudy` type requires at least one metric, so a case study cannot be
+  confirmed without a real number. That is deliberate: a case study without a
+  number is not proof.
+- **Named experts (5)** — no engineer is named anywhere on the site, while the
+  whole pitch is "senior-only teams". The highest-value gap on these pages.
+- **Price bands (5)** — nothing published beyond "scoped and priced to the
+  outcome".
+- **Testimonials (4)** — only one public quote exists, and it covers web work.
+
+`clientRoster` is deliberately **empty** on two pages, which is a finding rather
+than an omission: none of the five publicly named clients is a mobile
+engagement, and BVIVE is published as a "payment recovery platform" rather than
+as an AI build, so listing it on the AI page would imply work the public record
+does not support.
+
+The remaining slots are the client-question work in
 `../pixorama-service-page-plan.md` §8.
 
 **The page rules are enforced at build time.** `assertServiceContent` runs on
@@ -64,6 +106,8 @@ rather than reaching review. It checks:
 | `lastUpdated` is a real ISO date | format |
 | A page does not link to itself as "related" | membership |
 | A confirmed case study carries at least one metric | array length |
+| Every client-roster entry has a client, the work and a source | per-entry check |
+| A confirmed testimonial records where it is published | source present |
 
 The registry adds one check `assertServiceContent` cannot do alone: every
 `relatedServices` slug must resolve to a registered service. Without it a typo
@@ -71,7 +115,8 @@ or a renamed slug silently drops the link, because `relatedServices()` filters
 what it cannot resolve.
 
 Verified: all five pass; **eight** seeded violations are each rejected with a
-specific message, and a deliberately broken related-slug fails at import.
+specific message, three provenance violations are rejected, and a deliberately
+broken related-slug fails at import.
 
 ### Slug wording vs nav wording
 

@@ -1,4 +1,6 @@
-import { type ServiceContent, pending } from "../types";
+import { type ServiceContent, confirmed, pending } from "../types";
+
+import { HOMEPAGE_LOGOWALL, HOMEPAGE_ROSTER } from "./_sources";
 
 export const productSoftwareEngineering: ServiceContent = {
   slug: "product-software-engineering",
@@ -13,8 +15,9 @@ export const productSoftwareEngineering: ServiceContent = {
   openingAnswer:
     "Product & Software Engineering is how Pixorama turns an idea or a stalled roadmap into shipped, scalable software you own — MVPs, SaaS platforms, legacy modernisation and the engineering controls that keep velocity safe. It is for enterprises and funded startups in regulated sectors. Pixorama ships a production increment inside the first fortnight.",
 
-  proofLine: pending(
-    "One-line proof with a number. Strongest candidates: New Zealand Gateway (education platform) or Gateways (platform support and development). Needs permission plus a real figure.",
+  // Three named, already-published engagements. No numbers yet — see caseStudy.
+  proofLine: confirmed(
+    "Platforms shipped for BVIVE, Gateways and New Zealand Gateway.",
   ),
   proofLineFallback:
     "Senior-led from day one, with no ramp-up tax — and full ownership of the code at the end.",
@@ -84,6 +87,28 @@ export const productSoftwareEngineering: ServiceContent = {
         "A review, a target architecture, or a second opinion before committing budget.",
     },
   ],
+
+  clientRoster: [
+    {
+      client: "BVIVE",
+      work: "Payment recovery platform",
+      source: HOMEPAGE_LOGOWALL,
+    },
+    {
+      client: "Gateways",
+      work: "Platform support and development",
+      source: HOMEPAGE_LOGOWALL,
+    },
+    {
+      client: "New Zealand Gateway",
+      work: "Education platform",
+      source: HOMEPAGE_LOGOWALL,
+    },
+  ],
+
+  testimonial: pending(
+    "No published testimonial covers platform or product work.",
+  ),
 
   caseStudy: pending(
     "Named case study with numbers. Candidates: New Zealand Gateway (education platform), Gateways (platform support and development), BVIVE (payment recovery platform). At least one needs permission to name with a real metric — time to launch, throughput, cost per transaction, or incident reduction.",

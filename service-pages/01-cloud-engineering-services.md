@@ -29,10 +29,10 @@ the first fortnight, and you own the code, infrastructure and documentation outr
 
 ### Proof line
 
-`[CONFIRM: one-line proof with a number — e.g. "Gateways: platform support and development since
-{year}, {n} environments under management." Needs client permission and a real figure.]`
+**FILLED:** *Platform support and development for Gateways — live client work, not a capability claim.*
 
-Fallback if no number is approved: *Senior-led from day one, with no ramp-up tax.*
+Factual and already public on the homepage. Carries no number, because no approved number exists
+yet — see the case study below.
 
 ### Primary CTA
 
@@ -73,9 +73,16 @@ Fallback if no number is approved: *Senior-led from day one, with no ramp-up tax
 
 ## Proof
 
-`[CONFIRM: named case study with numbers. Candidate — Gateways (platform support and development).
-Required: client permission to name, plus at least one real metric (cost reduction, deployment
-frequency, incident reduction, uptime). The strategy forbids shipping unconfirmed numbers.]`
+### Filled — already published by Pixorama
+
+| Client | Work |
+|---|---|
+| **Gateways** | Platform support and development |
+
+### Still pending — needs Pixorama
+
+`[CONFIRM: a metric for Gateways — cost reduction, deployment frequency, incident reduction or
+uptime. The client roster above names the engagement; without a number it is not yet a case study.]`
 
 `[CONFIRM: named engineer with credentials — the "senior-only" claim is currently unevidenced
 anywhere on the site, and for regulated-sector buyers this is the gap that costs deals.]`

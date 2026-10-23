@@ -111,8 +111,17 @@ assets (Section 5b item 4).
 **Remove:** `/blog/journal-prompts-for-self-reflection` — unrelated to anything Pixorama sells, and
 it dilutes topical authority.
 
-**Homepage bug:** the "Continents of active delivery" counter renders as **0**. A visible zero in a
-credibility stat is worse than omitting it.
+**Homepage stat problems — three, all live now.** The strategy forbids publishing unconfirmed
+numbers. Pixorama's own homepage currently breaks that rule:
+
+| Stat | Problem |
+|---|---|
+| "Continents of active delivery" | Renders as a literal **0**. A visible zero in a credibility stat is worse than omitting it. |
+| **"4.9 / 5 — Average client rating"** | An aggregate rating with no source and **one** displayed testimonial. Not substantiable, and it must not be marked up as `AggregateRating` schema — unverifiable review markup risks a Google structured-data penalty. |
+| **"99.98% uptime — SLA-backed reliability"** | A hard figure with no stated measurement basis or SLA document. |
+
+These need either a verifiable source or removal. They are the same category of risk the Gushwork
+teardown flagged in Section 1 — claims a client cannot trace.
 
 ---
 
@@ -391,9 +400,12 @@ separate from the pages. **Never report page count.**
 4. **Can we name the senior engineers with credentials?** The "senior-only" claim is unevidenced.
 5. **Is `G-1DT0WH31GK` Pixorama's own GA4 property?**
 6. **Where did the 2,356 backlinks from 31 domains come from?** Needs an answer before any link work.
-7. **Is `/products` a product line Pixorama wants leads for**, or supporting material? It is the only
+7. **Can the "4.9 / 5 average client rating" and "99.98% uptime" figures be substantiated?** If not,
+   remove them. If the rating comes from a review platform, link it and we can use real `Review`
+   markup; otherwise the pages must not carry rating schema at all.
+8. **Is `/products` a product line Pixorama wants leads for**, or supporting material? It is the only
    correctly-canonicalised non-homepage page and has no plan here.
-8. **Which of the eight listed industries does Pixorama actually want leads for now?** All eight are
+9. **Which of the eight listed industries does Pixorama actually want leads for now?** All eight are
    claimed; the strategy only builds for services the client wants leads for and can deliver.
 
 ---

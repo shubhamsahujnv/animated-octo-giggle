@@ -1,4 +1,6 @@
-import { type ServiceContent, pending } from "../types";
+import { type ServiceContent, confirmed, pending } from "../types";
+
+import { HOMEPAGE_LOGOWALL, HOMEPAGE_ROSTER, HOMEPAGE_TESTIMONIAL } from "./_sources";
 
 export const webDevelopmentServices: ServiceContent = {
   slug: "web-development-services",
@@ -13,8 +15,8 @@ export const webDevelopmentServices: ServiceContent = {
   openingAnswer:
     "Web Development Services from Pixorama build and grow the web surface of your business — marketing sites, product catalogues, commerce front-ends and the analytics and search work that makes them earn enquiries. They are for enterprises and funded startups that need a site to perform, not just launch.",
 
-  proofLine: pending(
-    "This page has the best available proof of the five. Wingwaves (website and product catalogue) and Amelia Downie (website and SEO) both match it, and the Amelia Downie testimonial is already public on the homepage. Needs permission to reference on this page plus one real metric each. Moving that testimonial here, where it is topically relevant, is the single cheapest proof improvement available across all five pages.",
+  proofLine: confirmed(
+    "Website and product catalogue for Wingwaves, and website and SEO for Amelia Downie — in her own words below.",
   ),
   proofLineFallback:
     "Built to be measured — technical SEO, analytics and attribution are part of the same engagement.",
@@ -69,6 +71,29 @@ export const webDevelopmentServices: ServiceContent = {
     { model: "Specialist augmentation", fits: "A single capability — search, analytics, front-end." },
     { model: "Advisory & architecture", fits: "An audit of an existing site." },
   ],
+
+  clientRoster: [
+    {
+      client: "Wingwaves",
+      work: "Website and product catalogue",
+      source: HOMEPAGE_LOGOWALL,
+    },
+    {
+      client: "Amelia Downie",
+      work: "Website and SEO",
+      source: HOMEPAGE_ROSTER,
+    },
+  ],
+
+  // Verbatim from the homepage. Not paraphrased, not trimmed for punch.
+  testimonial: confirmed({
+    quote:
+      "I engaged Pixorama to build my website and undertake SEO work. I found them to be professional, knowledgeable, and trustworthy throughout the process. I would confidently recommend their services to anyone looking to improve their online presence.",
+    attribution: "Amelia Downie",
+    role: "Land Healing Practitioner",
+    site: "ameliadownie.com.au",
+    source: HOMEPAGE_TESTIMONIAL,
+  }),
 
   caseStudy: pending(
     "Wingwaves — website and product catalogue. Permission plus a metric: catalogue size, load time improvement, conversion or enquiry change. And Amelia Downie — website and SEO; the testimonial is already public, so add a metric (rankings, traffic, enquiries) and move the quote onto this page.",

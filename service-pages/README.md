@@ -24,6 +24,11 @@ leads at day 120, and do not prune before day 180.
 **Every claim in these drafts is traceable to Pixorama's own site** — the homepage FAQ, the
 capability sections, and the delivery models. Nothing is invented.
 
+**Proof status: 4 of 25 slots filled** from material already published on
+pixoramagroup.com — the five named clients with their own published work descriptions, and the
+Amelia Downie testimonial verbatim. Case-study metrics, named experts and price bands remain open;
+see `../nextjs/README.md` for the per-page table.
+
 **`[CONFIRM: …]` marks a slot that must not ship unfilled.** These are the proof points — case study
 numbers, named experts, pricing bands. The strategy forbids unconfirmed numbers, logos and
 certifications, so each is marked rather than guessed. A page can ship with the slot *removed*; it
