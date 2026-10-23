@@ -178,5 +178,7 @@ export const aiDataIntelligence: ServiceContent = {
     "Strongest existing content cluster on the site. These posts are the realistic near-term source of AI-assistant citations, which the service page itself will not earn for several quarters.",
     'An unanswered FAQ belongs here once confirmed: whether client data is used to train a provider model. It is the first question every regulated buyer asks and the site answers it nowhere.',
     'Recommended addition: an interactive AI readiness assessment, entry point on this page. "ai readiness assessment" is 720/mo US and failed Gate 3 as a service page precisely because the intent wants a tool.',
+    'Slug decision, now verified against a live SERP (23 Oct 2026): "ai development services" is 2,900/mo US, SD 37, commercial intent, and its top 10 is vendor service pages — a clean Gate 3 pass. It beats "ai development company" (also 2,900/mo but SD 48) and dwarfs "ai data intelligence" (30/mo). Recommended slug: ai-development-services.',
+    'RAG is a sub-service, not a separate page yet. Per the strategy\'s fold-in rule it belongs as an H2 section on this page now, and graduates to its own page only if rag-development-services clears the gates later.',
   ],
 };

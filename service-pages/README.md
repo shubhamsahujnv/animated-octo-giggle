@@ -125,7 +125,8 @@ where the brand naming actively costs demand.
 | Cloud & Platform Engineering | "cloud platform engineering services" | **20** | — | Weak. SERP is Microsoft/Google/AWS definitions — Gate 3 fail. |
 | | *alternative:* "cloud engineering services" | **110** | Commercial | **Better slug.** SD 22, commercial intent, 5× the demand. |
 | AI & Data Intelligence | "ai data intelligence" | **30** | Commercial | Brand-invented phrase, near-zero demand. |
-| | *alternative:* "ai agent development services" | **480** | Commercial | Real demand, matches what they actually sell. |
+| | *alternative:* "ai development services" | **2,900** | Commercial | **Best option.** SD 37, vendor-page SERP (Gate 3 pass). |
+| | *alternative:* "ai agent development services" | **480** | Commercial | Narrower; keep as a body/H2 topic, not a slug. |
 | Mobile App Development | "mobile app development company" | **3,600** | Commercial | **Strong.** Slug already sits inside the phrase. Keep as is. |
 | Product & Software Engineering | "product engineering services" | **320** | **Navigational** | Navigational intent — people want a specific company. Weak target. |
 | | *alternative:* "custom software development company" | **2,900** | Commercial | Real demand, unreachable for now, right long-term home. |
@@ -141,7 +142,7 @@ and H1 openings** to the buyer wording on the three where it costs nothing and g
 |---|---|
 | `/services/digital-growth-web` | `/services/web-development-services` |
 | `/services/cloud-platform-engineering` | `/services/cloud-engineering-services` |
-| `/services/ai-data-intelligence` | `/services/ai-development-services` *(verify against a live SERP before committing)* |
+| `/services/ai-data-intelligence` | `/services/ai-development-services` — **verified 23 Oct 2026:** 2,900/mo US, SD 37, commercial, top 10 is vendor service pages (clean Gate 3 pass). Beats "ai development company" (2,900/mo but SD 48) and dwarfs "ai data intelligence" (30/mo). |
 
 Leave `/services/mobile-app-development` and `/services/product-software-engineering` as drafted —
 the first is already well-formed, and the second's buyer phrase ("custom software development
