@@ -2,20 +2,20 @@
 
 **Why:** the strategy forbids publishing numbers a client cannot trace. Three groups of figures on
 pixoramagroup.com currently break that rule. This is a precise change list, derived from the live
-server-rendered HTML (23 Oct 2026) — **not** from the site's source, which this session does not have.
+server-rendered HTML (23 Oct 2026): **not** from the site's source, which this session does not have.
 
 ---
 
-## 1. Remove the two unsubstantiated trust figures — requested
+## 1. Remove the two unsubstantiated trust figures: requested
 
 They sit in a `trustbar` section near the top of the homepage, as **literal hardcoded text**, not
 counters. The section holds exactly **three** `trustitem` blocks:
 
 | # | Value | Label | Action |
 |---|---|---|---|
-| 1 | `99.98% uptime` | SLA-backed reliability | **Remove** — no stated measurement basis or SLA document |
-| 2 | `4.9 / 5` | Average client rating | **Remove** — aggregate rating, no source, one testimonial displayed |
-| 3 | `100% ownership` | Code & IP handed to you | **Keep** — a policy commitment, not a measured claim, and it is backed by the FAQ |
+| 1 | `99.98% uptime` | SLA-backed reliability | **Remove**: no stated measurement basis or SLA document |
+| 2 | `4.9 / 5` | Average client rating | **Remove**: aggregate rating, no source, one testimonial displayed |
+| 3 | `100% ownership` | Code & IP handed to you | **Keep**: a policy commitment, not a measured claim, and it is backed by the FAQ |
 
 ### Find it
 
@@ -42,7 +42,7 @@ The rendered markup to match is:
 ```
 
 Most likely this is an array of three objects mapped to `trustitem`. Delete the two entries rather
-than hiding them with CSS — a hidden claim is still in the HTML, still crawled, and still quoted by
+than hiding them with CSS, a hidden claim is still in the HTML, still crawled, and still quoted by
 an AI assistant.
 
 ### After removing
@@ -58,7 +58,7 @@ One item left in a three-up row will look wrong. Options, in order of preference
 
 **Do not** re-add the rating anywhere as `Review` or `AggregateRating` schema. Unverifiable review
 markup risks a Google structured-data penalty. If the 4.9 figure comes from a real review platform,
-link the profile and it can be marked up properly — which is also Step 5b.1 of the plan.
+link the profile and it can be marked up properly, which is also Step 5b.1 of the plan.
 
 ---
 
@@ -89,7 +89,7 @@ and listed it as a single display bug. That was too narrow, and partly wrong abo
 
 There are no `data-target`, `data-to` or count-up attributes in the HTML, and the target values were
 not in the twelve JS chunks fetched from the homepage. So the most likely explanation is a
-scroll-triggered counter animated client-side from a value this session could not locate — meaning a
+scroll-triggered counter animated client-side from a value this session could not locate: meaning a
 human in a browser may well see correct numbers, and my "renders a literal 0" was wrong as a
 statement about what visitors see.
 
@@ -106,8 +106,8 @@ on being quotable. **Check it in a browser first** to confirm whether the counte
   there, so crawlers get the number rather than zero.
 - **If they do not:** these are eight broken stats, which is more urgent than the two above.
 
-Either way, two of these labels — *"Average SLA-backed uptime"* and *"Typical cloud run-cost
-reduction"* — are measured claims and need a traceable source, exactly like the 99.98% figure.
+Either way, two of these labels are measured claims: *"Average SLA-backed uptime"* and *"Typical cloud run-cost
+reduction"*, are measured claims and need a traceable source, exactly like the 99.98% figure.
 *"Median uplift in deployment frequency"* likewise. Removing the trustbar pair while leaving these
 in place only half-solves the problem.
 

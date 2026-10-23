@@ -2,14 +2,14 @@ import { NextResponse } from "next/server";
 import { getService } from "@/lib/services";
 
 /**
- * Enquiry endpoint — STUB.
+ * Enquiry endpoint: STUB.
  *
  * This validates and logs the payload so the form works end to end in
  * development, but it does not yet deliver anywhere. Wire ONE of these before
  * launch, or enquiries will be silently lost:
  *
  *   - the CRM or inbox Pixorama already uses for /#contact submissions
- *     (preferred — reuse the existing path rather than adding a second one)
+ *     (preferred, reuse the existing path rather than adding a second one)
  *   - a transactional email provider
  *   - a webhook into the existing enquiry workflow
  *
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
 
   const payload = body as Partial<EnquiryPayload>;
 
-  // Minimal server-side validation — never trust the client's `required`.
+  // Minimal server-side validation: never trust the client's `required`.
   const missing = (["name", "email", "message", "service"] as const).filter(
     (field) => !isNonEmpty(payload[field]),
   );
@@ -68,7 +68,7 @@ export async function POST(request: Request) {
   }
 
   if (process.env.NODE_ENV === "production") {
-    console.error("[enquiry] endpoint not wired — enquiry NOT delivered", {
+    console.error("[enquiry] endpoint not wired, enquiry NOT delivered", {
       service: payload.service,
       pageUrl: payload.pageUrl,
     });

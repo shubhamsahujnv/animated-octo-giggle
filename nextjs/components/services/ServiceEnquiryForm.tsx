@@ -54,7 +54,7 @@ function resolveUtm(): Utm {
     const stored = window.sessionStorage.getItem(UTM_STORE_KEY);
     return stored ? (JSON.parse(stored) as Utm) : {};
   } catch {
-    // Private mode or blocked storage — the form still works without UTMs.
+    // Private mode or blocked storage, the form still works without UTMs.
     return fromUrl;
   }
 }
@@ -140,7 +140,7 @@ export function ServiceEnquiryForm({
   if (status === "sent") {
     return (
       <div className="form" role="status" aria-live="polite">
-        <p className="lead">Thank you — your enquiry is with us.</p>
+        <p className="lead">Thank you, your enquiry is with us.</p>
         <p className="form__note">
           A senior engineer will reply, usually within one business day.
         </p>

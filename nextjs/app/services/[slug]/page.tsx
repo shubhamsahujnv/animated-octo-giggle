@@ -12,7 +12,7 @@ import {
 } from "@/lib/services";
 
 /**
- * /services/[slug] — one page per real capability.
+ * /services/[slug], one page per real capability.
  *
  * Statically generated, with `dynamicParams: false` so an unknown slug 404s at
  * build time rather than rendering an empty page. The five slugs are the

@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/services/JsonLd";
 import { SERVICES, SITE_URL } from "@/lib/services";
 
 /**
- * /services — the hub for the five capability pages.
+ * /services, the hub for the five capability pages.
  *
  * This route currently serves homepage content under a homepage canonical and
  * is linked from nowhere (the nav uses /#capabilities). Replacing it with this

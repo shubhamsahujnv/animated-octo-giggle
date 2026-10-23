@@ -27,7 +27,7 @@ production, not a demo. Pixorama starts from the outcome and the data.
 ### Proof line
 
 `[CONFIRM: no public engagement is identifiable as AI work. BVIVE is published as a "payment
-recovery platform", not as an AI build: listing it here would imply work the public record does not
+recovery platform", not as an AI build. Listing it here would imply work the public record does not
 support. Confirm whether any client engagement involved AI, and whether it can be named.]`
 
 Fallback: *We start from the outcome and the data, not the demo, so what ships is safe and measurable.*
@@ -62,7 +62,7 @@ Fallback: *We start from the outcome and the data, not the demo, so what ships i
 
 Same four models as every Pixorama engagement: **outcome-based project** (milestone commercials),
 **dedicated squad**, **specialist augmentation**, **advisory & architecture**. Advisory is the common
-entry point here, an AI readiness and feasibility review before committing budget.
+entry point here: an AI readiness and feasibility review before committing budget.
 
 ---
 
@@ -166,7 +166,7 @@ Name · Work email · Company · What you need · "How did you hear about us?"
 Button: **Send enquiry**
 Hidden: `page_url`, `referrer`, `utm_*`, `service=ai-development-services`
 
-### Recommended addition, the AI readiness assessment
+### Recommended addition: the AI readiness assessment
 
 Per Step 5b.4: build an interactive **AI readiness assessment** and place its entry point on this
 page. "ai readiness assessment" is 720/mo in the US and failed Gate 3 as a service page precisely

@@ -3,7 +3,7 @@ import type { Slot } from "@/lib/services";
 /**
  * Renders a proof slot, or nothing.
  *
- * A pending slot renders null in production — that is the whole point: an
+ * A pending slot renders null in production. That is the whole point: an
  * unconfirmed claim cannot reach a visitor. In development it renders a
  * visible marker, so the open gaps are obvious while the pages are reviewed
  * rather than buried in a data file.
@@ -25,7 +25,7 @@ export function PendingSlot<T>({
 
   return (
     <p className="svc__pending" role="note">
-      <strong>Unconfirmed — {label}.</strong> {slot.note}
+      <strong>Unconfirmed: {label}.</strong> {slot.note}
     </p>
   );
 }

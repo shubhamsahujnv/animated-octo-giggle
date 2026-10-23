@@ -3,7 +3,7 @@
  * it for TypeScript without pulling in a dependency.
  *
  * Confirm the measurement ID is Pixorama's own GA4 property before relying on
- * these events — ownership is an open client question.
+ * these events: ownership is an open client question.
  */
 declare global {
   interface Window {

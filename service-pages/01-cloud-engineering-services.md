@@ -84,7 +84,7 @@ yet, see the case study below.
 `[CONFIRM: a metric for Gateways, cost reduction, deployment frequency, incident reduction or
 uptime. The client roster above names the engagement; without a number it is not yet a case study.]`
 
-`[CONFIRM: named engineer with credentials, the "senior-only" claim is currently unevidenced
+`[CONFIRM: named engineer with credentials. The "senior-only" claim is currently unevidenced
 anywhere on the site, and for regulated-sector buyers this is the gap that costs deals.]`
 
 **Supporting reading (publish-ready now, no confirmation needed):**

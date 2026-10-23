@@ -41,7 +41,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
             <h1>{service.h1}</h1>
 
             {/* The answer block. Kept as a single paragraph so an assistant can
-                quote it whole — do not split it for visual rhythm. */}
+                quote it whole: do not split it for visual rhythm. */}
             <p className="lead svc__answer">{service.openingAnswer}</p>
 
             <PendingSlot slot={service.proofLine} label="above-the-fold proof line">
@@ -108,7 +108,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
           <SectionHead eyebrow="Proof" heading="Evidence, not adjectives" />
 
           {/* Clients already named publicly. Real, sourced, and carrying no
-              numbers — which is why the case-study slot below stays separate. */}
+              numbers, which is why the case-study slot below stays separate. */}
           {service.clientRoster.length > 0 ? (
             <ul className="reveal svc__roster" style={delay(1)}>
               {service.clientRoster.map((entry) => (
@@ -140,7 +140,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
               {(study) => (
                 <article className="svc__case">
                   <h3 className="svc__h3">
-                    {study.client} — {study.work}
+                    {study.client}, {study.work}
                   </h3>
                   <ul className="svc__metrics">
                     {study.metrics.map((metric) => (
@@ -160,7 +160,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
             <PendingSlot slot={service.namedExpert} label="named expert">
               {(expert) => (
                 <p className="svc__expert">
-                  <strong>{expert.name}</strong>, {expert.role} — {expert.credentials}
+                  <strong>{expert.name}</strong>, {expert.role}, {expert.credentials}
                 </p>
               )}
             </PendingSlot>

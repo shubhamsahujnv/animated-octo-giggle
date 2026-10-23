@@ -9,8 +9,8 @@ import { webDevelopmentServices } from "./content/web-development-services";
  * Registry of service pages, in the order they should appear in nav and footer.
  *
  * Every entry passes through assertServiceContent, so the mechanically
- * checkable page rules — opening answer length, slug/title/H1 alignment, meta
- * description length, a metric on any confirmed case study — fail the build
+ * checkable page rules: opening answer length, slug/title/H1 alignment, meta
+ * description length, a metric on any confirmed case study, fail the build
  * rather than reaching review.
  */
 export const SERVICES: readonly ServiceContent[] = [

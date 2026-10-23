@@ -1,5 +1,5 @@
 /**
- * Renders a JSON-LD graph. Server component — no client JS.
+ * Renders a JSON-LD graph. Server component, no client JS.
  *
  * Next.js escapes nothing inside a script tag, so the payload is serialised
  * with `<` escaped to stop a stray sequence in copy from closing the tag.

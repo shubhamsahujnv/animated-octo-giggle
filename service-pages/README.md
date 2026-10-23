@@ -1,4 +1,4 @@
-# Pixorama — Service Page Drafts
+# Pixorama: Service Page Drafts
 
 Five drafts, one per real capability, built to Section 4 of the Service Page Strategy for Leads (v1.1).
 
@@ -15,32 +15,32 @@ Implemented as Next.js components in `../nextjs/`.
 ## Read this before implementing
 
 **These are not ranking bets.** Per the gate analysis in `../pixorama-service-page-plan.md`, zero
-keywords cleared Gates 1–4 — Pixorama has 31 referring domains against a gate threshold of 62, and
+keywords cleared Gates 1–4: Pixorama has 31 referring domains against a gate threshold of 62, and
 the weakest competitor in every SERP tested has 168–711. These pages exist to convert the traffic
 that already arrives, to give AI assistants something per-service to cite, to put real URLs behind
 the `Service` schema, and to be aged and ready when authority arrives. Judge them on qualified
 leads at day 120, and do not prune before day 180.
 
-**Every claim in these drafts is traceable to Pixorama's own site** — the homepage FAQ, the
+**Every claim in these drafts is traceable to Pixorama's own site**: the homepage FAQ, the
 capability sections, and the delivery models. Nothing is invented.
 
 **Proof status: 4 of 25 slots filled** from material already published on
-pixoramagroup.com — the five named clients with their own published work descriptions, and the
+pixoramagroup.com, the five named clients with their own published work descriptions, and the
 Amelia Downie testimonial verbatim. Case-study metrics, named experts and price bands remain open;
 see `../nextjs/README.md` for the per-page table.
 
-**`[CONFIRM: …]` marks a slot that must not ship unfilled.** These are the proof points — case study
+**`[CONFIRM: …]` marks a slot that must not ship unfilled.** These are the proof points, case study
 numbers, named experts, pricing bands. The strategy forbids unconfirmed numbers, logos and
 certifications, so each is marked rather than guessed. A page can ship with the slot *removed*; it
 must never ship with the slot *invented*.
 
-Note in particular: the site claims **SOC 2 and ISO 27001 *readiness*** — a way of building, not a
+Note in particular: the site claims **SOC 2 and ISO 27001 *readiness***, a way of building, not a
 held certification. The drafts keep that wording exactly. Do not upgrade it to "certified" or
 "compliant".
 
 ## Do these first (blockers)
 
-From the audit — these break the pages regardless of copy quality:
+From the audit, these break the pages regardless of copy quality:
 
 1. `/services`, `/about` and `/contact` currently serve homepage content and canonicalise to
    `https://pixoramagroup.com`, and are linked from nowhere (nav uses homepage anchors). Either
@@ -53,8 +53,8 @@ From the audit — these break the pages regardless of copy quality:
 3. Move the five `Service` entries out of the homepage `OfferCatalog` onto the pages they describe.
    Leave `Organization` and `WebSite` on the homepage.
 4. Split the homepage's 9-question `FAQPage` across these pages by topic. A question should live on
-   one page only — duplicate `FAQPage` markup across pages competes with itself.
-5. `/process` returns 404 but is **not linked from anywhere** (nav uses `/#method`) — no fix needed, listed so it is not mistaken for a broken link.
+   one page only: duplicate `FAQPage` markup across pages competes with itself.
+5. `/process` returns 404 but is **not linked from anywhere** (nav uses `/#method`), no fix needed, listed so it is not mistaken for a broken link.
 6. Fix the "Continents of active delivery" counter rendering a literal `0`.
 
 ## Shared components
@@ -70,7 +70,7 @@ Hidden fields captured on every submission:
 | `page_url` | Full URL of the submitting page |
 | `referrer` | `document.referrer` |
 | `utm_source` / `utm_medium` / `utm_campaign` | From query string, persisted across the session |
-| `service` | The page's service name — so leads are attributable per page |
+| `service` | The page's service name, so leads are attributable per page |
 
 Visible final field: **"How did you hear about us?"** with options including **"AI assistant
 (ChatGPT, Claude, Perplexity etc.)"**. Most AI-driven visits arrive as `direct`, so without this the
@@ -108,7 +108,7 @@ Referenced by `@id` from each page's `Service` block, so it is declared once:
 
 ### CTA wording
 
-Keep the existing wording — it is already good and consistent:
+Keep the existing wording; it is already good and consistent:
 primary **"Book a discovery call"**, mid-page **"Talk to us about {Service}"**, closing **"Let's talk"**,
 form button **"Send enquiry"**.
 
@@ -123,27 +123,27 @@ five dead ends.
 ## Keyword map per page (Ubersuggest, US, 23 Oct 2026)
 
 The strategy's rule is **slug = keyword**. With zero keywords passing Gates 1–4, these slugs use
-Pixorama's own capability names instead — defensible, since the pages are conversion and AEO assets
+Pixorama's own capability names instead: defensible, since the pages are conversion and AEO assets
 rather than ranking bets. But it is worth knowing what each name is worth as a search phrase, and
 where the brand naming actively costs demand.
 
 | Page | Slug as a search phrase | Vol/mo | Intent | Verdict on the slug |
 |---|---|---|---|---|
-| Cloud & Platform Engineering | "cloud platform engineering services" | **20** | — | Weak. SERP is Microsoft/Google/AWS definitions — Gate 3 fail. |
+| Cloud & Platform Engineering | "cloud platform engineering services" | **20** | n/a | Weak. SERP is Microsoft/Google/AWS definitions: Gate 3 fail. |
 | | *alternative:* "cloud engineering services" | **110** | Commercial | **Better slug.** SD 22, commercial intent, 5× the demand. |
 | AI & Data Intelligence | "ai data intelligence" | **30** | Commercial | Brand-invented phrase, near-zero demand. |
 | | *alternative:* "ai development services" | **2,900** | Commercial | **Best option.** SD 37, vendor-page SERP (Gate 3 pass). |
 | | *alternative:* "ai agent development services" | **480** | Commercial | Narrower; keep as a body/H2 topic, not a slug. |
 | Mobile App Development | "mobile app development company" | **3,600** | Commercial | **Strong.** Slug already sits inside the phrase. Keep as is. |
-| Product & Software Engineering | "product engineering services" | **320** | **Navigational** | Navigational intent — people want a specific company. Weak target. |
+| Product & Software Engineering | "product engineering services" | **320** | **Navigational** | Navigational intent: people want a specific company. Weak target. |
 | | *alternative:* "custom software development company" | **2,900** | Commercial | Real demand, unreachable for now, right long-term home. |
-| Digital Growth & Web | "digital growth web" | **~0** | — | Brand-invented. No demand. |
+| Digital Growth & Web | "digital growth web" | **~0** | n/a | Brand-invented. No demand. |
 | | *alternative:* "web development services" | **5,400** | Commercial | SD 36. The phrase buyers actually use. |
 
-### Slug changes — APPLIED
+### Slug changes: APPLIED
 
-Applied in `../nextjs/`. The **nav labels** stay the capability names — they are good brand
-language — while the **slugs, titles and H1s** use the buyer wording. The content model keeps these
+Applied in `../nextjs/`. The **nav labels** stay the capability names, which are good brand
+language, while the **slugs, titles and H1s** use the buyer wording. The content model keeps these
 as two separate fields (`navLabel` and `keywordPhrase`) and the build asserts that the slug is the
 slugified keyword phrase and that the title and H1 open with it, so the two can never drift:
 
@@ -151,14 +151,13 @@ slugified keyword phrase and that the title and H1 open with it, so the two can 
 |---|---|---|
 | `/services/digital-growth-web` | `/services/web-development-services` | ~0/mo → 5,400/mo |
 | `/services/cloud-platform-engineering` | `/services/cloud-engineering-services` | 20/mo (definitions SERP) → 110/mo commercial |
-| `/services/ai-data-intelligence` | `/services/ai-development-services` — **verified 23 Oct 2026:** 2,900/mo US, SD 37, commercial, top 10 is vendor service pages (clean Gate 3 pass). Beats "ai development company" (2,900/mo but SD 48) and dwarfs "ai data intelligence" (30/mo). |
+| `/services/ai-data-intelligence` | `/services/ai-development-services` | 30/mo → 2,900/mo. Verified 23 Oct 2026: SD 37, commercial, top 10 all vendor service pages (clean Gate 3 pass). Beats "ai development company", same volume but SD 48. |
 
-Leave `/services/mobile-app-development` and `/services/product-software-engineering` as drafted —
-the first is already well-formed, and the second's buyer phrase ("custom software development
+Leave `/services/mobile-app-development` and `/services/product-software-engineering` as drafted. The first is already well-formed, and the second's buyer phrase ("custom software development
 company") is a head term better earned later than claimed now.
 
 These pages have never been published, so no redirects are needed. Were they live, each change
-would require a 301 — and would reset the page age that is the main asset they accumulate. That is
+would require a 301, and would reset the page age that is the main asset they accumulate. That is
 why the decision was settled before launch rather than after.
 
 | Page | Slug / H1 open with | Nav and CTAs show |
@@ -175,11 +174,11 @@ Each page should have a target keyword it is being aged toward, taken from the B
 
 | Page | Growth-into target | Vol/mo | Blocked on |
 |---|---|---|---|
-| AI Development Services | `rag-development-services` | 70 | Gate 2 (and Gate 4 at 8 exact-match) — cleanest Gate 3 pass found |
+| AI Development Services | `rag-development-services` | 70 | Gate 2 (and Gate 4 at 8 exact-match), cleanest Gate 3 pass found |
 | Cloud Engineering Services | `cloud-cost-optimization-services` | 140 | Gate 2 only; Gate 4 already borderline-passing at 3 |
-| Mobile App Development | `mobile-app-development-company` | 3,600 | Gate 2 — head term, long horizon |
+| Mobile App Development | `mobile-app-development-company` | 3,600 | Gate 2, head term, long horizon |
 | Product & Software Engineering | `healthcare-` / `fintech-` / `logistics-software-development-company` | 480–720 | Gate 2; pick one industry per client answer §8.8, do not build all three |
-| Web Development Services | `web-development-services` (now its own slug) | 5,400 | Gate 2 — head term, long horizon |
+| Web Development Services | `web-development-services` (now its own slug) | 5,400 | Gate 2, head term, long horizon |
 
-One target per page. **Do not create separate pages for these** — they are what the existing page
+One target per page. **Do not create separate pages for these**: they are what the existing page
 grows into, and the strategy forbids synonym pages that compete with each other.

@@ -2,7 +2,7 @@ import type { FaqEntry } from "@/lib/services";
 
 /**
  * FAQ list, using the site's existing faq__* markup and the native
- * <details>/<summary> pattern already in use on the homepage — so it inherits
+ * <details>/<summary> pattern already in use on the homepage, so it inherits
  * the current styles and needs no client JS.
  *
  * Keep each question on exactly one page. Duplicate FAQPage markup across

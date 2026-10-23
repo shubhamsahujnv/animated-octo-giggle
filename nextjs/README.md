@@ -1,4 +1,4 @@
-# Pixorama service pages — Next.js implementation
+# Pixorama service pages: Next.js implementation
 
 App Router components for the five service pages drafted in `../service-pages/`.
 Typechecked against Next.js 15.0.3 / React 18.3.1 / TypeScript 5.6.3 (`tsc --noEmit`, clean).
@@ -9,7 +9,7 @@ Typechecked against Next.js 15.0.3 / React 18.3.1 / TypeScript 5.6.3 (`tsc --noE
 app/
   services/page.tsx              Hub page listing the five (replaces the current orphan route)
   services/[slug]/page.tsx       The service route: metadata, canonical, JSON-LD
-  api/enquiry/route.ts           Form endpoint — STUB, must be wired before launch
+  api/enquiry/route.ts           Form endpoint, STUB, must be wired before launch
 components/services/
   ServicePage.tsx                Page layout in the strategy's prescribed order
   ServiceFaq.tsx                 FAQ using the site's existing faq__* / <details> markup
@@ -21,7 +21,7 @@ lib/services/
   types.ts                       Content model + build-time guards
   organization.ts                Shared Organization @id, engagement models
   index.ts                       Registry, lookup, related-service resolution
-  content/*.ts                   One file per page — all copy lives here:
+  content/*.ts                   One file per page, all copy lives here:
                                    cloud-engineering-services.ts
                                    ai-development-services.ts
                                    mobile-app-development.ts
@@ -31,7 +31,7 @@ styles/services.css              New `svc` block only
 ```
 
 Drop `app/`, `components/` and `lib/` into the existing project root, import the
-stylesheet, and the routes exist. The `@/*` path alias is assumed — it is the
+stylesheet, and the routes exist. The `@/*` path alias is assumed, since it is the
 Next.js default and the components use it throughout.
 
 ## How it is put together, and why
@@ -41,8 +41,8 @@ only by a typed content object. Editing copy means editing `lib/services/content
 which a non-developer can review in one place, and the layout cannot drift
 between pages.
 
-**Unconfirmed proof cannot render.** Every proof point — case study, named
-expert, price band, testimonial, above-the-fold proof line — is a `Slot`, which
+**Unconfirmed proof cannot render.** Every proof point: case study, named
+expert, price band, testimonial, above-the-fold proof line, is a `Slot`, which
 is either `confirmed` or `pending`. A pending slot renders `null` in production
 and a loud dashed marker in development. This is the strategy's rule ("no
 unconfirmed client logos, numbers or certifications") made mechanical: a page
@@ -53,36 +53,36 @@ already publishes about itself. Nothing was inferred or composed.
 
 | Page | Proof line | Clients named | Quote | Case study | Expert | Price |
 |---|---|---|---|---|---|---|
-| Cloud Engineering Services | filled | 1 | — | — | — | — |
-| AI Development Services | — | 0 | — | — | — | — |
-| Mobile App Development | — | 0 | — | — | — | — |
-| Product & Software Engineering | filled | 3 | — | — | — | — |
-| Web Development Services | filled | 2 | **filled** | — | — | — |
+| Cloud Engineering Services | filled | 1 | pending | pending | pending | pending |
+| AI Development Services | pending | 0 | pending | pending | pending | pending |
+| Mobile App Development | pending | 0 | pending | pending | pending | pending |
+| Product & Software Engineering | filled | 3 | pending | pending | pending | pending |
+| Web Development Services | filled | 2 | **filled** | pending | pending | pending |
 
 What was filled, and why it was safe to fill:
 
-- **Client roster** — the five clients Pixorama already names on its homepage,
+- **Client roster**: the five clients Pixorama already names on its homepage,
   with the work in its own published wording, mapped to the service each
   belongs to. Reusing the same claim in a new location is not a new claim. Every
   entry carries a `source` recording where it is already live, and the build
   rejects an entry without one.
-- **One testimonial** — the Amelia Downie quote, verbatim from the homepage, on
+- **One testimonial**: the Amelia Downie quote, verbatim from the homepage, on
   the web development page where it is topically relevant. Not paraphrased, not
   trimmed for punch.
-- **Three proof lines** — factual and number-free, e.g. "Platforms shipped for
+- **Three proof lines**: factual and number-free, e.g. "Platforms shipped for
   BVIVE, Gateways and New Zealand Gateway."
 
 What is still pending, and why it cannot be filled without Pixorama:
 
-- **Case studies (5)** — no approved metric exists for any engagement. The
+- **Case studies (5)**: no approved metric exists for any engagement. The
   `CaseStudy` type requires at least one metric, so a case study cannot be
   confirmed without a real number. That is deliberate: a case study without a
   number is not proof.
-- **Named experts (5)** — no engineer is named anywhere on the site, while the
+- **Named experts (5)**: no engineer is named anywhere on the site, while the
   whole pitch is "senior-only teams". The highest-value gap on these pages.
-- **Price bands (5)** — nothing published beyond "scoped and priced to the
+- **Price bands (5)**: nothing published beyond "scoped and priced to the
   outcome".
-- **Testimonials (4)** — only one public quote exists, and it covers web work.
+- **Testimonials (4)**: only one public quote exists, and it covers web work.
 
 `clientRoster` is deliberately **empty** on two pages, which is a finding rather
 than an omission: none of the five publicly named clients is a mobile
@@ -140,7 +140,7 @@ wording they search for; Pixorama keeps its own brand language on screen.
 | `/services/product-software-engineering` | Product & Software Engineering |
 | `/services/web-development-services` | Digital Growth & Web |
 
-**Styling reuses what exists.** The site is hand-written BEM — `wrap`,
+**Styling reuses what exists.** The site is hand-written BEM: `wrap`,
 `section`, `head`, `eyebrow`, `lead`, `h2`, `gt`, `btn`, `btn--brand`, `arw`,
 `reveal`, `field`, `form__row`, `form__foot`, `req`, `faq__*`, `engcard`. The
 components use those directly, so the pages inherit current styles and theming.
@@ -151,17 +151,17 @@ there does not match the real stylesheet, map it rather than hardcoding a value.
 **The FAQ needs no JavaScript.** It reuses the homepage's native
 `<details>`/`<summary>` pattern.
 
-## Lead attribution — the part that makes the pages measurable
+## Lead attribution: the part that makes the pages measurable
 
 `ServiceEnquiryForm` submits, with every enquiry:
 
-- `service` — the page slug, so leads are attributable per page rather than to
+- `service`, the page slug, so leads are attributable per page rather than to
   the site as a whole. This is the number the strategy reports on.
 - `pageUrl` and `referrer`.
-- `utm_*` — read on first landing and persisted in `sessionStorage` for the
+- `utm_*`, read on first landing and persisted in `sessionStorage` for the
   session, because visitors rarely convert on the page they arrived on. Every
   storage access is wrapped; the form works with storage blocked.
-- `heardAbout` — including an explicit **"AI assistant (ChatGPT, Claude,
+- `heardAbout`: including an explicit **"AI assistant (ChatGPT, Claude,
   Perplexity etc.)"** option. Most assistant-driven visits arrive as `direct`,
   so without this the AI channel is invisible however the analytics are set up.
 
@@ -174,7 +174,7 @@ write arbitrary values into a lead record.
 ## Before launch
 
 1. **Wire `app/api/enquiry/route.ts`.** It currently logs in development and
-   returns **501 in production** — deliberately, so a half-wired form cannot look
+   returns **501 in production**: deliberately, so a half-wired form cannot look
    successful to a real visitor. Point it at whatever already handles
    `/#contact` submissions rather than adding a second path.
 2. **Confirm `G-1DT0WH31GK` is Pixorama's own GA4 property** before trusting any
@@ -184,13 +184,13 @@ write arbitrary values into a lead record.
    look like they are failing when they are not.
 4. **Add the five routes to `sitemap.xml`**, plus `/services`.
 5. **Point the footer's "Capabilities" column at the five pages.** All five
-   entries currently link to `#capabilities` — five links to one anchor.
+   entries currently link to `#capabilities`, five links to one anchor.
 6. **Point the nav's "Services" item at `/services`** instead of `/#capabilities`.
-7. ~~Decide the slug question.~~ **Done** — slugs use buyer wording, nav keeps
+7. ~~Decide the slug question.~~ **Done**: slugs use buyer wording, nav keeps
    brand wording (see above). No redirects needed, since none of these pages has
    been published. If any slug changes after launch it needs a 301, and it resets
    the page age that is the main asset these pages accumulate.
-8. **Move the five `Service` entries off the homepage `OfferCatalog`** — they now
+8. **Move the five `Service` entries off the homepage `OfferCatalog`**. They now
    live on the pages they describe. Leave `Organization` and `WebSite` on the
    homepage; the service pages reference `Organization` by `@id`.
 9. **Remove the migrated FAQ questions from the homepage.** Nine questions were
@@ -198,7 +198,7 @@ write arbitrary values into a lead record.
    itself.
 10. **`/about` and `/contact`** are still orphan routes serving homepage content
     under a homepage canonical. Build them out or remove them. (`/process` 404s
-    but is linked from nowhere — no action needed.)
+    but is linked from nowhere, no action needed.)
 
 ## What these pages are not
 
@@ -209,5 +209,5 @@ arrives, to give AI assistants something per-service to cite, to put real URLs
 behind the `Service` schema, and to be aged and ready when authority arrives.
 
 Judge them on qualified leads per page at **day 120**, and do not prune before
-**day 180** — the bottom authority band in the strategy's timeline. The lead path
+**day 180**, the bottom authority band in the strategy's timeline. The lead path
 for the next two to three quarters is the Step 5b plan, not these pages.

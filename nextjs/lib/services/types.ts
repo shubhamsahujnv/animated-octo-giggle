@@ -1,8 +1,7 @@
 /**
  * Service page content model.
  *
- * The `Slot` type is the important part. Every proof point on a service page —
- * case study numbers, named experts, price bands — is a Slot. A Slot is either
+ * The `Slot` type is the important part. Every proof point on a service page: * case study numbers, named experts, price bands, is a Slot. A Slot is either
  * confirmed (and renders) or pending (and does not). There is deliberately no
  * third state, because the page strategy forbids publishing unconfirmed
  * numbers, logos and certifications: a page may ship with a proof slot removed,
@@ -40,7 +39,7 @@ export interface CaseStudy {
   readonly client: string;
   /** What was delivered. */
   readonly work: string;
-  /** At least one real, client-approved metric. Required — a case study without
+  /** At least one real, client-approved metric. Required, a case study without
    *  a number is not proof, so the type will not let you ship one. */
   readonly metrics: readonly string[];
   readonly quote?: { readonly text: string; readonly attribution: string };
@@ -48,7 +47,7 @@ export interface CaseStudy {
 
 /**
  * A client Pixorama already names publicly, with the work described in its own
- * words. This is weaker proof than a case study — no numbers — but it is real,
+ * words. This is weaker proof than a case study, no numbers, but it is real,
  * already published, and costs nothing to confirm.
  *
  * `source` records where the claim is already live, so provenance stays
@@ -92,7 +91,7 @@ export interface FaqEntry {
 export interface BlogLink {
   readonly href: string;
   readonly label: string;
-  /** Set when the strategy flags this post — e.g. a zero-volume listicle.
+  /** Set when the strategy flags this post, e.g. a zero-volume listicle.
    *  Flagged posts are not rendered; the note explains why. */
   readonly flagged?: string;
 }
@@ -107,12 +106,12 @@ export interface TargetKeyword {
 
 export interface ServiceContent {
   /** URL segment. Also the key used in the registry. Must be the slugified
-   *  form of keywordPhrase — enforced by assertServiceContent(). */
+   *  form of keywordPhrase: enforced by assertServiceContent(). */
   readonly slug: string;
 
   /** The buyer wording this page is built on: the slug in words, and the words
    *  the title and H1 must open with. Distinct from navLabel because the two
-   *  serve different jobs — this one has to match how buyers search. */
+   *  serve different jobs, this one has to match how buyers search. */
   readonly keywordPhrase: string;
 
   /** Capability name as used in nav, footer and CTAs. Pixorama's own brand
@@ -121,7 +120,7 @@ export interface ServiceContent {
   /** <title>. Keep under ~60 characters. */
   readonly title: string;
   readonly metaDescription: string;
-  /** Must open with the same words as keywordPhrase — the strategy's
+  /** Must open with the same words as keywordPhrase, the strategy's
    *  slug/title/H1 rule. Enforced by assertServiceContent(). */
   readonly h1: string;
   readonly eyebrow: string;
@@ -141,11 +140,11 @@ export interface ServiceContent {
 
   /** Clients already named publicly, relevant to this service. Not a Slot:
    *  these are published facts, each carrying its own `source`. Empty is
-   *  legitimate — it means no public engagement covers this service. */
+   *  legitimate: it means no public engagement covers this service. */
   readonly clientRoster: readonly RosterEntry[];
 
   /** A real, already-published quote. Pending until one exists for this
-   *  service — never paraphrased or composed. */
+   *  service; never paraphrased or composed. */
   readonly testimonial: Slot<Testimonial>;
 
   readonly caseStudy: Slot<CaseStudy>;
@@ -163,7 +162,7 @@ export interface ServiceContent {
   readonly blogLinks: readonly BlogLink[];
 
   /** ISO date (YYYY-MM-DD) shown as "Last updated" and emitted as
-   *  schema.org dateModified. Bump it whenever the copy changes — a stale
+   *  schema.org dateModified. Bump it whenever the copy changes, a stale
    *  freshness date is worse than none. */
   readonly lastUpdated: string;
 
@@ -172,7 +171,7 @@ export interface ServiceContent {
   /** schema.org audience.audienceType */
   readonly audienceType: string;
 
-  /** The keyword this page is being aged toward. Documentation only — it does
+  /** The keyword this page is being aged toward. Documentation only; it does
    *  not affect rendering. */
   readonly targetKeyword?: TargetKeyword;
 
