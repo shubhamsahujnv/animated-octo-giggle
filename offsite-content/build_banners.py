@@ -9,8 +9,10 @@ Constraints taken from the template's own spec sheet:
   - titles around 9 words; auto-fit shrinks type and anything under 44px at OG
     size reads badly in a feed
   - *asterisks* tint words with the brand accent
-  - 'paper' background maps a white accent to #7c3aed, so paper rows use violet
-    or magenta explicitly
+  - 'paper' maps a WHITE accent to #7c3aed, and that mapping is the only
+    readable option there: measured against the paper ground, light violet
+    #a78bfa is 2.72:1 and magenta #e879f9 is 2.46:1, both under the 3:1 WCAG
+    large-text floor, while #7c3aed is 5.70:1. Every paper row uses white.
   - WebP q82 at 2x for the blog; keep covers under ~300KB
   - never put "SOC 2 certified" or "ISO 27001 certified" on a cover
 """
@@ -39,12 +41,12 @@ SPEC = {
  "M2": ("Lift and shift is a decision about *time*",                  "Cloud · Architecture",       "depth", "cyan"),
  "M3": ("We replaced a rewrite with *boring work*",                   "Engineering · Legacy",       "ink",   "magenta"),
  "M4": ("Most AI agent projects are *workflow projects*",             "AI & Data",                  "wash",  "violet"),
- "M5": ("How to read an agency pitch *without getting sold*",         "Digital Growth",             "paper", "violet"),
- "M6": ("Staff augmentation failed twice before we *fixed the contract*","Engagement Models",       "paper", "violet"),
- "M7": ("A fractional CTO question about *who owns the roadmap*",     "Leadership",                 "paper", "magenta"),
+ "M5": ("How to read an agency pitch *without getting sold*",         "Digital Growth",             "paper", "white"  ),
+ "M6": ("Staff augmentation failed twice before we *fixed the contract*","Engagement Models",       "paper", "white"  ),
+ "M7": ("A fractional CTO question about *who owns the roadmap*",     "Leadership",                 "paper", "white"  ),
  "M8": ("What a mobile app costs *after the quote*",                  "Mobile · Product",           "ink",   "cyan"),
  "M9": ("RAG or fine-tuning is the *wrong first question*",           "AI & Data",                  "wash",  "violet"),
- "M10":("Why every *top-10 list* looks the same",                     "Digital Growth",             "paper", "magenta"),
+ "M10":("Why every *top-10 list* looks the same",                     "Digital Growth",             "paper", "white"  ),
 
  "S1": ("What we mean by the *software backbone*",                    "Notes from the build",       "ink",   "violet"),
  "S2": ("The four numbers that *decide a migration*",                 "Cloud",                      "depth", "cyan"),
@@ -52,10 +54,10 @@ SPEC = {
  "S4": ("The modernisation decision tree we *actually use*",          "Engineering · Legacy",       "ink",   "magenta"),
  "S5": ("Where AI agents *earn their keep*",                          "AI & Data",                  "wash",  "violet"),
  "S6": ("Retrieval is a *product problem*",                           "AI & Data",                  "wash",  "violet"),
- "S7": ("How to buy *engineering capacity*",                          "Engagement Models",          "paper", "violet"),
+ "S7": ("How to buy *engineering capacity*",                          "Engagement Models",          "paper", "white"  ),
  "S8": ("Two platforms, *one team*",                                  "Mobile",                     "ink",   "cyan"),
  "S9": ("Security that *doesn't stop delivery*",                      "Security",                   "ink",   "magenta"),
- "S10":("How to run a *vendor shortlist*",                            "Digital Growth",             "paper", "magenta"),
+ "S10":("How to run a *vendor shortlist*",                            "Digital Growth",             "paper", "white"  ),
 }
 
 # Per-platform output. All three platforms crop, so the safe-area guide in the

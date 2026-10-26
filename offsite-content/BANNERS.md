@@ -1,4 +1,26 @@
-# Banner images — 30 covers from the Cover Studio
+# Banner images — 30 covers, generated
+
+**The 30 covers are generated and sit in `banners/`**, at 2400 × 1260 WebP q82,
+32–57 KB each. Plus `SUBSTACK-publication-cover.webp` at 1080 × 1080.
+
+They were produced by driving the Cover Studio's own canvas in headless
+Chromium rather than by reproducing its design — `generate_banners.js` loads
+the published page, sets each control from `banners.csv`, and reads the canvas
+back. The one local change is the export scale: the studio's `draw()` hardcodes
+`render(cv, 1)`, so a patched copy renders the preview canvas at 2×. The run
+fails loudly if Manrope has not loaded, since a fallback face would silently
+change every cover.
+
+Re-run after editing the spec table:
+
+```bash
+node generate_banners.js <studio index.html> banners.csv banners
+python3 add_banner_files.py     # record file name and real size in the CSVs
+```
+
+---
+
+## The spec
 
 Studio: **Pixorama Cover Studio** — https://claude.ai/artifact/K9GCrPoX2UCp5cv2oNro8T
 
