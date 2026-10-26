@@ -250,7 +250,7 @@ cannot produce it.
 ---
 
 AWS's
-[portfolio assessment guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-portfolio-assessment/welcome.html)
+[application portfolio assessment guide](https://docs.aws.amazon.com/prescriptive-guidance/latest/application-portfolio-assessment-guide/introduction.html)
 covers the data-collection side of this in more detail, including what to pull
 from discovery tooling. It is worth pairing with this, because the graph is only
 as good as the inventory feeding it.

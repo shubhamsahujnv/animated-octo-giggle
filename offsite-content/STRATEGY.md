@@ -351,3 +351,27 @@ offsite-content/
 Each post file carries a front-matter block with its title, target keyword,
 outbound links with exact anchor text, tags, and the platform-specific
 publishing notes.
+
+---
+
+## 8. Verification record
+
+**Date: 2026-10-26.**
+
+- All **24 unique pixoramagroup.com URLs** referenced across the 30 posts were
+  requested and returned **HTTP 200**. No broken internal link targets.
+- All **10 external authority URLs** were checked. Two were corrected:
+  - H2's AWS Prescriptive Guidance link 404'd; replaced with the current
+    `application-portfolio-assessment-guide` path.
+  - H6's Flexera link pointed at a generic press centre; now points at the
+    State of the Cloud report.
+- `canonical: NONE` confirmed on all 30 posts.
+- Per-post site-link counts confirmed within limits: Hashnode 2 body links,
+  Medium 2 body links (plus profile bio link, set in profile rather than post),
+  Substack 1-2 body links plus a byline employer disclosure.
+- `https://token.actions.githubusercontent.com` appears in H7 only inside JSON
+  and HCL configuration values as the OIDC issuer identifier. It is not a
+  hyperlink and will return 404 to a checker. This is correct.
+
+**Word counts:** Hashnode ~15,500 · Medium ~15,900 · Substack ~14,700 ·
+total ~46,000 across 30 posts.

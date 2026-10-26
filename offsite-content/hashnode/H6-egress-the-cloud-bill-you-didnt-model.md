@@ -226,7 +226,7 @@ shows a smaller saving and survives contact with the invoice is worth more than
 one that shows a larger saving and does not.
 
 Flexera's annual
-[State of the Cloud](https://www.flexera.com/about-us/press-center)
+[State of the Cloud report](https://info.flexera.com/CM-REPORT-State-of-the-Cloud)
 survey has put managing cloud spend at or near the top of respondents' concerns
 for years running, alongside consistently large self-reported waste. The waste is
 not mostly idle instances. It is structural, and data movement is the largest
