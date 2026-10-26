@@ -430,11 +430,14 @@ string is used more than twice across all 113 links.
 
 ---
 
-## Part 2 — Additions to the 12 existing blocks (20 links)
+## Part 2 — Additions to the 11 existing blocks (19 links)
 
 These pages already have a Related reading block. They also hold most of the
 site's internal equity. Adding cross-market and priority-target links routes it
 out of the India cluster instead of recycling it.
+
+`top-ai-development-companies-india` is deliberately absent: priority 1 already
+adds this exact Related reading entry to it. Adding it here too would duplicate.
 
 **Append these `<li>` rows to the existing `<ul>`, and update the count in the
 intro line** (e.g. "5 guides" becomes "7 guides").
@@ -479,12 +482,6 @@ intro line** (e.g. "5 guides" becomes "7 guides").
 <li><a href="/blog/cloud-cost-is-an-architecture-problem" rel="noreferrer">Why the bill goes up after you finish</a></li>
 ```
 
-### `top-ai-development-companies-india`
-
-```html
-<li><a href="/blog/best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c" rel="noreferrer">Best AI automation agencies in the USA and Australia</a></li>
-```
-
 ### `best-staff-augmentation-companies-india`
 
 ```html
@@ -524,9 +521,9 @@ intro line** (e.g. "5 guides" becomes "7 guides").
 ## Totals and expected effect
 
 - **Part 1:** 23 new blocks, **113 links**
-- **Part 2:** 12 existing blocks extended, **20 links**
-- **Combined: 133 new internal links**, taking the graph from 157 edges to
-  roughly **290**
+- **Part 2:** 12 existing blocks extended, **19 links**
+- **Combined: 132 new internal links**, taking the graph from 157 edges to
+  roughly **289**
 - Every one of the 16 zero-inbound pages now receives links
 - All four pure sinks now pass equity on
 

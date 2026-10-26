@@ -30,9 +30,6 @@ ADDITIONS = {
  "best-cloud-migration-companies-india": [
    ("cloud-migration-strategy-on-premise-to-cloud", "The migration strategy itself, step by step"),
    ("cloud-cost-is-an-architecture-problem", "Why the bill goes up after you finish")],
- "top-ai-development-companies-india": [
-   ("best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c",
-    "Best AI automation agencies in the USA and Australia")],
  "best-staff-augmentation-companies-india": [
    ("what-is-staff-augmentation", "What staff augmentation is, and when it beats a team"),
    ("top-it-staff-augmentation-companies-usa", "US staff augmentation firms, compared")],
@@ -120,6 +117,8 @@ w(f"## Part 2 — Additions to the {len(ADDITIONS)} existing blocks ({_n_add} li
 w("These pages already have a Related reading block. They also hold most of the")
 w("site's internal equity. Adding cross-market and priority-target links routes it")
 w("out of the India cluster instead of recycling it.\n")
+w("`top-ai-development-companies-india` is deliberately absent: priority 1 already")
+w("adds this exact Related reading entry to it. Adding it here too would duplicate.\n")
 w("**Append these `<li>` rows to the existing `<ul>`, and update the count in the")
 w("intro line** (e.g. \"5 guides\" becomes \"7 guides\").\n")
 tot = 0
