@@ -77,6 +77,12 @@ and the AI automation page (position 11-19, SD 13) sit under-linked.
 
 ### Priority 1 — Feed the AI automation page (8 links, one afternoon)
 
+> **Paste-ready copy for this priority is in `PRIORITY-1-PASTE-READY.md`.** All 8
+> pages were read, insertion points located by heading and quote, and the copy
+> written to match the house voice — 10 links from 8 pages, no repeated anchors.
+> The table below is the summary; that file is what you paste.
+
+
 Add one contextual body link to `best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c`
 from each of these, with varied anchors:
 
