@@ -66,7 +66,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
       {/* ---------- What's included ---------- */}
       <section className="section" id="included">
         <div className="wrap">
-          <SectionHead eyebrow="Scope" heading="What's included" />
+          <SectionHead eyebrow="Scope" heading={service.headings.included} />
           <dl className="reveal svc__grid" style={delay(1)}>
             {service.included.map((item) => (
               <div className="svc__item" key={item.label}>
@@ -84,6 +84,26 @@ export function ServicePage({ service }: { service: ServiceContent }) {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* ---------- Process ---------- */}
+      <section className="section" id="process">
+        <div className="wrap">
+          <SectionHead eyebrow="Method" heading={service.headings.process} />
+          <ol className="reveal svc__process" style={delay(1)}>
+            {service.process.map((step, i) => (
+              <li className="svc__step" key={step.step}>
+                <span className="svc__step-n" aria-hidden="true">
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 className="svc__h3">{step.step}</h3>
+                  <p>{step.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -105,7 +125,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
       {/* ---------- Proof ---------- */}
       <section className="section" id="proof">
         <div className="wrap">
-          <SectionHead eyebrow="Proof" heading="Evidence, not adjectives" />
+          <SectionHead eyebrow="Proof" heading={service.headings.proof} />
 
           {/* Clients already named publicly. Real, sourced, and carrying no
               numbers, which is why the case-study slot below stays separate. */}
@@ -184,7 +204,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
       {/* ---------- Pricing signal ---------- */}
       <section className="section" id="cost">
         <div className="wrap">
-          <SectionHead eyebrow="Commercials" heading="What drives cost" />
+          <SectionHead eyebrow="Commercials" heading={service.headings.cost} />
 
           <div className="reveal" style={delay(1)}>
             <PendingSlot slot={service.priceBand} label="price band">
@@ -212,7 +232,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
       {/* ---------- Qualification ---------- */}
       <section className="section" id="fit">
         <div className="wrap">
-          <SectionHead eyebrow="Fit" heading="Who it's for" />
+          <SectionHead eyebrow="Fit" heading={service.headings.fit} />
           <div className="reveal svc__fit" style={delay(1)}>
             <div className="svc__fit-col">
               <h3 className="svc__h3">Who it&apos;s for</h3>
@@ -235,7 +255,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
       </section>
 
       {/* ---------- FAQ ---------- */}
-      <ServiceFaq entries={service.faq} title="Questions," />
+      <ServiceFaq entries={service.faq} title={service.headings.faq} />
 
       {/* ---------- Related services ---------- */}
       {related.length > 0 ? (
@@ -258,9 +278,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
         <div className="wrap">
           <div className="reveal head" style={delay(0)}>
             <span className="eyebrow">Next step</span>
-            <h2 className="h2">
-              Let&apos;s <span className="gt">talk.</span>
-            </h2>
+            <h2 className="h2">{service.headings.cta}</h2>
             <p className="lead">
               Tell us the outcome you&apos;re chasing. A senior engineer replies, not a
               sales team.

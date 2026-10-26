@@ -41,7 +41,7 @@ tablets rather than stretched.*
 
 ---
 
-## What's included
+## What Our Mobile App Development Services Include
 
 | | |
 |---|---|
@@ -82,7 +82,7 @@ team needs one mobile capability. **Advisory & architecture** for a review of an
 
 ---
 
-## Proof
+## Mobile App Development Work We Can Name
 
 > **Client roster is deliberately empty on this page**: none of the five publicly named clients is
 > a mobile engagement. This is the finding, not an oversight.
@@ -100,7 +100,15 @@ team needs one mobile capability. **Advisory & architecture** for a review of an
 
 ---
 
-## What drives cost
+## Our Five-Step Mobile App Development Process
+
+1. **Agree the specification** Feature list, platforms, and the decision between native and cross-platform, made against that list.
+2. **Design for phone and tablet together** Tablet layouts laid out properly from the start, not stretched at the end.
+3. **Ship a production increment** A real signed build on a device inside the first fortnight.
+4. **Harden offline, payments and deep links** The parts that fail in the field: sync on a bad connection, store billing, link routing.
+5. **Submit, release and hand over** Store listings, review handling, and the signing assets and code transferred to you.
+
+## What Mobile App Development Costs
 
 - **Native or cross-platform**, and whether both platforms are in scope
 - **Feature depth**: offline sync, payments and background work each carry real weight
@@ -120,14 +128,14 @@ For worked numbers, point to
 
 ---
 
-## Who it's for
+## Who Our Mobile App Development Services Are For
 
 - Enterprises and funded startups shipping to both iOS and Android
 - Teams with a written specification, or ready to produce one
 - Products needing offline-first behaviour, tablet layouts, or in-app payments done properly
 - Teams who want the signed build, the signing assets and the code handed over
 
-## Who it's not for
+### Who it's not for
 
 - Anyone wanting a prototype with no route to a store release
 - Single-platform throwaway builds where the engagement model exceeds the need
@@ -135,7 +143,7 @@ For worked numbers, point to
 
 ---
 
-## FAQ
+## Frequently Asked Questions About Mobile App Development
 
 **Do you build mobile apps for iOS and Android?**
 We do. We take a mobile product from written specification to a signed build in both stores, native
@@ -169,7 +177,7 @@ Completely, including documentation, with handover designed in from the start.
 
 ---
 
-## Closing CTA
+## Scope a Mobile App Development Build
 
 **Let's talk**, form below.
 

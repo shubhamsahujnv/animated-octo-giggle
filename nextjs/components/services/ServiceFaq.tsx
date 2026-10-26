@@ -15,7 +15,7 @@ export function ServiceFaq({ entries, title }: { entries: readonly FaqEntry[]; t
         <div className="reveal head head--center" style={{ transitionDelay: "0ms" }}>
           <span className="eyebrow eyebrow--center">Answers</span>
           <h2 className="h2" id="faq-heading">
-            {title} <span className="gt">answered.</span>
+            {title}
           </h2>
         </div>
 

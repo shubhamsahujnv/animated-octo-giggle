@@ -111,25 +111,43 @@ export const mobileAppDevelopment: ServiceContent = {
     "Teams wanting hourly junior capacity rather than a senior-led build",
   ],
 
+  headings: {
+    included: "What Our Mobile App Development Services Include",
+    process: "Our Five-Step Mobile App Development Process",
+    proof: "Mobile App Development Work We Can Name",
+    cost: "What Mobile App Development Costs",
+    fit: "Who Our Mobile App Development Services Are For",
+    faq: "Frequently Asked Questions About Mobile App Development",
+    cta: "Scope a Mobile App Development Build",
+  },
+
+  process: [
+    { step: "Agree the specification", detail: "Feature list, platforms, and the decision between native and cross-platform, made against that list." },
+    { step: "Design for phone and tablet together", detail: "Tablet layouts laid out properly from the start, not stretched at the end." },
+    { step: "Ship a production increment", detail: "A real signed build on a device inside the first fortnight." },
+    { step: "Harden offline, payments and deep links", detail: "The parts that fail in the field: sync on a bad connection, store billing, link routing." },
+    { step: "Submit, release and hand over", detail: "Store listings, review handling, and the signing assets and code transferred to you." },
+  ],
+
   faq: [
     {
-      q: "Do you build mobile apps for iOS and Android?",
+      q: "Does your mobile app development cover both iOS and Android?",
       a: "We do. We take a mobile product from written specification to a signed build in both stores, native in Swift and Kotlin or cross-platform with React Native or Flutter. Every app is laid out properly for tablets rather than stretched, with offline-first data, push, deep links, and in-app payments where needed.",
     },
     {
-      q: "Should we go native or cross-platform?",
+      q: "Should our mobile app development be native or cross-platform?",
       a: "Native when you need platform depth: heavy device APIs or demanding performance. Cross-platform when the feature set is shared and one codebase is the faster, cheaper route. We make the recommendation against your actual feature list, not a house preference.",
     },
     {
-      q: "Can you take over an existing app?",
+      q: "Can your mobile app development team take over an existing app?",
       a: "Yes. An advisory and architecture review establishes what is there and what it would take to move it forward, before any rewrite is considered.",
     },
     {
-      q: "Do you handle App Store and Play Store submission?",
+      q: "Does mobile app development here include App Store and Play Store submission?",
       a: "Yes: signed builds, store listings, review handling and release management. Store review times themselves sit with Apple and Google.",
     },
     {
-      q: "Do we own the code and signing assets?",
+      q: "Do we own the mobile app code and signing assets?",
       a: "Completely, including documentation, with handover designed in from the start.",
     },
   ],

@@ -254,3 +254,42 @@
     transition: none !important;
   }
 }
+
+/* Process: a numbered run of steps, each step's name an H3. */
+.svc__process {
+  display: grid;
+  gap: 24px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: svc-step;
+}
+
+.svc__step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  max-width: 76ch;
+}
+
+.svc__step-n {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--brand, #5b2be8);
+}
+
+.svc__step h3 {
+  margin-bottom: 4px;
+}
+
+.svc__step p {
+  margin: 0;
+  opacity: 0.82;
+}

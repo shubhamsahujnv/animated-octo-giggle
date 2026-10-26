@@ -37,7 +37,7 @@ clients plus the only published testimonial Pixorama has.
 
 ---
 
-## What's included
+## What Our Web Development Services Include
 
 | | |
 |---|---|
@@ -70,7 +70,7 @@ audit of an existing site.
 
 ---
 
-## Proof
+## Web Development Work We Can Name
 
 ### Filled: already published by Pixorama
 
@@ -104,7 +104,15 @@ or enquiry change. The names and the quote are public; no number is.]`
 
 ---
 
-## What drives cost
+## Our Five-Step Web Development Process
+
+1. **Audit what the current site earns** Traffic, enquiries and attribution, so the build has a baseline to beat.
+2. **Structure before design** Service and category architecture that can rank, rather than one page doing everything.
+3. **Build on a stack your team can edit** Fast, accessible and measurable, with the analytics wired from day one.
+4. **Migrate with redirects mapped** The step that is usually skipped and most often causes the traffic drop.
+5. **Measure, then compound** Search and growth work reported against the baseline, month over month.
+
+## What Web Development Services Cost
 
 - **Page and template count**, and how much is bespoke versus systematised
 - **Catalogue size and data quality**: clean structured product data, or data work first
@@ -121,14 +129,14 @@ or enquiry change. The names and the quote are public; no number is.]`
 
 ---
 
-## Who it's for
+## Who Our Web Development Services Are For
 
 - Enterprises and funded startups whose site launched and then stopped producing enquiries
 - Teams with a product catalogue that has outgrown its current structure or search
 - Teams who need attribution they can trust before spending more on acquisition
 - Teams who want AI assistants to be able to quote and cite their pages
 
-## Who it's not for
+### Who it's not for
 
 - Anyone wanting a template site at template prices
 - Anyone wanting ranking guarantees; nobody can give them honestly
@@ -136,7 +144,7 @@ or enquiry change. The names and the quote are public; no number is.]`
 
 ---
 
-## FAQ
+## Frequently Asked Questions About Web Development Services
 
 **Do you do SEO as well as build the site?**
 Yes. Technical SEO, content structure and analytics are part of the same engagement. A site that
@@ -169,7 +177,7 @@ months. Anyone promising rankings on a fixed date is guessing.
 
 ---
 
-## Closing CTA
+## Scope a Web Development Project
 
 **Let's talk**, form below.
 

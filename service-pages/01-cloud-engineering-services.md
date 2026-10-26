@@ -13,7 +13,8 @@
 
 **H1:** Cloud Engineering Services: Built to Be Handed Back to You
 
-> Slug, title and H1 all open with the same words, "Cloud & Platform Engineering". Do not let a CMS
+> Every H2 carries the keyword or a close variant, per the strategy's keyword-placement
+> rule. Slug, title and H1 all open with the same words, "Cloud & Platform Engineering". Do not let a CMS
 > or an AI rewrite drift the H1 away from the slug.
 
 ---
@@ -40,7 +41,7 @@ yet, see the case study below.
 
 ---
 
-## What's included
+## What Our Cloud Engineering Services Include
 
 | | |
 |---|---|
@@ -71,7 +72,7 @@ yet, see the case study below.
 
 ---
 
-## Proof
+## Cloud Engineering Work We Can Name
 
 ### Filled: already published by Pixorama
 
@@ -94,7 +95,15 @@ anywhere on the site, and for regulated-sector buyers this is the gap that costs
 
 ---
 
-## What drives cost
+## Our Five-Step Cloud Engineering Process
+
+1. **Assess the estate before touching it** What runs where, what it costs, what the compliance load actually is.
+2. **Agree the target architecture** Landing zone shape, network and identity model, the guardrails that come with it.
+3. **Ship a production increment** Inside the first fortnight, reproducible from source, not a slide deck.
+4. **Migrate in steps with a rollback path** Workload by workload, with a way back at every one of them.
+5. **Hand it over, documented** Code, infrastructure and runbooks, so your own engineers can run and extend it.
+
+## What Cloud Engineering Services Cost
 
 The site currently says only that engagements are "scoped and priced to the outcome". That is not a
 pricing signal, and its absence is a known drop-off point for this buyer. Until a band is approved,
@@ -116,7 +125,7 @@ two convert better.]`
 
 ---
 
-## Who it's for
+## Who Our Cloud Engineering Services Are For
 
 - Enterprises and funded startups in financial services, healthcare and life sciences, logistics and
   mobility, public sector, energy and utilities
@@ -124,7 +133,7 @@ two convert better.]`
 - Teams who need SOC 2 or ISO 27001 readiness without stalling the roadmap
 - Teams who want the platform handed back, running, to their own engineers
 
-## Who it's not for
+### Who it's not for
 
 - Single-server or static-site hosting, where the engagement model is heavier than the need
 - Teams wanting a body shop staffed by junior engineers billed by the hour
@@ -135,7 +144,7 @@ two convert better.]`
 
 ---
 
-## FAQ
+## Frequently Asked Questions About Cloud Engineering Services
 
 Moved from the homepage's combined FAQ so each question lives on exactly one page.
 
@@ -170,7 +179,7 @@ target architecture, and work to it incrementally rather than demanding a rewrit
 
 ---
 
-## Closing CTA
+## Scope a Cloud Engineering Engagement
 
 **Let's talk**, form directly below.
 

@@ -141,25 +141,43 @@ export const webDevelopmentServices: ServiceContent = {
     "Teams wanting volume content production disconnected from a service they actually sell",
   ],
 
+  headings: {
+    included: "What Our Web Development Services Include",
+    process: "Our Five-Step Web Development Process",
+    proof: "Web Development Work We Can Name",
+    cost: "What Web Development Services Cost",
+    fit: "Who Our Web Development Services Are For",
+    faq: "Frequently Asked Questions About Web Development Services",
+    cta: "Scope a Web Development Project",
+  },
+
+  process: [
+    { step: "Audit what the current site earns", detail: "Traffic, enquiries and attribution, so the build has a baseline to beat." },
+    { step: "Structure before design", detail: "Service and category architecture that can rank, rather than one page doing everything." },
+    { step: "Build on a stack your team can edit", detail: "Fast, accessible and measurable, with the analytics wired from day one." },
+    { step: "Migrate with redirects mapped", detail: "The step that is usually skipped and most often causes the traffic drop." },
+    { step: "Measure, then compound", detail: "Search and growth work reported against the baseline, month over month." },
+  ],
+
   faq: [
     {
-      q: "Do you do SEO as well as build the site?",
+      q: "Do your web development services include SEO?",
       a: "Yes. Technical SEO, content structure and analytics are part of the same engagement. A site that launches and cannot be found has not finished.",
     },
     {
-      q: "What is AI answer readiness, and do we need it?",
+      q: "What is AI answer readiness, and should web development include it?",
       a: "Structuring pages so assistants can quote and cite them: an answer-ready opening, scannable facts, schema and a direct FAQ. It matters because an increasing share of buyers ask an assistant before they search, and those visits often arrive as direct traffic.",
     },
     {
-      q: "Can you migrate our existing site without losing traffic?",
+      q: "Can your web development team migrate our site without losing traffic?",
       a: "Yes. Migration work is redirect mapping, canonical and indexation handling, and monitoring after launch. It is the part that is usually skipped and most often causes a traffic drop.",
     },
     {
-      q: "Will we be able to edit the site ourselves?",
+      q: "Will we be able to edit the site your web development team builds?",
       a: "Yes. You get full ownership of the code and content, documented, on a stack your own team can edit. There is no lock-in by obscurity.",
     },
     {
-      q: "How long before we see results?",
+      q: "How long after a web development project before we see results?",
       a: "Build work ships in the first fortnight and continues in short cycles. Search results compound over months. Anyone promising rankings on a fixed date is guessing.",
     },
   ],

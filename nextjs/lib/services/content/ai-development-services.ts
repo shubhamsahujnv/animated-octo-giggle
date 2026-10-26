@@ -137,21 +137,39 @@ export const aiDevelopmentServices: ServiceContent = {
     "Anyone wanting AI added because it is expected, with no outcome attached",
   ],
 
+  headings: {
+    included: "What Our AI Development Services Include",
+    process: "Our Five-Step AI Development Process",
+    proof: "AI Development Work We Can Name",
+    cost: "What AI Development Services Cost",
+    fit: "Who Our AI Development Services Are For",
+    faq: "Frequently Asked Questions About AI Development Services",
+    cta: "Scope an AI Development Pilot",
+  },
+
+  process: [
+    { step: "Pick the question set first", detail: "The decisions and answers the system must get right, written down before any model is chosen." },
+    { step: "Get the data ready", detail: "Pipelines, permissions and quality work, because retrieval is only as good as what it reads." },
+    { step: "Build the evaluation set before the feature", detail: "A scored set of real questions, so quality is measured rather than asserted." },
+    { step: "Ship a narrow slice to production", detail: "One evaluable workflow inside the first fortnight, with guardrails and an audit trail." },
+    { step: "Monitor quality, cost and drift", detail: "Live monitoring and regression evaluation on every change after launch." },
+  ],
+
   faq: [
     {
-      q: "Can you build AI into our product?",
+      q: "What do AI development services actually include?",
       a: "Yes. We build production-grade AI on top of your data: LLM assistants and copilots, retrieval-augmented generation, agents and machine-learning models, all with guardrails, evaluation and monitoring. We start from the outcome and the data, not the demo, so what ships is safe and measurable.",
     },
     {
-      q: "RAG or fine-tuning: which do we need?",
+      q: "Do our AI development services need RAG or fine-tuning?",
       a: "Usually RAG first. It grounds answers in your current content, cites sources, and updates when your data updates. Fine-tuning earns its place for form and behaviour, rarely for knowledge.",
     },
     {
-      q: "How do you stop it hallucinating?",
+      q: "How do your AI development services stop a model inventing answers?",
       a: "Permission-aware retrieval, grounding with citations, explicit refusal behaviour, and an evaluation set that runs on every change. The goal is a system whose failure modes are known and monitored.",
     },
     {
-      q: "Do we own the AI system you build?",
+      q: "Do we own the AI system your development team builds?",
       a: "Completely: code, infrastructure, prompts, evaluation sets and documentation, with handover designed in from the start.",
     },
   ],

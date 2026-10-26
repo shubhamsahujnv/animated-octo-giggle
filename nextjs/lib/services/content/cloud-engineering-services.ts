@@ -136,21 +136,39 @@ export const cloudEngineeringServices: ServiceContent = {
     "Teams wanting a platform run as a permanent black box; handover is designed in, not optional",
   ],
 
+  headings: {
+    included: "What Our Cloud Engineering Services Include",
+    process: "Our Five-Step Cloud Engineering Process",
+    proof: "Cloud Engineering Work We Can Name",
+    cost: "What Cloud Engineering Services Cost",
+    fit: "Who Our Cloud Engineering Services Are For",
+    faq: "Frequently Asked Questions About Cloud Engineering Services",
+    cta: "Scope a Cloud Engineering Engagement",
+  },
+
+  process: [
+    { step: "Assess the estate before touching it", detail: "What runs where, what it costs, what the compliance load actually is." },
+    { step: "Agree the target architecture", detail: "Landing zone shape, network and identity model, the guardrails that come with it." },
+    { step: "Ship a production increment", detail: "Inside the first fortnight, reproducible from source, not a slide deck." },
+    { step: "Migrate in steps with a rollback path", detail: "Workload by workload, with a way back at every one of them." },
+    { step: "Hand it over, documented", detail: "Code, infrastructure and runbooks, so your own engineers can run and extend it." },
+  ],
+
   faq: [
     {
-      q: "How do you keep software secure and compliant?",
+      q: "Do your cloud engineering services cover SOC 2 and ISO 27001 readiness?",
       a: "Security is engineered in, not bolted on. We use zero-trust architecture, automate evidence collection, and harden the delivery pipeline so SOC 2 and ISO 27001 readiness becomes continuous rather than an end-of-cycle scramble.",
     },
     {
-      q: "How quickly can you start delivering?",
+      q: "How quickly can cloud engineering services start delivering?",
       a: "Engagements are senior-led from day one with no ramp-up tax. We ship a production increment inside the first fortnight, then keep shipping in short cycles.",
     },
     {
-      q: "Do we own the code and the infrastructure?",
+      q: "Do we own the code and infrastructure your cloud engineering team builds?",
       a: "Completely. You get full ownership of the code, infrastructure and documentation, with handover designed in from the start. There is no lock-in by obscurity.",
     },
     {
-      q: "Can you take over a platform someone else built?",
+      q: "Can your cloud engineering services take over a platform someone else built?",
       a: "Yes. Advisory and architecture reviews exist for exactly this. We assess what is there, agree a target architecture, and work to it incrementally rather than demanding a rewrite.",
     },
   ],

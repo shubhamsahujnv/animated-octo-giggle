@@ -83,6 +83,28 @@ export interface EngagementModel {
   readonly fits: string;
 }
 
+/**
+ * The page's H2s. They are data, not hard-coded in the component, because the
+ * strategy requires close keyword variants in them ("Close variants go in the
+ * body and H2s") and assertSectionHeadings() enforces it. Generic headings
+ * like "What's included" carry no keyword and were the original defect.
+ */
+export interface SectionHeadings {
+  readonly included: string;
+  readonly process: string;
+  readonly proof: string;
+  readonly cost: string;
+  readonly fit: string;
+  readonly faq: string;
+  readonly cta: string;
+}
+
+/** One step of the delivery process, rendered as an H3 under the process H2. */
+export interface ProcessStep {
+  readonly step: string;
+  readonly detail: string;
+}
+
 export interface FaqEntry {
   readonly q: string;
   readonly a: string;
@@ -155,6 +177,11 @@ export interface ServiceContent {
 
   readonly forWho: readonly string[];
   readonly notForWho: readonly string[];
+
+  readonly headings: SectionHeadings;
+
+  /** The numbered delivery process. Each step's name becomes an H3. */
+  readonly process: readonly ProcessStep[];
 
   readonly faq: readonly FaqEntry[];
 
@@ -251,6 +278,48 @@ export function assertServiceContent(c: ServiceContent): ServiceContent {
   }
 
   if (c.faq.length === 0) throw new Error(`${where}: needs at least one FAQ entry.`);
+
+  if (c.process.length < 3) {
+    throw new Error(`${where}: the process section needs at least three steps.`);
+  }
+
+  // The rule the first draft broke: close variants belong in the H2s.
+  // "Cloud Engineering Services" -> a heading must carry "cloud" or "engineering".
+  //
+  // "services" is dropped as too weak a match on its own; "ai" is kept despite
+  // being two letters, because it is the whole distinctive term on that page.
+  // Matching is on whole words, so "ai" does not match inside "chain".
+  const stop = new Set(["and", "the", "for", "with", "of", "services"]);
+  const terms = headingKey(c.keywordPhrase)
+    .split(" ")
+    .filter((w) => w.length > 1 && !stop.has(w));
+
+  if (terms.length === 0) {
+    throw new Error(`${where}: keywordPhrase "${c.keywordPhrase}" yields no distinctive terms.`);
+  }
+
+  const carries = (h: string) => {
+    const words = new Set(headingKey(h).split(" "));
+    return terms.some((t) => words.has(t));
+  };
+
+  const headings = Object.entries(c.headings) as [keyof SectionHeadings, string][];
+  const withKeyword = headings.filter(([, h]) => carries(h));
+  if (withKeyword.length < 5) {
+    const missing = headings.filter(([, h]) => !carries(h)).map(([k]) => k);
+    throw new Error(
+      `${where}: only ${withKeyword.length} of ${headings.length} H2s carry a term from "${c.keywordPhrase}" (need 5). Generic: ${missing.join(", ")}.`,
+    );
+  }
+
+  // The FAQ is where long-tail questions live, so most of them should name the
+  // service the way a buyer would ask about it.
+  const faqWithKeyword = c.faq.filter((f) => carries(f.q));
+  if (faqWithKeyword.length < Math.ceil(c.faq.length / 2)) {
+    throw new Error(
+      `${where}: only ${faqWithKeyword.length} of ${c.faq.length} FAQ questions name the service. At least half should.`,
+    );
+  }
 
   // A roster entry without provenance is an unsourced claim about a real third
   // party, which is the thing this model exists to prevent.

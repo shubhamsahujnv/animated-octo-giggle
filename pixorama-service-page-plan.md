@@ -242,6 +242,29 @@ Keep it to five, one per real capability. **Do not multiply by industry or city.
 | `/services/product-software-engineering` | "Product & Software Engineering" | `/blog/how-to-build-saas-product`, `/blog/legacy-application-modernization` |
 | `/services/web-development-services` | "Web Development Services" | `/products` |
 
+**Every H2 carries the keyword or a close variant.** Section 4's keyword-placement rule says close
+variants go in the body and H2s, and the first draft of these pages broke it: every section heading
+was generic ("What's included", "Timelines", "Who it's for"), carrying no keyword at all. The
+headings are now part of the content model and the build rejects a page whose H2s go generic again.
+
+| Section | Generic (wrong) | Keyword-bearing (right) |
+|---|---|---|
+| Scope | What's included | What Our Cloud Engineering Services Include |
+| Method | How we work | Our Five-Step Cloud Engineering Process |
+| Proof | Evidence, not adjectives | Cloud Engineering Work We Can Name |
+| Commercials | What drives cost | What Cloud Engineering Services Cost |
+| Fit | Who it's for | Who Our Cloud Engineering Services Are For |
+| FAQ | Questions, answered | Frequently Asked Questions About Cloud Engineering Services |
+| CTA | Let's talk | Scope a Cloud Engineering Engagement |
+
+**FAQ questions name the service too.** "How do you keep software secure and compliant?" became "Do
+your cloud engineering services cover SOC 2 and ISO 27001 readiness?" These are the long-tail
+phrasings buyers and AI assistants actually use, and at least half of each page's questions must
+carry the service name.
+
+**A numbered process section was added**, five steps per page, each step's name an H3. It gives the
+page a method to show rather than claim, and it is the structure AI assistants quote most readily.
+
 Note the slug/title discipline from Section 4: slug = the keyword, and title and H1 **open with the
 same words**, with the proof hook after, e.g. "Cloud Engineering Services: Built to Be Handed Back
 to You". Not "We build AI-powered software that scales your business".

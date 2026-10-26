@@ -157,25 +157,43 @@ export const productSoftwareEngineering: ServiceContent = {
     "Teams wanting a permanent outsourced black box; handover is designed in, not optional",
   ],
 
+  headings: {
+    included: "What Our Product & Software Engineering Services Include",
+    process: "Our Five-Step Software Engineering Process",
+    proof: "Software Engineering Work We Can Name",
+    cost: "What Product & Software Engineering Costs",
+    fit: "Who Our Product & Software Engineering Services Are For",
+    faq: "Frequently Asked Questions About Product & Software Engineering",
+    cta: "Scope a Software Engineering Engagement",
+  },
+
+  process: [
+    { step: "Discovery against production reality", detail: "The existing system, the constraints and the deadline that has not moved." },
+    { step: "Agree the slice that ships first", detail: "The narrowest thing that is genuinely useful in production." },
+    { step: "Ship a production increment", detail: "Inside the first fortnight, senior-led, with the engineering controls already in place." },
+    { step: "Replace the legacy incrementally", detail: "A working system at every step, never a big-bang rewrite." },
+    { step: "Hand over with documentation and enablement", detail: "Your team runs and extends it; there is no lock-in by obscurity." },
+  ],
+
   faq: [
     {
-      q: "What does Pixorama do?",
+      q: "What do your product and software engineering services cover?",
       a: "Pixorama is an engineering-led software company. We design, build, and operate cloud platforms, AI and data products, mobile apps, and security-hardened systems for enterprises and funded startups. In short: we turn an idea or a stalled roadmap into shipped, scalable software you own.",
     },
     {
-      q: "How do engagements and pricing work?",
+      q: "How do software engineering engagements and pricing work?",
       a: "Choose the model that fits your stage: outcome-based fixed-scope projects, a dedicated squad embedded in your roadmap, specialist augmentation for a critical capability, or advisory and architecture reviews. Every model is staffed with senior people and run against clear, measurable outcomes.",
     },
     {
-      q: "What industries do you work with?",
+      q: "Which industries do your software engineering teams work in?",
       a: "We work across regulated, high-stakes sectors: financial services, healthcare and life sciences, retail and eCommerce, logistics and mobility, SaaS and technology, public sector, energy and utilities, and education. Our discovery process gets us productive in a new domain quickly.",
     },
     {
-      q: "Can you modernise a legacy system without stopping delivery?",
+      q: "Can your software engineering team modernise a legacy system without stopping delivery?",
       a: "That is the default approach: incremental replacement with a working system at every step, rather than a big-bang rewrite.",
     },
     {
-      q: "Where is Pixorama based, and do you work remotely?",
+      q: "Where is the engineering team based, and do you work remotely?",
       a: "We are remote-first and senior-led, with distributed teams that align to your time zone and work with clients across regions. Founded in 2022, we operate as a hands-on engineering partner rather than a body shop.",
     },
   ],

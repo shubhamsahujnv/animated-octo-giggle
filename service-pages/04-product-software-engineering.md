@@ -34,7 +34,7 @@ Three named, already-published engagements. No numbers yet, see the case study b
 
 ---
 
-## What's included
+## What Our Product & Software Engineering Services Include
 
 | | |
 |---|---|
@@ -64,7 +64,7 @@ Three named, already-published engagements. No numbers yet, see the case study b
 
 ---
 
-## Proof
+## Software Engineering Work We Can Name
 
 ### Filled: already published by Pixorama
 
@@ -91,7 +91,15 @@ all five pages.]`
 
 ---
 
-## What drives cost
+## Our Five-Step Software Engineering Process
+
+1. **Discovery against production reality** The existing system, the constraints and the deadline that has not moved.
+2. **Agree the slice that ships first** The narrowest thing that is genuinely useful in production.
+3. **Ship a production increment** Inside the first fortnight, senior-led, with the engineering controls already in place.
+4. **Replace the legacy incrementally** A working system at every step, never a big-bang rewrite.
+5. **Hand over with documentation and enablement** Your team runs and extends it; there is no lock-in by obscurity.
+
+## What Product & Software Engineering Costs
 
 - **Scope and stage**, a first MVP versus a platform replacing a system in production
 - **Integration surface**, how many existing systems must be read from and written to
@@ -108,7 +116,7 @@ all five pages.]`
 
 ---
 
-## Who it's for
+## Who Our Product & Software Engineering Services Are For
 
 - Enterprises and funded startups in financial services, healthcare and life sciences, retail and
   eCommerce, logistics and mobility, SaaS and technology, public sector, energy and utilities,
@@ -117,7 +125,7 @@ all five pages.]`
 - Teams carrying a legacy system they cannot afford to stop or to rewrite wholesale
 - Teams who want the system handed back, documented, and runnable by their own engineers
 
-## Who it's not for
+### Who it's not for
 
 - Teams wanting hourly junior capacity billed by the seat
 - Anyone wanting a fixed price for a scope that has not been defined; we would scope it first
@@ -125,7 +133,7 @@ all five pages.]`
 
 ---
 
-## FAQ
+## Frequently Asked Questions About Product & Software Engineering
 
 **What does Pixorama do?**
 Pixorama is an engineering-led software company. We design, build and operate cloud platforms, AI and
@@ -165,7 +173,7 @@ This page is the hub of the cluster: link it from all four others.
 
 ---
 
-## Closing CTA
+## Scope a Software Engineering Engagement
 
 **Let's talk**, form below.
 

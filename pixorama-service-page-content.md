@@ -25,8 +25,13 @@ Volumes are US monthly, from Ubersuggest, 23 October 2026. A sixth page, `/servi
 five and replaces the current orphan route that serves homepage content under a homepage canonical.
 
 Every page carries the same structure: an answer-ready opening of 40 to 60 words, a scope table,
-timelines, the four engagement models, proof, what drives cost, who it is and is not for, an FAQ,
-internal links, and a form that attributes the lead to its page.
+timelines, a five-step process, the four engagement models, proof, what drives cost, who it is and
+is not for, an FAQ, internal links, and a form that attributes the lead to its page.
+
+**Every H2 carries the keyword or a close variant**, per the strategy's keyword-placement rule, and
+at least half of each page's FAQ questions name the service the way a buyer would ask about it. The
+first draft used generic headings ("What's included", "Who it's for") that carried no keyword at
+all; the build now rejects a page whose headings go generic again.
 
 ## Cloud Engineering Services
 
@@ -44,7 +49,7 @@ as code, built and operated by senior engineers. First increment in a fortnight.
 
 **Proof line:** Platform support and development for Gateways. Live client work, not a capability claim.
 
-### What's included
+### What Our Cloud Engineering Services Include
 
 | | |
 | --- | --- |
@@ -62,13 +67,21 @@ as code, built and operated by senior engineers. First increment in a fortnight.
 - Production increment inside the first fortnight. Senior-led from day one, no ramp-up tax.
 - Then short, continuous delivery cycles with the engineering controls that keep velocity from breaking things.
 
-### What drives cost
+### Our Five-Step Cloud Engineering Process
+
+1. **Assess the estate before touching it** What runs where, what it costs, what the compliance load actually is.
+2. **Agree the target architecture** Landing zone shape, network and identity model, the guardrails that come with it.
+3. **Ship a production increment** Inside the first fortnight, reproducible from source, not a slide deck.
+4. **Migrate in steps with a rollback path** Workload by workload, with a way back at every one of them.
+5. **Hand it over, documented** Code, infrastructure and runbooks, so your own engineers can run and extend it.
+
+### What Cloud Engineering Services Cost
 
 Scope (a single landing zone versus a multi-region platform) · estate size · compliance load ·
 starting state (reproducible infrastructure already, or hand-built environments) · model
 (fixed-scope project with milestone commercials, versus an embedded squad).
 
-### Who it's for
+### Who Our Cloud Engineering Services Are For
 
 - Enterprises and funded startups in financial services, healthcare and life sciences, logistics and mobility, public sector, energy and utilities
 - Teams whose cloud spend is rising faster than their delivery speed
@@ -81,7 +94,7 @@ starting state (reproducible infrastructure already, or hand-built environments)
 - Teams wanting a body shop staffed by junior engineers billed by the hour
 - Teams wanting a platform run as a permanent black box; handover is designed in, not optional
 
-### FAQ
+### Frequently Asked Questions About Cloud Engineering Services
 
 **How do you keep software secure and compliant?** Security is engineered in, not bolted on. We use
 zero-trust architecture, automate evidence collection, and harden the delivery pipeline so SOC 2 and
@@ -118,7 +131,7 @@ models with guardrails, evaluation and monitoring. From the outcome, not a demo.
 **Proof line:** none yet. No publicly named client is identifiable as AI work, so the page runs its
 fallback: *We start from the outcome and the data, not the demo, so what ships is safe and measurable.*
 
-### What's included
+### What Our AI Development Services Include
 
 | | |
 | --- | --- |
@@ -136,13 +149,21 @@ fallback: *We start from the outcome and the data, not the demo, so what ships i
 - Production increment inside the first fortnight, typically a narrow, evaluable slice rather than a broad demo.
 - Then short cycles, with the evaluation set growing alongside the feature.
 
-### What drives cost
+### Our Five-Step AI Development Process
+
+1. **Pick the question set first** The decisions and answers the system must get right, written down before any model is chosen.
+2. **Get the data ready** Pipelines, permissions and quality work, because retrieval is only as good as what it reads.
+3. **Build the evaluation set before the feature** A scored set of real questions, so quality is measured rather than asserted.
+4. **Ship a narrow slice to production** One evaluable workflow inside the first fortnight, with guardrails and an audit trail.
+5. **Monitor quality, cost and drift** Live monitoring and regression evaluation on every change after launch.
+
+### What AI Development Services Cost
 
 Data readiness · scope (one grounded assistant versus a multi-workflow agent system) · accuracy bar,
 since guardrail and evaluation work scales with the consequence of being wrong · integration surface
 · compliance load · run cost, which we design against rather than discover later.
 
-### Who it's for
+### Who Our AI Development Services Are For
 
 - Enterprises and funded startups with real proprietary data and a real workflow to improve
 - Teams who have run an AI pilot that impressed in a demo and failed in production
@@ -155,7 +176,7 @@ since guardrail and evaluation work scales with the consequence of being wrong �
 - Teams with no usable data yet; we would be doing data engineering, and would say so
 - Anyone wanting AI added because it is expected, with no outcome attached
 
-### FAQ
+### Frequently Asked Questions About AI Development Services
 
 **Can you build AI into our product?** Yes. We build production-grade AI on top of your data: LLM
 assistants and copilots, retrieval-augmented generation, agents and machine-learning models, all
@@ -201,7 +222,7 @@ Kotlin or cross-platform React Native and Flutter, offline-first and tablet-read
 named clients is a mobile engagement. It runs its fallback: *From written specification to a signed
 build in both stores, laid out properly for tablets rather than stretched.*
 
-### What's included
+### What Our Mobile App Development Services Include
 
 | | |
 | --- | --- |
@@ -227,14 +248,22 @@ across both platforms and one codebase is the cheaper, faster route.
 - Production increment inside the first fortnight, senior-led from day one.
 - Store review time sits with Apple and Google, so we plan around it rather than promise through it.
 
-### What drives cost
+### Our Five-Step Mobile App Development Process
+
+1. **Agree the specification** Feature list, platforms, and the decision between native and cross-platform, made against that list.
+2. **Design for phone and tablet together** Tablet layouts laid out properly from the start, not stretched at the end.
+3. **Ship a production increment** A real signed build on a device inside the first fortnight.
+4. **Harden offline, payments and deep links** The parts that fail in the field: sync on a bad connection, store billing, link routing.
+5. **Submit, release and hand over** Store listings, review handling, and the signing assets and code transferred to you.
+
+### What Mobile App Development Costs
 
 Native or cross-platform, and whether both platforms are in scope · feature depth, since offline
 sync, payments and background work each carry real weight · backend state · design state ·
 compliance · release management. The published cost post answers much of this and is linked from the
 pricing section.
 
-### Who it's for
+### Who Our Mobile App Development Services Are For
 
 - Enterprises and funded startups shipping to both iOS and Android
 - Teams with a written specification, or ready to produce one
@@ -247,7 +276,7 @@ pricing section.
 - Single-platform throwaway builds where the engagement model exceeds the need
 - Teams wanting hourly junior capacity rather than a senior-led build
 
-### FAQ
+### Frequently Asked Questions About Mobile App Development
 
 **Do you build mobile apps for iOS and Android?** We do. We take a mobile product from written
 specification to a signed build in both stores, native in Swift and Kotlin or cross-platform with
@@ -288,7 +317,7 @@ Production increment in the first fortnight, and you own the code and documentat
 
 **Proof line:** Platforms shipped for BVIVE, Gateways and New Zealand Gateway.
 
-### What's included
+### What Our Product & Software Engineering Services Include
 
 | | |
 | --- | --- |
@@ -306,12 +335,20 @@ Production increment in the first fortnight, and you own the code and documentat
 - Production increment inside the first fortnight. Senior-led from day one, no ramp-up tax.
 - Then short, continuous cycles.
 
-### What drives cost
+### Our Five-Step Software Engineering Process
+
+1. **Discovery against production reality** The existing system, the constraints and the deadline that has not moved.
+2. **Agree the slice that ships first** The narrowest thing that is genuinely useful in production.
+3. **Ship a production increment** Inside the first fortnight, senior-led, with the engineering controls already in place.
+4. **Replace the legacy incrementally** A working system at every step, never a big-bang rewrite.
+5. **Hand over with documentation and enablement** Your team runs and extends it; there is no lock-in by obscurity.
+
+### What Product & Software Engineering Costs
 
 Scope and stage (a first MVP versus a platform replacing a system in production) · integration
 surface · compliance load · starting state · model · handover depth.
 
-### Who it's for
+### Who Our Product & Software Engineering Services Are For
 
 - Enterprises and funded startups across financial services, healthcare and life sciences, retail and eCommerce, logistics and mobility, SaaS and technology, public sector, energy and utilities, and education
 - Teams with a stalled roadmap and a deadline that has not moved
@@ -324,7 +361,7 @@ surface · compliance load · starting state · model · handover depth.
 - Anyone wanting a fixed price for a scope that has not been defined; we would scope it first
 - Teams wanting a permanent outsourced black box; handover is designed in, not optional
 
-### FAQ
+### Frequently Asked Questions About Product & Software Engineering
 
 **What does Pixorama do?** Pixorama is an engineering-led software company. We design, build, and
 operate cloud platforms, AI and data products, mobile apps, and security-hardened systems for
@@ -380,7 +417,7 @@ in her own words below.
 This is the best-evidenced page of the five: two named clients plus the only published testimonial
 Pixorama has.
 
-### What's included
+### What Our Web Development Services Include
 
 | | |
 | --- | --- |
@@ -398,13 +435,21 @@ Pixorama has.
 - Production increment inside the first fortnight, senior-led from day one.
 - Search and growth work compounds over months, not weeks. We say so rather than imply otherwise.
 
-### What drives cost
+### Our Five-Step Web Development Process
+
+1. **Audit what the current site earns** Traffic, enquiries and attribution, so the build has a baseline to beat.
+2. **Structure before design** Service and category architecture that can rank, rather than one page doing everything.
+3. **Build on a stack your team can edit** Fast, accessible and measurable, with the analytics wired from day one.
+4. **Migrate with redirects mapped** The step that is usually skipped and most often causes the traffic drop.
+5. **Measure, then compound** Search and growth work reported against the baseline, month over month.
+
+### What Web Development Services Cost
 
 Page and template count · catalogue size and data quality · commerce integration · content, written
 and ready or produced in the engagement · migration, since replacing a live site carries redirect and
 indexation work a new build does not · ongoing growth work.
 
-### Who it's for
+### Who Our Web Development Services Are For
 
 - Enterprises and funded startups whose site launched and then stopped producing enquiries
 - Teams with a product catalogue that has outgrown its current structure or search
@@ -417,7 +462,7 @@ indexation work a new build does not · ongoing growth work.
 - Anyone wanting ranking guarantees; nobody can give them honestly
 - Teams wanting volume content production disconnected from a service they actually sell
 
-### FAQ
+### Frequently Asked Questions About Web Development Services
 
 **Do you do SEO as well as build the site?** Yes. Technical SEO, content structure and analytics are
 part of the same engagement. A site that launches and cannot be found has not finished.

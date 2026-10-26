@@ -38,7 +38,7 @@ Fallback: *We start from the outcome and the data, not the demo, so what ships i
 
 ---
 
-## What's included
+## What Our AI Development Services Include
 
 | | |
 |---|---|
@@ -66,7 +66,7 @@ entry point here: an AI readiness and feasibility review before committing budge
 
 ---
 
-## Proof
+## AI Development Work We Can Name
 
 > **Client roster is deliberately empty on this page.** None of the five publicly named clients is
 > published as an AI engagement.
@@ -90,7 +90,15 @@ service: regulated-sector AI buyers buy the people.]`
 
 ---
 
-## What drives cost
+## Our Five-Step AI Development Process
+
+1. **Pick the question set first** The decisions and answers the system must get right, written down before any model is chosen.
+2. **Get the data ready** Pipelines, permissions and quality work, because retrieval is only as good as what it reads.
+3. **Build the evaluation set before the feature** A scored set of real questions, so quality is measured rather than asserted.
+4. **Ship a narrow slice to production** One evaluable workflow inside the first fortnight, with guardrails and an audit trail.
+5. **Monitor quality, cost and drift** Live monitoring and regression evaluation on every change after launch.
+
+## What AI Development Services Cost
 
 - **Data readiness**: clean, accessible, permissioned data, or work needed before any AI is useful
 - **Scope**, one grounded assistant versus a multi-workflow agent system
@@ -107,14 +115,14 @@ service: regulated-sector AI buyers buy the people.]`
 
 ---
 
-## Who it's for
+## Who Our AI Development Services Are For
 
 - Enterprises and funded startups with real proprietary data and a real workflow to improve
 - Teams who have run an AI pilot that impressed in a demo and failed in production
 - Regulated sectors needing guardrails, evaluation and an audit trail, not just a model
 - Teams who want the AI system handed back, documented and runnable by their own engineers
 
-## Who it's not for
+### Who it's not for
 
 - Teams wanting a demo or a proof-of-concept with no route to production
 - Teams with no usable data yet; we would be doing data engineering, and would say so
@@ -122,7 +130,7 @@ service: regulated-sector AI buyers buy the people.]`
 
 ---
 
-## FAQ
+## Frequently Asked Questions About AI Development Services
 
 **Can you build AI into our product?**
 Yes. We build production-grade AI on top of your data: LLM assistants and copilots,
@@ -157,7 +165,7 @@ designed in from the start.
 
 ---
 
-## Closing CTA
+## Scope an AI Development Pilot
 
 **Let's talk**, form below.
 
