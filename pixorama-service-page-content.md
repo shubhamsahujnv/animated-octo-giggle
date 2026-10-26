@@ -178,7 +178,7 @@ since guardrail and evaluation work scales with the consequence of being wrong Â
 
 ### Frequently Asked Questions About AI Development Services
 
-**Can you build AI into our product?** Yes. We build production-grade AI on top of your data: LLM
+**Can your AI development services build AI into our product?** Yes. We build production-grade AI on top of your data: LLM
 assistants and copilots, retrieval-augmented generation, agents and machine-learning models, all
 with guardrails, evaluation and monitoring. We start from the outcome and the data, not the demo, so
 what ships is safe and measurable.

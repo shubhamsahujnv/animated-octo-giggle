@@ -157,7 +157,7 @@ export const aiDevelopmentServices: ServiceContent = {
 
   faq: [
     {
-      q: "What do AI development services actually include?",
+      q: "Can your AI development services build AI into our product?",
       a: "Yes. We build production-grade AI on top of your data: LLM assistants and copilots, retrieval-augmented generation, agents and machine-learning models, all with guardrails, evaluation and monitoring. We start from the outcome and the data, not the demo, so what ships is safe and measurable.",
     },
     {
