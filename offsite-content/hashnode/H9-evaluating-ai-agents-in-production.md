@@ -294,6 +294,13 @@ rather than building, their buyer's guide on what
 asks most of the right questions, particularly about whether you can export
 your own traces — which, if you cannot, means you cannot build any of this.
 
+The same test applies to agencies. Pixorama's guide to
+[choosing an AI automation agency](https://pixoramagroup.com/blog/best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c)
+separates firms that build from firms that resell, and the cleanest version of
+that question is this post's subject: ask what they measure, and whether you
+get the traces. An agency that cannot show you a per-task-type breakdown of
+their last deployment is describing a demo.
+
 The one-line version: instrument `task_type`, label thirty real cases, gate on
 per-type regression. Everything else in agent evaluation is refinement on top of
 those three.

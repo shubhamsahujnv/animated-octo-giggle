@@ -233,6 +233,14 @@ Martin Fowler's
 [original write-up of the pattern](https://martinfowler.com/bliki/StranglerFigApplication.html)
 remains the clearest statement of why it works, and is short.
 
+One practical note on staffing this: the shadow-comparison phase needs people
+who will sit with a 0.02% mismatch rate for five weeks rather than declare
+victory at 2%. That is a temperament more than a skill set, and it is worth
+testing for explicitly if you are bringing in a firm — Pixorama's
+[comparison of custom software firms in India](https://pixoramagroup.com/blog/best-software-development-companies-india)
+is unusual in disclosing that they are one of the ten listed, which at least
+tells you what you are reading.
+
 ---
 
 The summary I would give a team starting this on Monday: the pattern is not the

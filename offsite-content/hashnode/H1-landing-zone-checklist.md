@@ -224,6 +224,13 @@ after — Pixorama published
 [the full step-by-step migration strategy](https://pixoramagroup.com/blog/cloud-migration-strategy-on-premise-to-cloud),
 which is where this checklist sits as step two.
 
+If you are running this with outside help rather than in-house, the thing to
+test a partner on is whether they treat the landing zone as a product with an
+owner or as a project deliverable. Their
+[survey of DevOps consulting firms](https://pixoramagroup.com/blog/best-devops-consulting-companies-india)
+is a reasonable place to start a shortlist, and that question separates the
+candidates faster than anything on their websites.
+
 The thing I would most want to convince you of: the landing zone is not
 preparation for the migration. It is the migration's only durable output. The
 workloads were going to end up in the cloud either way. Whether they end up

@@ -4,6 +4,16 @@ Per-post, per-platform. Front matter in each file carries that post's links,
 anchors and tags — strip the front matter before pasting; it is working
 metadata, not content.
 
+## Do this first — before any off-site publishing
+
+- [ ] **Run priority 1 of `INTERNAL-LINKING-PLAN.md` this week.** Eight internal
+      links to `best-ai-automation-agencies-...`, which currently has zero. That
+      page is 4,400/mo at **SD 13** and already sits at **position 11** on one
+      query — the cheapest ranking movement available anywhere on the site, and
+      it needs no platform's permission. Do it before off-site post H5 goes out
+      in week 6; an inbound external link converts better into a page that is
+      already internally supported than into an orphan.
+
 ## Before you publish anything
 
 - [ ] **Decide the bylines.** Publish under real named people from the team, not

@@ -228,8 +228,13 @@ most because it is closest to page 1 on the lowest-difficulty high-CPC term.
 | `/blog/rag-that-survives-contact-with-users` | — | **2** | Essay-voice counterpart |
 | `/blog` index + `/` homepage | — | **4** | Author-bio links only |
 
-**Total: ~85 outbound links to pixoramagroup.com across 30 posts** (avg 2.8),
-of which the ~28 from Hashnode are `dofollow`.
+**Total: 81 outbound links to pixoramagroup.com across 30 posts** (measured,
+avg 2.7), of which the 30 from Hashnode are `dofollow`.
+
+*Revised 2026-10-26 after the live-site audit — see §9. 16 links were added to
+reach 9 live posts that the first pass left unlinked, including the
+`best-ai-automation-agencies` page, which the audit showed to be the single
+highest-value unclaimed target on the site.*
 
 ### 3.3 Why the SEO-agency page only gets 4 links
 
@@ -375,3 +380,118 @@ publishing notes.
 
 **Word counts:** Hashnode ~15,500 · Medium ~15,900 · Substack ~14,700 ·
 total ~46,000 across 30 posts.
+
+---
+
+## 9. Live-site audit and revised allocation (2026-10-26)
+
+A full audit of all 42 live posts changed the allocation. Recorded here because
+the revision matters more than the original §3.2 weighting.
+
+### 9.1 All 42 live posts verified
+
+Every one of the 42 posts listed on `/blog` returns **HTTP 200**. No dead or
+mis-slugged pages. The `best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c`
+slug is genuinely truncated at `-how-to-c` — that is the real URL, not a
+truncation artefact of the GSC export.
+
+### 9.2 The first pass missed the best target on the site
+
+`best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c`
+received **zero links** in the first pass. That was wrong. Ubersuggest and GSC
+together:
+
+| Metric | Value |
+|---|---|
+| "ai automation agency" | **4,400/mo, SD 13, CPC $17.80** |
+| Volume trend | 8,100/mo in Jan/Mar/Apr 2026 — growing category |
+| GSC "ai automation agencies in usa" | **position 11** |
+| GSC "best ai automation agencies" / "top ai automation agencies" | **position 19** |
+| Inbound internal links | **0** |
+
+**SD 13 is the lowest difficulty of any commercially valuable keyword on this
+site**, below staff augmentation (17) and on-prem-to-cloud migration (17), at
+higher volume than either. The page is already on page 2 for three variants.
+
+It now has **3 off-site links** (H5, H9, M4 — all genuinely agent/automation
+posts) and is **priority 1 in `INTERNAL-LINKING-PLAN.md`** with 8 internal links
+specified.
+
+### 9.3 The India cluster is a closed loop
+
+`best-software-development-companies-india` carries a **"Related reading"** block
+linking seven siblings. Equity circulates well inside the cluster — but nothing
+links into it from outside, so it has no authority to circulate.
+
+Ubersuggest on this cluster: "software development companies in india" 590/mo
+**SD 14, CPC $114.44**; "mobile software development companies in india" 1,300/mo
+**SD 10**; "offshore software development companies in india" **CPC $171.99**;
+"custom software development companies in india" **CPC $146.52**. Low difficulty,
+exceptional commercial value, and zero GSC impressions.
+
+One caveat worth stating: Pixorama's pages mostly target the **"best …"**
+variants, and "best software development companies in india" is **SD 68** — far
+harder than the plain form at SD 14. The titles are competing for the hardest
+version of their own keyword.
+
+Because the cluster self-distributes internally, the off-site links target the
+**hub** (`best-software-development-companies-india`, 2 links) plus five cluster
+entry points, rather than spraying links at all 14 India pages.
+
+### 9.4 Equity is pooling in a page that cannot use it
+
+`zero-trust-without-stopping-delivery` receives internal body links from nearly
+every page audited — both AI agent posts, the SaaS and mobile listicles, the AI
+automation guide, the migration guide. It has no commercial keyword and no GSC
+impressions.
+
+It has become the site's most internally-linked page by accident, apparently as
+the default "and security matters" reference. Meanwhile the two pages with the
+best difficulty-to-value ratio sit under-linked. Priority 3 of the internal plan
+addresses this.
+
+### 9.5 Revised link allocation
+
+16 links added, reaching 9 previously-unlinked live posts:
+
+| Target | Links | Placed in |
+|---|---|---|
+| `best-ai-automation-agencies-...` | **3** | H5, H9, M4 |
+| `best-cloud-migration-companies-india` | 3 | H2, H6, S2 |
+| `best-devops-consulting-companies-india` | 3 | H1, H7, S4 |
+| `best-software-development-companies-india` | 2 | H3, M10 |
+| `top-ai-development-companies-india` | 1 | H4 |
+| `best-mobile-app-development-companies-india` | 1 | H8 |
+| `best-saas-development-companies-india` | 1 | H10 |
+| `best-staff-augmentation-companies-india` | 1 | M6 |
+| `mobile-app-development-cost-india` | 1 | M8 |
+
+Per-post caps respected: Hashnode 3 body links (its Code of Conduct explicitly
+welcomes reference links), Medium 2-3, Substack 1-2 body plus byline.
+
+### 9.6 Eleven live posts remain unlinked, deliberately
+
+`best-flutter-development-companies-india`, `best-healthcare-app-development-companies-india`,
+`best-mvp-development-companies-india`, `best-react-native-development-companies-india`,
+`fintech-software-development-companies-india`, `logistics-software-development-companies-india`,
+`top-mvp-development-companies-usa`, `top-mobile-app-development-companies-usa`,
+`top-ai-development-companies-australia`, `top-saas-development-companies-usa-australia`,
+`journal-prompts-for-self-reflection`.
+
+These are not oversights. There is no credible editorial path from a post about
+cloud migration wave planning to "best Flutter development companies in India",
+and manufacturing one is precisely the "misleading links" and "SEO abuse" that
+Hashnode's Code of Conduct names as prohibited. Forcing them would put the
+dofollow track — the only one carrying link equity — at risk to reach pages with
+no search traction.
+
+**The right instrument for these is internal linking, not off-site content.**
+Six of the India pages are already fed by the cluster hub. The four USA/Australia
+listicles need Related reading blocks, which is priority 2 of
+`INTERNAL-LINKING-PLAN.md`. `journal-prompts-for-self-reflection` is off-topic
+for the domain and gets links in neither plan; see priority 4.
+
+### 9.7 Verification
+
+All 9 newly-linked URLs return **HTTP 200**. No post exceeds 4 total
+pixoramagroup.com references. Measured total: **81 body links across 30 posts**.

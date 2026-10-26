@@ -288,6 +288,14 @@ and their survey of
 is a useful sanity check on scope — most of the deployments that work are
 narrower than the ones people plan.
 
+If you are considering an agency for this rather than building in-house, the
+control plane above is the thing to interrogate them about. Most agency demos
+show the loop; very few show a spend-rate circuit breaker or a tool tier model.
+Pixorama's guide to
+[choosing an AI automation agency](https://pixoramagroup.com/blog/best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c)
+has a section on telling builders from resellers, and "show me your kill
+switch" is the shortest version of that test I know.
+
 The [Model Context Protocol spec](https://modelcontextprotocol.io/) is also
 worth reading before you design your tool layer, if only because standardising
 on it means your tool definitions outlive your framework choice.

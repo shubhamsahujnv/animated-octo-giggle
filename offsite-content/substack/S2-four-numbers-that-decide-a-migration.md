@@ -179,6 +179,15 @@ with the steps laid out properly. The part I would read twice is the assessment
 phase, because all four of these numbers belong there and it is the phase most
 programmes compress.
 
+A note if you are running this with a partner rather than in-house: ask which
+of these four they will compute before the business case is signed. All four are
+cheap, and a firm that has not offered them is quoting you a migration rather
+than a result. My colleagues' notes on
+[how to read a migration firm's partner tiers](https://pixoramagroup.com/blog/best-cloud-migration-companies-india)
+make a related point I had not thought about until I read it: a provider's
+top-tier partner badge is a measure of committed spend routed through them,
+which is not an incentive to make number two smaller.
+
 Next issue: why cost-optimisation programmes get exactly one good quarter.
 
 ---

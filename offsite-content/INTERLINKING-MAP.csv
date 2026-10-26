@@ -29,3 +29,20 @@ S7,Substack,7,Issue 7: How to buy engineering capacity,/blog/what-is-staff-augme
 S8,Substack,9,Issue 8: Shipping on two platforms without doubling the team,/blog/shipping-mobile-on-two-platforms,shipping one mobile product on two platforms,/blog/mobile-app-development-cost-usa-australia,what it costs,exact-adjacent,nofollow,—,H8
 S9,Substack,8,Issue 9: Security that does not stop delivery,/blog/zero-trust-without-stopping-delivery,zero-trust without bringing delivery to a halt,/blog/cloud-migration-strategy-on-premise-to-cloud,migration guardrails,exact-adjacent,nofollow,NIST SP 800-207,H7
 S10,Substack,10,Issue 10: How to run a vendor shortlist,/blog/best-seo-agencies-australia,how we read the Australian agency market,/blog/how-to-choose-software-development-company,choosing a software development company,descriptive,nofollow,—,M5
+# --- ADDED 2026-10-26 after live-site audit: third link per post, targeting previously unlinked live posts ---
+H1-add,Hashnode,1,(third link added to existing post),/blog/best-devops-consulting-companies-india,"survey of DevOps consulting firms",,,descriptive,dofollow,,
+H2-add,Hashnode,2,(third link added to existing post),/blog/best-cloud-migration-companies-india,"cloud migration firms and how to read partner tiers",,,descriptive,dofollow,,
+H3-add,Hashnode,4,(third link added to existing post),/blog/best-software-development-companies-india,"comparison of custom software firms in India",,,descriptive,dofollow,,
+H4-add,Hashnode,5,(third link added to existing post),/blog/top-ai-development-companies-india,"AI development firms in India",,,partial-match,dofollow,,
+H5-add,Hashnode,6,(third link added to existing post),/blog/best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c,"choosing an AI automation agency",,,partial-match,dofollow,,
+H6-add,Hashnode,3,(third link added to existing post),/blog/best-cloud-migration-companies-india,"reading cloud migration firms' partner tiers",,,descriptive,dofollow,,
+H7-add,Hashnode,8,(third link added to existing post),/blog/best-devops-consulting-companies-india,"DevOps consulting firm",,,exact-adjacent,dofollow,,
+H8-add,Hashnode,9,(third link added to existing post),/blog/best-mobile-app-development-companies-india,"mobile app development firms and what each is good for",,,descriptive,dofollow,,
+H9-add,Hashnode,7,(third link added to existing post),/blog/best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c,"choosing an AI automation agency",,,partial-match,dofollow,,
+H10-add,Hashnode,10,(third link added to existing post),/blog/best-saas-development-companies-india,"SaaS development firms and what makes SaaS harder to build",,,descriptive,dofollow,,
+M4-add,Medium,4,(third link added to existing post),/blog/best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c,"choosing an AI automation agency",,,partial-match,nofollow,,
+M6-add,Medium,7,(third link added to existing post),/blog/best-staff-augmentation-companies-india,"what to put in the contract when augmenting from India",,,natural-language,nofollow,,
+M8-add,Medium,9,(third link added to existing post),/blog/mobile-app-development-cost-india,"what a build costs in India, line by line",,,natural-language,nofollow,,
+M10-add,Medium,10,(third link added to existing post),/blog/best-software-development-companies-india,"comparison of software development companies in India",,,descriptive,nofollow,,
+S2-add,Substack,2,(third link added to existing post),/blog/best-cloud-migration-companies-india,"how to read a migration firm's partner tiers",,,descriptive,nofollow,,
+S4-add,Substack,4,(third link added to existing post),/blog/best-devops-consulting-companies-india,"DevOps consulting engagement",,,exact-adjacent,nofollow,,

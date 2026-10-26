@@ -189,6 +189,14 @@ issue. You do not have to win the argument against the rewrite. You only have to
 establish that the rewrite should happen *after* the system is deployable,
 observable and testable. Then let the six months make the argument for you.
 
+If you want to buy the six months rather than staff it, be precise about what
+you are buying, because "modernisation" as a service offering usually means
+question five. The work in question two — deployment automation, structured
+logging, a characterisation harness — is a
+[DevOps consulting engagement](https://pixoramagroup.com/blog/best-devops-consulting-companies-india)
+and it is a different purchase with a different and much smaller price. Asking
+for the second when a vendor is selling the first is the whole negotiation.
+
 Next issue: where AI agents earn their keep, which is the one I am most likely
 to be wrong about.
 

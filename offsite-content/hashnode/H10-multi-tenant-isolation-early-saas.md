@@ -285,6 +285,11 @@ extraction work, that is a well-defined, time-boxed piece of specialist work,
 which is the one case where
 [bringing in specialist capacity for a defined piece of work](https://pixoramagroup.com/blog/what-is-staff-augmentation)
 tends to beat hiring — you need it intensely for six weeks and then not at all.
+Their comparison of
+[SaaS development firms and what makes SaaS harder to build](https://pixoramagroup.com/blog/best-saas-development-companies-india)
+is relevant here for one reason: tenancy model is the question to ask a
+prospective partner first, because a firm that has only built single-tenant
+systems will reach for database-per-tenant and burn your runway on operations.
 
 The PostgreSQL
 [row security policies documentation](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)

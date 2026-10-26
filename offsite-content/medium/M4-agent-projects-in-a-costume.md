@@ -223,6 +223,15 @@ their walkthrough of
 [how to build one](https://pixoramagroup.com/blog/how-to-build-an-ai-agent)
 is a reasonable starting point once you have established that you should.
 
+If you are buying this rather than building it, the five questions above are
+the ones to put to an agency, and "draw me the decision tree for our use case"
+is the single most informative thing you can ask in a sales meeting. A firm
+that draws it has just told you the work is a workflow and quoted you for an
+agent. Their guide to
+[choosing an AI automation agency](https://pixoramagroup.com/blog/best-ai-automation-agencies-in-the-usa-and-australia-for-2026-how-to-c)
+covers the builder-versus-reseller distinction, which is the same distinction
+from the buyer's side.
+
 The claim I would defend: the most valuable thing you can do on an agent project
 is spend one afternoon trying to draw the decision tree, specifically hoping to
 succeed. Three times out of four you will, and you will have saved yourself a

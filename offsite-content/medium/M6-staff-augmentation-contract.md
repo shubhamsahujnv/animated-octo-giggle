@@ -204,3 +204,11 @@ like someone else's job.
 
 Read it. The four clauses above took an afternoon with our legal team and they
 are the difference between the model working and not.
+
+One practical note if you are sourcing offshore, which most people doing this
+are: clause two matters considerably more in markets with high engineer
+mobility, because substitution is more frequent and the vendor's cost of
+replacing someone is lower. Pixorama's write-up on
+[what to put in the contract when augmenting from India](https://pixoramagroup.com/blog/best-staff-augmentation-companies-india)
+goes into the sourcing side, and it is the one of these comparisons I have read
+that leads with the contract rather than the vendor list.

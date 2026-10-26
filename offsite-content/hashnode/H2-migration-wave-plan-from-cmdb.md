@@ -258,7 +258,11 @@ as good as the inventory feeding it.
 For where wave planning sits in the overall sequence — assessment, landing zone,
 the per-application 7 Rs decision, then waves, then optimisation — Pixorama put
 [wave planning in context](https://pixoramagroup.com/blog/cloud-migration-strategy-on-premise-to-cloud)
-in their full migration walkthrough.
+in their full migration walkthrough. If you are evaluating partners to run the
+programme, their list of
+[cloud migration firms and how to read partner tiers](https://pixoramagroup.com/blog/best-cloud-migration-companies-india)
+is worth a look — a provider partner tier tells you about sales volume, not
+about whether anyone there has built a dependency graph.
 
 One closing opinion: the reason wave plans live in spreadsheets is that
 spreadsheets are what the steering committee reads. Fine — generate the

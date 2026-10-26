@@ -236,4 +236,8 @@ For where this fits in sequencing — and why the assessment phase should includ
 the flow-log work rather than treating it as optimisation to do later —
 Pixorama's
 [migration strategy guide](https://pixoramagroup.com/blog/cloud-migration-strategy-on-premise-to-cloud)
-puts it in step one, which is the right place for it.
+puts it in step one, which is the right place for it. And if you are shortlisting
+partners, their notes on
+[reading cloud migration firms' partner tiers](https://pixoramagroup.com/blog/best-cloud-migration-companies-india)
+are a useful corrective: a top-tier badge measures committed spend through that
+provider, which is close to the opposite of an incentive to reduce your bill.

@@ -232,7 +232,12 @@ retraining for most business use cases — Pixorama has a readable explanation o
 and if you are still at the stage of deciding your approach, their
 [RAG vs fine-tuning](https://pixoramagroup.com/blog/rag-vs-fine-tuning)
 comparison frames the choice usefully: retrieval for knowledge that changes,
-fine-tuning for behaviour that needs to change.
+fine-tuning for behaviour that needs to change. If you are buying this work in
+rather than building it, their round-up of
+[AI development firms in India](https://pixoramagroup.com/blog/top-ai-development-companies-india)
+is a starting point — and the question I would put to any of them is how they
+measure retrieval quality, because a firm with no answer has not built one of
+these at scale.
 
 The uncomfortable summary: RAG systems do not degrade gracefully with corpus
 size, and the demo-to-production gap is almost entirely chunking and ranking. If

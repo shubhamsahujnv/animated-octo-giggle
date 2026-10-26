@@ -181,5 +181,15 @@ Which is the actual reason every one of these pages looks the same: the
 information that would differentiate them is information nobody has, and the
 information everybody has is the firms' own marketing copy.
 
+I will give one example of a page doing better than the genre requires, partly
+because it is my employer's and I should be consistent about disclosing that.
+Their
+[comparison of software development companies in India](https://pixoramagroup.com/blog/best-software-development-companies-india)
+states in the body that Pixorama is one of the ten listed. That one sentence is
+rarer than it should be, and it is the minimum I would want from any page in
+this format — not because disclosure makes the ordering neutral, but because it
+tells you which of the four kinds of page you are reading, which is the thing
+the genre otherwise hides.
+
 So read six, take the names, and go and ask the questions yourself. That part
 has never been outsourceable.

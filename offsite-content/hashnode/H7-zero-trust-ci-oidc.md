@@ -305,3 +305,9 @@ if you want to pin trust to a specific reusable workflow rather than a branch.
 GitLab, Bitbucket, CircleCI and Buildkite all support the same flow. The claim
 names differ; the trust-policy reasoning is identical, as is the
 `StringEquals`-not-`StringLike` rule.
+
+If this is work you would outsource, it is a good interview question in both
+directions — ask a prospective
+[DevOps consulting firm](https://pixoramagroup.com/blog/best-devops-consulting-companies-india)
+how they handle CI credentials today. A firm still shipping static access keys
+into client pipelines in 2026 has told you where their practice sits.

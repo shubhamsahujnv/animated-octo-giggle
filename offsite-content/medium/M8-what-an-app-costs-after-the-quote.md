@@ -203,4 +203,13 @@ previous major OS version" is a single sentence that removes a recurring
 argument and a meaningful slice of the test matrix. Deciding it later means
 deciding it under pressure from a specific complaining customer.
 
+One last note on geography, since it changes the first row of that table more
+than anything else: the same scope quoted in different markets varies by a
+factor I would not have believed before seeing it. Their breakdown of
+[what a build costs in India, line by line](https://pixoramagroup.com/blog/mobile-app-development-cost-india)
+is a useful comparison point against the US and Australian figures, and the
+thing worth noticing is that the *ratio* of build to three-year total is
+roughly constant across markets. A cheaper build does not buy you a cheaper
+product; it buys you a cheaper sixth of one.
+
 The app is not the project. The app is the part of the project you can see.

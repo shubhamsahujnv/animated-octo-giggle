@@ -229,7 +229,10 @@ is mostly about that operational half, which is the half worth planning.
 For a straight framework-versus-framework treatment with the trade-offs laid out
 properly, their
 [React Native vs Flutter](https://pixoramagroup.com/blog/react-native-vs-flutter)
-comparison covers the ground this post deliberately skips.
+comparison covers the ground this post deliberately skips, and their round-up of
+[mobile app development firms and what each is good for](https://pixoramagroup.com/blog/best-mobile-app-development-companies-india)
+is organised by specialism rather than by ranking, which is the more useful cut
+if your deciding input is native-bridge capability.
 
 Read both frameworks' own architecture documentation before deciding — Flutter's
 rendering-pipeline docs and React Native's New Architecture docs are honest
