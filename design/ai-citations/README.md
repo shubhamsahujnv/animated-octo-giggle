@@ -1,4 +1,4 @@
-# AI citation domains — Pixorama social card
+# AI citation domains: Pixorama social card
 
 1080×1350 (4:5), rendered at 2× → 2160×2700 PNG.
 
@@ -20,15 +20,15 @@ type matches exactly without a network call at render time.
 
 ## Chart note
 All bars share one global scale (max = 32.3%, AI Overviews / youtube.com),
-so bar length is comparable across all six panels — same as the source chart.
+so bar length is comparable across all six panels, matching the source chart.
 
 ## Takeaway band
 The three figures in the lower band are derived from the panel data, not
 asserted. Verified before use:
 
-- `27x` — youtube.com, 32.3% (AI Overviews) vs 1.2% (Gemini)
-- `4 of 5` — engines with reddit.com in their top five; Perplexity is the exception
-- `Zero` — social/video domains (youtube/facebook/instagram) in ChatGPT's or
+- `27x`: youtube.com, 32.3% (AI Overviews) vs 1.2% (Gemini)
+- `4 of 5`: engines with reddit.com in their top five; Perplexity is the exception
+- `Zero`: social/video domains (youtube/facebook/instagram) in ChatGPT's or
   Perplexity's top five
 
 Note "4 of 5" counts the five engines only, excluding the "All five AI
