@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI citation domains</title>
+<style>
+@font-face{font-family:Manrope;src:url(fonts/manrope.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:block}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains.woff2) format("woff2");font-weight:100 800;font-style:normal;font-display:block}
+
+:root{
+  --blue:#3a33c9; --cyan:#18bccf; --violet:#7c3aed; --magenta:#b23fc9;
+  --grad:linear-gradient(118deg,var(--blue) 0%,var(--violet) 52%,var(--magenta) 100%);
+  --paper:#fff; --paper-2:#f7f8fc; --paper-3:#eef0f8;
+  --line:#e7e9f4; --line-2:#eef0f7;
+  --ink:#0a0b18; --ink-2:#3a3d55; --muted:#6a6d88;
+  --r-sm:10px; --r:16px; --r-lg:22px; --r-xl:30px; --r-pill:999px;
+  --font-sans:Manrope,-apple-system,"Segoe UI",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --shadow-sm:0 1px 2px rgba(16,18,42,.04),0 2px 8px rgba(16,18,42,.04);
+  --shadow:0 4px 12px rgba(16,18,42,.06),0 18px 40px -12px rgba(16,18,42,.12);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  width:1080px;height:1350px;
+  font-family:var(--font-sans);
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  position:relative;overflow:hidden;
+}
+
+/* soft brand wash, mirrors the site hero background */
+.bg{position:absolute;inset:0;pointer-events:none}
+.bg::before{
+  content:"";position:absolute;top:-340px;left:-220px;width:980px;height:980px;
+  background:radial-gradient(circle at center,rgba(124,58,237,.13),transparent 62%);
+}
+.bg::after{
+  content:"";position:absolute;top:-260px;right:-300px;width:900px;height:900px;
+  background:radial-gradient(circle at center,rgba(178,63,201,.11),transparent 62%);
+}
+
+.wrap{position:relative;padding:70px 56px 0;height:100%;display:flex;flex-direction:column}
+
+/* ---------- header ---------- */
+.eyebrow{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.26em;
+  text-transform:uppercase;font-weight:500;color:var(--violet);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--grad)}
+
+h1{
+  margin-top:20px;
+  font-size:68px;line-height:1.03;letter-spacing:-.045em;font-weight:800;
+  max-width:16ch;
+}
+h1 .g{
+  background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.sub{
+  margin-top:16px;font-size:19px;line-height:1.45;color:var(--muted);
+  letter-spacing:-.01em;
+}
+.sub b{color:var(--ink-2);font-weight:700}
+
+/* ---------- grid ---------- */
+.grid{
+  margin-top:44px;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  box-shadow:var(--shadow-sm);
+  padding:26px 24px 24px;
+  display:flex;flex-direction:column;
+}
+.card--lead{
+  border-color:transparent;
+  background:
+    linear-gradient(var(--paper),var(--paper)) padding-box,
+    var(--grad) border-box;
+  border:1.5px solid transparent;
+  box-shadow:var(--shadow);
+}
+
+.card__head{
+  display:flex;align-items:center;gap:10px;
+  padding-bottom:18px;margin-bottom:20px;
+  border-bottom:1px solid var(--line-2);
+}
+.card__mark{
+  width:32px;height:32px;flex:none;border-radius:10px;
+  display:grid;place-items:center;overflow:hidden;
+  background:var(--paper-3);
+}
+.card__mark svg{display:block}
+.card__name{
+  font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1;
+}
+
+/* ---------- rows ---------- */
+.row{display:flex;flex-direction:column;gap:9px}
+.row + .row{margin-top:24px}
+
+.row__top{display:flex;align-items:center;gap:9px}
+.row__ico{
+  width:22px;height:22px;flex:none;border-radius:6px;
+  display:grid;place-items:center;
+  font-family:var(--font-sans);font-size:11px;font-weight:800;color:#fff;
+  letter-spacing:-.04em;line-height:1;
+}
+.row__dom{
+  font-size:15.5px;font-weight:600;letter-spacing:-.022em;color:var(--ink-2);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.row__val{
+  margin-left:auto;font-size:15.5px;font-weight:800;letter-spacing:-.03em;
+  color:var(--ink);font-variant-numeric:tabular-nums;
+}
+
+.track{height:7px;border-radius:var(--r-pill);background:var(--paper-3);overflow:hidden}
+.fill{height:100%;border-radius:var(--r-pill);background:var(--grad);background-size:1080px 100%}
+
+/* ---------- footer ---------- */
+.foot{
+  margin-top:auto;
+  padding:26px 0 40px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:28px;
+  border-top:1px solid var(--line);
+}
+.foot__note{
+  font-size:12.5px;line-height:1.5;color:var(--muted);max-width:74ch;
+  padding-top:20px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex:none;padding-top:20px}
+.logo__word{font-size:19px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="wrap">
+
+  <span class="eyebrow">Citation research</span>
+
+  <h1>AI's <span class="g">most cited domains</span> depend on which engine you use</h1>
+
+  <p class="sub">Share of answers citing each domain. <b>One scale across all six panels</b> &mdash; bar length is comparable everywhere.</p>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="foot">
+    <p class="foot__note">
+      Sourcer Searchable analysis of ChatGPT, AI Overviews, Perplexity, AI Mode and Gemini citations,
+      10&ndash;16 Oct 2026. Tracked questions, each account weighted equally.
+      Search engines and syndication sites excluded.
+    </p>
+    <div class="logo">
+      <svg width="46" height="28" viewBox="0 0 197 122" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="px-g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#5B2BE8"/>
+            <stop offset="100%" stop-color="#C13BD2"/>
+          </linearGradient>
+        </defs>
+        <rect width="122" height="122" rx="30" fill="url(#px-g)"/>
+        <text x="61" y="63" text-anchor="middle" dominant-baseline="central" fill="#fff"
+              font-size="57" font-weight="800" letter-spacing="-2.5"
+              font-family="Manrope, sans-serif">PX</text>
+        <circle cx="163" cy="61" r="27.5" stroke="#6248E8" stroke-width="13" fill="none"/>
+      </svg>
+      <span class="logo__word">Pixorama</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Single global scale so every bar is comparable across panels.
+const MAX = 32.3;
+
+const D = {
+  youtube:   ["YT", "#FF0000"],
+  reddit:    ["R",  "#FF4500"],
+  linkedin:  ["in", "#0A66C2"],
+  facebook:  ["f",  "#1877F2"],
+  nih:       ["N",  "#20558A"],
+  govuk:     ["G",  "#1D70B8"],
+  g2:        ["G2", "#FF492C"],
+  instagram: ["IG", "#C7308F"],
+  amazon:    ["a",  "#FF9900"],
+  trustpilot:["T",  "#00B67A"],
+  gartner:   ["g",  "#002856"],
+  medium:    ["M",  "#000000"]
+};
+
+const PANELS = [
+  { name:"All five AI engines", lead:true, mark:`<svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+      stroke="url(#mg)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a33c9"/><stop offset="100%" stop-color="#b23fc9"/>
+      </linearGradient></defs>
+      <path d="M3 12h4l3-8 4 16 3-8h4"/></svg>`,
+    rows:[["youtube.com","youtube",11.2],["reddit.com","reddit",7.3],["linkedin.com","linkedin",6.8],
+          ["facebook.com","facebook",4.5],["nih.gov","nih",2.4]] },
+
+  { name:"ChatGPT", markBg:"#0a0b18", markFg:"#fff", letter:"C",
+    rows:[["reddit.com","reddit",5.4],["nih.gov","nih",5.2],["linkedin.com","linkedin",4.9],
+          ["gov.uk","govuk",3.3],["g2.com","g2",2.7]] },
+
+  { name:"AI Overviews", markBg:"#fff", markFg:"#4285F4", letter:"G",
+    rows:[["youtube.com","youtube",32.3],["reddit.com","reddit",13.0],["facebook.com","facebook",11.2],
+          ["linkedin.com","linkedin",9.6],["instagram.com","instagram",5.8]] },
+
+  { name:"Perplexity", markBg:"#20808D", markFg:"#fff", letter:"P",
+    rows:[["linkedin.com","linkedin",12.8],["amazon.com","amazon",2.8],["nih.gov","nih",2.6],
+          ["trustpilot.com","trustpilot",2.6],["g2.com","g2",2.5]] },
+
+  { name:"AI Mode", markBg:"#fff", markFg:"#EA4335", letter:"G",
+    rows:[["youtube.com","youtube",20.9],["reddit.com","reddit",11.9],["facebook.com","facebook",8.7],
+          ["linkedin.com","linkedin",6.5],["instagram.com","instagram",3.5]] },
+
+  { name:"Gemini", markBg:"#fff", markFg:"#7c3aed", letter:"✦",
+    rows:[["reddit.com","reddit",4.7],["facebook.com","facebook",2.6],["youtube.com","youtube",1.2],
+          ["gartner.com","gartner",1.0],["medium.com","medium",0.9]] }
+];
+
+const fmt = v => v.toFixed(1) + "%";
+
+document.getElementById("grid").innerHTML = PANELS.map(p => {
+  const mark = p.mark
+    ? `<span class="card__mark" style="background:rgba(124,58,237,.09)">${p.mark}</span>`
+    : `<span class="card__mark" style="background:${p.markBg};border:1px solid var(--line)">
+         <span style="color:${p.markFg};font-size:14px;font-weight:800;letter-spacing:-.04em">${p.letter}</span>
+       </span>`;
+
+  const rows = p.rows.map(([dom, key, val]) => {
+    const [glyph, color] = D[key];
+    return `<div class="row">
+      <div class="row__top">
+        <span class="row__ico" style="background:${color}">${glyph}</span>
+        <span class="row__dom">${dom}</span>
+        <span class="row__val">${fmt(val)}</span>
+      </div>
+      <div class="track"><div class="fill" style="width:${(val / MAX * 100).toFixed(2)}%"></div></div>
+    </div>`;
+  }).join("");
+
+  return `<div class="card${p.lead ? " card--lead" : ""}">
+    <div class="card__head">${mark}<span class="card__name">${p.name}</span></div>
+    ${rows}
+  </div>`;
+}).join("");
+</script>
+</body>
+</html>
