@@ -32,9 +32,13 @@ dur = a.dur or len(fx) / SR
 n = int(dur * SR)
 
 tempo = a.film_bpm / a.bpm
+# Skip the seek and the stretch when they are no-ops: atempo resynthesizes the
+# audio (and shifts it by about 2 ms) even at exactly 1.0.
+seek = ["-ss", f"{a.offset:.4f}"] if a.offset else []
+stretch = ["-af", f"atempo={tempo:.6f}"] if abs(tempo - 1) > 1e-9 else []
 raw = subprocess.run(
-    ["ffmpeg", "-loglevel", "error", "-ss", f"{a.offset:.4f}", "-i", a.track,
-     "-af", f"atempo={tempo:.6f}", "-t", f"{dur + 0.5:.3f}", "-ac", "2", "-ar", str(SR), "-f", "s16le", "-"],
+    ["ffmpeg", "-loglevel", "error", *seek, "-i", a.track, *stretch,
+     "-t", f"{dur + 0.5:.3f}", "-ac", "2", "-ar", str(SR), "-f", "s16le", "-"],
     capture_output=True, check=True).stdout
 mus = np.frombuffer(raw, dtype=np.int16).reshape(-1, 2).astype(float) / 32768
 mus = np.pad(mus, ((0, max(0, n - len(mus))), (0, 0)))[:n]

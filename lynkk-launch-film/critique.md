@@ -52,3 +52,26 @@ Measured: -14.0 LUFS, peak -2.0 dBFS, no clipping, about 28 onsets per second
 in the drop, both pre-drop gaps about 30 dB under the music around them. The
 drop is 3.5 dB fuller in the mids and 5 dB in the highs than the groove before
 it. Not listened to by ear.
+
+## Round 3: chapters 01 to 06 (12 to 78 s) on the approved score
+
+Music: `assets/music/score-approved.m4a` (round 2's track, chosen by the client)
+is used unchanged. `foley.py` adds only the UI sounds for 12 to 78 s.
+
+Found by looking at stills, transition frames and the DOM:
+
+| Problem | Fix |
+|---|---|
+| Call window empty from 12.0 to 15.5 s: the crossfade gave a still layer zero opacity | A layer that is not changing shape shows at full opacity |
+| Column overlapped the call window's right edge | Call window moved left and narrowed |
+| "Hold fn. Talk. Let go." never appeared; the lockup headline would not have either | `maskIn` default `outAt = Infinity` made `Infinity - Infinity = NaN`; no exit now means no exit |
+| Wi-Fi drop would have dimmed the Lynkk mark (selector matched the mark's svg first) | Selector narrowed to the Wi-Fi icon; slash placed from measured coordinates |
+| Kanban drop landed off-centre (placeholder card shorter than the real one) | Placeholders carry the real card's text |
+| Notch island text too small for video | 60 px island, 23 px type |
+| "Available now" wrapped to two lines | No wrap |
+| `atempo=1.0` resynthesised the approved music and shifted it 2 ms (correlation 0.69) | No stretch or seek when they are no-ops; correlation now 1.0000, level change 0.00 dB |
+| `loudnorm` fell back to dynamic gain at the -1 dBTP ceiling | Not needed: the mix is -14.0 LUFS as it stands |
+| Descenders of the 8.5 s headline linger 2 frames into the call window | Exit tightened to finish by 11.98 s |
+
+Scores (whole film, after fixes): composition 8, motion 8, type 8, colour 9,
+sound sync 8 (measured, not heard), brand fidelity 9, legibility 8, story 8.

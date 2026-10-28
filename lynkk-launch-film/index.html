@@ -101,6 +101,7 @@ body { font-family: "Inter", sans-serif; color: var(--ink); -webkit-font-smoothi
 /* Grain */
 #grain { position: absolute; inset: 0; width: 1920px; height: 1080px; opacity: 0.055; mix-blend-mode: soft-light; pointer-events: none; }
 </style>
+<link rel="stylesheet" href="scenes.css">
 </head>
 <body>
 <div id="stage">
@@ -208,7 +209,7 @@ function maskIn(el, t, start, { stagger = 0.12, dur = 0.6, outAt = Infinity, out
   let any = false;
   lines.forEach((ln, i) => {
     const pin = E.out(seg(t, start + i * stagger, start + i * stagger + dur));
-    const pout = E.in(seg(t, outAt + i * 0.06, outAt + i * 0.06 + outDur));
+    const pout = Number.isFinite(outAt) ? E.in(seg(t, outAt + i * 0.06, outAt + i * 0.06 + outDur)) : 0;
     const y = (1 - pin) * 110 - pout * 110;
     ln.style.transform = `translateY(${y}%)`;
     if (pin > 0 && pout < 1) any = true;
@@ -369,7 +370,7 @@ function sceneBand(t) {
 
 function sceneHeadlines(t) {
   maskIn($("#h-brand"), t, 4.0, { stagger: 0.14, dur: 0.6, outAt: 6.75, outDur: 0.3 });
-  maskIn($("#h-mac"), t, 8.3, { stagger: 0.16, dur: 0.6, outAt: 11.75, outDur: 0.3 });
+  maskIn($("#h-mac"), t, 8.3, { stagger: 0.16, dur: 0.6, outAt: 11.72, outDur: 0.2 });
 }
 
 // ------------------------------------------------------------------ frame
@@ -381,6 +382,7 @@ window.renderFrame = function (realT) {
   sceneDesktop(t);
   sceneHeadlines(t);
   sceneMark(t);
+  window.renderScenes(t);
   grain(Math.round(realT * window.FPS));
 };
 
@@ -403,11 +405,13 @@ window.__ready = (async () => {
   await document.fonts.load('400 100px "Inter"');
   await document.fonts.ready;
   await new Promise((res) => { const img = new Image(); img.onload = img.onerror = res; img.src = "assets/plates/night.jpg"; });
+  window.initScenes();
   measure();
   window.renderFrame(0);
   document.documentElement.dataset.ready = "1";
   return true;
 })();
 </script>
+<script src="scenes.js"></script>
 </body>
 </html>
