@@ -20,7 +20,15 @@
     0: { z: [0.56, 0.56], f: [[960, 540], [960, 540]], fit: true, beatPunch: true },
     1: { z: [1.78, 2.4], f: [[960, 400], [1739, 27]] },
     14: { z: [1.78, 1.86], f: [[960, 540], [960, 520]] },
-    8: { f: [[1380, 440], [1380, 470]] },             // Ask: keep its heading in the narrower window
+    // Features: whole windows, or crops on a natural edge (the sidebar border).
+    4: { z: [1.0, 1.02], f: [[1060, 450], [1060, 440]] },   // call window changing shape
+    5: { z: [0.84, 0.88], f: [[1440, 500], [1440, 480]] },  // the column and the call beside it
+    7: { z: [0.95, 0.98], f: [[1400, 490], [1400, 470]] },  // notes pane
+    8: { z: [0.95, 0.98], f: [[1400, 470], [1400, 490]] },  // Ask pane
+    9: { z: [0.95, 0.98], f: [[1400, 500], [1400, 480]] },  // the board
+    11: { z: [0.9, 0.95], f: [[1300, 520], [1300, 520]] },  // fn key
+    12: { z: [0.88, 0.9], f: [[1260, 511], [1260, 511]] },  // the whole dictation window and the island
+    13: { z: [0.88, 0.9], f: [[1260, 450], [1260, 460]] },  // Polished card, then the modes
   };
 
   const DOTS = `<svg class="dots" width="100%" height="100%"><rect width="100%" height="100%" fill="url(#dots)"/></svg>`;
