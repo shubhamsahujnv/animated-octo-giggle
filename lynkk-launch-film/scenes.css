@@ -239,7 +239,7 @@
 #ember .hl .ink2 { color: rgb(255 255 255 / 0.66); font-size: 62px; }
 #ember .cta { position: absolute; left: 0; right: 0; top: 760px; display: flex; justify-content: center; gap: 16px; opacity: 0; }
 #ember .cta .btn { height: 72px; padding: 0 34px; border-radius: 10px; background: #fff; color: #111; display: grid; place-items: center; font: 500 28px/1 "Inter"; }
-#ember .cta .av { white-space: nowrap; height: 72px; padding: 0 30px; border-radius: 10px; background: rgb(0 0 0 / 0.28); border: 1px solid rgb(255 255 255 / 0.3); display: grid; place-items: center; font: 500 28px/1 "Inter"; color: #fff; }
+#ember .cta .avail { white-space: nowrap; height: 72px; padding: 0 30px; border-radius: 10px; background: rgb(0 0 0 / 0.28); border: 1px solid rgb(255 255 255 / 0.3); display: grid; place-items: center; font: 500 28px/1 "Inter"; color: #fff; }
 #ember .fine { position: absolute; left: 0; right: 0; top: 862px; text-align: center; font: 400 22px/1 "Inter"; color: rgb(255 255 255 / 0.75); opacity: 0; }
 
 /* ---------------------------------------------------------------- captions and cursor */

@@ -97,3 +97,25 @@ before its chip appeared, "Hold fn" cut off at the left, the notch island
 cropped, the caption box over the Polished card, a cut-off wall tile, an empty
 1 s reveal (camera now rides the mark into the menu bar), caption boxes seen
 empty (now wipe open with their words), the Ask shot opening on an empty pane.
+
+## Teaser v2 (37.5 s, 20 bars at 128 BPM)
+
+Client notes, all applied: the "Your revenue lives in your conversations" card
+is gone; Spotter is gone (its cmd-return fragment in the hook now reads cmd-K);
+the caption boxes are replaced by a split layout (footage in a tilted window on
+the right, the feature explained on the left: act label, headline, one plain
+line, a progress bar per act); the feature wall is gone; the "Available now"
+button no longer draws the avatar square behind it (class collision with .av).
+
+Eight features in three acts: It asks once; 7 call apps; Both sides; Notes,
+done; Ask anything; From talk to tickets; Hold fn, talk; Without the ums.
+Each holds 2.8 s so the explanation can be read.
+
+Not built: Salesforce or HubSpot. lynkk.ai says "No CRM sync yet" and TRUTHS.md
+forbids CRM claims, so "From talk to tickets" shows what is true (each action
+item sent on as an issue, when you choose). The destination is one label if the
+integration is confirmed.
+
+Fixed after looking at frames: the film laid itself out at window size inside
+the split window (it is now pinned at 1920x1080), the reveal had no title, the
+Ask question bubble was clipped at the window edge.

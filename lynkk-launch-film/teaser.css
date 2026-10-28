@@ -1,5 +1,5 @@
 /* Teaser layer: only used with ?edl=teaser. */
-#cam { position: absolute; inset: 0; transform-origin: 0 0; will-change: transform, filter; }
+#cam { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; will-change: transform, filter; }
 #tz { position: absolute; inset: 0; pointer-events: none; }
 
 /* Act cards and the brand card */
@@ -37,3 +37,24 @@
 
 #tz-flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
 #tz-black { position: absolute; inset: 0; background: #000; opacity: 0; }
+
+/* ---------------------------------------------------------------- split layout (v2) */
+#tz-bg { position: absolute; inset: 0; background: #111; }
+#tz-bg svg { position: absolute; inset: 0; }
+#win { position: absolute; overflow: hidden; transform-origin: 50% 50%; will-change: transform; background: #111; }
+#win.framed { border: 1px solid rgb(255 255 255 / 0.14); }
+#tzp { position: absolute; left: 120px; top: 0; width: 600px; height: 1080px; opacity: 0; }
+#tz-act { position: absolute; left: 0; top: 300px; }
+.tz-feat { position: absolute; left: 0; top: 370px; width: 600px; opacity: 0; }
+.tz-h { font: 500 96px/1.02 "Schibsted"; letter-spacing: -0.04em; color: #fff; }
+.tz-h b { font-weight: 500; }
+.tz-d { margin-top: 28px; font: 400 34px/1.32 "Inter"; letter-spacing: -0.01em; color: rgb(255 255 255 / 0.66); }
+.tz-d .chip-v { height: 34px; padding: 0 14px; font-size: 17px; vertical-align: 0.15em; }
+#tz-prog { position: absolute; left: 0; top: 880px; display: flex; gap: 10px; }
+#tz-prog i { --fill: 0; display: block; width: 64px; height: 5px; border-radius: 3px; background: rgb(255 255 255 / 0.16); position: relative; overflow: hidden; }
+#tz-prog i::after { content: ""; position: absolute; inset: 0; background: #fff; transform-origin: 0 50%; transform: scaleX(var(--fill)); }
+
+/* Reveal title: plain type, no box */
+#tz-title { position: absolute; left: 0; right: 0; top: 400px; text-align: center; opacity: 0; }
+#tz-title .t1 { font: 500 150px/1 "Schibsted"; letter-spacing: -0.045em; color: #fff; }
+#tz-title .t2 { margin-top: 26px; font: 500 44px/1.2 "Schibsted"; letter-spacing: -0.02em; color: rgb(255 255 255 / 0.72); }

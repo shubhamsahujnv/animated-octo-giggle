@@ -158,7 +158,7 @@ const STAGE_HTML = `
 <div id="ember"><div class="plate"></div><div class="scrim"></div>
   <div class="lock"><span class="m mk"></span>Lynkk</div>
   <div class="hl"><span class="mask"><span>Lynkk for Mac.</span></span><span class="mask"><span class="ink2">Your next call, noticed.</span></span><span class="mask"><span class="ink2">Your next message, spoken.</span></span></div>
-  <div class="cta"><span class="btn">Download at lynkk.ai</span><span class="av">Available now</span></div>
+  <div class="cta"><span class="btn">Download at lynkk.ai</span><span class="avail">Available now</span></div>
   <div class="fine">Free to install · Apple silicon · macOS 14.2 or later</div>
   <div id="fadeout" style="position:absolute;inset:0;background:#000;opacity:0"></div>
 </div>

@@ -258,22 +258,24 @@ ROLLS = [(3.0, 4.0), (7.0, 7.5), (30.0, 31.5), (71.0, 72.0)]
 GAPS = [(7.5, 8.0), (31.5, 32.0)]                    # music drops out, FX stays
 
 if ARR == "teaser":
-    # The same instruments at 128 BPM. Drops land on the story: 01 During the
-    # call (7.5), 02 After the call (13.125), fn down (18.28), the lockup (22.5).
-    b = BEAT
+    # The same instruments at 128 BPM, 20 bars. Drops land on the story:
+    # 01 During the call (7.5), 02 After the call (16.875), fn down (27.656),
+    # the lockup (33.75). 03 Between calls lifts instead, so fn is the drop.
     SECTIONS = [
-        (0.0, 3.75, "k h a"),                 # hook: a kick under every fragment
-        (3.75, 5.625, "k c h b a s"),         # Your revenue lives in your conversations
-        (5.625, 7.03125, "h a p"),            # the reveal builds
-        (7.5, 13.125, "k c h b a s p l"),     # 01 During the call
-        (13.125, 16.875, "k c h b a s p l"),  # 02 After the call
-        (16.875, 17.8125, "h a"),             # 03 Between calls: lift
-        (18.28125, 22.5, "k c h b a s p l"),  # fn down: the last drop
-        (22.5, 25.5, "p"),                    # lockup tail
+        (0.0, 3.75, "k h a"),                   # hook: a kick under every fragment
+        (3.75, 7.03125, "h a p"),               # the reveal builds
+        (7.5, 12.1875, "k c h b a s p l"),      # 01: It asks once, 7 call apps
+        (12.1875, 16.875, "k c h b a s"),       # 01: Both sides
+        (16.875, 21.5625, "k c h b a s p l"),   # 02: Notes, Ask
+        (21.5625, 26.25, "k c h b a s"),        # 02: talk to tickets
+        (26.25, 27.421875, "h a p"),            # 03 Between calls: lift
+        (27.65625, 32.8125, "k c h b a s p l"), # fn down: the last drop
+        (32.8125, 33.75, "a p"),                # install facts
+        (33.75, 37.5, "p"),                     # lockup tail
     ]
-    DROPS = [(7.5, 1.0), (13.125, 0.6), (18.28125, 1.0), (22.5, 1.2)]
-    ROLLS = [(2.8125, 3.75), (6.5625, 7.265625), (16.875, 17.8125), (21.5625, 22.5)]
-    GAPS = [(7.265625, 7.5), (17.8125, 18.28125)]
+    DROPS = [(7.5, 1.0), (16.875, 0.9), (26.25, 0.35), (27.65625, 1.0), (33.75, 1.2)]
+    ROLLS = [(2.8125, 3.75), (6.5625, 7.265625), (15.9375, 16.875), (25.3125, 26.25), (32.8125, 33.75)]
+    GAPS = [(7.265625, 7.5), (27.421875, 27.65625)]
 
 
 def bar_of(t):
@@ -324,7 +326,7 @@ if not FX_ONLY and ARR != "teaser":
 
 # ------------------------------------------------------------------ foley on the picture
 def film_to_teaser(src):
-    for t0, t1, s0, r, _ in EDL["segments"]:
+    for t0, t1, s0, r, *_ in EDL["segments"]:
         if r and s0 <= src <= s0 + (t1 - t0) * r + 1e-9:
             return t0 + (src - s0) / r
     return None
@@ -335,22 +337,27 @@ if ARR == "teaser":
     for i in range(6):                                      # a key-click per fragment, on the beat
         add(key_click(), i * BEAT, gain=0.55, send=0.12, bus=FX)
     add(soft_tick(hz(81)), 6 * BEAT, gain=0.14, send=0.4, bus=FX)
-    add(sub_thud(), 3.75, gain=0.9, bus=FX)                 # the mark lands
-    for t in EDL["cards"][0]["beats"][1:]:                  # each line of the brand card
-        add(soft_tick(hz(76)), t, gain=0.12, send=0.3, bus=FX)
-    for src, f in [(8.0, "dock"), (14.25, "click"), (24.9, "key"), (25.0, "key"), (34.55, "tick"), (39.5, "click")]:
+    add(sub_thud(), 3.75, gain=0.7, bus=FX)                 # cut to the reveal
+    # UI sounds at the film moments, placed through the cut list.
+    for src, kind in [(8.0, "dock"), (14.25, "click"), (44.0, "key"), (45.0, "key"), (52.3, "tick"),
+                      (54.42, "tap"), (55.0, "tap"), (55.85, "click"), (56.35, "tick"),
+                      (34.55, "tick"), (39.5, "click"), (41.0, "tap"), (41.25, "tap"), (41.5, "tap")]:
         t = film_to_teaser(src)
-        if f == "dock":
+        if t is None:
+            continue
+        if kind == "dock":
             add(soft_tick(hz(88)), t, gain=0.25, send=0.35, bus=FX); add(key_click(), t, gain=0.45, send=0.2, bus=FX)
-        elif f == "tick":
+        elif kind == "tick":
             add(soft_tick(hz(88)), t, gain=0.18, send=0.3, bus=FX)
+        elif kind == "tap":
+            add(soft_tick(hz(81)), t, gain=0.1, send=0.2, bus=FX)
         else:
-            add(key_click(heavy=(f == "key")), t, gain=0.45, send=0.15, bus=FX)
-    for c in EDL["cards"][1:]:                              # act cards
+            add(key_click(heavy=(kind == "key")), t, gain=0.42, send=0.15, bus=FX)
+    for k in range(6):                                      # the call window changes shape per beat
+        add(soft_tick(hz(76)), 11.25 + k * BEAT, gain=0.08, send=0.25, bus=FX)
+    for c in EDL["cards"]:                                  # act cards wipe in
         add(soft_tick(hz(76)), c["t0"], gain=0.16, send=0.35, bus=FX)
-    add(key_click(heavy=True), 18.28125, gain=0.5, send=0.2, bus=FX)   # fn down
-    for k in range(9):                                      # wall tiles, one per 8th
-        add(soft_tick(hz(88)), 20.625 + k * BEAT / 2, gain=0.07, send=0.3, bus=FX)
+    add(key_click(heavy=True), 27.65625, gain=0.5, send=0.2, bus=FX)   # fn down
 
 for i in ([] if ARR == "teaser" else range(6)):             # one key-click per fragment
     add(key_click(), i * 0.5, gain=0.55, send=0.12, bus=FX)

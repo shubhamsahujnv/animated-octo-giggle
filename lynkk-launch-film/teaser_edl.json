@@ -2,27 +2,63 @@
  "bpm": 128,
  "beat": 0.46875,
  "bar": 1.875,
- "duration": 25.5,
+ "duration": 37.5,
  "segments": [
   [
-   0.0,
+   0,
    3.75,
    0.0,
    1.06667,
-   "hook: UI fragments, collage, the mark"
+   "full",
+   {
+    "z": [
+     1,
+     1
+    ],
+    "f": [
+     [
+      960,
+      540
+     ],
+     [
+      960,
+      540
+     ]
+    ],
+    "beatPunch": true
+   },
+   "hook: UI fragments, the mark forms"
   ],
   [
    3.75,
-   5.625,
-   3.98,
-   0,
-   "card: Your revenue lives in your conversations"
-  ],
-  [
-   5.625,
    7.5,
    7.0,
    1.06667,
+   "full",
+   {
+    "z": [
+     1.0,
+     1.75
+    ],
+    "f": [
+     [
+      960,
+      400
+     ],
+     [
+      1739,
+      27
+     ]
+    ],
+    "ry": [
+     -4,
+     1
+    ],
+    "rx": [
+     3,
+     0
+    ]
+   },
    "reveal: the mark docks in the menu bar"
   ],
   [
@@ -30,198 +66,417 @@
    8.4375,
    11.9,
    0,
-   "card: 01 During the call"
+   "card",
+   null,
+   "01 During the call"
   ],
   [
    8.4375,
-   9.375,
+   11.25,
    12.95,
-   1.84889,
-   "the card asks; Record"
+   0.693333,
+   "split",
+   {
+    "z": [
+     1.3,
+     1.45
+    ],
+    "f": [
+     [
+      1600,
+      200
+     ],
+     [
+      1640,
+      160
+     ]
+    ],
+    "ry": [
+     -9,
+     -6
+    ]
+   },
+   "F1 the card asks, Record"
   ],
   [
-   9.375,
    11.25,
-   18.0,
-   1.86667,
-   "both sides, two channels"
-  ],
-  [
-   11.25,
-   13.125,
-   23.5,
-   1.6,
-   "Spotter, cmd-return"
-  ],
-  [
-   13.125,
    14.0625,
-   0,
-   0,
-   "card: 02 After the call"
+   15.5,
+   1.06667,
+   "split",
+   {
+    "z": [
+     1.02,
+     1.1
+    ],
+    "f": [
+     [
+      1060,
+      460
+     ],
+     [
+      1060,
+      440
+     ]
+    ],
+    "ry": [
+     -9,
+     -6
+    ]
+   },
+   "F2 call window changes shape per beat"
   ],
   [
    14.0625,
-   15.0,
-   45.05,
-   2.0,
-   "the note writes itself"
-  ],
-  [
-   15.0,
    16.875,
+   18.3,
+   1.137778,
+   "split",
+   {
+    "z": [
+     1.0,
+     1.1
+    ],
+    "f": [
+     [
+      1480,
+      480
+     ],
+     [
+      1520,
+      460
+     ]
+    ],
+    "ry": [
+     -9,
+     -6
+    ]
+   },
+   "F3 both sides, two channels"
+  ],
+  [
+   16.875,
+   17.8125,
+   0,
+   0,
+   "card",
+   null,
+   "02 After the call"
+  ],
+  [
+   17.8125,
+   20.625,
+   44.0,
+   1.06667,
+   "split",
+   {
+    "z": [
+     0.95,
+     1.05
+    ],
+    "f": [
+     [
+      1300,
+      520
+     ],
+     [
+      1320,
+      480
+     ]
+    ],
+    "ry": [
+     -9,
+     -6
+    ]
+   },
+   "F4 the note: summary, takeaways, action items"
+  ],
+  [
+   20.625,
+   23.4375,
    50.3,
-   1.5,
-   "Ask Lynkk, Play from 12:04"
+   0.871111,
+   "split",
+   {
+    "z": [
+     1.05,
+     1.15
+    ],
+    "f": [
+     [
+      1420,
+      440
+     ],
+     [
+      1420,
+      470
+     ]
+    ],
+    "ry": [
+     -9,
+     -6
+    ]
+   },
+   "F5 Ask Lynkk, Play from 12:04"
   ],
   [
-   16.875,
-   17.8125,
-   0,
-   0,
-   "card: 03 Between calls"
+   23.4375,
+   26.25,
+   54.2,
+   0.88,
+   "split",
+   {
+    "z": [
+     0.95,
+     1.05
+    ],
+    "f": [
+     [
+      1290,
+      520
+     ],
+     [
+      1300,
+      500
+     ]
+    ],
+    "ry": [
+     -9,
+     -6
+    ]
+   },
+   "F6 from talk to tickets: drag, Send, sent"
   ],
   [
-   17.8125,
-   18.75,
+   26.25,
+   27.1875,
+   0,
+   0,
+   "card",
+   null,
+   "03 Between calls"
+  ],
+  [
+   27.1875,
+   28.125,
    31.55,
    0.96,
-   "fn down on the beat"
+   "split",
+   {
+    "z": [
+     0.9,
+     0.98
+    ],
+    "f": [
+     [
+      1300,
+      520
+     ],
+     [
+      1300,
+      520
+     ]
+    ],
+    "ry": [
+     -9,
+     -7
+    ]
+   },
+   "F7a fn down on the beat"
   ],
   [
-   18.75,
-   19.6875,
+   28.125,
+   30.0,
    34.05,
    1.06667,
-   "words land in an email"
+   "split",
+   {
+    "z": [
+     1.05,
+     1.12
+    ],
+    "f": [
+     [
+      1240,
+      420
+     ],
+     [
+      1260,
+      430
+     ]
+    ],
+    "ry": [
+     -7,
+     -6
+    ]
+   },
+   "F7b the words land in an email"
   ],
   [
-   19.6875,
-   20.625,
-   39.1,
-   0.85333,
-   "Polished snap"
+   30.0,
+   32.8125,
+   38.6,
+   0.96,
+   "split",
+   {
+    "z": [
+     1.1,
+     1.0
+    ],
+    "f": [
+     [
+      1260,
+      400
+     ],
+     [
+      1260,
+      420
+     ]
+    ],
+    "ry": [
+     -9,
+     -6
+    ]
+   },
+   "F8 Polished snap, then the three modes"
   ],
   [
-   20.625,
-   22.5,
-   61.5,
-   2.13333,
-   "feature wall, a tile per 8th"
-  ],
-  [
-   22.5,
-   25.5,
-   71.8,
+   32.8125,
+   37.5,
+   71.11,
    1.0,
-   "lockup on the final hit"
+   "full",
+   {
+    "z": [
+     1.0,
+     1.06
+    ],
+    "f": [
+     [
+      960,
+      540
+     ],
+     [
+      960,
+      520
+     ]
+    ]
+   },
+   "install facts, then the lockup on the final hit"
   ]
  ],
  "cards": [
   {
-   "t0": 3.75,
-   "t1": 5.625,
-   "kind": "stack",
-   "lines": [
-    "Your revenue",
-    "lives in your",
-    "conversations.",
-    "~Don’t lose it."
-   ],
-   "beats": [
-    3.75,
-    4.21875,
-    4.6875,
-    5.15625
-   ]
-  },
-  {
-   "t0": 7.5,
-   "t1": 8.4375,
-   "kind": "act",
    "num": "01",
-   "text": "During the call."
+   "text": "During the call.",
+   "t0": 7.5,
+   "t1": 8.4375
   },
   {
-   "t0": 13.125,
-   "t1": 14.0625,
-   "kind": "act",
    "num": "02",
-   "text": "After the call."
+   "text": "After the call.",
+   "t0": 16.875,
+   "t1": 17.8125
   },
   {
-   "t0": 16.875,
-   "t1": 17.8125,
-   "kind": "act",
    "num": "03",
-   "text": "Between calls."
+   "text": "Between calls.",
+   "t0": 26.25,
+   "t1": 27.1875
   }
  ],
- "captions": [
+ "features": [
   {
-   "t0": 6.6,
-   "t1": 7.48,
-   "where": "center",
-   "lines": [
-    "Lynkk for Mac."
-   ]
+   "act": "01 During the call",
+   "h": "It asks once.",
+   "d": "A card asks to record. No bot joins.",
+   "t0": 8.4375,
+   "t1": 11.25
   },
   {
-   "t0": 8.47,
-   "t1": 9.36,
-   "lines": [
-    "No bot joins."
-   ]
+   "act": "01 During the call",
+   "h": "# call apps.",
+   "d": "It notices calls in the apps you already use.",
+   "count": 7,
+   "t0": 11.25,
+   "t1": 14.0625
   },
   {
-   "t0": 9.42,
-   "t1": 11.22,
-   "lines": [
-    "Both sides,",
-    "~two channels."
-   ]
+   "act": "01 During the call",
+   "h": "Both sides.",
+   "d": "You and everyone else, on two channels.",
+   "t0": 14.0625,
+   "t1": 16.875
   },
   {
-   "t0": 11.3,
-   "t1": 13.1,
-   "lines": [
-    "Ask Spotter",
-    "~during the call."
-   ],
-   "sm": "Early access"
+   "act": "02 After the call",
+   "h": "Notes, done.",
+   "d": "A summary, decisions and action items after every call.",
+   "t0": 17.8125,
+   "t1": 20.625
   },
   {
-   "t0": 14.1,
-   "t1": 14.99,
-   "lines": [
-    "Notes, done."
-   ]
+   "act": "02 After the call",
+   "h": "Ask anything.",
+   "d": "Answers come from your notes and cite the minute.",
+   "chip": "Pro",
+   "t0": 20.625,
+   "t1": 23.4375
   },
   {
-   "t0": 15.05,
-   "t1": 16.85,
-   "lines": [
-    "Ask anything.",
-    "~Hear the minute."
-   ],
-   "sm": "Ask Lynkk · Pro"
+   "act": "02 After the call",
+   "h": "From talk to tickets.",
+   "d": "Send each action item on as an issue, when you choose.",
+   "t0": 23.4375,
+   "t1": 26.25
   },
   {
-   "t0": 18.8,
-   "t1": 20.6,
-   "lines": [
-    "It types",
-    "what you say.",
-    "~In any app."
-   ]
+   "act": "03 Between calls",
+   "h": "Hold fn. Talk.",
+   "d": "The words land where your cursor is, in any app.",
+   "t0": 27.1875,
+   "t1": 30.0
   },
   {
-   "t0": 20.65,
-   "t1": 22.45,
-   "where": "top",
-   "lines": [
-    "And more."
-   ]
+   "act": "03 Between calls",
+   "h": "Without the ums.",
+   "d": "Polished drops the ums and false starts.",
+   "chip": "Pro",
+   "t0": 30.0,
+   "t1": 32.8125
   }
+ ],
+ "rings": [
+  [
+   14.2,
+   "#rec-btn",
+   10
+  ],
+  [
+   19.2,
+   "#column .lv",
+   10
+  ],
+  [
+   52.6,
+   "#ask-c2",
+   8
+  ],
+  [
+   55.9,
+   "#send-btn",
+   8
+  ],
+  [
+   39.6,
+   "#polish .clean",
+   14
+  ]
+ ],
+ "drops": [
+  7.5,
+  16.875,
+  27.65625,
+  33.75
  ]
 }
