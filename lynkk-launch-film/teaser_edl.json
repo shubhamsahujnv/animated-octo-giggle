@@ -1,0 +1,227 @@
+{
+ "bpm": 128,
+ "beat": 0.46875,
+ "bar": 1.875,
+ "duration": 25.5,
+ "segments": [
+  [
+   0.0,
+   3.75,
+   0.0,
+   1.06667,
+   "hook: UI fragments, collage, the mark"
+  ],
+  [
+   3.75,
+   5.625,
+   3.98,
+   0,
+   "card: Your revenue lives in your conversations"
+  ],
+  [
+   5.625,
+   7.5,
+   7.0,
+   1.06667,
+   "reveal: the mark docks in the menu bar"
+  ],
+  [
+   7.5,
+   8.4375,
+   11.9,
+   0,
+   "card: 01 During the call"
+  ],
+  [
+   8.4375,
+   9.375,
+   12.95,
+   1.84889,
+   "the card asks; Record"
+  ],
+  [
+   9.375,
+   11.25,
+   18.0,
+   1.86667,
+   "both sides, two channels"
+  ],
+  [
+   11.25,
+   13.125,
+   23.5,
+   1.6,
+   "Spotter, cmd-return"
+  ],
+  [
+   13.125,
+   14.0625,
+   0,
+   0,
+   "card: 02 After the call"
+  ],
+  [
+   14.0625,
+   15.0,
+   45.05,
+   2.0,
+   "the note writes itself"
+  ],
+  [
+   15.0,
+   16.875,
+   50.3,
+   1.5,
+   "Ask Lynkk, Play from 12:04"
+  ],
+  [
+   16.875,
+   17.8125,
+   0,
+   0,
+   "card: 03 Between calls"
+  ],
+  [
+   17.8125,
+   18.75,
+   31.55,
+   0.96,
+   "fn down on the beat"
+  ],
+  [
+   18.75,
+   19.6875,
+   34.05,
+   1.06667,
+   "words land in an email"
+  ],
+  [
+   19.6875,
+   20.625,
+   39.1,
+   0.85333,
+   "Polished snap"
+  ],
+  [
+   20.625,
+   22.5,
+   61.5,
+   2.13333,
+   "feature wall, a tile per 8th"
+  ],
+  [
+   22.5,
+   25.5,
+   71.8,
+   1.0,
+   "lockup on the final hit"
+  ]
+ ],
+ "cards": [
+  {
+   "t0": 3.75,
+   "t1": 5.625,
+   "kind": "stack",
+   "lines": [
+    "Your revenue",
+    "lives in your",
+    "conversations.",
+    "~Don’t lose it."
+   ],
+   "beats": [
+    3.75,
+    4.21875,
+    4.6875,
+    5.15625
+   ]
+  },
+  {
+   "t0": 7.5,
+   "t1": 8.4375,
+   "kind": "act",
+   "num": "01",
+   "text": "During the call."
+  },
+  {
+   "t0": 13.125,
+   "t1": 14.0625,
+   "kind": "act",
+   "num": "02",
+   "text": "After the call."
+  },
+  {
+   "t0": 16.875,
+   "t1": 17.8125,
+   "kind": "act",
+   "num": "03",
+   "text": "Between calls."
+  }
+ ],
+ "captions": [
+  {
+   "t0": 6.6,
+   "t1": 7.48,
+   "where": "center",
+   "lines": [
+    "Lynkk for Mac."
+   ]
+  },
+  {
+   "t0": 8.47,
+   "t1": 9.36,
+   "lines": [
+    "No bot joins."
+   ]
+  },
+  {
+   "t0": 9.42,
+   "t1": 11.22,
+   "lines": [
+    "Both sides,",
+    "~two channels."
+   ]
+  },
+  {
+   "t0": 11.3,
+   "t1": 13.1,
+   "lines": [
+    "Ask Spotter",
+    "~during the call."
+   ],
+   "sm": "Early access"
+  },
+  {
+   "t0": 14.1,
+   "t1": 14.99,
+   "lines": [
+    "Notes, done."
+   ]
+  },
+  {
+   "t0": 15.05,
+   "t1": 16.85,
+   "lines": [
+    "Ask anything.",
+    "~Hear the minute."
+   ],
+   "sm": "Ask Lynkk · Pro"
+  },
+  {
+   "t0": 18.8,
+   "t1": 20.6,
+   "lines": [
+    "It types",
+    "what you say.",
+    "~In any app."
+   ]
+  },
+  {
+   "t0": 20.65,
+   "t1": 22.45,
+   "where": "top",
+   "lines": [
+    "And more."
+   ]
+  }
+ ]
+}

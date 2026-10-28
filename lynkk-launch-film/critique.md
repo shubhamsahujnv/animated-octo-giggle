@@ -75,3 +75,25 @@ Found by looking at stills, transition frames and the DOM:
 
 Scores (whole film, after fixes): composition 8, motion 8, type 8, colour 9,
 sound sync 8 (measured, not heard), brand fidelity 9, legibility 8, story 8.
+
+## Teaser (25.5 s, 128 BPM): `index.html?edl=teaser`
+
+Built from the film by `teaser_edl.json`: 16 segments replayed at 0.85x to 2.1x,
+timed so the film's own hits land on the teaser's beats (dock on beat 14, fn
+down on 39, words land on 41, the Polished snap on 43, wall tiles on 8ths).
+Story from lynkk.ai: hook, Lynkk for Mac, 01 During the call, 02 After the call,
+03 Between calls, lockup. Score: the approved film score's instruments at 128 BPM
+(`ARR=teaser python3 score.py`), drops on each act.
+
+Animation added in `teaser.js`: a camera that frames and tilts every shot (zoom
+1.0 to 1.75, up to 10 degrees), punch-in with motion blur on every cut, beat
+punches under the hook and the wall, act cards that wipe in with giant outline
+numbers, a drawn rule and pulsing rings, word-by-word captions in wiping boxes,
+highlight rings drawn around Record, the meters, cmd-return, Play from 12:04
+and the Polished sentence, and a flash on every drop.
+
+Fixed after looking at frames: the cmd-3 keycap edge in shot, a ring drawn
+before its chip appeared, "Hold fn" cut off at the left, the notch island
+cropped, the caption box over the Polished card, a cut-off wall tile, an empty
+1 s reveal (camera now rides the mark into the menu bar), caption boxes seen
+empty (now wipe open with their words), the Ask shot opening on an empty pane.

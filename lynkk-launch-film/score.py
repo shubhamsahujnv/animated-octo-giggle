@@ -18,7 +18,9 @@ import wave
 import numpy as np
 
 SR = 48000
-GRID = json.load(open("beats.json"))
+# ARR=teaser builds the teaser at 128 BPM from teaser_beats.json and teaser_edl.json.
+ARR = os.environ.get("ARR", "film")
+GRID = json.load(open("teaser_beats.json" if ARR == "teaser" else "beats.json"))
 BEAT = GRID["beat"]                # 0.5 s
 BAR = GRID["bar"]                  # 2.0 s
 S16 = BEAT / 4                     # a 16th note, 0.125 s
@@ -255,6 +257,24 @@ DROPS = [(8.0, 1.0), (32.0, 1.0), (72.0, 1.2)]       # crash + thud on the big h
 ROLLS = [(3.0, 4.0), (7.0, 7.5), (30.0, 31.5), (71.0, 72.0)]
 GAPS = [(7.5, 8.0), (31.5, 32.0)]                    # music drops out, FX stays
 
+if ARR == "teaser":
+    # The same instruments at 128 BPM. Drops land on the story: 01 During the
+    # call (7.5), 02 After the call (13.125), fn down (18.28), the lockup (22.5).
+    b = BEAT
+    SECTIONS = [
+        (0.0, 3.75, "k h a"),                 # hook: a kick under every fragment
+        (3.75, 5.625, "k c h b a s"),         # Your revenue lives in your conversations
+        (5.625, 7.03125, "h a p"),            # the reveal builds
+        (7.5, 13.125, "k c h b a s p l"),     # 01 During the call
+        (13.125, 16.875, "k c h b a s p l"),  # 02 After the call
+        (16.875, 17.8125, "h a"),             # 03 Between calls: lift
+        (18.28125, 22.5, "k c h b a s p l"),  # fn down: the last drop
+        (22.5, 25.5, "p"),                    # lockup tail
+    ]
+    DROPS = [(7.5, 1.0), (13.125, 0.6), (18.28125, 1.0), (22.5, 1.2)]
+    ROLLS = [(2.8125, 3.75), (6.5625, 7.265625), (16.875, 17.8125), (21.5625, 22.5)]
+    GAPS = [(7.265625, 7.5), (17.8125, 18.28125)]
+
 
 def bar_of(t):
     return int(np.floor(t / BAR + 1e-6)) % 4
@@ -299,17 +319,47 @@ for (t, size) in DROPS:
     if not FX_ONLY:
         add(crash(), t, gain=0.5 * size, send=0.3)
     add(sub_thud(1.2), t, gain=0.6 * size, bus=FX)
-if not FX_ONLY:
+if not FX_ONLY and ARR != "teaser":
     add(crash(1.6), 4.0, gain=0.3, send=0.3)
 
 # ------------------------------------------------------------------ foley on the picture
-for i in range(6):                                          # one key-click per fragment
+def film_to_teaser(src):
+    for t0, t1, s0, r, _ in EDL["segments"]:
+        if r and s0 <= src <= s0 + (t1 - t0) * r + 1e-9:
+            return t0 + (src - s0) / r
+    return None
+
+
+if ARR == "teaser":
+    EDL = json.load(open("teaser_edl.json"))
+    for i in range(6):                                      # a key-click per fragment, on the beat
+        add(key_click(), i * BEAT, gain=0.55, send=0.12, bus=FX)
+    add(soft_tick(hz(81)), 6 * BEAT, gain=0.14, send=0.4, bus=FX)
+    add(sub_thud(), 3.75, gain=0.9, bus=FX)                 # the mark lands
+    for t in EDL["cards"][0]["beats"][1:]:                  # each line of the brand card
+        add(soft_tick(hz(76)), t, gain=0.12, send=0.3, bus=FX)
+    for src, f in [(8.0, "dock"), (14.25, "click"), (24.9, "key"), (25.0, "key"), (34.55, "tick"), (39.5, "click")]:
+        t = film_to_teaser(src)
+        if f == "dock":
+            add(soft_tick(hz(88)), t, gain=0.25, send=0.35, bus=FX); add(key_click(), t, gain=0.45, send=0.2, bus=FX)
+        elif f == "tick":
+            add(soft_tick(hz(88)), t, gain=0.18, send=0.3, bus=FX)
+        else:
+            add(key_click(heavy=(f == "key")), t, gain=0.45, send=0.15, bus=FX)
+    for c in EDL["cards"][1:]:                              # act cards
+        add(soft_tick(hz(76)), c["t0"], gain=0.16, send=0.35, bus=FX)
+    add(key_click(heavy=True), 18.28125, gain=0.5, send=0.2, bus=FX)   # fn down
+    for k in range(9):                                      # wall tiles, one per 8th
+        add(soft_tick(hz(88)), 20.625 + k * BEAT / 2, gain=0.07, send=0.3, bus=FX)
+
+for i in ([] if ARR == "teaser" else range(6)):             # one key-click per fragment
     add(key_click(), i * 0.5, gain=0.55, send=0.12, bus=FX)
-add(soft_tick(hz(81)), 3.0, gain=0.14, send=0.4, bus=FX)    # collage
-add(sub_thud(), 4.0, gain=0.9, bus=FX)                      # the mark lands
-add(key_click(heavy=True), 4.0, gain=0.35, send=0.2, bus=FX)
-add(soft_tick(hz(88)), 8.0, gain=0.25, send=0.35, bus=FX)   # docks in the menu bar
-add(key_click(), 8.0, gain=0.45, send=0.2, bus=FX)
+if ARR != "teaser":
+    add(soft_tick(hz(81)), 3.0, gain=0.14, send=0.4, bus=FX)    # collage
+    add(sub_thud(), 4.0, gain=0.9, bus=FX)                      # the mark lands
+    add(key_click(heavy=True), 4.0, gain=0.35, send=0.2, bus=FX)
+    add(soft_tick(hz(88)), 8.0, gain=0.25, send=0.35, bus=FX)   # docks in the menu bar
+    add(key_click(), 8.0, gain=0.45, send=0.2, bus=FX)
 
 # ------------------------------------------------------------------ mix
 # Sidechain the music to the kick: the pump is part of the drive.
@@ -343,7 +393,7 @@ mix[:, end - fade:end] *= np.linspace(1, 0, fade)
 
 out = (mix[:, :end].T * 0.89 * 32767).astype(np.int16)
 os.makedirs("out", exist_ok=True)
-name = "out/fx_raw.wav" if FX_ONLY else "out/score_raw.wav"
+name = "out/fx_raw.wav" if FX_ONLY else ("out/teaser_score_raw.wav" if ARR == "teaser" else "out/score_raw.wav")
 with wave.open(name, "wb") as w:
     w.setnchannels(2)
     w.setsampwidth(2)
