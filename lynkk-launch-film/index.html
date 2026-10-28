@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lynkk for Mac launch film</title>
+<style>
+@font-face { font-family: "Schibsted"; src: url("assets/fonts/SchibstedGrotesk-latin.woff2") format("woff2"); font-weight: 400 900; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/InterVariable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+
+:root {
+  --night: #111111;
+  --ink: #ffffff;
+  --ink-2: rgb(255 255 255 / 0.52);
+  --surface: #1e1e21;
+  --surface-2: #262629;
+  --line: rgb(255 255 255 / 0.09);
+  --violet: #7063be;
+  --violet-soft: #b4abe0;
+  --violet-deep: #231f3a;
+  --live: #e5484d;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--night); }
+body { font-family: "Inter", sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+#stage { position: absolute; inset: 0; overflow: hidden; background: var(--night); }
+.layer { position: absolute; inset: 0; will-change: transform, opacity; }
+.hide { opacity: 0; }
+
+/* Night band with the site's dot grid */
+#band { background: var(--night); }
+#band svg { position: absolute; inset: 0; }
+
+/* -------- Fragments: macro crops of Lynkk UI -------- */
+.frag { position: absolute; inset: 0; opacity: 0; }
+.frag .rig { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.num { font-variant-numeric: tabular-nums; }
+
+#f-live .dot { position: absolute; left: 470px; top: 430px; width: 220px; height: 220px; border-radius: 50%; background: var(--live); }
+#f-live .ring { position: absolute; left: 470px; top: 430px; width: 220px; height: 220px; border-radius: 50%; border: 10px solid var(--live); }
+#f-live .clock { position: absolute; left: 780px; top: 330px; font: 500 360px/1 "Inter"; letter-spacing: -0.04em; }
+
+#f-record .pill { position: absolute; left: 380px; top: 250px; width: 1400px; height: 380px; border-radius: 190px; background: #fff; color: #111; display: grid; place-items: center; font: 500 190px/1 "Inter"; letter-spacing: -0.035em; transform-origin: 50% 50%; }
+#f-record .pill2 { position: absolute; left: 380px; top: 690px; width: 1400px; height: 380px; border-radius: 190px; background: var(--surface-2); color: #fff; display: grid; place-items: center; font: 500 190px/1 "Inter"; letter-spacing: -0.035em; }
+.cursor { position: absolute; width: 120px; height: 170px; }
+
+#f-meters .row { position: absolute; left: 160px; width: 1760px; height: 180px; display: grid; grid-template-columns: 520px 1fr; align-items: center; }
+#f-meters .row span { font: 500 140px/1 "Inter"; letter-spacing: -0.035em; }
+#f-meters .row .track { height: 56px; border-radius: 28px; background: rgb(255 255 255 / 0.12); position: relative; overflow: hidden; }
+#f-meters .row .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 28px; background: #fff; }
+
+.keycap { position: absolute; }
+.keycap .base { position: absolute; inset: 0; border-radius: 13%; }
+.keycap .top { position: absolute; inset: 0; border-radius: 13%; display: flex; }
+#f-fn .keycap { left: 560px; top: 150px; width: 800px; height: 780px; }
+#f-fn .base { background: #b9b9b6; top: 46px; }
+#f-fn .top { background: #f5f5f4; color: #111; padding: 70px 80px; font: 500 230px/1 "Inter"; letter-spacing: -0.03em; }
+#f-cmd .keycap { top: 230px; width: 620px; height: 600px; }
+#f-cmd .base { background: #0b0b0c; top: 36px; }
+#f-cmd .top { background: var(--surface-2); color: #fff; align-items: center; justify-content: center; font: 400 300px/1 "Inter"; border: 2px solid rgb(255 255 255 / 0.08); }
+
+#f-chip .chip { position: absolute; left: 150px; top: 380px; height: 320px; padding: 0 120px 0 100px; border-radius: 160px; background: var(--violet-deep); border: 4px solid rgb(180 171 224 / 0.35); color: var(--violet-soft); display: flex; align-items: center; gap: 70px; font: 500 170px/1 "Inter"; letter-spacing: -0.035em; white-space: nowrap; }
+
+/* -------- Collage that converges into the mark -------- */
+.tile { position: absolute; left: 0; top: 0; width: 300px; height: 186px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; display: grid; place-items: center; opacity: 0; }
+.tile .t-dot { width: 26px; height: 26px; border-radius: 50%; background: var(--live); margin-right: 14px; display: inline-block; vertical-align: middle; }
+.tile .t-txt { font: 500 46px/1 "Inter"; letter-spacing: -0.03em; vertical-align: middle; }
+.tile .t-pill { width: 210px; height: 64px; border-radius: 32px; background: #fff; color: #111; display: grid; place-items: center; font: 500 30px/1 "Inter"; }
+.tile .t-key { width: 104px; height: 104px; border-radius: 15px; background: #f5f5f4; color: #111; font: 500 38px/1 "Inter"; padding: 14px 16px; }
+.tile .t-key.dark { background: var(--surface-2); color: #fff; display: grid; place-items: center; padding: 0; font-weight: 400; font-size: 52px; border: 1px solid var(--line); }
+.tile .t-chip { height: 58px; padding: 0 26px; border-radius: 29px; background: var(--violet-deep); border: 1px solid rgb(180 171 224 / 0.35); color: var(--violet-soft); display: flex; align-items: center; gap: 12px; font: 500 26px/1 "Inter"; white-space: nowrap; }
+.tile .t-meter { width: 230px; display: grid; gap: 16px; font: 500 20px/1 "Inter"; }
+.tile .t-meter div { display: grid; grid-template-columns: 70px 1fr; align-items: center; gap: 10px; }
+.tile .t-meter i { height: 10px; border-radius: 5px; background: rgb(255 255 255 / 0.14); position: relative; overflow: hidden; }
+.tile .t-meter b { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px; background: #fff; }
+
+/* -------- The mark -------- */
+#mark { position: absolute; left: 0; top: 0; width: 200px; height: 200px; color: #fff; transform-origin: 50% 50%; }
+#mark svg { width: 100%; height: 100%; overflow: visible; }
+#mark path { transform-box: fill-box; transform-origin: 0% 50%; }
+
+/* -------- Masked headlines -------- */
+.headline { position: absolute; left: 0; right: 0; text-align: center; font-family: "Schibsted"; font-weight: 500; letter-spacing: -0.035em; }
+.mask { display: block; overflow: hidden; padding: 0.04em 0 0.1em; margin: -0.04em 0 -0.1em; }
+.mask > span { display: inline-block; will-change: transform; }
+.ink2 { color: var(--ink-2); }
+
+/* -------- Mac desktop -------- */
+#desktop { }
+#wall { position: absolute; inset: -40px; background: url("assets/plates/night.jpg") center / cover no-repeat; }
+#wall-scrim { position: absolute; inset: 0; background: rgb(0 0 0 / 0.28); }
+#menubar { position: absolute; left: 0; right: 0; top: 0; height: 54px; background: rgb(18 18 20 / 0.5); -webkit-backdrop-filter: blur(30px) saturate(1.4); backdrop-filter: blur(30px) saturate(1.4); border-bottom: 1px solid rgb(255 255 255 / 0.07); }
+#menubar .right { position: absolute; right: 32px; top: 0; height: 54px; display: flex; align-items: center; gap: 30px; font: 500 23px/1 "Inter"; letter-spacing: -0.005em; }
+#menubar .slot { width: 30px; height: 30px; color: #fff; opacity: 0; }
+#menubar .slot svg { width: 100%; height: 100%; display: block; }
+#dock { position: absolute; left: 50%; bottom: 16px; width: 600px; height: 90px; margin-left: -300px; border-radius: 26px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.12); -webkit-backdrop-filter: blur(30px); backdrop-filter: blur(30px); display: flex; align-items: center; justify-content: center; gap: 14px; }
+#dock i { width: 64px; height: 64px; border-radius: 15px; background: rgb(255 255 255 / 0.09); border: 1px solid rgb(255 255 255 / 0.07); display: block; }
+
+#callout { position: absolute; right: 120px; top: 78px; padding: 20px 28px; border-radius: 16px; background: rgb(20 20 22 / 0.55); border: 1px solid rgb(255 255 255 / 0.12); -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); font: 500 34px/1.2 "Inter"; letter-spacing: -0.015em; white-space: nowrap; opacity: 0; }
+#callout::before { content: ""; position: absolute; top: -9px; right: var(--caret, 94px); width: 16px; height: 16px; background: rgb(28 28 30); border-left: 1px solid rgb(255 255 255 / 0.12); border-top: 1px solid rgb(255 255 255 / 0.12); transform: rotate(45deg); }
+
+/* Grain */
+#grain { position: absolute; inset: 0; width: 1920px; height: 1080px; opacity: 0.055; mix-blend-mode: soft-light; pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- Night band -->
+  <div id="band" class="layer">
+    <svg width="1920" height="1080"><defs><pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="rgb(255 255 255 / 0.035)"/></pattern></defs><rect width="1920" height="1080" fill="url(#dots)"/></svg>
+  </div>
+
+  <!-- Fragments -->
+  <div id="f-live" class="frag"><div class="rig"><div class="ring"></div><div class="dot"></div><div class="clock num">01:12</div></div></div>
+  <div id="f-record" class="frag"><div class="rig"><div class="pill">Record</div><div class="pill2">Not now</div>
+    <svg class="cursor" viewBox="0 0 24 34"><path d="M2 2 L2 27 L8 21 L12 31 L16 29.5 L12 20 L20 20 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></div></div>
+  <div id="f-meters" class="frag"><div class="rig">
+    <div class="row" style="top:300px"><span>You</span><div class="track"><div class="fill"></div></div></div>
+    <div class="row" style="top:600px"><span class="ink2">Others</span><div class="track"><div class="fill"></div></div></div>
+  </div></div>
+  <div id="f-fn" class="frag"><div class="rig"><div class="keycap"><div class="base"></div><div class="top">fn</div></div></div></div>
+  <div id="f-cmd" class="frag"><div class="rig">
+    <div class="keycap" style="left:290px"><div class="base"></div><div class="top">⌘</div></div>
+    <div class="keycap" style="left:1010px"><div class="base"></div><div class="top">↩</div></div>
+  </div></div>
+  <div id="f-chip" class="frag"><div class="rig"><div class="chip"><svg width="120" height="140" viewBox="0 0 12 14"><path d="M1 1 L11 7 L1 13 Z" fill="currentColor"/></svg>Play from <span class="num">12:04</span></div></div></div>
+
+  <!-- Collage tiles -->
+  <div id="tiles" class="layer">
+    <div class="tile"><div><span class="t-dot"></span><span class="t-txt num">01:12</span></div></div>
+    <div class="tile"><div class="t-pill">Record</div></div>
+    <div class="tile"><div class="t-meter"><div><span>You</span><i><b style="width:72%"></b></i></div><div><span class="ink2">Others</span><i><b style="width:46%"></b></i></div></div></div>
+    <div class="tile"><div class="t-key">fn</div></div>
+    <div class="tile"><div style="display:flex;gap:12px"><div class="t-key dark">⌘</div><div class="t-key dark">↩</div></div></div>
+    <div class="tile"><div class="t-chip"><svg width="16" height="18" viewBox="0 0 12 14"><path d="M1 1 L11 7 L1 13 Z" fill="currentColor"/></svg>Play from 12:04</div></div>
+  </div>
+
+  <!-- Mac desktop -->
+  <div id="desktop" class="layer hide">
+    <div id="wall"></div><div id="wall-scrim"></div>
+    <div id="menubar"><div class="right">
+      <div class="slot" id="slot"></div>
+      <svg width="29" height="21" viewBox="0 0 22 16"><path d="M11 15.2 L7.6 11.6 A4.8 4.8 0 0 1 14.4 11.6 Z" fill="#fff"/><path d="M4.6 8.6 A9.2 9.2 0 0 1 17.4 8.6" stroke="#fff" stroke-width="2.1" fill="none" stroke-linecap="round"/><path d="M1.6 5.4 A13.6 13.6 0 0 1 20.4 5.4" stroke="#fff" stroke-width="2.1" fill="none" stroke-linecap="round"/></svg>
+      <span class="num">Tue 29 Sep 16:02</span>
+    </div></div>
+    <div id="dock"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div id="callout">It lives in the menu bar, not the Dock.</div>
+  </div>
+
+  <!-- Headlines -->
+  <div id="h-brand" class="headline" style="top:470px; font-size:112px; line-height:1.06">
+    <span class="mask"><span>Your revenue lives in</span></span>
+    <span class="mask"><span>your conversations.</span></span>
+    <span class="mask"><span class="ink2">Don’t lose it.</span></span>
+  </div>
+  <div id="h-mac" class="headline" style="top:420px; font-size:96px; line-height:1.1">
+    <span class="mask"><span>Lynkk for Mac records your calls</span></span>
+    <span class="mask"><span class="ink2">and types what you say.</span></span>
+  </div>
+
+  <!-- The mark (drawn last so it flies over everything) -->
+  <div id="mark"></div>
+
+  <canvas id="grain" width="480" height="270"></canvas>
+</div>
+
+<script>
+// ------------------------------------------------------------------ contract
+window.DURATION = 78;
+window.FPS = 30;
+window.WIDTH = 1920;
+window.HEIGHT = 1080;
+
+// ------------------------------------------------------------------ helpers
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, p) => a + (b - a) * p;
+function bezier(x1, y1, x2, y2) {
+  const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx;
+  const cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+  const sx = (u) => ((ax * u + bx) * u + cx) * u;
+  const sy = (u) => ((ay * u + by) * u + cy) * u;
+  const dx = (u) => (3 * ax * u + 2 * bx) * u + cx;
+  return (x) => {
+    if (x <= 0) return 0; if (x >= 1) return 1;
+    let u = x;
+    for (let i = 0; i < 8; i++) { const e = sx(u) - x; const d = dx(u); if (Math.abs(e) < 1e-6 || !d) break; u -= e / d; }
+    return sy(clamp(u));
+  };
+}
+const E = {
+  out: bezier(0.22, 1, 0.36, 1),      // lynkk.ai --lk-ease
+  inOut: bezier(0.65, 0, 0.35, 1),    // lynkk.ai --gr-ease-inout
+  in: bezier(0.55, 0, 0.85, 0.2),
+};
+function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+const set = (el, o, tr) => { el.style.opacity = o; if (tr !== undefined) el.style.transform = tr; };
+// smooth deterministic "level" signal for meters
+const level = (t, seed) => clamp(0.45 + 0.28 * Math.sin(t * 9.1 + seed) + 0.17 * Math.sin(t * 23.7 + seed * 2.3) + 0.1 * Math.sin(t * 41.3 + seed * 5.1), 0.08, 0.98);
+
+// Masked line reveal: lines slide up from behind their mask, stagger per line.
+function maskIn(el, t, start, { stagger = 0.12, dur = 0.6, outAt = Infinity, outDur = 0.32 } = {}) {
+  const lines = el.querySelectorAll(".mask > span");
+  let any = false;
+  lines.forEach((ln, i) => {
+    const pin = E.out(seg(t, start + i * stagger, start + i * stagger + dur));
+    const pout = E.in(seg(t, outAt + i * 0.06, outAt + i * 0.06 + outDur));
+    const y = (1 - pin) * 110 - pout * 110;
+    ln.style.transform = `translateY(${y}%)`;
+    if (pin > 0 && pout < 1) any = true;
+  });
+  el.style.opacity = any ? 1 : 0;
+}
+
+// ------------------------------------------------------------------ the mark
+async function loadMark() {
+  const svg = await (await fetch("assets/mark.svg")).text();
+  $("#mark").innerHTML = svg;
+}
+function markStripes(p) {
+  // 13 stripes assemble one after another, bottom to top, sliding in from the left.
+  const paths = $$("#mark path");
+  const n = paths.length;
+  paths.forEach((path, i) => {
+    const a = (i / n) * 0.55;
+    const q = E.out(seg(p, a, a + 0.45));
+    path.style.opacity = q;
+    path.style.transform = `translateX(${(1 - q) * -26}px)`;
+  });
+}
+function placeMark(cx, cy, size, rot = 0) {
+  const m = $("#mark");
+  m.style.transform = `translate(${cx - 100}px, ${cy - 100}px) scale(${size / 200}) rotate(${rot}deg)`;
+}
+
+// ------------------------------------------------------------------ grain
+const gctx = $("#grain").getContext("2d");
+const gimg = gctx.createImageData(480, 270);
+function grain(frame) {
+  const r = mulberry32(frame * 7919 + 13);
+  const d = gimg.data;
+  for (let i = 0; i < d.length; i += 4) { const v = (r() * 255) | 0; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; }
+  gctx.putImageData(gimg, 0, 0);
+}
+
+// ------------------------------------------------------------------ scenes
+const FRAGS = ["#f-live", "#f-record", "#f-meters", "#f-fn", "#f-cmd", "#f-chip"];
+// Each fragment owns one beat. A tiny fade on the cut, then a slow macro drift.
+const FRAG_DRIFT = [
+  { x: [-30, 10], y: [0, 0], s: [1.04, 1.1] },
+  { x: [40, -10], y: [10, -10], s: [1.0, 1.06] },
+  { x: [-20, 20], y: [0, 0], s: [1.05, 1.1] },
+  { x: [0, 0], y: [20, -10], s: [1.0, 1.07] },
+  { x: [30, -20], y: [0, 0], s: [1.03, 1.08] },
+  { x: [-40, 0], y: [0, 0], s: [1.02, 1.08] },
+];
+
+function sceneFragments(t) {
+  FRAGS.forEach((sel, i) => {
+    const el = $(sel);
+    const a = i * 0.5, b = a + 0.5;
+    if (t < a || t >= b || t >= 3.0) { el.style.opacity = 0; return; }
+    const local = t - a;
+    const p = seg(t, a, b);
+    const d = FRAG_DRIFT[i];
+    const fade = seg(local, 0, 0.07);
+    el.style.opacity = fade;
+    el.querySelector(".rig").style.transform =
+      `translate(${lerp(d.x[0], d.x[1], p)}px, ${lerp(d.y[0], d.y[1], p)}px) scale(${lerp(d.s[0], d.s[1], p)})`;
+
+    if (sel === "#f-live") {
+      const rp = seg(local, 0.0, 0.5);
+      $("#f-live .ring").style.transform = `scale(${1 + rp * 1.6})`;
+      $("#f-live .ring").style.opacity = 0.55 * (1 - rp);
+    }
+    if (sel === "#f-record") {
+      const cp = E.out(seg(local, 0.0, 0.24));
+      const cur = $("#f-record .cursor");
+      cur.style.left = `${lerp(1720, 1460, cp)}px`;
+      cur.style.top = `${lerp(820, 470, cp)}px`;
+      const press = seg(local, 0.26, 0.3) * (1 - seg(local, 0.36, 0.44));
+      $("#f-record .pill").style.transform = `scale(${1 - 0.03 * press})`;
+      $("#f-record .pill").style.background = press > 0 ? `rgb(${255 - 18 * press} ${255 - 18 * press} ${255 - 18 * press})` : "#fff";
+    }
+    if (sel === "#f-meters") {
+      const fills = $$("#f-meters .fill");
+      fills[0].style.width = `${level(t, 1.3) * 100}%`;
+      fills[1].style.width = `${level(t, 4.2) * 72}%`;
+    }
+    if (sel === "#f-fn") {
+      const press = E.out(seg(local, 0.16, 0.22)) * (1 - E.out(seg(local, 0.4, 0.5)));
+      $("#f-fn .top").style.transform = `translateY(${press * 34}px)`;
+    }
+    if (sel === "#f-cmd") {
+      const tops = $$("#f-cmd .top");
+      const p1 = E.out(seg(local, 0.08, 0.13)) * (1 - E.out(seg(local, 0.42, 0.5)));
+      const p2 = E.out(seg(local, 0.22, 0.27)) * (1 - E.out(seg(local, 0.42, 0.5)));
+      tops[0].style.transform = `translateY(${p1 * 26}px)`;
+      tops[1].style.transform = `translateY(${p2 * 26}px)`;
+    }
+  });
+}
+
+// Collage: six tiles on a ring at 3.0, then they collapse into the centre.
+const TILE_POS = [
+  [-560, -250], [0, -330], [560, -250], [-560, 250], [0, 330], [560, 250],
+];
+function sceneCollage(t) {
+  const tiles = $$(".tile");
+  tiles.forEach((el, i) => {
+    // Hard cut in on the beat, settle outward-in, then all six
+    // collapse together into the centre where the mark forms.
+    const pin = E.out(seg(t, 3.0, 3.3));
+    const pc = E.in(seg(t, 3.28 + i * 0.01, 3.6 + i * 0.01));
+    if (t < 3.0 || pc >= 1) { el.style.opacity = 0; return; }
+    const [x, y] = TILE_POS[i];
+    const ix = lerp(x * 1.12, x, pin), iy = lerp(y * 1.12, y, pin);
+    const cx = lerp(ix, 0, pc), cy = lerp(iy, 0, pc);
+    const s = lerp(1, 0.12, pc) * lerp(0.94, 1, pin);
+    el.style.opacity = 1 - seg(pc, 0.45, 0.85);
+    el.style.transform = `translate(${960 - 150 + cx}px, ${540 - 93 + cy}px) scale(${s})`;
+  });
+}
+
+function sceneMark(t) {
+  const m = $("#mark");
+  // Once it has docked, the menu bar owns the mark.
+  $("#slot").style.opacity = t >= 8.0 ? 1 : 0;
+  if (t < 3.5 || t >= 8.0) { m.style.opacity = 0; return; }
+  m.style.opacity = 1;
+  markStripes(seg(t, 3.5, 3.98));
+  // 3.45 to 4.0: forms at the centre. 3.95 to 4.35: lifts to sit above the headline.
+  // 7.0 to 8.0: flies to the menu bar slot.
+  const lift = E.out(seg(t, 3.95, 4.45));
+  let cx = 960, cy = lerp(540, 300, lift), size = lerp(lerp(200, 230, E.out(seg(t, 3.5, 4.0))), 150, lift);
+  const fly = seg(t, 7.0, 8.0);
+  if (fly > 0) {
+    const fx = E.inOut(fly), fy = E.inOut(clamp(fly * 1.08));
+    const sx = SLOT.x, sy = SLOT.y;         // menu bar slot centre (screen space, fixed by transform-origin)
+    cx = lerp(960, sx, fx);
+    cy = lerp(300, sy, fy);
+    size = lerp(150, SLOT.size, E.inOut(fly));
+  }
+  placeMark(cx, cy, size);
+}
+
+function sceneDesktop(t) {
+  const d = $("#desktop");
+  if (t < 7.0) { d.style.opacity = 0; return; }
+  const p = seg(t, 7.0, 8.1);
+  d.style.opacity = E.out(seg(t, 7.0, 7.45));
+  d.style.transform = `scale(${lerp(1.22, 1, E.out(p))})`;
+  // gentle settle on the drop
+  // callout under the menu bar item
+  const cin = E.out(seg(t, 8.05, 8.45));
+  const cout = E.in(seg(t, 11.0, 11.3));
+  const c = $("#callout");
+  c.style.opacity = cin * (1 - cout);
+  c.style.transform = `translateY(${(1 - cin) * -10}px)`;
+}
+
+function sceneBand(t) {
+  $("#band").style.opacity = 1 - seg(t, 7.0, 7.45);
+}
+
+function sceneHeadlines(t) {
+  maskIn($("#h-brand"), t, 4.0, { stagger: 0.14, dur: 0.6, outAt: 6.75, outDur: 0.3 });
+  maskIn($("#h-mac"), t, 8.3, { stagger: 0.16, dur: 0.6, outAt: 11.75, outDur: 0.3 });
+}
+
+// ------------------------------------------------------------------ frame
+window.renderFrame = function (t) {
+  sceneBand(t);
+  sceneFragments(t);
+  sceneCollage(t);
+  sceneDesktop(t);
+  sceneHeadlines(t);
+  sceneMark(t);
+  grain(Math.round(t * window.FPS));
+};
+
+// ------------------------------------------------------------------ ready
+const SLOT = { x: 0, y: 0, size: 30 };
+function measure() {
+  const r = $("#slot").getBoundingClientRect();
+  SLOT.x = r.left + r.width / 2; SLOT.y = r.top + r.height / 2; SLOT.size = r.width;
+  $("#desktop").style.transformOrigin = `${SLOT.x}px ${SLOT.y}px`;
+  // Callout hangs under the mark, with its caret pointing at it.
+  const c = $("#callout");
+  c.style.right = `${1920 - SLOT.x - 60}px`;
+  c.style.setProperty("--caret", `${60 - 8}px`);
+}
+window.__ready = (async () => {
+  await loadMark();
+  $("#slot").innerHTML = $("#mark").innerHTML;
+  await document.fonts.load('500 100px "Schibsted"');
+  await document.fonts.load('500 100px "Inter"');
+  await document.fonts.load('400 100px "Inter"');
+  await document.fonts.ready;
+  await new Promise((res) => { const img = new Image(); img.onload = img.onerror = res; img.src = "assets/plates/night.jpg"; });
+  measure();
+  window.renderFrame(0);
+  document.documentElement.dataset.ready = "1";
+  return true;
+})();
+</script>
+</body>
+</html>
