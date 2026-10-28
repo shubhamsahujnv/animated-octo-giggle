@@ -55,11 +55,11 @@
         <div class="tz-h">${words(f.h).replace("#", `<b class="num" id="tzn${i}">${f.count || ""}</b>`)}</div>
         <div class="tz-d"><span class="tz-dl">${f.d}</span>${f.chip ? ` <span class="chip-v">${f.chip}</span>` : ""}</div></div>`).join("");
     stage.insertBefore(Object.assign(document.createElement("div"), { id: "tz", innerHTML:
-      `<div id="tz-title"><div class="t1">${words("Lynkk for Mac.")}</div><div class="t2">${words("Records your calls. Types what you say.")}</div></div><div id="tzp"><span class="eb" id="tz-act"></span>${feats}<div id="tz-prog"><i></i><i></i><i></i></div></div>` +
+      `<div id="tz-title"><div id="tz-logo"><svg class="rings" width="400" height="400" viewBox="-200 -200 400 400"><circle/><circle/><circle/></svg><span class="m">${$("#mark").innerHTML}</span><span class="wm">${words("Lynkk")}</span></div><div class="t1">${words("Lynkk for Mac.")}</div><div class="t2">${words("Records your calls. Types what you say.")}</div></div><div id="tzp"><span class="eb" id="tz-act"></span>${feats}<div id="tz-prog"><i></i><i></i><i></i></div></div>` +
       cards + `<div id="tz-flash"></div><div id="tz-black"></div>` }), $("#grain"));
 
     // The film's own captions and labels give way to the teaser's.
-    for (const sel of ["#caps", "#ch-eb", "#h-brand", "#h-mac", "#fnhero .eb", "#fnhero .lines", "#wallsc .eb"]) $(sel).style.display = "none";
+    for (const sel of ["#caps", "#ch-eb", "#h-brand", "#h-mac", "#fnhero .eb", "#fnhero .lines", "#wallsc .eb", "#callout"]) $(sel).style.display = "none";
     // Spotter is not in the teaser: the cmd-return fragment becomes cmd-K (search).
     $$("#f-cmd .top")[1].textContent = "K";
     const tile = $$(".tile")[4]; if (tile) { const ks = tile.querySelectorAll(".t-key"); if (ks[1]) ks[1].textContent = "K"; }
@@ -173,8 +173,24 @@
     const el = $("#tz-title"), a = 4.6875, z = 7.45;
     el.style.opacity = T >= a - 0.02 && T < z ? 1 : 0;
     if (T < a - 0.02 || T >= z) return;
-    wordsIn(el.querySelector(".t1"), T, a, z, 0.08, 0.32);
-    wordsIn(el.querySelector(".t2"), T, a + 0.45, z, 0.05, 0.28);
+    // Logo: the stripes assemble one by one while the mark spins and scales in,
+    // rings pulse out on the beat, then the wordmark rises beside it.
+    const lg = el.querySelector("#tz-logo"), m = lg.querySelector(".m");
+    const mp = E.out(seg(T, a, a + 0.55));
+    m.style.transform = `rotate(${lerp(-90, 0, mp)}deg) scale(${lerp(0.4, 1, mp) * (1 + 0.06 * Math.exp(-((T - a) % EDL.beat) / 0.1))})`;
+    const paths = m.querySelectorAll("path");
+    paths.forEach((pth, k) => {
+      const q = E.out(seg(T, a + k * 0.025, a + k * 0.025 + 0.32));
+      pth.style.opacity = q; pth.style.transform = `translateX(${(1 - q) * -34}px)`;
+    });
+    lg.querySelectorAll(".rings circle").forEach((r, k) => {
+      const age = T - a - k * EDL.beat;
+      const q = age >= 0 ? (age % (EDL.beat * 3)) / (EDL.beat * 3) : -1;
+      r.setAttribute("r", q < 0 ? 0 : 50 + q * 150); r.style.opacity = q < 0 ? 0 : 0.35 * (1 - q);
+    });
+    wordsIn(lg.querySelector(".wm"), T, a + 0.22, z, 0.06, 0.34);
+    wordsIn(el.querySelector(".t1"), T, a + 0.38, z, 0.08, 0.32);
+    wordsIn(el.querySelector(".t2"), T, a + 0.8, z, 0.05, 0.28);
   }
 
   function hits(T) {
