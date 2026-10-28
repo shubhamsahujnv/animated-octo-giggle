@@ -1,6 +1,7 @@
 # What Lynkk really does (write only from this)
 
-Last checked against the product: **2026-09-29**. Every claim on a post must be
+Last checked against the product: **2026-10-28** (Mac app 2.5.4). Sources: the
+product, lynkk.ai and lynkk.ai/download. Every claim on a post must be
 in this file. If something you want to say is not here, it is not a claim yet:
 ask the Lynkk team before you write it. The "Don't claim" lists are hard rules
 and `scripts/check.mjs` enforces the common ones.
@@ -13,12 +14,35 @@ recorded. Site: **lynkk.ai**.
 
 | Way | What is true |
 |---|---|
-| **Mac app** (menu bar) | Notices calls in Zoom, Google Meet (in a browser), Microsoft Teams, Slack huddles, WhatsApp, FaceTime and Webex. A card top right says "<App> call detected" with **Record** and **Not now**. **No bot joins the call.** Records both sides on two channels, so the transcript labels your side "You". While recording, a slim column on the right edge of the screen shows the clock, Pause, Stop, two levels (you and others), live words and a note field. Stops itself when the call ends ("The call ended. Saving in 10 s."), after 5 minutes of silence, or at the 2 hour cap. The card and the column are hidden from screen share (best effort, macOS 15.4 and later). Writes audio to disk from the first second; bad Wi-Fi or sleep does not lose the file, the upload resumes. Apple silicon only, macOS 14.2 or later, free to install. |
+| **Mac app** (menu bar) | Lives in the menu bar, not the Dock. Notices calls in Zoom, Google Meet (in a browser), Microsoft Teams, Slack huddles, WhatsApp, FaceTime and Webex. A card top right says "<App> call detected" with **Record** and **Not now**. **No bot joins the call**, and no calendar is needed. Records both sides on two channels, so the transcript labels your side "You". While recording, a slim column on the right edge of the screen shows the clock, Pause, Stop, two levels (you and others), live words and a note field ("Add a note"). The column folds into a tab at the edge of the screen. Stops itself when the call ends ("The call ended. Saving in 10 s."), after 5 minutes of silence, or at the 2 hour cap. The card and the column are hidden from screen share (best effort, macOS 15.4 and later). Writes audio to disk from the first second; bad Wi-Fi or sleep does not lose the file, the upload resumes. Apple silicon only, macOS 14.2 or later, free to install. |
 | **Meeting bot** | Joins Google Meet, Zoom and Teams links: paste a link, or turn on calendar auto-join. Free, audio only. Video recording is Pro. Live transcript panel during the meeting. |
 | **Chrome extension** | Live in the Chrome Web Store. Records a call in a Chrome tab on Google Meet, Zoom (web client) and Teams. **No bot**: a small capsule docks above the call controls; press Record. That tab's audio and your mic on two channels. Audio only. Works in Chrome and Chromium browsers from the Chrome Web Store (Edge, Brave, Arc). |
 | **Web** | Record your mic in the browser at lynkk.ai, with countdown, pause and a silence warning. Works for an in-person meeting. |
 
 **No phone.** No iPhone, Android, iOS or mobile app. Not in copy, not in mockups.
+
+## The Mac app window
+
+- One window for Notes, Ask Lynkk and Dictation. The same account and the same
+  notes as lynkk.ai.
+- **Notes** (`⌘1`): every recording, with its **AI Summary** and **Transcript**.
+  Search notes with `⌘K`. Ask about one note with `⌘J` ("Ask about this note",
+  Pro).
+- **Ask Lynkk** (`⌘2`, Pro): ask across all your notes. "Answers cite the minute."
+- **Dictation** (`⌘3`): your words, the time saved and your history.
+- **Tasks**: Kanban; cards drop where you let go (new in 2.5.4).
+- Settings: `⌘,`.
+
+## Installing and updating the Mac app
+
+- A disk image of **about 6 MB**. Drag Lynkk into Applications. **Signed and
+  notarized by Apple**, so it opens like any Mac app.
+- **Six steps, about two minutes**: download, drag to Applications, open, sign in
+  through the browser, allow three permissions, try your voice.
+- **Three permissions**: Microphone and System audio (to record both sides) and
+  Accessibility (to type at your cursor).
+- Checks for updates on its own and **installs only when you press Update**.
+- Intel Macs: use Lynkk in the browser at lynkk.ai.
 
 ## The note (every recording)
 
@@ -54,6 +78,8 @@ recorded. Site: **lynkk.ai**.
 - A chat that answers **only from your own notes**. Finds notes by person,
   company or project; lists open tasks and decisions. Answers carry citation
   chips; evidence opens the note at the moment ("Play from 12:04").
+- Drafts follow-ups from the conversation's context. You review, edit and send
+  them yourself. **Lynkk never sends a follow-up on its own.**
 - Attach a PDF, Word, text, Markdown or CSV file.
 - Actions from chat, each behind a confirm card: create a Google Calendar event
   with a Meet link, share a note, mark a task done, rename or retag a note,
@@ -76,8 +102,26 @@ recorded. Site: **lynkk.ai**.
   the words go to. It refuses to listen in a password field.
 - English by default; Hinglish and Hindi opt in. Cloud dictation hears **18
   languages**. Never say 20.
-- Modes: **Instant** (on your Mac, English, free), **Accurate** and
-  **Polished** (cloud, Pro). Only Polished removes ums and false starts.
+- Modes: **Instant** (on your Mac, English, free, nothing is sent), **Accurate**
+  and **Polished** (cloud, Pro). Only Polished removes ums and false starts.
+- After the words land, the island shows "Typed" with **Undo**.
+
+## Spotter (Mac app, early access)
+
+Always say **early access**. It is in development; early access is on Pro, by
+request.
+
+- A panel at the **top of your screen during the call**. Ask it anything, or press
+  `⌘↩` and it reads your screen and the conversation ("Help with this moment").
+- It hears your microphone as **Me** and the call as **Them**.
+- Modes: Sales, Support, Interview prep, or your own, with notes you paste in.
+- **Visible, and private**: it is a panel on your Mac, not part of the call. It is
+  **never hidden** from screen shares or recordings, so if you share your screen,
+  it shows. Your screen is read as text, never sent as a picture, and nothing is
+  saved unless you choose.
+- It answers **on your screen, as text, when you ask**. It never speaks.
+- Shortcuts: `⌘\` show or hide, `⌘⇧\` listen, `⌘↩` help with your screen,
+  `⌘R` new chat.
 
 ## Workspaces (teams)
 
@@ -101,7 +145,8 @@ recorded. Site: **lynkk.ai**.
   Meeting Brief, tasks, Jira send, Instant dictation on the Mac, 2 hour cap per
   recording.
 - **Pro** adds: Ask Lynkk, Summary Shapes, per-note chat, weekly digest, video
-  recording from the bot, Slack answers, cloud dictation, custom words.
+  recording from the bot, Slack answers, cloud dictation, custom words, and
+  Spotter (early access, by request).
 - Say "Start free", "Try it free", "Free plan". There is **no free trial**.
 - Plan limits are being reworked: do not state note limits, hours or
   "unlimited" on a post.
@@ -118,14 +163,21 @@ recorded. Site: **lynkk.ai**.
 | 3 s / 30 s | Mac call card appears after 3 s of a steady call; its line drains over 30 s |
 | 10 s | "The call ended. Saving in 10 s." |
 | 5 min | Mac recording stops after 5 minutes of silence |
+| about 6 MB | Mac app download |
+| about 2 min | Mac install, start to finish (six steps) |
+| 3 | permissions the Mac app asks for |
 
 Nothing else. No accuracy %, no speed claims ("notes in 30 seconds"), no user
 counts, no ratings.
 
 ## Don't claim (hard rules)
 
-- A bot or AI that **speaks** in the meeting, answers out loud, or answers
-  during the call.
+- A bot or AI that **speaks** in the meeting, answers out loud, or joins the
+  call to answer. (Spotter answering on your own screen, as text, when you ask,
+  is true: label it early access.)
+- Spotter hidden from screen shares (it never is), Spotter without "early
+  access", Spotter on the web, in Chrome or on the Free plan.
+- Lynkk sending a follow-up, an email or a message on its own.
 - **CRM** anything (Salesforce, HubSpot). Asana, Linear, Notion or Slack task
   sync. Automatic Jira.
 - **Regions**, data residency, "your data stays in your country".
