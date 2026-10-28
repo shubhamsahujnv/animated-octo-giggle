@@ -56,12 +56,18 @@
         <div class="tz-d"><span class="tz-dl">${f.d}</span>${f.chip ? ` <span class="chip-v">${f.chip}</span>` : ""}</div></div>`).join("");
     stage.insertBefore(Object.assign(document.createElement("div"), { id: "tz", innerHTML:
       `<div id="tz-title"><div id="tz-logo"><svg class="rings" width="400" height="400" viewBox="-200 -200 400 400"><circle/><circle/><circle/></svg><span class="m">${$("#mark").innerHTML}</span><span class="wm">${words("Lynkk")}</span></div><div class="t1">${words("Lynkk for Mac.")}</div><div class="t2">${words("Records your calls. Types what you say.")}</div></div><div id="tzp"><span class="eb" id="tz-act"></span>${feats}<div id="tz-prog"><i></i><i></i><i></i></div></div>` +
-      cards + `<div id="tz-flash"></div><div id="tz-black"></div>` }), $("#grain"));
+      cards + `<div id="tz-cta"><div class="btn"><i class="ripple"></i><svg class="dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><g class="arrow"><path d="M12 3v11"/><path d="M7 9.5l5 5 5-5"/></g><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg><span>Download for Mac</span></div>
+        <div class="url"></div><div class="facts">Free to install · Apple silicon · macOS 14.2 or later</div></div>
+      <svg id="tz-cur" viewBox="0 0 24 34"><path d="M2 2 L2 27 L8 21 L12 31 L16 29.5 L12 20 L20 20 Z" fill="#111" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>` +
+      `<div id="tz-flash"></div><div id="tz-black"></div>` }), $("#grain"));
 
     // The film's own captions and labels give way to the teaser's.
-    for (const sel of ["#caps", "#ch-eb", "#h-brand", "#h-mac", "#fnhero .eb", "#fnhero .lines", "#wallsc .eb", "#callout"]) $(sel).style.display = "none";
+    for (const sel of ["#caps", "#ch-eb", "#h-brand", "#h-mac", "#fnhero .eb", "#fnhero .lines", "#wallsc .eb", "#callout", "#ember .cta", "#ember .fine"]) $(sel).style.display = "none";
     // Spotter is not in the teaser: the cmd-return fragment becomes cmd-K (search).
     $$("#f-cmd .top")[1].textContent = "K";
+    // Lift the end screen's logo and headline to make room for the download call to action.
+    $("#ember .lock").style.top = "150px";
+    $("#ember .hl").style.top = "300px";
     const tile = $$(".tile")[4]; if (tile) { const ks = tile.querySelectorAll(".t-key"); if (ks[1]) ks[1].textContent = "K"; }
   }
 
@@ -193,6 +199,38 @@
     wordsIn(el.querySelector(".t2"), T, a + 0.8, z, 0.05, 0.28);
   }
 
+  // End screen call to action: the button pops in on beat 74, its arrow drops on
+  // every beat, a cursor clicks it on beat 76, then the address types out.
+  function cta(T) {
+    const el = $("#tz-cta"), cur = $("#tz-cur"), b = EDL.beat;
+    const pop = 74 * b, click = 76 * b, end = EDL.duration;
+    if (T < pop - 0.02) { el.style.opacity = 0; cur.style.opacity = 0; return; }
+    el.style.opacity = 1;
+    const btn = el.querySelector(".btn");
+    const pp = E.out(seg(T, pop, pop + 0.35));
+    const press = T >= click && T < click + 0.12 ? 0.94 : 1;
+    btn.style.transform = `scale(${lerp(0.6, 1, pp) * (1 + 0.08 * Math.exp(-Math.max(0, T - pop) / 0.12)) * press})`;
+    btn.style.opacity = pp;
+    const sinceBeat = (T - pop) % b;
+    btn.querySelector(".arrow").style.transform = `translateY(${4 * Math.sin(Math.PI * clamp(sinceBeat / (b * 0.6)))}px)`;
+    const rp = seg(T, click, click + 0.6);
+    const rip = btn.querySelector(".ripple");
+    rip.style.opacity = T >= click ? 0.5 * (1 - rp) : 0;
+    rip.style.transform = `scale(${1 + rp * 0.35})`;
+    // Cursor glides in from the lower right, clicks, eases away.
+    const r = btn.getBoundingClientRect();
+    const tx = r.left + r.width * 0.72, ty = r.top + r.height * 0.62;
+    const cin = E.inOut(seg(T, click - 0.55, click - 0.02)), cout = E.inOut(seg(T, click + 0.25, click + 0.75));
+    cur.style.opacity = vis(T, click - 0.55, click + 0.75, 0.15, 0.2);
+    cur.style.transform = `translate(${lerp(tx + 260, tx, cin) + cout * 40}px, ${lerp(ty + 180, ty, cin) + cout * 60}px) scale(${T >= click && T < click + 0.12 ? 0.86 : 1})`;
+    const url = "lynkk.ai/download";
+    const n = Math.round(url.length * seg(T, click + 0.15, click + 0.75));
+    el.querySelector(".url").innerHTML = url.slice(0, n) + (T < end - 0.2 && Math.floor(T * 2.5) % 2 === 0 ? '<span class="caret"></span>' : "");
+    const fp = E.out(seg(T, click + 0.7, click + 1.0));
+    const facts = el.querySelector(".facts");
+    facts.style.opacity = fp; facts.style.transform = `translateY(${(1 - fp) * 12}px)`;
+  }
+
   function hits(T) {
     let f = 0;
     for (const d of EDL.drops) if (T >= d) f = Math.max(f, 0.4 * Math.exp(-(T - d) / 0.07));
@@ -218,6 +256,7 @@
       cards(T);
       rings(T);
       title(T);
+      cta(T);
       hits(T);
     };
     window.renderFrame(0);

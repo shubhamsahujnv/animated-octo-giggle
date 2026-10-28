@@ -358,6 +358,8 @@ if ARR == "teaser":
     for c in EDL["cards"]:                                  # act cards wipe in
         add(soft_tick(hz(76)), c["t0"], gain=0.16, send=0.35, bus=FX)
     add(key_click(heavy=True), 27.65625, gain=0.5, send=0.2, bus=FX)   # fn down
+    add(soft_tick(hz(88)), 74 * BEAT, gain=0.2, send=0.35, bus=FX)       # Download for Mac lands
+    add(key_click(), 76 * BEAT, gain=0.5, send=0.2, bus=FX)              # and is clicked
 
 for i in ([] if ARR == "teaser" else range(6)):             # one key-click per fragment
     add(key_click(), i * 0.5, gain=0.55, send=0.12, bus=FX)
