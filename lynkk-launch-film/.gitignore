@@ -3,3 +3,5 @@ out/*.wav
 out/options/
 out/*.mp4
 out/parts/
+out/banner_l/
+out/banner_v/
