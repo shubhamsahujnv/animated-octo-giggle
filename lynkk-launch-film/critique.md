@@ -119,3 +119,14 @@ integration is confirmed.
 Fixed after looking at frames: the film laid itself out at window size inside
 the split window (it is now pinned at 1920x1080), the reveal had no title, the
 Ask question bubble was clipped at the window edge.
+
+## Teaser, 9:16 vertical (`index.html?edl=teaser&fmt=vertical`)
+
+Re-laid out for 1080x1920, not cropped: the hook shows the whole film frame,
+the reveal and the end screen fill the tall frame, each feature plays in a
+window on top (tilted back) with its explanation stacked underneath, act cards
+and the end screen are re-composed. The download button and every line of text
+sit above the bottom 300 px that Reels and Shorts cover with their own UI. Same
+cut list, same score. render.mjs now sizes the browser from the page.
+Fixed after looking at frames: the "Ask Lynkk" heading clipped by the narrower
+window.

@@ -76,3 +76,30 @@
 #tz-cta .url { margin-top: 30px; height: 44px; font: 500 38px/44px "Inter"; letter-spacing: -0.015em; color: #fff; }
 #tz-cta .facts { margin-top: 14px; font: 400 26px/1.2 "Inter"; color: rgb(255 255 255 / 0.78); opacity: 0; }
 #tz-cur { position: absolute; left: 0; top: 0; width: 38px; height: 54px; opacity: 0; transform-origin: 4px 4px; }
+
+/* ---------------------------------------------------------------- vertical 9:16 */
+.vertical #tz-bg svg, .vertical .tz-card > svg.dots { width: 100%; height: 100%; }
+.vertical .tz-num { right: 30px; top: 230px; font-size: 560px; }
+.vertical .tz-pill { left: 76px; top: 820px; }
+.vertical .tz-label { left: 72px; top: 900px; width: 940px; font-size: 132px; white-space: normal; }
+.vertical .tz-rule { left: 76px; top: 1080px; }
+.vertical .tz-rings { width: 1080px; height: 1920px; }
+.vertical #tzp { left: 72px; top: 1090px; width: 936px; height: 700px; }
+.vertical #tz-act { top: 0; }
+.vertical .tz-feat { top: 66px; width: 936px; }
+.vertical .tz-h { font-size: 108px; }
+.vertical .tz-d { margin-top: 24px; font-size: 44px; }
+.vertical #tz-prog { top: 500px; }
+.vertical #tz-title { top: 660px; padding: 0 60px; }
+.vertical #tz-title .t1 { font-size: 128px; }
+.vertical #tz-title .t2 { font-size: 46px; }
+.vertical #tz-cta { top: 1170px; }
+.vertical #tz-cta .facts { padding: 0 60px; }
+#tz-vlock { position: absolute; left: 0; right: 0; top: 520px; text-align: center; color: #fff; opacity: 0; }
+#tz-vlock .lg { display: inline-flex; align-items: center; gap: 22px; height: 100px; }
+#tz-vlock .m { width: 86px; height: 86px; display: block; }
+#tz-vlock .m svg { width: 100%; height: 100%; display: block; overflow: visible; }
+#tz-vlock .m path { transform-box: fill-box; transform-origin: 0% 50%; }
+#tz-vlock .wm { font: 500 76px/1 "Inter"; letter-spacing: -0.035em; }
+#tz-vlock .h { margin-top: 56px; font: 500 124px/1.02 "Schibsted"; letter-spacing: -0.045em; }
+#tz-vlock .l { margin-top: 18px; font: 500 60px/1.1 "Schibsted"; letter-spacing: -0.035em; color: rgb(255 255 255 / 0.7); }

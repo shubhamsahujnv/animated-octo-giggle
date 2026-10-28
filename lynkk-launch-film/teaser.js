@@ -8,11 +8,22 @@
 
   let EDL = null;
   const RINGS = [];
-  const W = 1920, H = 1080;
-  const FULL = { x: 0, y: 0, w: 1920, h: 1080, r: 0 };
-  const SPLIT = { x: 760, y: 100, w: 1060, h: 880, r: 28 };
+  const W = 1920, H = 1080;                    // the film's own frame
+  // &fmt=vertical re-lays the teaser out for 1080x1920: footage window on top,
+  // the explanation stacked under it, end screen re-composed. Same cut, same music.
+  const VERT = new URLSearchParams(location.search).get("fmt") === "vertical";
+  const FULL = VERT ? { x: 0, y: 0, w: 1080, h: 1920, r: 0 } : { x: 0, y: 0, w: 1920, h: 1080, r: 0 };
+  const SPLIT = VERT ? { x: 60, y: 130, w: 960, h: 900, r: 32 } : { x: 760, y: 100, w: 1060, h: 880, r: 28 };
+  // Vertical camera overrides by segment: the hook shows the whole film frame
+  // (fit), the reveal and the end screen fill the tall frame.
+  const VCAM = {
+    0: { z: [0.56, 0.56], f: [[960, 540], [960, 540]], fit: true, beatPunch: true },
+    1: { z: [1.78, 2.4], f: [[960, 400], [1739, 27]] },
+    14: { z: [1.78, 1.86], f: [[960, 540], [960, 520]] },
+    8: { f: [[1380, 440], [1380, 470]] },             // Ask: keep its heading in the narrower window
+  };
 
-  const DOTS = `<svg class="dots" width="1920" height="1080"><rect width="1920" height="1080" fill="url(#dots)"/></svg>`;
+  const DOTS = `<svg class="dots" width="100%" height="100%"><rect width="100%" height="100%" fill="url(#dots)"/></svg>`;
   const words = (line) => line.split(" ").map((w) => `<span class="w"><span>${w}</span></span>`).join(" ");
   const vis = (T, a, b, fi = 0.18, fo = 0.15) => E.out(seg(T, a, a + fi)) * (1 - E.in(seg(T, b - fo, b)));
   const segIndex = (T) => { const s = EDL.segments; for (let i = 0; i < s.length; i++) if (T < s[i][1]) return i; return s.length - 1; };
@@ -65,6 +76,14 @@
     for (const sel of ["#caps", "#ch-eb", "#h-brand", "#h-mac", "#fnhero .eb", "#fnhero .lines", "#wallsc .eb", "#callout", "#ember .cta", "#ember .fine"]) $(sel).style.display = "none";
     // Spotter is not in the teaser: the cmd-return fragment becomes cmd-K (search).
     $$("#f-cmd .top")[1].textContent = "K";
+    if (VERT) {
+      for (const el of [document.documentElement, document.body, stage]) Object.assign(el.style, { width: "1080px", height: "1920px" });
+      stage.classList.add("vertical");
+      window.WIDTH = 1080; window.HEIGHT = 1920;
+      $("#ember .lock").style.display = "none"; $("#ember .hl").style.display = "none";
+      $("#tz").insertAdjacentHTML("afterbegin", `<div id="tz-vlock"><div class="lg"><span class="m">${$("#mark").innerHTML}</span><span class="wm">${words("Lynkk")}</span></div>
+        <div class="h">${words("Lynkk for Mac.")}</div><div class="l">${words("Your next call, noticed.")}</div><div class="l">${words("Your next message, spoken.")}</div></div>`);
+    }
     // Lift the end screen's logo and headline to make room for the download call to action.
     $("#ember .lock").style.top = "150px";
     $("#ember .hl").style.top = "300px";
@@ -85,7 +104,9 @@
   }
 
   function camera(T, i) {
-    const s = EDL.segments[i], c = s[5];
+    const s = EDL.segments[i];
+    let c = s[5];
+    if (VERT && c) c = VCAM[i] ? { ...c, ...VCAM[i] } : { ...c, ry: [0, 0], rx: s[4] === "split" ? [7, 3] : [0, 0] };
     const win = $("#win"), cam = $("#cam");
     if (!c) { win.style.opacity = 0; return; }
     win.style.opacity = 1;
@@ -100,11 +121,13 @@
     if (c.beatPunch) punch = Math.max(punch, 0.045 * Math.exp(-(T % EDL.beat) / 0.08));
     const beatTilt = c.beatPunch ? (Math.floor(T / EDL.beat) % 2 ? 1.2 : -1.2) * Math.exp(-(T % EDL.beat) / 0.12) : 0;
     win.style.transform = `perspective(2400px) rotateY(${ry + beatTilt}deg) rotateX(${rx}deg)`;
-    const zMin = Math.max(g.w / W, g.h / H);
+    const zMin = c.fit ? 0 : Math.max(g.w / W, g.h / H);
     const over = split ? 1 : 1 + (Math.abs(ry) + Math.abs(rx)) * 0.006;
     const z = Math.max(lerp(c.z[0], c.z[1], p), zMin) * (1 + punch) * over;
     let fx = lerp(c.f[0][0], c.f[1][0], p), fy = lerp(c.f[0][1], c.f[1][1], p);
-    fx = clamp(fx, g.w / 2 / z, W - g.w / 2 / z); fy = clamp(fy, g.h / 2 / z, H - g.h / 2 / z);
+    // Where the film is narrower or shorter than the window (fit), centre it.
+    fx = W * z <= g.w ? W / 2 : clamp(fx, g.w / 2 / z, W - g.w / 2 / z);
+    fy = H * z <= g.h ? H / 2 : clamp(fy, g.h / 2 / z, H - g.h / 2 / z);
     cam.style.transform = `translate(${g.w / 2}px, ${g.h / 2}px) scale(${z}) translate(${-fx}px, ${-fy}px)`;
     const blur = 6 * (1 - E.out(seg(sinceCut, 0, 0.14)));
     cam.style.filter = blur > 0.05 ? `blur(${blur.toFixed(2)}px)` : "none";
@@ -152,7 +175,7 @@
       el.querySelectorAll(".tz-rings circle").forEach((r, k) => {
         const age = T - c.t0 - k * EDL.beat * 0.5;
         const a = age >= 0 ? (age % (EDL.beat * 2)) / (EDL.beat * 2) : -1;
-        r.setAttribute("cx", 1500); r.setAttribute("cy", 560);
+        r.setAttribute("cx", VERT ? 760 : 1500); r.setAttribute("cy", VERT ? 560 : 560);
         r.setAttribute("r", a < 0 ? 0 : 60 + a * 900); r.style.opacity = a < 0 ? 0 : 0.22 * (1 - a); r.style.strokeWidth = 2;
       });
       wordsIn(el.querySelector(".tz-label"), T, c.t0 + 0.04, c.t1 + 1, 0.07, 0.3);
@@ -231,6 +254,21 @@
     facts.style.opacity = fp; facts.style.transform = `translateY(${(1 - fp) * 12}px)`;
   }
 
+  // Vertical end screen: the logo assembles as the mark lands on the final hit,
+  // then the headline and both lines rise, above the download button.
+  function vlock(T) {
+    if (!VERT) return;
+    const el = $("#tz-vlock"), a = 33.45;
+    el.style.opacity = T >= a ? 1 : 0;
+    if (T < a) return;
+    const m = el.querySelector(".m"), mp = E.out(seg(T, a, a + 0.4));
+    m.style.transform = `rotate(${lerp(-90, 0, mp)}deg) scale(${lerp(0.4, 1, mp)})`;
+    m.querySelectorAll("path").forEach((pth, k) => { const q = E.out(seg(T, a + k * 0.02, a + k * 0.02 + 0.3)); pth.style.opacity = q; pth.style.transform = `translateX(${(1 - q) * -30}px)`; });
+    wordsIn(el.querySelector(".wm"), T, a + 0.2, 99, 0.06, 0.3);
+    wordsIn(el.querySelector(".h"), T, 33.85, 99, 0.08, 0.32);
+    el.querySelectorAll(".l").forEach((l, k) => wordsIn(l, T, 34.1 + k * 0.16, 99, 0.05, 0.3));
+  }
+
   function hits(T) {
     let f = 0;
     for (const d of EDL.drops) if (T >= d) f = Math.max(f, 0.4 * Math.exp(-(T - d) / 0.07));
@@ -256,6 +294,7 @@
       cards(T);
       rings(T);
       title(T);
+      vlock(T);
       cta(T);
       hits(T);
     };

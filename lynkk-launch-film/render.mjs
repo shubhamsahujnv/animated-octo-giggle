@@ -45,6 +45,8 @@ page.on("requestfailed", (r) => problems.push(`failed: ${r.url()}`));
 await page.goto(url, { waitUntil: "networkidle" });
 await page.evaluate(() => window.__ready);
 const meta = await page.evaluate(() => ({ d: window.DURATION, fps: window.FPS, w: window.WIDTH, h: window.HEIGHT }));
+// Pages can set their own frame size (the vertical teaser is 1080x1920).
+if (meta.w !== 1920 || meta.h !== 1080) await page.setViewportSize({ width: meta.w, height: meta.h });
 if (problems.length) { console.error(problems.join("\n")); }
 
 async function frameAt(t) {
