@@ -3,7 +3,8 @@
 A 78 second launch film rendered from code. `shots.md` is the approved script,
 `brand.md` and `style.md` are the rules, `beats.json` is the 120 BPM grid,
 `index.html` is the timeline (every frame is a pure function of time),
-`score.py` writes the music and sound design, `render.mjs` renders and encodes.
+`score.py` writes the music and sound design, `loudness.sh` normalises it to
+-14 LUFS, `render.mjs` renders and encodes.
 
 ```bash
 ./make.sh          # whole film -> out/lynkk-mac-launch_0-78s.mp4

@@ -31,3 +31,24 @@ Scores after fixes:
 
 Open for next round: the `fn` and `⌘` keycaps could use a touch more depth;
 the collage could carry a faint motion trail on the collapse.
+
+## Round 2: music (feedback: "more fast and engaging")
+
+Tempo stays at 120 BPM so every cut stays on the grid; the speed comes from
+density and arrangement instead.
+
+| Before | After |
+|---|---|
+| Sparse clicks and a low pulse until 4 s, drums only from 8 s | Four-on-the-floor kick from frame 0, one under every fragment |
+| 8th-note hats | 16th hats with accents and an open hat on the off-beat |
+| Long bass notes | Rolling 16th bass on the off-beats, the kick owns the downbeat |
+| Slow pad chords | 16th arpeggio that opens up over the film, supersaw stabs on the "and" |
+| No melody | A plucked lead hook (A minor, 2 bars) on every drop |
+| One riser | Snare rolls (8ths, 16ths, 32nds) and risers into 4 s, 8 s, 32 s and 72 s |
+| Groove looped to the end | Full 78 s arrangement: verse and hook sections per chapter, breakdown under the install, final hit at 72 s |
+| Single-pass loudnorm (dynamic mode, rides the gain) | Two-pass linear loudnorm (`loudness.sh`): one fixed gain, builds keep their shape |
+
+Measured: -14.0 LUFS, peak -2.0 dBFS, no clipping, about 28 onsets per second
+in the drop, both pre-drop gaps about 30 dB under the music around them. The
+drop is 3.5 dB fuller in the mids and 5 dB in the highs than the groove before
+it. Not listened to by ear.
