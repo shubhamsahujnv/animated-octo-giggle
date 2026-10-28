@@ -23,7 +23,11 @@ BEAT = GRID["beat"]                # 0.5 s
 BAR = GRID["bar"]                  # 2.0 s
 S16 = BEAT / 4                     # a 16th note, 0.125 s
 DUR = GRID["duration"]
-N = int(DUR * SR) + SR
+# FX_ONLY=1 writes just the picture's sound effects (for use over a licensed track).
+# TS=<factor> places every sound at t/TS, to match the picture played at 120*TS BPM.
+TS = float(os.environ.get("TS", "1"))
+FX_ONLY = os.environ.get("FX_ONLY") == "1"
+N = int(DUR / TS * SR) + SR
 rng = np.random.default_rng(7)
 
 KICK = np.zeros((2, N))
@@ -52,7 +56,7 @@ def fft_filter(x, lo=None, hi=None):
 def add(sig, t, gain=1.0, pan=0.0, send=0.0, bus=None):
     """Place a mono or (2, n) stereo signal at time t on a bus."""
     bus = MUS if bus is None else bus
-    i = int(round(t * SR))
+    i = int(round(t / TS * SR))
     if i >= N or i < 0:
         return
     if sig.ndim == 1:
@@ -256,7 +260,7 @@ def bar_of(t):
     return int(np.floor(t / BAR + 1e-6)) % 4
 
 
-for (t0, t1, layers) in SECTIONS:
+for (t0, t1, layers) in ([] if FX_ONLY else SECTIONS):
     lay = set(layers.split())
     bright = 4 if t1 <= 3.0 else (7 if t0 < 8.0 else 10)    # the arp opens up over the film
     t = t0
@@ -288,13 +292,15 @@ for (t0, t1, layers) in SECTIONS:
                 add(pluck(n + 12, 0.25, bright=6, decay=0.1), t, gain=0.05, pan=-0.2, send=0.35)
         t += S16
 
-for (t0, t1) in ROLLS:
+for (t0, t1) in ([] if FX_ONLY else ROLLS):
     snare_roll(t0, t1)
     add(riser(t1 - t0), t0, gain=0.1, send=0.3)
 for (t, size) in DROPS:
-    add(crash(), t, gain=0.5 * size, send=0.3)
+    if not FX_ONLY:
+        add(crash(), t, gain=0.5 * size, send=0.3)
     add(sub_thud(1.2), t, gain=0.6 * size, bus=FX)
-add(crash(1.6), 4.0, gain=0.3, send=0.3)
+if not FX_ONLY:
+    add(crash(1.6), 4.0, gain=0.3, send=0.3)
 
 # ------------------------------------------------------------------ foley on the picture
 for i in range(6):                                          # one key-click per fragment
@@ -309,12 +315,12 @@ add(key_click(), 8.0, gain=0.45, send=0.2, bus=FX)
 # Sidechain the music to the kick: the pump is part of the drive.
 duck = np.ones(N)
 for k in KICKS:
-    i = int(k * SR)
+    i = int(k / TS * SR)
     n = min(int(0.2 * SR), N - i)
     duck[i:i + n] = np.minimum(duck[i:i + n], 0.45 + 0.55 * np.linspace(0, 1, n) ** 1.3)
 
 for (g0, g1) in GAPS:                                       # the music drops out; FX stays
-    i0, i1 = int(g0 * SR), int(g1 * SR)
+    i0, i1 = int(g0 / TS * SR), int(g1 / TS * SR)
     MUS[:, i0:i1] = 0.0
     KICK[:, i0:i1] = 0.0
 
@@ -325,21 +331,22 @@ ir /= np.sqrt((ir ** 2).sum())
 size = 1 << int(np.ceil(np.log2(N + len(ir))))
 wet = np.fft.irfft(np.fft.rfft(REV, size) * np.fft.rfft(ir, size), size)[:N] * 0.45
 for (g0, g1) in GAPS:                                       # only a little tail into the gap
-    i0, i1 = int(g0 * SR), int(g1 * SR)
+    i0, i1 = int(g0 / TS * SR), int(g1 / TS * SR)
     wet[i0:i1] *= np.linspace(1, 0.15, i1 - i0)
 
 mix = KICK + MUS * duck + FX + np.stack([wet, np.roll(wet, int(0.011 * SR))])
 peak = np.abs(mix).max()
 mix = np.tanh(mix / peak * 1.5) / np.tanh(1.5)
-end = int(DUR * SR)
+end = int(DUR / TS * SR)
 fade = int(2.0 * SR)
 mix[:, end - fade:end] *= np.linspace(1, 0, fade)
 
 out = (mix[:, :end].T * 0.89 * 32767).astype(np.int16)
 os.makedirs("out", exist_ok=True)
-with wave.open("out/score_raw.wav", "wb") as w:
+name = "out/fx_raw.wav" if FX_ONLY else "out/score_raw.wav"
+with wave.open(name, "wb") as w:
     w.setnchannels(2)
     w.setsampwidth(2)
     w.setframerate(SR)
     w.writeframes(out.tobytes())
-print("wrote out/score_raw.wav", f"{DUR:.1f}s", f"{len(KICKS)} kicks")
+print("wrote", name, f"{DUR / TS:.2f}s", f"{len(KICKS)} kicks")

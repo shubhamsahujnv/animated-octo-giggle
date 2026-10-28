@@ -166,7 +166,9 @@ body { font-family: "Inter", sans-serif; color: var(--ink); -webkit-font-smoothi
 
 <script>
 // ------------------------------------------------------------------ contract
-window.DURATION = 78;
+// ?ts=<factor> plays the same timeline faster, to lock to a track at 120*ts BPM.
+const TS = Number(new URLSearchParams(location.search).get("ts") || 1);
+window.DURATION = 78 / TS;
 window.FPS = 30;
 window.WIDTH = 1920;
 window.HEIGHT = 1080;
@@ -371,14 +373,15 @@ function sceneHeadlines(t) {
 }
 
 // ------------------------------------------------------------------ frame
-window.renderFrame = function (t) {
+window.renderFrame = function (realT) {
+  const t = realT * TS;
   sceneBand(t);
   sceneFragments(t);
   sceneCollage(t);
   sceneDesktop(t);
   sceneHeadlines(t);
   sceneMark(t);
-  grain(Math.round(t * window.FPS));
+  grain(Math.round(realT * window.FPS));
 };
 
 // ------------------------------------------------------------------ ready
