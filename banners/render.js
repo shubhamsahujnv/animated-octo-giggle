@@ -4,6 +4,8 @@ const path = require('path');
 const OUT = process.argv[2];
 
 const SUB_LONG  = 'Your phones, answered at 9:42&nbsp;pm. PXO AI books the appointment, quotes from your own price list, and sends the confirmation &mdash; before the call ends.';
+const H1_STACK  = 'Closed.<br><span class="accent">Still answering.</span>';
+const SUB_IG    = 'A patient called at 9:42&nbsp;pm with a toothache. PXO AI answered, booked him in, and sent directions &mdash; before the call ended.';
 const SUB_SHORT = 'PXO AI answers after hours, books the appointment, and confirms on WhatsApp.';
 
 const sizes = [
@@ -26,6 +28,21 @@ const sizes = [
   { name:'og-card',         w:1200, h:630,  scale:1.00, padL:0,   textMax:1000, subMax:720,
     layout:'stacked', orb:150, orbGap:30, h1:62, h1gap:18, sub:19, subGap:28, chips:true, chipGap:32,
     markH:40, word:32, subtitle:SUB_SHORT },
+
+  { name:'instagram-feed',  w:1080, h:1350, scale:1.16, padL:0, textMax:860, subMax:700,
+    layout:'stacked', orb:200, orbGap:44, h1:76, h1gap:26, sub:19, subGap:34,
+    chips:true, chipGap:40, markH:40, word:32, subtitle:SUB_IG,
+    h1html:H1_STACK, footer:true },
+
+  { name:'instagram-square',w:1080, h:1080, scale:1.08, padL:0, textMax:860, subMax:680,
+    layout:'stacked', orb:172, orbGap:34, h1:68, h1gap:20, sub:18, subGap:28,
+    chips:true, chipGap:32, markH:38, word:30, subtitle:SUB_SHORT,
+    h1html:H1_STACK },
+
+  { name:'instagram-story', w:1080, h:1920, scale:1.26, padL:0, textMax:860, subMax:690,
+    layout:'stacked', orb:230, orbGap:50, h1:80, h1gap:28, sub:19, subGap:36,
+    chips:true, chipGap:44, markH:42, word:34, subtitle:SUB_IG,
+    h1html:H1_STACK, footer:true },
 ];
 
 (async () => {

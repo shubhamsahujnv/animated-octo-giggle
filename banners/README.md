@@ -17,6 +17,9 @@ crisp at 2560px with no background bleed.
 | `pxo-banner-linkedin-company-1128x191.png` | 1128×191 | LinkedIn company page |
 | `pxo-banner-youtube-channel-2560x1440.png` | 2560×1440 | YouTube channel art |
 | `pxo-banner-og-card-1200x630.png` | 1200×630 | OG / link preview, Facebook share |
+| `pxo-banner-instagram-feed-1080x1350.png` | 1080×1350 | Instagram feed post (4:5) |
+| `pxo-banner-instagram-square-1080x1080.png` | 1080×1080 | Instagram square / carousel cover |
+| `pxo-banner-instagram-story-1080x1920.png` | 1080×1920 | Instagram Story / Reel cover |
 
 ### Layout notes
 
@@ -29,6 +32,12 @@ crisp at 2560px with no background bleed.
   subhead shortened.
 - **OG card** — uses the stacked end-card composition (mark inside the orb),
   since the canvas is near-square.
+- **Instagram** — all three are stacked end-card compositions with the headline
+  broken over two lines. The 4:5 and Story versions carry the episode slate and
+  the AI-voice disclaimer; the square one drops both for breathing room.
+- **Instagram Story** — content is centred, which keeps it inside the 250px
+  top/bottom zones Instagram covers with its own UI. If you add a link sticker,
+  it will land in the clear area below the fine print.
 
 ## Regenerating
 
@@ -36,9 +45,10 @@ crisp at 2560px with no background bleed.
 node banners/render.js banners/
 ```
 
-Edit `banners/render.js` to change copy or add sizes (e.g. Instagram 1080×1350
-or 1080×1080); `banners/banner.html` holds the layout engine and the three
-layout modes (`left`, `stacked`, `wide`).
+Edit `banners/render.js` to change copy or add sizes; `banners/banner.html`
+holds the layout engine and the three layout modes (`left`, `stacked`, `wide`).
+Per-size options include `h1html` (headline override, e.g. forcing a line
+break), `subtitle`, `chips`, `footer`, and `padTop`/`padBottom`.
 
 Requires Playwright + Chromium, and the Inter Display / JetBrains Mono fonts
 installed locally.

@@ -65,7 +65,7 @@
   }
   .sub { color:#9fc4bd; font-weight:400; letter-spacing:-.005em; }
 
-  .proof { display:flex; }
+  .proof { display:flex; flex-wrap:wrap; }
   .chip {
     display:flex; align-items:center;
     background:rgba(255,255,255,.055);
@@ -85,6 +85,10 @@
   .cta { color:#e8fff8; font-weight:600; }
   .url { color:#7fdcc4; font-weight:500; }
 
+  .footer {
+    font-family:"JetBrains Mono",monospace; color:#5f8c82; font-weight:500;
+  }
+  .footer .fine { font-family:"Inter",sans-serif; color:#476c64; }
   .safe-note { position:absolute; inset:0; border:2px dashed rgba(255,255,255,.25); z-index:9; display:none; }
 </style>
 </head>
@@ -161,7 +165,9 @@ function build(cfg) {
 
   return `
   <div class="stage" style="width:${cfg.w}px;height:${cfg.h}px;
-       padding-left:${px(cfg.padL)};${centred?'justify-content:center;':''}">
+       padding-left:${px(cfg.padL)};${centred?'justify-content:center;':''}
+       ${cfg.padBottom?`padding-bottom:${px(cfg.padBottom)};`:''}
+       ${cfg.padTop?`padding-top:${px(cfg.padTop)};`:''}">
     <div class="bg"></div>
     ${orbs}
     <div class="vignette"></div>
@@ -178,7 +184,7 @@ function build(cfg) {
       </div>
 
       <h1 style="font-size:${px(cfg.h1)};margin-bottom:${px(cfg.h1gap)};">
-        Closed. <span class="accent">Still answering.</span>
+        ${cfg.h1html || 'Closed. <span class="accent">Still answering.</span>'}
       </h1>
 
       <div class="sub" style="font-size:${px(cfg.sub)};line-height:1.45;max-width:${px(cfg.subMax)};
@@ -187,6 +193,14 @@ function build(cfg) {
       </div>
       ${chips}
       ${lockup}
+      ${cfg.footer ? `
+      <div class="footer" style="margin-top:${px(cfg.footerGap||34)};font-size:${px(11)};
+           letter-spacing:${px(2.2)};">
+        1 OF 5 &nbsp;·&nbsp; LISTEN IN &nbsp;·&nbsp; DENTAL CLINIC
+        <div class="fine" style="font-size:${px(10.5)};letter-spacing:0;margin-top:${px(7)};">
+          Illustrative business and call. Voices are AI-generated.
+        </div>
+      </div>` : ''}
     </div>
   </div>`;
 }
