@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Grid · the Lynkk design system, v3
+   Source: "Lynkk (1) (2).fig", canvas "Lynkk landing page", rightmost board
+   (x=7324, 1920 x 10734). Values are read out of the document by
+   extract/extract.mjs, not invented. Where a token bends the file, the
+   comment says so.
+
+   Prefix: --gr-. Collides with nothing (Round is --lk-, the old record --ly-).
+   Themes: light is the default. A band flips itself with data-band="night".
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------ PALETTE
+     Reference values. Components never read these directly; they read the
+     semantic layer further down. */
+
+  /* Night: the dark bands */
+  --gr-black:        #111111;  /* night band, window content, ink on day     */
+  --gr-coal:         #171717;  /* window chrome, quiet button, quote card    */
+  --gr-coal-2:       #1d1d1d;  /* active row on night                        */
+  --gr-coal-3:       #2e2e2e;  /* window traffic dots                        */
+  --gr-rule-night:   #292c31;  /* THE night hairline                         */
+
+  /* Day: the light bands */
+  --gr-white:        #ffffff;  /* day band                                   */
+  --gr-paper:        #f9f9fa;  /* page tint, pricing card shell              */
+  --gr-mist:         #f5f5f5;  /* quiet button on day, empty window          */
+  --gr-rule-day:     #e0e3e9;  /* THE day hairline                           */
+
+  /* Warm neutrals: plates and glass */
+  --gr-sand:         #ece9e2;  /* feature plate bed                          */
+  --gr-sand-2:       #eeebe4;  /* warm fill, one step off sand               */
+  --gr-stone:        #dbdad6;  /* warm hairline on sand                      */
+  --gr-glass-line:   rgb(218 215 208 / 0.3);  /* glass stroke: #dad7d0 at 30%, as drawn */
+  --gr-ring:         rgb(255 255 255 / 0.1);  /* plate rings: white at 10%, as drawn    */
+
+  /* Brand: the six swatches parked above the board, plus two the cards use */
+  --gr-violet:       #7063be;  /* the accent: eyebrow text, primary button   */
+  --gr-violet-tint:  #e2e0f2;  /* eyebrow bed                                */
+  --gr-lavender:     #beb4fb;  /* avatar/icon chip                           */
+  --gr-orange:       #f57b3a;  /* ember plate, icon chip                     */
+  --gr-forest:       #235634;  /* meadow plate, icon chip                    */
+  --gr-leaf:         #93b45c;  /* icon chip                                  */
+  --gr-pink:         #f7b7ef;  /* icon chip                                  */
+
+  /* Live. The file draws the record stop button in #ff0000; pure red
+     vibrates against #111, so it is pulled a step toward warm. Only for
+     things that are recording or owed now. */
+  --gr-live:         #ff3b30;
+
+  /* ------------------------------------------------------------------ CHARTS
+     Categorical order, fixed, never cycled. Validated with the dataviz
+     six-check script (lightness band, chroma floor, adjacent CVD separation,
+     normal-vision floor, 3:1 contrast) in both modes. Orange leads because
+     orange/green adjacency fails protan; do not reorder. */
+  --gr-series-1: #e0692a;  /* orange   */
+  --gr-series-2: #7063be;  /* violet   */
+  --gr-series-3: #2f7a4a;  /* forest   */
+  --gr-series-4: #c24fb0;  /* magenta  */
+  --gr-series-5: #7a9a3e;  /* leaf     */
+  /* sequential: one hue, violet, light to dark */
+  --gr-seq-1: #e2e0f2; --gr-seq-2: #beb4fb; --gr-seq-3: #978bdc;
+  --gr-seq-4: #7063be; --gr-seq-5: #4c418f;
+
+  /* -------------------------------------------------------------- TYPOGRAPHY
+     One family, Inter. Medium speaks, Regular reads. Nothing else is drawn.
+     Tracking is the file's: -4% on everything 15px and up, -2% on the
+     eyebrow, 0 on small UI labels. */
+  --gr-font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gr-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --gr-w-regular: 400;
+  --gr-w-medium:  500;
+
+  --gr-track-tight: -0.04em;
+  --gr-track-snug:  -0.02em;
+
+  /* size / line-height, as authored at 1920. Display sizes clamp down on
+     small screens; body sizes do not move. */
+  --gr-display:      clamp(34px, 2.2vw + 18px, 50px);  --gr-display-lh: 1.2;   /* hero h1          */
+  --gr-display-cta:  clamp(32px, 2.2vw + 16px, 50px);  --gr-display-cta-lh: 1.3; /* closing band */
+  --gr-h2:           clamp(30px, 1.2vw + 18px, 40px);  --gr-h2-lh: 1.3;        /* section heading  */
+  --gr-h3:           clamp(22px, 0.84vw + 14px, 30px); --gr-h3-lh: 1.3;        /* divider line     */
+  --gr-lead:         22px;  --gr-lead-lh: 1.5;   /* closing band sub                  */
+  --gr-body-lg:      18px;  --gr-body-lg-lh: 1.5; /* section sub, pricing              */
+  --gr-title:        16px;  --gr-title-lh: 1.25;  /* card title (file draws 100%)      */
+  --gr-body:         15px;  --gr-body-lh: 1.5;    /* card body, button label           */
+  --gr-label:        14px;  --gr-label-lh: 1.2;   /* glass window title                */
+  --gr-eyebrow:      12px;  --gr-eyebrow-lh: 1.5;
+  --gr-ui:           11px;  --gr-ui-lh: 1.5;      /* product UI inside mock windows    */
+  --gr-ui-xs:        9px;   --gr-ui-xs-lh: 1.5;
+
+  /* ------------------------------------------------------------------ SPACE
+     A 10px grid. The file uses 10, 20, 30, 60 and 100 and almost nothing
+     else; 5 appears only inside chips. */
+  --gr-s-1: 5px;
+  --gr-s-2: 10px;
+  --gr-s-3: 20px;
+  --gr-s-4: 30px;
+  --gr-s-5: 40px;
+  --gr-s-6: 60px;
+  --gr-s-7: 100px;
+
+  /* ----------------------------------------------------------------- RADIUS
+     The file's own scale, measured, not improved on. An earlier pass rounded
+     everything one step up and floated the windows; the designer's review of
+     2026-09-21 put it back. Three rules the file keeps:
+
+     - Small things are tight: 5 on a button, 10 on a plate or a card.
+     - Glass floats, so it is soft: 21 outside, 20 for the panel inside it.
+     - A browser window never floats. It stands on the edge of its stage, so
+       only the corners that are in the air are round: 24 outside, 12 for the
+       body. See .gr-window--docked. */
+  --gr-r-xs:          8px;   /* rows inside a mock, small controls         */
+  --gr-r-btn:         5px;   /* every button, 43px tall                    */
+  --gr-r-card:        10px;  /* plates, quote cards, the closing plate     */
+  --gr-r-window-body: 12px;  /* the page inside a browser window           */
+  --gr-r-inner:       15px;  /* pricing inner panel, panels inside a card  */
+  --gr-r-pill:        20px;  /* eyebrow                                    */
+  --gr-r-glass:       21px;  /* the floating glass mini window             */
+  --gr-r-window:      24px;  /* browser chrome                             */
+  --gr-r-shell:       25px;  /* pricing shell                              */
+  --gr-r-full:        999px; /* chips, avatars, pricing pill button        */
+
+  /* ----------------------------------------------------------------- LAYOUT
+     1920 wide: 145 margin, 140 rail, 1350 column, 140 rail, 145 margin.
+     The rail shrinks with the viewport and vanishes below the column. */
+  --gr-col:       1350px;
+  --gr-rail-max:  140px;
+  --gr-rail:      clamp(0px, calc((100vw - var(--gr-col)) / 2 - 20px), var(--gr-rail-max));
+  --gr-gutter:    clamp(20px, 2vw, 30px);   /* inner padding of the column */
+  --gr-nav-h:     70px;
+  --gr-divider:   clamp(64px, 7.3vw, 140px); /* empty ruled strip between bands */
+  --gr-head-pad:  clamp(56px, 6vw, 92px);    /* section header top/bottom     */
+  --gr-btn-h:     43px;
+
+  /* ----------------------------------------------------------------- DEPTH
+     The file has no drop shadows. Depth is glass (background blur) and
+     blurred colour (foreground blur on blobs). */
+  --gr-blur-glass: 68px;
+  --gr-blur-chip:  3px;
+  --gr-blur-blob:  116px;
+  --gr-dot-pitch:  7.3px;  /* 3px dot + 4.31px gap, 6% white */
+  --gr-grain-opacity: 0.08;
+
+  /* ----------------------------------------------------------------- MOTION
+     Authored; a static file has no timings. One curve for arrivals, one for
+     presses. Everything respects prefers-reduced-motion. */
+  --gr-ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --gr-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --gr-t-fast:  150ms;   /* hover, press              */
+  --gr-t-base:  250ms;   /* tab change, tooltip       */
+  --gr-t-slow:  700ms;   /* section reveal            */
+  --gr-stagger: 60ms;
+  --gr-rise:    16px;    /* reveal travel             */
+}
+
+/* ==========================================================================
+   SEMANTIC LAYER
+   Day is the default. data-band="night" on any element flips that subtree's
+   background AND its ink together, so a band owns its theme.
+   ========================================================================== */
+
+:root,
+[data-band="day"] {
+  --gr-bg:         var(--gr-white);
+  --gr-bg-tint:    var(--gr-paper);
+  --gr-surface:    var(--gr-white);
+  --gr-raised:     var(--gr-paper);
+  --gr-ink:        var(--gr-black);
+  --gr-ink-2:      rgb(17 17 17 / 0.5);   /* the file's second ink: 50%, never a new hue */
+  --gr-ink-3:      rgb(17 17 17 / 0.3);   /* axis ticks and disabled only                */
+  --gr-line:       var(--gr-rule-day);
+  --gr-dot:        rgb(17 17 17 / 0.03);
+  --gr-fill-soft:  rgb(17 17 17 / 0.04);  /* chips inside mock UI */
+
+  --gr-btn-solid-bg:  var(--gr-black);
+  --gr-btn-solid-fg:  var(--gr-white);
+  --gr-btn-quiet-bg:  var(--gr-mist);
+  --gr-btn-quiet-fg:  var(--gr-black);
+
+  --gr-focus: var(--gr-violet);
+  color: var(--gr-ink);
+}
+
+[data-band="night"] {
+  --gr-bg:         var(--gr-black);
+  --gr-bg-tint:    var(--gr-coal);
+  --gr-surface:    var(--gr-coal);
+  --gr-raised:     var(--gr-coal-2);
+  --gr-ink:        var(--gr-white);
+  --gr-ink-2:      rgb(255 255 255 / 0.5);
+  --gr-ink-3:      rgb(255 255 255 / 0.3);
+  --gr-line:       var(--gr-rule-night);
+  --gr-dot:        rgb(255 255 255 / 0.035);
+  --gr-fill-soft:  rgb(255 255 255 / 0.06);
+
+  --gr-btn-solid-bg:  var(--gr-white);
+  --gr-btn-solid-fg:  var(--gr-black);
+  --gr-btn-quiet-bg:  var(--gr-coal);
+  --gr-btn-quiet-fg:  var(--gr-white);
+
+  --gr-focus: var(--gr-lavender);
+  /* charts on night: same order, dark-mode steps, validated on #111 */
+  --gr-series-1: #e06a2b;
+  --gr-series-2: #8a80dc;
+  --gr-series-3: #3b8e5b;
+  --gr-series-4: #c965b9;
+  --gr-series-5: #8f9f3f;
+  color: var(--gr-ink);
+}

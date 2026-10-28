@@ -1,0 +1,316 @@
+/* ==========================================================================
+   Grid · components
+   The parts the board repeats, written to measure. No hex values in here:
+   every colour is a semantic token from tokens.css.
+   ========================================================================== */
+
+/* ------------------------------------------------------------------ BASE */
+.gr, .gr *, .gr *::before, .gr *::after { box-sizing: border-box; }
+.gr {
+  font-family: var(--gr-font);
+  font-weight: var(--gr-w-medium);
+  letter-spacing: var(--gr-track-tight);
+  background: var(--gr-bg);
+  color: var(--gr-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* The artboard, scaled to the window. k is window / 1920, never below 0.8 so
+   15px copy stays above 12, and never above 1 so a wide screen gets margins,
+   not bigger type. atan2 of two lengths is how CSS divides them into a number.
+   Media queries still see the real window, which is what we want: under 1200
+   none of this applies and the stacked layout takes over. */
+/* A host page styles its own headings (the web app hands h1 to h3 a display
+   face). Inside Grid there is one family, so headings take it back. */
+.gr :where(h1, h2, h3, h4, h5, h6, p) { margin: 0; font-weight: inherit; font-family: inherit; }
+.gr :focus-visible { outline: 2px solid var(--gr-focus); outline-offset: 2px; }
+
+/* ------------------------------------------------------------------ TYPE */
+.gr-display     { font-size: var(--gr-display);     line-height: var(--gr-display-lh);     letter-spacing: var(--gr-track-tight); }
+.gr-display-cta { font-size: var(--gr-display-cta); line-height: var(--gr-display-cta-lh); letter-spacing: var(--gr-track-tight); }
+.gr-h2          { font-size: var(--gr-h2);          line-height: var(--gr-h2-lh);          letter-spacing: var(--gr-track-tight); }
+.gr-h3          { font-size: var(--gr-h3);          line-height: var(--gr-h3-lh);          letter-spacing: var(--gr-track-tight); }
+/* The file sets headings in fixed boxes (616 for the hero, 600 for a section)
+   and lets them wrap where they wrap: "remembers everything your / team
+   discusses." Balancing moves those breaks, so it only applies once the layout
+   has stacked and the file's boxes no longer exist. */
+/* Section headings are written for many pages, not only the file's, so they
+   still refuse a one-word last line ("...the awkward / one."). pretty does
+   that and otherwise leaves the breaks alone. The homepage hero opts out in
+   its own stylesheet, so it breaks exactly where the file's 616 box does. */
+.gr-display, .gr-display-cta, .gr-h2, .gr-h3 { text-wrap: pretty; }
+@media (max-width: 860px) { .gr-display, .gr-display-cta, .gr-h2, .gr-h3 { text-wrap: balance; } }
+.gr-lead        { font-size: var(--gr-lead);        line-height: var(--gr-lead-lh);        color: var(--gr-ink-2); }
+.gr-body-lg     { font-size: var(--gr-body-lg);     line-height: var(--gr-body-lg-lh);     color: var(--gr-ink-2); text-wrap: pretty; }
+.gr-title       { font-size: var(--gr-title);       line-height: var(--gr-title-lh);       letter-spacing: 0; }
+.gr-body        { font-size: var(--gr-body);        line-height: var(--gr-body-lh);        color: var(--gr-ink-2); text-wrap: pretty; }
+.gr-ui          { font-size: var(--gr-ui);          line-height: var(--gr-ui-lh);          letter-spacing: 0; }
+.gr-muted       { color: var(--gr-ink-2); }
+
+/* ---------------------------------------------------------------- LAYOUT
+   A band is full bleed. Inside it, the shell is rail | column | rail. The
+   rails are decoration, ruled on both tones. The file dots them on its night
+   content bands and nowhere else: not on day, not on a divider, and not on the
+   hero, which carries the same dots across its column and leaves the rails
+   plain. So dots are asked for (data-dots), never implied by the tone. */
+.gr-band { position: relative; background: var(--gr-bg); color: var(--gr-ink); }
+.gr-shell {
+  display: grid;
+  grid-template-columns: var(--gr-rail) minmax(0, var(--gr-col)) var(--gr-rail);
+  justify-content: center;
+}
+/* One line per rail, the one it shares with the column. The outer edge of the
+   page is not ruled. */
+.gr-rail:first-child { border-right: 1px solid var(--gr-line); }
+.gr-rail:last-child  { border-left: 1px solid var(--gr-line); }
+.gr-rail[data-dots] {
+  background-image: radial-gradient(circle, var(--gr-dot) 1.5px, transparent 1.6px);
+  background-size: var(--gr-dot-pitch) var(--gr-dot-pitch);
+}
+.gr-col { min-width: 0; border-bottom: 1px solid var(--gr-line); }
+@media (max-width: 1390px) { .gr-rail { display: none; } .gr-shell { grid-template-columns: minmax(0, 1fr); } }
+
+/* An empty divider is plain space: no rules, so it does not read as a box.
+   One that carries a line of copy keeps the file's ruled frame. */
+.gr-divider { height: var(--gr-divider); }
+.gr-divider .gr-col { height: 100%; border-bottom: 0; }
+.gr-divider .gr-col.gr-divider-line { border-inline: 1px solid var(--gr-line); border-bottom: 1px solid var(--gr-line); }
+.gr-divider-line { display: grid; place-items: center; text-align: center; padding: var(--gr-s-2) var(--gr-gutter); }
+
+.gr-dots {
+  background-image: radial-gradient(circle, var(--gr-dot) 1.5px, transparent 1.6px);
+  background-size: var(--gr-dot-pitch) var(--gr-dot-pitch);
+}
+
+/* Section header: eyebrow, then a 600px heading on the left with its action
+   underneath, and a 450px sub pinned right. */
+.gr-head {
+  display: grid; gap: var(--gr-s-2);
+  padding: var(--gr-head-pad) var(--gr-gutter);
+  border-bottom: 1px solid var(--gr-line);
+}
+.gr-head-row {
+  display: grid; gap: var(--gr-s-3) var(--gr-s-2);
+  grid-template-columns: minmax(0, 600px) minmax(0, 450px);
+  justify-content: space-between; align-items: start;
+}
+.gr-head-main { display: grid; gap: var(--gr-s-3); justify-items: start; }
+@media (max-width: 900px) { .gr-head-row { grid-template-columns: 1fr; } }
+
+/* -------------------------------------------------------------- EYEBROW */
+.gr-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 38px; padding: 0 var(--gr-s-3);
+  border-radius: var(--gr-r-pill);
+  background: var(--gr-violet-tint); color: var(--gr-violet);
+  font-size: var(--gr-eyebrow); line-height: var(--gr-eyebrow-lh);
+  letter-spacing: var(--gr-track-snug); white-space: nowrap;
+  justify-self: start;
+}
+/* On the hero the file draws it quiet: #323232 with white type. */
+.gr-eyebrow[data-tone="quiet"] { background: #323232; color: var(--gr-white); }
+
+/* -------------------------------------------------------------- BUTTONS
+   One size, 43px. Five fills. The label is 15 Medium at -4%. */
+.gr-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: var(--gr-btn-h); padding: 0 var(--gr-s-3);
+  border-radius: var(--gr-r-btn); border: 0;
+  font: var(--gr-w-medium) var(--gr-body)/1.5 var(--gr-font);
+  letter-spacing: var(--gr-track-tight); white-space: nowrap;
+  text-decoration: none; cursor: pointer;
+  transition: background-color var(--gr-t-fast) var(--gr-ease-out),
+              color var(--gr-t-fast) var(--gr-ease-out),
+              transform var(--gr-t-fast) var(--gr-ease-out);
+}
+.gr-btn:active { transform: scale(0.98); }
+.gr-btn svg { width: 16px; height: 16px; stroke-width: 1.75; }
+.gr-btn--accent { background: var(--gr-violet); color: var(--gr-white); }
+.gr-btn--accent:hover { background: color-mix(in oklab, var(--gr-violet), black 12%); }
+.gr-btn--solid  { background: var(--gr-btn-solid-bg); color: var(--gr-btn-solid-fg); }
+.gr-btn--solid:hover { background: color-mix(in oklab, var(--gr-btn-solid-bg), var(--gr-btn-solid-fg) 12%); }
+.gr-btn--quiet  { background: var(--gr-btn-quiet-bg); color: var(--gr-btn-quiet-fg); }
+.gr-btn--quiet:hover { background: color-mix(in oklab, var(--gr-btn-quiet-bg), var(--gr-btn-quiet-fg) 8%); }
+.gr-btn--glass  {
+  background: rgb(255 255 255 / 0.2); color: var(--gr-white);
+  -webkit-backdrop-filter: blur(70px); backdrop-filter: blur(70px);
+}
+.gr-btn--glass:hover { background: rgb(255 255 255 / 0.28); }
+.gr-btn--ghost  { background: transparent; color: var(--gr-ink-2); padding: 0 var(--gr-s-2); }
+.gr-btn--ghost:hover { color: var(--gr-ink); }
+.gr-btn--pill   { border-radius: var(--gr-r-full); width: 100%; }
+.gr-btn[aria-disabled="true"], .gr-btn:disabled { opacity: 0.4; pointer-events: none; }
+
+/* ------------------------------------------------------------------- NAV */
+.gr-nav { position: sticky; top: 0; z-index: 50; height: var(--gr-nav-h); }
+.gr-nav .gr-col { display: flex; align-items: center; justify-content: space-between; gap: var(--gr-s-3); height: 100%; border: 0; }
+.gr-nav-links { display: flex; gap: var(--gr-s-4); }
+.gr-nav-link { font-size: var(--gr-body); color: var(--gr-ink-2); text-decoration: none; transition: color var(--gr-t-fast); }
+.gr-nav-link:hover, .gr-nav-link[aria-current="page"] { color: var(--gr-ink); }
+
+/* ---------------------------------------------------------------- WINDOW
+   Browser chrome: a 50px bar with three 18px dots and a centred title at 50%
+   ink. The night version sits on coal; the glass version sits on a photo
+   plate. The frame is clipped, and the body carries the same corner minus its
+   2px inset so the two curves stay concentric. */
+.gr-window {
+  background: var(--gr-coal); padding: 0 2px 2px; display: flex; flex-direction: column;
+  border-radius: var(--gr-r-window); overflow: hidden; isolation: isolate;
+}
+.gr-window-bar {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  height: 50px; padding: 0 var(--gr-s-3);
+}
+.gr-window-dots { display: flex; gap: 10px; }
+.gr-window-dots i { width: 18px; height: 18px; border-radius: 50%; background: var(--gr-coal-3); }
+.gr-window-title { font-size: 18px; color: rgb(255 255 255 / 0.5); }
+.gr-window-body { background: var(--gr-black); flex: 1; min-height: 0; overflow: hidden;
+  border-radius: var(--gr-r-window-body); }
+.gr-window--glass {
+  background: rgb(0 0 0 / 0.1); border: 1px solid var(--gr-glass-line);
+  -webkit-backdrop-filter: blur(64px); backdrop-filter: blur(64px);
+}
+.gr-window--glass .gr-window-dots i { background: rgb(255 255 255 / 0.5); }
+.gr-window--glass .gr-window-title { color: var(--gr-white); }
+.gr-window--glass .gr-window-body { background: var(--gr-mist); color: var(--gr-black); }
+/* The glass window carries 4px of chrome beside the page, not 2. */
+.gr-window--glass { padding-inline: 4px; }
+/* Docked: how the file draws every window. It stands on the bottom edge of
+   its stage, so there is no chrome under the page and the two lower corners
+   are square. data-corner="start" is the Connected Memory case, where the
+   window also runs off the right edge and only the top-left is in the air. */
+.gr-window--docked { padding-bottom: 0; border-bottom: 0;
+  border-radius: var(--gr-r-window) var(--gr-r-window) 0 0; }
+.gr-window--docked .gr-window-body { border-radius: var(--gr-r-window-body) var(--gr-r-window-body) 0 0; }
+.gr-window--docked[data-corner="start"] { padding-right: 0; border-right: 0; border-radius: var(--gr-r-window) 0 0 0; }
+.gr-window--docked[data-corner="start"] .gr-window-body { border-radius: var(--gr-r-window-body) 0 0 0; }
+
+/* ----------------------------------------------------------------- GLASS
+   The floating mini window inside a feature plate: white at 20% over a
+   photo, 68px blur, warm hairline, a 30px title bar in white. */
+.gr-glass {
+  background: rgb(255 255 255 / 0.2);
+  border: 1px solid var(--gr-glass-line);
+  -webkit-backdrop-filter: blur(var(--gr-blur-glass)); backdrop-filter: blur(var(--gr-blur-glass));
+  padding: 2px; color: var(--gr-white);
+  border-radius: var(--gr-r-glass); overflow: hidden; isolation: isolate;
+}
+.gr-glass-title { height: 30px; display: grid; place-items: center; font-size: var(--gr-label); letter-spacing: 0; }
+.gr-glass-body  { background: var(--gr-white); color: var(--gr-black); border-radius: calc(var(--gr-r-glass) - 1px); overflow: hidden; }
+
+/* ----------------------------------------------------------------- PLATE
+   A photographic card: blurred colour, grain at 8%, 10px corners, and
+   (optionally) three concentric 1px rings behind the glass. */
+.gr-plate {
+  position: relative; overflow: hidden; isolation: isolate;
+  border-radius: var(--gr-r-card); background: var(--gr-sand);
+  background-size: cover; background-position: center;
+}
+.gr-plate::after { /* grain */
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
+  opacity: var(--gr-grain-opacity); mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.gr-rings { position: absolute; inset: 50% auto auto 50%; width: 118%; aspect-ratio: 1; translate: -50% -50%; pointer-events: none; }
+.gr-rings i { position: absolute; inset: 0; margin: auto; border-radius: 50%; border: 1px solid var(--gr-ring); }
+.gr-rings i:nth-child(2) { width: 74%; height: 74%; }
+.gr-rings i:nth-child(3) { width: 48%; height: 48%; }
+
+/* --------------------------------------------------------- FEATURE CARD */
+.gr-feature { display: grid; gap: var(--gr-s-3); }
+.gr-feature .gr-plate { aspect-ratio: 423 / 534; }
+.gr-feature-copy { display: grid; gap: var(--gr-s-2); padding-right: var(--gr-s-3); }
+
+/* ------------------------------------------------------------ SPEC CELL
+   Ruled cells in a row: title 16, body 15 at 50%, 30px padding. */
+.gr-cells { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.gr-cell  { display: grid; gap: var(--gr-s-2); align-content: start; padding: var(--gr-s-4); border-right: 1px solid var(--gr-line); }
+.gr-cell:last-child { border-right: 0; }
+
+/* ------------------------------------------------------------- TAB ROWS
+   The vertical list on the Connected Memory band. The active row is raised
+   and carries a 5px bar on its left edge, white on night as the file draws
+   it. That bar is the only indicator a row has: where the rows rotate on a
+   timer, the same bar is the timer, never a second one. */
+.gr-tabs { display: grid; border-right: 1px solid var(--gr-line); }
+.gr-tab {
+  position: relative; display: grid; gap: var(--gr-s-2); align-content: center;
+  text-align: left; padding: var(--gr-s-4); min-height: 178px;
+  border: 0; border-bottom: 1px solid var(--gr-line);
+  background: transparent; color: var(--gr-ink); font: inherit; cursor: pointer;
+  transition: background-color var(--gr-t-base) var(--gr-ease-out);
+}
+.gr-tab:last-child { border-bottom: 0; }
+.gr-tab[aria-selected="true"] { background: var(--gr-raised); }
+.gr-tab::before {
+  content: ""; position: absolute; inset: 0 auto 0 0; width: 5px;
+  background: var(--gr-ink); transform: scaleY(0); transform-origin: top;
+  transition: transform var(--gr-t-base) var(--gr-ease-out);
+}
+.gr-tab[aria-selected="true"]::before { transform: scaleY(1); }
+.gr-tab .gr-title { font-weight: var(--gr-w-regular); }
+
+/* ---------------------------------------------------------------- PRICE */
+.gr-price {
+  display: grid; align-content: start; padding: var(--gr-s-2);
+  background: var(--gr-paper); border: 1px solid var(--gr-rule-day);
+  border-radius: var(--gr-r-shell); color: var(--gr-black);
+}
+.gr-price-top {
+  display: grid; gap: var(--gr-s-2); padding: 15px;
+  background: var(--gr-white); border-radius: var(--gr-r-inner);
+}
+.gr-price-top[data-plate] { color: var(--gr-white); background-size: cover; background-position: center; }
+.gr-price-amount { font-size: 50px; line-height: 1.2; letter-spacing: var(--gr-track-tight); }
+.gr-price-amount small { font-size: 18px; opacity: 0.5; }
+.gr-price-list { list-style: none; margin: 0; padding: var(--gr-s-4) 15px 15px; display: grid; gap: var(--gr-s-2); }
+.gr-price-list li { display: flex; gap: 10px; font-size: var(--gr-body-lg); line-height: 1.5; color: rgb(17 17 17 / 0.5); }
+.gr-price-list svg { flex: none; width: 18px; height: 18px; margin-top: 4px; color: var(--gr-black); stroke-width: 1.75; }
+
+/* ---------------------------------------------------------------- QUOTE */
+.gr-quote {
+  display: grid; align-content: space-between; gap: var(--gr-s-5);
+  padding: var(--gr-s-4); border-radius: var(--gr-r-card);
+  background: var(--gr-coal); border: 1px solid var(--gr-rule-night); color: var(--gr-white);
+}
+.gr-quote blockquote { margin: 0; font-size: var(--gr-body); line-height: 1.5; }
+.gr-quote figcaption { display: flex; align-items: center; gap: 18px; font-size: 16px; letter-spacing: 0; font-weight: var(--gr-w-regular); color: rgb(255 255 255 / 0.5); }
+.gr-avatars { display: flex; }
+.gr-avatars > * { width: 37px; height: 37px; border-radius: 50%; border: 1px solid rgb(29 29 29 / 0.83); background: var(--gr-white); object-fit: cover; }
+.gr-avatars > * + * { margin-left: -16px; }
+
+/* ------------------------------------------------------------ LOGO TILE
+   White rounded squares on the dotted strip, growing toward the centre. */
+.gr-logo-tile { display: grid; place-items: center; background: var(--gr-white); border-radius: 28px; width: 106px; aspect-ratio: 1; }
+.gr-logo-tile[data-size="sm"] { width: 74px; border-radius: 20px; }
+.gr-logo-tile[data-size="lg"] { width: 152px; border-radius: 40px; }
+
+/* ----------------------------------------------------------------- CHIPS
+   Inside product mocks only. */
+.gr-chip {
+  display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 8px;
+  border-radius: var(--gr-r-full); background: var(--gr-fill-soft);
+  font-size: var(--gr-ui); letter-spacing: 0; color: var(--gr-ink-2);
+}
+.gr-icon-chip { display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; color: var(--gr-white); }
+.gr-icon-chip svg { width: 13px; height: 13px; stroke-width: 1.75; }
+.gr-live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gr-live); box-shadow: 0 0 0 0 color-mix(in srgb, var(--gr-live), transparent 40%); animation: gr-live 1.6s var(--gr-ease-out) infinite; }
+@keyframes gr-live { 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+
+/* ----------------------------------------------------------- CTA PLATE */
+.gr-cta {
+  position: relative; display: grid; justify-items: center; align-content: center; gap: var(--gr-s-6);
+  min-height: 680px; padding: var(--gr-s-7) var(--gr-gutter); text-align: center;
+  border-radius: var(--gr-r-card); border: 1px solid var(--gr-rule-night); color: var(--gr-white);
+}
+.gr-cta-tag {
+  display: inline-flex; align-items: center; height: 43px; padding: 0 16px; border-radius: var(--gr-r-full);
+  background: rgb(255 255 255 / 0.2); -webkit-backdrop-filter: blur(70px); backdrop-filter: blur(70px);
+  font-size: var(--gr-body-lg);
+}
+
+/* ------------------------------------------------------------ MOTION */
+@media (prefers-reduced-motion: reduce) {
+  .gr *, .gr *::before, .gr *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+}

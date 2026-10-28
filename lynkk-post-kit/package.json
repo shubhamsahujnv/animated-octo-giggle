@@ -1,0 +1,20 @@
+{
+  "name": "lynkk-post-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Make Lynkk social posts in the Grid design system: HTML slides rendered to PNG.",
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium",
+    "new": "node scripts/new.mjs",
+    "render": "node scripts/render.mjs",
+    "check": "node scripts/check.mjs",
+    "gallery": "node scripts/render.mjs gallery/index.html --scale 1"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

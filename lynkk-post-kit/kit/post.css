@@ -1,0 +1,310 @@
+/* ==========================================================================
+   Lynkk post kit · the poster layer
+   Grid v3 (kit/grid/tokens.css + components.css) is the design system. This
+   file only scales it to a social post and adds the blocks posts reuse.
+
+   Scale: a 1080 wide post shows about 390 wide on a phone, so type and
+   radius are roughly 1.8x the web values. Never go under 20px for any text
+   a reader needs.
+   ========================================================================== */
+@import url("grid/tokens.css");
+@import url("grid/components.css");
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: block;
+}
+
+html, body { margin: 0; background: #2a2a2a; }
+body { display: flex; flex-wrap: wrap; gap: 60px; justify-content: center; align-items: flex-start; padding: 60px; }
+
+/* ------------------------------------------------------------- PLATES
+   Blurred, grained photographs. The only place colour lives. */
+.plate {
+  position: relative; overflow: hidden; isolation: isolate;
+  border-radius: 16px; background: var(--gr-sand) center / cover no-repeat;
+}
+.plate::after { /* grain, as Grid's .gr-plate */
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
+  opacity: var(--gr-grain-opacity); mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.plate > :not(.gr-rings) { position: relative; z-index: 3; }
+.plate-dusk   { background-image: url("assets/plates/dusk.jpg"); }
+.plate-ember  { background-image: url("assets/plates/ember.jpg"); }
+.plate-field  { background-image: url("assets/plates/field.jpg"); }
+.plate-meadow { background-image: url("assets/plates/meadow.jpg"); }
+.plate-night  { background-image: url("assets/plates/night.jpg"); }
+.plate-sky    { background-image: url("assets/plates/sky.jpg"); }
+/* Something the story says is missing: take its colour away. */
+.is-off .plate, .plate.is-off { filter: grayscale(1) brightness(0.42); }
+.plate-center { display: grid; place-items: center; padding: 24px; }
+
+/* ------------------------------------------------------------- THE BOARD */
+.post {
+  --w: 1080px; --h: 1350px; --rail: 56px;
+  width: var(--w); height: var(--h); flex: none; overflow: hidden; position: relative;
+  display: grid; grid-template-columns: var(--rail) minmax(0, 1fr) var(--rail); grid-template-rows: minmax(0, 1fr);
+  background: var(--gr-bg); color: var(--gr-ink);
+  /* The site serves Inter's text cut at every size; the variable file would
+     switch to the tighter display cut at 84px. Keep it the site's. */
+  font-optical-sizing: none; font-variation-settings: "opsz" 14;
+}
+.post[data-size="square"]   { --h: 1080px; }
+.post[data-size="story"]    { --h: 1920px; }
+.post[data-size="wide"]     { --w: 1600px; --h: 900px; --rail: 72px; }
+.post[data-size="linkedin"] { --w: 1200px; --h: 1200px; }
+
+/* Grid's .gr-rail hides under a 1390 viewport, so the poster keeps its own. */
+.post-rail:first-child { border-right: 1px solid var(--gr-line); }
+.post-rail:last-child  { border-left: 1px solid var(--gr-line); }
+.post[data-band="night"] > .post-rail {
+  background-image: radial-gradient(circle, var(--gr-dot) 1.5px, transparent 1.6px);
+  background-size: var(--gr-dot-pitch) var(--gr-dot-pitch);
+}
+.post-col { display: grid; grid-template-rows: 112px minmax(0, 1fr) 104px; min-width: 0; }
+.post[data-size="wide"] .post-col { grid-template-rows: 96px minmax(0, 1fr) 88px; }
+.post-top, .post-foot { display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+.post-top  { border-bottom: 1px solid var(--gr-line); }
+.post-foot { border-top: 1px solid var(--gr-line); font-size: 24px; letter-spacing: var(--gr-track-snug); }
+.brand { display: inline-flex; align-items: center; gap: 14px; font-size: 32px; }
+.brand > i { display: inline-grid; width: 40px; height: 40px; }
+.count { font-size: 24px; letter-spacing: 0; color: var(--gr-ink-2); font-variant-numeric: tabular-nums; }
+.count b { font-weight: inherit; color: var(--gr-ink); }
+.next { display: inline-flex; align-items: center; gap: 10px; }
+.next i { display: inline-grid; width: 26px; height: 26px; }
+
+.post-body { padding: 60px 48px 56px; display: flex; flex-direction: column; min-height: 0; }
+.post-body[data-dots] {
+  background-image: radial-gradient(circle, var(--gr-dot) 1.5px, transparent 1.6px);
+  background-size: var(--gr-dot-pitch) var(--gr-dot-pitch);
+}
+.post-body.center { align-items: center; text-align: center; justify-content: center; }
+.post[data-size="wide"] .post-body { padding: 48px 56px; }
+
+i[data-icon], i[data-mark] { display: inline-grid; font-style: normal; }
+i[data-icon] svg, i[data-mark] svg { width: 100%; height: 100%; }
+
+/* ---------------------------------------------------------------- SPACING
+   Blocks stack in the body. Space them with these, not ad hoc margins. */
+.mt-0 { margin-top: 0; } .mt-s { margin-top: 16px; } .mt-m { margin-top: 32px; }
+.mt-l { margin-top: 48px; } .mt-xl { margin-top: 72px; } .mt-auto { margin-top: auto; }
+.grow { flex: 1; min-height: 0; }
+
+/* ------------------------------------------------------------------- TYPE
+   Inter 500 speaks, 400 reads. -4% tracking at display sizes. Two inks:
+   .ink-2 is the 50% second ink, used for the second half of a headline. */
+.eyebrow {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 10px;
+  height: 50px; padding: 0 24px; border-radius: 26px; white-space: nowrap;
+  background: var(--gr-violet-tint); color: var(--gr-violet);
+  font-size: 21px; letter-spacing: var(--gr-track-snug);
+}
+.eyebrow[data-tone="quiet"] { background: #323232; color: var(--gr-white); }
+[data-band="day"] .eyebrow[data-tone="quiet"] { background: var(--gr-mist); color: var(--gr-black); }
+.center .eyebrow { align-self: center; }
+.eyebrow + * { margin-top: 32px; }
+
+.t-display { font-size: 84px; line-height: 1.1;  letter-spacing: var(--gr-track-tight); text-wrap: pretty; }
+.t-h2      { font-size: 66px; line-height: 1.12; letter-spacing: var(--gr-track-tight); text-wrap: pretty; }
+.t-h3      { font-size: 44px; line-height: 1.2;  letter-spacing: var(--gr-track-tight); text-wrap: pretty; }
+.t-lead    { font-size: 30px; line-height: 1.42; color: var(--gr-ink-2); text-wrap: pretty; }
+.t-body    { font-size: 26px; line-height: 1.45; color: var(--gr-ink-2); letter-spacing: -0.02em; text-wrap: pretty; }
+.t-small   { font-size: 22px; line-height: 1.4;  color: var(--gr-ink-2); letter-spacing: -0.01em; }
+.t-lead b, .t-body b, .t-small b { font-weight: inherit; color: var(--gr-ink); }
+.ink-2 { color: var(--gr-ink-2); }
+.ink-3 { color: var(--gr-ink-3); }
+.post[data-size="story"] .t-display { font-size: 96px; }
+.post[data-size="wide"] .t-display  { font-size: 76px; }
+
+/* ----------------------------------------------------------- BUTTONS
+   The file's button, scaled: 5px radius at 43 tall becomes 8 at 76. */
+.btn {
+  align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  height: 76px; padding: 0 40px; border-radius: 8px; white-space: nowrap;
+  background: var(--gr-btn-solid-bg); color: var(--gr-btn-solid-fg); font-size: 28px; letter-spacing: var(--gr-track-tight);
+}
+.btn i { width: 28px; height: 28px; }
+.center .btn, .cta .btn { align-self: center; }
+.btn-accent { background: var(--gr-violet); color: var(--gr-white); } /* once per carousel, at most */
+.btn-glass { background: rgb(255 255 255 / 0.2); color: var(--gr-white); -webkit-backdrop-filter: blur(70px); backdrop-filter: blur(70px); }
+.on-plate .btn:not(.btn-glass):not(.btn-accent), .cta .btn:not(.btn-glass):not(.btn-accent) { background: var(--gr-white); color: var(--gr-black); }
+
+/* Pills on the band (not inside mocks). */
+.chips { display: flex; flex-wrap: wrap; gap: 12px; }
+.chip { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 22px; border-radius: 999px;
+  background: var(--gr-fill-soft); border: 1px solid var(--gr-line); font-size: 22px; letter-spacing: -0.01em; }
+.chip i { width: 24px; height: 24px; }
+.chip .gr-live-dot { width: 12px; height: 12px; animation: none; }
+
+/* ------------------------------------------------------------- GLASS
+   Grid's floating glass mini window at poster scale. Always on a plate. */
+.glass {
+  background: rgb(255 255 255 / 0.2); border: 1px solid var(--gr-glass-line);
+  -webkit-backdrop-filter: blur(var(--gr-blur-glass)); backdrop-filter: blur(var(--gr-blur-glass));
+  padding: 3px; border-radius: 30px; overflow: hidden; color: var(--gr-white); width: 100%;
+}
+.glass-title { height: 44px; display: grid; place-items: center; font-size: 19px; letter-spacing: 0; }
+.glass-body { background: var(--gr-white); color: var(--gr-black); border-radius: 27px; padding: 18px 20px;
+  font-size: 17px; line-height: 1.35; letter-spacing: 0; }
+.glass[data-size="l"] .glass-title { height: 52px; font-size: 22px; }
+.glass[data-size="l"] .glass-body { font-size: 21px; padding: 20px 26px; }
+
+/* Mock parts, used inside .glass-body or .window-body. Product UI is drawn,
+   never screenshotted, and only shows what the product really has. */
+.m-row { display: flex; align-items: baseline; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--gr-rule-day); }
+.m-row:last-child { border-bottom: 0; }
+.m-k, .m-t { color: rgb(17 17 17 / 0.5); flex: none; font-variant-numeric: tabular-nums; }
+.m-title { font-size: 1.15em; letter-spacing: -0.02em; padding-bottom: 6px; }
+.m-live { display: flex; align-items: center; gap: 10px; padding-bottom: 6px; }
+.m-live .gr-live-dot { animation: none; }
+.m-level { display: grid; grid-template-columns: 64px 1fr; align-items: center; gap: 8px; padding: 4px 0; }
+.m-level > span { color: rgb(17 17 17 / 0.5); }
+.m-level > i { height: 6px; border-radius: 3px; background: rgb(17 17 17 / 0.12); position: relative; overflow: hidden; }
+.m-level > i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--v, 50%); background: var(--gr-black); border-radius: 3px; }
+.m-quote { padding-top: 8px; color: rgb(17 17 17 / 0.7); }
+.m-option { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--gr-rule-day); }
+.m-option > :nth-child(2) { flex: 1; }
+.m-option:last-child { border-bottom: 0; }
+.m-radio { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid rgb(17 17 17 / 0.3); flex: none; }
+.m-radio.on { border: 6px solid var(--gr-black); }
+.m-check { width: 20px; height: 20px; border-radius: 5px; border: 1.5px solid rgb(17 17 17 / 0.3); flex: none; display: grid; place-items: center; }
+.m-check.on { background: var(--gr-black); border-color: var(--gr-black); color: var(--gr-white); }
+.m-check i { width: 14px; height: 14px; }
+.m-chip { display: inline-flex; align-items: center; height: 28px; padding: 0 12px; border-radius: 999px; font-size: max(15px, 0.85em);
+  background: rgb(17 17 17 / 0.06); color: rgb(17 17 17 / 0.6); white-space: nowrap; }
+.m-fine { padding-top: 12px; font-size: max(15px, 0.9em); color: rgb(17 17 17 / 0.5); }
+.m-btn { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 6px; background: var(--gr-black); color: var(--gr-white); font-size: max(15px, 0.9em); }
+.m-cite { display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border-radius: 6px; font-size: max(15px, 0.8em);
+  background: var(--gr-violet-tint); color: var(--gr-violet); vertical-align: 2px; }
+
+/* ------------------------------------------------------------- WINDOW
+   A bigger app window on a plate, for a scene with more UI than a glass card. */
+.window { background: rgb(0 0 0 / 0.1); border: 1px solid var(--gr-glass-line); padding: 0 4px 4px;
+  -webkit-backdrop-filter: blur(64px); backdrop-filter: blur(64px); border-radius: 30px; overflow: hidden; width: 100%; }
+.window-bar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 56px; padding: 0 22px; color: var(--gr-white); font-size: 20px; letter-spacing: 0; }
+.window-dots { display: flex; gap: 10px; } .window-dots i { width: 16px; height: 16px; border-radius: 50%; background: rgb(255 255 255 / 0.5); }
+.window-body { background: var(--gr-white); color: var(--gr-black); border-radius: 26px; padding: 26px 30px; font-size: 20px; line-height: 1.4; letter-spacing: 0; }
+.window[data-dock] { padding-bottom: 0; border-bottom: 0; border-radius: 30px 30px 0 0; align-self: end; }
+.window[data-dock] .window-body { border-radius: 26px 26px 0 0; }
+
+/* ------------------------------------------------------------- STAGES
+   A row of plates, each with a caption under it. --plate-h sets height. */
+.stages { --plate-h: 340px; display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); grid-auto-flow: column; gap: 16px; }
+.stage { margin: 0; display: grid; gap: 16px; align-content: start; }
+.stage > .plate { height: var(--plate-h); display: grid; place-items: center; padding: 0 18px; }
+.stage figcaption { display: grid; gap: 2px; font-size: 26px; line-height: 1.3; letter-spacing: var(--gr-track-snug); }
+
+/* One plate across the column with something centred on it. */
+.scene { height: var(--scene-h, 320px); display: grid; place-items: center; padding: 24px; }
+.scene > .glass, .scene > .window { width: var(--card-w, 560px); }
+
+/* ------------------------------------------------------------- COMPARE
+   Rows of cells. The "us" column is the file's active row on its side:
+   raised, with a 5px bar on its leading edge. Set columns with --cols. */
+.compare { --cols: 124px 1fr 1.3fr; display: grid; grid-template-columns: var(--cols); border-top: 1px solid var(--gr-line); }
+.compare > .row { display: contents; }
+.compare > .row > * { padding: 26px; border-bottom: 1px solid var(--gr-line); font-size: 27px; line-height: 1.35; color: var(--gr-ink-2); }
+.compare > .row > :first-child { padding-left: 0; font-size: 24px; letter-spacing: var(--gr-track-snug); }
+.compare > .row > .us { color: var(--gr-ink); padding-left: 34px;
+  background: linear-gradient(var(--gr-ink), var(--gr-ink)) left / 5px 100% no-repeat, var(--gr-raised); }
+.compare > .row.head > * { font-size: 24px; padding-block: 22px; display: flex; align-items: center; gap: 12px; letter-spacing: var(--gr-track-snug); }
+.tile { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 9px; background: var(--gr-violet); color: var(--gr-white); flex: none; }
+.tile > i { width: 26px; height: 26px; }
+
+/* ------------------------------------------------------------- CELLS
+   Ruled spec cells, 2 or 3 across. */
+.cells { display: grid; grid-template-columns: repeat(var(--n, 2), 1fr); border-top: 1px solid var(--gr-line); }
+.cells[data-n="3"] { --n: 3; }
+/* Hairlines between cells: each cell draws its bottom and left rule, and the
+   grid clips the outer ones away. */
+.cells { overflow: hidden; }
+.cell { display: grid; gap: 8px; align-content: start; padding: 26px 30px; margin: 0 0 -1px -1px;
+  border-bottom: 1px solid var(--gr-line); border-left: 1px solid var(--gr-line); }
+.cells:not([data-n="3"]) > .cell:nth-child(2n+1), .cells[data-n="3"] > .cell:nth-child(3n+1) { padding-left: 1px; }
+.cell-t { font-size: 31px; line-height: 1.2; }
+.cell-b { font-size: 24px; line-height: 1.4; color: var(--gr-ink-2); letter-spacing: -0.02em; }
+
+/* ------------------------------------------------------------- ROWS
+   Icon rows: a coloured icon chip, a title, a line. */
+.rows { border-top: 1px solid var(--gr-line); }
+.rows > .row { display: grid; grid-template-columns: 72px 1fr; gap: 28px; padding: 38px 0; border-bottom: 1px solid var(--gr-line); }
+.rows > .row:last-child { border-bottom: 0; }
+.row-t { font-size: 36px; line-height: 1.2; margin-bottom: 10px; }
+.row-b { font-size: 27px; line-height: 1.42; color: var(--gr-ink-2); letter-spacing: -0.02em; }
+.icon-chip { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; color: var(--gr-black); flex: none; }
+.icon-chip > i { width: 28px; height: 28px; }
+/* The product colours, for icon chips only (Meeting notes, Ask, Slack, Workspaces, and two spares). */
+.icon-chip[data-c="orange"]   { background: var(--gr-orange); }
+.icon-chip[data-c="lavender"] { background: var(--gr-lavender); }
+.icon-chip[data-c="pink"]     { background: var(--gr-pink); }
+.icon-chip[data-c="violet"]   { background: var(--gr-violet); color: var(--gr-white); }
+.icon-chip[data-c="leaf"]     { background: var(--gr-leaf); }
+.icon-chip[data-c="forest"]   { background: var(--gr-forest); color: var(--gr-white); }
+.icon-chip[data-c="quiet"]    { background: var(--gr-raised); color: var(--gr-ink); border: 1px solid var(--gr-line); }
+
+/* ------------------------------------------------------------- STEPS
+   How it works: numbered ruled columns. */
+.steps { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); border-top: 1px solid var(--gr-line); }
+.step { display: grid; gap: 12px; align-content: start; padding: 30px 26px 0; border-left: 1px solid var(--gr-line); }
+.step:first-child { border-left: 0; padding-left: 0; }
+.step-n { font-size: 24px; color: var(--gr-ink-2); font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.step-t { font-size: 32px; line-height: 1.2; }
+.step-b { font-size: 23px; line-height: 1.4; color: var(--gr-ink-2); letter-spacing: -0.01em; }
+
+/* ------------------------------------------------------------- STATS
+   Big figures. Real, sourced numbers only (see docs/TRUTHS.md). */
+.stats { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); gap: 24px; }
+.stat-n { font-size: 72px; line-height: 1.05; letter-spacing: var(--gr-track-tight); }
+.stat-l { margin-top: 10px; font-size: 23px; line-height: 1.4; color: var(--gr-ink-2); letter-spacing: -0.01em; }
+
+/* ------------------------------------------------------------- LOGOS
+   The real platform marks on white tiles. */
+.logos { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.logo-tile { display: grid; place-items: center; width: 112px; height: 112px; border-radius: 28px; background: var(--gr-white); }
+.logo-tile img { width: 60%; height: 60%; object-fit: contain; }
+
+/* ------------------------------------------------------------- QUOTE
+   A line someone said in a meeting (inside a product story), not a
+   testimonial. Testimonials need a real, approved customer. */
+.pull { border-left: 5px solid var(--gr-ink); padding: 6px 0 6px 30px; }
+.pull q { quotes: "\201C" "\201D"; font-size: 44px; line-height: 1.2; letter-spacing: var(--gr-track-tight); }
+.pull figcaption { margin-top: 14px; font-size: 22px; color: var(--gr-ink-2); letter-spacing: -0.01em; }
+
+/* ------------------------------------------------------------- CTA
+   The closing plate: tag, display line, sub, one button, facts in glass. */
+.cta { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 64px 48px 40px; color: var(--gr-white); }
+.cta > .gr-rings { width: 150%; top: 42%; }
+.cta-tag { display: inline-flex; align-items: center; height: 52px; padding: 0 22px; border-radius: 999px; font-size: 22px;
+  background: rgb(255 255 255 / 0.2); -webkit-backdrop-filter: blur(70px); backdrop-filter: blur(70px); }
+.cta .t-display { margin-top: 44px; font-size: 88px; }
+.cta-sub { margin-top: 30px; font-size: 29px; line-height: 1.42; color: rgb(255 255 255 / 0.85); max-width: 740px; text-wrap: balance; }
+.cta .btn { margin-top: 44px; }
+.facts { margin-top: auto; width: 100%; display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); border-radius: 16px;
+  background: rgb(255 255 255 / 0.2); border: 1px solid var(--gr-glass-line);
+  -webkit-backdrop-filter: blur(var(--gr-blur-glass)); backdrop-filter: blur(var(--gr-blur-glass)); color: var(--gr-white); }
+.fact { padding: 22px 18px; display: grid; gap: 4px; align-content: start; }
+.fact + .fact { border-left: 1px solid var(--gr-glass-line); }
+.fact-t { font-size: 30px; line-height: 1.2; }
+.fact-b { font-size: 20px; line-height: 1.35; color: rgb(255 255 255 / 0.8); letter-spacing: -0.01em; }
+
+
+/* ------------------------------------------------------------- SPLIT
+   Copy on one side, a scene on the other. Made for the wide size. */
+.split { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.split > .plate { align-self: stretch; height: auto; }
+.split > div:not(.plate) { display: flex; flex-direction: column; }
+
+
+/* Block heights per size, so a scaffold fits before anyone tunes it. */
+.post[data-size="square"] .stages, .post[data-size="linkedin"] .stages { --plate-h: 250px; }
+.post[data-size="square"] .scene,  .post[data-size="linkedin"] .scene  { --scene-h: 260px; }
+.post[data-size="story"] .stages { --plate-h: 460px; }
+.post[data-size="story"] .scene  { --scene-h: 520px; }
+.post[data-size="square"] .t-display, .post[data-size="linkedin"] .t-display { font-size: 72px; }
+.post[data-size="square"] .t-h2, .post[data-size="linkedin"] .t-h2 { font-size: 58px; }
+.post[data-size="square"] .rows > .row { padding: 26px 0; }
+
+/* Stills only: posts are images, nothing should be caught mid-animation. */
+.post *, .post *::before, .post *::after { animation: none !important; transition: none !important; }
