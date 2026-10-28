@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lynkk for Mac banner</title>
+<style>
+@font-face { font-family: "Schibsted"; src: url("assets/fonts/SchibstedGrotesk-latin.woff2") format("woff2"); font-weight: 400 900; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/InterVariable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #111; color: #fff; font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; overflow: hidden; }
+#b { position: relative; overflow: hidden; background: #111; }
+#b > svg.dots { position: absolute; inset: 0; }
+
+/* Brand pieces */
+.logo { display: inline-flex; align-items: center; gap: 18px; font: 500 58px/1 "Inter"; letter-spacing: -0.035em; }
+.logo .m { width: 66px; height: 66px; display: block; }
+.logo .m svg { width: 100%; height: 100%; display: block; }
+.pill { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 20px; border-radius: 23px; background: #231f3a; color: #b4abe0; border: 1px solid rgb(180 171 224 / 0.3); font: 500 22px/1 "Inter"; }
+.pill i { width: 9px; height: 9px; border-radius: 50%; background: #b4abe0; display: block; }
+.h { font: 500 128px/0.98 "Schibsted"; letter-spacing: -0.045em; }
+.sub { font: 500 46px/1.18 "Schibsted"; letter-spacing: -0.025em; color: rgb(255 255 255 / 0.62); }
+.cta { display: inline-flex; align-items: center; gap: 26px; }
+.btn { display: inline-flex; align-items: center; gap: 16px; height: 92px; padding: 0 40px; border-radius: 12px; background: #fff; color: #111; font: 500 36px/1 "Inter"; letter-spacing: -0.02em; }
+.btn svg { width: 38px; height: 38px; }
+.url { font: 500 32px/1 "Inter"; color: rgb(255 255 255 / 0.85); letter-spacing: -0.01em; }
+
+/* Product windows: real frames from the film, cropped, tilted, no shadows */
+.shot { position: absolute; overflow: hidden; border-radius: 22px; border: 1px solid rgb(255 255 255 / 0.16); background: #111; transform-origin: 50% 50%; }
+.shot img { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.key { position: absolute; width: 210px; height: 204px; transform-origin: 50% 50%; }
+.key .base { position: absolute; inset: 0; top: 16px; border-radius: 30px; background: #b9b9b6; }
+.key .top { position: absolute; inset: 0; border-radius: 30px; background: #f5f5f4; color: #111; padding: 22px 28px; font: 500 68px/1 "Inter"; letter-spacing: -0.03em; }
+
+/* Landscape 1920x1080 */
+.land { width: 1920px; height: 1080px; }
+.land .copy { position: absolute; left: 110px; top: 150px; width: 860px; }
+.land .copy .pill { margin-top: 52px; }
+.land .copy .h { margin-top: 30px; }
+.land .copy .sub { margin-top: 26px; width: 900px; }
+.land .copy .cta { margin-top: 64px; }
+
+/* Vertical 1080x1920: everything that matters inside the central 3:4 (y 240 to 1680) */
+.vert { width: 1080px; height: 1920px; }
+.vert .copy { position: absolute; left: 0; right: 0; top: 260px; text-align: center; }
+.vert .copy .pill { margin-top: 44px; }
+.vert .copy .h { margin-top: 30px; font-size: 132px; }
+.vert .copy .sub { margin: 26px auto 0; width: 860px; }
+.vert .cta { position: absolute; left: 0; right: 0; top: 1520px; flex-direction: column; gap: 22px; }
+</style>
+</head>
+<body>
+<div id="b">
+  <svg class="dots" width="100%" height="100%"><defs><pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="rgb(255 255 255 / 0.035)"/></pattern></defs><rect width="100%" height="100%" fill="url(#dots)"/></svg>
+  <div class="shot" id="s-ask"><img src="assets/banner/t052.70.png"></div>
+  <div class="shot" id="s-call"><img src="assets/banner/t014.10.png"></div>
+  <div class="key" id="k"><div class="base"></div><div class="top">fn</div></div>
+  <div class="copy">
+    <div class="logo"><span class="m" id="mk"></span>Lynkk</div><br>
+    <span class="pill"><i></i>Mac app · Available now</span>
+    <div class="h">Lynkk for Mac.</div>
+    <div class="sub">Records your calls. Types what you say.</div>
+    <div class="cta" id="cta-l"></div>
+  </div>
+  <div class="cta" id="cta-v"></div>
+</div>
+<script>
+const VERT = new URLSearchParams(location.search).get("fmt") === "vertical";
+window.WIDTH = VERT ? 1080 : 1920; window.HEIGHT = VERT ? 1920 : 1080;
+window.FPS = 30; window.DURATION = 1;
+const b = document.getElementById("b");
+b.className = VERT ? "vert" : "land";
+const CTA = `<span class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><path d="M7 9.5l5 5 5-5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>Download for Mac</span><span class="url">lynkk.ai/download</span>`;
+document.getElementById(VERT ? "cta-v" : "cta-l").innerHTML = CTA;
+
+// Place a crop of a film frame (film coordinates, frames are 2x) into a tilted window.
+function shot(id, crop, box, tilt) {
+  const el = document.getElementById(id), img = el.querySelector("img");
+  const [cx, cy, cw, ch] = crop, [x, y, w] = box, k = w / cw;
+  Object.assign(el.style, { left: `${x}px`, top: `${y}px`, width: `${w}px`, height: `${ch * k}px`, transform: `perspective(2400px) ${tilt}` });
+  img.style.width = "3840px"; img.style.height = "2160px";
+  img.style.transform = `scale(${k / 2}) translate(${-cx * 2}px, ${-cy * 2}px)`;
+}
+const CALL = [640, 0, 1270, 790], ASK = [940, 104, 920, 600];
+if (VERT) {
+  shot("s-ask", ASK, [330, 720, 660], "rotateY(10deg) rotateX(6deg) rotate(2deg)");
+  shot("s-call", CALL, [80, 1010, 780], "rotateY(-8deg) rotateX(5deg) rotate(-1.5deg)");
+  Object.assign(document.getElementById("k").style, { left: "790px", top: "1280px", transform: "rotate(9deg)" });
+} else {
+  shot("s-ask", ASK, [1290, 110, 560], "rotateY(-14deg) rotateX(6deg) rotate(1.5deg)");
+  shot("s-call", CALL, [1010, 330, 830], "rotateY(-12deg) rotateX(5deg) rotate(-1deg)");
+  Object.assign(document.getElementById("k").style, { left: "930px", top: "780px", transform: "rotate(-9deg)" });
+}
+
+window.renderFrame = () => {};
+window.__ready = (async () => {
+  document.getElementById("mk").innerHTML = await (await fetch("assets/mark.svg")).text();
+  await Promise.all([...document.images].map((i) => i.decode()));
+  await document.fonts.load('500 100px "Schibsted"'); await document.fonts.load('500 100px "Inter"'); await document.fonts.ready;
+  return true;
+})();
+</script>
+</body>
+</html>
