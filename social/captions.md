@@ -188,3 +188,65 @@ Cursor ➕ Claude Code ➕ Codex ➕ GitHub = 🔥
 ```
 
 𝗦𝘂𝗴𝗴𝗲𝘀𝘁𝗲𝗱 𝗮𝘂𝗱𝗶𝗼: an upbeat trending lo-fi or tech beat; switch clips on each beat.
+
+---
+
+## 🐦 Twitter / X
+
+𝗜𝗺𝗮𝗴𝗲: `banner-youtube-1280x720.png` (16:9 fits X perfectly)
+
+𝗦𝗶𝗻𝗴𝗹𝗲 𝘁𝘄𝗲𝗲𝘁:
+```
+⌨️ 𝗙𝗿𝗼𝗺 𝗭𝗲𝗿𝗼 𝘁𝗼 𝗚𝗶𝘁𝗛𝘂𝗯 𝘄𝗶𝘁𝗵 𝗔𝗜 🚀
+
+✅ Installed Cursor + Git
+✅ Used Claude Code & Codex (web)
+✅ Created a GitHub repo
+✅ Wrote README.md & pushed 🎉
+
+😅 Hardest part? Git on Mac 🍎
+
+Your go-to AI coding tool? 👇
+
+#AI #CursorIDE #ClaudeCode #Codex #GitHub
+```
+
+𝗧𝗵𝗿𝗲𝗮𝗱 𝘃𝗲𝗿𝘀𝗶𝗼𝗻:
+```
+1/ ⌨️ 𝗜 𝘀𝗲𝘁 𝘂𝗽 𝗺𝘆 𝗔𝗜 𝗰𝗼𝗱𝗶𝗻𝗴 𝘄𝗼𝗿𝗸𝗳𝗹𝗼𝘄 𝗳𝗿𝗼𝗺 𝘀𝗰𝗿𝗮𝘁𝗰𝗵 🚀
+
+Cursor + Claude Code + Codex + GitHub — here's how it went 🧵👇
+```
+```
+2/ 🛠️ 𝗧𝗵𝗲 𝘀𝘁𝗮𝗰𝗸
+
+⚡ Cursor IDE
+⚡ Git
+⚡ Claude Code (web)
+⚡ Codex (web)
+⚡ GitHub
+
+No extensions needed for the AI tools 🙌
+```
+```
+3/ 📋 𝗧𝗵𝗲 𝘀𝘁𝗲𝗽𝘀
+
+→ Install Cursor & Git
+→ Log in to Claude Code & Codex
+→ Create a public GitHub repo
+→ Open it in Cursor, write README.md
+→ Commit & push ✅
+```
+```
+4/ ⚠️ 𝗧𝗵𝗲 𝗵𝗮𝗿𝗱 𝗽𝗮𝗿𝘁: installing Git on Mac 🍎
+
+Terminal setup and config took a while to fix — but once it worked, everything else was smooth 💪
+```
+```
+5/ 📌 𝗧𝗮𝗸𝗲𝗮𝘄𝗮𝘆: setup is the hardest step. After that, AI makes building and shipping way faster ⚡
+
+🎥 Full video below 👇
+Follow for more AI dev content 🔔
+
+#AI #CursorIDE #ClaudeCode #Codex #GitHub
+```
