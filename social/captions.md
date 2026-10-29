@@ -144,3 +144,47 @@ From zero to GitHub in one go 💻✨
 .
 #AI #Coding #CursorIDE #ClaudeCode #Codex #GitHub #Git #Developer #Programming #CodeLife #TechReels #LearnToCode #AITools #DevSetup
 ```
+
+---
+
+## 🎬 Instagram Reel
+
+𝗖𝗼𝘃𝗲𝗿 𝗶𝗺𝗮𝗴𝗲: `reel-cover-1080x1920.png`
+
+𝗖𝗮𝗽𝘁𝗶𝗼𝗻:
+```
+⌨️ 𝗙𝗿𝗼𝗺 𝗭𝗲𝗿𝗼 𝘁𝗼 𝗚𝗶𝘁𝗛𝘂𝗯 𝘄𝗶𝘁𝗵 𝗔𝗜 𝗶𝗻 𝟲𝟬 𝗦𝗲𝗰𝗼𝗻𝗱𝘀! 🚀💻
+
+Cursor ➕ Claude Code ➕ Codex ➕ GitHub = 🔥
+
+⚡ 𝗜𝗻𝘀𝘁𝗮𝗹𝗹 Cursor & Git
+⚡ 𝗟𝗼𝗴𝗶𝗻 to Claude Code & Codex
+⚡ 𝗖𝗿𝗲𝗮𝘁𝗲 a GitHub repo
+⚡ 𝗪𝗿𝗶𝘁𝗲 README.md in Cursor
+⚡ 𝗣𝘂𝘀𝗵 it live 🎉
+
+😅 𝗣𝗹𝗼𝘁 𝘁𝘄𝗶𝘀𝘁: Git on Mac fought back 🍎 — but I won 💪
+
+💾 𝗦𝗮𝘃𝗲 this for your setup
+📤 𝗦𝗲𝗻𝗱 it to a coder friend
+💬 Comment "𝗦𝗘𝗧𝗨𝗣" and I'll share the steps 👇
+
+.
+.
+.
+#reels #reelsinstagram #AI #coding #CursorIDE #ClaudeCode #Codex #GitHub #developer #programming #techreels #codinglife #learntocode #aitools #devsetup
+```
+
+𝗢𝗻-𝘀𝗰𝗿𝗲𝗲𝗻 𝘁𝗲𝘅𝘁 (𝗼𝗻𝗲 𝗹𝗶𝗻𝗲 𝗽𝗲𝗿 𝗰𝗹𝗶𝗽):
+```
+⌨️ 𝗠𝘆 𝗔𝗜 𝗖𝗼𝗱𝗶𝗻𝗴 𝗦𝗲𝘁𝘂𝗽 👇
+1️⃣ Install Cursor + Git 💻
+2️⃣ Login to Claude Code & Codex 🤖
+3️⃣ Create a GitHub repo 📁
+4️⃣ Write README.md ✍️
+5️⃣ git push 🚀
+😅 Git on Mac = pain 🍎
+✅ Fixed it! Follow for more 🔔
+```
+
+𝗦𝘂𝗴𝗴𝗲𝘀𝘁𝗲𝗱 𝗮𝘂𝗱𝗶𝗼: an upbeat trending lo-fi or tech beat; switch clips on each beat.
