@@ -298,30 +298,40 @@ Sources: IEA, Energy and AI (2025); Government of India, IndiaAI Mission (2024);
 
 ## Instagram caption
 
-Myth or fact? 🤔 Data centres edition.
+Myth or fact? 🤔 Let's play: data centres edition.
 
-1️⃣ "Data centres don't really use water." ❌ Myth. Many cool down with water, and up to 50 Indian data centres sit in extremely water-stressed areas.
-2️⃣ "They use most of the world's electricity." ⚠️ Not quite. It's about 1.5%, but it could more than double by 2030.
-3️⃣ "India's power is mostly clean now." ⚖️ Half true. 54%+ of capacity is non-fossil, but coal still makes most of our electricity.
+1️⃣ "Data centres don't really use water."
+❌ MYTH. Servers turn almost all their power into heat, and many data centres cool down with water. Up to 50 Indian data centres sit in extremely water-stressed areas.
 
-The good news? The fixes are real: cleaner power, smarter cooling, less water. 🌱
+2️⃣ "They use most of the world's electricity."
+⚠️ NOT QUITE. It was about 1.5% in 2024, but that could more than double by 2030.
 
-💬 Which one surprised you? Tell us in the comments.
+3️⃣ "India's power is mostly clean now."
+⚖️ HALF TRUE. Over 54% of India's power capacity is non-fossil, but coal still makes most of the electricity we actually use.
+
+The good news? The fixes are real: cleaner power, smarter cooling, less water. We just have to choose them. 🌱
+
+💬 Which one did you get wrong? Be honest 😄
 🔁 Share this with a friend who loves a good myth-buster.
 
-#MythOrFact #MythBusters #DataCentres #Sustainability #CleanEnergy #WaterConservation #IndiaClimate #GreenTech #ClimateActionIndia #TheGreenSolve
+#MythOrFact #MythBusters #DataCentres #Sustainability #CleanEnergy #WaterConservation #ClimateActionIndia #IndiaClimate #GreenTech #TheGreenSolve
 
 ## LinkedIn caption
 
-Three things people often get wrong about data centres:
+Three things people often get wrong about data centres, and what the evidence actually says.
 
-1. "Data centres don't use water." Myth. Many rely on water for cooling, and a 2025 Planet Tracker analysis (via Climate Fact Checks) found up to 50 Indian data centres in regions of extremely high water stress.
-2. "They use most of the world's electricity." Not quite. Data centres used about 1.5% of global electricity in 2024, but the IEA projects demand could more than double by 2030.
-3. "India's power is now mostly clean." Half true. Non-fossil sources make up over 54% of installed capacity (MNRE, July 2026), but coal still generates most of the electricity consumed.
+1. "Data centres don't use water." → Myth.
+Many rely on water for cooling. A 2025 Planet Tracker analysis (via Climate Fact Checks) found up to 50 Indian data centres in regions of extremely high water stress.
+
+2. "They use most of the world's electricity." → Not quite.
+Data centres used about 1.5% of global electricity in 2024, but the IEA projects demand could more than double by 2030.
+
+3. "India's power is now mostly clean." → Half true.
+Non-fossil sources make up over 54% of installed capacity (MNRE, July 2026), but coal still generates most of the electricity consumed. Capacity is not the same as generation.
 
 Getting the facts right is the first step to the right decisions: cleaner power contracts, efficient cooling and water-wise design.
 
-Which myth do you hear most often?
+Which of these myths do you hear most often in your work?
 
 Sources: Planet Tracker (2025) via Climate Fact Checks; IEA, Energy and AI (2025); MNRE (31 July 2026).
 
