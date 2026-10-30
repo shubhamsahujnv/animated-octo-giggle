@@ -1,0 +1,36 @@
+1
+00:00:00,350 --> 00:00:06,208
+America's AI boom could eat up 44% of its power-sector climate budget. Here's how.
+
+2
+00:00:07,225 --> 00:00:13,783
+Data centres used about 4% of US power in 2024. By 2030, up to 12.
+
+3
+00:00:14,725 --> 00:00:19,478
+To keep up, at least 15 coal plants that were due to close kept running last year.
+
+4
+00:00:20,975 --> 00:00:25,953
+AI needs power around the clock, and gas already supplies over 40% of it.
+
+5
+00:00:27,225 --> 00:00:33,841
+Big Tech's own emissions rose by up to 182% between 2020 and 2023.
+
+6
+00:00:34,725 --> 00:00:39,081
+Cooling those servers could take 1.1 billion cubic metres of water a year.
+
+7
+00:00:40,975 --> 00:00:46,141
+And the pollution could cost over $20 billion a year in public health by 2030.
+
+8
+00:00:47,225 --> 00:00:51,893
+The good news? On clean power, the same boom uses just 4% of that budget.
+
+9
+00:00:53,475 --> 00:00:59,993
+AI's future is an energy choice. Should it run on clean power? Comment below, and follow The Green Solve.
+

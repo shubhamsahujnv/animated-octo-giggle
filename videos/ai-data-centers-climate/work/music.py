@@ -2,14 +2,14 @@
 """Synthesize the soundtrack: calm, polished, 96 BPM in A minor (Am-F-C-G).
 Every part sits on one beat grid counted from t=0, and scene cuts land on beats
 (scenes are 10 beats = 6.25s). Soft swells and chimes on cuts, in key.
-Usage: python3 music.py <out.wav> [cuts...]"""
+Usage: python3 music.py <out.wav> [total_seconds] [cuts...]"""
 import sys, wave
 import numpy as np
 
 SR = 44100
 BPM = 96
 BEAT = 60 / BPM            # 0.625s
-TOTAL = 51.25
+TOTAL = float(sys.argv[2]) if len(sys.argv) > 2 else 51.25
 N = int(SR * TOTAL)
 rng = np.random.default_rng(7)
 
@@ -37,7 +37,7 @@ pad = np.zeros(N); bass = np.zeros(N); kick = np.zeros(N); hat = np.zeros(N); pl
 
 for b in range(nbars):
     t0 = b * BAR
-    last = t0 >= 42.5                                       # final section: hold on Am
+    last = t0 >= TOTAL - 8.75                               # final section: hold on Am
     root, notes = CHORDS[0] if last else CHORDS[b % 4]
     # pad: detuned additive saws, slow attack, gentle low-pass
     n = int(BAR * SR) + int(0.6 * SR); tt = np.arange(n) / SR; sig = np.zeros(n)
@@ -82,7 +82,7 @@ d = int(0.75 * BEAT * SR); echo = np.zeros(N); echo[d:] = pluck[:-d] * 0.35; ech
 pluck += lowpass(echo, 2500)
 
 # transition fx: a soft swell into each cut, a chime on it (A-minor notes)
-cuts = [float(c) for c in sys.argv[2:]] or [6.25, 12.5, 18.75, 25, 31.25, 37.5, 43.75]
+cuts = [float(c) for c in sys.argv[3:]] or [6.25, 12.5, 18.75, 25, 31.25, 37.5, 43.75]
 for k, c in enumerate(cuts):
     n = int(0.6 * SR); tt = np.arange(n) / SR
     sw = lowpass(rng.standard_normal(n), 1800) * (tt / tt[-1]) ** 2 * 0.05

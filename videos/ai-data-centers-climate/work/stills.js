@@ -1,17 +1,19 @@
-// Render review stills: node work/stills.js t1 t2 ... -> work/stills/still-<t>.png + work/stills/sheet.png
+// Render review stills: node work/stills.js [page.html] t1 t2 ... -> work/stills/still-<t>.png + work/stills/sheet.png
 const { chromium } = require('playwright');
 const path = require('path'), fs = require('fs'), { execFileSync } = require('child_process');
 (async () => {
   const dir = path.resolve(__dirname, '..'), out = path.join(__dirname, 'stills');
+  const args = process.argv.slice(2);
+  const html = args[0] && args[0].endsWith('.html') ? args.shift() : 'video.html';
   fs.mkdirSync(out, { recursive: true });
   const b = await chromium.launch();
   const page = await b.newPage({ viewport: { width: 1080, height: 1920 } });
   const missing = [];
   page.on('requestfailed', (r) => missing.push(r.url()));
-  await page.goto('file://' + path.join(dir, 'video.html'));
+  await page.goto('file://' + path.join(dir, html));
   await page.evaluate(() => document.fonts.ready);
   const files = [];
-  for (const t of process.argv.slice(2)) {
+  for (const t of args) {
     await page.evaluate((t) => renderAt(t), +t);
     const f = path.join(out, `still-${t}.png`); await page.screenshot({ path: f }); files.push(f);
   }
