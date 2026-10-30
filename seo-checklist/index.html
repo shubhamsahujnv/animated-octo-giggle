@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Updated SEO Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@600;700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Pixo Rama palette: change these to match the exact brand colors */
+  :root {
+    --bg: #0f0c2e;
+    --bg-2: #1a1550;
+    --ink: #1b1740;
+    --muted: #6b6890;
+    --card: #ffffff;
+    --row-alt: #f5f3ff;
+    --line: #e6e2fb;
+    --pink: #ff3ea5;
+    --violet: #7c3aed;
+    --cyan: #22d3ee;
+    --yellow: #ffd23f;
+    --high: #16a34a;
+    --high-bg: #dcfce7;
+    --med: #ea580c;
+    --med-bg: #ffedd5;
+    --low: #dc2626;
+    --low-bg: #fee2e2;
+    --px: 'Press Start 2P', monospace;
+    --head: 'Space Grotesk', system-ui, sans-serif;
+    --body: 'Inter', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); }
+
+  .poster {
+    position: relative;
+    width: 1200px;
+    height: 1500px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 44px 56px 0;
+    font-family: var(--body);
+    color: var(--ink);
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(124,58,237,.55), transparent 60%),
+      radial-gradient(700px 500px at -10% 110%, rgba(255,62,165,.35), transparent 60%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+  }
+  /* pixel grid overlay */
+  .poster::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+  .poster > * { position: relative; z-index: 1; }
+
+  /* scattered pixel blocks */
+  .pixels { position: absolute; z-index: 0; display: grid; gap: 0; }
+  .pixels i { width: 24px; height: 24px; display: block; }
+  .p-tl { bottom: 84px; right: 0; grid-template-columns: repeat(4, 24px); }
+  .p-tr { top: 168px; right: 0; grid-template-columns: repeat(3, 24px); }
+
+  /* top bar */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .logo { display: flex; align-items: center; gap: 14px; }
+  .logo-mark {
+    display: grid; grid-template-columns: repeat(2, 14px); gap: 3px;
+  }
+  .logo-mark i { width: 14px; height: 14px; display: block; }
+  .logo-text {
+    font-family: var(--px); font-size: 17px; color: #fff; letter-spacing: 1px;
+  }
+  .logo-text b { color: var(--yellow); font-weight: 400; }
+  .byline {
+    font-family: var(--head); font-weight: 600; font-size: 17px;
+    color: rgba(255,255,255,.75);
+  }
+  .byline strong { color: #fff; }
+
+  /* title */
+  .title { text-align: center; margin-bottom: 30px; }
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--px); font-size: 15px; color: var(--bg);
+    background: var(--yellow);
+    padding: 10px 16px 9px;
+    box-shadow: 4px 4px 0 var(--pink);
+    margin-bottom: 20px;
+  }
+  .title h1 {
+    font-family: var(--head); font-weight: 700;
+    font-size: 96px; line-height: 1; letter-spacing: -2px;
+    color: #fff;
+  }
+  .title h1 span {
+    background: linear-gradient(90deg, var(--cyan), var(--violet) 50%, var(--pink));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .pixel-rule {
+    display: flex; justify-content: center; gap: 6px; margin-top: 22px;
+  }
+  .pixel-rule i { width: 12px; height: 12px; display: block; }
+
+  /* table card */
+  .card {
+    background: var(--card);
+    border: 3px solid var(--ink);
+    box-shadow: 10px 10px 0 var(--pink);
+    overflow: hidden;
+  }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  col.c-no { width: 80px; }
+  thead th {
+    background: var(--ink); color: #fff;
+    font-family: var(--head); font-weight: 700; font-size: 22px;
+    height: 64px; text-align: left; padding: 0 20px;
+    vertical-align: middle;
+  }
+  thead th.no {
+    text-align: center; padding: 0;
+    font-family: var(--px); font-size: 13px; color: var(--yellow);
+  }
+  .tag { display: inline-flex; align-items: center; gap: 12px; }
+  .tag i { width: 16px; height: 16px; display: block; box-shadow: 3px 3px 0 rgba(255,255,255,.25); }
+  .tag.high i { background: #22c55e; }
+  .tag.med i { background: #fb923c; }
+  .tag.low i { background: #f87171; }
+
+  tbody td {
+    height: 48.5px; padding: 0 20px;
+    font-size: 19px; font-weight: 500; color: var(--ink);
+    border-top: 1px solid var(--line);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  tbody tr:nth-child(even) td { background: var(--row-alt); }
+  tbody td + td { border-left: 1px solid var(--line); }
+  tbody td.no {
+    text-align: center; padding: 0;
+    font-family: var(--px); font-size: 13px; color: var(--violet);
+  }
+  tbody td.hi { font-weight: 700; }
+  tbody td.hi::before {
+    content: ""; display: inline-block; width: 8px; height: 8px;
+    background: var(--high); margin-right: 12px; vertical-align: 3px;
+  }
+
+  /* footer */
+  .footer {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 84px; padding: 0 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(255,255,255,.06);
+    border-top: 3px solid var(--violet);
+    color: rgba(255,255,255,.85);
+    font-family: var(--head); font-size: 17px; font-weight: 600;
+  }
+  .footer .who { display: flex; align-items: center; gap: 14px; color: #fff; }
+  .avatar {
+    width: 44px; height: 44px; display: grid; place-items: center;
+    background: var(--yellow); color: var(--bg);
+    font-family: var(--px); font-size: 13px;
+    box-shadow: 3px 3px 0 var(--pink);
+  }
+  .footer .site { font-family: var(--px); font-size: 13px; color: var(--cyan); }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="pixels p-tl">
+    <i style="background:var(--pink)"></i><i style="background:var(--violet)"></i><i></i><i style="background:var(--cyan);opacity:.5"></i>
+    <i style="background:var(--violet)"></i><i></i><i style="background:var(--yellow);opacity:.6"></i><i></i>
+    <i></i><i style="background:var(--cyan);opacity:.35"></i><i></i><i></i>
+  </div>
+  <div class="pixels p-tr">
+    <i></i><i style="background:var(--yellow)"></i><i style="background:var(--pink)"></i>
+    <i style="background:var(--cyan);opacity:.5"></i><i></i><i style="background:var(--violet)"></i>
+    <i></i><i></i><i style="background:var(--pink);opacity:.4"></i>
+  </div>
+
+  <header class="topbar">
+    <div class="logo">
+      <div class="logo-mark">
+        <i style="background:var(--pink)"></i><i style="background:var(--yellow)"></i>
+        <i style="background:var(--cyan)"></i><i style="background:var(--violet)"></i>
+      </div>
+      <div class="logo-text">PIXO<b>RAMA</b></div>
+    </div>
+    <div class="byline">By <strong>Sunny Grewal</strong></div>
+  </header>
+
+  <section class="title">
+    <div class="eyebrow">UPDATED</div>
+    <h1><span>SEO</span> Checklist</h1>
+    <div class="pixel-rule">
+      <i style="background:var(--cyan)"></i><i style="background:var(--cyan)"></i>
+      <i style="background:var(--violet)"></i><i style="background:var(--violet)"></i>
+      <i style="background:var(--pink)"></i><i style="background:var(--pink)"></i>
+      <i style="background:var(--yellow)"></i><i style="background:var(--yellow)"></i>
+    </div>
+  </section>
+
+  <div class="card">
+    <table>
+      <colgroup><col class="c-no"><col><col><col></colgroup>
+      <thead>
+        <tr>
+          <th class="no">#</th>
+          <th><span class="tag high"><i></i>High Priority</span></th>
+          <th><span class="tag med"><i></i>Medium Priority</span></th>
+          <th><span class="tag low"><i></i>Low Priority</span></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <footer class="footer">
+    <div class="who"><div class="avatar">SG</div>Sunny Grewal · AI SEO Top Voice</div>
+    <div>Join the SEOwithsunny Newsletter</div>
+    <div class="site">PIXORAMA.COM</div>
+  </footer>
+</div>
+
+<script>
+  const rows = [
+    ["Search Intent", "Content Gaps", "URL Slugs"],
+    ["Keyword Research", "Long-Tail Keywords", "Keyword Variations"],
+    ["Helpful Content", "Expert Insights", "Readability Checks"],
+    ["Title Tags", "Meta Descriptions", "Title Testing"],
+    ["H1 Optimization", "Heading Structure", "Heading Consistency"],
+    ["Content Quality", "Topic Coverage", "Content Pruning"],
+    ["Topical Authority", "Topic Clusters", "Category Structure"],
+    ["Internal Linking", "Anchor Text", "Navigation Paths"],
+    ["Quality Backlinks", "Link Building", "Brand Mentions"],
+    ["Firsthand Experience", "Author Credentials", "Author Bios"],
+    ["Fact Checking", "Content Refresh", "Grammar Checks"],
+    ["Image Optimization", "Alt Text", "Image Filenames"],
+    ["Page Experience", "Mobile Usability", "Layout Improvements"],
+    ["Organic Traffic", "Keyword Tracking", "Ranking Trends"],
+    ["Traffic Recovery", "Content Updates", "Content Consolidation"],
+    ["Landing Pages", "Conversion Optimization", "Layout Testing"],
+    ["Spam Prevention", "AI Content Review", "Repetition Removal"],
+    ["AI Search Visibility", "Clear Answers", "Answer Formatting"],
+    ["Structured Data", "Schema Validation", "Schema Maintenance"],
+    ["Business Results", "Lead Tracking", "Monthly Reporting"],
+  ];
+  document.getElementById("rows").innerHTML = rows.map((r, i) =>
+    `<tr><td class="no">${String(i + 1).padStart(2, "0")}</td>` +
+    `<td class="hi">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`
+  ).join("");
+</script>
+</body>
+</html>
