@@ -153,4 +153,6 @@ If this made you think twice about your next AI prompt, share it with someone wh
 - Green America and others: corporate emissions; embodied carbon
 - Cornell Chronicle and others: water use; diesel generator pollution
 
+> **Update:** A fact-checked vertical-video version of this script, with corrected figures and sources, is in `videos/ai-data-centers-climate/script.md`. Use that one. In particular, the 138–182% figures are *increases* from 2020 to 2023 (ITU/WBA, 2025), the 15 coal plants come from a DeSmog analysis, and the 10× per-query figure is disputed by newer estimates.
+>
 > **Production note:** Check each figure against the primary source before publishing. AI-generated summaries can lose context. For example, the "138–182%" range refers to *some* companies, not all four, and the per-query energy estimate varies between studies.
