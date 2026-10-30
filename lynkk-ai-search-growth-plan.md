@@ -401,7 +401,7 @@ To do, ranked by impact:
 - Indian startup media and communities: YourStory, Inc42, Entrackr guest posts; founder podcasts; Product Hunt launch.
 - Programme pages that earn links: **/startups** (e.g. 6–12 months of Pro free) and **/students**. Granola's students page has 21 referring domains.
 - Original data: e.g. "We analysed X hours of Hinglish meetings: how often people switch languages mid-sentence". Data earns press links and AI citations.
-- **Reddit** (Granola's April move): ChatGPT gives ~27% of its search slots to Reddit. Answer the exact prompts from 2.2 in r/sales, r/startups, r/ProductManagement, r/SaaS, r/IndiaStartups, r/productivity, r/msp. Disclose that you're from Lynkk. Use Discovered Labs' free "Reddit Threads Finder" to find threads AI already cites.
+- **Reddit** (Granola's April move): see the full **`lynkk-reddit-playbook.md`**. It covers how Granola's agency ran Reddit, the research numbers (27% of ChatGPT's search slots; Reddit is 27–33% of "best X for Y" results), 22 Reddit threads ranking on Google for Lynkk's searches today, a tiered subreddit map, comment rules, post ideas, cadence and tracking. Do it openly with disclosed team accounts; don't use the agency-style "managed accounts".
 - **YouTube:** cited across all engines. Short demos: "Ask your meetings with sources", "Hinglish transcription", "record Zoom without a bot".
 
 **Contest:** directories or listicles with wrong Lynkk facts (pricing, languages). Fix them as you find them. Set a Google Alert for "Lynkk".
