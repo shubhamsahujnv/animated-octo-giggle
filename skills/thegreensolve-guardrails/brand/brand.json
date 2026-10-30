@@ -1,0 +1,40 @@
+{
+  "name": "The Green Solve",
+  "short_name": "TGS",
+  "hashtag": "#TheGreenSolve",
+  "colors": {
+    "ink": "#02403D",
+    "accent": "#E2FF4D",
+    "surface": "#D8CAC3",
+    "muted": "#665458",
+    "paper": "#FFFDF8"
+  },
+  "fonts": {
+    "heading": { "google": "Libre Baskerville" },
+    "body": { "family": "Helvetica Neue", "fallback": "Helvetica, Arial, \"Liberation Sans\", sans-serif" }
+  },
+  "logos": {
+    "on_dark": "logo-light.png",
+    "on_light": "logo-dark.png"
+  },
+  "voice": {
+    "audience": "Sustainability managers, auditors, consultants and informed professionals in India",
+    "tone": "Professional, transparent, fact-based, hopeful (problem → evidence → solution)",
+    "avoid": ["hype", "greenwashing", "unsupported guarantees", "'TGS-verified'"],
+    "required_disclosures": [
+      "When carbon credits are mentioned: Carbon credits do not eliminate emissions and should be used as part of a broader decarbonization strategy.",
+      "When carbon credits are mentioned: Credits listed on this platform are issued and certified by third-party standards. The Green Solve acts as a marketplace facilitator."
+    ]
+  },
+  "video": {
+    "allowed_tones": ["polished", "app-store", "default", "deadpan", "cinematic"],
+    "default_tone": "polished",
+    "banned_tones": ["chaotic", "yc-parody"],
+    "duration_s": [15, 25],
+    "fps": 30,
+    "music_volume": [0.25, 0.35],
+    "sfx_volume": [0.55, 0.7],
+    "max_sfx": 4
+  },
+  "_notes": "Single source of truth for every TGS image and video. Same shape as the editorial-carousel-design brand.json, so engines/editorial-carousel-design/scripts/make_tokens.py reads it directly. The 'video' block is read by scripts/check_guardrails.py."
+}

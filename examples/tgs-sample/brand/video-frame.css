@@ -1,0 +1,68 @@
+/* The Green Solve video frame. Use in any brag / Hyperframes composition, or any HTML that is
+   rendered to video, AFTER brand/tokens.css (colours + fonts) and before scene styles.
+   Put one format class on the root stage:  <div class="tgs-stage tgs-landscape"> … </div>
+   Values follow references/scale.md: video type sizes, safe zones and the motion scale. */
+
+:root {
+  /* video type scale (minimums at a 1080 short side) */
+  --fs-source: 24px; --fs-kicker: 26px; --fs-footer: 22px; --fs-body: 34px;
+  --fs-lead: 40px;   --fs-title: 44px;  --fs-h2: 72px;     --fs-h1: 96px;
+  --fs-stat: 200px;
+
+  --sp-1: 8px;  --sp-2: 16px; --sp-3: 22px; --sp-4: 32px;  --sp-5: 44px;
+  --sp-6: 56px; --sp-7: 72px; --sp-8: 88px; --sp-9: 96px; --sp-10: 132px;
+
+  /* motion scale */
+  --t-micro: 200ms; --t-exit: 300ms; --t-enter: 450ms; --t-xfade: 700ms; --t-slow: 1000ms;
+  --stagger: 150ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --travel: 44px;          /* max distance anything slides */
+  --enter-scale: 0.95;     /* only scale move allowed: 0.95 -> 1 */
+}
+
+.tgs-stage { position: relative; overflow: hidden; font-family: var(--font-body); }
+.tgs-landscape { width: 1920px; height: 1080px; --side: 120px; --top: 96px;  --safe-bottom: 190px; --footer: 56px; }
+.tgs-vertical  { width: 1080px; height: 1920px; --side: 120px; --top: 260px; --safe-bottom: 520px; --footer: 400px; }
+.tgs-square    { width: 1080px; height: 1080px; --side: 88px;  --top: 88px;  --safe-bottom: 190px; --footer: 56px; }
+.tgs-portrait  { width: 1080px; height: 1350px; --side: 88px;  --top: 96px;  --safe-bottom: 190px; --footer: 56px; }
+
+/* a scene fills the stage; content lives inside the safe box */
+.tgs-scene { position: absolute; inset: 0; padding: var(--top) var(--side) var(--safe-bottom); display: flex; flex-direction: column; }
+.tgs-scene.dark  { background: var(--ink);     color: var(--paper); }
+.tgs-scene.light { background: var(--paper);   color: var(--ink); }
+.tgs-scene.stone { background: var(--surface); color: var(--ink); }
+.tgs-scene.center { justify-content: center; }   /* default for video: content sits in the optical middle of the safe box */
+
+.tgs-scene h1 { font: 700 var(--fs-h1)/1.12 var(--font-head); letter-spacing: -.01em; }
+.tgs-scene h2 { font: 700 var(--fs-h2)/1.14 var(--font-head); letter-spacing: -.01em; }
+.tgs-scene em { font-style: italic; font-weight: 400; }
+.tgs-scene.dark em { color: var(--accent-on-ink); }
+.tgs-scene .kicker { font: 600 var(--fs-kicker)/1 var(--font-body); letter-spacing: .18em; text-transform: uppercase; display: flex; align-items: center; gap: var(--sp-2); }
+.tgs-scene .kicker::before { content: ""; width: 44px; height: 3px; background: currentColor; }
+.tgs-scene.dark .kicker { color: var(--accent-on-ink); }
+.tgs-scene.light .kicker { color: var(--muted); }
+.tgs-scene .lead { font-size: var(--fs-lead); line-height: 1.45; margin-top: var(--sp-4); }
+.tgs-scene .stat { font: 700 var(--fs-stat)/1 var(--font-head); }
+.tgs-scene.dark .stat { color: var(--accent-on-ink); }
+
+/* source band + footer: fixed positions, nothing else may enter them */
+.tgs-source { position: absolute; left: var(--side); right: var(--side); bottom: calc(var(--footer) + 76px); font: 400 var(--fs-source)/1.4 var(--font-body); }
+.tgs-scene.dark .tgs-source { color: color-mix(in srgb, var(--paper) 70%, transparent); }
+.tgs-scene.light .tgs-source { color: var(--muted); }
+.tgs-scene.stone .tgs-source { color: var(--ink); }
+.tgs-footer { position: absolute; left: var(--side); right: var(--side); bottom: var(--footer); display: flex; justify-content: flex-end; }
+.tgs-footer img { height: 54px; }
+.tgs-endlogo { height: 150px; }
+
+/* the only entrance moves allowed */
+@keyframes tgs-rise  { from { opacity: 0; transform: translateY(var(--travel)); } to { opacity: 1; transform: none; } }
+@keyframes tgs-fade  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes tgs-settle{ from { opacity: 0; transform: scale(var(--enter-scale)); } to { opacity: 1; transform: none; } }
+.tgs-in-rise   { animation: tgs-rise   var(--t-enter) var(--ease-out) both; }
+.tgs-in-fade   { animation: tgs-fade   var(--t-enter) var(--ease-out) both; }
+.tgs-in-settle { animation: tgs-settle var(--t-enter) var(--ease-out) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tgs-in-rise, .tgs-in-fade, .tgs-in-settle { animation: none; }
+}

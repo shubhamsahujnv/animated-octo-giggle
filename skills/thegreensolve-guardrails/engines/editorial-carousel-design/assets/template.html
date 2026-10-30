@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>[Carousel title]</title>
+<!-- Copy this file to <project>/carousels/<nn-slug>/slides.html. Paths assume <project>/brand/ from make_tokens.py. -->
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../../brand/carousel.css">
+</head>
+<body>
+
+<!-- 1 · HOOK COVER (dark). One surprising, sourced line; italic accent on the punch. A simple visual, swipe cue, logo. -->
+<section class="slide dark">
+  <div class="kicker">[Series name] · 01</div>
+  <h1>[Hook line that makes people stop,] <em>[with the punch in italics.]</em></h1>
+  <div style="margin-top:84px;display:flex;flex-direction:column;gap:44px">
+    <div>
+      <div style="font:600 30px/1 var(--font-body);color:var(--surface);margin-bottom:20px">[Comparison A]</div>
+      <div style="height:120px;width:760px;background:var(--surface);border-radius:14px"></div>
+    </div>
+    <div>
+      <div style="font:600 30px/1 var(--font-body);color:var(--accent-on-ink);margin-bottom:20px">[Comparison B: the surprising one]</div>
+      <div style="height:120px;width:904px;background:var(--accent);border-radius:14px"></div>
+    </div>
+  </div>
+  <div class="source"><b>Source:</b> [Publisher, report title (year)].</div>
+  <div class="footer"><span>SWIPE &nbsp;→</span><img src="../../brand/logo-on-dark.png" alt="[Brand]"></div>
+</section>
+
+<!-- 2 · DEFINITION (light). Plain-words explainer + 3 icon cards + a quote/analogy. -->
+<section class="slide light">
+  <div class="kicker">First, the basics</div>
+  <h2>So, what is<br><em>[the thing]?</em></h2>
+  <p class="lead">[One or two plain sentences. Bold the <b class="t">key term</b> once.]</p>
+  <div class="grid3" style="margin-top:64px">
+    <div class="card ink" style="padding:68px 36px 76px">
+      <svg viewBox="0 0 80 80" width="88" height="88"><circle cx="40" cy="40" r="30" fill="none" stroke="var(--accent-on-ink)" stroke-width="5"/></svg>
+      <div class="ttl" style="margin-top:30px">[Verb]</div></div>
+    <div class="card ink" style="padding:68px 36px 76px">
+      <svg viewBox="0 0 80 80" width="88" height="88"><rect x="14" y="14" width="52" height="52" rx="8" fill="none" stroke="var(--accent-on-ink)" stroke-width="5"/></svg>
+      <div class="ttl" style="margin-top:30px">[Verb]</div></div>
+    <div class="card ink" style="padding:68px 36px 76px">
+      <svg viewBox="0 0 80 80" width="88" height="88"><path d="M40 10 L70 66 H10 Z" fill="none" stroke="var(--accent-on-ink)" stroke-width="5" stroke-linejoin="round"/></svg>
+      <div class="ttl" style="margin-top:30px">[Verb]</div></div>
+  </div>
+  <div class="quote" style="margin-top:88px;font-size:40px">[A one-line analogy people will remember.]</div>
+  <div class="footer"><span>02 / 09</span><img src="../../brand/logo-on-light.png" alt="[Brand]"></div>
+</section>
+
+<!-- 3 · TWO-PART EXPLAINER (light). Two rows: icon + title + one sentence each. -->
+<section class="slide light">
+  <div class="kicker">[Why it happens]</div>
+  <h2>[Two things]<br><em>[never stop.]</em></h2>
+  <div class="stack" style="margin-top:60px">
+    <div class="card paper row" style="padding:76px 46px">
+      <svg viewBox="0 0 120 120" width="110" height="110"><rect x="10" y="10" width="100" height="100" rx="16" fill="var(--ink)"/></svg>
+      <div><div class="num">01</div><div class="ttl" style="margin-top:12px">[First driver]</div><div class="sub">[One plain sentence.]</div></div></div>
+    <div class="card paper row" style="padding:76px 46px">
+      <svg viewBox="0 0 120 120" width="110" height="110"><circle cx="60" cy="60" r="52" fill="var(--ink)"/></svg>
+      <div><div class="num">02</div><div class="ttl" style="margin-top:12px">[Second driver]</div><div class="sub">[One plain sentence.]</div></div></div>
+  </div>
+  <p style="margin-top:64px;font:italic 400 38px/1.45 var(--font-head)">[A short line that ties them together.]</p>
+  <div class="footer"><span>03 / 09</span><img src="../../brand/logo-on-light.png" alt="[Brand]"></div>
+</section>
+
+<!-- 4 · BIG NUMBER / BEFORE-AFTER BARS (dark). One headline number, a 2-bar chart, source. -->
+<section class="slide dark">
+  <div class="kicker">[The big picture]</div>
+  <h2>[Headline that states<br>the change,] <em>[plainly.]</em></h2>
+  <svg viewBox="0 0 904 500" width="904" height="500" style="margin-top:64px">
+    <line x1="0" y1="440" x2="904" y2="440" stroke="var(--surface)" stroke-width="2" opacity=".5"/>
+    <rect x="90" y="246" width="250" height="194" rx="12" fill="var(--surface)"/>
+    <rect x="530" y="20" width="250" height="420" rx="12" fill="var(--accent)"/>
+    <text x="215" y="220" text-anchor="middle" style="font:700 62px var(--font-head)" fill="var(--paper)">[A]</text>
+    <text x="655" y="250" text-anchor="middle" style="font:700 70px var(--font-head)" fill="var(--on-accent)">[B]</text>
+    <text x="215" y="490" text-anchor="middle" style="font:700 30px var(--font-body)" fill="var(--paper)">[Year]</text>
+    <text x="655" y="490" text-anchor="middle" style="font:700 30px var(--font-body)" fill="var(--paper)">[Year]</text>
+  </svg>
+  <p style="font-size:33px;line-height:1.45;margin-top:40px">[Sentence with the <b class="hl">key figure</b> highlighted.]</p>
+  <div class="source"><b>Source:</b> [Publisher, report (year)].</div>
+  <div class="footer"><span>04 / 09</span><img src="../../brand/logo-on-dark.png" alt="[Brand]"></div>
+</section>
+
+<!-- 5 · RANKING BARS (light). Horizontal bars with labels and values; leader in ink. -->
+<section class="slide light">
+  <div class="kicker">[Where it happens]</div>
+  <h2>[Headline with]<br><em>[the key number.]</em></h2>
+  <p class="lead">[One sentence on what the bars show.]</p>
+  <div class="bars">
+    <div class="bar"><span class="lbl">[Item 1]</span><div class="track"><i class="lead" style="width:100%"></i></div><b>[53%]</b></div>
+    <div class="bar"><span class="lbl">[Item 2]</span><div class="track"><i style="width:38%"></i></div><b>[20%]</b></div>
+    <div class="bar"><span class="lbl">[Item 3]</span><div class="track"><i style="width:19%"></i></div><b>[10%]</b></div>
+    <div class="bar"><span class="lbl">[Item 4]</span><div class="track"><i style="width:13%"></i></div><b>[7%]</b></div>
+  </div>
+  <div class="note" style="margin-top:64px;font-size:31px"><b>Why it matters:</b> [the so-what of the ranking].</div>
+  <div class="source"><b>Source:</b> [Publisher (year); say which measure].</div>
+  <div class="footer"><span>05 / 09</span><img src="../../brand/logo-on-light.png" alt="[Brand]"></div>
+</section>
+
+<!-- 6 · TIMELINE (surface). 3 dated events + a takeaway note. -->
+<section class="slide stone">
+  <div class="kicker">[How we got here]</div>
+  <h2>[Headline about]<br><em>[the change over time.]</em></h2>
+  <div class="timeline">
+    <div class="ev"><div class="yr">[2018]</div><div class="tx">[What changed, in one line.]</div></div>
+    <div class="ev"><div class="yr">[2023]</div><div class="tx">[What changed, in one line.]</div></div>
+    <div class="ev"><div class="yr">[2025 → 2027]</div><div class="tx">[What's next, in one line.]</div></div>
+  </div>
+  <div class="note" style="margin-top:80px;font-size:31px"><b>The result:</b> [the so-what, in one sentence].</div>
+  <div class="footer"><span>06 / 09</span><img src="../../brand/logo-on-light.png" alt="[Brand]"></div>
+</section>
+
+<!-- 7 · PROGRESS RING + HONEST NOTE (dark). The hopeful turn, with a caveat that builds trust. -->
+<section class="slide dark">
+  <div class="kicker">The hopeful part</div>
+  <h2>[Good-news headline,]<br><em>[stated carefully.]</em></h2>
+  <div class="row" style="margin-top:60px;gap:56px">
+    <svg viewBox="0 0 360 360" width="360" height="360">
+      <circle cx="180" cy="180" r="150" fill="none" stroke="color-mix(in srgb, var(--surface) 25%, transparent)" stroke-width="36"/>
+      <!-- stroke-dasharray first value = 942.5 × share (e.g. 54% → 508.9) -->
+      <circle cx="180" cy="180" r="150" fill="none" stroke="var(--accent)" stroke-width="36" stroke-linecap="round" stroke-dasharray="508.9 942.5" transform="rotate(-90 180 180)"/>
+      <text x="180" y="195" text-anchor="middle" style="font:700 88px var(--font-head)" fill="var(--paper)">[54%]</text>
+    </svg>
+    <div style="font-size:32px;line-height:1.45">[What the number means, with the <b class="hl">key phrase</b> highlighted.]</div>
+  </div>
+  <div class="note" style="margin-top:56px"><b>Honest note:</b> [the limitation or caveat, in one or two sentences].</div>
+  <div class="source"><b>Source:</b> [Publisher (date)].</div>
+  <div class="footer"><span>07 / 09</span><img src="../../brand/logo-on-dark.png" alt="[Brand]"></div>
+</section>
+
+<!-- 8 · ACTION CHECKLIST (light). 3–4 practical asks for the audience. -->
+<section class="slide light">
+  <div class="kicker">[For your team]</div>
+  <h2>[Three questions]<br><em>[to ask today.]</em></h2>
+  <div class="stack" style="margin-top:56px">
+    <div class="check"><svg viewBox="0 0 44 44" width="56" height="56"><circle cx="22" cy="22" r="21" fill="var(--accent)"/><path d="M12 23 l7 7 13-15" fill="none" stroke="var(--on-accent)" stroke-width="4" stroke-linecap="round"/></svg><div class="ttl">[Action or question one]</div></div>
+    <div class="check"><svg viewBox="0 0 44 44" width="56" height="56"><circle cx="22" cy="22" r="21" fill="var(--accent)"/><path d="M12 23 l7 7 13-15" fill="none" stroke="var(--on-accent)" stroke-width="4" stroke-linecap="round"/></svg><div class="ttl">[Action or question two]</div></div>
+    <div class="check"><svg viewBox="0 0 44 44" width="56" height="56"><circle cx="22" cy="22" r="21" fill="var(--accent)"/><path d="M12 23 l7 7 13-15" fill="none" stroke="var(--on-accent)" stroke-width="4" stroke-linecap="round"/></svg><div class="ttl">[Action or question three]</div></div>
+  </div>
+  <div class="footer"><span>08 / 09</span><img src="../../brand/logo-on-light.png" alt="[Brand]"></div>
+</section>
+
+<!-- 9 · CLOSE + CTA (dark). Takeaway line, next-in-series card, save/share/follow pills, large logo. -->
+<section class="slide dark">
+  <div class="kicker">The takeaway</div>
+  <h2 style="font-size:76px">[One-line takeaway.]<br><em>[The hopeful twist.]</em></h2>
+  <div class="next"><div class="lbl">Next in this series</div><div class="ttl">[Next post's hook]</div></div>
+  <div class="ctas"><span class="pill ghost">Save</span><span class="pill ghost">Share</span><span class="pill">Follow [Brand]</span></div>
+  <img class="endlogo" src="../../brand/logo-on-dark.png" alt="[Brand]">
+  <div class="footer"><span>09 / 09</span><span></span></div>
+</section>
+
+</body>
+</html>

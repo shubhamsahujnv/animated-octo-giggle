@@ -1,0 +1,27 @@
+{
+  "name": "The Green Solve",
+  "colors": {
+    "ink": "#02403D",
+    "accent": "#E2FF4D",
+    "surface": "#D8CAC3",
+    "muted": "#665458",
+    "paper": "#FFFDF8"
+  },
+  "fonts": {
+    "heading": { "google": "Libre Baskerville" },
+    "body": { "family": "Helvetica Neue", "fallback": "Helvetica, Arial, \"Liberation Sans\", sans-serif" }
+  },
+  "logos": {
+    "on_dark": "logo-light.png",
+    "on_light": "logo-dark.png"
+  },
+  "voice": {
+    "audience": "Sustainability managers, auditors, consultants and informed professionals in India",
+    "tone": "Professional, transparent, fact-based, hopeful (problem → evidence → solution)",
+    "avoid": ["hype", "greenwashing", "unsupported guarantees", "'TGS-verified'"],
+    "required_disclosures": [
+      "When carbon credits are mentioned: Carbon credits do not eliminate emissions and should be used as part of a broader decarbonization strategy.",
+      "When carbon credits are mentioned: Credits listed on this platform are issued and certified by third-party standards. The Green Solve acts as a marketplace facilitator."
+    ]
+  }
+}

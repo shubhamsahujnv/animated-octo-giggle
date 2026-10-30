@@ -1,0 +1,24 @@
+/* The Green Solve guardrail layer. Load AFTER brand/tokens.css and brand/carousel.css:
+     <link rel="stylesheet" href="../../brand/tokens.css">
+     <link rel="stylesheet" href="../../brand/carousel.css">
+     <link rel="stylesheet" href="../../brand/tgs-overrides.css">
+   It adds the TGS scale tokens (references/scale.md) and fixes the one palette pair
+   that fails contrast: muted (#665458) on surface (#D8CAC3) is 4.42:1, below AA 4.5:1. */
+
+:root {
+  /* type scale, static images (px at a 1080 short side) */
+  --fs-source: 21px; --fs-kicker: 22px; --fs-footer: 22px; --fs-body: 28px;
+  --fs-lead: 36px;   --fs-title: 40px;  --fs-h2: 66px;     --fs-h1: 86px;
+
+  /* spacing scale */
+  --sp-1: 8px;  --sp-2: 16px; --sp-3: 22px; --sp-4: 32px;  --sp-5: 44px;
+  --sp-6: 56px; --sp-7: 72px; --sp-8: 88px; --sp-9: 96px; --sp-10: 132px;
+}
+
+/* stone (surface) slides: supporting text moves from muted to ink so it stays readable */
+.stone p.lead, .stone .sub, .stone .source, .stone .footer, .stone .kicker,
+.stone .num, .stone .note { color: var(--ink); }
+.stone .note { background: color-mix(in srgb, var(--paper) 70%, transparent); }
+
+/* accent never becomes text on paper or surface; use the highlighter emphasis from tokens.css */
+.light .hl, .stone .hl { color: var(--ink); }
