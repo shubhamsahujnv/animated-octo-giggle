@@ -1,0 +1,29 @@
+{
+  "name": "Your Brand",
+  "colors": {
+    "ink": "#1B2A41",
+    "accent": "#F2C14E",
+    "surface": "#E4DED3",
+    "muted": "#5C6470",
+    "paper": "#FBF8F2"
+  },
+  "fonts": {
+    "heading": { "google": "Fraunces" },
+    "body": { "family": "Helvetica Neue", "fallback": "Helvetica, Arial, \"Liberation Sans\", sans-serif" }
+  },
+  "logos": {
+    "on_dark": "logo-light.png",
+    "on_light": "logo-dark.png"
+  },
+  "voice": {
+    "audience": "Who reads this (e.g. sustainability managers, founders, parents)",
+    "tone": "e.g. professional, hopeful, evidence-led",
+    "avoid": ["hype", "unsupported claims"],
+    "required_disclosures": []
+  },
+  "_notes": {
+    "colors": "ink = deep brand colour (dark slides, headings). accent = bright highlight. surface = soft secondary for cards. muted = supporting text. paper = light background.",
+    "fonts": "Each font is either {\"google\": \"Family Name\"} (downloaded), {\"files\": {\"regular\": \"path.ttf\", \"bold\": \"...\", \"italic\": \"...\"}} (local, licensed), or {\"family\": \"Name\"} (system font, not bundled).",
+    "logos": "Transparent PNGs. on_dark is used on ink slides, on_light on paper/surface slides. Paths are relative to this file."
+  }
+}
