@@ -50,10 +50,36 @@ function AuthorPage() {
             <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Author</p>
             <h1 className="tgs-display mt-2">{a.name}</h1>
             <p className="mt-2 font-display text-sm font-bold text-primary">{a.role}</p>
+            {(a.pronouns || a.location) && (
+              <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                {[a.pronouns, a.location].filter(Boolean).join(" · ")}
+              </p>
+            )}
             {a.bio.map((b) => <p key={b} className="mt-4 max-w-2xl text-sm leading-6 text-foreground/80">{b}</p>)}
             <a href={a.linkedin} target="_blank" rel="noreferrer" className="mt-4 inline-flex font-semibold underline decoration-2 underline-offset-4 hover:text-primary">View LinkedIn profile ↗</a>
           </div>
         </section>
+
+        {a.experience && a.experience.length > 0 && (
+          <section className="mt-10">
+            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Experience</p>
+            <h2 className="tgs-h1 mt-2">Where {a.name.split(" ")[0]} does the work</h2>
+            <ol className="mt-6 border-t border-foreground/15">
+              {a.experience.map((e) => (
+                <li key={`${e.org}-${e.title}-${e.period}`} className="border-b border-foreground/15 py-5">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <h3 className="font-display text-base font-bold">
+                      {e.title} <span className="font-normal text-muted-foreground">· {e.org}</span>
+                    </h3>
+                    <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{e.period}</span>
+                  </div>
+                  {e.place && <p className="mt-1 text-xs text-muted-foreground">{e.place}</p>}
+                  {e.note && <p className="mt-2 max-w-2xl text-sm leading-6 text-foreground/80">{e.note}</p>}
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
         <h2 className="tgs-h1 mt-14">{posts.length} {posts.length === 1 ? "article" : "articles"} by {a.name}</h2>
         <div className="mt-5 grid gap-5">
           {posts.map((p) => (

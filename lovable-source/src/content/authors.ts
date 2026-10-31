@@ -2,6 +2,15 @@ import ankitaPortrait from "../assets/ankita-patwa.jpg.asset.json";
 import tgsLogo from "../assets/tgs-logo.png.asset.json";
 import { POSTS } from "./posts";
 
+/** One role in an author's work history, newest first. */
+export type ExperienceEntry = {
+  title: string;
+  org: string;
+  period: string;
+  place?: string;
+  note?: string;
+};
+
 export type AuthorProfile = {
   slug: string;
   name: string;
@@ -10,6 +19,9 @@ export type AuthorProfile = {
   bio: string[];
   image: string;
   linkedin: string;
+  pronouns?: string;
+  location?: string;
+  experience?: ExperienceEntry[];
 };
 
 export const DEFAULT_AUTHOR: AuthorProfile = {
@@ -30,12 +42,41 @@ export const AUTHORS: Record<string, AuthorProfile> = {
   "Ankita Patwa": {
     slug: "ankita-patwa",
     name: "Ankita Patwa",
-    role: "Founder, TheGreensolve",
+    role: "Founder & CEO, TheGreensolve",
     description:
-      "An environmental engineer and carbon strategy specialist helping manufacturers turn emissions data into practical compliance, decarbonisation and carbon market decisions.",
+      "Climate tech founder and carbon strategy specialist for manufacturing, working on the practical end of the problem: turning the emissions data a plant already produces into compliance, decarbonisation and carbon market decisions.",
+    pronouns: "She/Her",
+    location: "United States",
     bio: [
-      "An environmental engineer and carbon strategy specialist helping manufacturers turn emissions data into practical compliance, decarbonisation and carbon market decisions.",
-      "Ankita founded TheGreensolve to make credible carbon accounting reachable for small and mid-sized industrial companies, and leads the development of Baseline, the TGS platform for inventories, reduction projects and carbon credit screening.",
+      "Climate tech founder and carbon strategy specialist for manufacturing. Ankita works on the practical end of the problem: turning the emissions data a plant already produces into compliance, decarbonisation and carbon market decisions.",
+      "She founded TheGreensolve in 2025 to build a carbon intelligence platform that helps manufacturers measure emissions, quantify sustainability ROI and navigate compliance with confidence, and she leads the development of Baseline, the TGS platform for inventories, reduction projects and carbon credit screening.",
+      "She writes from inside the industry rather than about it. Since 2022 she has worked at Foxconn, first as an Environmental Engineer in Lordstown, Ohio and since 2023 as an Environmental Manager. She is also a founding member of The Women in STEM Network.",
+    ],
+    experience: [
+      {
+        title: "Founder & CEO",
+        org: "TheGreensolve",
+        period: "2025 — present",
+        note: "Building a carbon intelligence platform that helps manufacturers measure emissions, quantify sustainability ROI and navigate compliance with confidence.",
+      },
+      {
+        title: "Environmental Manager",
+        org: "Foxconn",
+        period: "May 2023 — present",
+        place: "On-site",
+      },
+      {
+        title: "Environmental Engineer",
+        org: "Foxconn",
+        period: "May 2022 — May 2023",
+        place: "Lordstown, Ohio, United States",
+      },
+      {
+        title: "Founding Member",
+        org: "The Women in STEM Network",
+        period: "Mar 2025 — present",
+        place: "Hertfordshire, England, United Kingdom · Remote",
+      },
     ],
     image: ankitaPortrait.url,
     linkedin: "https://www.linkedin.com/in/ankita-patwa/",

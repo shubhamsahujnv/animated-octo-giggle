@@ -1106,7 +1106,15 @@
   body{background-color:var(--bg);background-image:linear-gradient(rgba(2,64,61,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(2,64,61,.08) 1px,transparent 1px);background-size:42px 42px;}
   .app{max-width:1180px;padding-inline:24px;}
   header.top{border-bottom:3px solid var(--ink);box-shadow:none;background:var(--surface);}
-  .top-inner{max-width:1180px;padding-top:14px;gap:12px;}
+  /* The app content is a centred 1180px column on the tinted grid background, and
+     the header sits inside it, so its cream band and rule used to stop mid-window
+     and leave a visible seam down each side. Let the band reach both edges while
+     .top-inner keeps the header content on the same column as the page.
+     overflow-x:clip (not hidden) does not create a scroll container, so the
+     sticky header keeps working. */
+  html{overflow-x:clip;}
+  header.top{width:100vw;margin-left:calc(50% - 50vw);}
+  .top-inner{max-width:1180px;padding-top:14px;gap:12px;padding-inline:24px;}
   .brand h1{font-size:26px;font-weight:700;text-transform:uppercase;padding-left:0;}
   .brand h1::before{display:none;}
   .brand-input,.brand .tag{border:2px solid var(--ink);border-radius:2px;background:var(--tgs-gold);color:var(--ink);font-weight:700;}
