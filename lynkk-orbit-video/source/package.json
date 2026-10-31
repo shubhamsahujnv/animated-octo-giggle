@@ -1,0 +1,29 @@
+{
+  "name": "lynkk-remi-film",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "studio": "remotion studio src/index.tsx",
+    "cues": "node --no-warnings --experimental-strip-types scripts/write-cues.mts",
+    "render:reel": "remotion render src/index.tsx Reel out/picture-reel.mp4 --codec h264 --crf 16 --muted",
+    "render:post": "remotion render src/index.tsx Post out/picture-post.mp4 --codec h264 --crf 16 --muted",
+    "still": "remotion still src/index.tsx Reel out/still.png",
+    "check": "node scripts/check-copy.mjs",
+    "finish": "bash scripts/finish.sh"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.529",
+    "@remotion/google-fonts": "^4.0.529",
+    "@remotion/layout-utils": "^4.0.529",
+    "@remotion/media": "^4.0.529",
+    "@remotion/motion-blur": "^4.0.529",
+    "@remotion/noise": "^4.0.529",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.529"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}
