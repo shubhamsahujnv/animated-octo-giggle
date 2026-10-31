@@ -55,12 +55,10 @@ All the content lives in `public_html/index.html`:
 * Page text: search the file for the sentence you want to change.
 * Re-zip and re-upload after editing, or edit the file directly in Hostinger's File Manager.
 
-## The rest of the Lovable project (not live)
+## Full React source (`lovable-source/`)
 
-The Lovable project also holds a TanStack Start + React + Supabase codebase
-(a blog under `/blog/*`, a Net-Low dashboard under `/netlow/*` with Supabase auth,
-and API routes). **The published domain does not serve any of it**: those URLs
-return the same static page shown above. Self-hosting that code would need a
-Node.js host plus a Supabase project, not plain shared hosting. To get it, connect
-the project to GitHub in Lovable (top-right → GitHub → Connect) and it will push the
-full repository.
+`lovable-source/` contains the complete Lovable codebase: the TanStack Start + React app
+with the blog, the Net-Low dashboard, Supabase integration, database migrations and the
+UI kit. It is also available as `thegreensolve-react-source.zip`. See
+`lovable-source/SELF-HOSTING.md` for how to run it, why only the home page shows on the
+live domain, and how to host it on a Hostinger Node.js plan.
