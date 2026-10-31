@@ -1,0 +1,159 @@
+{
+ "_doc": "Impacts: one metal-latch lock voice (Mixkit 'Safe lock' + the last click of 'Gear metallic lock sound'), a soft low hit (Mixkit 'Short bass hit', low-passed) for the sphere pulse and under the biggest lock, and the first beat of Mixkit 'Deep heartbeat impact' for the logo. Dry, mono, centred.",
+ "samples": {
+  "im.pulse": {
+   "file": "audio/assets/impacts/mk-2299_short-bass-hit.wav",
+   "start": 0.05,
+   "end": 0.95,
+   "mono": true,
+   "eq": {
+    "hp": 35,
+    "lp": 1800
+   },
+   "norm_peak_db": -6,
+   "fade_in": 0.003,
+   "fade_out": 0.35,
+   "_doc": "soft deep hit: attack 0.062, peak 0.088 (measured); low-passed so it is a felt pulse, not a kick"
+  },
+  "im.lock.a": {
+   "file": "audio/assets/impacts/mk-2853_safe-lock.wav",
+   "start": 0.002,
+   "end": 0.42,
+   "mono": true,
+   "eq": {
+    "hp": 180,
+    "highshelf": [
+     7000,
+     -3
+    ]
+   },
+   "norm_peak_db": -6,
+   "fade_in": 0.002,
+   "fade_out": 0.15,
+   "_doc": "metal latch: -20 dB span 6-78 ms, peak 63 ms"
+  },
+  "im.lock.b": {
+   "file": "audio/assets/impacts/mk-2858_gear-metallic-lock-sound.wav",
+   "start": 0.203,
+   "end": 0.52,
+   "mono": true,
+   "eq": {
+    "hp": 180,
+    "highshelf": [
+     7000,
+     -3
+    ]
+   },
+   "norm_peak_db": -6,
+   "fade_in": 0.002,
+   "fade_out": 0.12,
+   "_doc": "the last click of the gear lock (onset 0.213, peak 0.226)"
+  },
+  "im.lock.low": {
+   "file": "audio/assets/impacts/mk-2299_short-bass-hit.wav",
+   "start": 0.05,
+   "end": 0.8,
+   "mono": true,
+   "eq": {
+    "hp": 35,
+    "lp": 400
+   },
+   "norm_peak_db": -6,
+   "fade_in": 0.003,
+   "fade_out": 0.3,
+   "_doc": "a little low end under the biggest lock only"
+  },
+  "im.logo": {
+   "file": "audio/assets/impacts/mk-498_deep-heartbeat-impact.wav",
+   "start": 0.0,
+   "end": 0.375,
+   "eq": {
+    "hp": 35
+   },
+   "norm_peak_db": -4,
+   "fade_in": 0.003,
+   "fade_out": 0.18,
+   "_doc": "first beat only (second beat at 0.384 cut before it starts)",
+   "qa_ok": "first beat only: the second heartbeat starts at 0.384, so the tail is faded at 0.375 on purpose"
+  }
+ },
+ "pools": {
+  "im.pulse": [
+   "im.pulse"
+  ],
+  "im.lock": [
+   "im.lock.a",
+   "im.lock.b"
+  ],
+  "im.lock.low": [
+   "im.lock.low"
+  ],
+  "im.logo": [
+   "im.logo"
+  ]
+ },
+ "rules": [
+  {
+   "name": "im.pulse",
+   "match": {
+    "kind": "hit",
+    "id": "^hook:sphere:pulse$"
+   },
+   "pool": "im.pulse",
+   "mode": "fixed",
+   "gain_db": -3,
+   "pan": 0,
+   "align": "attack",
+   "_doc": "the sphere's first pulse on 1.0 s"
+  },
+  {
+   "name": "im.lock",
+   "match": {
+    "kind": "hit",
+    "id": "^ring[123]:lock$"
+   },
+   "pool": "im.lock",
+   "mode": "cycle",
+   "gain_db": -4,
+   "gain_ramp": [
+    0,
+    2
+   ],
+   "pitch": [
+    0,
+    0
+   ],
+   "pitch_ramp": [
+    0.5,
+    -1.0
+   ],
+   "pan": 0,
+   "align": "attack",
+   "_doc": "lock1 a, lock2 b, lock3 a again but a semitone lower and 2 dB louder: the biggest lock"
+  },
+  {
+   "name": "im.lock.low",
+   "match": {
+    "kind": "hit",
+    "id": "^ring3:lock$"
+   },
+   "pool": "im.lock.low",
+   "mode": "fixed",
+   "gain_db": -6,
+   "pan": 0,
+   "align": "attack"
+  },
+  {
+   "name": "im.logo",
+   "match": {
+    "kind": "hit",
+    "id": "^end:logo:impact$"
+   },
+   "pool": "im.logo",
+   "mode": "fixed",
+   "gain_db": -4,
+   "pan": 0,
+   "align": "attack"
+  }
+ ]
+}

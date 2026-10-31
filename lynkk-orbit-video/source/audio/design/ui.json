@@ -1,0 +1,131 @@
+{
+ "_doc": "UI: soft real ticks for the title words (three single-click Mixkit takes, cycled, very quiet) and one pop family for the chips and the note card.",
+ "samples": {
+  "ui.tick.1": {
+   "file": "audio/assets/ui/mk-1125_typewriter-soft-click.wav",
+   "start": 0.097,
+   "end": 0.2,
+   "mono": true,
+   "eq": {
+    "hp": 300,
+    "highshelf": [
+     6000,
+     -4
+    ]
+   },
+   "norm_peak_db": -10,
+   "fade_in": 0.002,
+   "fade_out": 0.04,
+   "gain_db": 3.0
+  },
+  "ui.tick.2": {
+   "file": "audio/assets/ui/mk-1124_plastic-bubble-click.wav",
+   "start": 0.097,
+   "end": 0.2,
+   "mono": true,
+   "eq": {
+    "hp": 300,
+    "highshelf": [
+     6000,
+     -4
+    ]
+   },
+   "norm_peak_db": -10,
+   "fade_in": 0.002,
+   "fade_out": 0.04,
+   "gain_db": 4.0,
+   "_doc": "the 7 ms plastic click reads 4 dB weaker than the other two under the music (v2 qa): +4 dB"
+  },
+  "ui.tick.3": {
+   "file": "audio/assets/ui/mk-1120_modern-click-box-check.wav",
+   "start": 0.092,
+   "end": 0.22,
+   "mono": true,
+   "eq": {
+    "hp": 300,
+    "highshelf": [
+     6000,
+     -4
+    ]
+   },
+   "norm_peak_db": -10,
+   "fade_in": 0.002,
+   "fade_out": 0.04
+  },
+  "ui.pop.1": {
+   "file": "audio/assets/ui/mk-2364_hard-pop-click.wav",
+   "start": 0.0,
+   "end": 0.28,
+   "mono": true,
+   "eq": {
+    "hp": 200,
+    "highshelf": [
+     6000,
+     -3
+    ]
+   },
+   "norm_peak_db": -8,
+   "fade_in": 0.002,
+   "fade_out": 0.08
+  },
+  "ui.pop.2": {
+   "file": "audio/assets/ui/mk-2358_long-pop.wav",
+   "start": 0.024,
+   "end": 0.3,
+   "mono": true,
+   "eq": {
+    "hp": 200,
+    "highshelf": [
+     6000,
+     -3
+    ]
+   },
+   "norm_peak_db": -8,
+   "fade_in": 0.002,
+   "fade_out": 0.08
+  }
+ },
+ "pools": {
+  "ui.tick": [
+   "ui.tick.1",
+   "ui.tick.2",
+   "ui.tick.3"
+  ],
+  "ui.pop": [
+   "ui.pop.1",
+   "ui.pop.2"
+  ]
+ },
+ "rules": [
+  {
+   "name": "ui.tick",
+   "match": {
+    "kind": "tick",
+    "id": "^ring1:title:"
+   },
+   "pool": "ui.tick",
+   "mode": "cycle",
+   "gain_db": 3,
+   "jitter_db": 1.0,
+   "pan": 0,
+   "align": "attack",
+   "_doc": "raised for the louder, punchier v3 track (v3 first render: read -1..-7 dB masked)"
+  },
+  {
+   "name": "ui.pop",
+   "match": {
+    "kind": "pop"
+   },
+   "pool": "ui.pop",
+   "mode": "cycle",
+   "gain_db": -4,
+   "pitch_ramp": [
+    0,
+    2
+   ],
+   "pan": "cue",
+   "pan_scale": 0.4,
+   "align": "attack"
+  }
+ ]
+}

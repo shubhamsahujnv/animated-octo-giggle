@@ -1,0 +1,42 @@
+{
+ "_doc": "Music edit v3 (client note 2026-10-31: different track, loud and punchy from the start, music the clearly loudest element). Track: 'Better Times are Coming' by Alejandro Magaña (A. M.) (Mixkit Stock Music Free License), 119.999 BPM (arrange.py: grid residual 3.4 ms, 100 % of beats on it), downbeats 0.118 + 2.00001*n s (phase 0, confidence 1.25), key Ab minor (analyze.py). Bars 0-11 full groove (-12.7 LUFS per bar), bars 12-18 lighter section, bar 19 (38.118) the lift (+2 dB, onset measured 38.116), bar 48 (96.118) the final hit decaying to silence by about 99.5 s. No stretch. Previous edit (Ramp It Up) kept in out/audio-review/v_ramp_it_up/.",
+ "music": {
+  "file": "audio/assets/music/mk-m173_better-times-are-coming.mp3",
+  "src_bpm": 119.999,
+  "target_bpm": 120,
+  "stretch": "none",
+  "gain_db": 0.0,
+  "eq": {
+   "hp": 30
+  },
+  "segments": [
+   {
+    "label": "film 0.0-9.5 = src bar 0 through bar 4 beat 3, ONE continuous take: the drums + bass groove from the first downbeat (src 0.118 on film 0.000; ridden down 5 dB under the dark hook, full from 2.000 = src bar 1); runs under all three ring circles and locks; ends on the beat line 9.5",
+    "src_from": 0.118,
+    "src_to": 9.618,
+    "at": 0.0,
+    "fade_in": 0.002,
+    "fade_out": 0.005,
+    "tail_fade": 0.06,
+    "qa_ok": "deliberate break on the beat line at 9.5: bar 4 beat 4 is replaced by the track's own last beat before its lift (bar 18 beat 4, about 2 dB lighter): the one-beat pull-back; chroma cosine bar 4 beat 4 vs bar 18 beat 4 = 0.90"
+   },
+   {
+    "label": "film 9.5-14.0 = src bar 18 beat 4 + bars 19-20 (src to 42.118 = bar 21 downbeat), one continuous take: the one-beat pull-back, then the track's lift / drop downbeat (src 38.118, bar 19, onset 38.116) on film 10.000, bars 19-20 (src to 42.118 = bar 21 downbeat) under the drop, the fold and the logo lock (13.5)",
+    "src_from": 37.618,
+    "src_to": 42.118,
+    "at": 9.5,
+    "fade_in": 0.008,
+    "fade_out": 0.005
+   },
+   {
+    "label": "film 14.0-16.0 = src bar 47 beat 4 + the track's own ring-out: the last and strongest beat of the groove (attack 95.62, peak -0.4 dBFS) on 14.000 (Remi lands on the button), then the track's reverb tail (B, C#, F#), measured -24 dB at 96.12 falling to -47 dB by 98.0; splice bar 20 beat 4 -> bar 47 beat 4, chroma cosine 0.94; tail_fade so nothing is chopped at 16.000. (The track has no separate final chord: the groove stops at 96.1 and only its tail follows.)",
+    "src_from": 95.618,
+    "src_to": 97.608,
+    "at": 14.0,
+    "fade_in": 0.008,
+    "fade_out": 0.002,
+    "tail_fade": 0.3
+   }
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "_doc": "Motion: real air swishes from Mixkit, each placed by its apex (align peak) on the move's velocity peak = cue + dur*apexFrac (the rule offset). Ring circles use the swirling / air family; the pull-back a fast air sweep; the fold a wind woosh that builds into the logo lock.",
+ "samples": {
+  "mo.launch": {
+   "file": "audio/assets/motion/mk-1464_quick-swoosh-accent.wav",
+   "start": 0.0,
+   "end": 0.6,
+   "eq": {
+    "hp": 200,
+    "highshelf": [
+     6000,
+     -4
+    ]
+   },
+   "norm_peak_db": -8,
+   "fade_in": 0.005,
+   "fade_out": 0.2
+  },
+  "mo.ring1": {
+   "file": "audio/assets/motion/mk-1493_swirling-whoosh.wav",
+   "start": 0.7,
+   "end": 2.45,
+   "eq": {
+    "hp": 150,
+    "highshelf": [
+     6000,
+     -3
+    ]
+   },
+   "norm_peak_db": -8,
+   "fade_in": 0.25,
+   "fade_out": 0.25,
+   "_doc": "the spin's build 1.0-2.18 s, apex 1.97"
+  },
+  "mo.ring2": {
+   "file": "audio/assets/motion/mk-1489_air-woosh.wav",
+   "start": 0.1,
+   "end": 1.6,
+   "eq": {
+    "hp": 150
+   },
+   "norm_peak_db": -8,
+   "fade_in": 0.15,
+   "fade_out": 0.3
+  },
+  "mo.pull": {
+   "file": "audio/assets/motion/mk-168_fast-air-sweep-transition.wav",
+   "start": 0.0,
+   "end": 0.84,
+   "eq": {
+    "hp": 120
+   },
+   "norm_peak_db": -8,
+   "fade_in": 0.01,
+   "fade_out": 0.2
+  },
+  "mo.ring3": {
+   "file": "audio/assets/motion/mk-1474_transition-windy-swoosh.wav",
+   "start": 0.4,
+   "end": 2.6,
+   "eq": {
+    "hp": 200,
+    "highshelf": [
+     6000,
+     -3
+    ]
+   },
+   "norm_peak_db": -8,
+   "fade_in": 0.2,
+   "fade_out": 0.4
+  },
+  "mo.fold": {
+   "file": "audio/assets/motion/mk-1168_woosh-wind.wav",
+   "start": 0.3,
+   "end": 2.6,
+   "eq": {
+    "hp": 120
+   },
+   "norm_peak_db": -7,
+   "fade_in": 0.5,
+   "fade_out": 0.4,
+   "_doc": "builds 1.27-1.6 s; trimmed to end before the logo note rings"
+  }
+ },
+ "pools": {
+  "mo.launch": [
+   "mo.launch"
+  ],
+  "mo.ring1": [
+   "mo.ring1"
+  ],
+  "mo.ring2": [
+   "mo.ring2"
+  ],
+  "mo.pull": [
+   "mo.pull"
+  ],
+  "mo.ring3": [
+   "mo.ring3"
+  ],
+  "mo.fold": [
+   "mo.fold"
+  ]
+ },
+ "rules": [
+  {
+   "name": "mo.launch",
+   "match": {
+    "kind": "whoosh",
+    "id": "^hook:remi:launch$"
+   },
+   "pool": "mo.launch",
+   "mode": "fixed",
+   "gain_db": -6,
+   "pan": 0,
+   "align": "peak",
+   "offset": 0.2333
+  },
+  {
+   "name": "mo.ring1",
+   "match": {
+    "kind": "whoosh",
+    "id": "^ring1:draw$"
+   },
+   "pool": "mo.ring1",
+   "mode": "fixed",
+   "gain_db": -8,
+   "pan": 0,
+   "align": "peak",
+   "offset": 0.7667
+  },
+  {
+   "name": "mo.ring2",
+   "match": {
+    "kind": "whoosh",
+    "id": "^ring2:draw$"
+   },
+   "pool": "mo.ring2",
+   "mode": "fixed",
+   "gain_db": -8,
+   "pan": "cue",
+   "align": "peak",
+   "offset": 0.6333
+  },
+  {
+   "name": "mo.pull",
+   "match": {
+    "kind": "whoosh",
+    "id": "^ring3:pull$"
+   },
+   "pool": "mo.pull",
+   "mode": "fixed",
+   "gain_db": -6,
+   "pan": 0,
+   "align": "peak",
+   "offset": 0.2667
+  },
+  {
+   "name": "mo.ring3",
+   "match": {
+    "kind": "whoosh",
+    "id": "^ring3:draw$"
+   },
+   "pool": "mo.ring3",
+   "mode": "fixed",
+   "gain_db": -11,
+   "pan": "cue",
+   "align": "peak",
+   "offset": 0.59,
+   "_doc": "quieter: it overlaps the pull-back. offset 0.59 (not 0.633): v1 measured the apex 49 ms late",
+   "qa_ok": "apex measured +639 ms after the cue = 6 ms from the picture velocity peak f263 (cue + 38*0.5/30 = +633 ms); the offset is 0.59 because this trim's 50 ms apex sits 49 ms after its 5 ms peak"
+  },
+  {
+   "name": "mo.fold",
+   "match": {
+    "kind": "whoosh",
+    "id": "^end:collapse$"
+   },
+   "pool": "mo.fold",
+   "mode": "fixed",
+   "gain_db": -6,
+   "pan": 0,
+   "align": "peak",
+   "offset": 1.275
+  }
+ ]
+}

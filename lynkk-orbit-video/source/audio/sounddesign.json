@@ -1,0 +1,65 @@
+{
+ "_doc": "Lynkk integrations film 'lynkk-orbit' (16 s, 30 fps, 120 BPM). Professional recordings only, credited in CREDITS.md. Built by real-sound scripts/mix.py from this file and one fragment per category in audio/design/. Client change: music is the lead element, loud and prominent; SFX sit inside it.",
+ "duration": 16.0,
+ "cues": "out/cues.json",
+ "include": [
+  "audio/design/music.json",
+  "audio/design/impacts.json",
+  "audio/design/motion.json",
+  "audio/design/ui.json",
+  "audio/design/blips.json"
+ ],
+ "_buses_doc": "v3 (new track): music is the clearly loudest element. -5 dB under the dark hook (0-2, the track is full-on from its first bar), 0 from the groove downbeat 2.0, +1.5 dB from the drop downbeat 10.0 (the loudest moment), held through the final hit at 14.0 which decays by itself. v3b: back to 0 dB on the 14.0 splice (the final beat measured -11.3 LUFS-M at 14.2, 0.3 LU over the drop).",
+ "buses": {
+  "music": {
+   "gain_db": 0.0,
+   "auto": [
+    [
+     0,
+     -5
+    ],
+    [
+     1.98,
+     -5
+    ],
+    [
+     2.0,
+     0
+    ],
+    [
+     9.98,
+     0
+    ],
+    [
+     10.0,
+     1.5
+    ],
+    [
+     13.98,
+     1.5
+    ],
+    [
+     14.0,
+     0
+    ],
+    [
+     16.0,
+     0
+    ]
+   ]
+  },
+  "amb": {
+   "gain_db": 0.0
+  },
+  "sfx": {
+   "gain_db": 0.0
+  }
+ },
+ "_master_doc": "-14 LUFS integrated, ceiling 0.77 linear (about -2.3 dBFS) so the AAC encode stays under -1 dBTP.",
+ "master": {
+  "lufs": -14,
+  "ceiling": 0.77,
+  "no_glue": true,
+  "no_comp": true
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "_doc": "Remi's voice = real glockenspiel notes (cabled_mess 'Glockenspiel' pack, CC0), retuned by resampling for the new track's key (Ab minor / B major): C7 -1 st = B6, D7 +1 st = D#7, E7 as is (E is in Ab minor). Logo note: VSCO 2 CE glockenspiel C6 (sgossner, CC0), measured +12 c, resampled -1.12 st = B5 (the final hit's chroma: B, C#, F#).",
+ "samples": {
+  "bl.e7": {
+   "file": "audio/assets/blips/fs-348918_glock-e4-01.ogg",
+   "start": 0.0,
+   "end": 0.9,
+   "mono": true,
+   "eq": {
+    "hp": 400,
+    "highshelf": [
+     8000,
+     -3
+    ]
+   },
+   "norm_peak_db": -14,
+   "fade_in": 0.0005,
+   "fade_out": 0.6,
+   "gain_db": 6.0
+  },
+  "bl.e7b": {
+   "file": "audio/assets/blips/fs-348919_glock-e4-02.ogg",
+   "start": 0.0,
+   "end": 0.9,
+   "mono": true,
+   "eq": {
+    "hp": 400,
+    "highshelf": [
+     8000,
+     -3
+    ]
+   },
+   "norm_peak_db": -14,
+   "fade_in": 0.0005,
+   "fade_out": 0.6,
+   "gain_db": 6.0
+  },
+  "bl.logo": {
+   "file": "audio/assets/blips/fs-373364_vsco2-glock-c5.ogg",
+   "start": 0.0,
+   "end": 2.1,
+   "pitch": -1.12,
+   "eq": {
+    "hp": 300
+   },
+   "norm_peak_db": -10,
+   "fade_in": 0.002,
+   "fade_out": 1.2
+  },
+  "bl.b6": {
+   "file": "audio/assets/blips/fs-348911_glock-c4-01.ogg",
+   "start": 0.0,
+   "end": 0.9,
+   "mono": true,
+   "eq": {
+    "hp": 400,
+    "highshelf": [
+     8000,
+     -3
+    ]
+   },
+   "norm_peak_db": -14,
+   "fade_in": 0.0005,
+   "fade_out": 0.6,
+   "gain_db": 6.0,
+   "pitch": -1.0
+  },
+  "bl.ds7": {
+   "file": "audio/assets/blips/fs-348917_glock-d4-01.ogg",
+   "start": 0.0,
+   "end": 0.9,
+   "mono": true,
+   "eq": {
+    "hp": 400,
+    "highshelf": [
+     8000,
+     -3
+    ]
+   },
+   "norm_peak_db": -14,
+   "fade_in": 0.0005,
+   "fade_out": 0.6,
+   "gain_db": 6.0,
+   "pitch": 1.0
+  }
+ },
+ "pools": {
+  "bl.b6": [
+   "bl.b6"
+  ],
+  "bl.ds7": [
+   "bl.ds7"
+  ],
+  "bl.e7": [
+   "bl.e7"
+  ],
+  "bl.e7b": [
+   "bl.e7b"
+  ],
+  "bl.logo": [
+   "bl.logo"
+  ]
+ },
+ "rules": [
+  {
+   "name": "bl.eyes",
+   "match": {
+    "kind": "blip",
+    "id": "^hook:remi:eyes$"
+   },
+   "pool": "bl.ds7",
+   "mode": "fixed",
+   "gain_db": -6,
+   "pan": 0,
+   "align": "attack",
+   "_doc": "Remi wakes: D#"
+  },
+  {
+   "name": "bl.loop",
+   "match": {
+    "kind": "blip",
+    "id": "^drop:remi:loop$"
+   },
+   "pool": "bl.e7b",
+   "mode": "fixed",
+   "gain_db": -3,
+   "pan": 0,
+   "align": "attack"
+  },
+  {
+   "name": "bl.hop0",
+   "match": {
+    "kind": "blip",
+    "id": "^drop:remi:hop:0$"
+   },
+   "pool": "bl.b6",
+   "mode": "fixed",
+   "gain_db": 2,
+   "pan": 0,
+   "align": "attack"
+  },
+  {
+   "name": "bl.hop1",
+   "match": {
+    "kind": "blip",
+    "id": "^drop:remi:hop:1$"
+   },
+   "pool": "bl.ds7",
+   "mode": "fixed",
+   "gain_db": 3,
+   "pan": 0,
+   "align": "attack"
+  },
+  {
+   "name": "bl.land",
+   "match": {
+    "kind": "blip",
+    "id": "^end:remi:land$"
+   },
+   "pool": "bl.b6",
+   "mode": "fixed",
+   "gain_db": 3,
+   "pan": 0,
+   "align": "attack",
+   "_doc": "lands on B with the final hit (B, C#, F#)"
+  },
+  {
+   "name": "bl.logo",
+   "match": {
+    "kind": "bell",
+    "id": "^end:logo:note$"
+   },
+   "pool": "bl.logo",
+   "mode": "fixed",
+   "gain_db": -2,
+   "pan": 0,
+   "align": "attack"
+  }
+ ]
+}
