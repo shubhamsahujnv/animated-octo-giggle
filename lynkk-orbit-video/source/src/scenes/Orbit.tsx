@@ -513,8 +513,12 @@ export const Orbit: React.FC<{ cover?: boolean }> = ({ cover = false }) => {
         </div>
       ) : null}
       <svg style={{ position: "absolute", inset: 0, width: fmt.W, height: fmt.H, overflow: "visible" }}>{sparkles}</svg>
-      <Trail f={f} from={T.launch} pos={(g) => remiPos(fmt, g)} len={12} width={per(fmt, 18, 14)} opacity={1 - tween(f, T.button - 8, T.button)} />
-      <Remi s={remi} size={rSize} id="remi-orbit" glow={0.55} />
+      {cover ? null : (
+        <>
+          <Trail f={f} from={T.launch} pos={(g) => remiPos(fmt, g)} len={12} width={per(fmt, 18, 14)} opacity={1 - tween(f, T.button - 8, T.button)} />
+          <Remi s={remi} size={rSize} id="remi-orbit" glow={0.55} />
+        </>
+      )}
 
       <Flash f={f} at={T.lock3} peak={0.12} dur={8} color="#e2e0f2" />
       <Flash f={f} at={T.drop} peak={0.22} dur={9} color="#ffffff" />
