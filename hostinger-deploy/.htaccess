@@ -10,6 +10,9 @@
 
 Options -Indexes
 DirectoryIndex index.html
+# Serve /blog straight from /blog/index.html instead of bouncing to /blog/,
+# so the URL keeps matching the canonical link inside each page.
+DirectorySlash Off
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -26,9 +29,8 @@ DirectoryIndex index.html
   # instead of answering with a page the caller would try to parse.
   RewriteRule ^api/ - [R=404,L]
 
-  # Serve real files and directories as they are
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
+  # Serve real files as they are
+  RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
   # Pre-rendered page for this URL, e.g. /blog/faq -> /blog/faq/index.html
