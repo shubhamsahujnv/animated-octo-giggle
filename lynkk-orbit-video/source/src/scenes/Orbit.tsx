@@ -281,7 +281,7 @@ const Rays: React.FC<{ c: { x: number; y: number }; size: number; f: number; k: 
 
 // ------------------------------------------------------------------ scene
 
-export const Orbit: React.FC = () => {
+export const Orbit: React.FC<{ cover?: boolean }> = ({ cover = false }) => {
   const fmt = useFmt();
   const f = useCurrentFrame();
   const c = centreAt(fmt, f);
@@ -519,6 +519,8 @@ export const Orbit: React.FC = () => {
       <Flash f={f} at={T.lock3} peak={0.12} dur={8} color="#e2e0f2" />
       <Flash f={f} at={T.drop} peak={0.22} dur={9} color="#ffffff" />
 
+      {cover ? null : (
+        <>
       <TitleSlam f={f} out={T.ring2From - 6} words={T.titleRecords.map((at, i) => ({ text: ["Records", "every", "call."][i], at, accent: i === 2 }))} />
       <TitleSlam
         f={f}
@@ -558,6 +560,8 @@ export const Orbit: React.FC = () => {
           { text: "work.", at: T.titleWork[3], accent: true },
         ]}
       />
+        </>
+      )}
     </AbsoluteFill>
   );
 };
