@@ -1,0 +1,68 @@
+{
+  "title": "Why AI is moving from air to liquid",
+  "voice": "af_heart",
+  "speed": 1.0,
+  "gap": 0.42,
+  "music": {
+    "lift": "water",
+    "drums": true,
+    "impacts": [
+      {
+        "scene": "racks",
+        "at": 7.6
+      },
+      {
+        "scene": "liquid",
+        "at": 0.3
+      }
+    ]
+  },
+  "sources": [
+    "Uptime Institute, Global Data Center Survey (2026)",
+    "NVIDIA GB200 NVL72 (2024)",
+    "Yotta Data Services (2026)",
+    "Microsoft (Aug 2024), company estimate"
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "The newest AI chips run so hot that fans can't cool them. So data centres are turning into plumbing.",
+      "caption": "The newest AI chips run so hot that fans can't cool them. So data centres are turning into plumbing."
+    },
+    {
+      "id": "racks",
+      "say": "A normal server rack draws about eleven kilowatts. Nvidia's newest AI rack packs seventy-two chips tightly together, so they work as one giant chip. It draws about a hundred and twenty.",
+      "caption": "A normal server rack draws about 11 kilowatts. Nvidia's newest AI rack packs 72 chips tightly together, so they work as one giant chip. It draws about 120."
+    },
+    {
+      "id": "air",
+      "say": "Every watt becomes heat. And air can only carry away about twenty kilowatts per rack.",
+      "caption": "Every watt becomes heat. And air can only carry away about 20 kilowatts per rack."
+    },
+    {
+      "id": "liquid",
+      "say": "Litre for litre, water holds about thirty-five hundred times more heat than air. So cold plates now sit right on the chips. Or whole servers sink into a fluid that doesn't conduct electricity.",
+      "caption": "Litre for litre, water holds about 3,500 times more heat than air. So cold plates now sit right on the chips. Or whole servers sink into a fluid that doesn't conduct electricity."
+    },
+    {
+      "id": "water",
+      "say": "Does that mean more water? Not if the loop is closed. Microsoft says its zero-evaporation design saves a hundred and twenty-five million litres a year, per site.",
+      "caption": "Does that mean more water? Not if the loop is closed. Microsoft says its zero-evaporation design saves 125 million litres a year, per site."
+    },
+    {
+      "id": "india",
+      "say": "In hot, humid India, operators like Yotta already run their AI chips on liquid.",
+      "caption": "In hot, humid India, operators like Yotta already run their AI chips on liquid."
+    },
+    {
+      "id": "close",
+      "say": "So, next time you hear AI data centre, ask: how is it cooled? And where does the heat go?",
+      "caption": "So next time you hear \"AI data centre\", ask: how is it cooled? And where does the heat go?"
+    }
+  ],
+  "vocab": [
+    "Nvidia",
+    "Yotta",
+    "Microsoft"
+  ]
+}

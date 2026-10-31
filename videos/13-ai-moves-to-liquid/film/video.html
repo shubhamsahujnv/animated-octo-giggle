@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Why AI is moving from air to liquid</title>
+<link rel="stylesheet" href="../../_engine/engine.css">
+<style>
+  .rackbody { fill: none; stroke-width: 6; stroke-linejoin: round; }
+  .dark .rackbody { stroke: var(--paper); }
+  .light .rackbody, .stone .rackbody { stroke: var(--ink); }
+  .slot { stroke-width: 4; stroke-linecap: round; }
+  .dark .slot { stroke: color-mix(in srgb, var(--paper) 45%, var(--ink)); }
+  .light .slot, .stone .slot { stroke: color-mix(in srgb, var(--ink) 45%, var(--paper)); }
+  .led { fill: var(--accent); }
+  .light .led, .stone .led { fill: var(--ink); }
+  .pipe { fill: none; stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; }
+  .pipeflow { fill: none; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+  .chipcell { fill: var(--ink); }
+  .meter { position: absolute; height: 54px; border-radius: 14px; }
+  #hookHead, #hookHead2 { top: 300px; left: 80px; right: 80px; }
+  .q { left: 80px; right: 80px; }
+</style>
+</head><body>
+<div id="stage">
+
+  <!-- 1 HOOK (ink) -->
+  <div id="hook" class="scene dark"><div class="dots"></div><div class="cam">
+    <div id="hookHead" class="center h1">Too hot for <span class="it hl">fans.</span></div>
+    <div id="hookHead2" class="center h1">Data centres are turning into <span class="it hl">plumbing.</span></div>
+    <svg id="hookArt" width="1080" height="900" style="left:0;top:500px" viewBox="0 0 1080 900">
+      <g id="hookPipes">
+        <path class="pipe" id="hp1" d="M60 760 H300 V600" stroke="#FFFDF8" stroke-opacity=".25"/>
+        <path class="pipeflow" id="hpf1" d="M60 760 H300 V600" stroke="#E2FF4D"/>
+        <path class="pipe" id="hp2" d="M1020 140 H780 V300" stroke="#FFFDF8" stroke-opacity=".25"/>
+        <path class="pipeflow" id="hpf2" d="M1020 140 H780 V300" stroke="#E2FF4D"/>
+        <path class="pipe" id="hp3" d="M60 220 H300 V300" stroke="#FFFDF8" stroke-opacity=".25"/>
+        <path class="pipeflow" id="hpf3" d="M60 220 H300 V300" stroke="#E2FF4D"/>
+        <path class="pipe" id="hp4" d="M1020 680 H780 V600" stroke="#FFFDF8" stroke-opacity=".25"/>
+        <path class="pipeflow" id="hpf4" d="M1020 680 H780 V600" stroke="#E2FF4D"/>
+      </g>
+      <g id="hookRack"></g>
+      <g id="fan" transform="translate(540 300)">
+        <circle r="118" fill="#02403D" stroke="#FFFDF8" stroke-width="6"/>
+        <g id="fanBlades">
+          <path d="M0 0 C 20 -40 70 -90 30 -105 C -5 -110 -15 -50 0 0Z" fill="#FFFDF8"/>
+          <path d="M0 0 C 20 -40 70 -90 30 -105 C -5 -110 -15 -50 0 0Z" fill="#FFFDF8" transform="rotate(120)"/>
+          <path d="M0 0 C 20 -40 70 -90 30 -105 C -5 -110 -15 -50 0 0Z" fill="#FFFDF8" transform="rotate(240)"/>
+          <circle r="16" fill="#E2FF4D"/>
+        </g>
+      </g>
+      <g id="thermo" transform="translate(900 180)">
+        <rect x="-26" y="0" width="52" height="400" rx="26" fill="none" stroke="#FFFDF8" stroke-width="6"/>
+        <circle cx="0" cy="440" r="52" fill="#E2FF4D"/>
+        <rect id="merc" x="-12" y="60" width="24" height="380" rx="12" fill="#E2FF4D" style="transform-origin:50% 100%"/>
+      </g>
+    </svg>
+    <div id="hookHeat" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+  </div></div>
+
+  <!-- 2 RACKS (paper) -->
+  <div id="racks" class="scene light"><div class="dots"></div><div class="cam">
+    <div id="rkKick" class="center kick" style="top:300px">The rack</div>
+    <div id="rkHead" class="center h2" style="top:350px;left:70px;right:70px">Same cabinet. <span class="it">Ten times</span> the power.</div>
+    <svg id="rkArt" width="1080" height="640" style="left:0;top:520px" viewBox="0 0 1080 640">
+      <g id="normRack"></g>
+      <text id="normLbl" x="235" y="600" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="700" fill="#02403D">Normal rack</text>
+      <g id="aiRackG">
+        <rect id="aiBody" class="rackbody" x="500" y="20" width="470" height="530" rx="18"/>
+        <g id="cables"></g>
+        <g id="chips"></g>
+        <rect id="giant" x="526" y="46" width="418" height="478" rx="14" fill="none" stroke="#02403D" stroke-width="8" stroke-dasharray="14 10"/>
+      </g>
+      <text id="aiLbl" x="735" y="600" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="700" fill="#02403D">AI rack</text>
+    </svg>
+    <div id="chipsTag" class="abs tag" style="left:660px;top:790px">72 chips</div>
+    <div id="giantTag" class="abs tag" style="left:560px;top:830px">= one giant chip</div>
+    <div class="abs" style="left:90px;top:1170px;width:900px">
+      <div id="b1row" style="display:flex;align-items:center;gap:20px;height:70px">
+        <div class="small" style="width:200px">Normal</div>
+        <div style="flex:1;position:relative;height:54px"><div id="b1" class="meter" style="left:0;width:6.9%;background:var(--surface);transform-origin:left"></div>
+          <div id="b1v" class="abs h3" style="left:8.5%;top:4px;white-space:nowrap">11 kW</div></div>
+      </div>
+      <div id="b2row" style="display:flex;align-items:center;gap:20px;height:70px;margin-top:14px">
+        <div class="small" style="width:200px">AI rack</div>
+        <div style="flex:1;position:relative;height:54px"><div id="b2" class="meter" style="left:0;width:75%;background:var(--ink);transform-origin:left"></div>
+          <div id="b2v" class="abs h3" style="left:77%;top:4px;white-space:nowrap">0</div></div>
+      </div>
+    </div>
+    <div class="src"><b>Source:</b> Uptime Institute, Global Data Center Survey (2026), most common rack; NVIDIA GB200 NVL72 (2024).</div>
+  </div></div>
+
+  <!-- 3 AIR (ink) -->
+  <div id="air" class="scene dark"><div class="dots"></div><div class="cam">
+    <div id="airHead" class="center h2" style="top:310px;left:70px;right:70px">Air tops out at about <span class="it hl">20 kW.</span></div>
+    <svg id="airArt" width="1080" height="560" style="left:0;top:520px" viewBox="0 0 1080 560">
+      <g id="airFlows">
+        <path class="af" d="M40 120 C 220 120 260 160 380 160" />
+        <path class="af" d="M40 230 C 220 230 260 240 380 240" />
+        <path class="af" d="M40 340 C 220 340 260 320 380 320" />
+        <path class="af" d="M40 450 C 220 450 260 400 380 400" />
+        <path class="af" d="M700 160 C 820 160 860 110 1040 110" />
+        <path class="af" d="M700 240 C 820 240 860 220 1040 220" />
+        <path class="af" d="M700 320 C 820 320 860 340 1040 340" />
+        <path class="af" d="M700 400 C 820 400 860 450 1040 450" />
+      </g>
+      <g id="airRack"></g>
+    </svg>
+    <div id="airHeat" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+    <div class="abs" style="left:90px;top:1110px;width:900px;height:200px">
+      <div class="small" style="color:var(--surface)">Heat per rack, kW (to scale)</div>
+      <div class="abs" style="left:0;top:50px;width:900px;height:62px;border-radius:16px;background:color-mix(in srgb, var(--paper) 10%, var(--ink))"></div>
+      <div id="airFill" class="abs" style="left:0;top:50px;width:900px;height:62px;border-radius:16px;background:var(--accent);transform-origin:left"></div>
+      <div id="airLimit" class="abs" style="left:150px;top:30px;width:6px;height:102px;background:var(--paper)"></div>
+      <div id="airLimitL" class="abs small" style="left:70px;top:148px;color:var(--paper)">Air limit ~20</div>
+      <div id="airAIL" class="abs small" style="right:0;top:148px;color:var(--accent)">AI rack ~120</div>
+    </div>
+    <div class="src"><b>Source:</b> Yotta Data Services (2026), practical air-cooling limit 15–20 kW per rack; NVIDIA GB200 NVL72 (2024).</div>
+  </div></div>
+
+  <!-- 4 LIQUID (stone) -->
+  <div id="liquid" class="scene stone"><div class="dots"></div><div class="cam">
+    <div id="lqHead" class="center h2" style="top:310px;left:40px;right:40px;font-size:60px">Water holds <span class="it">~<span id="lqX">3,500</span>×</span> more heat</div>
+    <svg id="cubes" width="1080" height="380" style="left:0;top:440px" viewBox="0 0 1080 380">
+      <g id="cubeAir" transform="translate(150 30)">
+        <path d="M0 80 L80 0 H300 V220 L220 300 H0Z M0 80 H220 V300 M220 80 L300 0" fill="none" stroke="#02403D" stroke-width="5" stroke-linejoin="round"/>
+        <g id="airDots"></g>
+      </g>
+      <g id="cubeWater" transform="translate(630 30)">
+        <path d="M0 80 L80 0 H300 V220 L220 300 H0Z" fill="#02403D"/>
+        <path d="M0 80 H220 V300 M220 80 L300 0" fill="none" stroke="#D8CAC3" stroke-width="4" stroke-opacity=".5"/>
+        <g id="waterDots"></g>
+      </g>
+      <text x="260" y="370" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="700" fill="#02403D">1 litre of air</text>
+      <text x="740" y="370" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="700" fill="#02403D">1 litre of water</text>
+    </svg>
+    <div id="cardD" class="card" style="left:70px;top:860px;width:455px;height:470px">
+      <div class="h3">Direct-to-chip</div><div class="small" style="margin-top:8px">Cold plate on the processor</div>
+      <svg width="400" height="300" style="left:28px;top:150px" viewBox="0 0 400 300">
+        <path class="pipe" d="M40 40 H140 V110" stroke="#D8CAC3"/>
+        <path class="pipe" d="M360 40 H260 V110" stroke="#D8CAC3"/>
+        <path id="dIn" class="pipeflow" d="M40 40 H140 V110" stroke="#02403D"/>
+        <path id="dOut" class="pipeflow" d="M260 110 V40 H360" stroke="#02403D"/>
+        <rect x="70" y="220" width="260" height="40" rx="8" fill="#D8CAC3"/>
+        <rect id="chipD" x="120" y="170" width="160" height="50" rx="8" fill="#02403D"/>
+        <g id="plate"><rect x="110" y="110" width="180" height="48" rx="10" fill="#02403D" fill-opacity=".85"/>
+          <path d="M130 134 H270" stroke="#E2FF4D" stroke-width="6" stroke-dasharray="12 10"/></g>
+      </svg>
+    </div>
+    <div id="cardI" class="card" style="left:555px;top:860px;width:455px;height:470px">
+      <div class="h3">Immersion</div><div class="small" style="margin-top:8px">Server sunk in non-conductive fluid</div>
+      <svg width="400" height="300" style="left:28px;top:150px" viewBox="0 0 400 300">
+        <rect id="fluid" x="62" y="80" width="276" height="200" rx="6" fill="#02403D" fill-opacity=".9" style="transform-origin:50% 100%"/>
+        <path id="tank" d="M50 40 V280 H350 V40" fill="none" stroke="#02403D" stroke-width="8" stroke-linejoin="round"/>
+        <g id="board"><rect x="150" y="-60" width="100" height="260" rx="8" fill="#D8CAC3" stroke="#02403D" stroke-width="5"/>
+          <rect x="170" y="-20" width="60" height="40" rx="4" fill="#02403D"/><rect x="170" y="60" width="60" height="40" rx="4" fill="#02403D"/><rect x="170" y="140" width="60" height="40" rx="4" fill="#02403D"/></g>
+        <g id="bubbles"></g>
+      </svg>
+    </div>
+    <div class="src"><b>Source:</b> physical constants, heat held per litre (volumetric heat capacity) of water vs air.</div>
+  </div></div>
+
+  <!-- 5 WATER (paper) -->
+  <div id="water" class="scene light"><div class="dots"></div><div class="cam">
+    <div id="wQ" class="center h1 q" style="top:300px">More <span class="it">water?</span></div>
+    <div id="wA" class="center h2 q" style="top:310px">Not if the loop is <span class="it">closed.</span></div>
+    <svg id="loopArt" width="1080" height="560" style="left:0;top:470px" viewBox="0 0 1080 560">
+      <path id="loopTrack" d="M260 120 H820 A140 140 0 0 1 820 400 H260 A140 140 0 0 1 260 120Z" fill="none" stroke="#D8CAC3" stroke-width="34"/>
+      <path id="loopFlow" d="M260 120 H820 A140 140 0 0 1 820 400 H260 A140 140 0 0 1 260 120Z" fill="none" stroke="#02403D" stroke-width="10" stroke-linecap="round"/>
+      <path id="loopDash" d="M260 120 H820 A140 140 0 0 1 820 400 H260 A140 140 0 0 1 260 120Z" fill="none" stroke="#FFFDF8" stroke-width="6"/>
+      <g id="nodeChip" transform="translate(150 190)"><rect width="200" height="140" rx="22" fill="#02403D"/>
+        <rect x="60" y="35" width="80" height="70" rx="8" fill="#E2FF4D"/>
+        <text x="100" y="185" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="700" fill="#02403D">AI chips</text></g>
+      <g id="nodeChill" transform="translate(730 190)"><rect width="200" height="140" rx="22" fill="#02403D"/>
+        <path d="M40 40 V100 M70 40 V100 M100 40 V100 M130 40 V100 M160 40 V100" stroke="#D8CAC3" stroke-width="10" stroke-linecap="round"/>
+        <text x="100" y="185" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="700" fill="#02403D">Chiller</text></g>
+      <g id="drops"></g>
+      <g id="steam" transform="translate(540 470)">
+        <path d="M-40 60 C -60 30 -20 20 -40 -10 M0 60 C -20 30 20 20 0 -10 M40 60 C 20 30 60 20 40 -10" fill="none" stroke="#665458" stroke-width="8" stroke-linecap="round"/>
+        <path id="strike" d="M-80 -20 L80 70" stroke="#02403D" stroke-width="12" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <div id="evapTag" class="abs tag" style="left:330px;top:1090px">Zero evaporation</div>
+    <div id="wStat" class="abs" style="left:90px;top:1140px;width:900px;text-align:center">
+      <div class="h2" style="font-size:96px;margin-top:20px"><span id="wNum">125</span> <span class="unit" style="font-family:var(--sans);font-weight:700">million litres</span></div>
+      <div id="wLbl" class="label" style="color:var(--muted)">a year, per site (Microsoft estimate)</div>
+    </div>
+    <div class="src"><b>Source:</b> Microsoft (Aug 2024), company projection for its zero-evaporation design; first sites from late 2027.</div>
+  </div></div>
+
+  <!-- 6 INDIA (ink) -->
+  <div id="india" class="scene dark"><div class="dots"></div><div class="cam">
+    <div id="inHead" class="center h2" style="top:300px;left:70px;right:70px">In India, AI chips are <span class="it hl">already liquid-cooled.</span></div>
+    <svg id="sun" width="240" height="240" style="left:780px;top:520px" viewBox="-120 -120 240 240">
+      <g id="rays"></g><circle r="62" fill="#E2FF4D"/>
+    </svg>
+    <div id="rain" class="abs" style="left:0;top:500px;width:1080px;height:500px"></div>
+    <svg id="city" width="1080" height="560" style="left:0;top:760px" viewBox="0 0 1080 560">
+      <g id="sky"></g>
+      <g id="dc"><rect x="330" y="150" width="420" height="330" rx="16" fill="#FFFDF8"/>
+        <g id="dcRows"></g>
+        <text x="540" y="210" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="700" fill="#02403D">AI DATA CENTRE</text></g>
+      <path class="pipe" d="M0 420 H330" stroke="#FFFDF8" stroke-opacity=".25"/>
+      <path id="inP1" class="pipeflow" d="M0 420 H330" stroke="#E2FF4D"/>
+      <path class="pipe" d="M750 420 H1080" stroke="#FFFDF8" stroke-opacity=".25"/>
+      <path id="inP2" class="pipeflow" d="M750 420 H1080" stroke="#E2FF4D"/>
+      <path d="M0 482 H1080" stroke="#FFFDF8" stroke-width="4" stroke-opacity=".5"/>
+    </svg>
+    <div id="yTag" class="abs tag" style="left:390px;top:1300px;top:690px">Yotta Data Services</div>
+    <div class="src"><b>Source:</b> Yotta Data Services (2026): all GPU and AI load on liquid cooling.</div>
+  </div></div>
+
+  <!-- 7 CLOSE (ink) -->
+  <div id="close" class="scene dark"><div class="dots"></div><div class="cam">
+    <div id="clMark" class="center" style="top:520px;font:700 420px/1 var(--serif);color:var(--accent)">?</div>
+    <div id="clKick" class="center kick" style="top:330px">Next time you hear "AI data centre", ask</div>
+    <div id="clQ1" class="center h1 q" style="top:470px">How is it <span class="it hl">cooled?</span></div>
+    <div id="clQ2" class="center h1 q" style="top:800px">Where does the <span class="it hl">heat</span> go?</div>
+    <svg id="clArt" width="1080" height="200" style="left:0;top:640px" viewBox="0 0 1080 200">
+      <path id="clPipe" class="pipe" d="M200 100 H880" stroke="#FFFDF8" stroke-opacity=".2"/>
+      <path id="clFlow" class="pipeflow" d="M200 100 H880" stroke="#E2FF4D"/>
+    </svg>
+    <div id="endCard" class="abs" style="inset:0;background:var(--ink)">
+      <img id="endLogo" src="../../_engine/brand/logo-light-trimmed.png" alt="The Green Solve">
+      <div id="endT1" class="center h2" style="top:860px">Picture <span class="it hl">plumbing,</span> not fans.</div>
+      <div id="endT2" class="center" style="top:1010px"><span class="pill">Follow The Green Solve</span></div>
+      <div id="endT3" class="center small" style="top:1130px;color:var(--surface)">NEXT: DATA CENTRES IN SPACE?</div>
+      <div id="endSrc" class="src" style="top:1250px"></div>
+    </div>
+  </div></div>
+</div>
+
+<script src="../../_engine/engine.js"></script>
+<script>
+chrome('Data centres · AI &amp; tech', 'EP 13');
+
+// ---------- builders ----------
+function rack(g, x, y, w, h, slots, cls = '') {
+  g = $(g);
+  svgEl('rect', { class: 'rackbody', x, y, width: w, height: h, rx: 18 }, g);
+  const leds = [];
+  for (let i = 0; i < slots; i++) {
+    const yy = y + 34 + i * ((h - 60) / slots);
+    svgEl('line', { class: 'slot', x1: x + 28, y1: yy, x2: x + w - 70, y2: yy }, g);
+    leds.push(svgEl('circle', { class: 'led', cx: x + w - 40, cy: yy, r: 8 }, g));
+  }
+  return leds;
+}
+function blink(leds, t) { leds.forEach((l, i) => A(l, [{ opacity: 1 }, { opacity: .25 }], t + rnd() * .8, .35 + rnd() * .5, { it: Infinity, dir: 'alternate', ease: 'steps(2)' })); }
+
+// ---------- 1 HOOK ----------
+{
+  const t = scene('hook');
+  const leds = rack('#hookRack', 330, 120, 420, 600, 9);
+  blink(leds, 0);
+  A('#hookRack', [{ opacity: 0, transform: 'translateY(80px)' }, { opacity: 1, transform: 'none' }], 0, .7);
+  kinetic('#hookHead', .15, .1);
+  popIn('#fan', .3);
+  spin('#fanBlades', 0, .35);
+  breathe('#fan', 1.2, 1.06, .5);                                    // fan straining
+  A('#thermo', [{ opacity: 0, transform: 'translateX(80px)' }, { opacity: 1, transform: 'none' }], .4, .6);
+  A('#merc', [{ transform: 'scaleY(.15)' }, { transform: 'scaleY(1)' }], W('hook', 3), WF('hook', 'them') - W('hook', 3) + .3);
+  heat('#hookHeat', W('hook', 3), 40, { x: 330, y: 620, w: 420, h: 520 }, C.accent, 1.3);
+  // switch to plumbing
+  const tp = WF('hook', 'So', 8);
+  fadeOut('#hookHead', tp - .3, .3);
+  kinetic('#hookHead2', tp, .08);
+  ['#hp1', '#hp2', '#hp3', '#hp4'].forEach((p, i) => draw(p, tp + .1 + i * .12, .7));
+  ['#hpf1', '#hpf2', '#hpf3', '#hpf4'].forEach((p, i) => { fadeIn(p, tp + .6 + i * .12, .3); flow(p, 0, 1.2); });
+  fadeOut('#thermo', tp + .2, .4);
+  A('#fan', [{ opacity: 1 }, { opacity: 0 }], WF('hook', 'plumbing'), .4, { fill: 'forwards' });
+}
+
+// ---------- 2 RACKS ----------
+{
+  const t = scene('racks', 'wipe');
+  fadeUp('#rkKick', t); kinetic('#rkHead', t + .15, .07);
+  const leds = rack('#normRack', 120, 120, 230, 430, 7);
+  blink(leds, t);
+  slideIn('#normRack', t + .2, -200); fadeIn('#normLbl', t + .4);
+  const t11 = WF('racks', '11');
+  popIn('#b1row', t11 - .2); grow('#b1', t11, .5, 'X');
+  // AI rack: 72 chips build up
+  const tAI = WF('racks', 'Nvidia');
+  A('#aiBody', [{ opacity: 0, transform: 'scale(.9)' }, { opacity: 1, transform: 'none' }], tAI - .1, .5, { ease: BACK }); fadeIn('#aiLbl', tAI);
+  const t72 = WF('racks', '72'), chips = $('#chips'), cables = $('#cables');
+  let k = 0;
+  for (let r = 0; r < 9; r++) for (let c = 0; c < 8; c++) {
+    const cell = svgEl('rect', { class: 'chipcell', x: 540 + c * 50, y: 60 + r * 51, width: 40, height: 40, rx: 6 }, chips);
+    A(cell, [{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }], t72 - .3 + k * .016, .35, { ease: BACK });
+    A(cell, [{ opacity: 1 }, { opacity: .55 }], t72 + 1.5 + ((r + c) % 6) * .12, .4, { it: Infinity, dir: 'alternate', fill: 'forwards' });
+    k++;
+  }
+  popIn('#chipsTag', t72 + .2);
+  const tT = WF('racks', 'tightly');
+  for (let r = 0; r < 9; r++) { const l = svgEl('line', { x1: 530, y1: 80 + r * 51, x2: 940, y2: 80 + r * 51, stroke: C.accent, 'stroke-width': 5 }, cables); draw(l, tT + r * .05, .5); }
+  for (let c = 0; c < 8; c++) { const l = svgEl('line', { x1: 560 + c * 50, y1: 50, x2: 560 + c * 50, y2: 520, stroke: C.accent, 'stroke-width': 5 }, cables); draw(l, tT + .2 + c * .05, .5); }
+  const tG = WF('racks', 'giant');
+  A('#chips', [{ transform: 'scale(1)' }, { transform: 'scale(.94)' }], tG - .2, .5, { ease: BACK });
+  draw('#giant', tG - .1, .6); popIn('#giantTag', tG + .1);
+  fadeOut('#chipsTag', tG - .2);
+  const t120 = WF('racks', '120');
+  popIn('#b2row', t120 - .9); grow('#b2', t120 - .6, 1.1, 'X');
+  counter('#b2v', t120 - .6, 1.1, 120, (v) => Math.round(v) + ' kW');
+}
+
+// ---------- 3 AIR ----------
+{
+  const t = scene('air', 'circle', { at: '50% 60%' });
+  kinetic('#airHead', t + .1, .07);
+  const leds = rack('#airRack', 390, 40, 300, 480, 8); blink(leds, t);
+  A('#airRack', [{ opacity: 0, transform: 'scale(.8)' }, { opacity: 1, transform: 'none' }], t, .5, { ease: BACK });
+  each('.af', (p, i) => { p.setAttribute('fill', 'none'); p.setAttribute('stroke', C.surface); p.setAttribute('stroke-width', 8); p.setAttribute('stroke-linecap', 'round');
+    fadeIn(p, t + .1 + i * .06, .3); flow(p, 0, .9 + (i % 3) * .2, '30 26'); });
+  heat('#airHeat', t, 34, { x: 400, y: 600, w: 280, h: 440 }, C.accent, 1.5);
+  const t20 = WF('air', '20');
+  A('#airFill', [{ transform: 'scaleX(0)' }, { transform: 'scaleX(.1667)' }], t20 - .4, .5);
+  popIn('#airLimit', t20); fadeUp('#airLimitL', t20 + .1);
+  A('#airFill', [{ transform: 'scaleX(.1667)' }, { transform: 'scaleX(1)' }], WF('air', 'per') - .2, .8, { fill: 'forwards' });
+  fadeUp('#airAIL', WF('air', 'rack') + .1);
+  each('.af', (p, i) => A(p, [{ opacity: 1 }, { opacity: .25 }], t20 + .4, .5, { fill: 'forwards' }));   // air can't keep up
+}
+
+// ---------- 4 LIQUID ----------
+{
+  const t = scene('liquid', 'up');
+  kinetic('#lqHead', t + .1, .07);
+  slideIn('#cubeAir', t + .2, -200); slideIn('#cubeWater', t + .35, 200);
+  for (let i = 0; i < 4; i++) { const d = svgEl('circle', { cx: 40 + rnd() * 160, cy: 110 + rnd() * 170, r: 9, fill: C.ink }, '#airDots'); popIn(d, t + .8 + i * .2); bob(d, t + 1, 8, 1.4 + rnd()); }
+  const tX = WF('liquid', '3,500');
+  for (let i = 0; i < 70; i++) { const d = svgEl('circle', { cx: 18 + (i % 10) * 20, cy: 105 + Math.floor(i / 10) * 26, r: 7, fill: C.accent }, '#waterDots'); popIn(d, tX - .5 + i * .022, .3); }
+  counter('#lqX', tX - .5, 1.6, 3500);
+  breathe('#cubeWater', tX + 1.2, 1.03, 1.2);
+  // direct to chip
+  const tD = WF('liquid', 'cold');
+  popIn('#cardD', tD - .3);
+  A('#plate', [{ transform: 'translateY(-90px)', opacity: 0 }, { transform: 'none', opacity: 1 }], WF('liquid', 'sit') - .2, .7, { ease: BACK });
+  ['#dIn', '#dOut'].forEach((p) => { fadeIn(p, WF('liquid', 'right'), .3); flow(p, 0, 1.4); });
+  A('#chipD', [{ fill: C.accent }, { fill: C.ink }], WF('liquid', 'chips') - .1, .9);
+  // immersion
+  const tI = WF('liquid', 'Or');
+  popIn('#cardI', tI - .3);
+  draw('#tank', tI, .6);
+  A('#board', [{ transform: 'translateY(-160px)' }, { transform: 'translateY(60px)' }], WF('liquid', 'sink') - .3, 1.0, { ease: INOUT });
+  A('#fluid', [{ transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }], WF('liquid', 'sink'), 1.0);
+  for (let i = 0; i < 14; i++) {
+    const b = svgEl('circle', { cx: 80 + rnd() * 240, cy: 270, r: 4 + rnd() * 6, fill: 'none', stroke: C.accent, 'stroke-width': 3 }, '#bubbles');
+    A(b, [{ opacity: 0, transform: 'translateY(0)' }, { opacity: 1, offset: .2 }, { opacity: 0, transform: 'translateY(-180px)' }], WF('liquid', 'fluid') - .3 + rnd() * 1.2, 1.3 + rnd(), { it: Infinity, ease: LIN });
+  }
+}
+
+// ---------- 5 WATER ----------
+{
+  const t = scene('water', 'wipe');
+  kinetic('#wQ', t + .05, .1);
+  const tA = WF('water', 'Not');
+  fadeOut('#wQ', tA - .3, .3); kinetic('#wA', tA, .07);
+  draw('#loopTrack', t + .3, .9); draw('#loopFlow', t + .5, .9);
+  popIn('#nodeChip', t + .4); popIn('#nodeChill', t + .55);
+  fadeIn('#loopDash', WF('water', 'loop'), .3); flow('#loopDash', 0, .5, '18 30');
+  const path = "path('M260 120 H820 A140 140 0 0 1 820 400 H260 A140 140 0 0 1 260 120Z')";
+  for (let i = 0; i < 8; i++) {
+    const d = svgEl('path', { d: 'M0 -16 C 8 -4 12 2 12 8 A12 12 0 0 1 -12 8 C -12 2 -8 -4 0 -16Z', fill: C.accent, stroke: C.ink, 'stroke-width': 3 }, '#drops');
+    d.style.offsetPath = path; d.style.offsetRotate = '0deg';
+    A(d, [{ opacity: 0 }, { opacity: 1 }], WF('water', 'closed') + i * .05, .3);
+    A(d, [{ offsetDistance: `${i * 12.5}%` }, { offsetDistance: `${i * 12.5 + 100}%` }], WF('water', 'loop'), 4, { it: Infinity, ease: LIN });
+  }
+  const tE = WF('water', 'zero');
+  popIn('#steam', tE - .2); draw('#strike', tE + .3, .4); popIn('#evapTag', tE + .4);
+  counter('#wNum', WF('water', '125') - .3, 1.3, 125);
+  fadeUp('#wStat', WF('water', '125') - .4); fadeUp('#wLbl', WF('water', 'year'));
+}
+
+// ---------- 6 INDIA ----------
+{
+  const t = scene('india', 'zoom');
+  kinetic('#inHead', t + .1, .07);
+  for (let i = 0; i < 12; i++) svgEl('rect', { x: -6, y: -112, width: 12, height: 34, rx: 6, fill: C.accent, transform: `rotate(${i * 30})` }, '#rays');
+  popIn('#sun', WF('india', 'hot') - .2); spin('#rays', 0, 9);
+  // humidity: soft drops drifting down
+  const rain = $('#rain');
+  for (let i = 0; i < 26; i++) {
+    const d = document.createElement('i');
+    d.style.cssText = `position:absolute;left:${rnd() * 1080}px;top:0;width:6px;height:26px;border-radius:3px;background:var(--surface);opacity:0`;
+    rain.appendChild(d);
+    A(d, [{ opacity: 0, transform: 'translateY(0)' }, { opacity: .5, offset: .2 }, { opacity: 0, transform: 'translateY(380px)' }], WF('india', 'humid') - .2 + rnd() * 1.4, 1.2 + rnd() * .6, { it: Infinity, ease: LIN });
+  }
+  const sky = $('#sky'); let x = 0;
+  while (x < 1080) { const w = 70 + rnd() * 90, h = 120 + rnd() * 240; const b = svgEl('rect', { x, y: 480 - h, width: w - 10, height: h, fill: C.paper, 'fill-opacity': .14 }, sky); b.style.transformOrigin = '50% 100%'; grow(b, t + .2 + x / 3000, .6); x += w; }
+  A('#dc', [{ opacity: 0, transform: 'translateY(120px)' }, { opacity: 1, transform: 'none' }], WF('india', 'operators') - .3, .7, { ease: BACK });
+  for (let r = 0; r < 4; r++) { const l = svgEl('rect', { x: 370, y: 250 + r * 52, width: 340, height: 30, rx: 8, fill: C.ink }, '#dcRows'); grow(l, WF('india', 'operators') + .2 + r * .1, .4, 'X'); }
+  ['#inP1', '#inP2'].forEach((p) => { fadeIn(p, WF('india', 'liquid') - .4, .3); flow(p, 0, 1.3); });
+  popIn('#yTag', WF('india', 'Yotta') - .1);
+}
+
+// ---------- 7 CLOSE + END ----------
+{
+  const t = scene('close', 'circle', { at: '50% 40%' });
+  fadeUp('#clKick', t + .1);
+  popIn('#clMark', t + .2, .7); A('#clMark', [{ transform: 'rotate(-6deg)' }, { transform: 'rotate(6deg)' }], t + .9, .9, { it: Infinity, dir: 'alternate', ease: 'ease-in-out', fill: 'forwards' });
+  fadeOut('#clMark', WF('close', 'how') - .4, .3);
+  kinetic('#clQ1', WF('close', 'how') - .15, .08);
+  draw('#clPipe', WF('close', 'how'), .6); fadeIn('#clFlow', WF('close', 'cooled'), .3); flow('#clFlow', 0, 1.4);
+  kinetic('#clQ2', WF('close', 'And') - .1, .08);
+  const tE = SC.close.end + .45;
+  A('#endCard', [{ clipPath: 'circle(0% at 50% 50%)' }, { clipPath: 'circle(150% at 50% 50%)' }], tE, .8, { ease: INOUT });
+  A('#endLogo', [{ opacity: 0, transform: 'translateY(40px) scale(.9)' }, { opacity: 1, transform: 'none' }], tE + .3, .7, { ease: BACK });
+  kinetic('#endT1', tE + .6, .07); popIn('#endT2', tE + 1.0); fadeUp('#endT3', tE + 1.2);
+  $('#endSrc').innerHTML = '<b>Sources:</b> ' + TL.sources.join(' · ');
+  fadeUp('#endSrc', tE + 1.3);
+  A('#chrome', [{ opacity: 1 }, { opacity: 0 }], tE, .4, { fill: 'forwards' });
+}
+
+captions(/^(hot|fans|plumbing|11|72|120|giant|heat|20|3,500|water|closed|zero|125|liquid|cooled|Yotta)/i);
+finish();
+</script>
+</body></html>

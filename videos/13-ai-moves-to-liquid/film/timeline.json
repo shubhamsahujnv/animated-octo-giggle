@@ -1,0 +1,830 @@
+{
+  "duration": 62.248,
+  "voice": "af_heart",
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0.3,
+      "end": 6.43,
+      "caption": "The newest AI chips run so hot that fans can't cool them. So data centres are turning into plumbing.",
+      "say": "The newest AI chips run so hot that fans can't cool them. So data centres are turning into plumbing.",
+      "words": [
+        {
+          "w": "The",
+          "start": 0.25,
+          "end": 0.44
+        },
+        {
+          "w": "newest",
+          "start": 0.44,
+          "end": 0.72
+        },
+        {
+          "w": "AI",
+          "start": 0.72,
+          "end": 1.2
+        },
+        {
+          "w": "chips",
+          "start": 1.2,
+          "end": 1.58
+        },
+        {
+          "w": "run",
+          "start": 1.58,
+          "end": 1.82
+        },
+        {
+          "w": "so",
+          "start": 1.82,
+          "end": 2.08
+        },
+        {
+          "w": "hot",
+          "start": 2.08,
+          "end": 2.4
+        },
+        {
+          "w": "that",
+          "start": 2.4,
+          "end": 2.66
+        },
+        {
+          "w": "fans",
+          "start": 2.66,
+          "end": 3.02
+        },
+        {
+          "w": "can't",
+          "start": 3.02,
+          "end": 3.42
+        },
+        {
+          "w": "cool",
+          "start": 3.42,
+          "end": 3.6
+        },
+        {
+          "w": "them.",
+          "start": 3.6,
+          "end": 3.88
+        },
+        {
+          "w": "So",
+          "start": 4.4,
+          "end": 4.52
+        },
+        {
+          "w": "data",
+          "start": 4.52,
+          "end": 4.8
+        },
+        {
+          "w": "centres",
+          "start": 4.8,
+          "end": 5.22
+        },
+        {
+          "w": "are",
+          "start": 5.22,
+          "end": 5.46
+        },
+        {
+          "w": "turning",
+          "start": 5.46,
+          "end": 5.7
+        },
+        {
+          "w": "into",
+          "start": 5.7,
+          "end": 5.94
+        },
+        {
+          "w": "plumbing.",
+          "start": 5.94,
+          "end": 6.22
+        }
+      ]
+    },
+    {
+      "id": "racks",
+      "start": 6.85,
+      "end": 18.702,
+      "caption": "A normal server rack draws about 11 kilowatts. Nvidia's newest AI rack packs 72 chips tightly together, so they work as one giant chip. It draws about 120.",
+      "say": "A normal server rack draws about eleven kilowatts. Nvidia's newest AI rack packs seventy-two chips tightly together, so they work as one giant chip. It draws about a hundred and twenty.",
+      "words": [
+        {
+          "w": "A",
+          "start": 6.8,
+          "end": 7.01
+        },
+        {
+          "w": "normal",
+          "start": 7.01,
+          "end": 7.31
+        },
+        {
+          "w": "server",
+          "start": 7.31,
+          "end": 7.65
+        },
+        {
+          "w": "rack",
+          "start": 7.65,
+          "end": 8.01
+        },
+        {
+          "w": "draws",
+          "start": 8.01,
+          "end": 8.41
+        },
+        {
+          "w": "about",
+          "start": 8.41,
+          "end": 8.71
+        },
+        {
+          "w": "11",
+          "start": 8.71,
+          "end": 9.11
+        },
+        {
+          "w": "kilowatts.",
+          "start": 9.11,
+          "end": 9.73
+        },
+        {
+          "w": "Nvidia's",
+          "start": 10.37,
+          "end": 10.91
+        },
+        {
+          "w": "newest",
+          "start": 10.91,
+          "end": 11.23
+        },
+        {
+          "w": "AI",
+          "start": 11.23,
+          "end": 11.77
+        },
+        {
+          "w": "rack",
+          "start": 11.77,
+          "end": 12.11
+        },
+        {
+          "w": "packs",
+          "start": 12.11,
+          "end": 12.53
+        },
+        {
+          "w": "72",
+          "start": 12.53,
+          "end": 13.11
+        },
+        {
+          "w": "chips",
+          "start": 13.11,
+          "end": 13.51
+        },
+        {
+          "w": "tightly",
+          "start": 13.51,
+          "end": 13.89
+        },
+        {
+          "w": "together,",
+          "start": 13.89,
+          "end": 14.35
+        },
+        {
+          "w": "so",
+          "start": 14.65,
+          "end": 14.85
+        },
+        {
+          "w": "they",
+          "start": 14.85,
+          "end": 15.01
+        },
+        {
+          "w": "work",
+          "start": 15.01,
+          "end": 15.23
+        },
+        {
+          "w": "as",
+          "start": 15.23,
+          "end": 15.41
+        },
+        {
+          "w": "one",
+          "start": 15.41,
+          "end": 15.69
+        },
+        {
+          "w": "giant",
+          "start": 15.69,
+          "end": 16.05
+        },
+        {
+          "w": "chip.",
+          "start": 16.05,
+          "end": 16.45
+        },
+        {
+          "w": "It",
+          "start": 16.95,
+          "end": 17.07
+        },
+        {
+          "w": "draws",
+          "start": 17.07,
+          "end": 17.37
+        },
+        {
+          "w": "about",
+          "start": 17.37,
+          "end": 17.67
+        },
+        {
+          "w": "120.",
+          "start": 17.67,
+          "end": 18.17
+        }
+      ]
+    },
+    {
+      "id": "air",
+      "start": 19.122,
+      "end": 24.016,
+      "caption": "Every watt becomes heat. And air can only carry away about 20 kilowatts per rack.",
+      "say": "Every watt becomes heat. And air can only carry away about twenty kilowatts per rack.",
+      "words": [
+        {
+          "w": "Every",
+          "start": 19.072,
+          "end": 19.402
+        },
+        {
+          "w": "watt",
+          "start": 19.402,
+          "end": 19.682
+        },
+        {
+          "w": "becomes",
+          "start": 19.682,
+          "end": 20.042
+        },
+        {
+          "w": "heat.",
+          "start": 20.042,
+          "end": 20.382
+        },
+        {
+          "w": "And",
+          "start": 20.882,
+          "end": 20.982
+        },
+        {
+          "w": "air",
+          "start": 20.982,
+          "end": 21.262
+        },
+        {
+          "w": "can",
+          "start": 21.262,
+          "end": 21.482
+        },
+        {
+          "w": "only",
+          "start": 21.482,
+          "end": 21.702
+        },
+        {
+          "w": "carry",
+          "start": 21.702,
+          "end": 21.982
+        },
+        {
+          "w": "away",
+          "start": 21.982,
+          "end": 22.322
+        },
+        {
+          "w": "about",
+          "start": 22.322,
+          "end": 22.602
+        },
+        {
+          "w": "20",
+          "start": 22.602,
+          "end": 22.922
+        },
+        {
+          "w": "kilowatts",
+          "start": 22.922,
+          "end": 23.402
+        },
+        {
+          "w": "per",
+          "start": 23.402,
+          "end": 23.582
+        },
+        {
+          "w": "rack.",
+          "start": 23.582,
+          "end": 23.902
+        }
+      ]
+    },
+    {
+      "id": "liquid",
+      "start": 24.436,
+      "end": 36.408,
+      "caption": "Litre for litre, water holds about 3,500 times more heat than air. So cold plates now sit right on the chips. Or whole servers sink into a fluid that doesn't conduct electricity.",
+      "say": "Litre for litre, water holds about thirty-five hundred times more heat than air. So cold plates now sit right on the chips. Or whole servers sink into a fluid that doesn't conduct electricity.",
+      "words": [
+        {
+          "w": "Litre",
+          "start": 24.386,
+          "end": 24.776
+        },
+        {
+          "w": "for",
+          "start": 24.776,
+          "end": 24.916
+        },
+        {
+          "w": "litre,",
+          "start": 24.916,
+          "end": 25.376
+        },
+        {
+          "w": "water",
+          "start": 25.776,
+          "end": 25.936
+        },
+        {
+          "w": "holds",
+          "start": 25.936,
+          "end": 26.356
+        },
+        {
+          "w": "about",
+          "start": 26.356,
+          "end": 26.676
+        },
+        {
+          "w": "3,500",
+          "start": 26.676,
+          "end": 27.596
+        },
+        {
+          "w": "times",
+          "start": 27.596,
+          "end": 28.016
+        },
+        {
+          "w": "more",
+          "start": 28.016,
+          "end": 28.296
+        },
+        {
+          "w": "heat",
+          "start": 28.296,
+          "end": 28.576
+        },
+        {
+          "w": "than",
+          "start": 28.576,
+          "end": 28.816
+        },
+        {
+          "w": "air.",
+          "start": 28.816,
+          "end": 29.156
+        },
+        {
+          "w": "So",
+          "start": 29.676,
+          "end": 29.856
+        },
+        {
+          "w": "cold",
+          "start": 29.856,
+          "end": 30.216
+        },
+        {
+          "w": "plates",
+          "start": 30.216,
+          "end": 30.576
+        },
+        {
+          "w": "now",
+          "start": 30.576,
+          "end": 30.816
+        },
+        {
+          "w": "sit",
+          "start": 30.816,
+          "end": 31.116
+        },
+        {
+          "w": "right",
+          "start": 31.116,
+          "end": 31.456
+        },
+        {
+          "w": "on",
+          "start": 31.456,
+          "end": 31.696
+        },
+        {
+          "w": "the",
+          "start": 31.696,
+          "end": 31.816
+        },
+        {
+          "w": "chips.",
+          "start": 31.816,
+          "end": 32.156
+        },
+        {
+          "w": "Or",
+          "start": 32.556,
+          "end": 32.796
+        },
+        {
+          "w": "whole",
+          "start": 32.796,
+          "end": 33.096
+        },
+        {
+          "w": "servers",
+          "start": 33.096,
+          "end": 33.516
+        },
+        {
+          "w": "sink",
+          "start": 33.516,
+          "end": 33.916
+        },
+        {
+          "w": "into",
+          "start": 33.916,
+          "end": 34.196
+        },
+        {
+          "w": "a",
+          "start": 34.196,
+          "end": 34.396
+        },
+        {
+          "w": "fluid",
+          "start": 34.396,
+          "end": 34.676
+        },
+        {
+          "w": "that",
+          "start": 34.676,
+          "end": 34.956
+        },
+        {
+          "w": "doesn't",
+          "start": 34.956,
+          "end": 35.236
+        },
+        {
+          "w": "conduct",
+          "start": 35.236,
+          "end": 35.616
+        },
+        {
+          "w": "electricity.",
+          "start": 35.616,
+          "end": 36.176
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "start": 36.828,
+      "end": 47.002,
+      "caption": "Does that mean more water? Not if the loop is closed. Microsoft says its zero-evaporation design saves 125 million litres a year, per site.",
+      "say": "Does that mean more water? Not if the loop is closed. Microsoft says its zero-evaporation design saves a hundred and twenty-five million litres a year, per site.",
+      "words": [
+        {
+          "w": "Does",
+          "start": 36.778,
+          "end": 36.948
+        },
+        {
+          "w": "that",
+          "start": 36.948,
+          "end": 37.168
+        },
+        {
+          "w": "mean",
+          "start": 37.168,
+          "end": 37.368
+        },
+        {
+          "w": "more",
+          "start": 37.368,
+          "end": 37.628
+        },
+        {
+          "w": "water?",
+          "start": 37.628,
+          "end": 37.988
+        },
+        {
+          "w": "Not",
+          "start": 38.488,
+          "end": 38.668
+        },
+        {
+          "w": "if",
+          "start": 38.668,
+          "end": 38.848
+        },
+        {
+          "w": "the",
+          "start": 38.848,
+          "end": 39.008
+        },
+        {
+          "w": "loop",
+          "start": 39.008,
+          "end": 39.168
+        },
+        {
+          "w": "is",
+          "start": 39.168,
+          "end": 39.348
+        },
+        {
+          "w": "closed.",
+          "start": 39.348,
+          "end": 39.868
+        },
+        {
+          "w": "Microsoft",
+          "start": 40.448,
+          "end": 40.828
+        },
+        {
+          "w": "says",
+          "start": 40.828,
+          "end": 41.228
+        },
+        {
+          "w": "its",
+          "start": 41.228,
+          "end": 41.428
+        },
+        {
+          "w": "zero-evaporation",
+          "start": 41.428,
+          "end": 42.528
+        },
+        {
+          "w": "design",
+          "start": 42.528,
+          "end": 43.008
+        },
+        {
+          "w": "saves",
+          "start": 43.008,
+          "end": 43.448
+        },
+        {
+          "w": "125",
+          "start": 43.448,
+          "end": 44.348
+        },
+        {
+          "w": "million",
+          "start": 44.348,
+          "end": 45.108
+        },
+        {
+          "w": "litres",
+          "start": 45.108,
+          "end": 45.608
+        },
+        {
+          "w": "a",
+          "start": 45.608,
+          "end": 45.748
+        },
+        {
+          "w": "year,",
+          "start": 45.748,
+          "end": 46.088
+        },
+        {
+          "w": "per",
+          "start": 46.368,
+          "end": 46.508
+        },
+        {
+          "w": "site.",
+          "start": 46.508,
+          "end": 46.828
+        }
+      ]
+    },
+    {
+      "id": "india",
+      "start": 47.422,
+      "end": 52.704,
+      "caption": "In hot, humid India, operators like Yotta already run their AI chips on liquid.",
+      "say": "In hot, humid India, operators like Yotta already run their AI chips on liquid.",
+      "words": [
+        {
+          "w": "In",
+          "start": 47.372,
+          "end": 47.562
+        },
+        {
+          "w": "hot,",
+          "start": 47.562,
+          "end": 47.942
+        },
+        {
+          "w": "humid",
+          "start": 48.162,
+          "end": 48.402
+        },
+        {
+          "w": "India,",
+          "start": 48.402,
+          "end": 48.882
+        },
+        {
+          "w": "operators",
+          "start": 49.382,
+          "end": 49.822
+        },
+        {
+          "w": "like",
+          "start": 49.822,
+          "end": 50.062
+        },
+        {
+          "w": "Yotta",
+          "start": 50.062,
+          "end": 50.442
+        },
+        {
+          "w": "already",
+          "start": 50.442,
+          "end": 50.962
+        },
+        {
+          "w": "run",
+          "start": 50.962,
+          "end": 51.182
+        },
+        {
+          "w": "their",
+          "start": 51.182,
+          "end": 51.322
+        },
+        {
+          "w": "AI",
+          "start": 51.322,
+          "end": 51.702
+        },
+        {
+          "w": "chips",
+          "start": 51.702,
+          "end": 52.062
+        },
+        {
+          "w": "on",
+          "start": 52.062,
+          "end": 52.282
+        },
+        {
+          "w": "liquid.",
+          "start": 52.282,
+          "end": 52.542
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "start": 53.124,
+      "end": 58.428,
+      "caption": "So next time you hear \"AI data centre\", ask: how is it cooled? And where does the heat go?",
+      "say": "So, next time you hear AI data centre, ask: how is it cooled? And where does the heat go?",
+      "words": [
+        {
+          "w": "So",
+          "start": 53.074,
+          "end": 53.364
+        },
+        {
+          "w": "next",
+          "start": 53.364,
+          "end": 53.644
+        },
+        {
+          "w": "time",
+          "start": 53.644,
+          "end": 53.864
+        },
+        {
+          "w": "you",
+          "start": 53.864,
+          "end": 54.004
+        },
+        {
+          "w": "hear",
+          "start": 54.004,
+          "end": 54.164
+        },
+        {
+          "w": "\"AI",
+          "start": 54.164,
+          "end": 54.564
+        },
+        {
+          "w": "data",
+          "start": 54.564,
+          "end": 54.884
+        },
+        {
+          "w": "centre\",",
+          "start": 54.884,
+          "end": 55.284
+        },
+        {
+          "w": "ask:",
+          "start": 55.284,
+          "end": 55.744
+        },
+        {
+          "w": "how",
+          "start": 56.084,
+          "end": 56.264
+        },
+        {
+          "w": "is",
+          "start": 56.264,
+          "end": 56.424
+        },
+        {
+          "w": "it",
+          "start": 56.424,
+          "end": 56.544
+        },
+        {
+          "w": "cooled?",
+          "start": 56.544,
+          "end": 56.864
+        },
+        {
+          "w": "And",
+          "start": 56.864,
+          "end": 57.404
+        },
+        {
+          "w": "where",
+          "start": 57.404,
+          "end": 57.564
+        },
+        {
+          "w": "does",
+          "start": 57.564,
+          "end": 57.724
+        },
+        {
+          "w": "the",
+          "start": 57.724,
+          "end": 57.884
+        },
+        {
+          "w": "heat",
+          "start": 57.884,
+          "end": 58.044
+        },
+        {
+          "w": "go?",
+          "start": 58.044,
+          "end": 58.324
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Uptime Institute, Global Data Center Survey (2026)",
+    "NVIDIA GB200 NVL72 (2024)",
+    "Yotta Data Services (2026)",
+    "Microsoft (Aug 2024), company estimate"
+  ]
+}

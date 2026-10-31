@@ -1,0 +1,772 @@
+{
+  "duration": 58.978,
+  "voice": "af_heart",
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0.3,
+      "end": 7.147,
+      "caption": "In October 2026, Google launched AI chips into space, to test whether data centres could orbit Earth.",
+      "say": "In October twenty twenty-six, Google launched AI chips into space, to test whether data centres could orbit Earth.",
+      "words": [
+        {
+          "w": "In",
+          "start": 0.25,
+          "end": 0.44
+        },
+        {
+          "w": "October",
+          "start": 0.44,
+          "end": 0.84
+        },
+        {
+          "w": "2026,",
+          "start": 0.84,
+          "end": 1.88
+        },
+        {
+          "w": "Google",
+          "start": 2.34,
+          "end": 2.56
+        },
+        {
+          "w": "launched",
+          "start": 2.56,
+          "end": 2.96
+        },
+        {
+          "w": "AI",
+          "start": 2.96,
+          "end": 3.42
+        },
+        {
+          "w": "chips",
+          "start": 3.42,
+          "end": 3.74
+        },
+        {
+          "w": "into",
+          "start": 3.74,
+          "end": 3.98
+        },
+        {
+          "w": "space,",
+          "start": 3.98,
+          "end": 4.44
+        },
+        {
+          "w": "to",
+          "start": 4.44,
+          "end": 5.02
+        },
+        {
+          "w": "test",
+          "start": 5.02,
+          "end": 5.3
+        },
+        {
+          "w": "whether",
+          "start": 5.3,
+          "end": 5.54
+        },
+        {
+          "w": "data",
+          "start": 5.54,
+          "end": 5.86
+        },
+        {
+          "w": "centres",
+          "start": 5.86,
+          "end": 6.26
+        },
+        {
+          "w": "could",
+          "start": 6.26,
+          "end": 6.46
+        },
+        {
+          "w": "orbit",
+          "start": 6.46,
+          "end": 6.76
+        },
+        {
+          "w": "Earth.",
+          "start": 6.76,
+          "end": 7.04
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "start": 7.567,
+      "end": 19.509,
+      "caption": "Why? On Earth, AI is running short of grid connections, land and water. In the right orbit, solar panels almost never go dark. Google says they can produce up to 8 times more power.",
+      "say": "Why? On Earth, AI is running short of grid connections, land and water. In the right orbit, solar panels almost never go dark. Google says they can produce up to eight times more power.",
+      "words": [
+        {
+          "w": "Why?",
+          "start": 7.517,
+          "end": 7.867
+        },
+        {
+          "w": "On",
+          "start": 8.107,
+          "end": 8.287
+        },
+        {
+          "w": "Earth,",
+          "start": 8.287,
+          "end": 8.587
+        },
+        {
+          "w": "AI",
+          "start": 8.867,
+          "end": 9.107
+        },
+        {
+          "w": "is",
+          "start": 9.107,
+          "end": 9.467
+        },
+        {
+          "w": "running",
+          "start": 9.467,
+          "end": 9.687
+        },
+        {
+          "w": "short",
+          "start": 9.687,
+          "end": 9.947
+        },
+        {
+          "w": "of",
+          "start": 9.947,
+          "end": 10.127
+        },
+        {
+          "w": "grid",
+          "start": 10.127,
+          "end": 10.307
+        },
+        {
+          "w": "connections,",
+          "start": 10.307,
+          "end": 10.887
+        },
+        {
+          "w": "land",
+          "start": 11.427,
+          "end": 11.647
+        },
+        {
+          "w": "and",
+          "start": 11.887,
+          "end": 11.987
+        },
+        {
+          "w": "water.",
+          "start": 11.987,
+          "end": 12.267
+        },
+        {
+          "w": "In",
+          "start": 12.887,
+          "end": 13.027
+        },
+        {
+          "w": "the",
+          "start": 13.027,
+          "end": 13.127
+        },
+        {
+          "w": "right",
+          "start": 13.127,
+          "end": 13.327
+        },
+        {
+          "w": "orbit,",
+          "start": 13.327,
+          "end": 13.727
+        },
+        {
+          "w": "solar",
+          "start": 14.087,
+          "end": 14.287
+        },
+        {
+          "w": "panels",
+          "start": 14.287,
+          "end": 14.687
+        },
+        {
+          "w": "almost",
+          "start": 14.687,
+          "end": 15.047
+        },
+        {
+          "w": "never",
+          "start": 15.047,
+          "end": 15.447
+        },
+        {
+          "w": "go",
+          "start": 15.447,
+          "end": 15.667
+        },
+        {
+          "w": "dark.",
+          "start": 15.667,
+          "end": 16.087
+        },
+        {
+          "w": "Google",
+          "start": 16.707,
+          "end": 16.907
+        },
+        {
+          "w": "says",
+          "start": 16.907,
+          "end": 17.207
+        },
+        {
+          "w": "they",
+          "start": 17.207,
+          "end": 17.387
+        },
+        {
+          "w": "can",
+          "start": 17.387,
+          "end": 17.527
+        },
+        {
+          "w": "produce",
+          "start": 17.527,
+          "end": 17.827
+        },
+        {
+          "w": "up",
+          "start": 17.827,
+          "end": 18.047
+        },
+        {
+          "w": "to",
+          "start": 18.047,
+          "end": 18.247
+        },
+        {
+          "w": "8",
+          "start": 18.247,
+          "end": 18.427
+        },
+        {
+          "w": "times",
+          "start": 18.427,
+          "end": 18.787
+        },
+        {
+          "w": "more",
+          "start": 18.787,
+          "end": 19.007
+        },
+        {
+          "w": "power.",
+          "start": 19.007,
+          "end": 19.367
+        }
+      ]
+    },
+    {
+      "id": "race",
+      "start": 19.929,
+      "end": 33.842,
+      "caption": "Starcloud has already trained a small AI model on an Nvidia chip in orbit. SpaceX has asked to launch up to a million computing satellites. Only about 16,800 working satellites exist today.",
+      "say": "Starcloud has already trained a small AI model on an Nvidia chip in orbit. SpaceX has asked to launch up to a million computing satellites. Only about sixteen thousand eight hundred working satellites exist today.",
+      "words": [
+        {
+          "w": "Starcloud",
+          "start": 19.879,
+          "end": 20.409
+        },
+        {
+          "w": "has",
+          "start": 20.409,
+          "end": 20.669
+        },
+        {
+          "w": "already",
+          "start": 20.669,
+          "end": 21.029
+        },
+        {
+          "w": "trained",
+          "start": 21.029,
+          "end": 21.409
+        },
+        {
+          "w": "a",
+          "start": 21.409,
+          "end": 21.609
+        },
+        {
+          "w": "small",
+          "start": 21.609,
+          "end": 22.009
+        },
+        {
+          "w": "AI",
+          "start": 22.009,
+          "end": 22.429
+        },
+        {
+          "w": "model",
+          "start": 22.429,
+          "end": 22.889
+        },
+        {
+          "w": "on",
+          "start": 22.889,
+          "end": 23.289
+        },
+        {
+          "w": "an",
+          "start": 23.289,
+          "end": 23.409
+        },
+        {
+          "w": "Nvidia",
+          "start": 23.409,
+          "end": 23.729
+        },
+        {
+          "w": "chip",
+          "start": 23.729,
+          "end": 24.089
+        },
+        {
+          "w": "in",
+          "start": 24.089,
+          "end": 24.349
+        },
+        {
+          "w": "orbit.",
+          "start": 24.349,
+          "end": 24.729
+        },
+        {
+          "w": "SpaceX",
+          "start": 25.529,
+          "end": 25.929
+        },
+        {
+          "w": "has",
+          "start": 25.929,
+          "end": 26.409
+        },
+        {
+          "w": "asked",
+          "start": 26.409,
+          "end": 26.729
+        },
+        {
+          "w": "to",
+          "start": 26.729,
+          "end": 26.929
+        },
+        {
+          "w": "launch",
+          "start": 26.929,
+          "end": 27.149
+        },
+        {
+          "w": "up",
+          "start": 27.149,
+          "end": 27.369
+        },
+        {
+          "w": "to",
+          "start": 27.369,
+          "end": 27.569
+        },
+        {
+          "w": "a",
+          "start": 27.569,
+          "end": 27.689
+        },
+        {
+          "w": "million",
+          "start": 27.689,
+          "end": 28.029
+        },
+        {
+          "w": "computing",
+          "start": 28.029,
+          "end": 28.549
+        },
+        {
+          "w": "satellites.",
+          "start": 28.549,
+          "end": 29.169
+        },
+        {
+          "w": "Only",
+          "start": 29.829,
+          "end": 30.089
+        },
+        {
+          "w": "about",
+          "start": 30.089,
+          "end": 30.429
+        },
+        {
+          "w": "16,800",
+          "start": 30.429,
+          "end": 31.829
+        },
+        {
+          "w": "working",
+          "start": 31.829,
+          "end": 32.249
+        },
+        {
+          "w": "satellites",
+          "start": 32.249,
+          "end": 32.929
+        },
+        {
+          "w": "exist",
+          "start": 32.929,
+          "end": 33.289
+        },
+        {
+          "w": "today.",
+          "start": 33.289,
+          "end": 33.689
+        }
+      ]
+    },
+    {
+      "id": "catch",
+      "start": 34.262,
+      "end": 45.33,
+      "caption": "The catch: there's no air to carry heat away. Chips must radiate it through huge panels, around 100 tonnes per megawatt, by one estimate. Add radiation, and no repairs.",
+      "say": "The catch: there's no air to carry heat away. Chips must radiate it through huge panels, around a hundred tonnes per megawatt, by one estimate. Add radiation, and no repairs.",
+      "words": [
+        {
+          "w": "The",
+          "start": 34.212,
+          "end": 34.362
+        },
+        {
+          "w": "catch:",
+          "start": 34.362,
+          "end": 34.722
+        },
+        {
+          "w": "there's",
+          "start": 34.942,
+          "end": 35.142
+        },
+        {
+          "w": "no",
+          "start": 35.142,
+          "end": 35.302
+        },
+        {
+          "w": "air",
+          "start": 35.302,
+          "end": 35.502
+        },
+        {
+          "w": "to",
+          "start": 35.502,
+          "end": 35.682
+        },
+        {
+          "w": "carry",
+          "start": 35.682,
+          "end": 35.902
+        },
+        {
+          "w": "heat",
+          "start": 35.902,
+          "end": 36.162
+        },
+        {
+          "w": "away.",
+          "start": 36.162,
+          "end": 36.502
+        },
+        {
+          "w": "Chips",
+          "start": 37.142,
+          "end": 37.322
+        },
+        {
+          "w": "must",
+          "start": 37.322,
+          "end": 37.582
+        },
+        {
+          "w": "radiate",
+          "start": 37.582,
+          "end": 38.182
+        },
+        {
+          "w": "it",
+          "start": 38.182,
+          "end": 38.362
+        },
+        {
+          "w": "through",
+          "start": 38.362,
+          "end": 38.542
+        },
+        {
+          "w": "huge",
+          "start": 38.542,
+          "end": 38.922
+        },
+        {
+          "w": "panels,",
+          "start": 38.922,
+          "end": 39.422
+        },
+        {
+          "w": "around",
+          "start": 39.862,
+          "end": 39.982
+        },
+        {
+          "w": "100",
+          "start": 39.982,
+          "end": 40.362
+        },
+        {
+          "w": "tonnes",
+          "start": 40.362,
+          "end": 40.702
+        },
+        {
+          "w": "per",
+          "start": 40.702,
+          "end": 40.942
+        },
+        {
+          "w": "megawatt,",
+          "start": 40.942,
+          "end": 41.522
+        },
+        {
+          "w": "by",
+          "start": 41.642,
+          "end": 41.782
+        },
+        {
+          "w": "one",
+          "start": 41.782,
+          "end": 42.042
+        },
+        {
+          "w": "estimate.",
+          "start": 42.042,
+          "end": 42.502
+        },
+        {
+          "w": "Add",
+          "start": 43.202,
+          "end": 43.362
+        },
+        {
+          "w": "radiation,",
+          "start": 43.362,
+          "end": 43.982
+        },
+        {
+          "w": "and",
+          "start": 43.982,
+          "end": 44.422
+        },
+        {
+          "w": "no",
+          "start": 44.422,
+          "end": 44.602
+        },
+        {
+          "w": "repairs.",
+          "start": 44.602,
+          "end": 45.022
+        }
+      ]
+    },
+    {
+      "id": "when",
+      "start": 45.75,
+      "end": 48.953,
+      "caption": "Google itself says it might add up by the mid-2030s.",
+      "say": "Google itself says it might add up by the mid twenty-thirties.",
+      "words": [
+        {
+          "w": "Google",
+          "start": 45.7,
+          "end": 46.01
+        },
+        {
+          "w": "itself",
+          "start": 46.01,
+          "end": 46.47
+        },
+        {
+          "w": "says",
+          "start": 46.47,
+          "end": 46.79
+        },
+        {
+          "w": "it",
+          "start": 46.79,
+          "end": 46.97
+        },
+        {
+          "w": "might",
+          "start": 46.97,
+          "end": 47.17
+        },
+        {
+          "w": "add",
+          "start": 47.17,
+          "end": 47.43
+        },
+        {
+          "w": "up",
+          "start": 47.43,
+          "end": 47.67
+        },
+        {
+          "w": "by",
+          "start": 47.67,
+          "end": 47.81
+        },
+        {
+          "w": "the",
+          "start": 47.81,
+          "end": 47.95
+        },
+        {
+          "w": "mid-2030s.",
+          "start": 47.95,
+          "end": 48.91
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "start": 49.373,
+      "end": 55.158,
+      "caption": "So it's an experiment, not an escape hatch. AI's clean power still has to be built on the ground.",
+      "say": "So it's an experiment, not an escape hatch. AI's clean power still has to be built on the ground.",
+      "words": [
+        {
+          "w": "So",
+          "start": 49.323,
+          "end": 49.513
+        },
+        {
+          "w": "it's",
+          "start": 49.513,
+          "end": 49.673
+        },
+        {
+          "w": "an",
+          "start": 49.673,
+          "end": 49.753
+        },
+        {
+          "w": "experiment,",
+          "start": 49.753,
+          "end": 50.293
+        },
+        {
+          "w": "not",
+          "start": 50.713,
+          "end": 50.813
+        },
+        {
+          "w": "an",
+          "start": 50.813,
+          "end": 50.953
+        },
+        {
+          "w": "escape",
+          "start": 50.953,
+          "end": 51.273
+        },
+        {
+          "w": "hatch.",
+          "start": 51.273,
+          "end": 51.753
+        },
+        {
+          "w": "AI's",
+          "start": 52.273,
+          "end": 52.753
+        },
+        {
+          "w": "clean",
+          "start": 52.753,
+          "end": 52.953
+        },
+        {
+          "w": "power",
+          "start": 52.953,
+          "end": 53.313
+        },
+        {
+          "w": "still",
+          "start": 53.313,
+          "end": 53.673
+        },
+        {
+          "w": "has",
+          "start": 53.673,
+          "end": 53.893
+        },
+        {
+          "w": "to",
+          "start": 53.893,
+          "end": 54.053
+        },
+        {
+          "w": "be",
+          "start": 54.053,
+          "end": 54.213
+        },
+        {
+          "w": "built",
+          "start": 54.213,
+          "end": 54.373
+        },
+        {
+          "w": "on",
+          "start": 54.373,
+          "end": 54.573
+        },
+        {
+          "w": "the",
+          "start": 54.573,
+          "end": 54.673
+        },
+        {
+          "w": "ground.",
+          "start": 54.673,
+          "end": 54.973
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Google, Project Suncatcher (2025–26)",
+    "Starcloud (Nov 2025)",
+    "SpaceX FCC filing (Jan 2026) via DCD",
+    "KeepTrack satellite catalog (Oct 2026)",
+    "World Economic Forum (June 2026), estimate"
+  ]
+}

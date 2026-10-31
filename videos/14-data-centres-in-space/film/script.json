@@ -1,0 +1,65 @@
+{
+  "title": "Data centres in space",
+  "voice": "af_heart",
+  "speed": 1.0,
+  "gap": 0.42,
+  "music": {
+    "lift": "catch",
+    "drums": true,
+    "impacts": [
+      {
+        "scene": "hook",
+        "at": 2.2
+      },
+      {
+        "scene": "race",
+        "at": 5.2
+      }
+    ]
+  },
+  "sources": [
+    "Google, Project Suncatcher (2025–26)",
+    "Starcloud (Nov 2025)",
+    "SpaceX FCC filing (Jan 2026) via DCD",
+    "KeepTrack satellite catalog (Oct 2026)",
+    "World Economic Forum (June 2026), estimate"
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "In October twenty twenty-six, Google launched AI chips into space, to test whether data centres could orbit Earth.",
+      "caption": "In October 2026, Google launched AI chips into space, to test whether data centres could orbit Earth."
+    },
+    {
+      "id": "why",
+      "say": "Why? On Earth, AI is running short of grid connections, land and water. In the right orbit, solar panels almost never go dark. Google says they can produce up to eight times more power.",
+      "caption": "Why? On Earth, AI is running short of grid connections, land and water. In the right orbit, solar panels almost never go dark. Google says they can produce up to 8 times more power."
+    },
+    {
+      "id": "race",
+      "say": "Starcloud has already trained a small AI model on an Nvidia chip in orbit. SpaceX has asked to launch up to a million computing satellites. Only about sixteen thousand eight hundred working satellites exist today.",
+      "caption": "Starcloud has already trained a small AI model on an Nvidia chip in orbit. SpaceX has asked to launch up to a million computing satellites. Only about 16,800 working satellites exist today."
+    },
+    {
+      "id": "catch",
+      "say": "The catch: there's no air to carry heat away. Chips must radiate it through huge panels, around a hundred tonnes per megawatt, by one estimate. Add radiation, and no repairs.",
+      "caption": "The catch: there's no air to carry heat away. Chips must radiate it through huge panels, around 100 tonnes per megawatt, by one estimate. Add radiation, and no repairs."
+    },
+    {
+      "id": "when",
+      "say": "Google itself says it might add up by the mid twenty-thirties.",
+      "caption": "Google itself says it might add up by the mid-2030s."
+    },
+    {
+      "id": "close",
+      "say": "So it's an experiment, not an escape hatch. AI's clean power still has to be built on the ground.",
+      "caption": "So it's an experiment, not an escape hatch. AI's clean power still has to be built on the ground."
+    }
+  ],
+  "vocab": [
+    "Google",
+    "Starcloud",
+    "Nvidia",
+    "SpaceX"
+  ]
+}
