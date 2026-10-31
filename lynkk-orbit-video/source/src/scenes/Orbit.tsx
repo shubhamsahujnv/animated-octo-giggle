@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Img, staticFile, useCurrentFrame } from "remotion";
 import { noise2D } from "@remotion/noise";
 import { BEAT, T } from "../timing";
 import { radius } from "../brand/tokens";
@@ -45,7 +45,7 @@ const remiPos = (fmt: Fmt, f: number) => {
   const onRing = (i: number) => polar(c, ringR(fmt, i, f), -90 + RINGS[i].dir * 360 * sweepAt(i, f));
   const perch1 = polar(c, ringR(fmt, 0, f) + per(fmt, 105, 85), -38);
   const perch2 = polar(c, ringR(fmt, 1, f) + per(fmt, 95, 80), -40);
-  const perch3 = polar(c, RINGS[2].r * scaleAt(fmt, f) * 0.86, 30);
+  const perch3 = polar(c, RINGS[2].r * scaleAt(fmt, f) * 0.84, 62);
   const L = endLayout(fmt);
   const endPerch = { x: fmt.W / 2 + L.button.w / 2 - 70, y: L.button.y - L.button.h / 2 - remiSize(fmt) * 0.34 };
 
@@ -113,26 +113,40 @@ const remiState = (fmt: Fmt, f: number): RemiState => {
 
 // ------------------------------------------------------------------ parts
 
+/** FaceTime has no usable logo file: its green tile with a white camera, drawn. */
+const FaceTimeMark: React.FC<{ size: number }> = ({ size }) => (
+  <svg viewBox="0 0 24 24" width={size * 0.62} height={size * 0.62}>
+    <rect x="2.5" y="7" width="12.5" height="10" rx="2.6" fill="#fff" />
+    <path d="M16 11.2 21 8v8l-5-3.2z" fill="#fff" />
+  </svg>
+);
+
 const AppTile: React.FC<{ tile: Tile; size: number; check?: number }> = ({ tile, size, check = 0 }) => (
   <div
     style={{
       width: size,
       height: size,
-      borderRadius: size * 0.26,
-      background: tile.bg,
+      borderRadius: size * 0.24,
+      background: tile.bg === "facetime" ? "linear-gradient(180deg, #5cf27a, #10c43b)" : "#ffffff",
       display: "grid",
       placeItems: "center",
-      color: tile.ink ?? "#fff",
-      fontFamily: INTER,
-      fontWeight: 700,
-      fontSize: size * (tile.glyph.length > 1 ? 0.42 : 0.56),
-      letterSpacing: "-0.03em",
-      lineHeight: 1,
-      boxShadow: `inset 0 0 0 ${Math.max(1, size * 0.02)}px rgba(255,255,255,0.18), 0 ${size * 0.12}px ${size * 0.35}px rgba(0,0,0,0.45)`,
+      overflow: "visible",
+      boxShadow: `inset 0 0 0 ${Math.max(1, size * 0.015)}px rgba(0,0,0,0.08), 0 ${size * 0.12}px ${size * 0.35}px rgba(0,0,0,0.45)`,
       position: "relative",
     }}
   >
-    {tile.glyph}
+    {tile.bg === "facetime" ? (
+      <FaceTimeMark size={size} />
+    ) : tile.logo ? (
+      <Img
+        src={staticFile(`logos/${tile.logo}`)}
+        style={
+          tile.full
+            ? { width: size, height: size, borderRadius: size * 0.24, objectFit: "cover" }
+            : { width: size * (tile.wide ? 0.88 : 0.68), height: size * (tile.wide ? 0.88 : 0.68), objectFit: "contain" }
+        }
+      />
+    ) : null}
     {check > 0 ? (
       <div
         style={{
@@ -146,6 +160,8 @@ const AppTile: React.FC<{ tile: Tile; size: number; check?: number }> = ({ tile,
           color: palette.black,
           display: "grid",
           placeItems: "center",
+          fontFamily: INTER,
+          fontWeight: 700,
           fontSize: size * 0.3,
           transform: `scale(${check})`,
           boxShadow: "0 0 18px rgba(190,180,251,0.9)",

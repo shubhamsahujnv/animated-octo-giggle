@@ -8,9 +8,19 @@ import { clamp, expoIn, expoInOut, expoOut, inOut, lerp, per, tween, type Fmt } 
  * same functions, so they can never drift apart.
  */
 
-export type Tile = { name: string; bg: string; glyph: string; ink?: string };
+export type Tile = {
+  name: string;
+  /** The app's own logo in public/logos/ (shown on a white tile). */
+  logo?: string;
+  /** The logo is already a full app icon (fills the tile). */
+  full?: boolean;
+  /** A wide wordmark: give it more of the tile. */
+  wide?: boolean;
+  /** Drawn tile for apps with no usable logo file (FaceTime). */
+  bg?: string;
+};
 
-/** Generic app tiles: a colour and a letter, never a real logo (the kit's rule). */
+/** The apps, with their own logos (the client asked for the real logos in this "works with" film). */
 export const RINGS: {
   r: number;
   dir: 1 | -1;
@@ -32,13 +42,13 @@ export const RINGS: {
     spin: 0.9,
     labelsOut: T.ring2From,
     tiles: [
-      { name: "Zoom", bg: "#2d8cff", glyph: "Z" },
-      { name: "Google Meet", bg: "#00832d", glyph: "M" },
-      { name: "Teams", bg: "#5b5fc7", glyph: "T" },
-      { name: "Slack huddles", bg: "#4a154b", glyph: "#" },
-      { name: "WhatsApp", bg: "#25d366", glyph: "W" },
-      { name: "FaceTime", bg: "#2fbf4f", glyph: "F" },
-      { name: "Webex", bg: "#0b4f71", glyph: "Wx" },
+      { name: "Zoom", logo: "zoom.svg", full: true },
+      { name: "Google Meet", logo: "googlemeet.svg" },
+      { name: "Teams", logo: "teams.svg" },
+      { name: "Slack huddles", logo: "slack.svg" },
+      { name: "WhatsApp", logo: "whatsapp.svg" },
+      { name: "FaceTime", bg: "facetime" },
+      { name: "Webex", logo: "webex.svg" },
     ],
   },
   {
@@ -50,8 +60,8 @@ export const RINGS: {
     spin: -0.45,
     labelsOut: T.ring3From,
     tiles: [
-      { name: "Google Calendar", bg: "#ffffff", glyph: "31", ink: "#1a73e8" },
-      { name: "Slack", bg: "#4a154b", glyph: "#" },
+      { name: "Google Calendar", logo: "googlecalendar.svg" },
+      { name: "Slack", logo: "slack.svg" },
     ],
   },
   {
@@ -63,11 +73,11 @@ export const RINGS: {
     spin: 0.22,
     labelsOut: T.drop + 20,
     tiles: [
-      { name: "HubSpot", bg: "#ff7a59", glyph: "H" },
-      { name: "Salesforce", bg: "#00a1e0", glyph: "S" },
-      { name: "Pipedrive", bg: "#1f2a24", glyph: "P" },
-      { name: "Attio", bg: "#ffffff", glyph: "A", ink: "#111" },
-      { name: "Zoho", bg: "#e42527", glyph: "Z" },
+      { name: "HubSpot", logo: "hubspot.svg" },
+      { name: "Salesforce", logo: "salesforce.svg", wide: true },
+      { name: "Pipedrive", logo: "pipedrive.png", full: true },
+      { name: "Attio", logo: "attio.svg" },
+      { name: "Zoho", logo: "zoho.svg", wide: true },
     ],
   },
 ];
