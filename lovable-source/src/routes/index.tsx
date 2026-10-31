@@ -6,7 +6,7 @@ export const Route = createFileRoute("/")({
   server: {
     handlers: {
       GET: async () => {
-        const { default: html } = await import("../../index.html?raw");
+        const { default: html } = await import("../baseline.html?raw");
         return new Response(html, {
           headers: { "content-type": "text/html; charset=utf-8" },
         });

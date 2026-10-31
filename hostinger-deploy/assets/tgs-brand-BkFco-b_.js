@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-ByaQ0wya.js";import{g as t}from"./index-D2HL4Eft.js";var n=e();function r({className:e=``}){return(0,n.jsx)(`img`,{src:t.url,alt:`TGS`,width:360,height:271,className:`h-auto w-9 object-contain ${e}`})}export{r as t};
