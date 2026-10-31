@@ -1,4 +1,3 @@
-import ankitaPortrait from "../assets/ankita-patwa.jpg.asset.json";
 import tgsLogo from "../assets/tgs-logo.png.asset.json";
 import { POSTS } from "./posts";
 
@@ -78,7 +77,10 @@ export const AUTHORS: Record<string, AuthorProfile> = {
         place: "Hertfordshire, England, United Kingdom · Remote",
       },
     ],
-    image: ankitaPortrait.url,
+    // Drop the real portrait at public/authors/ankita-patwa.png to replace the
+    // placeholder. It is used on the author page, the blog index author card and
+    // every article byline, so one file updates all of them.
+    image: "/authors/ankita-patwa.png",
     linkedin: "https://www.linkedin.com/in/ankita-patwa/",
   },
   "TGS Editorial": DEFAULT_AUTHOR,
