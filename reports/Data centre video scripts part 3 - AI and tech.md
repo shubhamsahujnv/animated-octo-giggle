@@ -8,6 +8,8 @@ This batch covers the **technology** behind AI data centres: how they behave on 
 
 ---
 
+> **TGS reel versions:** Scripts 13 and 14 also have 22–23 s reel plans that follow The Green Solve guardrails skill, in `videos/13-ai-moves-to-liquid/` and `videos/14-data-centres-in-space/`.
+
 ## How this batch avoids repeating earlier content
 
 Topics already covered, and not reused as the main idea here:
@@ -32,7 +34,7 @@ Topics already covered, and not reused as the main idea here:
 | # | Insight | Key figure | Date / source | Script |
 |---|---|---|---|---|
 | 11 | Data centres can suddenly drop off the grid together and destabilise it | ~1,500 MW lost at 60 points (Jul 2024); ~3,800 MW (Jul 2026), PJM's largest ever. NERC then issued its highest-level alert | NERC incident review, Jan 2025; PJM via Utility Dive, Aug 2026; NERC Level 3 Alert, 4 May 2026 | ✅ 11 |
-| 12 | Data centres that pause briefly could unlock huge grid capacity | 76–126 GW of new US load if curtailed 0.25–1% of the time. Live trials cut AI power 25–40% on request | Duke Nicholas Institute, Feb 2025; EPRI/Emerald AI; National Grid, 2026 | ✅ 12 |
+| 12 | Data centres that pause briefly could free up huge grid capacity | 76–126 GW of new US load if curtailed 0.25–1% of the time. Live trials cut AI power 25–40% on request | Duke Nicholas Institute, Feb 2025; EPRI/Emerald AI; National Grid, 2026 | ✅ 12 |
 | 13 | AI chips are too hot for air, so cooling is moving to liquid | Typical rack ~11 kW vs ~120 kW (GB200 NVL72) and ~600 kW planned (2027) | Uptime Institute 2026 survey; NVIDIA reporting | ✅ 13 |
 | 14 | Data centres in space: real tests, unproven economics | Google launched 4 TPUs to orbit (1 Oct 2026). SpaceX filed for up to 1 million compute satellites | Google, Oct 2026; DCD / IEEE Spectrum, 2026 | ✅ 14 |
 | 15 | AI is splitting into "factories" (training) and "counters" (inference), which changes where data centres get built, including in India | Inference ≈ two-thirds of AI compute in 2026. Google's 1 GW Vizag hub broke ground Apr 2026 | Deloitte via reports; Google / Business Standard, Apr 2026 | ✅ 15 |
@@ -73,7 +75,7 @@ Topics already covered, and not reused as the main idea here:
 
 ## Script 12: "The data centre that can take a break"
 
-- **Thumbnail text:** "Pause AI. Unlock 100 GW?"
+- **Thumbnail text:** "Pause AI. Free up 100 GW?"
 - **Core insight:** If AI data centres agree to dial down for a few hours a year, the existing grid can connect far more of them, faster, without building as many new power plants. Trials show it works.
 - **Runtime:** ~110 seconds
 
@@ -197,7 +199,7 @@ Start with the most dramatic real event, follow it immediately with the hopeful 
 - Use only brand colours (Deep Teal, Lime, Taupe, Mauve, Cream) and fonts (Libre Baskerville headings, Helvetica body).
 - Logo on every end card. Source line on every stat frame (source + year).
 - No company logos on screen (Google, Microsoft, NVIDIA, SpaceX, Reliance): use names in text only, with original illustrations.
-- None of these scripts mention carbon credits, so the credit disclosures are not needed. If a caption adds credits, include both required disclosures.
+- None of these scripts cover offsets or credit markets, so the two TGS disclosures are not needed. If a caption adds them, include both required disclosure lines.
 
 ---
 

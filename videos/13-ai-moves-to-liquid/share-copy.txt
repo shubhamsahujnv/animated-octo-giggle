@@ -1,0 +1,1 @@
+One AI rack now draws 10× the power of a typical one, far more heat than air can carry away. That's why AI data centres are switching to liquid cooling, and why a closed loop can save water as well as energy.
