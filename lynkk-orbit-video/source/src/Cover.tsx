@@ -1,16 +1,15 @@
 import React from "react";
 import { AbsoluteFill, Img, Sequence, staticFile } from "remotion";
-import { FORMATS, FmtContext, INTER, MARK_PATHS, MARK_VIEWBOX, palette, per, type Fmt, type FmtName } from "./lib";
+import { FORMATS, FmtContext, INTER, MARK_PATHS, MARK_VIEWBOX, palette, per, type FmtName } from "./lib";
 import { Orbit } from "./scenes/Orbit";
 import { Remi } from "./remi/Remi";
 import { remiAt, wave } from "./remi/flight";
 import { T } from "./timing";
 
 /**
- * Cover images for the two videos, built to stop the scroll: a crossed-out
- * old habit, the hook, the orbit at full spin with a stack of notifications
- * landing on it, Remi with a line, a FREE TO START sticker and a hand-drawn
- * arrow to "Link in bio". Rendered as stills.
+ * Cover images for the two videos, kept simple: a crossed-out old habit, the
+ * hook, the orbit at full spin with one notification landing, and "Link in bio".
+ * Rendered as stills.
  */
 const FRAME = T.drop + 32; // every ring spinning, light streaming in
 
@@ -49,39 +48,23 @@ const Toast: React.FC<{ at: Box; w: number; logo: string; app: string; title: st
   </div>
 );
 
-/** A hand-drawn arrow from a to b, curving. */
-const Scribble: React.FC<{ fmt: Fmt; a: Box; b: Box; bend: number; color: string; w: number }> = ({ fmt, a, b, bend, color, w }) => {
-  const mx = (a.x + b.x) / 2 + bend;
-  const my = (a.y + b.y) / 2 - Math.abs(bend) * 0.4;
-  const ang = Math.atan2(b.y - my, b.x - mx);
-  const h = w * 4.2;
-  const l = { x: b.x - h * Math.cos(ang - 0.5), y: b.y - h * Math.sin(ang - 0.5) };
-  const r = { x: b.x - h * Math.cos(ang + 0.5), y: b.y - h * Math.sin(ang + 0.5) };
-  return (
-    <svg style={{ position: "absolute", inset: 0, width: fmt.W, height: fmt.H, overflow: "visible" }}>
-      <path d={`M${a.x} ${a.y} Q${mx} ${my} ${b.x} ${b.y}`} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round" />
-      <path d={`M${l.x} ${l.y} L${b.x} ${b.y} L${r.x} ${r.y}`} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-};
-
 export const Cover: React.FC<{ fmt: FmtName }> = ({ fmt: name }) => {
   const fmt = FORMATS[name];
   const L = per(
     fmt,
     {
       brand: 215, strike: 340, strikeFs: 46, head: 485, size: 104,
-      orbitDy: 215, orbitK: 0.72, orbitY: 740,
-      toastW: 700, toastS: 1, toasts: [{ x: 560, y: 1200 }, { x: 520, y: 1335 }, { x: 560, y: 1470 }],
-      remi: { x: 935, y: 790, size: 170 }, bubble: { x: 640, y: 640 },
-      sticker: { x: 175, y: 690 }, pill: { x: 470, y: 1640 }, pillFs: 46, arrow: { a: { x: 900, y: 1560 }, b: { x: 700, y: 1640 } }, url: 1730,
+      orbitDy: 285, orbitK: 0.86, orbitY: 740,
+      toastW: 720, toastS: 1.05, toasts: [{ x: 540, y: 1470 }],
+      remi: { x: 975, y: 860, size: 150 },
+      pill: { x: 540, y: 1640 }, pillFs: 48,
     },
     {
       brand: 52, strike: 135, strikeFs: 36, head: 245, size: 80,
-      orbitDy: 150, orbitK: 0.64, orbitY: 520,
-      toastW: 560, toastS: 0.8, toasts: [{ x: 560, y: 880 }, { x: 525, y: 985 }, { x: 560, y: 1090 }],
-      remi: { x: 920, y: 500, size: 135 }, bubble: { x: 690, y: 385 },
-      sticker: { x: 165, y: 470 }, pill: { x: 450, y: 1230 }, pillFs: 38, arrow: { a: { x: 880, y: 1170 }, b: { x: 670, y: 1232 } }, url: 1305,
+      orbitDy: 185, orbitK: 0.74, orbitY: 520,
+      toastW: 620, toastS: 0.88, toasts: [{ x: 540, y: 1070 }],
+      remi: { x: 950, y: 560, size: 125 },
+      pill: { x: 540, y: 1235 }, pillFs: 40,
     },
   );
   const remi = remiAt({ path: [{ f: 0, x: 0, y: 0 }], faces: [[0, "wave"]], stunts: [wave(0, 40)], noBlink: true }, 12);
@@ -141,60 +124,10 @@ export const Cover: React.FC<{ fmt: FmtName }> = ({ fmt: name }) => {
           <span style={{ color: palette.lavender }}>itself</span> now.
         </div>
 
-        {/* FREE TO START sticker */}
-        <div
-          style={{
-            position: "absolute",
-            left: L.sticker.x,
-            top: L.sticker.y,
-            transform: "translate(-50%, -50%) rotate(-10deg)",
-            padding: `${per(fmt, 14, 11)}px ${per(fmt, 22, 17)}px`,
-            borderRadius: 14,
-            background: palette.orange,
-            color: palette.black,
-            fontFamily: INTER,
-            fontWeight: 800,
-            fontSize: per(fmt, 32, 25),
-            lineHeight: 1.05,
-            textAlign: "center",
-            letterSpacing: "-0.01em",
-            boxShadow: "0 14px 40px rgba(245,123,58,0.45)",
-            border: "3px solid #fff",
-          }}
-        >
-          FREE
-          <br />
-          TO START
-        </div>
-
-        {/* Remi and its line */}
-        <div
-          style={{
-            position: "absolute",
-            left: L.bubble.x,
-            top: L.bubble.y,
-            transform: "translate(-50%, -50%)",
-            padding: `${per(fmt, 16, 12)}px ${per(fmt, 24, 18)}px`,
-            borderRadius: 26,
-            borderBottomRightRadius: 6,
-            background: palette.white,
-            color: palette.black,
-            fontFamily: INTER,
-            fontWeight: 700,
-            fontSize: per(fmt, 32, 25),
-            letterSpacing: "-0.02em",
-            whiteSpace: "nowrap",
-            boxShadow: "0 16px 40px rgba(0,0,0,0.45)",
-          }}
-        >
-          Done. You just sell.
-        </div>
         <Remi s={{ ...remi, x: L.remi.x, y: L.remi.y, rot: -8 }} size={L.remi.size} id="remi-cover" glow={0.7} />
 
         {/* the notifications landing */}
-        <Toast at={L.toasts[0]} w={L.toastW} s={L.toastS} rot={-2} logo="hubspot.svg" app="HubSpot" title="Deal updated" body="Summary, next steps and tasks logged" />
-        <Toast at={L.toasts[1]} w={L.toastW} s={L.toastS} rot={1.5} logo="salesforce.svg" app="Salesforce" title="Opportunity updated" body="Call notes added after your Zoom call" />
-        <Toast at={L.toasts[2]} w={L.toastW} s={L.toastS} rot={-1} logo="slack.svg" app="Slack" title="@Lynkk replied" body="Here's what they said, from your notes" />
+        <Toast at={L.toasts[0]} w={L.toastW} s={L.toastS} rot={-1.5} logo="hubspot.svg" app="HubSpot" title="Deal updated" body="Summary, next steps and tasks logged" />
 
         {/* the CTA */}
         <div
@@ -217,8 +150,6 @@ export const Cover: React.FC<{ fmt: FmtName }> = ({ fmt: name }) => {
         >
           Link in bio ↗
         </div>
-        <Scribble fmt={fmt} a={L.arrow.a} b={L.arrow.b} bend={per(fmt, 60, 50)} color={palette.lavender} w={per(fmt, 7, 6)} />
-        <div style={{ position: "absolute", left: L.pill.x, top: L.url, transform: "translate(-50%, -50%)", fontFamily: INTER, fontWeight: 500, fontSize: per(fmt, 30, 25), color: "rgba(255,255,255,0.7)" }}>lynkk.ai</div>
       </AbsoluteFill>
     </FmtContext.Provider>
   );
