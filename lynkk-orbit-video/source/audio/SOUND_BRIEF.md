@@ -16,7 +16,7 @@ the cues. Code selects, trims, places, levels, EQs, pitches by resampling and ma
   down under the dark hook), one continuous take to 9.5, one-beat pull-back, DROP on 10.0, final strong beat on 14.0
   ringing out to 16.0.
 - Remi's blips: glockenspiel notes retuned to the key (B6, D#7, E7); the logo note a glockenspiel B5.
-- Ambience: none (abstract space; the music carries it).
+- Ambience (client change 3, 2026-10-31): a soft real wind + air bed under the whole film (Mixkit 'Wind in the top of the mountain' + 'Desert ambience'), clearly present in 0-2 s, about 12 dB under the music after 2 s, fading with the ring-out.
 
 ## Picture map
 | t (s) | on screen | cue | sound |
@@ -30,6 +30,7 @@ the cues. Code selects, trims, places, levels, EQs, pitches by resampling and ma
 | 4.0, 4.5, 5.0 | title words | tick ring1:title:0-2 | soft clicks, cycled |
 | 6.13-7.4 | second circle (apex 6.77) | whoosh ring2:draw | air woosh |
 | 7.5 | ring 2 locks | hit ring2:lock | second latch take (Gear metallic lock, last click) |
+| 7.57-8.17 (apex 7.87) | Remi barrel roll | whoosh ring2:remi:roll | small light swish (Short wind swoosh +3 st) |
 | 7.8 | chips pop | pop ring2:chips | pop |
 | 8.0 (apex 8.27) | camera pulls back | whoosh ring3:pull | fast air sweep |
 | 8.13-9.4 (apex 8.77) | third circle | whoosh ring3:draw | windy swoosh, quieter |
@@ -40,7 +41,10 @@ the cues. Code selects, trims, places, levels, EQs, pitches by resampling and ma
 | 12.0-13.5 (apex 13.28) | rings fold into the sphere | whoosh end:collapse | wind woosh building into the lock |
 | 13.5 | sphere locks with "Lynkk" | hit end:logo:impact | first beat of Deep heartbeat impact |
 | 13.7 | wordmark | bell end:logo:note | glock B5 |
+| 13.53 | sparkle burst from the logo | shimmer end:logo:sparkles | Magic wand sparkle |
 | **14.0** | Remi lands on "Start for free" | blip end:remi:land | glock B6 + the music's final beat, ring-out to 16.0 |
+| 15.0-15.53 (middle 15.27) | light sweep over the button | shimmer end:button:shine | very soft Crystal chime, by its peak |
+| 0.0-16.0 | star dust, whole film | ambience amb:bed | the wind + air bed (amb bus) |
 
 ## Licences
 Allowed: CC0, public domain, CC BY 2.0-4.0, Mixkit free licences, Pixabay. Never NC, ND, SA, Sampling+.

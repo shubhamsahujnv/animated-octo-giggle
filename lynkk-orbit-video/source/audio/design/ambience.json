@@ -1,0 +1,73 @@
+{
+ "_doc": "Background bed (client request, cue amb:bed f0-480): two real Mixkit ambiences on the amb bus. Body: 'Wind in the top of the mountain' (steady wind, per-second RMS -21..-23 dBFS, crest 10-13 dB: no bumps), high-passed so it sits as air above the music's low end. Air: 'Desert ambience' (rolloff 8.6 kHz, per-second RMS -38..-40 in the window used) as the airy top layer for the star dust. Present in the 0-2 s intro, then ridden down to sit about 10-14 dB under the music, fading with the ring-out.",
+ "ambience": [
+  {
+   "name": "am.wind",
+   "file": "audio/assets/ambience/mk-1267_wind-in-the-top-of-the-mountain.wav",
+   "src_start": 2.0,
+   "src_end": 19.0,
+   "at": 0.0,
+   "until": 16.0,
+   "fade_in": 0.25,
+   "fade_out": 1.6,
+   "gain_db": 0.0,
+   "eq": {
+    "hp": 180,
+    "lp": 9000
+   },
+   "width": 1.0,
+   "auto": [
+    [
+     0,
+     -1
+    ],
+    [
+     1.9,
+     -1
+    ],
+    [
+     2.0,
+     -6
+    ],
+    [
+     16,
+     -6
+    ]
+   ]
+  },
+  {
+   "name": "am.air",
+   "file": "audio/assets/ambience/mk-2495_desert-ambience.wav",
+   "src_start": 20.0,
+   "src_end": 37.0,
+   "at": 0.0,
+   "until": 16.0,
+   "fade_in": 0.25,
+   "fade_out": 1.6,
+   "gain_db": 12.0,
+   "eq": {
+    "hp": 1500
+   },
+   "width": 1.15,
+   "auto": [
+    [
+     0,
+     -1
+    ],
+    [
+     1.9,
+     -1
+    ],
+    [
+     2.0,
+     -5
+    ],
+    [
+     16,
+     -5
+    ]
+   ]
+  }
+ ],
+ "_rides_doc": "v2: first pass measured the bed 1 dB under the music in 0-2 s and 10 dB under after 2 s; now -1 dB in the intro and -6/-5 dB from the 2.0 downbeat (about 12 dB under the music)"
+}

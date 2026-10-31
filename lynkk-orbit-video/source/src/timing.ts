@@ -71,6 +71,7 @@ export const T = {
   button: bar(7), // 14.0 s: Start for free; Remi lands on it (the final chord)
   url: bar(7) + BEAT,
   fine: bar(7) + BEAT + 8,
+  shine: bar(7) + BEAT * 2, // a light sweep crosses the button
 } as const;
 
 export type Cue = {
@@ -86,6 +87,8 @@ export type Cue = {
 
 /** Every sound the picture asks for, on the frame the eye reads it. */
 export const CUES: Cue[] = [
+  // A soft background bed under the whole film (space air, a low shimmer).
+  { f: 0, kind: "ambience", id: "amb:bed", dur: DURATION, weight: 0.5 },
   { f: 0, kind: "riser", id: "hook:swell", dur: T.centre, weight: 0.5 },
   { f: T.centre, kind: "hit", id: "hook:sphere:pulse", weight: 0.8, variant: "soft" },
   { f: T.eyesOpen, kind: "blip", id: "hook:remi:eyes", weight: 0.6 },
@@ -97,6 +100,7 @@ export const CUES: Cue[] = [
 
   { f: T.ring2From, kind: "whoosh", id: "ring2:draw", dur: T.ring2To - T.ring2From, apexFrac: 0.5, weight: 0.6, pan: -0.2 },
   { f: T.lock2, kind: "hit", id: "ring2:lock", weight: 1, variant: "snap" },
+  { f: T.lock2 + 2, kind: "whoosh", id: "ring2:remi:roll", dur: 18, apexFrac: 0.5, weight: 0.4 },
   { f: T.chips + 3, kind: "pop", id: "ring2:chips", weight: 0.6, pan: 0.3 },
 
   { f: T.pull, kind: "whoosh", id: "ring3:pull", dur: 20, apexFrac: 0.4, weight: 0.8 },
@@ -111,5 +115,7 @@ export const CUES: Cue[] = [
   { f: T.collapse, kind: "whoosh", id: "end:collapse", dur: T.logo - T.collapse, apexFrac: 0.85, weight: 0.8 },
   { f: T.logo, kind: "hit", id: "end:logo:impact", weight: 1.2 },
   { f: T.logo + 6, kind: "bell", id: "end:logo:note", weight: 0.7 },
+  { f: T.logo + 1, kind: "shimmer", id: "end:logo:sparkles", dur: 24, weight: 0.6 },
+  { f: T.shine, kind: "shimmer", id: "end:button:shine", dur: 16, weight: 0.4, pan: 0.2 },
   { f: T.button, kind: "blip", id: "end:remi:land", weight: 0.5 },
 ].sort((a, b) => a.f - b.f);

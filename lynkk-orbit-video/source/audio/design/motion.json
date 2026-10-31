@@ -80,6 +80,23 @@
    "fade_in": 0.5,
    "fade_out": 0.4,
    "_doc": "builds 1.27-1.6 s; trimmed to end before the logo note rings"
+  },
+  "mo.roll": {
+   "file": "audio/assets/motion/mk-1461_short-wind-swoosh.wav",
+   "start": 0.0,
+   "end": 0.5,
+   "pitch": 3.0,
+   "eq": {
+    "hp": 300,
+    "highshelf": [
+     7000,
+     -3
+    ]
+   },
+   "norm_peak_db": -8,
+   "fade_in": 0.005,
+   "fade_out": 0.15,
+   "_doc": "small light swish: +3 st by resampling (smaller, shorter); peak 0.164 in the source"
   }
  },
  "pools": {
@@ -100,6 +117,9 @@
   ],
   "mo.fold": [
    "mo.fold"
+  ],
+  "mo.roll": [
+   "mo.roll"
   ]
  },
  "rules": [
@@ -182,6 +202,20 @@
    "pan": 0,
    "align": "peak",
    "offset": 1.275
+  },
+  {
+   "name": "mo.roll",
+   "match": {
+    "kind": "whoosh",
+    "id": "^ring2:remi:roll$"
+   },
+   "pool": "mo.roll",
+   "mode": "fixed",
+   "gain_db": -4,
+   "pan": 0,
+   "align": "peak",
+   "offset": 0.3,
+   "_doc": "Remi's barrel roll, apex f227 + 18*0.5 = f236; v2 +5 dB (v1 read -0.2 dB, masked)"
   }
  ]
 }

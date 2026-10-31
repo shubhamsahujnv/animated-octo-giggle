@@ -77,6 +77,28 @@ export const EndCard: React.FC = () => {
           }}
         >
           Start for free
+          {f >= T.shine && f < T.shine + 18 ? (
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                borderRadius: L.button.h / 2,
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  top: -20,
+                  bottom: -20,
+                  width: L.button.w * 0.22,
+                  left: -L.button.w * 0.3 + tween(f, T.shine, T.shine + 18, 0, 1) * L.button.w * 1.4,
+                  background: "linear-gradient(90deg, rgba(190,180,251,0), rgba(190,180,251,0.75), rgba(190,180,251,0))",
+                  transform: "skewX(-20deg)",
+                }}
+              />
+            </div>
+          ) : null}
         </div>
       ) : null}
       {text(L.url, L.size * 0.4, url, 500, "rgba(255,255,255,0.78)", "lynkk.ai")}

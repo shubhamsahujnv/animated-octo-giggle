@@ -22,19 +22,24 @@ Real recordings from Mixkit and Freesound.org, trimmed, layered, level-adjusted,
 ### Mixkit Sound Effects Free License
 
 - "Air woosh" by Mixkit (https://mixkit.co/free-sound-effects/whoosh/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
+- "Crystal chime" by Mixkit (https://mixkit.co/free-sound-effects/chimes/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Deep heartbeat impact" by Mixkit (https://mixkit.co/free-sound-effects/hit/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
+- "Desert ambience" by Mixkit (https://mixkit.co/free-sound-effects/wind/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Fast air sweep transition" by Mixkit (https://mixkit.co/free-sound-effects/swoosh/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Gear metallic lock sound" by Mixkit (https://mixkit.co/free-sound-effects/click/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Hard pop click" by Mixkit (https://mixkit.co/free-sound-effects/pop/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Long pop" by Mixkit (https://mixkit.co/free-sound-effects/pop/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
+- "Magic wand sparkle" by Mixkit (https://mixkit.co/free-sound-effects/magic/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Modern click box check" by Mixkit (https://mixkit.co/free-sound-effects/click/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Plastic bubble click" by Mixkit (https://mixkit.co/free-sound-effects/click/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Quick swoosh accent" by Mixkit (https://mixkit.co/free-sound-effects/swoosh/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Safe lock" by Mixkit (https://mixkit.co/free-sound-effects/lock/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Short bass hit" by Mixkit (https://mixkit.co/free-sound-effects/hit/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
+- "Short wind swoosh" by Mixkit (https://mixkit.co/free-sound-effects/swoosh/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Swirling whoosh" by Mixkit (https://mixkit.co/free-sound-effects/whoosh/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Transition windy swoosh" by Mixkit (https://mixkit.co/free-sound-effects/swoosh/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Typewriter soft click" by Mixkit (https://mixkit.co/free-sound-effects/click/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
+- "Wind in the top of the mountain" by Mixkit (https://mixkit.co/free-sound-effects/wind/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 - "Woosh wind" by Mixkit (https://mixkit.co/free-sound-effects/transition/), licensed under Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree)
 
 ## Tools

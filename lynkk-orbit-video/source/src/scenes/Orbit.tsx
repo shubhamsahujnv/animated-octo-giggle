@@ -6,7 +6,7 @@ import { radius } from "../brand/tokens";
 import { INTER, MARK_PATHS, MARK_VIEWBOX, clamp, expoInOut, expoOut, lerp, palette, per, springAt, tween, useFmt, type Fmt } from "../lib";
 import { Flash, TitleSlam, Trail } from "../fx/fx";
 import { Remi } from "../remi/Remi";
-import { hop, loop, remiAt, squish, wave, type FlightPlan, type RemiState } from "../remi/flight";
+import { hop, loop, roll360, remiAt, squish, wave, type FlightPlan, type RemiState } from "../remi/flight";
 import {
   RINGS,
   centreAt,
@@ -91,7 +91,7 @@ const remiPlan: FlightPlan = {
     (f) => ({ blink: f < T.eyesOpen ? 0.05 : f < T.eyesOpen + 4 ? (f - T.eyesOpen) / 4 : 1 }),
     (f) => ({ dark: 0.6 * (1 - tween(f, T.eyesOpen, T.launch + 6)) }),
     hop(T.lock1, 34, 12),
-    hop(T.lock2, 30, 12),
+    roll360(T.lock2 + 2, 18),
     hop(T.lock3, 40, 14),
     loop(T.loop, 28, 70),
     ...T.hops.map((h) => hop(h, 30, 12)),
@@ -230,6 +230,55 @@ const RingLine: React.FC<{ fmt: Fmt; i: number; f: number }> = ({ fmt, i, f }) =
 const streamAt = (f: number) =>
   0.45 * tween(f, T.streamOn, T.streamOn + 20) + 0.55 * tween(f, T.drop - 4, T.drop + 4) - tween(f, T.collapse, T.collapse + 24);
 
+// ------------------------------------------------------------------ ambient motion
+
+/** Drifting star dust and two slow colour glows, behind everything. */
+const Atmosphere: React.FC<{ fmt: Fmt; f: number; c: { x: number; y: number }; S: number }> = ({ fmt, f, c, S }) => {
+  const dots: React.ReactNode[] = [];
+  for (let i = 0; i < 90; i++) {
+    const depth = 0.3 + 0.7 * ((noise2D("dd", i, 0) + 1) / 2);
+    const bx = ((noise2D("dx", i, 0) + 1) / 2) * fmt.W * 1.4 - fmt.W * 0.2;
+    const by = ((noise2D("dy", i, 0) + 1) / 2) * fmt.H * 1.4 - fmt.H * 0.2;
+    // drift up slowly; nearer dust drifts faster and follows the camera's zoom more
+    const y0 = by - f * 0.35 * depth;
+    const y = ((y0 % (fmt.H * 1.4)) + fmt.H * 1.4) % (fmt.H * 1.4) - fmt.H * 0.2;
+    const z = 1 + (S - 1) * 0.25 * depth;
+    const x = c.x + (bx - c.x) * z;
+    const yy = c.y + (y - c.y) * z;
+    const tw = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(f / (9 + (i % 7)) + i));
+    dots.push(<circle key={i} cx={x} cy={yy} r={(0.8 + 1.8 * depth) * per(fmt, 1.2, 1)} fill={i % 5 === 0 ? LAV : "#ffffff"} opacity={0.08 + 0.32 * depth * tw} />);
+  }
+  const g1 = { x: fmt.W * (0.25 + 0.1 * Math.sin(f / 70)), y: fmt.H * (0.3 + 0.06 * Math.cos(f / 55)) };
+  const g2 = { x: fmt.W * (0.78 + 0.08 * Math.cos(f / 60)), y: fmt.H * (0.62 + 0.07 * Math.sin(f / 80)) };
+  return (
+    <>
+      <div style={{ position: "absolute", left: g1.x - 420, top: g1.y - 420, width: 840, height: 840, borderRadius: "50%", background: "radial-gradient(closest-side, rgba(112,99,190,0.22), rgba(112,99,190,0))" }} />
+      <div style={{ position: "absolute", left: g2.x - 380, top: g2.y - 380, width: 760, height: 760, borderRadius: "50%", background: "radial-gradient(closest-side, rgba(247,183,239,0.10), rgba(247,183,239,0))" }} />
+      <svg style={{ position: "absolute", inset: 0, width: fmt.W, height: fmt.H }}>{dots}</svg>
+    </>
+  );
+};
+
+/** Slow light rays turning behind the sphere. */
+const Rays: React.FC<{ c: { x: number; y: number }; size: number; f: number; k: number }> = ({ c, size, f, k }) =>
+  k <= 0.01 ? null : (
+    <div
+      style={{
+        position: "absolute",
+        left: c.x - size / 2,
+        top: c.y - size / 2,
+        width: size,
+        height: size,
+        borderRadius: "50%",
+        background: "repeating-conic-gradient(from 0deg, rgba(190,180,251,0.22) 0deg 4deg, rgba(190,180,251,0) 4deg 22deg)",
+        WebkitMaskImage: "radial-gradient(closest-side, black 18%, transparent 100%)",
+        maskImage: "radial-gradient(closest-side, black 18%, transparent 100%)",
+        transform: `rotate(${f * 0.35}deg)`,
+        opacity: k,
+      }}
+    />
+  );
+
 // ------------------------------------------------------------------ scene
 
 export const Orbit: React.FC = () => {
@@ -355,13 +404,58 @@ export const Orbit: React.FC = () => {
   const hub = tilePos(fmt, 2, 0, f);
   const note = f >= T.noteFly && f < T.noteLand + 3 ? { x: lerp(c.x, hub.x, noteT), y: lerp(c.y, hub.y, noteT) - Math.sin(Math.PI * noteT) * 80, s: 1 - 0.55 * noteT } : null;
 
+  // Shockwaves and tile pings when a ring locks; comets of light running round the locked rings.
+  const waves: React.ReactNode[] = [];
+  RINGS.forEach((ring, i) => {
+    const t = (f - ring.lock) / 22;
+    if (t >= 0 && t < 1 && fold > 0.5) {
+      const r0 = ringR(fmt, i, f);
+      waves.push(<circle key={`w${i}`} cx={c.x} cy={c.y} r={r0 + expoOut(t) * per(fmt, 220, 170)} fill="none" stroke={LAV} strokeWidth={6 * (1 - t) + 0.5} opacity={(1 - t) * 0.7} />);
+      ring.tiles.forEach((_, j) => {
+        const tj = (f - ring.lock - j * 2) / 14;
+        if (tj < 0 || tj >= 1) return;
+        const p = tilePos(fmt, i, j, f);
+        waves.push(<circle key={`p${i}-${j}`} cx={p.x} cy={p.y} r={tileBase * (0.55 + 0.6 * expoOut(tj))} fill="none" stroke="#ffffff" strokeWidth={3 * (1 - tj)} opacity={(1 - tj) * 0.8} />);
+      });
+    }
+    if (f > ring.lock && fold > 0.05) {
+      const r = ringR(fmt, i, f);
+      for (let k = 0; k < 2; k++) {
+        const head = -90 + ring.dir * ((f - ring.lock) * (2.4 - i * 0.5) + k * 180);
+        const on = tween(f, ring.lock, ring.lock + 10) * clamp(fold * 2);
+        for (let q = 0; q < 10; q++) {
+          const p = polar(c, r, head - ring.dir * q * 1.6);
+          waves.push(<circle key={`c${i}-${k}-${q}`} cx={p.x} cy={p.y} r={(per(fmt, 6, 5) * (1 - q / 11))} fill={q === 0 ? "#ffffff" : LAV} opacity={on * (1 - q / 10) * 0.9} />);
+        }
+      }
+    }
+  });
+
+  // The logo's sparkle burst.
+  const sparkles: React.ReactNode[] = [];
+  const sb = (f - T.logo) / 26;
+  if (sb >= 0 && sb < 1) {
+    for (let k = 0; k < 18; k++) {
+      const a = (k / 18) * Math.PI * 2 + noise2D("sp", k, 0) * 0.3;
+      const d = sphereSize * 0.55 + expoOut(sb) * per(fmt, 260, 200) * (0.7 + 0.3 * noise2D("sd", k, 1));
+      const x = c.x + Math.cos(a) * d;
+      const y = c.y + Math.sin(a) * d;
+      const r = per(fmt, 7, 6) * (1 - sb);
+      sparkles.push(
+        <path key={k} d={`M${x} ${y - r * 2}L${x + r * 0.5} ${y - r * 0.5}L${x + r * 2} ${y}L${x + r * 0.5} ${y + r * 0.5}L${x} ${y + r * 2}L${x - r * 0.5} ${y + r * 0.5}L${x - r * 2} ${y}L${x - r * 0.5} ${y - r * 0.5}Z`} fill={k % 3 ? LAV : "#ffffff"} opacity={1 - sb} />,
+      );
+    }
+  }
+
   const remi = remiState(fmt, f);
   const rSize = remiSize(fmt);
 
   return (
     <AbsoluteFill>
+      <Atmosphere fmt={fmt} f={f} c={c} S={Sn} />
       {/* the dark at the very start */}
       <AbsoluteFill style={{ background: "#050408", opacity: 1 - tween(f, 10, T.centre + 10) }} />
+      <Rays c={c} size={sphereSize * 4.2} f={f} k={(0.35 + 0.65 * clamp(streamAt(f))) * tween(f, T.lock1 - 10, T.lock1 + 10) + (f >= T.logo ? 0.6 * Math.exp(-(f - T.logo) / 20) : 0)} />
       {/* glow behind the sphere */}
       <div
         style={{
@@ -384,6 +478,7 @@ export const Orbit: React.FC = () => {
           <RingLine key={i} fmt={fmt} i={i} f={f} />
         ))}
         {particles}
+        {waves}
       </svg>
       {/* the sphere */}
       <div style={{ position: "absolute", left: c.x - sphereSize / 2, top: c.y - sphereSize / 2, width: sphereSize, height: sphereSize }}>
@@ -417,6 +512,7 @@ export const Orbit: React.FC = () => {
           ))}
         </div>
       ) : null}
+      <svg style={{ position: "absolute", inset: 0, width: fmt.W, height: fmt.H, overflow: "visible" }}>{sparkles}</svg>
       <Trail f={f} from={T.launch} pos={(g) => remiPos(fmt, g)} len={12} width={per(fmt, 18, 14)} opacity={1 - tween(f, T.button - 8, T.button)} />
       <Remi s={remi} size={rSize} id="remi-orbit" glow={0.55} />
 

@@ -1,0 +1,7 @@
+{
+ "_doc": "Target loudness per FILM bar (2 s at 120 BPM) relative to the track's loud bars. Bar 1 (0-2 s) dark hook: soft intro / swell. Bars 2-5 (2-10 s) the three rings: groove from 2.0 s, a gentle climb ring by ring. Bar 6 (10-12 s) = THE DROP on 10.0 s. Bar 7 (12-14 s) fold into the sphere, the groove continues. Bar 8 (14-16 s) final chord on 14.0 ringing out.",
+ "film_bpm": 120,
+ "beats_per_bar": 4,
+ "drop_film_bar": 6,
+ "arc": [-14, -7, -6, -5, -4, 0, -2, -8]
+}
