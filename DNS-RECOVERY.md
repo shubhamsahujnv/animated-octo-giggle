@@ -76,3 +76,77 @@ does not work.
 The Google Workspace MX record only resolves from resolver cache right now. Once
 those caches expire, inbound mail to @thegreensolve.com will start bouncing.
 Step 2 is the urgent part.
+
+---
+
+# Update — 2026-11-02: every API route tested and closed
+
+I re-tested this exhaustively. Five different write paths, all refused:
+
+| Call | Result |
+|------|--------|
+| `dns_records_update` (add MX) | `404 [DNS:4009] Domain not found` |
+| `dns_records_reset` | `500 [DNS:1000] Domain not pointing to Hostinger` |
+| `dns_snapshots_restore` (snapshot 193234306, from 11:34, two minutes before the zone was deleted) | `500 [DNS:1000] Domain not pointing to Hostinger` |
+| `hosting_domains_create-website-parked` | `422 [Hosting:9999] Domain is already hosted` |
+| `hosting_websites_update-settings` `cdn: true` | **applied** — but the zone is still empty |
+
+## The deadlock, confirmed
+
+* The registry delegation is **correct**: GoDaddy points the domain at
+  `NS1`/`NS2.DNS-PARKING.COM` (Hostinger's nameservers).
+* Those nameservers return **NXDOMAIN** for the apex (verified via Google and
+  Cloudflare DoH — Google's answer even names the responder, `162.159.24.201`,
+  which is `ns1.dns-parking.com`). So the delegation is fine and the *zone
+  behind it* is missing.
+* Hostinger's DNS gate decides "pointing to Hostinger" by resolving the domain.
+  It gets NXDOMAIN, concludes the domain is not pointed at Hostinger, and
+  refuses to create the zone. The zone cannot be created because the zone does
+  not exist.
+
+`hosting_domains_create-website-parked` returning "Domain is already hosted"
+proves the *hosting* link is intact. Only the DNS zone was dropped.
+
+## What I changed
+
+Re-enabled the CDN, which the 11:36 event had switched off. The CDN hostnames
+now resolve again:
+
+* `thegreensolve.com.cdn.hstgr.net` -> `145.223.124.97`, `88.223.87.248`
+* `www.thegreensolve.com.cdn.hstgr.net` -> `88.223.87.43`, `147.79.72.233`
+
+## Lovable is not the blocker
+
+The Lovable project (`Project Navigator`, `7cd52853-...`) is still published,
+but the nameservers point at Hostinger, not Lovable, so Lovable is not serving
+DNS for this domain. Detaching it there is good hygiene and will not restore the
+zone. The Lovable API exposed to me has no domain-management operation, so that
+one has to be done in the Lovable UI: Project -> Settings -> Domains -> remove
+`thegreensolve.com`.
+
+## Route B — move DNS to GoDaddy (breaks the deadlock permanently)
+
+Hostinger's gate only exists because Hostinger is the DNS host. Since the domain
+is registered at GoDaddy, moving DNS there sidesteps it entirely.
+
+1. GoDaddy -> thegreensolve.com -> Nameservers -> switch to **GoDaddy's default
+   nameservers** (this is the "disconnect" step).
+2. GoDaddy -> DNS -> add:
+
+| Type | Name | Value | Priority | TTL |
+|------|------|-------|----------|-----|
+| A | `@` | `145.223.124.97` | — | 600 |
+| A | `@` | `88.223.87.248` | — | 600 |
+| CNAME | `www` | `www.thegreensolve.com.cdn.hstgr.net.` | — | 600 |
+| MX | `@` | `smtp.google.com.` | 1 | 3600 |
+| TXT | `@` | `v=spf1 include:_spf.google.com ~all` | — | 3600 |
+| TXT | `@` | `google-site-verification=KKlkLGyRmh6n4_Ptr5kw9EejULSjcO3xnZzZFH8vrCo` | — | 3600 |
+
+Caveat on the two apex `A` records: those are Hostinger CDN edge addresses, and
+edge addresses can change over time. They are correct today. If you would rather
+pin a stable origin instead, turn the CDN off in hPanel and use the single
+server IP shown on hPanel -> Websites -> thegreensolve.com -> Dashboard.
+
+Once the domain resolves, install SSL in hPanel (it currently reads
+`waiting_for_retry`, "Domain challenge failed", which is expected while DNS is
+down) and then enable the HTTPS redirect.
