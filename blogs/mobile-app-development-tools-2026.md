@@ -6,7 +6,7 @@
 
 Building a mobile app in 2026 is less about writing code and more about choosing the right tools. Pick well and a small team can ship to iOS and Android in a few months. Pick badly and you spend that time fighting your own stack.
 
-We build mobile apps for startups and enterprises across India, the USA and Australia, and these are the tools that keep showing up in our projects and in the teams we work alongside. Some are frameworks, some are platforms, and one is us. We'll be upfront about that when we get there.
+We build mobile apps for startups and enterprises across India, the USA and Australia, and these are the tools that keep showing up in our projects and in the teams we work alongside. Some are frameworks, some are platforms, and all of them earn their place in a real project.
 
 ---
 
@@ -37,29 +37,7 @@ Flutter is Google's open-source UI toolkit. You write your app once in Dart, and
 
 ---
 
-## 2. Pixorama: when you need a team, not another tool
-
-**Best for:** funded startups and enterprises that need a production-ready app and don't want to assemble an in-house team first.
-
-*Full disclosure: this is our company, and this article is published by our team.*
-
-Tools only take you so far. Someone still has to choose the stack, design the architecture, write the code, pass App Store review and keep the app running after launch. That's where [Pixorama](https://pixoramagroup.com) fits.
-
-We're an engineering-led company that builds native and cross-platform mobile apps using the tools on this list. Our own app, **EchoMind**, is a private AI journal for iOS and Android, so we ship to the stores ourselves, not just for clients.
-
-**How teams work with us:**
-- **Outcome-based projects:** fixed scope and milestones, from MVP to launch
-- **Dedicated squads:** an embedded team that keeps building after launch
-- **Specialist augmentation:** senior mobile engineers who join your existing team
-- **Advisory and architecture:** a stack review before you commit
-
-**What's different:** you keep everything. Every engagement includes a full handover of code and IP.
-
-**Watch out for:** if you're building a weekend side project, a framework and a tutorial will serve you better than an agency.
-
----
-
-## 3. React Native with Expo: mobile app development with React
+## 2. React Native with Expo: mobile app development with React
 
 **Best for:** teams that already know JavaScript or TypeScript and React.
 
@@ -74,7 +52,7 @@ React Native, maintained by Meta, lets you build mobile apps with React and rend
 
 ---
 
-## 4. Kotlin Multiplatform: share logic, keep native UI
+## 3. Kotlin Multiplatform: share logic, keep native UI
 
 **Best for:** teams that want native look and feel but don't want to write the same business logic twice.
 
@@ -89,7 +67,7 @@ Kotlin Multiplatform (KMP), from JetBrains, lets you share code such as networki
 
 ---
 
-## 5. Xcode and SwiftUI: the iOS essentials
+## 4. Xcode and SwiftUI: the iOS essentials
 
 **Best for:** anyone shipping to the App Store, which means almost everyone.
 
@@ -104,7 +82,7 @@ Even if you build with Flutter or React Native, you'll need Xcode, Apple's devel
 
 ---
 
-## 6. Android Studio and Jetpack Compose: the Android essentials
+## 5. Android Studio and Jetpack Compose: the Android essentials
 
 **Best for:** native Android apps, and debugging any app on Android devices.
 
@@ -119,7 +97,7 @@ Android Studio is Google's official development environment for Android. Jetpack
 
 ---
 
-## 7. Figma: where the app starts
+## 6. Figma: where the app starts
 
 **Best for:** designing screens, building clickable prototypes and handing designs to developers.
 
@@ -134,7 +112,7 @@ Most apps begin life in Figma. Designers build screens and design systems there,
 
 ---
 
-## 8. Firebase: a backend without the servers
+## 7. Firebase: a backend without the servers
 
 **Best for:** MVPs and apps that need authentication, a database and push notifications fast.
 
@@ -149,7 +127,7 @@ Firebase is Google's app development platform. It bundles the services most mobi
 
 ---
 
-## 9. Supabase: the open-source alternative
+## 8. Supabase: the open-source alternative
 
 **Best for:** teams that want a Firebase-style experience on top of a real SQL database.
 
@@ -164,7 +142,7 @@ Supabase gives you a hosted PostgreSQL database with authentication, file storag
 
 ---
 
-## 10. AI coding assistants: GitHub Copilot, Cursor and Claude Code
+## 9. AI coding assistants: GitHub Copilot, Cursor and Claude Code
 
 **Best for:** speeding up everyday coding, writing tests and understanding unfamiliar codebases.
 
@@ -176,6 +154,21 @@ AI assistants are now a normal part of the mobile developer's toolkit. GitHub Co
 - Helpful for moving between Swift, Kotlin, Dart and TypeScript
 
 **Watch out for:** AI-generated code still needs careful review, especially around security, payments and user data.
+
+---
+
+## 10. Maestro: automated UI testing without the pain
+
+**Best for:** teams that want end-to-end tests for real user journeys like sign-up, checkout and onboarding.
+
+Maestro is an open-source framework for testing mobile apps the way a user would: tapping, typing and scrolling through real screens. You write tests as simple, readable flows instead of complex test code, and it works with native, Flutter and React Native apps on both iOS and Android.
+
+**Why developers like it:**
+- Tests are short and easy to read, even for non-developers
+- Handles the delays and flaky timing that break many UI tests
+- Fits into your CI/CD pipeline so every build is checked automatically
+
+**Watch out for:** UI tests complement unit tests rather than replace them. Test your business logic separately. If your team already uses Appium or Detox, there's no need to switch.
 
 ---
 
@@ -221,7 +214,7 @@ There's no single best stack. Here's a quick guide based on the projects we see 
 | Premium iOS-first product | SwiftUI and Xcode, then Android later |
 | Regulated industry (fintech, healthcare) | Native or KMP, a backend you control, and strict monitoring |
 
-Whatever you choose, add **Figma** at the start and **CI/CD** and **Sentry** before launch. Teams that skip those three almost always regret it.
+Whatever you choose, add **Figma** at the start, and **automated testing**, **CI/CD** and **Sentry** before launch. Teams that skip these almost always regret it.
 
 ---
 
@@ -230,6 +223,24 @@ Whatever you choose, add **Figma** at the start and **CI/CD** and **Sentry** bef
 1. **Choosing the trendiest framework instead of the one your team knows.** A familiar tool used well beats a new one used badly.
 2. **Ignoring what happens after launch.** Monitoring, updates and store reviews are where most of the long-term work lives.
 3. **Locking into a backend without an exit plan.** Make sure you can export your data and move if you outgrow your provider.
+
+---
+
+## When you need a team, not another tool
+
+Tools only take you so far. Someone still has to choose the stack, design the architecture, write the code, get through App Store review and keep the app healthy after launch. For many startups and enterprises, that's the hardest part.
+
+*Full disclosure: this is where we come in. [Pixorama](https://pixoramagroup.com) is the company behind this article.*
+
+We're an engineering-led team that builds native and cross-platform mobile apps with the tools on this list. Our own app, **EchoMind**, is a private AI journal for iOS and Android, so we ship to the stores ourselves, not just for clients.
+
+**Ways teams work with us:**
+- **Outcome-based projects:** fixed scope and milestones, from MVP to launch
+- **Dedicated squads:** an embedded team that keeps building after launch
+- **Specialist augmentation:** senior mobile engineers who join your existing team
+- **Advisory and architecture:** a stack review before you commit
+
+Every engagement ends with a full handover of code and IP, so the app is always yours.
 
 ---
 
