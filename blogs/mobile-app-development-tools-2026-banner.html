@@ -1,0 +1,84 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#3a33c9;--violet:#7c3aed;--magenta:#b23fc9;--cyan:#18bccf;
+--grad:linear-gradient(118deg,#3a33c9 0%,#7c3aed 52%,#b23fc9 100%);
+--ink:#0a0b18;--ink-2:#3a3d55;--muted:#6a6d88;--line:#e7e9f4;--paper-2:#f7f8fc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1400px;height:788px;overflow:hidden;font-family:Manrope,sans-serif;color:var(--ink);
+background:
+ radial-gradient(900px 500px at 85% 0%,rgba(178,63,201,.16),transparent 60%),
+ radial-gradient(800px 500px at 0% 100%,rgba(58,51,201,.12),transparent 60%),
+ radial-gradient(circle,rgba(58,51,201,.13) 1px,transparent 1.4px) 0 0/26px 26px,
+ #fbfaff;position:relative}
+.wrap{position:absolute;inset:0;padding:64px 80px;display:flex;align-items:center;gap:56px}
+.left{flex:1.15}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:28px;letter-spacing:-.5px;margin-bottom:46px}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:3px;color:var(--violet);
+text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;
+background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.18);margin-bottom:26px}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--grad)}
+h1{font-size:68px;line-height:1.04;font-weight:800;letter-spacing:-2.6px}
+h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:26px;font-size:22px;line-height:1.5;color:var(--ink-2);max-width:560px}
+.right{flex:1;position:relative;height:640px;display:flex;align-items:center;justify-content:center}
+.phone{width:330px;height:640px;border-radius:52px;background:#0b0c1c;padding:12px;
+box-shadow:0 8px 24px rgba(16,18,42,.1),0 50px 90px -30px rgba(90,60,220,.55);position:relative;z-index:2}
+.screen{width:100%;height:100%;border-radius:41px;background:#fff;overflow:hidden;padding:46px 20px 20px;position:relative}
+.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:96px;height:28px;border-radius:20px;background:#0b0c1c}
+.sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.sh b{font-size:19px;font-weight:800;letter-spacing:-.4px}
+.sh span{font-size:11px;font-weight:700;color:#fff;background:var(--grad);padding:4px 10px;border-radius:999px}
+.ss{font-size:12px;color:var(--muted);margin-bottom:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.t{border:1px solid var(--line);border-radius:14px;padding:10px 11px;background:var(--paper-2);display:flex;align-items:center;gap:9px}
+.t .n{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
+.t .ic{width:26px;height:26px;border-radius:8px;flex:none;display:grid;place-items:center;color:#fff;font-size:11px;font-weight:800}
+.t p{font-size:12.5px;font-weight:700;line-height:1.15}
+.t.px{background:linear-gradient(118deg,rgba(58,51,201,.09),rgba(178,63,201,.1));border-color:rgba(124,58,237,.35)}
+.card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;
+box-shadow:0 4px 12px rgba(16,18,42,.06),0 18px 40px -12px rgba(16,18,42,.16);z-index:3}
+.c1{left:-4px;bottom:22px;width:200px}
+.c2{right:-20px;bottom:88px;width:210px}
+.k{font-size:11px;color:var(--muted);font-weight:600}
+.v{font-size:22px;font-weight:800;letter-spacing:-.5px;margin-top:2px}
+.ok{font-size:11px;font-weight:700;color:#16a34a;background:#eafbef;border-radius:999px;padding:3px 9px;display:inline-block;margin-top:6px}
+.bar{height:7px;border-radius:9px;background:var(--line);margin-top:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:78%;background:var(--grad)}
+.ring{position:absolute;right:30px;top:40px;width:120px;height:120px;border-radius:50%;border:16px solid rgba(98,72,232,.16);z-index:1}
+</style></head>
+<body><div class="wrap">
+ <div class="left">
+  <div class="logo">
+   <svg width="58" height="36" viewBox="0 0 197 122"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B2BE8"/><stop offset="100%" stop-color="#C13BD2"/></linearGradient></defs><rect width="122" height="122" rx="30" fill="url(#g)"/><text x="61" y="63" text-anchor="middle" dominant-baseline="central" fill="#fff" font-size="57" font-weight="800" letter-spacing="-2.5" font-family="Manrope">PX</text><circle cx="163" cy="61" r="27.5" stroke="#6248E8" stroke-width="13" fill="none"/></svg>
+   Pixorama
+  </div>
+  <div class="eyebrow"><i></i>Mobile App Development · 2026</div>
+  <h1>12 Mobile App Development <span class="g">Apps &amp; Tools</span> Developers Use in 2026</h1>
+  <p class="sub">The frameworks, platforms and services behind the apps people actually download.</p>
+ </div>
+ <div class="right">
+  <div class="ring"></div>
+  <div class="phone"><div class="screen"><div class="notch"></div>
+   <div class="sh"><b>Your 2026 stack</b><span>12 tools</span></div>
+   <div class="ss">Build · Design · Ship · Monitor</div>
+   <div class="grid">
+    <div class="t"><div class="ic" style="background:#3a33c9">01</div><p>Flutter</p></div>
+    <div class="t px"><div class="ic" style="background:var(--grad)">PX</div><p>Pixorama</p></div>
+    <div class="t"><div class="ic" style="background:#18bccf">03</div><p>React Native</p></div>
+    <div class="t"><div class="ic" style="background:#7c3aed">04</div><p>Kotlin MP</p></div>
+    <div class="t"><div class="ic" style="background:#4f48e0">05</div><p>Xcode &amp; SwiftUI</p></div>
+    <div class="t"><div class="ic" style="background:#8b5cf6">06</div><p>Android Studio</p></div>
+    <div class="t"><div class="ic" style="background:#b23fc9">07</div><p>Figma</p></div>
+    <div class="t"><div class="ic" style="background:#3a33c9">08</div><p>Firebase</p></div>
+    <div class="t"><div class="ic" style="background:#18bccf">09</div><p>Supabase</p></div>
+    <div class="t"><div class="ic" style="background:#7c3aed">10</div><p>AI assistants</p></div>
+    <div class="t"><div class="ic" style="background:#c065da">11</div><p>CI/CD</p></div>
+    <div class="t"><div class="ic" style="background:#4f48e0">12</div><p>Sentry</p></div>
+   </div>
+  </div></div>
+  <div class="card c1"><div class="k">Build status</div><div class="v">iOS + Android</div><span class="ok">✓ Success</span></div>
+  <div class="card c2"><div class="k">Release progress</div><div class="v">v1.0 · Launch</div><div class="bar"><i></i></div></div>
+ </div>
+</div></body></html>
