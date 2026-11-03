@@ -6,6 +6,7 @@ specs={ # name: (w,h,layout,scale)
  'facebook':(1200,630,'land',0.92),
  'linkedin':(1200,627,'land',0.92),
  'x':(1600,900,'land',1.22),
+ 'instagram-reel':(1080,1920,'reel',1.0),
 }
 css='''
 *{margin:0;padding:0;box-sizing:border-box}
@@ -50,6 +51,23 @@ def html(name,w,h,lay,s):
         if name=='youtube':  # thumbnail: fewer words, bigger type
             body=body.replace('<div class="sub">👀 <b>Reads</b> your screen. 👂 <b>Hears</b> the call.<br>🔒 <b>Nothing kept.</b></div>','<div class="sub" style="font-size:%dpx">👀 Reads. 👂 Hears.<br>🔒 <b>Keeps nothing.</b></div>'%f(32)).replace('<div class="cta">Request early access <span>→ lynkk.ai</span></div>','')
             v['h1']=f(104)
+    elif lay=='reel':
+        # keep key content inside the 3:4 grid crop (y 240-1680) and clear of reel UI at the bottom
+        v=dict(w=w,h=h,gx='50% 62%',pad=0,gap=f(26),k=f(26),h1=f(132),sub=f(36),bg=f(18),bf=f(46),lg=f(62),cf=f(30),r=f(30))
+        body=f'''<div class="wrap" style="flex-direction:column;align-items:center;padding:{f(250)}px {f(70)}px 0;gap:{f(46)}px;text-align:center">
+<div class="text" style="align-items:center">
+ <div class="brand"><img src="logo_t.png">Spotter</div>
+ <div class="kick" style="align-self:center">🤖 AI Meeting Assistant · Mac</div>
+ <h1>Spotter<br>answers. <em>Live.</em></h1>
+ <div class="sub">👀 <b>Reads.</b> 👂 <b>Hears.</b> 🔒 <b>Keeps nothing.</b></div>
+</div>
+<div class="shot" style="width:{f(880)}px">
+ <div class="card"><img src="ui.png" style="height:{f(520)}px;object-fit:cover;object-position:top"></div>
+ <img class="bot" src="bot_t.png" style="width:{f(180)}px;right:{-f(50)}px;bottom:{-f(60)}px">
+ <div class="tag" style="font-size:{f(26)}px;left:{f(28)}px;top:{-f(24)}px">⌘↩ to ask</div>
+</div>
+<div class="cta" style="align-self:center;margin-top:{f(10)}px">⚡ Early access <span>→ lynkk.ai</span></div>
+</div>'''
     else:
         v=dict(w=w,h=h,gx='50% 75%',pad=f(72),gap=f(24),k=f(24),h1=f(112),sub=f(34),bg=f(16),bf=f(40),lg=f(54),cf=f(28),r=f(28))
         body=f'''<div class="wrap" style="flex-direction:column;gap:{f(44)}px">
