@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0e0c16;--ink:#fff;--mut:#a9a3c2;--acc:#b7a4ff;--acc2:#7c66f0}
+body{width:1080px;height:1350px;overflow:hidden;background:var(--bg);font-family:"Inter Display","Inter","Noto Color Emoji",sans-serif;color:var(--ink);position:relative}
+.glow{position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 75%,rgba(124,102,240,.42),transparent 70%),radial-gradient(40% 50% at 0% 100%,rgba(124,102,240,.18),transparent 70%)}
+.grain{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:4px 4px}
+.wrap{position:absolute;inset:0;display:flex;padding:72px}
+.text{display:flex;flex-direction:column;justify-content:center;gap:24px;z-index:3}
+.kick{display:inline-flex;align-self:flex-start;gap:.4em;align-items:center;font-weight:700;font-size:24px;letter-spacing:.06em;text-transform:uppercase;color:#e6e0ff;background:rgba(124,102,240,.28);border:1px solid rgba(183,164,255,.45);padding:.45em .9em;border-radius:999px}
+h1{font-weight:800;font-size:112px;line-height:.98;letter-spacing:-.035em}
+h1 em{font-style:normal;color:var(--acc)}
+.sub{font-weight:600;font-size:34px;color:var(--mut);line-height:1.3}
+.sub b{color:#fff}
+.brand{display:flex;align-items:center;gap:16px;font-weight:700;font-size:40px;letter-spacing:-.02em}
+.brand img{height:54px}
+.cta{display:inline-flex;align-self:flex-start;align-items:center;gap:.6em;background:#fff;color:#14111f;font-weight:700;font-size:28px;padding:.6em 1.1em;border-radius:999px;box-shadow:0 10px 40px rgba(124,102,240,.45)}
+.cta span{color:#6d5ae0;font-weight:600}
+.shot{position:relative;z-index:2}
+.shot .card{border-radius:28px;overflow:hidden;border:2px solid rgba(183,164,255,.35);box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 80px rgba(124,102,240,.35)}
+.shot .card img{display:block;width:100%}
+.bot{position:absolute;z-index:4;filter:drop-shadow(0 12px 30px rgba(124,102,240,.6))}
+.tag{position:absolute;z-index:4;background:#7c66f0;color:#fff;font-weight:700;border-radius:999px;padding:.4em .9em;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+</style></head><body><div class="glow"></div><div class="grain"></div><div class="wrap" style="flex-direction:column;gap:44px">
+<div class="text">
+ <div class="brand"><img src="logo_t.png">Spotter</div>
+ <div class="kick">🤖 AI Meeting Assistant · Mac</div>
+ <h1>Spotter answers. <em>Live.</em></h1>
+ <div class="sub">👀 <b>Reads</b> your screen. 👂 <b>Hears</b> the call. 🔒 <b>Nothing kept.</b></div>
+</div>
+<div class="shot" style="margin:0 10px">
+ <div class="card"><img src="ui.png" style="height:720px;object-fit:cover;object-position:top"></div>
+ <img class="bot" src="bot_t.png" style="width:170px;right:-30px;bottom:-50px">
+ <div class="tag" style="font-size:24px;left:24px;bottom:-22px">⚡ Early access · lynkk.ai</div>
+</div></div></body></html>
