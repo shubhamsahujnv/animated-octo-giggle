@@ -21,7 +21,7 @@
 | # | Field | Type | Default | Help text |
 |---|---|---|---|---|
 | 1 | Calls per month | number | 600 | Total inbound calls to the business |
-| 2 | % of calls missed or sent to voicemail | % slider | 25% | Industry studies often put this between 20% and 60% for small businesses. Check your phone system's reports. |
+| 2 | % of calls missed or sent to voicemail | % slider | 25% | Check your phone system's call reports for unanswered or abandoned calls. |
 | 3 | % of missed callers who don't call back | % slider | 60% | Many callers try the next business instead |
 | 4 | % of answered calls that become a booking or sale | % | 30% | Your call-to-booking rate |
 | 5 | Average value of a new customer or booking | currency | 150 | First transaction, or lifetime value if you know it |

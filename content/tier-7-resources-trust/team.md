@@ -60,7 +60,7 @@ Group the cards under the five capabilities:
 
 ### H2: How we hire
 
-We hire slowly and senior. Engineers join us after `[[VERIFY: e.g. 6+]]` years building and running production software, and after a hiring process that includes real code, a system-design conversation and a session with the people they'd work with.
+We hire slowly and senior. Engineers join us after `[[CONFIRM: e.g. 6+]]` years building and running production software, and after a hiring process that includes real code, a system-design conversation and a session with the people they'd work with.
 
 Interested? [See open roles →](/careers)
 
@@ -75,7 +75,7 @@ Our engineers write the [Pixorama blog](/blog). A few recent posts:
 - [Zero-trust without bringing delivery to a halt](/blog/zero-trust-without-stopping-delivery)
 - [Shipping one mobile product on two platforms without doubling the team](/blog/shipping-mobile-on-two-platforms)
 
-> **Writer note:** add a real author byline (linking to the author's bio on this page) to every blog post. Right now posts have no visible authors. Bylines plus `Person` schema plus this page are one of the cheapest E-E-A-T wins available.
+> **Writer note:** blog posts already have an "About the author" box (Udesh Bhan). Link each byline to a bio on this page and add `Person` schema. Engineering posts carry more weight with a named engineer as author or technical reviewer. Bylines plus `Person` schema plus this page are one of the cheapest E-E-A-T wins available.
 
 ---
 

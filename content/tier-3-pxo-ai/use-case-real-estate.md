@@ -39,7 +39,7 @@ In real estate, the first agent to respond often wins the lead. But you're at an
 Answers questions about a listing from your property data, including price guide, features, land size, inspection times and strata or HOA details, and books private viewings into the listing agent's calendar.
 
 #### Lead qualification
-Asks the questions you would: buying or renting? Timeline? Pre-approved? Need to sell first? Then it scores and tags the lead in your CRM. `[[VERIFY: CRM integrations]]`
+Asks the questions you would: buying or renting? Timeline? Pre-approved? Need to sell first? Then it scores and tags the lead in your CRM. `[[CONFIRM: CRM integrations]]`
 
 #### Seller and appraisal enquiries
 Captures details for appraisal requests and books a call or visit with the right agent. These are your most valuable calls, so they get a priority alert.
@@ -54,7 +54,7 @@ Turn it on when agents don't answer, after hours, or all the time.
 
 ### H2: Knows your listings
 
-PXO AI answers from your live listing data, not from a script that goes stale. When a property goes under offer or the price guide changes, update it once and the agent knows on the next call. `[[VERIFY: listing feed / CRM sync, e.g. REA, Domain, Zillow/MLS feeds, Rex, VaultRE, Agentbox, Follow Up Boss]]`
+PXO AI answers from your live listing data, not from a script that goes stale. When a property goes under offer or the price guide changes, update it once and the agent knows on the next call. `[[CONFIRM: listing feed / CRM sync, e.g. REA, Domain, Zillow/MLS feeds, Rex, VaultRE, Agentbox, Follow Up Boss]]`
 
 ---
 
@@ -64,7 +64,7 @@ Real estate advertising and disclosure rules differ by state and country. PXO AI
 
 - **Only approved information.** It quotes price guides and details exactly as you've provided them.
 - **No commitments it can't make.** It won't negotiate, accept offers or promise outcomes.
-- **Fair-housing-safe answers.** Configured to avoid steering or discriminatory responses. `[[VERIFY: wording appropriate to US Fair Housing Act and local equivalents]]`
+- **Fair-housing-safe answers.** Configured to avoid steering or discriminatory responses. `[[CONFIRM: wording appropriate to US Fair Housing Act and local equivalents]]`
 - **AI disclosure** at the start of every call.
 - **Full transcripts** for compliance and training.
 
@@ -99,10 +99,10 @@ After an open home, PXO AI can call attendees to collect feedback and gauge inte
 ### H2: Frequently asked questions
 
 **Can it book inspections into my calendar?**
-Yes, into the listing agent's calendar, with confirmation sent to the buyer. `[[VERIFY]]`
+Yes, into the listing agent's calendar, with confirmation sent to the buyer. `[[CONFIRM]]`
 
 **Does it work with my CRM?**
-`[[VERIFY integrations]]` Leads can also be sent by email or webhook to any system.
+`[[CONFIRM integrations]]` Leads can also be sent by email or webhook to any system.
 
 **Can it handle several listings at once?**
 Yes. It identifies which property the caller means by address or listing ID and answers about that one.

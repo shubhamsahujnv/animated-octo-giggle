@@ -57,14 +57,14 @@ Whichever provider you choose, every minute of an AI voice call has the same bui
 | **Text-to-speech** | Turning the response into a natural voice | Voice quality tier, characters spoken |
 | **Platform** | Orchestration, guardrails, integrations, analytics, storage | Features, agents, seats, retention |
 
-**What PXO AI includes in its per-minute rate:** `[[VERIFY: e.g. "telephony, speech, LLM and voice are bundled into one rate, so there are no separate provider bills"]]`
+**What PXO AI includes in its per-minute rate:** `[[CONFIRM: e.g. "telephony, speech, LLM and voice are bundled into one rate, so there are no separate provider bills"]]`
 
 ---
 
 ### H2: What changes your monthly bill
 
 - **Call volume and length.** Most bills track total minutes. A 2-minute booking call costs a fraction of a 10-minute support call.
-- **Model choice.** Larger models cost more per minute. PXO AI can route simple turns to smaller, cheaper models. `[[VERIFY]]`
+- **Model choice.** Larger models cost more per minute. PXO AI can route simple turns to smaller, cheaper models. `[[CONFIRM]]`
 - **Knowledge size.** More retrieved context per turn means more model tokens.
 - **Outbound vs inbound.** Outbound telephony rates are usually different.
 - **Recording retention.** Longer storage of audio costs more.
@@ -108,13 +108,13 @@ Across the market, most providers charge per minute of conversation, often with 
 For a small business taking a few hundred calls a month, cost is usually driven by total minutes. `[[STATE B: give a worked example, e.g. 300 calls × 2.5 min = 750 min ≈ $X/month]]` See the [small business page](/products/pxo-ai/use-cases/small-business).
 
 **Is there a free trial?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **Is there a setup fee?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **Can I cancel anytime?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **Do you offer white-label or reseller pricing?**
 Yes. See [PXO AI white label](/products/pxo-ai/white-label).

@@ -18,7 +18,7 @@
 
 Write a few lines a day. EchoMind gives you a thoughtful prompt when you're stuck, picks up the patterns you might miss, and sends you a short summary of your week. Your entries stay private.
 
-**[Download on the App Store]** **[Get it on Google Play]**
+**[Download on the App Store]** **[Get it on Google Play]** `[[CONFIRM: store links. The live EchoMind page has no App Store or Google Play links, only "Ask us about EchoMind". If the app isn't publicly listed yet, use that CTA instead.]]`
 
 ---
 
@@ -45,7 +45,7 @@ EchoMind notices recurring themes, such as the topics, people, times and moods t
 Every week you get a short, plain-language summary of what you wrote about, what seemed to lift you and what seemed to weigh on you.
 
 #### A safety check on every entry
-Every entry passes through a safety classifier. If an entry suggests you might be in crisis, EchoMind will point you to people who can help right away. `[[VERIFY: exact behaviour, e.g. shows crisis line resources by region]]`
+A safety classifier runs on every entry before any insight is shown. `[[CONFIRM: what the user sees when an entry is flagged, e.g. crisis-line resources by region]]`
 
 ---
 
@@ -54,10 +54,10 @@ Every entry passes through a safety classifier. If an entry suggests you might b
 A journal is only useful if you can be honest in it. That means you have to trust where it goes.
 
 - **Your entries are yours.** We don't sell your data or use your entries for advertising.
-- **Encrypted** in transit and at rest. `[[VERIFY: on-device vs server encryption, E2E?]]`
-- **App lock** with Face ID, Touch ID or a passcode. `[[VERIFY]]`
-- **Export or delete everything** at any time. `[[VERIFY]]`
-- **AI processing** `[[VERIFY: whether entries are processed on-device or by a model provider, and whether providers retain data. State this plainly, because privacy-conscious users will look for it.]]`
+- **Encrypted** in transit and at rest. `[[CONFIRM: on-device vs server encryption, E2E?]]`
+- **App lock** with Face ID, Touch ID or a passcode. `[[CONFIRM]]`
+- **Export or delete everything** at any time. `[[CONFIRM]]`
+- **AI processing** `[[CONFIRM: whether entries are processed on-device or by a model provider, and whether providers retain data. State this plainly, because privacy-conscious users will look for it.]]`
 
 [Read the EchoMind privacy policy →](`[[ADD link]]`)
 
@@ -67,7 +67,7 @@ A journal is only useful if you can be honest in it. That means you have to trus
 
 EchoMind is a journal, not a therapist and not a crisis service. It can help you reflect, but it can't diagnose, treat or replace professional support.
 
-If you're struggling, please talk to someone you trust or a qualified professional. If you're in immediate danger, call your local emergency number.
+If you're struggling, please talk to someone you trust or a qualified professional. If you are in crisis, contact your local emergency number.
 
 > **Writer note:** keep this section prominent. It's the right thing to do, it's what app stores expect from wellbeing apps, and it builds trust with exactly the users who care most about privacy.
 
@@ -118,16 +118,16 @@ An AI journal app is a journaling app that uses AI to help you reflect. It can s
 `[[ADD]]`
 
 **Does EchoMind write back to me?**
-EchoMind responds with prompts, patterns and summaries rather than chatting with you like a companion. The focus stays on your own reflection. `[[VERIFY]]`
+EchoMind responds with prompts, patterns and summaries rather than chatting with you like a companion. The focus stays on your own reflection. `[[CONFIRM]]`
 
 **Can anyone at Pixorama read my journal?**
-`[[VERIFY and state plainly]]`
+`[[CONFIRM and state plainly]]`
 
 **Is EchoMind a replacement for therapy?**
 No. EchoMind is a reflection tool. It is not a therapist or a crisis service.
 
 **Which devices does it work on?**
-iPhone and Android phones. `[[VERIFY: iPad, minimum OS versions]]`
+iPhone and Android phones. `[[CONFIRM: iPad, minimum OS versions]]`
 
 ---
 

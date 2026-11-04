@@ -35,7 +35,7 @@ When devices are inspected by eye, two inspectors can grade the same device diff
 - **Margin:** devices get under-graded and sold too cheap, or over-graded and returned.
 - **Throughput:** experienced inspectors are slow to train and hard to hire.
 
-`[[VERIFY: target device types, e.g. smartphones, tablets, laptops, and target buyers, e.g. refurbishers, trade-in programmes, insurers, rental and leasing firms. Tighten the copy to the real segment.]]`
+`[[CONFIRM: target device types, e.g. smartphones, tablets, laptops, and target buyers, e.g. refurbishers, trade-in programmes, insurers, rental and leasing firms. Tighten the copy to the real segment.]]`
 
 ---
 
@@ -63,7 +63,7 @@ Every decision, whether by the model or a person, is logged with a timestamp and
 | **Evidence** | A signed report and image set for every device |
 | **Accountability** | An audit trail of every automated and human decision |
 | **Speed** | Guided capture shortens training for new inspectors |
-| **Integration** | Grades and reports pushed to your inventory or order system `[[VERIFY]]` |
+| **Integration** | Grades and reports pushed to your inventory or order system `[[CONFIRM]]` |
 
 ---
 

@@ -36,7 +36,7 @@ Every week you also get a short written update: what shipped, what's next, risks
 
 - Code lives in **your** GitHub or GitLab organisation, not ours.
 - Infrastructure is defined as code in your repo and deployed to **your** cloud accounts.
-- You have admin access to everything, all the time.
+- You have commit and admin access throughout. There's no big reveal at the end, because nothing is hidden until then.
 - There's no final-payment hostage situation, no licence-back and no retained components.
 
 If you ever want to stop working with us, you already have everything.
@@ -45,7 +45,7 @@ If you ever want to stop working with us, you already have everything.
 
 ### H2: Engineering standards we don't negotiate on
 
-- **Code review on every change.** No direct pushes to main.
+- **Trunk-based development, reviewed.** Small changes merged daily, with review on every change.
 - **Automated tests**: unit, integration and end-to-end where it matters, run on every pull request.
 - **CI/CD from day one.** Every merge is deployable.
 - **Security in the pipeline**: dependency scanning, static analysis, secrets detection.

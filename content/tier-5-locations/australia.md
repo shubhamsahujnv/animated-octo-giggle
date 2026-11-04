@@ -32,7 +32,7 @@ Pixorama builds AI-powered software, cloud platforms and mobile apps for Austral
 - **Service businesses** that want AI to answer phones, triage enquiries or automate admin
 - **Small businesses** that need a website and SEO done properly
 
-Recent work for Australian and New Zealand clients includes a website and SEO for **Amelia Downie** (ameliadownie.com.au) and an education platform for **New Zealand Gateway**. `[[VERIFY: add other AU clients, with permission]]`
+Recent work for Australian and New Zealand clients includes a website and SEO for **Amelia Downie** (ameliadownie.com.au) and an education platform for **New Zealand Gateway**. `[[CONFIRM: add other AU clients, with permission]]`
 
 ---
 
@@ -42,7 +42,7 @@ Recent work for Australian and New Zealand clients includes a website and SEO fo
 |---|---|
 | **[AI & Data](/#services)** | AI agents, AI receptionists, RAG over internal documents, AI automation of back-office work |
 | **[Cloud & Platform](/#services)** | AWS Sydney / Azure Australia East migrations, Kubernetes, DevOps, cost reduction |
-| **[Product & Software](/#services)** | SaaS products, custom business platforms, integrations with Xero, MYOB and others `[[VERIFY]]` |
+| **[Product & Software](/#services)** | SaaS products, custom business platforms, integrations with Xero, MYOB and others `[[CONFIRM]]` |
 | **[Mobile](/#services)** | iOS and Android apps, React Native and Flutter |
 | **[Web & Growth](/#services)** | Websites and technical SEO |
 
@@ -56,11 +56,11 @@ Much of our engineering team works on Indian Standard Time, which is 4.5 to 5.5 
 
 | Your time (AEST) | What's happening |
 |---|---|
-| 9:00am to 1:00pm | Some of the team is online `[[VERIFY]]` |
+| 9:00am to 1:00pm | Some of the team is online `[[CONFIRM]]` |
 | 1:00pm to 5:30pm | **Full team overlap**: stand-ups, reviews, pairing |
 | Overnight | Work continues, with a written update waiting in the morning |
 
-`[[VERIFY: adjust to actual working pattern]]`
+`[[CONFIRM: adjust to actual working pattern]]`
 
 For most Australian clients this means a mid-morning or early-afternoon stand-up, same-day answers, and progress overnight.
 
@@ -68,11 +68,11 @@ For most Australian clients this means a mid-morning or early-afternoon stand-up
 
 ### H2: Contracts, currency and payment
 
-- **Quoted and invoiced in AUD** `[[VERIFY]]`
-- **Australian-law contracts** available on request `[[VERIFY: governing law offered]]`
+- **Quoted and invoiced in AUD** `[[CONFIRM]]`
+- **Australian-law contracts** available on request `[[CONFIRM: governing law offered]]`
 - **IP assignment** to you as standard: 100% of code and IP transfers at handover
 - **No lock-in.** Systems run in your cloud accounts, and AU regions are available on AWS, Azure and Google Cloud
-- **GST:** `[[VERIFY: GST treatment for services supplied from overseas, and whether Pixorama is GST-registered in Australia. Get accounting advice and state it plainly.]]`
+- **GST:** `[[CONFIRM: GST treatment for services supplied from overseas, and whether Pixorama is GST-registered in Australia. Get accounting advice and state it plainly.]]`
 
 ---
 
@@ -121,7 +121,7 @@ No. We're remote-first and work with Australian clients over video, with daily w
 Yes. We build in your cloud accounts and can use Australian regions (for example AWS Sydney or Melbourne, or Azure Australia East).
 
 **Do you invoice in AUD?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **How much does app or software development cost in Australia?**
 We compared typical prices in [mobile app development cost in the USA and Australia](/blog/mobile-app-development-cost-usa-australia). For your project, start with our [cost calculator](/resources/software-development-cost-calculator) or a discovery call.

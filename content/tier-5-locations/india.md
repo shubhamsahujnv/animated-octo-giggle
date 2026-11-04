@@ -44,13 +44,13 @@ Comparing options? We wrote an evidence-based guide to [the best AI development 
 | **Mobile** | iOS, Android, React Native, Flutter |
 | **Web & Growth** | Websites, web platforms, SEO |
 
-Recent work includes a payment recovery platform for **BVIVE** and platform support and development for **Gateways**. `[[VERIFY: which clients are India-based, and add with permission]]`
+Recent work includes a payment recovery platform for **BVIVE** and platform support and development for **Gateways**. `[[CONFIRM: which clients are India-based, and add with permission]]`
 
 ---
 
 ### H2: For Indian businesses
 
-- **Contracts in INR** with GST invoicing `[[VERIFY]]`
+- **Contracts in INR** with GST invoicing `[[CONFIRM]]`
 - **IST working hours**, with the whole team overlapping yours
 - **India data residency** using Mumbai and Hyderabad cloud regions where needed
 - **DPDP Act-aware engineering:** consent, purpose limitation and data-principal rights built into data flows (Digital Personal Data Protection Act, 2023)
@@ -68,7 +68,7 @@ If you're in the US, Australia or elsewhere and looking for a development partne
 - **Production standards.** Tests, code review, CI/CD, security scanning and observability from the first week.
 - **You own everything.** Code lives in your repo from day one, with 100% IP transfer.
 - **Working-hour overlap** with [Australia](/locations/australia) and the [USA](/locations/usa).
-- **Contracts in USD or AUD** under agreed governing law. `[[VERIFY]]`
+- **Contracts in USD or AUD** under agreed governing law. `[[CONFIRM]]`
 
 For an honest take on the trade-offs, read [offshore vs onshore development](/compare/offshore-vs-onshore-development).
 
@@ -100,7 +100,7 @@ We've written more on this in [how to choose a software development company](/bl
 ### H2: Frequently asked questions
 
 **Where in India is Pixorama based?**
-`[[VERIFY: state the city/cities or "remote-first across India". If a registered office exists, it may be named here.]]`
+`[[CONFIRM: state the city/cities or "remote-first across India". If a registered office exists, it may be named here.]]`
 
 **What does AI development cost in India?**
 It depends on scope and team. Indian senior engineering rates are typically well below US and Australian rates. For a ballpark, use the [cost calculator](/resources/software-development-cost-calculator). For mobile, see [mobile app development cost in India](/blog/mobile-app-development-cost-india).

@@ -113,7 +113,7 @@ Estimate your side of the equation with the [ROI calculator](/resources/ai-voice
 
 - **Small and mid-size businesses** with a common use case: buy. See [PXO AI](/products/pxo-ai) or the alternatives in our [comparison](/compare/best-ai-voice-agents).
 - **Product companies** where AI is the product: build, with senior help on architecture and evaluation. See our [AI & Data services](/#services) and [fractional CTO / architecture review](/engagement-models/advisory-architecture).
-- **Enterprises** with strict data requirements: build on your own cloud, or use a platform that supports private deployment. `[[VERIFY whether PXO AI does]]`
+- **Enterprises** with strict data requirements: build on your own cloud, or use a platform that supports private deployment. `[[CONFIRM whether PXO AI does]]`
 
 ---
 
@@ -126,7 +126,7 @@ Usually not in total cost until volumes are very high, because building means ow
 Yes. Open-source models and voice stacks are improving fast and give you more control. They also move more of the operational work onto your team.
 
 **How long does it take to build a production AI agent?**
-A prototype can take days. A production agent with integrations, guardrails, evaluation and monitoring typically takes `[[VERIFY: e.g. 2 to 4 months]]` for a small senior team.
+A prototype can take days. A production agent with integrations, guardrails, evaluation and monitoring typically takes `[[CONFIRM: e.g. 2 to 4 months]]` for a small senior team.
 
 **Can you build on top of a platform?**
 Yes. That's the hybrid path, and it's often the best of both.

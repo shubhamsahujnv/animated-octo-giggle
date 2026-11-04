@@ -61,7 +61,7 @@ We work with your compliance and clinical-safety leads and build the controls th
 - **India:** DPDP Act 2023, and ABDM standards for digital health
 - **Software as a Medical Device (SaMD):** if your product might qualify, we'll flag it early, because it changes the whole delivery plan
 
-> **Writer note:** keep this section to awareness and approach. Don't claim Pixorama is "HIPAA certified". There's no such certification. `[[VERIFY: whether Pixorama signs BAAs]]`
+> **Writer note:** keep this section to awareness and approach. Don't claim Pixorama is "HIPAA certified". There's no such certification. `[[CONFIRM: whether Pixorama signs BAAs]]`
 
 ---
 
@@ -84,7 +84,7 @@ Healthcare systems rarely stand alone. We build integrations using **HL7 v2** an
 ### H2: Frequently asked questions
 
 **Is your software HIPAA compliant?**
-Compliance belongs to the whole organisation, not just the software. We build software with the technical safeguards HIPAA requires and work with your compliance team on the rest. `[[VERIFY BAA position]]`
+Compliance belongs to the whole organisation, not just the software. We build software with the technical safeguards HIPAA requires and work with your compliance team on the rest. `[[CONFIRM BAA position]]`
 
 **Can you integrate with our EHR?**
 Usually, yes, via FHIR, HL7 or the vendor's API. We'll confirm feasibility in discovery.

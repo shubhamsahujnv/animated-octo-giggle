@@ -36,10 +36,10 @@ Friday at 7pm, the phone is ringing, the floor is full and nobody can get to it.
 ### H2: What PXO AI handles for a restaurant
 
 #### Reservations
-Checks availability, takes party size, time, name and number, notes special requests (birthdays, high chairs, accessibility) and confirms by SMS. Handles changes and cancellations too. `[[VERIFY: booking-system integrations]]`
+Checks availability, takes party size, time, name and number, notes special requests (birthdays, high chairs, accessibility) and confirms by SMS. Handles changes and cancellations too. `[[CONFIRM: booking-system integrations]]`
 
 #### Takeaway and pickup orders
-Reads from your current menu, takes the order item by item, handles modifiers ("no onions, extra sauce"), reads it back, gives a pickup time and sends it to the kitchen. `[[VERIFY: POS/ordering integrations]]`
+Reads from your current menu, takes the order item by item, handles modifiers ("no onions, extra sauce"), reads it back, gives a pickup time and sends it to the kitchen. `[[CONFIRM: POS/ordering integrations]]`
 
 #### Menu and dietary questions
 Answers from your menu and allergen information. It's configured to be careful: for serious allergies it tells the caller to confirm with staff rather than guess.
@@ -64,7 +64,7 @@ Food allergies are a safety issue, so PXO AI's guardrails are strict here:
 
 ### H2: Works with the systems you already have
 
-`[[VERIFY and list real integrations only. Commonly requested: OpenTable, Resy, SevenRooms, Tock, Square, Toast, Lightspeed, Clover, Google Business Profile.]]`
+`[[CONFIRM and list real integrations only. Commonly requested: OpenTable, Resy, SevenRooms, Tock, Square, Toast, Lightspeed, Clover, Google Business Profile.]]`
 
 If your POS or booking system isn't listed, ask us. Orders and bookings can also be sent by email, SMS or webhook to any system.
 

@@ -16,9 +16,9 @@
 
 ### H1: Tell us what you're building
 
-Share a few lines about your project and we'll come back within one business day `[[VERIFY: response SLA]]` with either a time for a discovery call or a couple of questions.
+Share a few lines about your project and we'll come back within one business day `[[CONFIRM: response SLA]]` with either a time for a discovery call or a couple of questions.
 
-The first call is free and comes with no obligation. You'll talk to a senior engineer, not a salesperson.
+The first call is free and comes with no obligation. You'll talk to a senior engineer, not a salesperson. There's no account manager layer.
 
 ---
 
@@ -43,7 +43,7 @@ Microcopy under the button: *We'll only use your details to reply to this enquir
 ### H2: Prefer to talk now?
 
 - **WhatsApp:** [+91 96826 35763](https://wa.me/919682635763)
-- **Email:** `[[ADD: plain-text email address. The current one is obfuscated and unreadable to users and search engines.]]`
+- **Email:** [contact@pixoramagroup.com](mailto:contact@pixoramagroup.com)
 - **Book directly:** `[[ADD: Calendly or Cal.com link]]`
 
 ---
@@ -62,7 +62,7 @@ Microcopy under the button: *We'll only use your details to reply to this enquir
 We're remote-first and work with clients across three primary markets:
 
 - **India:** IST working hours
-- **USA:** overlapping hours with US East Coast mornings and West Coast `[[VERIFY: actual overlap offered]]`
+- **USA:** overlapping hours with US East Coast mornings and West Coast `[[CONFIRM: actual overlap offered]]`
 - **Australia:** strong overlap with AEST/AEDT business hours
 
 We don't operate client-facing offices, so all meetings are on video.
@@ -91,5 +91,5 @@ Trustpilot rating widget · "100% code and IP ownership" · "Senior-led delivery
 ## Writer notes
 
 - Replaces `/#contact`. Point every "Book a discovery call" button here.
-- Put the email address in plain text. An obfuscated address costs conversions and gives Google no contact signal.
+- The live site hides contact@pixoramagroup.com behind Cloudflare email obfuscation, so search engines and users without JavaScript see "[email protected]". Turn off Email Address Obfuscation in Cloudflare (Scrape Shield), or exclude the contact page from it, so the address appears as plain text.
 - Pass the engagement-model dropdown value to the CRM. It tells you which model pages are converting.

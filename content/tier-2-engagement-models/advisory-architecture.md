@@ -18,7 +18,9 @@
 
 ### H1: Fractional CTO services and architecture reviews from engineers who've run production systems
 
-Get senior technical judgement exactly when you need it: before a big build, during a scale-up, or when something keeps breaking. We offer fractional CTO support, independent architecture and security reviews, and cloud and AI adoption roadmaps.
+Get senior technical judgement exactly when you need it: before a big build, during a scale-up, before an investment round, or when something keeps breaking. We offer fractional CTO support, independent architecture and security reviews, technical due diligence, and cloud and AI adoption roadmaps.
+
+In process terms, this is stages one and two (discover and architect) as a standalone engagement, which is often all a team needs. You keep the written findings, the decision records and the roadmap.
 
 **[Book an advisory call]**
 
@@ -27,7 +29,7 @@ Get senior technical judgement exactly when you need it: before a big build, dur
 ### H2: Three ways we advise
 
 #### Fractional CTO
-A senior technical leader for a few days a month. Typical work: technology strategy, hiring your first engineers, vendor and build-vs-buy decisions, board and investor technical diligence, and keeping delivery honest.
+A senior technical leader, part-time. Typical work: technology strategy, hiring your first engineers, vendor and build-vs-buy decisions, board and investor technical diligence, and keeping delivery honest.
 
 #### Architecture & security review
 A fixed-scope, independent review of your system. We look at architecture, cloud setup, security posture, reliability and cost, and give you a prioritised report: what's fine, what's risky, what to fix first.
@@ -84,7 +86,7 @@ Related reading: [cloud cost is an architecture problem](/blog/cloud-cost-is-an-
 | | Format | Typical length | Pricing |
 |---|---|---|---|
 | **Fractional CTO** | Monthly retainer, X days per month | 3 months + | `[[ADD: from $X/month]]` |
-| **Architecture & security review** | Fixed scope | 2 to 3 weeks | `[[ADD: fixed fee from $X]]` |
+| **Architecture & security review** | Fixed scope | Stages 1 and 2: typically 2 to 5 weeks | `[[ADD: fixed fee from $X]]` |
 | **Adoption roadmap** | Fixed scope | 2 to 4 weeks | `[[ADD]]` |
 
 > **Writer note:** `fractional cto cost` and `fractional cto rates` both have low SD. Real indicative numbers here will help this page rank and convert.
@@ -94,7 +96,7 @@ Related reading: [cloud cost is an architecture problem](/blog/cloud-cost-is-an-
 ### H2: Frequently asked questions
 
 **How much does a fractional CTO cost?**
-It depends on days per month and scope. `[[ADD our range]]` See our [rates guide](/blog/what-is-a-fractional-cto) for typical US and Australian market rates.
+It depends on days per month and scope. `[[ADD our range]]` As a market benchmark, our [rates guide](/blog/what-is-a-fractional-cto) reports US fractional CTO rates averaging about US$213 an hour (middle 50% US$160 to US$250, Go Fractional benchmark, September 2026). Published Australian rates commonly run A$9,000 to A$18,000 a month.
 
 **Is a fractional CTO the same as a consultant?**
 Not quite. A consultant usually delivers a defined piece of advice and leaves. A fractional CTO takes ongoing responsibility for technical direction, often sitting in leadership meetings and owning decisions.

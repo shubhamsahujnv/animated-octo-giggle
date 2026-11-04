@@ -37,13 +37,13 @@ Front desks at clinics and dental practices spend much of the day on the phone, 
 
 | Call type | What PXO AI does |
 |---|---|
-| **New appointments** | Checks availability, books the slot, confirms by SMS `[[VERIFY]]` |
-| **Reschedules and cancellations** | Moves or cancels the booking and offers the freed slot to the waitlist `[[VERIFY]]` |
+| **New appointments** | Checks availability, books the slot, confirms by SMS `[[CONFIRM]]` |
+| **Reschedules and cancellations** | Moves or cancels the booking and offers the freed slot to the waitlist `[[CONFIRM]]` |
 | **Reminders** | Calls or messages patients before appointments to confirm (see [outbound](/products/pxo-ai/use-cases/outbound)) |
 | **Practice information** | Hours, location, parking, accepted insurers, what to bring |
 | **Pre-visit questions** | Answers from your approved FAQs: preparation, fees, forms |
 | **Urgent or clinical calls** | **Does not advise.** Escalates to staff immediately, or gives emergency instructions you've approved |
-| **Prescription and results queries** | Takes a message and routes it to the right team, without discussing clinical details `[[VERIFY policy]]` |
+| **Prescription and results queries** | Takes a message and routes it to the right team, without discussing clinical details `[[CONFIRM policy]]` |
 
 ---
 
@@ -63,7 +63,7 @@ An AI agent in a healthcare setting has to know what it must not do. PXO AI's gu
 
 Healthcare data is regulated differently in each of our markets: HIPAA in the US, the Privacy Act and Australian Privacy Principles in Australia, and the DPDP Act in India.
 
-`[[VERIFY BEFORE PUBLISHING. State exactly what is true, for example:]]`
+`[[CONFIRM BEFORE PUBLISHING. State exactly what is true, for example:]]`
 - `Whether Pixorama will sign a Business Associate Agreement (BAA) for US customers`
 - `Where call data is stored, and whether region can be selected`
 - `Encryption at rest and in transit`
@@ -89,7 +89,7 @@ Dental practices have the same phone problem, with a few extras: recall appointm
 
 PXO AI books into your existing calendar or practice management system through integrations and webhooks.
 
-`[[VERIFY: launch integrations. Common in target markets: Cliniko, HotDoc, Dentally, Dental4Windows, Open Dental, athenahealth, Google Calendar. Only list ones that work.]]`
+`[[CONFIRM: launch integrations. Common in target markets: Cliniko, HotDoc, Dentally, Dental4Windows, Open Dental, athenahealth, Google Calendar. Only list ones that work.]]`
 
 No integration for your system yet? Our [AI & Data team](/#services) builds custom integrations.
 
@@ -120,13 +120,13 @@ No. PXO AI is configured to avoid clinical advice and to escalate anything clini
 The agent recognises emergency language, gives the emergency instructions you've approved (for example, call 911 or 000) and alerts your team.
 
 **Is PXO AI HIPAA compliant?**
-`[[VERIFY and answer accurately]]`
+`[[CONFIRM and answer accurately]]`
 
 **Can it work alongside our reception team?**
 Yes. Most practices use it for overflow, lunch breaks and after hours first, then expand.
 
 **How long does setup take?**
-`[[VERIFY: typical onboarding time]]`
+`[[CONFIRM: typical onboarding time]]`
 
 ---
 

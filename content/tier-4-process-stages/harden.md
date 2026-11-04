@@ -27,9 +27,9 @@ Harden is the fourth of our [five stages](/process), but it doesn't start at the
 - **Cloud security review:** IAM least privilege, network boundaries, encryption, secrets management, logging. Related: [zero-trust without stopping delivery](/blog/zero-trust-without-stopping-delivery).
 - **Dependency and supply-chain checks:** known vulnerabilities, licences, pinned versions.
 - **AI-specific risks** where relevant: prompt injection, data leakage through retrieval, unsafe outputs.
-- **Third-party penetration test** coordinated if your risk or compliance profile needs one. `[[VERIFY: do we partner with a pen-testing firm?]]`
+- **Third-party penetration test** coordinated if your risk or compliance profile needs one. `[[CONFIRM: do we partner with a pen-testing firm?]]`
 
-We design to the control frameworks your auditors will ask about, such as SOC 2, ISO 27001 and OWASP ASVS. `[[VERIFY wording: we build to these frameworks; we don't certify the client.]]`
+We engineer to practices aligned with SOC 2 and ISO 27001, the frameworks your auditors will ask about, plus OWASP guidance for application security. We build to the controls; certification is between you and your auditor.
 
 ---
 
@@ -82,6 +82,9 @@ Before go-live we review together:
 ---
 
 ### H2: Frequently asked questions
+
+**How long does hardening take?**
+Typically two to four weeks. You keep the test suites, load profiles and the security review.
 
 **Is hardening an extra cost?**
 No. It's part of every engagement. Third-party penetration testing, if needed, is quoted separately.

@@ -43,8 +43,11 @@ PXO AI is built around closing that gap. We built it because we kept solving the
 
 ### H2: What you can do with PXO AI
 
+#### Natural, real-time voice
+Low-latency, human-sounding conversations that handle interruptions and context, not rigid scripts.
+
 #### Design agents in one console
-Define an agent's role, tone, tools and escalation rules in one place. The same agent can answer the phone, reply on web chat, or both.
+Define an agent's role, tone, tools and escalation rules in one place, then version and deploy it across web, phone and apps from a single dashboard.
 
 #### Ground answers in your own knowledge
 Connect documents, FAQs, policies and product data. PXO AI uses **retrieval-augmented generation (RAG)** so the agent answers from your content and says "I don't know" when it should. [What is RAG? →](/blog/what-is-rag-in-ai)
@@ -53,10 +56,13 @@ Connect documents, FAQs, policies and product data. PXO AI uses **retrieval-augm
 Block topics, enforce disclosures, cap what the agent can promise, and define hand-off triggers to a human. Guardrails are applied on every turn, not just in the prompt.
 
 #### Connect to the systems you already use
-Book appointments, look up orders, update a CRM record or create a ticket through tool integrations and webhooks. `[[VERIFY: list of launch integrations, e.g. calendar, CRM, helpdesk, telephony provider]]`
+Book appointments, look up orders, update a CRM record or create a ticket through tool integrations and webhooks. `[[CONFIRM: list of launch integrations, e.g. calendar, CRM, helpdesk, telephony provider]]`
 
 #### See every call
-Every conversation is logged with transcript, audio, retrieved sources, tool calls, latency and cost. When a call goes wrong, you can see the exact turn where it went wrong.
+Every conversation is logged with transcript, audio, retrieved sources, tool calls, latency and cost. Analytics and quality scoring show how agents are performing overall. When a call goes wrong, you can see the exact turn where it went wrong.
+
+#### Own your data
+Export your data at any time and keep full ownership. No lock-in, and no surprises.
 
 #### Test before you ship
 Replay past conversations against a new prompt or model version and compare outcomes before you put it live.
@@ -69,8 +75,8 @@ Replay past conversations against a new prompt or model version and compare outc
 |---|---|
 | **Observability** | Per-call traces, latency and cost metrics, alerting |
 | **Evaluation** | Regression suites built from real conversations |
-| **Security** | Role-based access, encrypted storage, audit log `[[VERIFY: data residency options]]` |
-| **Model choice** | Model-agnostic, so you can route to different LLM and speech providers by task `[[VERIFY]]` |
+| **Security** | Zero-trust architecture, encryption and data controls aligned to SOC 2 and ISO 27001 practices `[[CONFIRM: data residency options]]` |
+| **Model choice** | Designed so the model stays swappable. Pixorama's AI work uses Anthropic, OpenAI and open-weight models `[[CONFIRM: which models PXO AI supports at launch]]` |
 | **Human hand-off** | Warm transfer to a person with full context |
 
 ---
@@ -126,10 +132,10 @@ An AI voice agent is software that holds a spoken phone conversation: it listens
 PXO AI is in active development. We're working with a small group of early-access customers. Join the list and we'll contact you about access.
 
 **Can it use my existing phone number?**
-`[[VERIFY: number porting / SIP / forwarding options]]`
+`[[CONFIRM: number porting / SIP / forwarding options]]`
 
 **What languages does it support?**
-`[[VERIFY: launch languages]]`
+`[[CONFIRM: launch languages]]`
 
 **What happens when the agent can't help?**
 It hands off to a person according to rules you set: by topic, sentiment, or caller request. The person sees the transcript and context so the caller doesn't have to repeat themselves.
@@ -138,7 +144,7 @@ It hands off to a person according to rules you set: by topic, sentiment, or cal
 We've written an honest comparison that includes PXO AI and the main alternatives. [Compare AI voice agents →](/compare/best-ai-voice-agents)
 
 **Do you store call recordings?**
-Recordings and transcripts are stored encrypted, and you control retention. `[[VERIFY: default retention and regions]]`
+Recordings and transcripts are stored encrypted, and you control retention. `[[CONFIRM: default retention and regions]]`
 
 ---
 
@@ -160,4 +166,4 @@ Form: Name · Work email · Company · Main use case (dropdown) · Monthly call 
 
 - SD 7 on 1,000 searches is the softest significant term on the site. Use "AI voice agent platform" in the H1, the first 100 words, one H2 and the title tag.
 - Don't add `offers`, prices or a star rating to schema until they're real. Fake ratings in schema risk a manual action.
-- Replace every `[[VERIFY]]` before launch. Unverified capability claims on a product page are a trust risk.
+- Replace every `[[CONFIRM]]` before launch. Unverified capability claims on a product page are a trust risk.

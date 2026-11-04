@@ -76,7 +76,7 @@ We wrote about what it takes to make retrieval hold up under real traffic in [re
 
 PXO AI takes actions through integrations and webhooks to your helpdesk, CRM, order management and identity systems.
 
-`[[VERIFY: launch integrations. Commonly requested: Zendesk, Salesforce Service Cloud, Freshdesk, Intercom, HubSpot, Shopify, Twilio, Genesys, Amazon Connect, Five9, plus SIP trunking.]]`
+`[[CONFIRM: launch integrations. Commonly requested: Zendesk, Salesforce Service Cloud, Freshdesk, Intercom, HubSpot, Shopify, Twilio, Genesys, Amazon Connect, Five9, plus SIP trunking.]]`
 
 Need a custom integration? Our [AI & Data team](/#services) builds them.
 
@@ -89,7 +89,7 @@ The PXO AI dashboard reports on the metrics your team already uses:
 - **Containment and resolution rate** by intent
 - **Escalation rate and reasons**
 - **Average handle time** for AI and escalated calls
-- **CSAT** from post-call surveys `[[VERIFY]]`
+- **CSAT** from post-call surveys `[[CONFIRM]]`
 - **Cost per resolved call**
 - **Failure analysis:** the calls that went wrong, the turn where they went wrong, and why
 
@@ -105,9 +105,9 @@ Changing a prompt in production shouldn't be a leap of faith. PXO AI lets you **
 
 - Identity verification flows before account actions
 - Role-based console access and audit logs
-- Encrypted recordings and transcripts with configurable retention `[[VERIFY]]`
-- PII redaction in transcripts `[[VERIFY]]`
-- Data residency options `[[VERIFY]]`
+- Encrypted recordings and transcripts with configurable retention `[[CONFIRM]]`
+- PII redaction in transcripts `[[CONFIRM]]`
+- Data residency options `[[CONFIRM]]`
 
 ---
 
@@ -119,7 +119,7 @@ Changing a prompt in production shouldn't be a leap of faith. PXO AI lets you **
 4. **Go live on a slice of traffic**, such as overflow or after hours.
 5. **Review weekly** and expand the intents and traffic as results hold.
 
-`[[VERIFY: pilot length and pricing]]`
+`[[CONFIRM: pilot length and pricing]]`
 
 ---
 
@@ -135,16 +135,16 @@ Your team can build on the PXO AI console, or our engineers can design, integrat
 No. It takes the repetitive tier-1 volume, so your people can focus on the complex, emotional and high-value calls.
 
 **How does it verify a caller's identity?**
-Using the checks you define, such as account number plus postcode, a one-time code by SMS, or caller ID matching. `[[VERIFY]]`
+Using the checks you define, such as account number plus postcode, a one-time code by SMS, or caller ID matching. `[[CONFIRM]]`
 
 **What happens if the AI gets something wrong?**
 Every call is logged with sources and actions, so you can see exactly what happened, fix the cause and test the fix against past calls.
 
 **Can it work in our existing contact-centre platform?**
-`[[VERIFY: CCaaS integration / SIP]]`
+`[[CONFIRM: CCaaS integration / SIP]]`
 
 **What languages does it support?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 ---
 

@@ -28,14 +28,14 @@ You tell us the outcome. We agree a scope and cost envelope, then deliver agains
 - You want a predictable budget and a clear finish line.
 - You'd rather hold one partner accountable than manage engineers yourself.
 
-If your scope will keep shifting, a [dedicated squad](/engagement-models/dedicated-squads) is usually a better fit. If you just need extra hands, look at [staff augmentation](/engagement-models/staff-augmentation).
+If the scope is still being discovered, start with [advisory and architecture](/engagement-models/advisory-architecture). If it will keep shifting, a [dedicated squad](/engagement-models/dedicated-squads) is usually a better fit. If you just need extra hands, look at [staff augmentation](/engagement-models/staff-augmentation).
 
 ---
 
 ### H2: How it works
 
-#### 1. Discovery (fixed price, 2 to 3 weeks)
-We define goals, users, constraints and success metrics with you. You leave with a written scope, a risk register and a **cost envelope**: a cost and timeline range with every assumption written down. [More on discovery →](/process/discover)
+#### 1. Discovery (fixed price, typically 1 to 2 weeks)
+We define goals, users, constraints and success metrics with you. You leave with a written scope, a risk register and a **cost envelope**: the cost and timeline, with every assumption written down. You see the number before you commit to the build. [More on discovery →](/process/discover)
 
 #### 2. Milestone plan
 We break the scope into milestones, each with clear acceptance criteria and a payment attached. Typical milestones: running slice, MVP, feature-complete, production launch, handover.
@@ -57,7 +57,7 @@ Fixed-price projects go wrong in two ways: vendors pad the price to cover unknow
 
 - **Paid discovery first.** We price once we understand the problem, not after a sales call.
 - **Assumptions in writing.** If an assumption turns out wrong, we both know exactly what changed.
-- **A running slice early.** The riskiest technical assumptions get tested in weeks 3 to 6, not month five.
+- **A running slice early.** The riskiest technical assumptions get tested in the first few weeks, not month five.
 - **Visible change control.** New requests get a written impact on cost and timeline before anything changes. You decide.
 - **No quality trade-off.** Tests, reviews, security checks and observability are in every milestone, not optional extras.
 
@@ -106,15 +106,15 @@ No. Discovery is a separate, fixed-price piece of work. The scope and envelope a
 You can. We'll show you the impact on cost and timeline in writing, and you decide.
 
 **What if a milestone slips?**
-The delivery lead flags risk as early as it appears. If a slip is on our side, it's on our cost. `[[VERIFY: commercial commitment]]`
+The delivery lead flags risk as early as it appears. If a slip is on our side, it's on our cost. `[[CONFIRM: commercial commitment]]`
 
 **How are payments structured?**
-Discovery is paid up front, and the build is paid per accepted milestone. `[[VERIFY]]`
+Discovery is paid up front, and the build is paid per accepted milestone. `[[CONFIRM]]`
 
 ---
 
 ### CTA
-**Start with a two-to-three-week discovery.** Leave with a scope, a risk register and a cost envelope.
+**Start with a one-to-two-week discovery.** Leave with a scope, a risk register and a cost envelope.
 **[Book a discovery call]**
 
 Want a ballpark first? Try the [software development cost calculator](/resources/software-development-cost-calculator).

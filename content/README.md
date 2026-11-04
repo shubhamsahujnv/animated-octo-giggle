@@ -17,7 +17,7 @@ Keyword data: **Ubersuggest, pulled 4 Nov 2026**, US (locId 2840) unless noted. 
 
 | Marker | Meaning |
 |---|---|
-| `[[VERIFY: …]]` | A claim we believe is right but couldn't confirm from the site, such as integrations, SLA terms, overlap hours or compliance status. **Confirm or delete.** |
+| `[[CONFIRM: …]]` | **Not stated anywhere on pixoramagroup.com** (checked 4 Nov 2026), such as integrations, SLA response times, overlap hours or compliance status. Someone on the team needs to confirm it, or the line should be deleted. |
 | `[[ADD: …]]` | Information only Pixorama has: prices, team bios, client results, email address. |
 
 No prices, client results, team names, certifications or competitor details have been invented. Where the copy needs one, there's a placeholder.
@@ -95,9 +95,64 @@ Domain snapshot (Ubersuggest): **DA 5, 51 referring domains, about 1 organic key
 
 ---
 
+## Verification against pixoramagroup.com (4 Nov 2026)
+
+Every `[[VERIFY]]` item was checked against the live site: the homepage, all sitemap pages (services, products, engagement models, process, about, contact, privacy, terms) and the relevant blog posts.
+
+### 1. Several of these pages already exist on the live site
+
+The sitemap now includes **`/process`, `/about`, `/contact`, `/products`, all three product pages, `/engagement-models` and all four model pages, and `/services` with five service pages.** Doc 06 listed them as missing, so they were built after it was written.
+
+**What to do:** don't replace those live pages wholesale. Use the drafts here to **extend** them: add the sections, FAQs, keywords and internal links the live pages lack. The live pages are 250 to 1,150 words; the drafts are 750 to 1,300.
+
+Still missing (no URL in the sitemap): the process stage pages, PXO AI use-case, pricing and white-label pages, locations, industries, resources, glossary, case studies, team, careers, blog category hubs and comparison pages.
+
+### 2. Corrected from the site
+
+| Item | Draft said | Website says | Fixed in |
+|---|---|---|---|
+| Discovery length | 2 to 3 weeks | **1 to 2 weeks** | process, discover, outcome-based, hub, cost calculator |
+| Architecture length | 2 to 4 weeks | **1 to 3 weeks** | architect, advisory |
+| Hardening length | not stated | **2 to 4 weeks** | process, harden |
+| Cost envelope | "a range" | **"a number… not a range with a disclaimer", with assumptions written down** | process, discover, outcome-based, glossary, cost calculator |
+| Email | `[[ADD]]` | **contact@pixoramagroup.com** (decoded from Cloudflare's protected link) | contact, careers |
+| Founded / team size | `[[ADD]]` | **Founded 2022; 40+ engineers, architects and strategists** (from Pixorama's own entry in its staff augmentation blog post) | about |
+| Testimonial | short quote, `[[VERIFY]]` | **Full Amelia Downie quote, via Trustpilot**; site says it publishes only what clients write | about |
+| Security claim | "SOC 2 / ISO 27001 control frameworks" | **"aligned to SOC 2 and ISO 27001 practices"** | PXO AI, harden, USA |
+| Model choice | `[[VERIFY]]` | **Model kept swappable; Anthropic, OpenAI and open-weight (Hugging Face) models** | PXO AI |
+| PXO AI features | partial | **Handles interruptions; deploys across web, phone and apps; analytics and quality scoring; data export, no lock-in** | PXO AI |
+| Squad stability | `[[VERIFY]]` | **"The same senior engineers from month to month"; a Pixorama lead engineer runs delivery; no account manager layer** | dedicated squads, process, contact |
+| Augmentation | not stated | **"Named engineers, not an agency average"** | staff augmentation |
+| Build practice | partial | **Trunk-based, reviewed, CI from first commit, commit access throughout** | process, build |
+| Handover | "support window" | **"A defined support taper"** | process, scale & operate |
+| SLA uptime | `[[VERIFY]]` | **99.98% average SLA-backed uptime, "representative of recent work and confirmed per engagement"** | about, scale & operate |
+| EchoMind safety | `[[VERIFY]]` | **Classifier runs on every entry before any insight is shown**; crisis wording matched to site | EchoMind |
+| Fractional CTO rates | `[[ADD]]` | **Market benchmark from own blog: US avg ~US$213/hr; AU A$9k–18k/month** (Pixorama's own rate still `[[ADD]]`) | advisory |
+| Answering service prices | `[[market range]]` | **Ruby from ~US$250 for 50 min; AI plans US$0–500/month** (own blog, Sept 2026) | small business |
+| Blog authors | "no visible authors" | **Posts carry an author box (Udesh Bhan)** | team (writer note) |
+| ROI calculator help text | "industry studies say 20–60%" | **Removed.** It wasn't sourced. | ROI calculator |
+
+### 3. Things on the live site to fix
+
+- **The email is invisible to search engines.** Cloudflare Email Obfuscation shows "[email protected]" in the HTML. Turn it off for the site or the contact page.
+- **The stat counters render as zero.** "Enterprise clients served", "Engineers, architects & strategists", "0.00%", "0×" and "−0%" are empty or zero in the HTML until JavaScript runs. Put the real numbers in the HTML.
+- **The dashboard screenshot is demo data.** The Terms page says product screens are "illustrative demonstrations, not live systems or real customer data". The figures and name in it (12,458 users, "Ananya Rao") must not be quoted as facts anywhere. None of the drafts quote them.
+- **EchoMind has no app store links.** The page says "iOS and Android" but only offers "Ask us about EchoMind". If the app is public, add store links. If not, the draft's download buttons need to change (flagged in the file).
+
+### 4. Still `[[CONFIRM]]`: not on the website
+
+These need an internal answer. Main groups:
+- **PXO AI:** integrations, languages, phone-number options, data residency, retention, onboarding time, pilot terms, concurrency, white-label branding and API, HIPAA/BAA position
+- **Commercials:** minimum terms, notice periods, replacement guarantee, currencies, governing law, GST, insurance
+- **Operations:** time-zone overlap hours, response SLA, support-taper length, where the team is based (the site never states it; the location pages assume India)
+- **Products:** EchoMind privacy, encryption and AI processing; AI Device Inspector's target devices and buyers
+- **Competitors** on `/compare/best-ai-voice-agents`: check on each vendor's own site and date it
+
+---
+
 ## Before you publish: checklist
 
-1. **Resolve every `[[VERIFY]]` and `[[ADD]]`.** Run `grep -rn "\[\[" content/` to list them.
+1. **Resolve every `[[CONFIRM]]` and `[[ADD]]`.** Run `grep -rn "\[\[" content/` to list them.
 2. **PXO AI is in active development.** Every PXO AI page carries an early-access banner. Don't remove it until the product is generally available.
 3. **No compliance claims without proof.** Don't write "HIPAA compliant", "SOC 2 certified" or "ISO 27001 certified" unless it's true for Pixorama itself.
 4. **Competitor facts** on `/compare/best-ai-voice-agents` must be checked on each vendor's site, with the date recorded on the page.

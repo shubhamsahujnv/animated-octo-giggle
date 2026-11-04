@@ -70,7 +70,7 @@ It proves the things diagrams can't:
 - Does retrieval return the right answers on *your* documents?
 - Does the deployment pipeline actually work end to end?
 
-The slice is usually live in weeks three to six. It becomes the foundation of the [build stage](/process/build), not a throwaway prototype.
+The slice is usually live within the first few weeks. It becomes the foundation of the [build stage](/process/build), not a throwaway prototype.
 
 ---
 
@@ -94,7 +94,7 @@ If you have a team to build but want senior architecture first, we offer this st
 ### H2: Frequently asked questions
 
 **How long does the architect stage take?**
-Typically two to four weeks, including the running slice.
+Typically one to three weeks, including the running slice.
 
 **Will you use our existing cloud account?**
 Yes. Everything is built in your accounts from day one.

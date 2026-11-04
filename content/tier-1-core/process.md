@@ -38,14 +38,14 @@ Our process is designed around those three failure points. It has five stages. E
 
 ### H2: Stage 1, Discover: agree what success looks like before anyone writes code
 
-Discovery is short and fixed-price, usually two to three weeks. A senior engineer and a product lead work with your team to pin down:
+Discovery is short and fixed-price, typically one to two weeks. A senior engineer and a product lead work with your team to pin down:
 
 - **The business goal.** What changes for the business if this works? Revenue, cost, risk or speed.
 - **The users and their jobs.** Who uses it, how often, and what they do today instead.
 - **The constraints.** Budget, deadlines, regulation, existing systems, data you can and can't move.
 - **The success metrics.** Two or three numbers we'll both be held to.
 
-You leave discovery with a written scope, a ranked risk register and a **cost envelope**: a range for what the build will cost and how long it will take, with the assumptions written down. You're not committed to anything else. If you want to take the scope to another firm, it's yours.
+You leave discovery with a written scope, a ranked risk register and a **cost envelope**: the number for what the build will cost and how long it will take, with the assumptions written down, so you can tell when something changes. Not a range with a disclaimer. You're not committed to anything else. If you want to take the scope to another firm, it's yours.
 
 [Read more about discovery →](/process/discover)
 
@@ -68,7 +68,7 @@ Then we build a **running slice**: one thin path through the real system, deploy
 We work in two-week increments. Each one ends with working software deployed to a staging or production environment, not a slide that says "60% complete".
 
 - **You own the code from day one.** It lives in your GitHub or GitLab organisation, not ours.
-- **Automated tests and CI/CD run from the first commit.** Nothing merges without review and a green pipeline.
+- **Trunk-based, reviewed, with CI from the first commit.** Nothing merges without review and a green pipeline, and you have commit access throughout.
 - **You see progress in software, not status reports.** A demo every two weeks, a written update every week.
 - **Scope changes are visible.** If something new comes in, we show you what it displaces or what it adds to the envelope.
 
@@ -93,7 +93,7 @@ Hardening isn't a phase we start at the end. Security scanning, dependency check
 
 After launch we can run the system for you under an SLA, train your team to run it, or both. Either way the goal is that you are never dependent on us.
 
-Handover includes runbooks, architecture documentation, recorded walkthroughs and paired on-call shifts. All code, infrastructure-as-code and credentials transfer to you. There is no licence-back, no retained components and no hosting lock-in.
+Handover includes runbooks, architecture documentation, knowledge-transfer sessions, paired on-call shifts and a defined support taper. All code, infrastructure-as-code and credentials transfer to you. There is no licence-back, no retained components and no hosting lock-in.
 
 [Read more about scale and operate →](/process/scale-and-operate)
 
@@ -128,14 +128,20 @@ The five stages stay the same whether you hire us for a fixed-scope project, a d
 
 ### H2: Frequently asked questions
 
-**How long does discovery take?**
-Usually two to three weeks, depending on how many stakeholders and systems are involved. It's priced as a fixed, separate piece of work.
+**How long does each stage take?**
+Discovery takes one to two weeks and architecture one to three. Build runs in two-week increments against the agreed scope. Hardening takes two to four weeks. Discovery is priced as a fixed, separate piece of work.
+
+**Is this agile or waterfall?**
+Agile inside each stage, staged overall. The stage gates exist so you can stop, not so we can invoice.
+
+**Who do we actually talk to?**
+The senior engineers doing the work. There is no account manager layer.
 
 **Do I get a fixed price?**
-You get a cost envelope at the end of discovery: a range with written assumptions. For outcome-based projects we then agree milestone-based commercials against that envelope.
+You get a cost envelope at the end of discovery: the number, with its assumptions written down, before you commit to the build. For outcome-based projects we then agree milestone-based commercials against that envelope.
 
 **When do we see working software?**
-The running slice at the end of architecture is the first working software, usually within four to six weeks of starting. After that, every two weeks.
+The running slice at the end of architecture is the first working software, usually within the first few weeks of the engagement. After that, every two weeks.
 
 **Who owns the code?**
 You do, from the first commit. It lives in your repository.
@@ -151,7 +157,7 @@ That's our [advisory & architecture](/engagement-models/advisory-architecture) e
 ### CTA block
 
 **Have an idea? We'll build it, and you'll own it.**
-Start with a two-to-three-week discovery. You'll leave with a scope, a risk register and a cost envelope, whether or not you build with us.
+Start with a one-to-two-week discovery. You'll leave with a scope, a risk register and a cost envelope, whether or not you build with us.
 
 **[Book a discovery call]**
 

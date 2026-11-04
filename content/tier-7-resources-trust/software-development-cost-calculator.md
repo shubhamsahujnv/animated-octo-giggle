@@ -83,7 +83,7 @@ Get a cost and timeline range for your software project in about a minute. Pick 
 
 *[calculator]*
 
-**Disclaimer (directly under results):** *This is a ballpark range based on typical projects, not a quote. Real cost depends on details this calculator can't see: your integrations, data, regulations and how settled the scope is. For a range you can plan around, our [discovery phase](/process/discover) produces a cost envelope with every assumption written down.*
+**Disclaimer (directly under results):** *This is a ballpark range based on typical projects, not a quote. Real cost depends on details this calculator can't see: your integrations, data, regulations and how settled the scope is. For a figure you can plan around, our [discovery phase](/process/discover) produces a cost envelope with every assumption written down.*
 
 ---
 
@@ -99,9 +99,9 @@ Get a cost and timeline range for your software project in about a minute. Pick 
 
 ---
 
-### H2: Why we give a range, not a number
+### H2: Why the calculator gives a range
 
-A single number before the work is understood is either padded or wrong. A range with stated assumptions is more honest, and more useful when you're planning a budget. The same principle sits behind the cost envelope we produce at the end of [discovery](/process/discover).
+A calculator can't see your integrations, data or constraints, so it can only give a range. [Discovery](/process/discover) can see them. That's why it ends with a cost envelope: a single figure with every assumption written down.
 
 ---
 
@@ -130,7 +130,7 @@ After discovery, yes. See [outcome-based projects](/engagement-models/outcome-ba
 ---
 
 ### Soft CTA
-**Want a range you can actually plan around?** [Start with a two-to-three-week discovery →](/process/discover)
+**Want a number you can actually plan around?** [Start with a one-to-two-week discovery →](/process/discover)
 
 ---
 

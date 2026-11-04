@@ -42,11 +42,11 @@ What's hard is building and running the voice stack yourself: telephony, speech,
 
 | | |
 |---|---|
-| **Your brand** | Your logo, colours and product name across the client console `[[VERIFY]]` |
-| **Your domain** | Clients log in at `app.youragency.com` `[[VERIFY]]` |
+| **Your brand** | Your logo, colours and product name across the client console `[[CONFIRM]]` |
+| **Your domain** | Clients log in at `app.youragency.com` `[[CONFIRM]]` |
 | **Your pricing** | Set your own plans and margins, and we bill you wholesale |
 | **Your clients** | Create and manage client workspaces from one partner dashboard |
-| **No PXO AI branding** | In the console, emails or on calls `[[VERIFY]]` |
+| **No PXO AI branding** | In the console, emails or on calls `[[CONFIRM]]` |
 
 ---
 
@@ -81,7 +81,7 @@ Your reputation rides on our uptime. PXO AI is built by an engineering firm that
 - **Per-call observability:** see any client call, the sources used and the actions taken.
 - **Guardrails** applied every turn, so a client's agent doesn't go off-script.
 - **Replay testing** to check a change against past calls before it goes live.
-- **Monitoring and alerting** on latency and failures. `[[VERIFY: SLA available to partners]]`
+- **Monitoring and alerting** on latency and failures. `[[CONFIRM: SLA available to partners]]`
 
 ---
 
@@ -90,9 +90,9 @@ Your reputation rides on our uptime. PXO AI is built by an engineering firm that
 1. **Apply.** Tell us about your agency, your clients and your target verticals.
 2. **Onboarding call.** We set up your branded workspace and walk through the platform.
 3. **First client.** We help you launch your first client agent and review the results together.
-4. **Grow.** Wholesale volume pricing improves as your client base grows. `[[VERIFY]]`
+4. **Grow.** Wholesale volume pricing improves as your client base grows. `[[CONFIRM]]`
 
-**Partner support:** `[[VERIFY: e.g. dedicated partner channel, second-line support for client issues, co-branded sales material]]`
+**Partner support:** `[[CONFIRM: e.g. dedicated partner channel, second-line support for client issues, co-branded sales material]]`
 
 ---
 
@@ -104,26 +104,26 @@ Partners pay wholesale per-minute and platform rates and set their own retail pr
 
 ### H2: Need more than a reseller platform?
 
-If you're a SaaS platform that wants voice agents **inside your own product**, through an API or embedded console, we can do that too. `[[VERIFY: API/embedding availability]]` Our engineering team can also build the integration for you as a [project](/engagement-models/outcome-based-projects).
+If you're a SaaS platform that wants voice agents **inside your own product**, through an API or embedded console, we can do that too. `[[CONFIRM: API/embedding availability]]` Our engineering team can also build the integration for you as a [project](/engagement-models/outcome-based-projects).
 
 ---
 
 ### H2: Frequently asked questions
 
 **Can I fully rebrand the platform?**
-Yes. Logo, colours, product name and custom domain. Your clients won't see PXO AI branding. `[[VERIFY]]`
+Yes. Logo, colours, product name and custom domain. Your clients won't see PXO AI branding. `[[CONFIRM]]`
 
 **Who supports my clients?**
-You handle first-line support with your clients, and we support you. `[[VERIFY]]`
+You handle first-line support with your clients, and we support you. `[[CONFIRM]]`
 
 **Can I set my own prices?**
 Yes. You buy at wholesale and set your own retail pricing.
 
 **Is there a minimum commitment?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **Can I bring existing clients' phone numbers?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **How is this different from GoHighLevel's voice AI?**
 `[[Only answer if you can do so accurately and fairly. Otherwise remove. "gohighlevel ai voice agent" has 50/mo searches and many agencies will be comparing.]]`

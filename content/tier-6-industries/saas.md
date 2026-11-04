@@ -98,7 +98,7 @@ Choosing a SaaS partner? We've written fair comparisons of [SaaS development com
 It depends heavily on scope. We break down stages and costs in [how to build a SaaS product](/blog/how-to-build-saas-product). For your product, try the [cost calculator](/resources/software-development-cost-calculator) or start with discovery.
 
 **How long does a SaaS MVP take?**
-Often three to six months from discovery to launch, depending on scope. `[[VERIFY]]`
+Often three to six months from discovery to launch, depending on scope. `[[CONFIRM]]`
 
 **Single-tenant or multi-tenant?**
 Multi-tenant is right for most SaaS. Some enterprise or regulated customers need isolation. We'll recommend a model in discovery.

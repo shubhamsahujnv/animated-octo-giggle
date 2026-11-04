@@ -27,8 +27,8 @@ Some teams need a whole product built. Some need two senior engineers next month
 | **Best for** | A defined product or feature with a clear outcome | An ongoing roadmap that needs a full team | Filling skill or capacity gaps in your team | Decisions before you commit budget |
 | **Who manages delivery** | We do | We do, on your roadmap | You do | You do; we advise |
 | **Commercials** | Fixed scope, milestone payments | Monthly, per squad | Monthly, per engineer | Fixed-fee review or monthly retainer |
-| **Typical start** | After a 2 to 3 week discovery | 3 to 4 weeks | About 2 weeks | 1 to 2 weeks `[[VERIFY]]` |
-| **Typical length** | 2 to 9 months `[[VERIFY]]` | 6 months + | 3 months + | 2 weeks to ongoing |
+| **Typical start** | After a 1 to 2 week discovery | 3 to 4 weeks | About 2 weeks | 1 to 2 weeks `[[CONFIRM]]` |
+| **Typical length** | 2 to 9 months `[[CONFIRM]]` | 6 months + | 3 months + | 2 weeks to ongoing |
 | **You own the code** | ✓ | ✓ | ✓ | ✓ (all documents) |
 
 ---
@@ -114,4 +114,4 @@ You do, in every model.
 
 ## Writer notes
 
-- Fill the `[[VERIFY]]` cells with real ranges. A comparison table with vague cells reads as evasive.
+- Fill the `[[CONFIRM]]` cells with real ranges. A comparison table with vague cells reads as evasive.

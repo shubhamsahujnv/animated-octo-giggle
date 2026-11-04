@@ -40,7 +40,7 @@ This guide compares six platforms on the things that matter in production.
 | Focused on voice quality and expressive speech | **ElevenLabs** |
 | Wanting grounded answers, guardrails and per-call observability in one console, or a done-for-you build | **PXO AI** (early access) |
 
-`[[VERIFY each line against current vendor positioning before publishing]]`
+`[[CONFIRM each line against current vendor positioning before publishing]]`
 
 ---
 
@@ -61,44 +61,44 @@ We looked at seven things that decide whether a voice agent works in production:
 ### H2: The platforms
 
 #### Retell AI
-**What it is:** a platform for building, testing and deploying AI phone agents, widely used for contact-centre and business phone use cases. `[[VERIFY]]`
-**Strengths:** `[[VERIFY: e.g. focus on low latency and natural turn-taking; developer API plus visual builder; telephony integrations]]`
-**Watch-outs:** `[[VERIFY: e.g. pricing components]]`
+**What it is:** a platform for building, testing and deploying AI phone agents, widely used for contact-centre and business phone use cases. `[[CONFIRM]]`
+**Strengths:** `[[CONFIRM: e.g. focus on low latency and natural turn-taking; developer API plus visual builder; telephony integrations]]`
+**Watch-outs:** `[[CONFIRM: e.g. pricing components]]`
 **Best for:** teams with some technical capacity building production phone agents.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### Vapi
-**What it is:** a developer-focused voice AI platform and API for building voice agents, with flexibility to choose speech and model providers. `[[VERIFY]]`
-**Strengths:** `[[VERIFY: e.g. flexibility, bring-your-own models, developer tooling]]`
-**Watch-outs:** `[[VERIFY: e.g. requires engineering effort; costs from multiple providers add up]]`
+**What it is:** a developer-focused voice AI platform and API for building voice agents, with flexibility to choose speech and model providers. `[[CONFIRM]]`
+**Strengths:** `[[CONFIRM: e.g. flexibility, bring-your-own models, developer tooling]]`
+**Watch-outs:** `[[CONFIRM: e.g. requires engineering effort; costs from multiple providers add up]]`
 **Best for:** developers and product teams embedding voice into their own product.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### Synthflow
-**What it is:** a no-code AI voice agent builder, popular with agencies and small businesses. `[[VERIFY]]`
-**Strengths:** `[[VERIFY: e.g. no-code builder, templates, white-label options for agencies]]`
-**Watch-outs:** `[[VERIFY]]`
+**What it is:** a no-code AI voice agent builder, popular with agencies and small businesses. `[[CONFIRM]]`
+**Strengths:** `[[CONFIRM: e.g. no-code builder, templates, white-label options for agencies]]`
+**Watch-outs:** `[[CONFIRM]]`
 **Best for:** non-technical teams and agencies that want to launch quickly.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### Bland AI
-**What it is:** an AI phone-calling platform aimed at enterprises and high call volumes. `[[VERIFY]]`
-**Strengths:** `[[VERIFY]]`
-**Watch-outs:** `[[VERIFY]]`
+**What it is:** an AI phone-calling platform aimed at enterprises and high call volumes. `[[CONFIRM]]`
+**Strengths:** `[[CONFIRM]]`
+**Watch-outs:** `[[CONFIRM]]`
 **Best for:** enterprises with high-volume inbound or outbound calling.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### ElevenLabs (Conversational AI / Agents)
-**What it is:** best known for realistic text-to-speech voices, ElevenLabs also offers a platform for building conversational voice agents. `[[VERIFY current product name]]`
-**Strengths:** `[[VERIFY: e.g. voice quality and range, multilingual voices]]`
-**Watch-outs:** `[[VERIFY]]`
+**What it is:** best known for realistic text-to-speech voices, ElevenLabs also offers a platform for building conversational voice agents. `[[CONFIRM current product name]]`
+**Strengths:** `[[CONFIRM: e.g. voice quality and range, multilingual voices]]`
+**Watch-outs:** `[[CONFIRM]]`
 **Best for:** use cases where voice quality and expressiveness matter most.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### PXO AI (ours)
 **What it is:** a platform to design, deploy and operate AI voice and chat agents from one console. *In active development; early access only.*
 **Strengths:** retrieval over your own knowledge so answers are grounded; guardrails applied on every turn; per-call observability (transcript, sources, tool calls, latency, cost); replay testing of changes against past calls; and the option of a done-for-you build by Pixorama's engineers.
-**Watch-outs:** it's **early access**, so it's not yet generally available, it has a smaller integration library than established platforms `[[VERIFY]]`, and it has fewer production references.
+**Watch-outs:** it's **early access**, so it's not yet generally available, it has a smaller integration library than established platforms `[[CONFIRM]]`, and it has fewer production references.
 **Best for:** businesses that want grounded, auditable agents and value having an engineering team behind the platform.
 **Pricing:** [how PXO AI pricing works](/products/pxo-ai/pricing)
 
@@ -106,7 +106,7 @@ We looked at seven things that decide whether a voice agent works in production:
 
 ### H2: Side-by-side comparison
 
-`[[VERIFY every cell. Use ✓ / ✗ / "Partial" / "Not stated". Never guess.]]`
+`[[CONFIRM every cell. Use ✓ / ✗ / "Partial" / "Not stated". Never guess.]]`
 
 | | Retell AI | Vapi | Synthflow | Bland AI | ElevenLabs | PXO AI |
 |---|---|---|---|---|---|---|
@@ -140,7 +140,7 @@ We looked at seven things that decide whether a voice agent works in production:
 
 ### H2: Best AI receptionist for small business
 
-If you're a small business and want an AI receptionist rather than a developer platform, the shortlist changes. You need a simple setup, calendar booking and SMS summaries, not an API. In that case, look first at no-code options. `[[VERIFY: e.g. Synthflow and dedicated receptionist products]]` For PXO AI's approach, see [AI receptionist for small business](/products/pxo-ai/use-cases/small-business).
+If you're a small business and want an AI receptionist rather than a developer platform, the shortlist changes. You need a simple setup, calendar booking and SMS summaries, not an API. In that case, look first at no-code options. `[[CONFIRM: e.g. Synthflow and dedicated receptionist products]]` For PXO AI's approach, see [AI receptionist for small business](/products/pxo-ai/use-cases/small-business).
 
 ---
 

@@ -28,13 +28,13 @@ Launch isn't the finish line. In the fifth of our [five stages](/process) we run
 | **Shared** | We co-operate with your team, with paired on-call, while they ramp up | Teams building ops capability |
 | **You operate** | Full handover at launch, with a support window | Teams with mature ops |
 
-Systems we operate are covered by an SLA. `[[VERIFY: SLA terms, e.g. 99.9% / 99.98% availability, response times by severity]]`
+Systems we operate are covered by an agreed SLA. Across recent engagements, average SLA-backed uptime has been 99.98% (representative of recent work and confirmed per engagement). `[[CONFIRM: response times by severity]]`
 
 ---
 
 ### H2: Operate: what's included
 
-- 24/7 monitoring and alerting `[[VERIFY hours]]`
+- 24/7 monitoring and alerting `[[CONFIRM hours]]`
 - Incident response with written post-incident reviews
 - Security patching and dependency updates
 - Backups and restore tests
@@ -62,7 +62,7 @@ Handover isn't a zip file and a goodbye. It includes:
 3. **Recorded walkthroughs** of each major component
 4. **Paired on-call shifts**, where your engineers handle incidents with ours alongside
 5. **Access transfer:** every credential, account, domain and secret, audited
-6. **A support window** after handover for questions `[[VERIFY length]]`
+6. **A defined support taper** after handover, so support steps down gradually rather than stopping `[[CONFIRM: length]]`
 
 ---
 

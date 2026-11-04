@@ -37,7 +37,7 @@ If you're in the US or Australia, an offshore team can cost a fraction of a loca
 | | Onshore | Nearshore | Offshore (e.g. India) |
 |---|---|---|---|
 | **Cost** | Highest | Mid | Lowest, often well below onshore for comparable seniority |
-| **Time-zone overlap** | Full | Most of the day | Partial: a few hours a day `[[VERIFY for US/AU]]` |
+| **Time-zone overlap** | Full | Most of the day | Partial: a few hours a day `[[CONFIRM for US/AU]]` |
 | **Talent pool size** | Limited, competitive | Growing | Very large |
 | **Cultural and communication fit** | Easiest | Usually good | Varies a lot by vendor |
 | **Legal and IP** | Familiar | Varies | Needs clear contracts (IP assignment, governing law) |
@@ -100,7 +100,7 @@ Many companies end up with a blend: an onshore product owner or tech lead, with 
 - **Two-week increments** with demos, and weekly written updates.
 - **Daily overlap** with [US](/locations/usa) and [Australian](/locations/australia) clients.
 - **One accountable lead** per engagement.
-- **Contracts** in USD or AUD. `[[VERIFY]]`
+- **Contracts** in USD or AUD. `[[CONFIRM]]`
 
 ---
 

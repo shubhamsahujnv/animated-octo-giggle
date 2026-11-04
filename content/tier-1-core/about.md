@@ -16,7 +16,7 @@
 
 ### H1: We're a small, senior engineering firm that ships production software
 
-Pixorama builds AI-powered software, cloud platforms and secure systems for enterprises and funded startups. We are deliberately small. The people who scope your project are the people who design it, and they stay on it until it's running.
+Founded in 2022 and remote-first, Pixorama builds AI-powered software, cloud platforms and secure systems for enterprises and funded startups. We are deliberately small. The people who scope your project are the people who design it, and they stay on it until it's running.
 
 **[Meet the team](/team)** **[Book a discovery call](/contact)**
 
@@ -31,6 +31,17 @@ We started Pixorama to do the opposite:
 - **Senior-led delivery.** Every engagement is led by engineers who have designed, shipped and operated software at scale.
 - **Production, not prototypes.** We measure ourselves on what runs in production, not on what demos well.
 - **You own everything.** All code and IP transfer to you at handover. No licence-back, no retained components, no hosting lock-in.
+
+---
+
+### H2: Six principles, every engagement
+
+- **Senior-only teams.** Experienced architects and engineers, never juniors learning on your budget.
+- **Outcomes, not hours.** We align on measurable business results and stand behind them.
+- **Secure by default.** Security, privacy and compliance engineered in from day one.
+- **Speed with certainty.** Production increments from week one, with controls that keep velocity safe.
+- **No lock-in.** You own the code, infrastructure and documentation. We design for handover from the start.
+- **A true partner.** Transparent communication, shared roadmaps and a relationship that compounds over time.
 
 ---
 
@@ -77,9 +88,9 @@ Every model includes secure-by-design engineering, automated testing, observabil
 
 We're remote-first and work with clients in three primary markets:
 
-- **[India](/locations/india)**, where much of our engineering team is based
+- **[India](/locations/india)** `[[CONFIRM: the site doesn't say where the team is based. If most engineers are in India, say so here, because the location pages rely on it.]]`
 - **[United States](/locations/usa)**, with working-hour overlap for US East and West Coast teams
-- **[Australia](/locations/australia)**, with strong time-zone overlap and clients across Sydney, Melbourne and Brisbane `[[VERIFY: cities where clients actually are]]`
+- **[Australia](/locations/australia)**, with time-zone overlap with Australian business hours, and recent work such as Amelia Downie's website and SEO
 
 Being remote-first means we hire for skill, not postcode, and we've built our delivery habits around written communication, recorded demos and overlapping hours.
 
@@ -93,8 +104,10 @@ Recent work includes a payment recovery platform for **BVIVE**, platform support
 
 [Read our case studies →](/case-studies)
 
-> "Professional, knowledgeable, and trustworthy."
-> **Amelia Downie**, Land Healing Practitioner `[[VERIFY: full quote and permission]]`
+> "I engaged Pixorama to build my website and undertake SEO work. I found them to be professional, knowledgeable, and trustworthy throughout the process. I would confidently recommend their services to anyone looking to improve their online presence."
+> **Amelia Downie**, Land Healing Practitioner, ameliadownie.com.au (via Trustpilot)
+
+*We publish only what clients have written themselves. Nothing here is drafted on their behalf.*
 
 ---
 
@@ -103,13 +116,14 @@ Recent work includes a payment recovery platform for **BVIVE**, platform support
 | | |
 |---|---|
 | **100%** | of code and IP transferred to clients at handover |
-| **99.98%** | SLA-backed uptime on systems we operate `[[VERIFY: measurement period and scope]]` |
+| **2022** | founded |
+| **40+** | engineers, architects and strategists |
+| **99.98%** | average SLA-backed uptime (representative of recent work, confirmed per engagement) |
 | **~2 weeks** | typical time to start a specialist augmentation engagement |
 | **3 to 4 weeks** | typical time to stand up a full squad |
 | `[[ADD]]` | clients served |
-| `[[ADD]]` | senior engineers on the team |
 
-> **Writer note:** the homepage stats for client count, team size and continents currently render as placeholders. Fill these with real numbers or remove them. Don't publish invented figures.
+> **Writer note:** "40+ engineers, architects and strategists" and "founded 2022" come from Pixorama's own entry in the blog post on the best staff augmentation companies in India. On the live homepage and /about, the animated counters (clients served, team size, continents, deployment uplift, cloud cost reduction) render as empty or "0" in the page HTML, so search engines see zeros. Put the real numbers in the HTML and animate them with JavaScript, or remove the counters.
 
 ---
 

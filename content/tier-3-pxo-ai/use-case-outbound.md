@@ -34,7 +34,7 @@ Outbound voice AI works best when the person being called **expects or welcomes 
 | **Speed-to-lead follow-up** | Calls a new web enquiry within a minute and qualifies it | More leads reached while they're interested |
 | **Booking confirmations** | Confirms details for services, deliveries and viewings | Fewer wasted trips |
 | **Re-engagement** | Calls lapsed customers who opted in, such as recalls and renewals | Recovered revenue |
-| **Payment reminders** | Polite reminders with a payment link by SMS | Faster collections `[[VERIFY legal suitability per market]]` |
+| **Payment reminders** | Polite reminders with a payment link by SMS | Faster collections `[[CONFIRM legal suitability per market]]` |
 | **Feedback and surveys** | Post-visit or post-purchase surveys | Higher response than email |
 | **Event and open-home follow-up** | Calls attendees for feedback and next steps | Warm leads for agents |
 
@@ -54,7 +54,7 @@ Automated and AI-voiced calls are regulated in every market we work in. Rules di
 
 ### H2: Compliance controls built into PXO AI
 
-`[[VERIFY each before publishing]]`
+`[[CONFIRM each before publishing]]`
 
 - **Consent records:** campaigns only call contacts with a recorded consent basis.
 - **Do-not-call suppression:** your internal list, plus registry checks where supported.
@@ -89,7 +89,7 @@ Searches for "AI cold calling" are growing, and so are complaints and enforcemen
 3. **Set the rules:** calling windows, retries, voicemail behaviour, transfer conditions.
 4. **Test on yourself and your team.**
 5. **Launch** and watch results live: reached, completed, converted, opted out.
-6. **Outcomes are written back** to your CRM automatically. `[[VERIFY integrations]]`
+6. **Outcomes are written back** to your CRM automatically. `[[CONFIRM integrations]]`
 
 ---
 
@@ -114,7 +114,7 @@ Yes, according to your rules. Some regulations also apply to voicemail messages.
 Yes, live, with a summary of the conversation so far.
 
 **How many calls can it make at once?**
-`[[VERIFY concurrency limits]]`
+`[[CONFIRM concurrency limits]]`
 
 **How is outbound priced?**
 Per minute, like inbound. Outbound telephony rates can differ by country. See [pricing](/products/pxo-ai/pricing).

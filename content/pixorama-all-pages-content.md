@@ -1,11 +1,12 @@
 # Pixorama: New Page Content (All Pages)
 
-Every page from doc 06 (New Pages to Create) in one file, in tier order. Keyword data from Ubersuggest, 4 Nov 2026.
+Every page from doc 06 (New Pages to Create) in one file, in tier order. Keyword data from Ubersuggest; facts checked against pixoramagroup.com on 4 Nov 2026.
 
-Placeholders: `[[VERIFY: …]]` means confirm or delete before publishing. `[[ADD: …]]` means information only Pixorama has.
+Placeholders: `[[CONFIRM: …]]` means not stated on pixoramagroup.com, so the team needs to confirm it or delete the line. `[[ADD: …]]` means information only Pixorama has.
 
 ## Contents
 
+- [Verification against pixoramagroup.com](#verification-against-pixoramagroupcom-4-nov-2026)
 - [/about](#about)
 - [/contact](#contact)
 - [/process](#process)
@@ -73,9 +74,64 @@ Domain snapshot (Ubersuggest): **DA 5, 51 referring domains, about 1 organic key
 
 ---
 
+## Verification against pixoramagroup.com (4 Nov 2026)
+
+Every `[[VERIFY]]` item was checked against the live site: the homepage, all sitemap pages (services, products, engagement models, process, about, contact, privacy, terms) and the relevant blog posts.
+
+### 1. Several of these pages already exist on the live site
+
+The sitemap now includes **`/process`, `/about`, `/contact`, `/products`, all three product pages, `/engagement-models` and all four model pages, and `/services` with five service pages.** Doc 06 listed them as missing, so they were built after it was written.
+
+**What to do:** don't replace those live pages wholesale. Use the drafts here to **extend** them: add the sections, FAQs, keywords and internal links the live pages lack. The live pages are 250 to 1,150 words; the drafts are 750 to 1,300.
+
+Still missing (no URL in the sitemap): the process stage pages, PXO AI use-case, pricing and white-label pages, locations, industries, resources, glossary, case studies, team, careers, blog category hubs and comparison pages.
+
+### 2. Corrected from the site
+
+| Item | Draft said | Website says | Fixed in |
+|---|---|---|---|
+| Discovery length | 2 to 3 weeks | **1 to 2 weeks** | process, discover, outcome-based, hub, cost calculator |
+| Architecture length | 2 to 4 weeks | **1 to 3 weeks** | architect, advisory |
+| Hardening length | not stated | **2 to 4 weeks** | process, harden |
+| Cost envelope | "a range" | **"a number… not a range with a disclaimer", with assumptions written down** | process, discover, outcome-based, glossary, cost calculator |
+| Email | `[[ADD]]` | **contact@pixoramagroup.com** (decoded from Cloudflare's protected link) | contact, careers |
+| Founded / team size | `[[ADD]]` | **Founded 2022; 40+ engineers, architects and strategists** (from Pixorama's own entry in its staff augmentation blog post) | about |
+| Testimonial | short quote, `[[VERIFY]]` | **Full Amelia Downie quote, via Trustpilot**; site says it publishes only what clients write | about |
+| Security claim | "SOC 2 / ISO 27001 control frameworks" | **"aligned to SOC 2 and ISO 27001 practices"** | PXO AI, harden, USA |
+| Model choice | `[[VERIFY]]` | **Model kept swappable; Anthropic, OpenAI and open-weight (Hugging Face) models** | PXO AI |
+| PXO AI features | partial | **Handles interruptions; deploys across web, phone and apps; analytics and quality scoring; data export, no lock-in** | PXO AI |
+| Squad stability | `[[VERIFY]]` | **"The same senior engineers from month to month"; a Pixorama lead engineer runs delivery; no account manager layer** | dedicated squads, process, contact |
+| Augmentation | not stated | **"Named engineers, not an agency average"** | staff augmentation |
+| Build practice | partial | **Trunk-based, reviewed, CI from first commit, commit access throughout** | process, build |
+| Handover | "support window" | **"A defined support taper"** | process, scale & operate |
+| SLA uptime | `[[VERIFY]]` | **99.98% average SLA-backed uptime, "representative of recent work and confirmed per engagement"** | about, scale & operate |
+| EchoMind safety | `[[VERIFY]]` | **Classifier runs on every entry before any insight is shown**; crisis wording matched to site | EchoMind |
+| Fractional CTO rates | `[[ADD]]` | **Market benchmark from own blog: US avg ~US$213/hr; AU A$9k–18k/month** (Pixorama's own rate still `[[ADD]]`) | advisory |
+| Answering service prices | `[[market range]]` | **Ruby from ~US$250 for 50 min; AI plans US$0–500/month** (own blog, Sept 2026) | small business |
+| Blog authors | "no visible authors" | **Posts carry an author box (Udesh Bhan)** | team (writer note) |
+| ROI calculator help text | "industry studies say 20–60%" | **Removed.** It wasn't sourced. | ROI calculator |
+
+### 3. Things on the live site to fix
+
+- **The email is invisible to search engines.** Cloudflare Email Obfuscation shows "[email protected]" in the HTML. Turn it off for the site or the contact page.
+- **The stat counters render as zero.** "Enterprise clients served", "Engineers, architects & strategists", "0.00%", "0×" and "−0%" are empty or zero in the HTML until JavaScript runs. Put the real numbers in the HTML.
+- **The dashboard screenshot is demo data.** The Terms page says product screens are "illustrative demonstrations, not live systems or real customer data". The figures and name in it (12,458 users, "Ananya Rao") must not be quoted as facts anywhere. None of the drafts quote them.
+- **EchoMind has no app store links.** The page says "iOS and Android" but only offers "Ask us about EchoMind". If the app is public, add store links. If not, the draft's download buttons need to change (flagged in the file).
+
+### 4. Still `[[CONFIRM]]`: not on the website
+
+These need an internal answer. Main groups:
+- **PXO AI:** integrations, languages, phone-number options, data residency, retention, onboarding time, pilot terms, concurrency, white-label branding and API, HIPAA/BAA position
+- **Commercials:** minimum terms, notice periods, replacement guarantee, currencies, governing law, GST, insurance
+- **Operations:** time-zone overlap hours, response SLA, support-taper length, where the team is based (the site never states it; the location pages assume India)
+- **Products:** EchoMind privacy, encryption and AI processing; AI Device Inspector's target devices and buyers
+- **Competitors** on `/compare/best-ai-voice-agents`: check on each vendor's own site and date it
+
+---
+
 ## Before you publish: checklist
 
-1. **Resolve every `[[VERIFY]]` and `[[ADD]]`.** Run `grep -rn "\[\[" content/` to list them.
+1. **Resolve every `[[CONFIRM]]` and `[[ADD]]`.** Run `grep -rn "\[\[" content/` to list them.
 2. **PXO AI is in active development.** Every PXO AI page carries an early-access banner. Don't remove it until the product is generally available.
 3. **No compliance claims without proof.** Don't write "HIPAA compliant", "SOC 2 certified" or "ISO 27001 certified" unless it's true for Pixorama itself.
 4. **Competitor facts** on `/compare/best-ai-voice-agents` must be checked on each vendor's site, with the date recorded on the page.
@@ -105,7 +161,7 @@ Domain snapshot (Ubersuggest): **DA 5, 51 referring domains, about 1 organic key
 
 ### H1: We're a small, senior engineering firm that ships production software
 
-Pixorama builds AI-powered software, cloud platforms and secure systems for enterprises and funded startups. We are deliberately small. The people who scope your project are the people who design it, and they stay on it until it's running.
+Founded in 2022 and remote-first, Pixorama builds AI-powered software, cloud platforms and secure systems for enterprises and funded startups. We are deliberately small. The people who scope your project are the people who design it, and they stay on it until it's running.
 
 **[Meet the team](/team)** **[Book a discovery call](/contact)**
 
@@ -120,6 +176,17 @@ We started Pixorama to do the opposite:
 - **Senior-led delivery.** Every engagement is led by engineers who have designed, shipped and operated software at scale.
 - **Production, not prototypes.** We measure ourselves on what runs in production, not on what demos well.
 - **You own everything.** All code and IP transfer to you at handover. No licence-back, no retained components, no hosting lock-in.
+
+---
+
+### H2: Six principles, every engagement
+
+- **Senior-only teams.** Experienced architects and engineers, never juniors learning on your budget.
+- **Outcomes, not hours.** We align on measurable business results and stand behind them.
+- **Secure by default.** Security, privacy and compliance engineered in from day one.
+- **Speed with certainty.** Production increments from week one, with controls that keep velocity safe.
+- **No lock-in.** You own the code, infrastructure and documentation. We design for handover from the start.
+- **A true partner.** Transparent communication, shared roadmaps and a relationship that compounds over time.
 
 ---
 
@@ -166,9 +233,9 @@ Every model includes secure-by-design engineering, automated testing, observabil
 
 We're remote-first and work with clients in three primary markets:
 
-- **[India](/locations/india)**, where much of our engineering team is based
+- **[India](/locations/india)** `[[CONFIRM: the site doesn't say where the team is based. If most engineers are in India, say so here, because the location pages rely on it.]]`
 - **[United States](/locations/usa)**, with working-hour overlap for US East and West Coast teams
-- **[Australia](/locations/australia)**, with strong time-zone overlap and clients across Sydney, Melbourne and Brisbane `[[VERIFY: cities where clients actually are]]`
+- **[Australia](/locations/australia)**, with time-zone overlap with Australian business hours, and recent work such as Amelia Downie's website and SEO
 
 Being remote-first means we hire for skill, not postcode, and we've built our delivery habits around written communication, recorded demos and overlapping hours.
 
@@ -182,8 +249,10 @@ Recent work includes a payment recovery platform for **BVIVE**, platform support
 
 [Read our case studies →](/case-studies)
 
-> "Professional, knowledgeable, and trustworthy."
-> **Amelia Downie**, Land Healing Practitioner `[[VERIFY: full quote and permission]]`
+> "I engaged Pixorama to build my website and undertake SEO work. I found them to be professional, knowledgeable, and trustworthy throughout the process. I would confidently recommend their services to anyone looking to improve their online presence."
+> **Amelia Downie**, Land Healing Practitioner, ameliadownie.com.au (via Trustpilot)
+
+*We publish only what clients have written themselves. Nothing here is drafted on their behalf.*
 
 ---
 
@@ -192,13 +261,14 @@ Recent work includes a payment recovery platform for **BVIVE**, platform support
 | | |
 |---|---|
 | **100%** | of code and IP transferred to clients at handover |
-| **99.98%** | SLA-backed uptime on systems we operate `[[VERIFY: measurement period and scope]]` |
+| **2022** | founded |
+| **40+** | engineers, architects and strategists |
+| **99.98%** | average SLA-backed uptime (representative of recent work, confirmed per engagement) |
 | **~2 weeks** | typical time to start a specialist augmentation engagement |
 | **3 to 4 weeks** | typical time to stand up a full squad |
 | `[[ADD]]` | clients served |
-| `[[ADD]]` | senior engineers on the team |
 
-> **Writer note:** the homepage stats for client count, team size and continents currently render as placeholders. Fill these with real numbers or remove them. Don't publish invented figures.
+> **Writer note:** "40+ engineers, architects and strategists" and "founded 2022" come from Pixorama's own entry in the blog post on the best staff augmentation companies in India. On the live homepage and /about, the animated counters (clients served, team size, continents, deployment uplift, cloud cost reduction) render as empty or "0" in the page HTML, so search engines see zeros. Put the real numbers in the HTML and animate them with JavaScript, or remove the counters.
 
 ---
 
@@ -251,9 +321,9 @@ This section matters more than it looks. Our positioning is "senior-led". Named 
 
 ### H1: Tell us what you're building
 
-Share a few lines about your project and we'll come back within one business day `[[VERIFY: response SLA]]` with either a time for a discovery call or a couple of questions.
+Share a few lines about your project and we'll come back within one business day `[[CONFIRM: response SLA]]` with either a time for a discovery call or a couple of questions.
 
-The first call is free and comes with no obligation. You'll talk to a senior engineer, not a salesperson.
+The first call is free and comes with no obligation. You'll talk to a senior engineer, not a salesperson. There's no account manager layer.
 
 ---
 
@@ -278,7 +348,7 @@ Microcopy under the button: *We'll only use your details to reply to this enquir
 ### H2: Prefer to talk now?
 
 - **WhatsApp:** [+91 96826 35763](https://wa.me/919682635763)
-- **Email:** `[[ADD: plain-text email address. The current one is obfuscated and unreadable to users and search engines.]]`
+- **Email:** [contact@pixoramagroup.com](mailto:contact@pixoramagroup.com)
 - **Book directly:** `[[ADD: Calendly or Cal.com link]]`
 
 ---
@@ -297,7 +367,7 @@ Microcopy under the button: *We'll only use your details to reply to this enquir
 We're remote-first and work with clients across three primary markets:
 
 - **India:** IST working hours
-- **USA:** overlapping hours with US East Coast mornings and West Coast `[[VERIFY: actual overlap offered]]`
+- **USA:** overlapping hours with US East Coast mornings and West Coast `[[CONFIRM: actual overlap offered]]`
 - **Australia:** strong overlap with AEST/AEDT business hours
 
 We don't operate client-facing offices, so all meetings are on video.
@@ -326,7 +396,7 @@ Trustpilot rating widget · "100% code and IP ownership" · "Senior-led delivery
 ## Writer notes
 
 - Replaces `/#contact`. Point every "Book a discovery call" button here.
-- Put the email address in plain text. An obfuscated address costs conversions and gives Google no contact signal.
+- The live site hides contact@pixoramagroup.com behind Cloudflare email obfuscation, so search engines and users without JavaScript see "[email protected]". Turn off Email Address Obfuscation in Cloudflare (Scrape Shield), or exclude the contact page from it, so the address appears as plain text.
 - Pass the engagement-model dropdown value to the CRM. It tells you which model pages are converting.
 
 
@@ -373,14 +443,14 @@ Our process is designed around those three failure points. It has five stages. E
 
 ### H2: Stage 1, Discover: agree what success looks like before anyone writes code
 
-Discovery is short and fixed-price, usually two to three weeks. A senior engineer and a product lead work with your team to pin down:
+Discovery is short and fixed-price, typically one to two weeks. A senior engineer and a product lead work with your team to pin down:
 
 - **The business goal.** What changes for the business if this works? Revenue, cost, risk or speed.
 - **The users and their jobs.** Who uses it, how often, and what they do today instead.
 - **The constraints.** Budget, deadlines, regulation, existing systems, data you can and can't move.
 - **The success metrics.** Two or three numbers we'll both be held to.
 
-You leave discovery with a written scope, a ranked risk register and a **cost envelope**: a range for what the build will cost and how long it will take, with the assumptions written down. You're not committed to anything else. If you want to take the scope to another firm, it's yours.
+You leave discovery with a written scope, a ranked risk register and a **cost envelope**: the number for what the build will cost and how long it will take, with the assumptions written down, so you can tell when something changes. Not a range with a disclaimer. You're not committed to anything else. If you want to take the scope to another firm, it's yours.
 
 [Read more about discovery →](/process/discover)
 
@@ -403,7 +473,7 @@ Then we build a **running slice**: one thin path through the real system, deploy
 We work in two-week increments. Each one ends with working software deployed to a staging or production environment, not a slide that says "60% complete".
 
 - **You own the code from day one.** It lives in your GitHub or GitLab organisation, not ours.
-- **Automated tests and CI/CD run from the first commit.** Nothing merges without review and a green pipeline.
+- **Trunk-based, reviewed, with CI from the first commit.** Nothing merges without review and a green pipeline, and you have commit access throughout.
 - **You see progress in software, not status reports.** A demo every two weeks, a written update every week.
 - **Scope changes are visible.** If something new comes in, we show you what it displaces or what it adds to the envelope.
 
@@ -428,7 +498,7 @@ Hardening isn't a phase we start at the end. Security scanning, dependency check
 
 After launch we can run the system for you under an SLA, train your team to run it, or both. Either way the goal is that you are never dependent on us.
 
-Handover includes runbooks, architecture documentation, recorded walkthroughs and paired on-call shifts. All code, infrastructure-as-code and credentials transfer to you. There is no licence-back, no retained components and no hosting lock-in.
+Handover includes runbooks, architecture documentation, knowledge-transfer sessions, paired on-call shifts and a defined support taper. All code, infrastructure-as-code and credentials transfer to you. There is no licence-back, no retained components and no hosting lock-in.
 
 [Read more about scale and operate →](/process/scale-and-operate)
 
@@ -463,14 +533,20 @@ The five stages stay the same whether you hire us for a fixed-scope project, a d
 
 ### H2: Frequently asked questions
 
-**How long does discovery take?**
-Usually two to three weeks, depending on how many stakeholders and systems are involved. It's priced as a fixed, separate piece of work.
+**How long does each stage take?**
+Discovery takes one to two weeks and architecture one to three. Build runs in two-week increments against the agreed scope. Hardening takes two to four weeks. Discovery is priced as a fixed, separate piece of work.
+
+**Is this agile or waterfall?**
+Agile inside each stage, staged overall. The stage gates exist so you can stop, not so we can invoice.
+
+**Who do we actually talk to?**
+The senior engineers doing the work. There is no account manager layer.
 
 **Do I get a fixed price?**
-You get a cost envelope at the end of discovery: a range with written assumptions. For outcome-based projects we then agree milestone-based commercials against that envelope.
+You get a cost envelope at the end of discovery: the number, with its assumptions written down, before you commit to the build. For outcome-based projects we then agree milestone-based commercials against that envelope.
 
 **When do we see working software?**
-The running slice at the end of architecture is the first working software, usually within four to six weeks of starting. After that, every two weeks.
+The running slice at the end of architecture is the first working software, usually within the first few weeks of the engagement. After that, every two weeks.
 
 **Who owns the code?**
 You do, from the first commit. It lives in your repository.
@@ -486,7 +562,7 @@ That's our [advisory & architecture](/engagement-models/advisory-architecture) e
 ### CTA block
 
 **Have an idea? We'll build it, and you'll own it.**
-Start with a two-to-three-week discovery. You'll leave with a scope, a risk register and a cost envelope, whether or not you build with us.
+Start with a one-to-two-week discovery. You'll leave with a scope, a risk register and a cost envelope, whether or not you build with us.
 
 **[Book a discovery call]**
 
@@ -544,7 +620,7 @@ When devices are inspected by eye, two inspectors can grade the same device diff
 - **Margin:** devices get under-graded and sold too cheap, or over-graded and returned.
 - **Throughput:** experienced inspectors are slow to train and hard to hire.
 
-`[[VERIFY: target device types, e.g. smartphones, tablets, laptops, and target buyers, e.g. refurbishers, trade-in programmes, insurers, rental and leasing firms. Tighten the copy to the real segment.]]`
+`[[CONFIRM: target device types, e.g. smartphones, tablets, laptops, and target buyers, e.g. refurbishers, trade-in programmes, insurers, rental and leasing firms. Tighten the copy to the real segment.]]`
 
 ---
 
@@ -572,7 +648,7 @@ Every decision, whether by the model or a person, is logged with a timestamp and
 | **Evidence** | A signed report and image set for every device |
 | **Accountability** | An audit trail of every automated and human decision |
 | **Speed** | Guided capture shortens training for new inspectors |
-| **Integration** | Grades and reports pushed to your inventory or order system `[[VERIFY]]` |
+| **Integration** | Grades and reports pushed to your inventory or order system `[[CONFIRM]]` |
 
 ---
 
@@ -631,7 +707,7 @@ Form: Name · Work email · Company · Devices inspected per month · Device typ
 
 Write a few lines a day. EchoMind gives you a thoughtful prompt when you're stuck, picks up the patterns you might miss, and sends you a short summary of your week. Your entries stay private.
 
-**[Download on the App Store]** **[Get it on Google Play]**
+**[Download on the App Store]** **[Get it on Google Play]** `[[CONFIRM: store links. The live EchoMind page has no App Store or Google Play links, only "Ask us about EchoMind". If the app isn't publicly listed yet, use that CTA instead.]]`
 
 ---
 
@@ -658,7 +734,7 @@ EchoMind notices recurring themes, such as the topics, people, times and moods t
 Every week you get a short, plain-language summary of what you wrote about, what seemed to lift you and what seemed to weigh on you.
 
 #### A safety check on every entry
-Every entry passes through a safety classifier. If an entry suggests you might be in crisis, EchoMind will point you to people who can help right away. `[[VERIFY: exact behaviour, e.g. shows crisis line resources by region]]`
+A safety classifier runs on every entry before any insight is shown. `[[CONFIRM: what the user sees when an entry is flagged, e.g. crisis-line resources by region]]`
 
 ---
 
@@ -667,10 +743,10 @@ Every entry passes through a safety classifier. If an entry suggests you might b
 A journal is only useful if you can be honest in it. That means you have to trust where it goes.
 
 - **Your entries are yours.** We don't sell your data or use your entries for advertising.
-- **Encrypted** in transit and at rest. `[[VERIFY: on-device vs server encryption, E2E?]]`
-- **App lock** with Face ID, Touch ID or a passcode. `[[VERIFY]]`
-- **Export or delete everything** at any time. `[[VERIFY]]`
-- **AI processing** `[[VERIFY: whether entries are processed on-device or by a model provider, and whether providers retain data. State this plainly, because privacy-conscious users will look for it.]]`
+- **Encrypted** in transit and at rest. `[[CONFIRM: on-device vs server encryption, E2E?]]`
+- **App lock** with Face ID, Touch ID or a passcode. `[[CONFIRM]]`
+- **Export or delete everything** at any time. `[[CONFIRM]]`
+- **AI processing** `[[CONFIRM: whether entries are processed on-device or by a model provider, and whether providers retain data. State this plainly, because privacy-conscious users will look for it.]]`
 
 [Read the EchoMind privacy policy →](`[[ADD link]]`)
 
@@ -680,7 +756,7 @@ A journal is only useful if you can be honest in it. That means you have to trus
 
 EchoMind is a journal, not a therapist and not a crisis service. It can help you reflect, but it can't diagnose, treat or replace professional support.
 
-If you're struggling, please talk to someone you trust or a qualified professional. If you're in immediate danger, call your local emergency number.
+If you're struggling, please talk to someone you trust or a qualified professional. If you are in crisis, contact your local emergency number.
 
 > **Writer note:** keep this section prominent. It's the right thing to do, it's what app stores expect from wellbeing apps, and it builds trust with exactly the users who care most about privacy.
 
@@ -731,16 +807,16 @@ An AI journal app is a journaling app that uses AI to help you reflect. It can s
 `[[ADD]]`
 
 **Does EchoMind write back to me?**
-EchoMind responds with prompts, patterns and summaries rather than chatting with you like a companion. The focus stays on your own reflection. `[[VERIFY]]`
+EchoMind responds with prompts, patterns and summaries rather than chatting with you like a companion. The focus stays on your own reflection. `[[CONFIRM]]`
 
 **Can anyone at Pixorama read my journal?**
-`[[VERIFY and state plainly]]`
+`[[CONFIRM and state plainly]]`
 
 **Is EchoMind a replacement for therapy?**
 No. EchoMind is a reflection tool. It is not a therapist or a crisis service.
 
 **Which devices does it work on?**
-iPhone and Android phones. `[[VERIFY: iPad, minimum OS versions]]`
+iPhone and Android phones. `[[CONFIRM: iPad, minimum OS versions]]`
 
 ---
 
@@ -815,8 +891,11 @@ PXO AI is built around closing that gap. We built it because we kept solving the
 
 ### H2: What you can do with PXO AI
 
+#### Natural, real-time voice
+Low-latency, human-sounding conversations that handle interruptions and context, not rigid scripts.
+
 #### Design agents in one console
-Define an agent's role, tone, tools and escalation rules in one place. The same agent can answer the phone, reply on web chat, or both.
+Define an agent's role, tone, tools and escalation rules in one place, then version and deploy it across web, phone and apps from a single dashboard.
 
 #### Ground answers in your own knowledge
 Connect documents, FAQs, policies and product data. PXO AI uses **retrieval-augmented generation (RAG)** so the agent answers from your content and says "I don't know" when it should. [What is RAG? →](/blog/what-is-rag-in-ai)
@@ -825,10 +904,13 @@ Connect documents, FAQs, policies and product data. PXO AI uses **retrieval-augm
 Block topics, enforce disclosures, cap what the agent can promise, and define hand-off triggers to a human. Guardrails are applied on every turn, not just in the prompt.
 
 #### Connect to the systems you already use
-Book appointments, look up orders, update a CRM record or create a ticket through tool integrations and webhooks. `[[VERIFY: list of launch integrations, e.g. calendar, CRM, helpdesk, telephony provider]]`
+Book appointments, look up orders, update a CRM record or create a ticket through tool integrations and webhooks. `[[CONFIRM: list of launch integrations, e.g. calendar, CRM, helpdesk, telephony provider]]`
 
 #### See every call
-Every conversation is logged with transcript, audio, retrieved sources, tool calls, latency and cost. When a call goes wrong, you can see the exact turn where it went wrong.
+Every conversation is logged with transcript, audio, retrieved sources, tool calls, latency and cost. Analytics and quality scoring show how agents are performing overall. When a call goes wrong, you can see the exact turn where it went wrong.
+
+#### Own your data
+Export your data at any time and keep full ownership. No lock-in, and no surprises.
 
 #### Test before you ship
 Replay past conversations against a new prompt or model version and compare outcomes before you put it live.
@@ -841,8 +923,8 @@ Replay past conversations against a new prompt or model version and compare outc
 |---|---|
 | **Observability** | Per-call traces, latency and cost metrics, alerting |
 | **Evaluation** | Regression suites built from real conversations |
-| **Security** | Role-based access, encrypted storage, audit log `[[VERIFY: data residency options]]` |
-| **Model choice** | Model-agnostic, so you can route to different LLM and speech providers by task `[[VERIFY]]` |
+| **Security** | Zero-trust architecture, encryption and data controls aligned to SOC 2 and ISO 27001 practices `[[CONFIRM: data residency options]]` |
+| **Model choice** | Designed so the model stays swappable. Pixorama's AI work uses Anthropic, OpenAI and open-weight models `[[CONFIRM: which models PXO AI supports at launch]]` |
 | **Human hand-off** | Warm transfer to a person with full context |
 
 ---
@@ -898,10 +980,10 @@ An AI voice agent is software that holds a spoken phone conversation: it listens
 PXO AI is in active development. We're working with a small group of early-access customers. Join the list and we'll contact you about access.
 
 **Can it use my existing phone number?**
-`[[VERIFY: number porting / SIP / forwarding options]]`
+`[[CONFIRM: number porting / SIP / forwarding options]]`
 
 **What languages does it support?**
-`[[VERIFY: launch languages]]`
+`[[CONFIRM: launch languages]]`
 
 **What happens when the agent can't help?**
 It hands off to a person according to rules you set: by topic, sentiment, or caller request. The person sees the transcript and context so the caller doesn't have to repeat themselves.
@@ -910,7 +992,7 @@ It hands off to a person according to rules you set: by topic, sentiment, or cal
 We've written an honest comparison that includes PXO AI and the main alternatives. [Compare AI voice agents →](/compare/best-ai-voice-agents)
 
 **Do you store call recordings?**
-Recordings and transcripts are stored encrypted, and you control retention. `[[VERIFY: default retention and regions]]`
+Recordings and transcripts are stored encrypted, and you control retention. `[[CONFIRM: default retention and regions]]`
 
 ---
 
@@ -932,7 +1014,7 @@ Form: Name · Work email · Company · Main use case (dropdown) · Monthly call 
 
 - SD 7 on 1,000 searches is the softest significant term on the site. Use "AI voice agent platform" in the H1, the first 100 words, one H2 and the title tag.
 - Don't add `offers`, prices or a star rating to schema until they're real. Fake ratings in schema risk a manual action.
-- Replace every `[[VERIFY]]` before launch. Unverified capability claims on a product page are a trust risk.
+- Replace every `[[CONFIRM]]` before launch. Unverified capability claims on a product page are a trust risk.
 
 
 ---
@@ -958,7 +1040,9 @@ Form: Name · Work email · Company · Main use case (dropdown) · Monthly call 
 
 ### H1: Fractional CTO services and architecture reviews from engineers who've run production systems
 
-Get senior technical judgement exactly when you need it: before a big build, during a scale-up, or when something keeps breaking. We offer fractional CTO support, independent architecture and security reviews, and cloud and AI adoption roadmaps.
+Get senior technical judgement exactly when you need it: before a big build, during a scale-up, before an investment round, or when something keeps breaking. We offer fractional CTO support, independent architecture and security reviews, technical due diligence, and cloud and AI adoption roadmaps.
+
+In process terms, this is stages one and two (discover and architect) as a standalone engagement, which is often all a team needs. You keep the written findings, the decision records and the roadmap.
 
 **[Book an advisory call]**
 
@@ -967,7 +1051,7 @@ Get senior technical judgement exactly when you need it: before a big build, dur
 ### H2: Three ways we advise
 
 #### Fractional CTO
-A senior technical leader for a few days a month. Typical work: technology strategy, hiring your first engineers, vendor and build-vs-buy decisions, board and investor technical diligence, and keeping delivery honest.
+A senior technical leader, part-time. Typical work: technology strategy, hiring your first engineers, vendor and build-vs-buy decisions, board and investor technical diligence, and keeping delivery honest.
 
 #### Architecture & security review
 A fixed-scope, independent review of your system. We look at architecture, cloud setup, security posture, reliability and cost, and give you a prioritised report: what's fine, what's risky, what to fix first.
@@ -1024,7 +1108,7 @@ Related reading: [cloud cost is an architecture problem](/blog/cloud-cost-is-an-
 | | Format | Typical length | Pricing |
 |---|---|---|---|
 | **Fractional CTO** | Monthly retainer, X days per month | 3 months + | `[[ADD: from $X/month]]` |
-| **Architecture & security review** | Fixed scope | 2 to 3 weeks | `[[ADD: fixed fee from $X]]` |
+| **Architecture & security review** | Fixed scope | Stages 1 and 2: typically 2 to 5 weeks | `[[ADD: fixed fee from $X]]` |
 | **Adoption roadmap** | Fixed scope | 2 to 4 weeks | `[[ADD]]` |
 
 > **Writer note:** `fractional cto cost` and `fractional cto rates` both have low SD. Real indicative numbers here will help this page rank and convert.
@@ -1034,7 +1118,7 @@ Related reading: [cloud cost is an architecture problem](/blog/cloud-cost-is-an-
 ### H2: Frequently asked questions
 
 **How much does a fractional CTO cost?**
-It depends on days per month and scope. `[[ADD our range]]` See our [rates guide](/blog/what-is-a-fractional-cto) for typical US and Australian market rates.
+It depends on days per month and scope. `[[ADD our range]]` As a market benchmark, our [rates guide](/blog/what-is-a-fractional-cto) reports US fractional CTO rates averaging about US$213 an hour (middle 50% US$160 to US$250, Go Fractional benchmark, September 2026). Published Australian rates commonly run A$9,000 to A$18,000 a month.
 
 **Is a fractional CTO the same as a consultant?**
 Not quite. A consultant usually delivers a defined piece of advice and leaves. A fractional CTO takes ongoing responsibility for technical direction, often sitting in leadership meetings and owning decisions.
@@ -1124,9 +1208,9 @@ AI-heavy roadmaps add AI/ML engineers and an evaluation specialist. Mobile roadm
 
 - **Senior-led.** Every squad has a tech lead who has shipped and operated software at scale.
 - **Accountable for outcomes.** The squad commits to sprint goals and reports on them, not just on hours logged.
-- **Our delivery method, on your roadmap.** Squads run the build → harden → operate loop of our [five-stage process](/process): two-week increments, automated tests, security in the pipeline, observability from day one.
-- **Elastic.** Add a specialist for a quarter, or scale down after a launch, with 30 days' notice. `[[VERIFY]]`
-- **Stable.** The same people stay on your product. `[[VERIFY: retention commitment]]`
+- **Our delivery method, on your roadmap.** Discovery and architecture happen up front. After that, squads run the build → harden → operate loop of our [five-stage process](/process): two-week increments, automated tests, security in the pipeline, observability from day one.
+- **Elastic.** Add a specialist for a quarter, or scale down after a launch, with 30 days' notice. `[[CONFIRM]]`
+- **Stable.** The same senior engineers from month to month.
 - **You own everything.** Code lives in your repo from the first commit.
 
 ---
@@ -1146,7 +1230,7 @@ AI-heavy roadmaps add AI/ML engineers and an evaluation specialist. Mobile roadm
 
 - **Weekly written update:** done, next, risks, decisions needed.
 - **Bi-weekly demo** of working software.
-- **Delivery metrics:** deployment frequency, lead time, change failure rate, and escaped defects. `[[VERIFY which]]`
+- **Delivery metrics:** deployment frequency, lead time, change failure rate, and escaped defects. `[[CONFIRM which]]`
 - **Direct access** to the squad in your Slack or Teams.
 
 ---
@@ -1188,13 +1272,13 @@ Squads are priced per month based on size and seniority. `[[ADD: "Core squads fr
 Typically three to four weeks from the first call.
 
 **Can we change the squad size?**
-Yes. Scale up or down with `[[VERIFY: 30]]` days' notice.
+Yes. Scale up or down with `[[CONFIRM: 30]]` days' notice.
 
 **Do we get the same people throughout?**
 Yes, that's the point of a dedicated team. If someone has to leave, we overlap their replacement and hand over properly.
 
 **Who sets priorities?**
-You do. The squad's tech lead turns priorities into a plan and owns delivery.
+You do. A Pixorama lead engineer runs delivery inside the squad, against the priorities you set. There's no account manager layer between you and the people doing the work.
 
 **Can the squad hand over to our in-house team later?**
 Yes. We plan for it with runbooks, documentation and paired on-call.
@@ -1248,8 +1332,8 @@ Some teams need a whole product built. Some need two senior engineers next month
 | **Best for** | A defined product or feature with a clear outcome | An ongoing roadmap that needs a full team | Filling skill or capacity gaps in your team | Decisions before you commit budget |
 | **Who manages delivery** | We do | We do, on your roadmap | You do | You do; we advise |
 | **Commercials** | Fixed scope, milestone payments | Monthly, per squad | Monthly, per engineer | Fixed-fee review or monthly retainer |
-| **Typical start** | After a 2 to 3 week discovery | 3 to 4 weeks | About 2 weeks | 1 to 2 weeks `[[VERIFY]]` |
-| **Typical length** | 2 to 9 months `[[VERIFY]]` | 6 months + | 3 months + | 2 weeks to ongoing |
+| **Typical start** | After a 1 to 2 week discovery | 3 to 4 weeks | About 2 weeks | 1 to 2 weeks `[[CONFIRM]]` |
+| **Typical length** | 2 to 9 months `[[CONFIRM]]` | 6 months + | 3 months + | 2 weeks to ongoing |
 | **You own the code** | ✓ | ✓ | ✓ | ✓ (all documents) |
 
 ---
@@ -1335,7 +1419,7 @@ You do, in every model.
 
 ## Writer notes
 
-- Fill the `[[VERIFY]]` cells with real ranges. A comparison table with vague cells reads as evasive.
+- Fill the `[[CONFIRM]]` cells with real ranges. A comparison table with vague cells reads as evasive.
 
 
 ---
@@ -1371,14 +1455,14 @@ You tell us the outcome. We agree a scope and cost envelope, then deliver agains
 - You want a predictable budget and a clear finish line.
 - You'd rather hold one partner accountable than manage engineers yourself.
 
-If your scope will keep shifting, a [dedicated squad](/engagement-models/dedicated-squads) is usually a better fit. If you just need extra hands, look at [staff augmentation](/engagement-models/staff-augmentation).
+If the scope is still being discovered, start with [advisory and architecture](/engagement-models/advisory-architecture). If it will keep shifting, a [dedicated squad](/engagement-models/dedicated-squads) is usually a better fit. If you just need extra hands, look at [staff augmentation](/engagement-models/staff-augmentation).
 
 ---
 
 ### H2: How it works
 
-#### 1. Discovery (fixed price, 2 to 3 weeks)
-We define goals, users, constraints and success metrics with you. You leave with a written scope, a risk register and a **cost envelope**: a cost and timeline range with every assumption written down. [More on discovery →](/process/discover)
+#### 1. Discovery (fixed price, typically 1 to 2 weeks)
+We define goals, users, constraints and success metrics with you. You leave with a written scope, a risk register and a **cost envelope**: the cost and timeline, with every assumption written down. You see the number before you commit to the build. [More on discovery →](/process/discover)
 
 #### 2. Milestone plan
 We break the scope into milestones, each with clear acceptance criteria and a payment attached. Typical milestones: running slice, MVP, feature-complete, production launch, handover.
@@ -1400,7 +1484,7 @@ Fixed-price projects go wrong in two ways: vendors pad the price to cover unknow
 
 - **Paid discovery first.** We price once we understand the problem, not after a sales call.
 - **Assumptions in writing.** If an assumption turns out wrong, we both know exactly what changed.
-- **A running slice early.** The riskiest technical assumptions get tested in weeks 3 to 6, not month five.
+- **A running slice early.** The riskiest technical assumptions get tested in the first few weeks, not month five.
 - **Visible change control.** New requests get a written impact on cost and timeline before anything changes. You decide.
 - **No quality trade-off.** Tests, reviews, security checks and observability are in every milestone, not optional extras.
 
@@ -1449,15 +1533,15 @@ No. Discovery is a separate, fixed-price piece of work. The scope and envelope a
 You can. We'll show you the impact on cost and timeline in writing, and you decide.
 
 **What if a milestone slips?**
-The delivery lead flags risk as early as it appears. If a slip is on our side, it's on our cost. `[[VERIFY: commercial commitment]]`
+The delivery lead flags risk as early as it appears. If a slip is on our side, it's on our cost. `[[CONFIRM: commercial commitment]]`
 
 **How are payments structured?**
-Discovery is paid up front, and the build is paid per accepted milestone. `[[VERIFY]]`
+Discovery is paid up front, and the build is paid per accepted milestone. `[[CONFIRM]]`
 
 ---
 
 ### CTA
-**Start with a two-to-three-week discovery.** Leave with a scope, a risk register and a cost envelope.
+**Start with a one-to-two-week discovery.** Leave with a scope, a risk register and a cost envelope.
 **[Book a discovery call]**
 
 Want a ballpark first? Try the [software development cost calculator](/resources/software-development-cost-calculator).
@@ -1493,7 +1577,7 @@ Want a ballpark first? Try the [software development cost calculator](/resources
 
 ### H1: IT staff augmentation services with senior engineers, not just CVs
 
-Add experienced cloud, AI, security and software engineers to your team, usually within about two weeks. They work inside your process, report to your leads, and leave your team stronger than they found it.
+Add experienced cloud, AI, security and software engineers to your team, usually within about two weeks. They work inside your process, report to your leads, and leave your team stronger than they found it. You know exactly who is joining: named engineers, not an agency average.
 
 **[Tell us who you need]** **[See how it works](#how)**
 
@@ -1511,12 +1595,12 @@ It's the right model when you already have a team and a delivery process, and wh
 
 Most staff augmentation companies sell headcount. We sell senior engineers who bring production habits with them.
 
-- **Senior by default.** We don't place juniors to fill a seat. Our specialists have designed, shipped and operated systems in production. `[[VERIFY: minimum years' experience, e.g. 6+]]`
+- **Senior by default.** We don't place juniors to fill a seat. Our specialists have designed, shipped and operated systems in production. `[[CONFIRM: minimum years' experience, e.g. 6+]]`
 - **Fast start.** Specialists typically start within about two weeks of agreeing the brief.
 - **Knowledge transfer built in.** Every engagement includes documentation, pairing and handover, so the skill stays when the engineer leaves.
 - **Same standard as our project work.** Tested code, reviewed changes, security in the pipeline.
 - **You own everything they produce.** Code and IP transfer to you. No retained components.
-- **Overlapping hours** with US and Australian teams. `[[VERIFY: overlap hours]]`
+- **Overlapping hours** with US and Australian teams. `[[CONFIRM: overlap hours]]`
 
 ---
 
@@ -1538,7 +1622,7 @@ Stack we work in daily: AWS, Azure, Google Cloud, Kubernetes, Terraform, Docker,
 ### H2: How it works {#how}
 
 1. **Brief (day 1 to 2).** A 30-minute call with a senior engineer to understand the role, the stack, your team and how you work.
-2. **Matched profiles (within a week).** We put forward one to three engineers who fit, not a stack of CVs. `[[VERIFY]]`
+2. **Matched profiles (within a week).** We put forward one to three engineers who fit, not a stack of CVs. `[[CONFIRM]]`
 3. **Your interview.** You interview and choose. Technical exercises welcome.
 4. **Onboarding (about two weeks from brief).** The engineer joins your Slack, standups, repo and tooling.
 5. **Monthly check-ins.** We review fit and delivery with you and the engineer every month.
@@ -1576,9 +1660,9 @@ Concerned about offshore delivery? We address it directly in [offshore vs onshor
 ### H2: Contracts and commercials
 
 - **Monthly, per engineer.** Rates depend on seniority and skill. `[[ADD: indicative range, or "from $X/month". Price transparency on this page will lift conversion.]]`
-- **Minimum term:** `[[VERIFY, e.g. 3 months]]`
-- **Notice period:** `[[VERIFY, e.g. 30 days]]`
-- **Replacement guarantee:** if an engineer isn't working out, we replace them at no extra cost. `[[VERIFY terms]]`
+- **Minimum term:** `[[CONFIRM, e.g. 3 months]]`
+- **Notice period:** `[[CONFIRM, e.g. 30 days]]`
+- **Replacement guarantee:** if an engineer isn't working out, we replace them at no extra cost. `[[CONFIRM terms]]`
 - **IP assignment, confidentiality and NDA** as standard.
 
 What should be in a staff augmentation contract? We covered it in [the best staff augmentation companies in India, and what to put in the contract](/blog/best-staff-augmentation-companies-india).
@@ -1684,14 +1768,14 @@ Whichever provider you choose, every minute of an AI voice call has the same bui
 | **Text-to-speech** | Turning the response into a natural voice | Voice quality tier, characters spoken |
 | **Platform** | Orchestration, guardrails, integrations, analytics, storage | Features, agents, seats, retention |
 
-**What PXO AI includes in its per-minute rate:** `[[VERIFY: e.g. "telephony, speech, LLM and voice are bundled into one rate, so there are no separate provider bills"]]`
+**What PXO AI includes in its per-minute rate:** `[[CONFIRM: e.g. "telephony, speech, LLM and voice are bundled into one rate, so there are no separate provider bills"]]`
 
 ---
 
 ### H2: What changes your monthly bill
 
 - **Call volume and length.** Most bills track total minutes. A 2-minute booking call costs a fraction of a 10-minute support call.
-- **Model choice.** Larger models cost more per minute. PXO AI can route simple turns to smaller, cheaper models. `[[VERIFY]]`
+- **Model choice.** Larger models cost more per minute. PXO AI can route simple turns to smaller, cheaper models. `[[CONFIRM]]`
 - **Knowledge size.** More retrieved context per turn means more model tokens.
 - **Outbound vs inbound.** Outbound telephony rates are usually different.
 - **Recording retention.** Longer storage of audio costs more.
@@ -1735,13 +1819,13 @@ Across the market, most providers charge per minute of conversation, often with 
 For a small business taking a few hundred calls a month, cost is usually driven by total minutes. `[[STATE B: give a worked example, e.g. 300 calls × 2.5 min = 750 min ≈ $X/month]]` See the [small business page](/products/pxo-ai/use-cases/small-business).
 
 **Is there a free trial?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **Is there a setup fee?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **Can I cancel anytime?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **Do you offer white-label or reseller pricing?**
 Yes. See [PXO AI white label](/products/pxo-ai/white-label).
@@ -1841,7 +1925,7 @@ We wrote about what it takes to make retrieval hold up under real traffic in [re
 
 PXO AI takes actions through integrations and webhooks to your helpdesk, CRM, order management and identity systems.
 
-`[[VERIFY: launch integrations. Commonly requested: Zendesk, Salesforce Service Cloud, Freshdesk, Intercom, HubSpot, Shopify, Twilio, Genesys, Amazon Connect, Five9, plus SIP trunking.]]`
+`[[CONFIRM: launch integrations. Commonly requested: Zendesk, Salesforce Service Cloud, Freshdesk, Intercom, HubSpot, Shopify, Twilio, Genesys, Amazon Connect, Five9, plus SIP trunking.]]`
 
 Need a custom integration? Our [AI & Data team](/#services) builds them.
 
@@ -1854,7 +1938,7 @@ The PXO AI dashboard reports on the metrics your team already uses:
 - **Containment and resolution rate** by intent
 - **Escalation rate and reasons**
 - **Average handle time** for AI and escalated calls
-- **CSAT** from post-call surveys `[[VERIFY]]`
+- **CSAT** from post-call surveys `[[CONFIRM]]`
 - **Cost per resolved call**
 - **Failure analysis:** the calls that went wrong, the turn where they went wrong, and why
 
@@ -1870,9 +1954,9 @@ Changing a prompt in production shouldn't be a leap of faith. PXO AI lets you **
 
 - Identity verification flows before account actions
 - Role-based console access and audit logs
-- Encrypted recordings and transcripts with configurable retention `[[VERIFY]]`
-- PII redaction in transcripts `[[VERIFY]]`
-- Data residency options `[[VERIFY]]`
+- Encrypted recordings and transcripts with configurable retention `[[CONFIRM]]`
+- PII redaction in transcripts `[[CONFIRM]]`
+- Data residency options `[[CONFIRM]]`
 
 ---
 
@@ -1884,7 +1968,7 @@ Changing a prompt in production shouldn't be a leap of faith. PXO AI lets you **
 4. **Go live on a slice of traffic**, such as overflow or after hours.
 5. **Review weekly** and expand the intents and traffic as results hold.
 
-`[[VERIFY: pilot length and pricing]]`
+`[[CONFIRM: pilot length and pricing]]`
 
 ---
 
@@ -1900,16 +1984,16 @@ Your team can build on the PXO AI console, or our engineers can design, integrat
 No. It takes the repetitive tier-1 volume, so your people can focus on the complex, emotional and high-value calls.
 
 **How does it verify a caller's identity?**
-Using the checks you define, such as account number plus postcode, a one-time code by SMS, or caller ID matching. `[[VERIFY]]`
+Using the checks you define, such as account number plus postcode, a one-time code by SMS, or caller ID matching. `[[CONFIRM]]`
 
 **What happens if the AI gets something wrong?**
 Every call is logged with sources and actions, so you can see exactly what happened, fix the cause and test the fix against past calls.
 
 **Can it work in our existing contact-centre platform?**
-`[[VERIFY: CCaaS integration / SIP]]`
+`[[CONFIRM: CCaaS integration / SIP]]`
 
 **What languages does it support?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 ---
 
@@ -1967,13 +2051,13 @@ Front desks at clinics and dental practices spend much of the day on the phone, 
 
 | Call type | What PXO AI does |
 |---|---|
-| **New appointments** | Checks availability, books the slot, confirms by SMS `[[VERIFY]]` |
-| **Reschedules and cancellations** | Moves or cancels the booking and offers the freed slot to the waitlist `[[VERIFY]]` |
+| **New appointments** | Checks availability, books the slot, confirms by SMS `[[CONFIRM]]` |
+| **Reschedules and cancellations** | Moves or cancels the booking and offers the freed slot to the waitlist `[[CONFIRM]]` |
 | **Reminders** | Calls or messages patients before appointments to confirm (see [outbound](/products/pxo-ai/use-cases/outbound)) |
 | **Practice information** | Hours, location, parking, accepted insurers, what to bring |
 | **Pre-visit questions** | Answers from your approved FAQs: preparation, fees, forms |
 | **Urgent or clinical calls** | **Does not advise.** Escalates to staff immediately, or gives emergency instructions you've approved |
-| **Prescription and results queries** | Takes a message and routes it to the right team, without discussing clinical details `[[VERIFY policy]]` |
+| **Prescription and results queries** | Takes a message and routes it to the right team, without discussing clinical details `[[CONFIRM policy]]` |
 
 ---
 
@@ -1993,7 +2077,7 @@ An AI agent in a healthcare setting has to know what it must not do. PXO AI's gu
 
 Healthcare data is regulated differently in each of our markets: HIPAA in the US, the Privacy Act and Australian Privacy Principles in Australia, and the DPDP Act in India.
 
-`[[VERIFY BEFORE PUBLISHING. State exactly what is true, for example:]]`
+`[[CONFIRM BEFORE PUBLISHING. State exactly what is true, for example:]]`
 - `Whether Pixorama will sign a Business Associate Agreement (BAA) for US customers`
 - `Where call data is stored, and whether region can be selected`
 - `Encryption at rest and in transit`
@@ -2019,7 +2103,7 @@ Dental practices have the same phone problem, with a few extras: recall appointm
 
 PXO AI books into your existing calendar or practice management system through integrations and webhooks.
 
-`[[VERIFY: launch integrations. Common in target markets: Cliniko, HotDoc, Dentally, Dental4Windows, Open Dental, athenahealth, Google Calendar. Only list ones that work.]]`
+`[[CONFIRM: launch integrations. Common in target markets: Cliniko, HotDoc, Dentally, Dental4Windows, Open Dental, athenahealth, Google Calendar. Only list ones that work.]]`
 
 No integration for your system yet? Our [AI & Data team](/#services) builds custom integrations.
 
@@ -2050,13 +2134,13 @@ No. PXO AI is configured to avoid clinical advice and to escalate anything clini
 The agent recognises emergency language, gives the emergency instructions you've approved (for example, call 911 or 000) and alerts your team.
 
 **Is PXO AI HIPAA compliant?**
-`[[VERIFY and answer accurately]]`
+`[[CONFIRM and answer accurately]]`
 
 **Can it work alongside our reception team?**
 Yes. Most practices use it for overflow, lunch breaks and after hours first, then expand.
 
 **How long does setup take?**
-`[[VERIFY: typical onboarding time]]`
+`[[CONFIRM: typical onboarding time]]`
 
 ---
 
@@ -2111,7 +2195,7 @@ Outbound voice AI works best when the person being called **expects or welcomes 
 | **Speed-to-lead follow-up** | Calls a new web enquiry within a minute and qualifies it | More leads reached while they're interested |
 | **Booking confirmations** | Confirms details for services, deliveries and viewings | Fewer wasted trips |
 | **Re-engagement** | Calls lapsed customers who opted in, such as recalls and renewals | Recovered revenue |
-| **Payment reminders** | Polite reminders with a payment link by SMS | Faster collections `[[VERIFY legal suitability per market]]` |
+| **Payment reminders** | Polite reminders with a payment link by SMS | Faster collections `[[CONFIRM legal suitability per market]]` |
 | **Feedback and surveys** | Post-visit or post-purchase surveys | Higher response than email |
 | **Event and open-home follow-up** | Calls attendees for feedback and next steps | Warm leads for agents |
 
@@ -2131,7 +2215,7 @@ Automated and AI-voiced calls are regulated in every market we work in. Rules di
 
 ### H2: Compliance controls built into PXO AI
 
-`[[VERIFY each before publishing]]`
+`[[CONFIRM each before publishing]]`
 
 - **Consent records:** campaigns only call contacts with a recorded consent basis.
 - **Do-not-call suppression:** your internal list, plus registry checks where supported.
@@ -2166,7 +2250,7 @@ Searches for "AI cold calling" are growing, and so are complaints and enforcemen
 3. **Set the rules:** calling windows, retries, voicemail behaviour, transfer conditions.
 4. **Test on yourself and your team.**
 5. **Launch** and watch results live: reached, completed, converted, opted out.
-6. **Outcomes are written back** to your CRM automatically. `[[VERIFY integrations]]`
+6. **Outcomes are written back** to your CRM automatically. `[[CONFIRM integrations]]`
 
 ---
 
@@ -2191,7 +2275,7 @@ Yes, according to your rules. Some regulations also apply to voicemail messages.
 Yes, live, with a summary of the conversation so far.
 
 **How many calls can it make at once?**
-`[[VERIFY concurrency limits]]`
+`[[CONFIRM concurrency limits]]`
 
 **How is outbound priced?**
 Per minute, like inbound. Outbound telephony rates can differ by country. See [pricing](/products/pxo-ai/pricing).
@@ -2254,7 +2338,7 @@ In real estate, the first agent to respond often wins the lead. But you're at an
 Answers questions about a listing from your property data, including price guide, features, land size, inspection times and strata or HOA details, and books private viewings into the listing agent's calendar.
 
 #### Lead qualification
-Asks the questions you would: buying or renting? Timeline? Pre-approved? Need to sell first? Then it scores and tags the lead in your CRM. `[[VERIFY: CRM integrations]]`
+Asks the questions you would: buying or renting? Timeline? Pre-approved? Need to sell first? Then it scores and tags the lead in your CRM. `[[CONFIRM: CRM integrations]]`
 
 #### Seller and appraisal enquiries
 Captures details for appraisal requests and books a call or visit with the right agent. These are your most valuable calls, so they get a priority alert.
@@ -2269,7 +2353,7 @@ Turn it on when agents don't answer, after hours, or all the time.
 
 ### H2: Knows your listings
 
-PXO AI answers from your live listing data, not from a script that goes stale. When a property goes under offer or the price guide changes, update it once and the agent knows on the next call. `[[VERIFY: listing feed / CRM sync, e.g. REA, Domain, Zillow/MLS feeds, Rex, VaultRE, Agentbox, Follow Up Boss]]`
+PXO AI answers from your live listing data, not from a script that goes stale. When a property goes under offer or the price guide changes, update it once and the agent knows on the next call. `[[CONFIRM: listing feed / CRM sync, e.g. REA, Domain, Zillow/MLS feeds, Rex, VaultRE, Agentbox, Follow Up Boss]]`
 
 ---
 
@@ -2279,7 +2363,7 @@ Real estate advertising and disclosure rules differ by state and country. PXO AI
 
 - **Only approved information.** It quotes price guides and details exactly as you've provided them.
 - **No commitments it can't make.** It won't negotiate, accept offers or promise outcomes.
-- **Fair-housing-safe answers.** Configured to avoid steering or discriminatory responses. `[[VERIFY: wording appropriate to US Fair Housing Act and local equivalents]]`
+- **Fair-housing-safe answers.** Configured to avoid steering or discriminatory responses. `[[CONFIRM: wording appropriate to US Fair Housing Act and local equivalents]]`
 - **AI disclosure** at the start of every call.
 - **Full transcripts** for compliance and training.
 
@@ -2314,10 +2398,10 @@ After an open home, PXO AI can call attendees to collect feedback and gauge inte
 ### H2: Frequently asked questions
 
 **Can it book inspections into my calendar?**
-Yes, into the listing agent's calendar, with confirmation sent to the buyer. `[[VERIFY]]`
+Yes, into the listing agent's calendar, with confirmation sent to the buyer. `[[CONFIRM]]`
 
 **Does it work with my CRM?**
-`[[VERIFY integrations]]` Leads can also be sent by email or webhook to any system.
+`[[CONFIRM integrations]]` Leads can also be sent by email or webhook to any system.
 
 **Can it handle several listings at once?**
 Yes. It identifies which property the caller means by address or listing ID and answers about that one.
@@ -2383,10 +2467,10 @@ Friday at 7pm, the phone is ringing, the floor is full and nobody can get to it.
 ### H2: What PXO AI handles for a restaurant
 
 #### Reservations
-Checks availability, takes party size, time, name and number, notes special requests (birthdays, high chairs, accessibility) and confirms by SMS. Handles changes and cancellations too. `[[VERIFY: booking-system integrations]]`
+Checks availability, takes party size, time, name and number, notes special requests (birthdays, high chairs, accessibility) and confirms by SMS. Handles changes and cancellations too. `[[CONFIRM: booking-system integrations]]`
 
 #### Takeaway and pickup orders
-Reads from your current menu, takes the order item by item, handles modifiers ("no onions, extra sauce"), reads it back, gives a pickup time and sends it to the kitchen. `[[VERIFY: POS/ordering integrations]]`
+Reads from your current menu, takes the order item by item, handles modifiers ("no onions, extra sauce"), reads it back, gives a pickup time and sends it to the kitchen. `[[CONFIRM: POS/ordering integrations]]`
 
 #### Menu and dietary questions
 Answers from your menu and allergen information. It's configured to be careful: for serious allergies it tells the caller to confirm with staff rather than guess.
@@ -2411,7 +2495,7 @@ Food allergies are a safety issue, so PXO AI's guardrails are strict here:
 
 ### H2: Works with the systems you already have
 
-`[[VERIFY and list real integrations only. Commonly requested: OpenTable, Resy, SevenRooms, Tock, Square, Toast, Lightspeed, Clover, Google Business Profile.]]`
+`[[CONFIRM and list real integrations only. Commonly requested: OpenTable, Resy, SevenRooms, Tock, Square, Toast, Lightspeed, Clover, Google Business Profile.]]`
 
 If your POS or booking system isn't listed, ask us. Orders and bookings can also be sent by email, SMS or webhook to any system.
 
@@ -2525,18 +2609,18 @@ For a small business, the phone is often the main source of new work, and also t
 | | |
 |---|---|
 | **Answers 24/7** | Every call, including after hours, weekends and holidays |
-| **Books appointments** | Into your calendar, by service type and duration `[[VERIFY integrations]]` |
+| **Books appointments** | Into your calendar, by service type and duration `[[CONFIRM integrations]]` |
 | **Captures leads** | Name, number, what they need, where, how urgent |
 | **Answers questions** | Prices, service areas, hours, what's included, all from your info |
 | **Qualifies jobs** | Asks the questions you'd ask, so you only call back the right leads |
-| **Texts you a summary** | Instantly, after every call `[[VERIFY: SMS/email/app]]` |
+| **Texts you a summary** | Instantly, after every call `[[CONFIRM: SMS/email/app]]` |
 | **Transfers urgent calls** | To your mobile, based on rules you set |
 
 ---
 
 ### H2: Set up in an afternoon, not a project
 
-You don't need a developer. `[[VERIFY onboarding flow]]`
+You don't need a developer. `[[CONFIRM onboarding flow]]`
 
 1. **Tell it about your business:** services, prices, hours, service area, FAQs. Paste them in or upload a document.
 2. **Connect your calendar** so it can book.
@@ -2564,7 +2648,9 @@ You don't need a developer. `[[VERIFY onboarding flow]]`
 | Books appointments | ✗ | Sometimes | ✓ | ✓ |
 | Knows your prices and services | ✗ | Script only | ✓ | ✓ |
 | Handles several calls at once | ✗ | ✓ | ✗ | ✓ |
-| Monthly cost | Free | `[[market range]]` | `[[market range]]` | [See pricing](/products/pxo-ai/pricing) |
+| Monthly cost | Free | From about US$250 for 50 minutes¹ | `[[ADD local wage estimate]]` | [See pricing](/products/pxo-ai/pricing) |
+
+¹ Ruby's published entry plan, September 2026. Published AI receptionist plans typically run US$0 to US$500 a month. Both figures are from our guide, [AI receptionist vs answering service](/blog/ai-answering-service-vs-human-receptionist).
 
 We compared these options in depth in [AI receptionist vs answering service](/blog/ai-answering-service-vs-human-receptionist).
 
@@ -2593,10 +2679,10 @@ You control the greeting, the tone and the answers. The agent uses only the info
 An AI receptionist is an AI voice agent that answers your business phone. It talks to callers naturally, answers questions, books appointments and takes messages, then sends you the details. [Full definition →](/resources/glossary/ai-voice-agent)
 
 **Will callers know it's AI?**
-Yes, the agent introduces itself as an AI assistant. Most callers care far more about getting an answer than about who gives it.
+Yes, the agent introduces itself as an AI assistant. You should also tell callers the call is recorded: in some US states, including California, recording a confidential call without everyone's consent is illegal.
 
 **Can I keep my business number?**
-Yes. Forward your existing number to PXO AI, all the time or only when you don't answer. `[[VERIFY]]`
+Yes. Forward your existing number to PXO AI, all the time or only when you don't answer. `[[CONFIRM]]`
 
 **What if someone needs to talk to me urgently?**
 Set rules, for example "transfer if it's an emergency or an existing customer", and the call comes to your mobile.
@@ -2675,11 +2761,11 @@ What's hard is building and running the voice stack yourself: telephony, speech,
 
 | | |
 |---|---|
-| **Your brand** | Your logo, colours and product name across the client console `[[VERIFY]]` |
-| **Your domain** | Clients log in at `app.youragency.com` `[[VERIFY]]` |
+| **Your brand** | Your logo, colours and product name across the client console `[[CONFIRM]]` |
+| **Your domain** | Clients log in at `app.youragency.com` `[[CONFIRM]]` |
 | **Your pricing** | Set your own plans and margins, and we bill you wholesale |
 | **Your clients** | Create and manage client workspaces from one partner dashboard |
-| **No PXO AI branding** | In the console, emails or on calls `[[VERIFY]]` |
+| **No PXO AI branding** | In the console, emails or on calls `[[CONFIRM]]` |
 
 ---
 
@@ -2714,7 +2800,7 @@ Your reputation rides on our uptime. PXO AI is built by an engineering firm that
 - **Per-call observability:** see any client call, the sources used and the actions taken.
 - **Guardrails** applied every turn, so a client's agent doesn't go off-script.
 - **Replay testing** to check a change against past calls before it goes live.
-- **Monitoring and alerting** on latency and failures. `[[VERIFY: SLA available to partners]]`
+- **Monitoring and alerting** on latency and failures. `[[CONFIRM: SLA available to partners]]`
 
 ---
 
@@ -2723,9 +2809,9 @@ Your reputation rides on our uptime. PXO AI is built by an engineering firm that
 1. **Apply.** Tell us about your agency, your clients and your target verticals.
 2. **Onboarding call.** We set up your branded workspace and walk through the platform.
 3. **First client.** We help you launch your first client agent and review the results together.
-4. **Grow.** Wholesale volume pricing improves as your client base grows. `[[VERIFY]]`
+4. **Grow.** Wholesale volume pricing improves as your client base grows. `[[CONFIRM]]`
 
-**Partner support:** `[[VERIFY: e.g. dedicated partner channel, second-line support for client issues, co-branded sales material]]`
+**Partner support:** `[[CONFIRM: e.g. dedicated partner channel, second-line support for client issues, co-branded sales material]]`
 
 ---
 
@@ -2737,26 +2823,26 @@ Partners pay wholesale per-minute and platform rates and set their own retail pr
 
 ### H2: Need more than a reseller platform?
 
-If you're a SaaS platform that wants voice agents **inside your own product**, through an API or embedded console, we can do that too. `[[VERIFY: API/embedding availability]]` Our engineering team can also build the integration for you as a [project](/engagement-models/outcome-based-projects).
+If you're a SaaS platform that wants voice agents **inside your own product**, through an API or embedded console, we can do that too. `[[CONFIRM: API/embedding availability]]` Our engineering team can also build the integration for you as a [project](/engagement-models/outcome-based-projects).
 
 ---
 
 ### H2: Frequently asked questions
 
 **Can I fully rebrand the platform?**
-Yes. Logo, colours, product name and custom domain. Your clients won't see PXO AI branding. `[[VERIFY]]`
+Yes. Logo, colours, product name and custom domain. Your clients won't see PXO AI branding. `[[CONFIRM]]`
 
 **Who supports my clients?**
-You handle first-line support with your clients, and we support you. `[[VERIFY]]`
+You handle first-line support with your clients, and we support you. `[[CONFIRM]]`
 
 **Can I set my own prices?**
 Yes. You buy at wholesale and set your own retail pricing.
 
 **Is there a minimum commitment?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **Can I bring existing clients' phone numbers?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **How is this different from GoHighLevel's voice AI?**
 `[[Only answer if you can do so accurately and fairly. Otherwise remove. "gohighlevel ai voice agent" has 50/mo searches and many agencies will be comparing.]]`
@@ -2850,7 +2936,7 @@ It proves the things diagrams can't:
 - Does retrieval return the right answers on *your* documents?
 - Does the deployment pipeline actually work end to end?
 
-The slice is usually live in weeks three to six. It becomes the foundation of the [build stage](/process/build), not a throwaway prototype.
+The slice is usually live within the first few weeks. It becomes the foundation of the [build stage](/process/build), not a throwaway prototype.
 
 ---
 
@@ -2874,7 +2960,7 @@ If you have a team to build but want senior architecture first, we offer this st
 ### H2: Frequently asked questions
 
 **How long does the architect stage take?**
-Typically two to four weeks, including the running slice.
+Typically one to three weeks, including the running slice.
 
 **Will you use our existing cloud account?**
 Yes. Everything is built in your accounts from day one.
@@ -2935,7 +3021,7 @@ Every week you also get a short written update: what shipped, what's next, risks
 
 - Code lives in **your** GitHub or GitLab organisation, not ours.
 - Infrastructure is defined as code in your repo and deployed to **your** cloud accounts.
-- You have admin access to everything, all the time.
+- You have commit and admin access throughout. There's no big reveal at the end, because nothing is hidden until then.
 - There's no final-payment hostage situation, no licence-back and no retained components.
 
 If you ever want to stop working with us, you already have everything.
@@ -2944,7 +3030,7 @@ If you ever want to stop working with us, you already have everything.
 
 ### H2: Engineering standards we don't negotiate on
 
-- **Code review on every change.** No direct pushes to main.
+- **Trunk-based development, reviewed.** Small changes merged daily, with review on every change.
 - **Automated tests**: unit, integration and end-to-end where it matters, run on every pull request.
 - **CI/CD from day one.** Every merge is deployable.
 - **Security in the pipeline**: dependency scanning, static analysis, secrets detection.
@@ -3008,7 +3094,7 @@ We use short iterations, planning, demos and retros. We adapt to your ceremonies
 | Primary keyword | software discovery phase |
 | Secondary keywords | project discovery phase, software project scoping, software development cost estimate, discovery workshop software, what is a discovery phase in software development |
 | Title tag | Discovery Phase: Scope, Risks and a Cost Envelope \| Pixorama |
-| Meta description | Our fixed-price, two-to-three-week discovery phase turns an idea into a written scope, a ranked risk register and a cost envelope you can take anywhere. |
+| Meta description | Our fixed-price, one-to-two-week discovery phase turns an idea into a written scope, a ranked risk register and a cost envelope you can take anywhere. |
 | H1 | Discover: agree what success looks like before anyone writes code |
 | Schema | `WebPage` + `FAQPage` + `BreadcrumbList` (Process › Discover) |
 | Target length | ~750 words |
@@ -3019,7 +3105,7 @@ We use short iterations, planning, demos and retros. We adapt to your ceremonies
 
 ### H1: Discover: agree what success looks like before anyone writes code
 
-Discovery is the first of our [five stages](/process). It's short (usually two to three weeks), fixed-price, and designed to answer one question honestly: what will this take, and is it worth doing?
+Discovery is the first of our [five stages](/process). It's short (typically one to two weeks), fixed-price, and designed to answer one question honestly: what will this take, and is it worth doing?
 
 **[Book a discovery call]**
 
@@ -3036,12 +3122,14 @@ Most estimates are made after a single sales call, with half the facts. Either t
 | Week | Activities |
 |---|---|
 | **Week 1: Understand** | Stakeholder interviews, current-state review, user and workflow mapping, existing systems and data audit |
-| **Week 2: Shape** | Scope options, key user journeys, technical risk spikes, integration and data checks, early architecture sketch |
-| **Week 3: Commit** (if needed) | Scope agreed, risk register ranked, cost envelope and timeline, delivery plan, readout session |
+| **Week 2: Shape and commit** | Scope options, key user journeys, technical risk spikes, integration and data checks, early architecture sketch |
+| **End of week 2** | Scope agreed, risk register ranked, cost envelope and timeline, delivery plan, readout session |
 
 Who's involved from Pixorama: a senior engineer who will lead the build, plus a product lead. Specialists in AI, security or cloud join where the problem needs them.
 
 Who we need from you: a decision-maker, a product owner, and access to anyone who knows the current systems.
+
+For AI projects, discovery also produces an **evaluation harness**: real questions with known-good answers, scored automatically on every change, built before the first feature.
 
 ---
 
@@ -3049,7 +3137,7 @@ Who we need from you: a decision-maker, a product owner, and access to anyone wh
 
 1. **A written scope:** what's in, what's out, and the success metrics we'll both be held to.
 2. **A ranked risk register:** technical, data, integration, regulatory and delivery risks, each with a mitigation.
-3. **A cost envelope:** a cost and timeline range with every assumption written down. If an assumption changes later, everyone can see what changed and why.
+3. **A cost envelope:** the cost and timeline, with every assumption written down. If an assumption changes later, everyone can see what changed and why.
 4. **A delivery plan:** milestones, team shape and the first increments.
 5. **An initial architecture direction**, refined in the [architect stage](/process/architect).
 
@@ -3059,9 +3147,9 @@ All of it is yours. If you take it to another firm or your in-house team, that's
 
 ### H2: What is a cost envelope?
 
-A cost envelope is a range, not a single number, for what a build will cost and how long it will take. Each end of the range is tied to stated assumptions. For example: "the low end assumes the existing customer API can be used as is; the high end assumes it needs replacing."
+A cost envelope is the number for what a build will cost and how long it will take, with every assumption behind it written down. For example: "this assumes the existing customer API can be used as is."
 
-It's more honest than a single fixed figure produced before the work is understood, and more useful than "it depends."
+It's not a range with a disclaimer. Because the assumptions are written down, both sides can see exactly when something has changed, and what that change does to the cost.
 
 Want a ballpark before discovery? Try our [software development cost calculator](/resources/software-development-cost-calculator).
 
@@ -3085,10 +3173,10 @@ It's a fixed fee agreed up front, based on the size of the problem. `[[ADD: typi
 No. The outputs are yours to keep.
 
 **Can discovery be shorter?**
-For small, well-understood work, sometimes a week. We'll tell you if you don't need the full process.
+For small, well-understood work, sometimes just a few days. We'll tell you if you don't need the full process.
 
 **What if discovery shows the project isn't worth doing?**
-Then discovery did its job. Finding out in three weeks is far cheaper than finding out in six months.
+Then discovery did its job. Finding out in two weeks is far cheaper than finding out in six months.
 
 ---
 
@@ -3134,9 +3222,9 @@ Harden is the fourth of our [five stages](/process), but it doesn't start at the
 - **Cloud security review:** IAM least privilege, network boundaries, encryption, secrets management, logging. Related: [zero-trust without stopping delivery](/blog/zero-trust-without-stopping-delivery).
 - **Dependency and supply-chain checks:** known vulnerabilities, licences, pinned versions.
 - **AI-specific risks** where relevant: prompt injection, data leakage through retrieval, unsafe outputs.
-- **Third-party penetration test** coordinated if your risk or compliance profile needs one. `[[VERIFY: do we partner with a pen-testing firm?]]`
+- **Third-party penetration test** coordinated if your risk or compliance profile needs one. `[[CONFIRM: do we partner with a pen-testing firm?]]`
 
-We design to the control frameworks your auditors will ask about, such as SOC 2, ISO 27001 and OWASP ASVS. `[[VERIFY wording: we build to these frameworks; we don't certify the client.]]`
+We engineer to practices aligned with SOC 2 and ISO 27001, the frameworks your auditors will ask about, plus OWASP guidance for application security. We build to the controls; certification is between you and your auditor.
 
 ---
 
@@ -3189,6 +3277,9 @@ Before go-live we review together:
 ---
 
 ### H2: Frequently asked questions
+
+**How long does hardening take?**
+Typically two to four weeks. You keep the test suites, load profiles and the security review.
 
 **Is hardening an extra cost?**
 No. It's part of every engagement. Third-party penetration testing, if needed, is quoted separately.
@@ -3244,13 +3335,13 @@ Launch isn't the finish line. In the fifth of our [five stages](/process) we run
 | **Shared** | We co-operate with your team, with paired on-call, while they ramp up | Teams building ops capability |
 | **You operate** | Full handover at launch, with a support window | Teams with mature ops |
 
-Systems we operate are covered by an SLA. `[[VERIFY: SLA terms, e.g. 99.9% / 99.98% availability, response times by severity]]`
+Systems we operate are covered by an agreed SLA. Across recent engagements, average SLA-backed uptime has been 99.98% (representative of recent work and confirmed per engagement). `[[CONFIRM: response times by severity]]`
 
 ---
 
 ### H2: Operate: what's included
 
-- 24/7 monitoring and alerting `[[VERIFY hours]]`
+- 24/7 monitoring and alerting `[[CONFIRM hours]]`
 - Incident response with written post-incident reviews
 - Security patching and dependency updates
 - Backups and restore tests
@@ -3278,7 +3369,7 @@ Handover isn't a zip file and a goodbye. It includes:
 3. **Recorded walkthroughs** of each major component
 4. **Paired on-call shifts**, where your engineers handle incidents with ours alongside
 5. **Access transfer:** every credential, account, domain and secret, audited
-6. **A support window** after handover for questions `[[VERIFY length]]`
+6. **A defined support taper** after handover, so support steps down gradually rather than stopping `[[CONFIRM: length]]`
 
 ---
 
@@ -3354,7 +3445,7 @@ Pixorama builds AI-powered software, cloud platforms and mobile apps for Austral
 - **Service businesses** that want AI to answer phones, triage enquiries or automate admin
 - **Small businesses** that need a website and SEO done properly
 
-Recent work for Australian and New Zealand clients includes a website and SEO for **Amelia Downie** (ameliadownie.com.au) and an education platform for **New Zealand Gateway**. `[[VERIFY: add other AU clients, with permission]]`
+Recent work for Australian and New Zealand clients includes a website and SEO for **Amelia Downie** (ameliadownie.com.au) and an education platform for **New Zealand Gateway**. `[[CONFIRM: add other AU clients, with permission]]`
 
 ---
 
@@ -3364,7 +3455,7 @@ Recent work for Australian and New Zealand clients includes a website and SEO fo
 |---|---|
 | **[AI & Data](/#services)** | AI agents, AI receptionists, RAG over internal documents, AI automation of back-office work |
 | **[Cloud & Platform](/#services)** | AWS Sydney / Azure Australia East migrations, Kubernetes, DevOps, cost reduction |
-| **[Product & Software](/#services)** | SaaS products, custom business platforms, integrations with Xero, MYOB and others `[[VERIFY]]` |
+| **[Product & Software](/#services)** | SaaS products, custom business platforms, integrations with Xero, MYOB and others `[[CONFIRM]]` |
 | **[Mobile](/#services)** | iOS and Android apps, React Native and Flutter |
 | **[Web & Growth](/#services)** | Websites and technical SEO |
 
@@ -3378,11 +3469,11 @@ Much of our engineering team works on Indian Standard Time, which is 4.5 to 5.5 
 
 | Your time (AEST) | What's happening |
 |---|---|
-| 9:00am to 1:00pm | Some of the team is online `[[VERIFY]]` |
+| 9:00am to 1:00pm | Some of the team is online `[[CONFIRM]]` |
 | 1:00pm to 5:30pm | **Full team overlap**: stand-ups, reviews, pairing |
 | Overnight | Work continues, with a written update waiting in the morning |
 
-`[[VERIFY: adjust to actual working pattern]]`
+`[[CONFIRM: adjust to actual working pattern]]`
 
 For most Australian clients this means a mid-morning or early-afternoon stand-up, same-day answers, and progress overnight.
 
@@ -3390,11 +3481,11 @@ For most Australian clients this means a mid-morning or early-afternoon stand-up
 
 ### H2: Contracts, currency and payment
 
-- **Quoted and invoiced in AUD** `[[VERIFY]]`
-- **Australian-law contracts** available on request `[[VERIFY: governing law offered]]`
+- **Quoted and invoiced in AUD** `[[CONFIRM]]`
+- **Australian-law contracts** available on request `[[CONFIRM: governing law offered]]`
 - **IP assignment** to you as standard: 100% of code and IP transfers at handover
 - **No lock-in.** Systems run in your cloud accounts, and AU regions are available on AWS, Azure and Google Cloud
-- **GST:** `[[VERIFY: GST treatment for services supplied from overseas, and whether Pixorama is GST-registered in Australia. Get accounting advice and state it plainly.]]`
+- **GST:** `[[CONFIRM: GST treatment for services supplied from overseas, and whether Pixorama is GST-registered in Australia. Get accounting advice and state it plainly.]]`
 
 ---
 
@@ -3443,7 +3534,7 @@ No. We're remote-first and work with Australian clients over video, with daily w
 Yes. We build in your cloud accounts and can use Australian regions (for example AWS Sydney or Melbourne, or Azure Australia East).
 
 **Do you invoice in AUD?**
-`[[VERIFY]]`
+`[[CONFIRM]]`
 
 **How much does app or software development cost in Australia?**
 We compared typical prices in [mobile app development cost in the USA and Australia](/blog/mobile-app-development-cost-usa-australia). For your project, start with our [cost calculator](/resources/software-development-cost-calculator) or a discovery call.
@@ -3514,13 +3605,13 @@ Comparing options? We wrote an evidence-based guide to [the best AI development 
 | **Mobile** | iOS, Android, React Native, Flutter |
 | **Web & Growth** | Websites, web platforms, SEO |
 
-Recent work includes a payment recovery platform for **BVIVE** and platform support and development for **Gateways**. `[[VERIFY: which clients are India-based, and add with permission]]`
+Recent work includes a payment recovery platform for **BVIVE** and platform support and development for **Gateways**. `[[CONFIRM: which clients are India-based, and add with permission]]`
 
 ---
 
 ### H2: For Indian businesses
 
-- **Contracts in INR** with GST invoicing `[[VERIFY]]`
+- **Contracts in INR** with GST invoicing `[[CONFIRM]]`
 - **IST working hours**, with the whole team overlapping yours
 - **India data residency** using Mumbai and Hyderabad cloud regions where needed
 - **DPDP Act-aware engineering:** consent, purpose limitation and data-principal rights built into data flows (Digital Personal Data Protection Act, 2023)
@@ -3538,7 +3629,7 @@ If you're in the US, Australia or elsewhere and looking for a development partne
 - **Production standards.** Tests, code review, CI/CD, security scanning and observability from the first week.
 - **You own everything.** Code lives in your repo from day one, with 100% IP transfer.
 - **Working-hour overlap** with [Australia](/locations/australia) and the [USA](/locations/usa).
-- **Contracts in USD or AUD** under agreed governing law. `[[VERIFY]]`
+- **Contracts in USD or AUD** under agreed governing law. `[[CONFIRM]]`
 
 For an honest take on the trade-offs, read [offshore vs onshore development](/compare/offshore-vs-onshore-development).
 
@@ -3570,7 +3661,7 @@ We've written more on this in [how to choose a software development company](/bl
 ### H2: Frequently asked questions
 
 **Where in India is Pixorama based?**
-`[[VERIFY: state the city/cities or "remote-first across India". If a registered office exists, it may be named here.]]`
+`[[CONFIRM: state the city/cities or "remote-first across India". If a registered office exists, it may be named here.]]`
 
 **What does AI development cost in India?**
 It depends on scope and team. Indian senior engineering rates are typically well below US and Australian rates. For a ballpark, use the [cost calculator](/resources/software-development-cost-calculator). For mobile, see [mobile app development cost in India](/blog/mobile-app-development-cost-india).
@@ -3649,7 +3740,7 @@ Pixorama builds custom software, AI systems and cloud platforms for US enterpris
 
 ### H2: Working across US time zones
 
-`[[VERIFY: the actual overlap we offer. The table below is a template.]]`
+`[[CONFIRM: the actual overlap we offer. The table below is a template.]]`
 
 | Your time zone | Overlap window | Typical rhythm |
 |---|---|---|
@@ -3657,17 +3748,17 @@ Pixorama builds custom software, AI systems and cloud platforms for US enterpris
 | **Central / Mountain** | Early morning | Same pattern |
 | **Pacific (PT)** | Late evening / early morning PT | Async-first with a scheduled overlap window |
 
-Our delivery is built to work across that gap: written-first communication, recorded demos, clear pull requests and a written daily update. Engineers on US-facing engagements can shift hours to extend overlap. `[[VERIFY]]`
+Our delivery is built to work across that gap: written-first communication, recorded demos, clear pull requests and a written daily update. Engineers on US-facing engagements can shift hours to extend overlap. `[[CONFIRM]]`
 
 ---
 
 ### H2: Contracts and commercials for US companies
 
 - **Quoted and invoiced in USD**
-- **US-friendly MSAs and SOWs.** We can work on your paper. `[[VERIFY: governing law options, e.g. Delaware/NY]]`
+- **US-friendly MSAs and SOWs.** We can work on your paper. `[[CONFIRM: governing law options, e.g. Delaware/NY]]`
 - **IP assignment** in every contract: 100% of code and IP is yours
 - **Mutual NDA** before detailed conversations
-- **Insurance:** `[[VERIFY: professional indemnity / cyber cover, which US procurement often asks about]]`
+- **Insurance:** `[[CONFIRM: professional indemnity / cyber cover, which US procurement often asks about]]`
 
 ---
 
@@ -3675,7 +3766,7 @@ Our delivery is built to work across that gap: written-first communication, reco
 
 US procurement asks hard security questions, as it should. We build to:
 
-- **SOC 2 and ISO 27001 control frameworks** in the systems we build for you `[[VERIFY wording: building to the frameworks is not the same as Pixorama holding the certification. State our own certification status accurately.]]`
+- **Practices aligned to SOC 2 and ISO 27001** in the systems we build for you (alignment, not a certification claim) `[[CONFIRM: Pixorama's own certification status, if any]]`
 - **HIPAA-aware engineering** for healthcare systems ([see healthcare](/industries/healthcare))
 - **PCI-aware design** for payments ([see fintech](/industries/fintech))
 - **State privacy laws** such as CCPA/CPRA considerations in data handling
@@ -3713,13 +3804,13 @@ For a fair look at the trade-offs, read [offshore vs onshore development](/compa
 No. We're remote-first and work with US clients over video and in shared tools, with daily overlap. We'd rather say that plainly than list an address we don't use.
 
 **Can you work on our MSA?**
-Yes, in most cases. `[[VERIFY]]`
+Yes, in most cases. `[[CONFIRM]]`
 
 **How much does custom software development cost for a US company?**
 It depends on scope, team and timeline. Our engineers cost less than US onshore rates for comparable seniority. Try the [cost calculator](/resources/software-development-cost-calculator) for a ballpark, and see [mobile app costs in the USA](/blog/mobile-app-development-cost-usa-australia).
 
 **Can engineers work US hours?**
-Engineers on US engagements can shift hours to extend overlap. `[[VERIFY]]`
+Engineers on US engagements can shift hours to extend overlap. `[[CONFIRM]]`
 
 **Do you work with US startups?**
 Yes, with funded startups. Many start with a [fractional CTO](/engagement-models/advisory-architecture) or a core squad.
@@ -3925,7 +4016,7 @@ We work with your compliance and clinical-safety leads and build the controls th
 - **India:** DPDP Act 2023, and ABDM standards for digital health
 - **Software as a Medical Device (SaMD):** if your product might qualify, we'll flag it early, because it changes the whole delivery plan
 
-> **Writer note:** keep this section to awareness and approach. Don't claim Pixorama is "HIPAA certified". There's no such certification. `[[VERIFY: whether Pixorama signs BAAs]]`
+> **Writer note:** keep this section to awareness and approach. Don't claim Pixorama is "HIPAA certified". There's no such certification. `[[CONFIRM: whether Pixorama signs BAAs]]`
 
 ---
 
@@ -3948,7 +4039,7 @@ Healthcare systems rarely stand alone. We build integrations using **HL7 v2** an
 ### H2: Frequently asked questions
 
 **Is your software HIPAA compliant?**
-Compliance belongs to the whole organisation, not just the software. We build software with the technical safeguards HIPAA requires and work with your compliance team on the rest. `[[VERIFY BAA position]]`
+Compliance belongs to the whole organisation, not just the software. We build software with the technical safeguards HIPAA requires and work with your compliance team on the rest. `[[CONFIRM BAA position]]`
 
 **Can you integrate with our EHR?**
 Usually, yes, via FHIR, HL7 or the vendor's API. We'll confirm feasibility in discovery.
@@ -4189,7 +4280,7 @@ Choosing a SaaS partner? We've written fair comparisons of [SaaS development com
 It depends heavily on scope. We break down stages and costs in [how to build a SaaS product](/blog/how-to-build-saas-product). For your product, try the [cost calculator](/resources/software-development-cost-calculator) or start with discovery.
 
 **How long does a SaaS MVP take?**
-Often three to six months from discovery to launch, depending on scope. `[[VERIFY]]`
+Often three to six months from discovery to launch, depending on scope. `[[CONFIRM]]`
 
 **Single-tenant or multi-tenant?**
 Multi-tenant is right for most SaaS. Some enterprise or regulated customers need isolation. We'll recommend a model in discovery.
@@ -4236,7 +4327,7 @@ Yes, usually starting with an [architecture review](/engagement-models/advisory-
 | # | Field | Type | Default | Help text |
 |---|---|---|---|---|
 | 1 | Calls per month | number | 600 | Total inbound calls to the business |
-| 2 | % of calls missed or sent to voicemail | % slider | 25% | Industry studies often put this between 20% and 60% for small businesses. Check your phone system's reports. |
+| 2 | % of calls missed or sent to voicemail | % slider | 25% | Check your phone system's call reports for unanswered or abandoned calls. |
 | 3 | % of missed callers who don't call back | % slider | 60% | Many callers try the next business instead |
 | 4 | % of answered calls that become a booking or sale | % | 30% | Your call-to-booking rate |
 | 5 | Average value of a new customer or booking | currency | 150 | First transaction, or lifetime value if you know it |
@@ -4508,7 +4599,7 @@ Pixorama is a small, remote-first engineering firm. We build production AI, clou
 - **Production, not prototypes.** We measure success by what runs in production and what it does for the client.
 - **Engineering standards we don't compromise on.** Code review, tests, CI/CD, observability and security from day one, on every project.
 - **Our own products too.** Work on [PXO AI](/products/pxo-ai), [EchoMind](/products/echomind) and [AI Device Inspector](/products/ai-device-inspector), not only client work.
-- **Remote-first.** Work from anywhere in `[[VERIFY: India / specific countries]]`, with overlap hours for client time zones.
+- **Remote-first.** Work from anywhere in `[[CONFIRM: India / specific countries]]`, with overlap hours for client time zones.
 - **Write and share.** Engineers write for our [blog](/blog) and get credited by name.
 
 ---
@@ -4520,7 +4611,7 @@ Pixorama is a small, remote-first engineering firm. We build production AI, clou
 - **Judgement.** You know when boring technology is the right answer.
 - **Ownership.** You finish things, flag risks early and care about the outcome.
 
-Years of experience matter less than what you've shipped, but most of our engineers have `[[VERIFY: 6+]]` years.
+Years of experience matter less than what you've shipped, but most of our engineers have `[[CONFIRM: 6+]]` years.
 
 ---
 
@@ -4534,10 +4625,10 @@ Years of experience matter less than what you've shipped, but most of our engine
 
 1. **Application:** CV or LinkedIn, plus a short note on something you've built that you're proud of.
 2. **Intro call (30 min):** with an engineer, not a recruiter.
-3. **Technical exercise:** a realistic, time-boxed task, or a walkthrough of code you've already written. Your choice. `[[VERIFY]]`
+3. **Technical exercise:** a realistic, time-boxed task, or a walkthrough of code you've already written. Your choice. `[[CONFIRM]]`
 4. **System design conversation:** we'll design something together.
 5. **Meet the team:** the people you'd work with day to day.
-6. **Offer:** usually within `[[VERIFY]]` days of the first call.
+6. **Offer:** usually within `[[CONFIRM]]` days of the first call.
 
 We'll give you feedback at every stage, including if it's a no.
 
@@ -4557,13 +4648,13 @@ Stack you'll use · How we work · Salary range [if published] · How to apply
 JobPosting schema with validThrough set
 ```
 
-**No role that fits?** We're always happy to hear from strong senior engineers in AI, cloud, security and mobile. [Send us a note](mailto:[[ADD careers email]]).
+**No role that fits?** We're always happy to hear from strong senior engineers in AI, cloud, security and mobile. [Send us a note](mailto:contact@pixoramagroup.com) `[[CONFIRM: or a dedicated careers address]]`.
 
 ---
 
 ### H2: Fractional and contract work
 
-We sometimes work with senior independent engineers and fractional CTOs on specific engagements. If that's you, [get in touch](mailto:[[ADD]]).
+We sometimes work with senior independent engineers and fractional CTOs on specific engagements. If that's you, [get in touch](mailto:contact@pixoramagroup.com).
 
 ---
 
@@ -4940,7 +5031,7 @@ A short document recording a significant technical decision: the context, the op
 A thin end-to-end version of a system, with real UI, API, database and deployment, built early to prove the riskiest assumptions. [More →](/process/architect)
 
 **Cost envelope**
-A cost and timeline range for a project, with each end tied to written assumptions. [More →](/process/discover)
+The cost and timeline for a project, agreed at the end of discovery, with every assumption behind it written down so any change is visible. [More →](/process/discover)
 
 **Discovery phase**
 A short, structured piece of work at the start of a project to agree goals, scope, risks and cost before building. [More →](/process/discover)
@@ -5096,7 +5187,7 @@ Get a cost and timeline range for your software project in about a minute. Pick 
 
 *[calculator]*
 
-**Disclaimer (directly under results):** *This is a ballpark range based on typical projects, not a quote. Real cost depends on details this calculator can't see: your integrations, data, regulations and how settled the scope is. For a range you can plan around, our [discovery phase](/process/discover) produces a cost envelope with every assumption written down.*
+**Disclaimer (directly under results):** *This is a ballpark range based on typical projects, not a quote. Real cost depends on details this calculator can't see: your integrations, data, regulations and how settled the scope is. For a figure you can plan around, our [discovery phase](/process/discover) produces a cost envelope with every assumption written down.*
 
 ---
 
@@ -5112,9 +5203,9 @@ Get a cost and timeline range for your software project in about a minute. Pick 
 
 ---
 
-### H2: Why we give a range, not a number
+### H2: Why the calculator gives a range
 
-A single number before the work is understood is either padded or wrong. A range with stated assumptions is more honest, and more useful when you're planning a budget. The same principle sits behind the cost envelope we produce at the end of [discovery](/process/discover).
+A calculator can't see your integrations, data or constraints, so it can only give a range. [Discovery](/process/discover) can see them. That's why it ends with a cost envelope: a single figure with every assumption written down.
 
 ---
 
@@ -5143,7 +5234,7 @@ After discovery, yes. See [outcome-based projects](/engagement-models/outcome-ba
 ---
 
 ### Soft CTA
-**Want a range you can actually plan around?** [Start with a two-to-three-week discovery →](/process/discover)
+**Want a number you can actually plan around?** [Start with a one-to-two-week discovery →](/process/discover)
 
 ---
 
@@ -5217,7 +5308,7 @@ Group the cards under the five capabilities:
 
 ### H2: How we hire
 
-We hire slowly and senior. Engineers join us after `[[VERIFY: e.g. 6+]]` years building and running production software, and after a hiring process that includes real code, a system-design conversation and a session with the people they'd work with.
+We hire slowly and senior. Engineers join us after `[[CONFIRM: e.g. 6+]]` years building and running production software, and after a hiring process that includes real code, a system-design conversation and a session with the people they'd work with.
 
 Interested? [See open roles →](/careers)
 
@@ -5232,7 +5323,7 @@ Our engineers write the [Pixorama blog](/blog). A few recent posts:
 - [Zero-trust without bringing delivery to a halt](/blog/zero-trust-without-stopping-delivery)
 - [Shipping one mobile product on two platforms without doubling the team](/blog/shipping-mobile-on-two-platforms)
 
-> **Writer note:** add a real author byline (linking to the author's bio on this page) to every blog post. Right now posts have no visible authors. Bylines plus `Person` schema plus this page are one of the cheapest E-E-A-T wins available.
+> **Writer note:** blog posts already have an "About the author" box (Udesh Bhan). Link each byline to a bio on this page and add `Person` schema. Engineering posts carry more weight with a named engineer as author or technical reviewer. Bylines plus `Person` schema plus this page are one of the cheapest E-E-A-T wins available.
 
 ---
 
@@ -5291,7 +5382,7 @@ This guide compares six platforms on the things that matter in production.
 | Focused on voice quality and expressive speech | **ElevenLabs** |
 | Wanting grounded answers, guardrails and per-call observability in one console, or a done-for-you build | **PXO AI** (early access) |
 
-`[[VERIFY each line against current vendor positioning before publishing]]`
+`[[CONFIRM each line against current vendor positioning before publishing]]`
 
 ---
 
@@ -5312,44 +5403,44 @@ We looked at seven things that decide whether a voice agent works in production:
 ### H2: The platforms
 
 #### Retell AI
-**What it is:** a platform for building, testing and deploying AI phone agents, widely used for contact-centre and business phone use cases. `[[VERIFY]]`
-**Strengths:** `[[VERIFY: e.g. focus on low latency and natural turn-taking; developer API plus visual builder; telephony integrations]]`
-**Watch-outs:** `[[VERIFY: e.g. pricing components]]`
+**What it is:** a platform for building, testing and deploying AI phone agents, widely used for contact-centre and business phone use cases. `[[CONFIRM]]`
+**Strengths:** `[[CONFIRM: e.g. focus on low latency and natural turn-taking; developer API plus visual builder; telephony integrations]]`
+**Watch-outs:** `[[CONFIRM: e.g. pricing components]]`
 **Best for:** teams with some technical capacity building production phone agents.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### Vapi
-**What it is:** a developer-focused voice AI platform and API for building voice agents, with flexibility to choose speech and model providers. `[[VERIFY]]`
-**Strengths:** `[[VERIFY: e.g. flexibility, bring-your-own models, developer tooling]]`
-**Watch-outs:** `[[VERIFY: e.g. requires engineering effort; costs from multiple providers add up]]`
+**What it is:** a developer-focused voice AI platform and API for building voice agents, with flexibility to choose speech and model providers. `[[CONFIRM]]`
+**Strengths:** `[[CONFIRM: e.g. flexibility, bring-your-own models, developer tooling]]`
+**Watch-outs:** `[[CONFIRM: e.g. requires engineering effort; costs from multiple providers add up]]`
 **Best for:** developers and product teams embedding voice into their own product.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### Synthflow
-**What it is:** a no-code AI voice agent builder, popular with agencies and small businesses. `[[VERIFY]]`
-**Strengths:** `[[VERIFY: e.g. no-code builder, templates, white-label options for agencies]]`
-**Watch-outs:** `[[VERIFY]]`
+**What it is:** a no-code AI voice agent builder, popular with agencies and small businesses. `[[CONFIRM]]`
+**Strengths:** `[[CONFIRM: e.g. no-code builder, templates, white-label options for agencies]]`
+**Watch-outs:** `[[CONFIRM]]`
 **Best for:** non-technical teams and agencies that want to launch quickly.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### Bland AI
-**What it is:** an AI phone-calling platform aimed at enterprises and high call volumes. `[[VERIFY]]`
-**Strengths:** `[[VERIFY]]`
-**Watch-outs:** `[[VERIFY]]`
+**What it is:** an AI phone-calling platform aimed at enterprises and high call volumes. `[[CONFIRM]]`
+**Strengths:** `[[CONFIRM]]`
+**Watch-outs:** `[[CONFIRM]]`
 **Best for:** enterprises with high-volume inbound or outbound calling.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### ElevenLabs (Conversational AI / Agents)
-**What it is:** best known for realistic text-to-speech voices, ElevenLabs also offers a platform for building conversational voice agents. `[[VERIFY current product name]]`
-**Strengths:** `[[VERIFY: e.g. voice quality and range, multilingual voices]]`
-**Watch-outs:** `[[VERIFY]]`
+**What it is:** best known for realistic text-to-speech voices, ElevenLabs also offers a platform for building conversational voice agents. `[[CONFIRM current product name]]`
+**Strengths:** `[[CONFIRM: e.g. voice quality and range, multilingual voices]]`
+**Watch-outs:** `[[CONFIRM]]`
 **Best for:** use cases where voice quality and expressiveness matter most.
 **Pricing (checked [[DATE]]):** `[[ ]]`
 
 #### PXO AI (ours)
 **What it is:** a platform to design, deploy and operate AI voice and chat agents from one console. *In active development; early access only.*
 **Strengths:** retrieval over your own knowledge so answers are grounded; guardrails applied on every turn; per-call observability (transcript, sources, tool calls, latency, cost); replay testing of changes against past calls; and the option of a done-for-you build by Pixorama's engineers.
-**Watch-outs:** it's **early access**, so it's not yet generally available, it has a smaller integration library than established platforms `[[VERIFY]]`, and it has fewer production references.
+**Watch-outs:** it's **early access**, so it's not yet generally available, it has a smaller integration library than established platforms `[[CONFIRM]]`, and it has fewer production references.
 **Best for:** businesses that want grounded, auditable agents and value having an engineering team behind the platform.
 **Pricing:** [how PXO AI pricing works](/products/pxo-ai/pricing)
 
@@ -5357,7 +5448,7 @@ We looked at seven things that decide whether a voice agent works in production:
 
 ### H2: Side-by-side comparison
 
-`[[VERIFY every cell. Use ✓ / ✗ / "Partial" / "Not stated". Never guess.]]`
+`[[CONFIRM every cell. Use ✓ / ✗ / "Partial" / "Not stated". Never guess.]]`
 
 | | Retell AI | Vapi | Synthflow | Bland AI | ElevenLabs | PXO AI |
 |---|---|---|---|---|---|---|
@@ -5391,7 +5482,7 @@ We looked at seven things that decide whether a voice agent works in production:
 
 ### H2: Best AI receptionist for small business
 
-If you're a small business and want an AI receptionist rather than a developer platform, the shortlist changes. You need a simple setup, calendar booking and SMS summaries, not an API. In that case, look first at no-code options. `[[VERIFY: e.g. Synthflow and dedicated receptionist products]]` For PXO AI's approach, see [AI receptionist for small business](/products/pxo-ai/use-cases/small-business).
+If you're a small business and want an AI receptionist rather than a developer platform, the shortlist changes. You need a simple setup, calendar booking and SMS summaries, not an API. In that case, look first at no-code options. `[[CONFIRM: e.g. Synthflow and dedicated receptionist products]]` For PXO AI's approach, see [AI receptionist for small business](/products/pxo-ai/use-cases/small-business).
 
 ---
 
@@ -5545,7 +5636,7 @@ Estimate your side of the equation with the [ROI calculator](/resources/ai-voice
 
 - **Small and mid-size businesses** with a common use case: buy. See [PXO AI](/products/pxo-ai) or the alternatives in our [comparison](/compare/best-ai-voice-agents).
 - **Product companies** where AI is the product: build, with senior help on architecture and evaluation. See our [AI & Data services](/#services) and [fractional CTO / architecture review](/engagement-models/advisory-architecture).
-- **Enterprises** with strict data requirements: build on your own cloud, or use a platform that supports private deployment. `[[VERIFY whether PXO AI does]]`
+- **Enterprises** with strict data requirements: build on your own cloud, or use a platform that supports private deployment. `[[CONFIRM whether PXO AI does]]`
 
 ---
 
@@ -5558,7 +5649,7 @@ Usually not in total cost until volumes are very high, because building means ow
 Yes. Open-source models and voice stacks are improving fast and give you more control. They also move more of the operational work onto your team.
 
 **How long does it take to build a production AI agent?**
-A prototype can take days. A production agent with integrations, guardrails, evaluation and monitoring typically takes `[[VERIFY: e.g. 2 to 4 months]]` for a small senior team.
+A prototype can take days. A production agent with integrations, guardrails, evaluation and monitoring typically takes `[[CONFIRM: e.g. 2 to 4 months]]` for a small senior team.
 
 **Can you build on top of a platform?**
 Yes. That's the hybrid path, and it's often the best of both.
@@ -5617,7 +5708,7 @@ If you're in the US or Australia, an offshore team can cost a fraction of a loca
 | | Onshore | Nearshore | Offshore (e.g. India) |
 |---|---|---|---|
 | **Cost** | Highest | Mid | Lowest, often well below onshore for comparable seniority |
-| **Time-zone overlap** | Full | Most of the day | Partial: a few hours a day `[[VERIFY for US/AU]]` |
+| **Time-zone overlap** | Full | Most of the day | Partial: a few hours a day `[[CONFIRM for US/AU]]` |
 | **Talent pool size** | Limited, competitive | Growing | Very large |
 | **Cultural and communication fit** | Easiest | Usually good | Varies a lot by vendor |
 | **Legal and IP** | Familiar | Varies | Needs clear contracts (IP assignment, governing law) |
@@ -5680,7 +5771,7 @@ Many companies end up with a blend: an onshore product owner or tech lead, with 
 - **Two-week increments** with demos, and weekly written updates.
 - **Daily overlap** with [US](/locations/usa) and [Australian](/locations/australia) clients.
 - **One accountable lead** per engagement.
-- **Contracts** in USD or AUD. `[[VERIFY]]`
+- **Contracts** in USD or AUD. `[[CONFIRM]]`
 
 ---
 

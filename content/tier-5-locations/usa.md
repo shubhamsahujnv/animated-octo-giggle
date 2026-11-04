@@ -49,7 +49,7 @@ Pixorama builds custom software, AI systems and cloud platforms for US enterpris
 
 ### H2: Working across US time zones
 
-`[[VERIFY: the actual overlap we offer. The table below is a template.]]`
+`[[CONFIRM: the actual overlap we offer. The table below is a template.]]`
 
 | Your time zone | Overlap window | Typical rhythm |
 |---|---|---|
@@ -57,17 +57,17 @@ Pixorama builds custom software, AI systems and cloud platforms for US enterpris
 | **Central / Mountain** | Early morning | Same pattern |
 | **Pacific (PT)** | Late evening / early morning PT | Async-first with a scheduled overlap window |
 
-Our delivery is built to work across that gap: written-first communication, recorded demos, clear pull requests and a written daily update. Engineers on US-facing engagements can shift hours to extend overlap. `[[VERIFY]]`
+Our delivery is built to work across that gap: written-first communication, recorded demos, clear pull requests and a written daily update. Engineers on US-facing engagements can shift hours to extend overlap. `[[CONFIRM]]`
 
 ---
 
 ### H2: Contracts and commercials for US companies
 
 - **Quoted and invoiced in USD**
-- **US-friendly MSAs and SOWs.** We can work on your paper. `[[VERIFY: governing law options, e.g. Delaware/NY]]`
+- **US-friendly MSAs and SOWs.** We can work on your paper. `[[CONFIRM: governing law options, e.g. Delaware/NY]]`
 - **IP assignment** in every contract: 100% of code and IP is yours
 - **Mutual NDA** before detailed conversations
-- **Insurance:** `[[VERIFY: professional indemnity / cyber cover, which US procurement often asks about]]`
+- **Insurance:** `[[CONFIRM: professional indemnity / cyber cover, which US procurement often asks about]]`
 
 ---
 
@@ -75,7 +75,7 @@ Our delivery is built to work across that gap: written-first communication, reco
 
 US procurement asks hard security questions, as it should. We build to:
 
-- **SOC 2 and ISO 27001 control frameworks** in the systems we build for you `[[VERIFY wording: building to the frameworks is not the same as Pixorama holding the certification. State our own certification status accurately.]]`
+- **Practices aligned to SOC 2 and ISO 27001** in the systems we build for you (alignment, not a certification claim) `[[CONFIRM: Pixorama's own certification status, if any]]`
 - **HIPAA-aware engineering** for healthcare systems ([see healthcare](/industries/healthcare))
 - **PCI-aware design** for payments ([see fintech](/industries/fintech))
 - **State privacy laws** such as CCPA/CPRA considerations in data handling
@@ -113,13 +113,13 @@ For a fair look at the trade-offs, read [offshore vs onshore development](/compa
 No. We're remote-first and work with US clients over video and in shared tools, with daily overlap. We'd rather say that plainly than list an address we don't use.
 
 **Can you work on our MSA?**
-Yes, in most cases. `[[VERIFY]]`
+Yes, in most cases. `[[CONFIRM]]`
 
 **How much does custom software development cost for a US company?**
 It depends on scope, team and timeline. Our engineers cost less than US onshore rates for comparable seniority. Try the [cost calculator](/resources/software-development-cost-calculator) for a ballpark, and see [mobile app costs in the USA](/blog/mobile-app-development-cost-usa-australia).
 
 **Can engineers work US hours?**
-Engineers on US engagements can shift hours to extend overlap. `[[VERIFY]]`
+Engineers on US engagements can shift hours to extend overlap. `[[CONFIRM]]`
 
 **Do you work with US startups?**
 Yes, with funded startups. Many start with a [fractional CTO](/engagement-models/advisory-architecture) or a core squad.

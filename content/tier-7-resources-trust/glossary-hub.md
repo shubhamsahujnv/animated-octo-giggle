@@ -91,7 +91,7 @@ A short document recording a significant technical decision: the context, the op
 A thin end-to-end version of a system, with real UI, API, database and deployment, built early to prove the riskiest assumptions. [More →](/process/architect)
 
 **Cost envelope**
-A cost and timeline range for a project, with each end tied to written assumptions. [More →](/process/discover)
+The cost and timeline for a project, agreed at the end of discovery, with every assumption behind it written down so any change is visible. [More →](/process/discover)
 
 **Discovery phase**
 A short, structured piece of work at the start of a project to agree goals, scope, risks and cost before building. [More →](/process/discover)

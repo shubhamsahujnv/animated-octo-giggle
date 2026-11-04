@@ -18,7 +18,7 @@
 
 ### H1: IT staff augmentation services with senior engineers, not just CVs
 
-Add experienced cloud, AI, security and software engineers to your team, usually within about two weeks. They work inside your process, report to your leads, and leave your team stronger than they found it.
+Add experienced cloud, AI, security and software engineers to your team, usually within about two weeks. They work inside your process, report to your leads, and leave your team stronger than they found it. You know exactly who is joining: named engineers, not an agency average.
 
 **[Tell us who you need]** **[See how it works](#how)**
 
@@ -36,12 +36,12 @@ It's the right model when you already have a team and a delivery process, and wh
 
 Most staff augmentation companies sell headcount. We sell senior engineers who bring production habits with them.
 
-- **Senior by default.** We don't place juniors to fill a seat. Our specialists have designed, shipped and operated systems in production. `[[VERIFY: minimum years' experience, e.g. 6+]]`
+- **Senior by default.** We don't place juniors to fill a seat. Our specialists have designed, shipped and operated systems in production. `[[CONFIRM: minimum years' experience, e.g. 6+]]`
 - **Fast start.** Specialists typically start within about two weeks of agreeing the brief.
 - **Knowledge transfer built in.** Every engagement includes documentation, pairing and handover, so the skill stays when the engineer leaves.
 - **Same standard as our project work.** Tested code, reviewed changes, security in the pipeline.
 - **You own everything they produce.** Code and IP transfer to you. No retained components.
-- **Overlapping hours** with US and Australian teams. `[[VERIFY: overlap hours]]`
+- **Overlapping hours** with US and Australian teams. `[[CONFIRM: overlap hours]]`
 
 ---
 
@@ -63,7 +63,7 @@ Stack we work in daily: AWS, Azure, Google Cloud, Kubernetes, Terraform, Docker,
 ### H2: How it works {#how}
 
 1. **Brief (day 1 to 2).** A 30-minute call with a senior engineer to understand the role, the stack, your team and how you work.
-2. **Matched profiles (within a week).** We put forward one to three engineers who fit, not a stack of CVs. `[[VERIFY]]`
+2. **Matched profiles (within a week).** We put forward one to three engineers who fit, not a stack of CVs. `[[CONFIRM]]`
 3. **Your interview.** You interview and choose. Technical exercises welcome.
 4. **Onboarding (about two weeks from brief).** The engineer joins your Slack, standups, repo and tooling.
 5. **Monthly check-ins.** We review fit and delivery with you and the engineer every month.
@@ -101,9 +101,9 @@ Concerned about offshore delivery? We address it directly in [offshore vs onshor
 ### H2: Contracts and commercials
 
 - **Monthly, per engineer.** Rates depend on seniority and skill. `[[ADD: indicative range, or "from $X/month". Price transparency on this page will lift conversion.]]`
-- **Minimum term:** `[[VERIFY, e.g. 3 months]]`
-- **Notice period:** `[[VERIFY, e.g. 30 days]]`
-- **Replacement guarantee:** if an engineer isn't working out, we replace them at no extra cost. `[[VERIFY terms]]`
+- **Minimum term:** `[[CONFIRM, e.g. 3 months]]`
+- **Notice period:** `[[CONFIRM, e.g. 30 days]]`
+- **Replacement guarantee:** if an engineer isn't working out, we replace them at no extra cost. `[[CONFIRM terms]]`
 - **IP assignment, confidentiality and NDA** as standard.
 
 What should be in a staff augmentation contract? We covered it in [the best staff augmentation companies in India, and what to put in the contract](/blog/best-staff-augmentation-companies-india).

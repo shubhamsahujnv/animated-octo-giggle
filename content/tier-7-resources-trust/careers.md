@@ -30,7 +30,7 @@ Pixorama is a small, remote-first engineering firm. We build production AI, clou
 - **Production, not prototypes.** We measure success by what runs in production and what it does for the client.
 - **Engineering standards we don't compromise on.** Code review, tests, CI/CD, observability and security from day one, on every project.
 - **Our own products too.** Work on [PXO AI](/products/pxo-ai), [EchoMind](/products/echomind) and [AI Device Inspector](/products/ai-device-inspector), not only client work.
-- **Remote-first.** Work from anywhere in `[[VERIFY: India / specific countries]]`, with overlap hours for client time zones.
+- **Remote-first.** Work from anywhere in `[[CONFIRM: India / specific countries]]`, with overlap hours for client time zones.
 - **Write and share.** Engineers write for our [blog](/blog) and get credited by name.
 
 ---
@@ -42,7 +42,7 @@ Pixorama is a small, remote-first engineering firm. We build production AI, clou
 - **Judgement.** You know when boring technology is the right answer.
 - **Ownership.** You finish things, flag risks early and care about the outcome.
 
-Years of experience matter less than what you've shipped, but most of our engineers have `[[VERIFY: 6+]]` years.
+Years of experience matter less than what you've shipped, but most of our engineers have `[[CONFIRM: 6+]]` years.
 
 ---
 
@@ -56,10 +56,10 @@ Years of experience matter less than what you've shipped, but most of our engine
 
 1. **Application:** CV or LinkedIn, plus a short note on something you've built that you're proud of.
 2. **Intro call (30 min):** with an engineer, not a recruiter.
-3. **Technical exercise:** a realistic, time-boxed task, or a walkthrough of code you've already written. Your choice. `[[VERIFY]]`
+3. **Technical exercise:** a realistic, time-boxed task, or a walkthrough of code you've already written. Your choice. `[[CONFIRM]]`
 4. **System design conversation:** we'll design something together.
 5. **Meet the team:** the people you'd work with day to day.
-6. **Offer:** usually within `[[VERIFY]]` days of the first call.
+6. **Offer:** usually within `[[CONFIRM]]` days of the first call.
 
 We'll give you feedback at every stage, including if it's a no.
 
@@ -79,13 +79,13 @@ Stack you'll use · How we work · Salary range [if published] · How to apply
 JobPosting schema with validThrough set
 ```
 
-**No role that fits?** We're always happy to hear from strong senior engineers in AI, cloud, security and mobile. [Send us a note](mailto:[[ADD careers email]]).
+**No role that fits?** We're always happy to hear from strong senior engineers in AI, cloud, security and mobile. [Send us a note](mailto:contact@pixoramagroup.com) `[[CONFIRM: or a dedicated careers address]]`.
 
 ---
 
 ### H2: Fractional and contract work
 
-We sometimes work with senior independent engineers and fractional CTOs on specific engagements. If that's you, [get in touch](mailto:[[ADD]]).
+We sometimes work with senior independent engineers and fractional CTOs on specific engagements. If that's you, [get in touch](mailto:contact@pixoramagroup.com).
 
 ---
 

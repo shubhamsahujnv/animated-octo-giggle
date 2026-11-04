@@ -42,18 +42,18 @@ For a small business, the phone is often the main source of new work, and also t
 | | |
 |---|---|
 | **Answers 24/7** | Every call, including after hours, weekends and holidays |
-| **Books appointments** | Into your calendar, by service type and duration `[[VERIFY integrations]]` |
+| **Books appointments** | Into your calendar, by service type and duration `[[CONFIRM integrations]]` |
 | **Captures leads** | Name, number, what they need, where, how urgent |
 | **Answers questions** | Prices, service areas, hours, what's included, all from your info |
 | **Qualifies jobs** | Asks the questions you'd ask, so you only call back the right leads |
-| **Texts you a summary** | Instantly, after every call `[[VERIFY: SMS/email/app]]` |
+| **Texts you a summary** | Instantly, after every call `[[CONFIRM: SMS/email/app]]` |
 | **Transfers urgent calls** | To your mobile, based on rules you set |
 
 ---
 
 ### H2: Set up in an afternoon, not a project
 
-You don't need a developer. `[[VERIFY onboarding flow]]`
+You don't need a developer. `[[CONFIRM onboarding flow]]`
 
 1. **Tell it about your business:** services, prices, hours, service area, FAQs. Paste them in or upload a document.
 2. **Connect your calendar** so it can book.
@@ -81,7 +81,9 @@ You don't need a developer. `[[VERIFY onboarding flow]]`
 | Books appointments | ✗ | Sometimes | ✓ | ✓ |
 | Knows your prices and services | ✗ | Script only | ✓ | ✓ |
 | Handles several calls at once | ✗ | ✓ | ✗ | ✓ |
-| Monthly cost | Free | `[[market range]]` | `[[market range]]` | [See pricing](/products/pxo-ai/pricing) |
+| Monthly cost | Free | From about US$250 for 50 minutes¹ | `[[ADD local wage estimate]]` | [See pricing](/products/pxo-ai/pricing) |
+
+¹ Ruby's published entry plan, September 2026. Published AI receptionist plans typically run US$0 to US$500 a month. Both figures are from our guide, [AI receptionist vs answering service](/blog/ai-answering-service-vs-human-receptionist).
 
 We compared these options in depth in [AI receptionist vs answering service](/blog/ai-answering-service-vs-human-receptionist).
 
@@ -110,10 +112,10 @@ You control the greeting, the tone and the answers. The agent uses only the info
 An AI receptionist is an AI voice agent that answers your business phone. It talks to callers naturally, answers questions, books appointments and takes messages, then sends you the details. [Full definition →](/resources/glossary/ai-voice-agent)
 
 **Will callers know it's AI?**
-Yes, the agent introduces itself as an AI assistant. Most callers care far more about getting an answer than about who gives it.
+Yes, the agent introduces itself as an AI assistant. You should also tell callers the call is recorded: in some US states, including California, recording a confidential call without everyone's consent is illegal.
 
 **Can I keep my business number?**
-Yes. Forward your existing number to PXO AI, all the time or only when you don't answer. `[[VERIFY]]`
+Yes. Forward your existing number to PXO AI, all the time or only when you don't answer. `[[CONFIRM]]`
 
 **What if someone needs to talk to me urgently?**
 Set rules, for example "transfer if it's an emergency or an existing customer", and the call comes to your mobile.

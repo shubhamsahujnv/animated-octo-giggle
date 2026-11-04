@@ -54,9 +54,9 @@ AI-heavy roadmaps add AI/ML engineers and an evaluation specialist. Mobile roadm
 
 - **Senior-led.** Every squad has a tech lead who has shipped and operated software at scale.
 - **Accountable for outcomes.** The squad commits to sprint goals and reports on them, not just on hours logged.
-- **Our delivery method, on your roadmap.** Squads run the build → harden → operate loop of our [five-stage process](/process): two-week increments, automated tests, security in the pipeline, observability from day one.
-- **Elastic.** Add a specialist for a quarter, or scale down after a launch, with 30 days' notice. `[[VERIFY]]`
-- **Stable.** The same people stay on your product. `[[VERIFY: retention commitment]]`
+- **Our delivery method, on your roadmap.** Discovery and architecture happen up front. After that, squads run the build → harden → operate loop of our [five-stage process](/process): two-week increments, automated tests, security in the pipeline, observability from day one.
+- **Elastic.** Add a specialist for a quarter, or scale down after a launch, with 30 days' notice. `[[CONFIRM]]`
+- **Stable.** The same senior engineers from month to month.
 - **You own everything.** Code lives in your repo from the first commit.
 
 ---
@@ -76,7 +76,7 @@ AI-heavy roadmaps add AI/ML engineers and an evaluation specialist. Mobile roadm
 
 - **Weekly written update:** done, next, risks, decisions needed.
 - **Bi-weekly demo** of working software.
-- **Delivery metrics:** deployment frequency, lead time, change failure rate, and escaped defects. `[[VERIFY which]]`
+- **Delivery metrics:** deployment frequency, lead time, change failure rate, and escaped defects. `[[CONFIRM which]]`
 - **Direct access** to the squad in your Slack or Teams.
 
 ---
@@ -118,13 +118,13 @@ Squads are priced per month based on size and seniority. `[[ADD: "Core squads fr
 Typically three to four weeks from the first call.
 
 **Can we change the squad size?**
-Yes. Scale up or down with `[[VERIFY: 30]]` days' notice.
+Yes. Scale up or down with `[[CONFIRM: 30]]` days' notice.
 
 **Do we get the same people throughout?**
 Yes, that's the point of a dedicated team. If someone has to leave, we overlap their replacement and hand over properly.
 
 **Who sets priorities?**
-You do. The squad's tech lead turns priorities into a plan and owns delivery.
+You do. A Pixorama lead engineer runs delivery inside the squad, against the priorities you set. There's no account manager layer between you and the people doing the work.
 
 **Can the squad hand over to our in-house team later?**
 Yes. We plan for it with runbooks, documentation and paired on-call.
