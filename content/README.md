@@ -1,6 +1,6 @@
 # Pixorama: New Page Content
 
-Ready-to-publish copy for every page recommended in **doc 06 (New Pages to Create)** for pixoramagroup.com. That's 44 pages across 8 tiers, plus 5 blog category hubs and case-study drafts for the 6 clients on the homepage.
+Ready-to-publish copy for every page recommended in **doc 06 (New Pages to Create)** for pixoramagroup.com. That's 43 page files across 8 tiers. Two of the files hold several pages: the 5 blog category hubs, and the case-studies hub with drafts for the 6 clients on the homepage.
 
 Keyword data: **Ubersuggest, pulled 4 Nov 2026**, US (locId 2840) unless noted. Australia figures use locId 2036. Facts about Pixorama come from the live homepage and blog.
 
