@@ -15,8 +15,9 @@
 ## Banners
 - `banner-landscape-1920x1080.png`: 16:9, for LinkedIn, X, YouTube, website hero or email header
 - `banner-square-1080x1080.png`: 1:1, for an Instagram or Facebook feed post
+- `banner-story-1080x1920.png`: 9:16, for Instagram and Facebook Stories, WhatsApp status or a Reels cover
 
-Both are drawn by `banner.html` (`?size=landscape` or `?size=square`) with the same drawing kit as the video (`lib.js`).
+Both are drawn by `banner.html` (`?size=landscape`, `?size=square` or `?size=story`) with the same drawing kit as the video (`lib.js`).
 
 ## Rebuild
 ```bash

@@ -33,7 +33,7 @@ function serve() {
   const { DUR, FPS } = await page.evaluate(() => window.__meta);
 
   if (args.includes('--banners')) {
-    for (const [size, w, h] of [['landscape', 1920, 1080], ['square', 1080, 1080]]) {
+    for (const [size, w, h] of [['landscape', 1920, 1080], ['square', 1080, 1080], ['story', 1080, 1920]]) {
       const bp = await browser.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });
       await bp.goto(`http://localhost:${srv.address().port}/banner.html?size=${size}`);
       await bp.waitForFunction(() => window.__ready === true);
