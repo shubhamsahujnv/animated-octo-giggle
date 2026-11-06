@@ -32,6 +32,19 @@ function serve() {
   await page.waitForFunction(() => window.__ready === true);
   const { DUR, FPS } = await page.evaluate(() => window.__meta);
 
+  if (args.includes('--banners')) {
+    for (const [size, w, h] of [['landscape', 1920, 1080], ['square', 1080, 1080]]) {
+      const bp = await browser.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });
+      await bp.goto(`http://localhost:${srv.address().port}/banner.html?size=${size}`);
+      await bp.waitForFunction(() => window.__ready === true);
+      const b64 = await bp.evaluate(() => window.__png());
+      const out = path.join(ROOT, `banner-${size}-${w}x${h}.png`);
+      fs.writeFileSync(out, Buffer.from(b64, 'base64'));
+      console.log('wrote', out);
+    }
+    await browser.close(); srv.close(); return;
+  }
+
   if (stillsArg) {
     fs.mkdirSync(path.join(ROOT, 'stills'), { recursive: true });
     for (const s of stillsArg.split(',')) {

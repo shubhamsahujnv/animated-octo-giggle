@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Green Dhanteras Banner</title>
+<style>
+@font-face{font-family:'DM Sans';font-weight:400;font-display:block;src:url(fonts/DMSans-400-latin.woff2) format('woff2');}
+@font-face{font-family:'DM Sans';font-weight:500;font-display:block;src:url(fonts/DMSans-500-latin.woff2) format('woff2');}
+@font-face{font-family:'DM Sans';font-weight:700;font-display:block;src:url(fonts/DMSans-700-latin.woff2) format('woff2');}
+@font-face{font-family:'Space Grotesk';font-weight:700;font-display:block;src:url(fonts/SpaceGrotesk-700-latin.woff2) format('woff2');}
+@font-face{font-family:'Tiro Devanagari Hindi';font-weight:400;font-display:block;src:url(fonts/TiroDevanagariHindi-400-devanagari.woff2) format('woff2');unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;}
+html,body{margin:0;background:#012624;}
+body{display:flex;align-items:center;justify-content:center;min-height:100vh;}
+canvas{display:block;max-width:100vw;max-height:100vh;}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+/* Static banners for Green Dhanteras (TheGreenSolve).
+   ?size=landscape -> 1920x1080   ?size=square -> 1080x1080 */
+const SIZE = new URLSearchParams(location.search).get('size') || 'landscape';
+const W = SIZE === 'square' ? 1080 : 1920, H = 1080;
+const cv = document.getElementById('c'); cv.width = W; cv.height = H;
+const ctx = cv.getContext('2d');
+</script>
+<script src="lib.js"></script>
+<script>
+const T = 2.4;  // frozen moment for flames, sway and turbine angles
+const logoCream = new Image(); logoCream.src = 'assets/tgs-logo-cream.png';
+const logoTeal = new Image(); logoTeal.src = 'assets/tgs-logo-teal.png';
+
+function sky(){
+  const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,C.deep2);g.addColorStop(.6,C.deep);g.addColorStop(1,C.teal);
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  const r=rng(77);
+  for(let i=0;i<Math.round(W*H/16000);i++){ctx.globalAlpha=.2+r()*.6;circle(r()*W,r()*H*.7,.8+r()*2,C.cream);}
+  ctx.globalAlpha=1;
+  return g;
+}
+function moon(x,y){glow(x,y,150,C.cream,.12);const m=document.createElement('canvas');m.width=m.height=100;const c=m.getContext('2d');
+  c.fillStyle=C.cream;c.beginPath();c.arc(50,50,42,0,Math.PI*2);c.fill();c.globalCompositeOperation='destination-out';c.beginPath();c.arc(70,36,38,0,Math.PI*2);c.fill();ctx.drawImage(m,x-50,y-50);}
+function flies(n,x0,x1,y0,y1,seed){const r=rng(seed);for(let i=0;i<n;i++){const x=lerp(x0,x1,r()),y=lerp(y0,y1,r()),a=.4+r()*.6;glow(x,y,20,C.lime,.45*a);ctx.globalAlpha=a;circle(x,y,3,C.lime);ctx.globalAlpha=1;}}
+
+// full-grown tree, same construction as the video's scene 3
+function tree(gx,gy,s){
+  ctx.save();ctx.translate(gx,gy);ctx.scale(s,s);
+  const TH=540;
+  ctx.beginPath();ctx.moveTo(-28,0);ctx.quadraticCurveTo(-10,-TH*.5,-7,-TH);ctx.lineTo(7,-TH);ctx.quadraticCurveTo(12,-TH*.5,28,0);ctx.closePath();
+  ctx.fillStyle='#6B4A32';ctx.fill();
+  const br=[{at:.42,ang:-.95,len:210},{at:.52,ang:.9,len:220},{at:.7,ang:-.6,len:170},{at:.78,ang:.62,len:160}];
+  const ends=[];
+  br.forEach(b=>{const sy=-TH*b.at, ex=Math.sin(b.ang)*b.len, ey=sy-Math.cos(b.ang)*b.len;
+    ctx.strokeStyle='#6B4A32';ctx.lineWidth=10;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(0,sy);ctx.quadraticCurveTo(Math.sin(b.ang)*b.len*.3,sy-b.len*.6,ex,ey);ctx.stroke();
+    ends.push({x:ex,y:ey});});
+  ends.push({x:0,y:-TH-20},{x:-90,y:-TH+40},{x:95,y:-TH+50});
+  const pal=[C.lime,C.mint,C.leaf2,C.leaf];
+  ends.forEach((e,k)=>{circle(e.x,e.y,110,'#1C5541');
+    for(let i=0;i<18;i++){const a=i/18*Math.PI*2+k;leaf(e.x+Math.cos(a)*30,e.y+Math.sin(a)*30,70+((i*37)%30),40,a-Math.PI/2,pal[(i+k)%4],rgba(C.teal,.35));}});
+  ctx.restore();
+}
+
+function chip(x,y,i,label,fs){
+  ctx.save();ctx.font=`500 ${fs}px "DM Sans"`;
+  const h=fs*2.1, r=h*.36, w=ctx.measureText(label).width+h+r*1.2;
+  ctx.beginPath();ctx.roundRect(x,y,w,h,h/2);ctx.fillStyle=rgba(C.cream,.08);ctx.fill();ctx.strokeStyle=rgba(C.lime,.55);ctx.lineWidth=2;ctx.stroke();
+  const ix=x+h/2, iy=y+h/2;
+  circle(ix,iy,r,C.lime);
+  ctx.save();ctx.translate(ix,iy);ctx.scale(r/44,r/44);
+  if(i===0) diya(-6,8,.36,1,T,4,false);
+  if(i===1) iconSun(0,0);
+  if(i===2) iconSprout(0,0);
+  ctx.restore();
+  ctx.fillStyle=C.cream;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(label,x+h-2,iy+1);
+  ctx.restore();
+  return w;
+}
+function drawLogo(img,x,y,w,align='left'){const h=w*img.naturalHeight/img.naturalWidth;ctx.drawImage(img,align==='center'?x-w/2:x,y-h/2,w,h);return h;}
+
+/* ---------------- 1920 x 1080 ---------------- */
+function landscape(){
+  const sg=sky();
+  glow(1480,640,700,C.lime,.09);
+  moon(1760,300);
+  // landscape
+  hillPath(880,60,1.5,.9);ctx.fillStyle=C.hill1;ctx.fill();
+  [[1090,300,.4],[1270,250,2.1],[1820,290,3.3]].forEach(([x,h,o])=>turbine(x,hillY(x,880,60,1.5,.9)+6,h,T,o));
+  hillPath(960,45,1.1,2.4);ctx.fillStyle=C.hill2;ctx.fill();
+  solarRow(1560,hillY(1600,960,45,1.1,2.4)+24,4,T);
+  solarRow(980,hillY(1000,960,45,1.1,2.4)+30,3,T+1);
+  hillPath(1030,22,1,0);ctx.fillStyle=C.hill3;ctx.fill();
+  tree(1480,1010,.86);
+  // coins turning into leaves on their way to the tree
+  [[1180,520,.0,.2],[1250,420,.35,1.1],[1310,330,.7,2.2]].forEach(([x,y,m,sp])=>coin(x,y,34,sp,m));
+  flies(26,1080,1900,380,940,5);
+  glow(1480,1060,520,'#FFD27A',.07);
+  [1100,1260,1700,1860].forEach((x,i)=>diya(x-24,1032,.6,1,T+i,i+2));
+  toran(T,1,0,false);
+
+  // text column
+  text('THEGREENSOLVE WISHES YOU',140,305,{font:'500 26px "DM Sans"',color:C.cream,alpha:.8,align:'left',ls:8});
+  text('शुभ धनतेरस',134,415,{font:'400 104px "Tiro Devanagari Hindi"',color:C.cream,align:'left'});
+  text('Green is the',136,560,{font:'700 132px "Space Grotesk"',color:C.lime,align:'left'});
+  text('new gold.',136,690,{font:'700 132px "Space Grotesk"',color:C.lime,align:'left'});
+  text('Invest in wealth that grows. Happy Dhanteras!',140,770,{font:'400 38px "DM Sans"',color:C.cream,alpha:.9,align:'left'});
+  let x=140;
+  ['Clay diyas','Solar & LED lights','Gift a sapling'].forEach((l,i)=>{x+=chip(x,812,i,l,26)+18;});
+  // brand lock-up
+  drawLogo(logoCream,140,975,128);
+  ctx.fillStyle=rgba(C.cream,.35);ctx.fillRect(296,945,2,60);
+  text('thegreensolve.com',322,968,{font:'500 30px "DM Sans"',color:C.cream,align:'left'});
+  text('#GreenDhanteras',322,1004,{font:'700 24px "DM Sans"',color:C.lime,align:'left',ls:1});
+}
+
+/* ---------------- 1080 x 1080 ---------------- */
+function square(){
+  const sg=sky();
+  glow(540,800,560,C.lime,.1);
+  moon(930,290);
+  hillPath(800,50,1.6,.5);ctx.fillStyle=C.hill1;ctx.fill();
+  [[120,250,.2],[270,200,1.9],[960,230,3.1]].forEach(([x,h,o])=>turbine(x,hillY(x,800,50,1.6,.5)+6,h,T,o));
+  hillPath(880,35,1.2,2.2);ctx.fillStyle=C.hill2;ctx.fill();
+  solarRow(700,hillY(760,880,35,1.2,2.2)+26,3,T);
+  hillPath(950,18,1,0);ctx.fillStyle=C.hill3;ctx.fill();
+  // kalash with sapling, coins turning green
+  glow(540,760,300,C.lime,.18);
+  pot(540,880,.58);
+  ctx.save();ctx.translate(540,780);ctx.scale(.62,.62);sapling(0,0,280,T,[1,1,1]);ctx.restore();
+  coin(330,690,30,.3,.1);coin(745,650,30,1.2,.55);coin(420,600,26,2.1,.9);
+  flies(14,80,1000,560,900,9);
+  glow(540,990,480,'#FFD27A',.07);
+  [140,310,770,940].forEach((x,i)=>diya(x-22,972,.56,1,T+i,i+2));
+  toran(T,1,0,false);
+  text('THEGREENSOLVE WISHES YOU',540,262,{font:'500 24px "DM Sans"',color:C.cream,alpha:.8,ls:7});
+  text('शुभ धनतेरस',540,360,{font:'400 92px "Tiro Devanagari Hindi"',color:C.cream});
+  text('Green is the new gold.',540,462,{font:'700 84px "Space Grotesk"',color:C.lime});
+  text('Invest in wealth that grows.',540,522,{font:'400 34px "DM Sans"',color:C.cream,alpha:.9});
+  // brand bar
+  ctx.fillStyle=C.cream;ctx.fillRect(0,1012,W,68);
+  drawLogo(logoTeal,60,1046,64);
+  text('Happy Dhanteras',150,1057,{font:'700 30px "Space Grotesk"',color:C.teal,align:'left'});
+  text('thegreensolve.com',1020,1057,{font:'500 28px "DM Sans"',color:C.teal,align:'right'});
+}
+
+(async()=>{
+  await Promise.all([
+    document.fonts.load('400 100px "Tiro Devanagari Hindi"','शुभ धनतेरस'),
+    document.fonts.load('700 100px "Space Grotesk"'),
+    document.fonts.load('400 30px "DM Sans"'),document.fonts.load('500 30px "DM Sans"'),document.fonts.load('700 30px "DM Sans"'),
+    logoCream.decode().catch(()=>{}),logoTeal.decode().catch(()=>{})
+  ]);
+  SIZE==='square'?square():landscape();
+  window.__png=()=>cv.toDataURL('image/png').split(',')[1];
+  window.__ready=true;
+})();
+</script>
+</body>
+</html>

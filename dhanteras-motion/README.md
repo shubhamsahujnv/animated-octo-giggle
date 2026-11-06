@@ -12,9 +12,16 @@
 | 13.8–17.6 s | A leaf and marigold rangoli blooms around a diya: "Invest in wealth that grows." |
 | 17.6–22 s | Cream wipe to the end card: TGS logo, "Wishing you a prosperous & sustainable Dhanteras", thegreensolve.com |
 
+## Banners
+- `banner-landscape-1920x1080.png`: 16:9, for LinkedIn, X, YouTube, website hero or email header
+- `banner-square-1080x1080.png`: 1:1, for an Instagram or Facebook feed post
+
+Both are drawn by `banner.html` (`?size=landscape` or `?size=square`) with the same drawing kit as the video (`lib.js`).
+
 ## Rebuild
 ```bash
 python3 make_audio.py   # synthesised soundtrack -> assets/soundtrack.wav
 node render.js          # renders index.html frame-by-frame -> dhanteras-tgs.mp4
+node render.js --banners  # -> banner-*.png
 ```
 To preview live, serve the folder (for example with `python3 -m http.server`) and open `index.html`. Add `?t=12` to freeze on one moment.
