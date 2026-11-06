@@ -174,11 +174,14 @@ function story(){
   text('Green is the',540,705,{font:'700 124px "Space Grotesk"',color:C.lime});
   text('new gold.',540,830,{font:'700 124px "Space Grotesk"',color:C.lime});
   text('Invest in wealth that grows.',540,912,{font:'400 42px "DM Sans"',color:C.cream,alpha:.9});
-  // brand bar
-  ctx.fillStyle=C.cream;ctx.fillRect(0,1790,W,130);
-  drawLogo(logoTeal,70,1855,96);
-  text('Happy Dhanteras',196,1868,{font:'700 36px "Space Grotesk"',color:C.teal,align:'left'});
-  text('thegreensolve.com',1010,1868,{font:'500 32px "DM Sans"',color:C.teal,align:'right'});
+  // brand lock-up on the dark ground (same as the landscape banner), centred
+  ctx.save();ctx.font='500 32px "DM Sans"';const tw=ctx.measureText('thegreensolve.com').width;ctx.restore();
+  const lw=118, gx=(W-(lw+28+2+28+tw))/2, cy=1838;
+  drawLogo(logoCream,gx,cy,lw);
+  ctx.fillStyle=rgba(C.cream,.35);ctx.fillRect(gx+lw+28,cy-32,2,64);
+  const tx=gx+lw+58;
+  text('thegreensolve.com',tx,cy-3,{font:'500 32px "DM Sans"',color:C.cream,align:'left'});
+  text('#GreenDhanteras',tx,cy+33,{font:'700 25px "DM Sans"',color:C.lime,align:'left',ls:1});
 }
 
 (async()=>{
