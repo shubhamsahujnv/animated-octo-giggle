@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TGS Diwali Story Banner</title>
+<style>
+  @font-face { font-family: 'Space Grotesk'; font-weight: 700; src: url(../fonts/SpaceGrotesk-700.ttf); }
+  @font-face { font-family: 'DM Sans'; font-weight: 400; src: url(../fonts/DMSans-400.ttf); }
+  @font-face { font-family: 'IBM Plex Mono'; font-weight: 600; src: url(../fonts/IBMPlexMono-600.ttf); }
+  :root { --deep: #02403D; --night: #01302E; --lime: #E2FF4D; --ink-dark: #F7F4EE; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; font-family: 'DM Sans', sans-serif;
+    background: radial-gradient(ellipse 900px 1100px at 50% 50%, #0A4E4A 0%, #063f3c 38%, var(--night) 75%); }
+  .abs { position: absolute; }
+  .center { left: 0; width: 1080px; text-align: center; }
+  .pill { font-family: 'IBM Plex Mono', monospace; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+          background: var(--lime); color: var(--deep); border-radius: 999px; padding: 14px 30px; font-size: 28px; white-space: nowrap; display: inline-block; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 112px; line-height: 1.02; letter-spacing: -0.02em; color: var(--ink-dark); }
+  h1 em { font-style: normal; color: var(--lime); }
+  .sub { font-size: 38px; line-height: 1.4; color: #D8E3DF; }
+  svg#art { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; }
+</style>
+</head>
+<body>
+  <svg id="art" viewBox="0 0 1080 1920"></svg>
+  <div class="abs center" style="top:318px;"><span class="pill">Happy Diwali · 2026</span></div>
+  <h1 class="abs center" style="top:400px;">Light diyas,<br><em>not emissions.</em></h1>
+  <p class="abs center sub" style="top:1330px;">Less smoke, more light.<br>Wishing you a bright, clean and green Diwali.</p>
+  <div class="abs center" style="top:1478px; display:flex; justify-content:center; align-items:center; gap:24px;">
+    <img src="../assets/tgs-logo-cream.png" style="width:96px; height:72px;">
+    <div style="width:1px; height:50px; background:#2A6F69"></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:24px; letter-spacing:0.1em; color:var(--lime); text-transform:uppercase;">thegreensolve.com</div>
+  </div>
+<script src="art.js"></script>
+<script>
+  const art = document.getElementById('art');
+  artDefs(art);
+  let s = 11; const r = () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296;
+  for (let i = 0; i < 80; i++) gEl(art, `<circle cx="${r() * 1080}" cy="${r() * 1900}" r="${1 + r() * 2}" fill="${r() > 0.75 ? '#E2FF4D' : '#F7F4EE'}" opacity="${0.18 + r() * 0.4}"/>`);
+  poseLights(HangingLights(art, [70, 180, 290, 790, 900, 1010], [300, 220, 260, 250, 200, 290]), 0.9, 1);
+  const t = 2.0;
+  poseGlobe(Globe(art, 210), { x: 540, y: 935, t, draw: 1, clear: 1, orbit: 1 });
+  gEl(art, `<line x1="150" y1="1251" x2="930" y2="1251" stroke="#2A6F69" stroke-width="2"/>`);
+  poseDiya(Diya(art), { x: 540, y: 1250, s: 0.82, t, seed: 1.3, lit: 1 });
+  // a marigold sprig either side
+  const right = Plant(art); posePlant(right, { x: 905, y: 1251, s: 0.62, t, grow: 1, leaf: 1, bloom: 1 }); right.ground.setAttribute('opacity', 0);
+  const lw = gEl(art, ''); lw.setAttribute('transform', 'translate(175 1251) scale(-1 1)');
+  const left = Plant(lw); posePlant(left, { x: 0, y: 0, s: 0.5, t: 3.1, grow: 1, leaf: 1, bloom: 1 }); left.ground.setAttribute('opacity', 0);
+  window.ready = Promise.all([document.fonts.ready, ...[...document.images].map(i => i.complete ? 1 : new Promise(r => { i.onload = r; i.onerror = r; }))]);
+</script>
+</body>
+</html>
