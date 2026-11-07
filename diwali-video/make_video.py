@@ -20,11 +20,41 @@ from multiprocessing import Pool
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from story import BRAND, CAPTIONS, CARD
+from story import BRAND, CAPTIONS, CARD, STORY_CAPTIONS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-W, H, FPS = 1920, 1080, 30
+FPS = 30
+WW, SH = 1920, 1080  # the town "world" strip is always authored at 1920x1080
+W, H = 1920, 1080    # output canvas (changed by configure())
+OY = 0               # where the town strip sits vertically inside the canvas
+VERTICAL = False
 DURATION = 55.0
+STORY_DURATION = 15.0
+
+# per-format layout. "reel" = the full story in 9:16, "story" = a 15 s Instagram Story greeting
+LAYOUTS = {
+    "landscape": dict(size=(1920, 1080), oy=0, cap_y=36, cap_w=1560, cap_size=46, quote_size=54,
+                      rc=(960, 600), fg_panel_x=1560, pots=[1085, 1255],
+                      card=dict(center=(960, 700), swags=3, title_size=210, title_w=1800, title_y=370,
+                                sub_size=48, sub_w=1700, sub_y=540, logo_y=655, wish_w=1700, wish_y=815,
+                                diyas=11, diya_y=1035, diya_margin=110)),
+    "vertical": dict(size=(1080, 1920), oy=700, cap_y=330, cap_w=900, cap_size=52, quote_size=60,
+                     rc=(540, 1010), fg_panel_x=790, pots=[1100, 1260],
+                     card=dict(center=(540, 1150), swags=2, title_size=250, title_w=900, title_y=640,
+                               sub_size=54, sub_w=880, sub_y=930, logo_y=1175, wish_w=700, wish_y=1360,
+                               diyas=6, diya_y=1660, diya_margin=110)),
+}
+L = LAYOUTS["landscape"]
+RC = L["rc"]
+
+
+def configure(fmt):
+    global W, H, OY, VERTICAL, L, RC
+    L = LAYOUTS["landscape" if fmt == "landscape" else "vertical"]
+    W, H = L["size"]
+    OY = L["oy"]
+    VERTICAL = fmt != "landscape"
+    RC = L["rc"]
 SS = 3  # supersampling factor for anti-aliased vector artwork
 
 
@@ -128,7 +158,8 @@ def noise_tex(w, h, cx, cy, seed, blur):
     return np.asarray(im, np.float32) / 255.0
 
 
-def vgrad(stops, h=H):
+def vgrad(stops, h=None):
+    h = h or H
     pos = np.linspace(0, 1, h)
     out = np.zeros((h, 1, 3), np.float32)
     for c in range(3):
@@ -206,8 +237,17 @@ T_CARD = 44.6
 XF = 0.8  # crossfade length
 
 
+CAM_KEYS_V = [(0, 520), (8.0, 420), (10.2, 70), (18.4, 70), (26.4, 640), (35.6, 70), (36.6, 70),
+              (44.6, 330), (60, 330)]
+
+
 def cam(t):
-    return CAM_MAX * smooth(t / 45.0)
+    if not VERTICAL:
+        return CAM_MAX * smooth(t / 45.0)
+    for (t0, c0), (t1, c1) in zip(CAM_KEYS_V, CAM_KEYS_V[1:]):
+        if t <= t1:
+            return lerp(c0, c1, ramp(t, t0, t1))
+    return CAM_KEYS_V[-1][1]
 
 
 def clarity(t):
@@ -300,17 +340,26 @@ def build_town():
     rng = np.random.default_rng(11)
 
     # ---- sky ---------------------------------------------------------------
-    R["sky_smog"] = vgrad([(0, (46, 42, 52)), (0.45, (82, 74, 76)), (0.72, (122, 106, 96)), (1, (128, 110, 98))])
-    R["sky_clear"] = vgrad([(0, (5, 8, 32)), (0.4, (18, 18, 62)), (0.62, (52, 30, 82)),
-                            (0.76, (118, 56, 84)), (1, (140, 70, 70))])
-    tex = 0.6 * noise_tex(2 * W, 900, 26, 7, 1, 40) + 0.4 * noise_tex(2 * W, 900, 70, 18, 2, 14)
+    def sky(stops, top):
+        # stops are authored for the 1080-tall strip; extend upwards for tall canvases
+        st = [((OY + f * SH) / H, c) for f, c in stops]
+        if OY:
+            st = [(0.0, top)] + st
+        return vgrad(st)
+    R["sky_smog"] = sky([(0, (46, 42, 52)), (0.45, (82, 74, 76)), (0.72, (122, 106, 96)), (1, (128, 110, 98))],
+                        (34, 31, 40))
+    R["sky_clear"] = sky([(0, (5, 8, 32)), (0.4, (18, 18, 62)), (0.62, (52, 30, 82)),
+                          (0.76, (118, 56, 84)), (1, (140, 70, 70))], (3, 4, 20))
+    sh = OY + 900
+    tex = 0.6 * noise_tex(2 * WW, sh, 26, 7 + OY // 130, 1, 40) + \
+        0.4 * noise_tex(2 * WW, sh, 70, 18 + OY // 50, 2, 14)
     R["smog_tex"] = np.clip((tex - 0.22) / 0.6, 0, 1).astype(np.float32)
     R["haze_v"] = np.clip(np.linspace(0, 1, 450) / 0.45, 0, 1)[:, None, None].astype(np.float32) ** 1.5
-    R["smog_w"] = (0.35 + 0.65 * np.linspace(0, 1, 900) ** 0.8)[:, None].astype(np.float32)
+    R["smog_w"] = (0.35 + 0.65 * np.linspace(0, 1, sh) ** 0.8)[:, None].astype(np.float32)
 
-    n = 420
+    n = int(420 * W * (OY + 700) / (1920 * 700))
     R["stars"] = dict(
-        x=rng.uniform(0, W, n), y=rng.uniform(0, 700, n) ** 1.0,
+        x=rng.uniform(0, W - 2, n), y=rng.uniform(0, OY + 700, n),
         b=rng.uniform(0.25, 1.0, n) ** 1.6, ph=rng.uniform(0, 6.28, n), fr=rng.uniform(1.0, 3.5, n),
         big=rng.random(n) < 0.09)
 
@@ -329,10 +378,12 @@ def build_town():
     R["bursts"] = [(1.0, 420, 300, (255, 120, 60)), (2.5, 1350, 230, (255, 200, 90)),
                    (3.9, 860, 360, (255, 90, 90)), (5.3, 1650, 330, (255, 170, 70)),
                    (6.6, 300, 220, (240, 220, 160)), (7.8, 1100, 270, (255, 130, 80))]
+    if VERTICAL:  # squeeze the fireworks into the narrow frame, higher up in the tall sky
+        R["bursts"] = [(bt, 120 + (bx - 300) / 1400 * 840, by + OY * 0.55, c) for bt, bx, by, c in R["bursts"]]
     R["burst_dirs"] = [(rng.uniform(0, 6.283, 40), rng.uniform(150, 260, 40)) for _ in R["bursts"]]
 
     # ---- far skyline -------------------------------------------------------
-    fw = W + 80
+    fw = WW + 80
     fy0 = 470
     blocks = []
     x = -20
@@ -396,7 +447,7 @@ def build_town():
               (1156, 176, 742, "flat", False), (1326, 220, 682, "flat", False), (1540, 150, 735, "tree", False),
               (1688, 236, 664, "flat", True), (1920, 130, 712, "flat", False)]
     R["houses"] = houses
-    mw, my0 = W + 120, 540
+    mw, my0 = WW + 120, 540
     mid_win_a, mid_win_b = [], []
 
     def mid(d, s):
@@ -509,26 +560,27 @@ def build_town():
     R["fg_panel"] = panel_sprite(250, 92, 26)
 
     # ---- foreground ledge ----------------------------------------------------
-    lw = W + 160
+    lw = WW + 160
+    lh = 210 + (H - OY - SH)  # tall canvases: the wall continues to the bottom of the frame
 
     def ledge(d, s):
-        d.rectangle([0, 18 * s, lw * s, 210 * s], fill=FG_COL)
+        d.rectangle([0, 18 * s, lw * s, lh * s], fill=FG_COL)
         d.rectangle([0, 0, lw * s, 18 * s], fill=(92, 56, 48, 255))
         d.rectangle([0, 0, lw * s, 3 * s], fill=(128, 82, 66, 255))
         d.rectangle([0, 18 * s, lw * s, 26 * s], fill=(30, 17, 21, 255))
         for px in range(-40, lw, 380):
-            d.rectangle([px * s, 26 * s, (px + 60) * s, 210 * s], fill=(48, 29, 33, 255))
+            d.rectangle([px * s, 26 * s, (px + 60) * s, lh * s], fill=(48, 29, 33, 255))
         # jali (lattice) panels between pillars
         for px in range(-40, lw, 380):
             for i in range(6):
                 cx = px + 95 + i * 42
-                for j in range(2):
+                for j in range(int((lh - 40) / 60)):
                     cy = 70 + j * 60
                     d.ellipse([(cx - 13) * s, (cy - 20) * s, (cx + 13) * s, (cy + 20) * s], fill=(30, 18, 22, 255))
-    R["ledge"] = vector_layer(lw, 210, ledge, ss=2)
+    R["ledge"] = vector_layer(lw, lh, ledge, ss=2)
 
     ledge_diyas = []
-    pots = [1085, 1255]
+    pots = L["pots"]
     for x in range(70, int(lw) - 20, 96):
         if abs(x - MAIN_DIYA[0]) < 60 or any(abs(x - p) < 70 for p in pots):
             continue
@@ -620,13 +672,18 @@ def build_town():
 def build_common():
     R["flames"] = build_flames()
     R["diyas"] = {sc: make_diya(sc) for sc in (1.0, 0.55, 1.25)}
-    cap_font = font("PlayfairDisplay.ttf", 46, "Regular")
-    quote_font = font("PlayfairDisplay-Italic.ttf", 54, "Medium Italic")
-    R["captions"] = []
-    for (t0, t1, text, style) in CAPTIONS:
-        f = quote_font if style == "quote" else cap_font
-        col = (255, 214, 130) if style == "quote" else (255, 244, 228)
-        R["captions"].append((t0, t1, text_sprite(text, f, col, maxw=1560, shadow=True)))
+    cap_font = font("PlayfairDisplay.ttf", L["cap_size"], "Regular")
+    quote_font = font("PlayfairDisplay-Italic.ttf", L["quote_size"], "Medium Italic")
+
+    def caps(lst):
+        out = []
+        for (t0, t1, text, style) in lst:
+            f = quote_font if style == "quote" else cap_font
+            col = (255, 214, 130) if style == "quote" else (255, 244, 228)
+            out.append((t0, t1, text_sprite(text, f, col, maxw=L["cap_w"], shadow=True)))
+        return out
+    R["captions"] = caps(CAPTIONS)
+    R["story_captions"] = caps(STORY_CAPTIONS)
 
 
 def wrap(text, f, maxw):
@@ -700,7 +757,6 @@ def draw_tracked(d, x, y, s, f, tracking):
 # --------------------------------------------------------------------------
 # rangoli close-up
 # --------------------------------------------------------------------------
-RC = (W // 2, 600)
 
 
 def build_rangoli():
@@ -842,7 +898,8 @@ def build_rangoli():
 def build_card():
     rng = np.random.default_rng(3)
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
-    d = np.sqrt(((xx - W / 2) / 1100) ** 2 + ((yy - 700) / 800) ** 2)
+    C = L["card"]
+    d = np.sqrt(((xx - C["center"][0]) / 1100) ** 2 + ((yy - C["center"][1]) / (800 if not VERTICAL else 1100)) ** 2)
     bg = np.zeros((H, W, 3), np.float32)
     for ch, (a, b) in enumerate(((84, 10), (30, 6), (52, 26))):
         bg[..., ch] = lerp(a, b, np.clip(d, 0, 1) ** 0.9)
@@ -850,7 +907,7 @@ def build_card():
 
     # marigold toran (garland) across the top
     def toran(dr, s):
-        swags = 3
+        swags = C["swags"]
         for i in range(swags):
             x0 = -30 + i * (W + 60) / swags
             x1 = -30 + (i + 1) * (W + 60) / swags
@@ -884,14 +941,15 @@ def build_card():
                        col=[(255, 190, 90), (255, 140, 60), (150, 230, 140), (255, 225, 160)][rng.integers(0, 4)],
                        k=rng.uniform(0.12, 0.3), ph=rng.uniform(0, 6.28)) for _ in range(48)]
 
-    title = text_sprite(CARD["title"], font("GreatVibes-Regular.ttf", 210), (255, 210, 120), maxw=1800,
+    title = text_sprite(CARD["title"], font("GreatVibes-Regular.ttf", C["title_size"]), (255, 210, 120),
+                        maxw=C["title_w"], spacing=-60,
                         shadow=False, glow=((255, 140, 40), 16, 0.75),
                         gradient=((255, 236, 170), (232, 150, 40)))
     R["card_title"] = title
-    R["card_sub"] = text_sprite(CARD["subtitle"], font("PlayfairDisplay-Italic.ttf", 48, "Italic"),
-                                (255, 238, 215), maxw=1700)
-    R["card_wish"] = text_sprite(CARD["wish"], font("Poppins-Regular.ttf", 30), (245, 215, 175), maxw=1700,
-                                 tracking=2)
+    R["card_sub"] = text_sprite(CARD["subtitle"], font("PlayfairDisplay-Italic.ttf", C["sub_size"], "Italic"),
+                                (255, 238, 215), maxw=C["sub_w"])
+    R["card_wish"] = text_sprite(CARD["wish"], font("Poppins-Regular.ttf", 30 if not VERTICAL else 32),
+                                 (245, 215, 175), maxw=C["wish_w"], tracking=2, spacing=10)
 
     logo_path = os.path.join(HERE, "logo.png")
     if os.path.exists(logo_path):
@@ -971,8 +1029,11 @@ def render_town(t):
     c = clarity(t)
     cm = cam(t)
     sky = R["sky_smog"] * (1 - c) + R["sky_clear"] * c
-    base = np.broadcast_to(sky, (H, W, 3)).copy()
-    light = np.zeros((H, W, 3), np.float32)
+    canvas = np.broadcast_to(sky, (H, W, 3)).copy()
+    glow = np.zeros((H, W, 3), np.float32)
+    # the town strip (authored at 1920x1080) is drawn through views into the canvas
+    base, light = canvas[OY:OY + SH], glow[OY:OY + SH]
+    sx = W / 1920  # horizontal scale for sky events
 
     # stars
     st = R["stars"]
@@ -984,9 +1045,9 @@ def render_town(t):
         ys = st["y"].astype(int)
         for dy in (0, 1):
             for dx in (0, 1):
-                light[ys + dy, xs + dx] += (b * (0.8 if dx or dy else 1.0))[:, None] * np.array([0.9, 0.95, 1.0])
+                glow[ys + dy, xs + dx] += (b * (0.8 if dx or dy else 1.0))[:, None] * np.array([0.9, 0.95, 1.0])
         for i in np.nonzero(st["big"])[0]:
-            add_glow(light, st["x"][i], st["y"][i], 7, (200, 215, 255), b[i] / 255 * 0.9)
+            add_glow(glow, st["x"][i], st["y"][i], 7, (200, 215, 255), b[i] / 255 * 0.9)
 
     # shooting star
     if 41.0 < t < 42.0:
@@ -994,8 +1055,8 @@ def render_town(t):
         for j in range(24):
             uu = u - j * 0.012
             if 0 <= uu <= 1:
-                x, y = lerp(1650, 1050, uu), lerp(90, 330, uu)
-                add_glow(light, x, y, 6 if j else 10, (230, 235, 255), (1 - j / 24) * math.sin(math.pi * clamp(u)) * 1.2)
+                x, y = lerp(1650, 1050, uu) * sx, lerp(90, 330, uu) + OY * 0.5
+                add_glow(glow, x, y, 6 if j else 10, (230, 235, 255), (1 - j / 24) * math.sin(math.pi * clamp(u)) * 1.2)
 
     # firecrackers (only in the smoggy opening)
     for bi, (bt, bx, by, bcol) in enumerate(R["bursts"]):
@@ -1008,20 +1069,20 @@ def render_town(t):
                 px = bx + np.cos(angs) * spd * a2
                 py = by + np.sin(angs) * spd * a2 + 70 * a2 * a2
                 for k in range(len(px)):
-                    add_glow(light, px[k], py[k], 7, bcol, fade * (1 - tr * 6) * 0.9)
+                    add_glow(glow, px[k], py[k], 7, bcol, fade * (1 - tr * 6) * 0.9)
             if age < 0.12:
-                light += np.array(bcol, np.float32) * 0.07 * (1 - age / 0.12)
+                glow += np.array(bcol, np.float32) * 0.07 * (1 - age / 0.12)
         if 0.1 <= age < 7.0:
             pa = ramp(age, 0.1, 0.7) * (1 - ramp(age, 2.5, 7.0)) * 0.55
             idx = 0 if age < 1.2 else 1 if age < 3.0 else 2
             p = R["puffs"][idx]
-            blend(base, p, bx - p.shape[1] / 2 + age * 12, by - p.shape[0] / 2 - age * 10, pa * (1 - c))
+            blend(canvas, p, bx - p.shape[1] / 2 + age * 12, by - p.shape[0] / 2 - age * 10, pa * (1 - c))
 
     # smog
-    off = int(t * 22) % W
+    off = int(t * 22) % WW
     tex = R["smog_tex"][:, off:off + W] * R["smog_w"]
     a = (tex * (1 - c) * 0.6)[..., None]
-    reg = base[:900]
+    reg = canvas[:OY + 900]
     reg *= 1 - a
     reg += np.array([118, 106, 100], np.float32) * a
 
@@ -1039,7 +1100,7 @@ def render_town(t):
     blend(base, R["mid_win_b"], mx, my0, 0.85 * ramp(t, 20, 26) + 0.1 * ramp(t, 36.5, 41))
 
     # haze in front of the town while the air is smoggy
-    hz = R["smog_tex"][450:900, (off + 400):(off + 400 + W)][..., None] * (1 - c) * 0.32 * R["haze_v"]
+    hz = R["smog_tex"][OY + 450:OY + 900, (off + 400):(off + 400 + W)][..., None] * (1 - c) * 0.32 * R["haze_v"]
     reg = base[450:900]
     reg *= 1 - hz
     reg += np.array([112, 100, 96], np.float32) * hz
@@ -1063,17 +1124,17 @@ def render_town(t):
             draw_diya(base, light, dx + mx, dy, 0.55, ramp(t, t_on, t_on + 0.35), t, i)
 
     # flush town lights now so foreground (Meera, ledge) occludes them
-    base += light
-    light[:] = 0
+    canvas += glow
+    glow[:] = 0
 
     # foreground
     fgx = -cm * K_FG
     panel_p = ramp(t, 18.3, 19.3)
     if panel_p > 0:
         sp = R["fg_panel"]
-        blend(base, sp, 1560 + fgx, LEDGE_Y - sp.shape[0] + 30 + (1 - panel_p) * 110)
+        blend(base, sp, L["fg_panel_x"] + fgx, LEDGE_Y - sp.shape[0] + 30 + (1 - panel_p) * 110)
         gl = math.exp(-((t - 19.5) / 0.3) ** 2)
-        add_glow(light, 1560 + fgx + 140, LEDGE_Y - 70, 60, (160, 210, 255), gl * 0.9)
+        add_glow(light, L["fg_panel_x"] + fgx + 140, LEDGE_Y - 70, 60, (160, 210, 255), gl * 0.9)
 
     mp = ramp(t, T_MEERA, T_MEERA + 1.4)
     lit = ramp(t, T_IGNITE, T_IGNITE + 0.6)
@@ -1083,7 +1144,7 @@ def render_town(t):
         blend(base, R["meera_rim"], mox + fgx + 3 + slide, moy - 1, mp * lit)
         blend(base, ms, mox + fgx + slide, moy, mp)
 
-    blend(base, R["ledge"], fgx, LEDGE_Y - 4)
+    blend(canvas, R["ledge"], fgx, OY + LEDGE_Y - 4)
 
     # pots + saplings
     pot_p = ramp(t, 22.0, 22.8)
@@ -1112,8 +1173,7 @@ def render_town(t):
         if t > t_on - 0.4:
             draw_diya(base, light, x + fgx, LEDGE_Y + 2, 1.0, ramp(t, t_on, t_on + 0.4), t, i + 7, glow_big=170)
 
-    out = base + light
-    return out
+    return canvas + glow
 
 
 def render_rangoli(t):
@@ -1138,7 +1198,7 @@ def render_rangoli(t):
     # sparkles that follow the drawing
     out = base + light
     # slow push-in
-    z = 1.0 + 0.07 * ramp(t, T_RANGOLI_IN, T_RANGOLI_OUT + XF)
+    z = (1.14 if VERTICAL else 1.0) + 0.07 * ramp(t, T_RANGOLI_IN, T_RANGOLI_OUT + XF)
     if z > 1.001:
         img = Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
         cw, ch = W / z, H / z
@@ -1150,10 +1210,11 @@ def render_rangoli(t):
     return out
 
 
-def render_card(t):
+def render_card(t, lt=None):
+    C = L["card"]
     base = R["card_bg"].copy()
     light = np.zeros((H, W, 3), np.float32)
-    lt = t - T_CARD
+    lt = t - T_CARD if lt is None else lt
     for b in R["bokeh"]:
         y = (b["y"] - b["sp"] * lt) % (H + 100) - 50
         x = b["x"] + 20 * math.sin(lt * 0.6 + b["ph"])
@@ -1163,11 +1224,12 @@ def render_card(t):
     blend(base, tor, 0, -230 + 230 * (1 - (1 - ramp(lt, 0.4, 2.0)) ** 2))
 
     # row of diyas along the bottom
-    n = 11
+    n = C["diyas"]
     for i in range(n):
-        x = 110 + i * (W - 220) / (n - 1)
-        on = ramp(lt, 0.8 + abs(i - n // 2) * 0.12, 1.2 + abs(i - n // 2) * 0.12)
-        draw_diya(base, light, x, 1035, 1.25, on, t, i * 3, glow_big=200)
+        x = C["diya_margin"] + i * (W - 2 * C["diya_margin"]) / (n - 1)
+        dc = abs(i - (n - 1) / 2)
+        on = ramp(lt, 0.8 + dc * 0.12, 1.2 + dc * 0.12)
+        draw_diya(base, light, x, C["diya_y"], 1.25, on, t, i * 3, glow_big=200)
 
     title = R["card_title"]
     tp = ramp(lt, 1.0, 2.8)
@@ -1175,31 +1237,56 @@ def render_card(t):
         wipe = title.copy()
         xs = np.linspace(0, 1, wipe.shape[1])[None, :]
         wipe[..., 3] *= np.clip((tp * 1.25 - xs) / 0.25, 0, 1)
-        blend(base, wipe, (W - title.shape[1]) / 2, 370 - title.shape[0] / 2)
+        blend(base, wipe, (W - title.shape[1]) / 2, C["title_y"] - title.shape[0] / 2)
     sub = R["card_sub"]
-    blend(base, sub, (W - sub.shape[1]) / 2, 540 + (1 - ramp(lt, 2.6, 3.6)) * 20, ramp(lt, 2.6, 3.6))
+    blend(base, sub, (W - sub.shape[1]) / 2, C["sub_y"] + (1 - ramp(lt, 2.6, 3.6)) * 20, ramp(lt, 2.6, 3.6))
 
     logo = R["card_logo"]
     lp = ramp(lt, 3.8, 4.8)
-    ly = 655 + (1 - lp) * 24
+    ly = C["logo_y"] + (1 - lp) * 24
     lx = (W - logo.shape[1]) / 2
     blend(base, logo, lx, ly, lp)
     if R["logo_flame"] is not None and lp > 0:
         fx, fy = R["logo_flame"]
         add_glow(light, lx + fx, ly + fy, 80, (255, 170, 70), 0.45 * lp * (0.9 + 0.1 * math.sin(t * 9)))
     wish = R["card_wish"]
-    blend(base, wish, (W - wish.shape[1]) / 2, 815 + (1 - ramp(lt, 4.8, 5.8)) * 16, ramp(lt, 4.8, 5.8))
+    blend(base, wish, (W - wish.shape[1]) / 2, C["wish_y"] + (1 - ramp(lt, 4.8, 5.8)) * 16, ramp(lt, 4.8, 5.8))
     return base + light
 
 
-def draw_captions(out, t):
-    for (t0, t1, spr) in R["captions"]:
+def draw_captions(out, t, caps):
+    for (t0, t1, spr) in caps:
         if t0 - 0.1 < t < t1 + 0.1:
             k = window(t, t0, t1, 0.6, 0.6)
-            blend(out, spr, (W - spr.shape[1]) / 2, 36 + (1 - ramp(t, t0, t0 + 0.6)) * 10, k)
+            blend(out, spr, (W - spr.shape[1]) / 2, L["cap_y"] + (1 - ramp(t, t0, t0 + 0.6)) * 10, k)
 
 
-GRAIN = None
+def finish(out, i, t, dur, caps):
+    out = np.clip(out, 0, 255)
+    draw_captions(out, t, caps)
+    out *= ramp(t, 0, 1.0) * (1 - ramp(t, dur - 1.8, dur - 0.1))
+    # gentle grain + dither to avoid banding in the dark gradients
+    rng = np.random.default_rng(i)
+    out += rng.normal(0, 1.6, (H, W, 1)).astype(np.float32)
+    return np.clip(out, 0, 255).astype(np.uint8).tobytes()
+
+
+# Instagram Story (15 s): the rangoli blooms around a diya, then the greeting card.
+STORY_RANGOLI = (26.9, 1.3)  # rangoli time = 26.9 + t * 1.3
+STORY_CARD_AT = 5.8
+
+
+def render_story(i):
+    t = i / FPS
+    tr = STORY_RANGOLI[0] + t * STORY_RANGOLI[1]
+    if t < STORY_CARD_AT:
+        out = render_rangoli(tr)
+    elif t < STORY_CARD_AT + XF:
+        k = ramp(t, STORY_CARD_AT, STORY_CARD_AT + XF)
+        out = render_rangoli(tr) * (1 - k) + render_card(t, lt=t - STORY_CARD_AT) * k
+    else:
+        out = render_card(t, lt=t - STORY_CARD_AT)
+    return finish(out, i, t, STORY_DURATION, R["story_captions"])
 
 
 def render(i):
@@ -1221,15 +1308,7 @@ def render(i):
         out = render_town(t) * (1 - k) + render_card(t) * k
     else:
         out = render_card(t)
-
-    out = np.clip(out, 0, 255)
-    draw_captions(out, t)
-    fade = ramp(t, 0, 1.0) * (1 - ramp(t, DURATION - 1.8, DURATION - 0.1))
-    out *= fade
-    # gentle grain + dither to avoid banding in the dark gradients
-    rng = np.random.default_rng(i)
-    out += rng.normal(0, 1.6, (H, W, 1)).astype(np.float32)
-    return np.clip(out, 0, 255).astype(np.uint8).tobytes()
+    return finish(out, i, t, DURATION, R["captions"])
 
 
 def build_all():
@@ -1242,35 +1321,55 @@ def build_all():
 # --------------------------------------------------------------------------
 # main
 # --------------------------------------------------------------------------
+OUTPUTS = {
+    "landscape": ("greensolve_diwali.mp4", DURATION),
+    "reel": ("greensolve_diwali_reel.mp4", DURATION),
+    "story": ("greensolve_diwali_story.mp4", STORY_DURATION),
+}
+
+
+def arg(name, default=None):
+    return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
+
+
 def main():
-    preview = "--preview" in sys.argv
-    print("building artwork…", flush=True)
+    fmt = arg("--format", "landscape")
+    if fmt not in OUTPUTS:
+        sys.exit(f"--format must be one of {', '.join(OUTPUTS)}")
+    configure(fmt)
+    frame_fn = render_story if fmt == "story" else render
+    name, dur = OUTPUTS[fmt]
+    print(f"[{fmt}] {W}x{H}, {dur:.0f}s — building artwork…", flush=True)
     build_all()
-    if preview:
+
+    if "--preview" in sys.argv:
         os.makedirs(os.path.join(HERE, "preview"), exist_ok=True)
-        times = [float(a) for a in sys.argv[sys.argv.index("--preview") + 1:]] or \
-            [3.0, 14.5, 24.0, 33.5, 43.0, 51.5]
+        times = [float(a) for a in sys.argv[sys.argv.index("--preview") + 1:] if not a.startswith("-")] or \
+            ([1.5, 4.0, 7.5, 10.5, 14.0] if fmt == "story" else [3.0, 14.5, 24.0, 33.5, 43.0, 51.5])
         for tt in times:
-            buf = render(int(tt * FPS))
+            buf = frame_fn(int(tt * FPS))
             im = Image.frombytes("RGB", (W, H), buf)
-            p = os.path.join(HERE, "preview", f"frame_{tt:05.1f}.jpg")
+            p = os.path.join(HERE, "preview", f"{fmt}_{tt:05.1f}.jpg")
             im.save(p, quality=90)
             print("wrote", p)
         return
 
-    from soundtrack import make_soundtrack
-    wav = os.path.join(HERE, "soundtrack.wav")
+    import soundtrack
+    wav = os.path.join(HERE, f"soundtrack_{fmt}.wav")
     print("composing soundtrack…", flush=True)
-    make_soundtrack(wav, DURATION)
+    if fmt == "story":
+        soundtrack.make_story_soundtrack(wav, dur)
+    else:
+        soundtrack.make_soundtrack(wav, dur)
 
-    out = os.path.join(HERE, "greensolve_diwali.mp4")
-    n = int(DURATION * FPS)
+    out = os.path.join(HERE, name)
+    n = int(dur * FPS)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
            "-r", str(FPS), "-i", "-", "-i", wav, "-c:v", "libx264", "-preset", "slow", "-crf", "19",
            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     with Pool(os.cpu_count()) as pool:
-        for k, buf in enumerate(pool.imap(render, range(n), chunksize=4)):
+        for k, buf in enumerate(pool.imap(frame_fn, range(n), chunksize=4)):
             proc.stdin.write(buf)
             if k % 60 == 0:
                 print(f"  frame {k}/{n}", flush=True)

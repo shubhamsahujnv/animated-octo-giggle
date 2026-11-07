@@ -199,6 +199,10 @@ def make_soundtrack(path, duration):
         m.add(santoor(hz(nm), 5.0, seed=950 + j), 50.6 + j * 0.06, 0.12, -0.5 + 0.2 * j)
     m.add(bell(hz("A5"), 5.0, tau=2.2), 50.9, 0.06, 0.3)
 
+    master(m, T, path, duration)
+
+
+def master(m, T, path, duration):
     # ---- reverb (stereo, FFT convolution) --------------------------------
     rl = int(SR * 2.6)
     tr = np.arange(rl) / SR
@@ -224,6 +228,67 @@ def make_soundtrack(path, duration):
         w.setsampwidth(2)
         w.setframerate(SR)
         w.writeframes(pcm.tobytes())
+
+
+def drone_and_pad(m, T, duration, rangoli=False):
+    pattern = [("A2", 0.0), ("D3", 1.05), ("D3", 2.1), ("D2", 3.15)]
+    cache = {}
+    t0, cyc = 0.2, 0
+    while t0 < duration:
+        for (note, off) in pattern:
+            key = (note, cyc % 3)
+            if key not in cache:
+                s = ks(hz(note), 5.0, 0.9993, seed=hash(key) % 1000, bright=0.95)
+                cache[key] = np.tanh(2.2 * s) / np.tanh(2.2)
+            m.add(cache[key], t0 + off, 0.075, pan=-0.35 if note != "D2" else 0.2)
+        t0 += 4.2
+        cyc += 1
+    end = duration
+
+    def pad_voice(freq, pts, amp, pan):
+        env = np.interp(T, [p[0] for p in pts], [p[1] for p in pts])
+        ph = 2 * np.pi * freq * np.cumsum(1 + 0.0025 * np.sin(2 * np.pi * 0.21 * T + freq)) / SR
+        m.add((np.sin(ph) + 0.25 * np.sin(2 * ph) + 0.08 * np.sin(3 * ph)) * env, 0, amp, pan)
+    pad_voice(hz("D3"), [(0, 0), (1.5, 1), (end - 2, 1), (end, 0)], 0.05, -0.2)
+    pad_voice(hz("A3"), [(0, 0), (2, 0.8), (end - 2, 1), (end, 0)], 0.04, 0.25)
+    pad_voice(hz("F#4"), [(0, 0), (5, 0), (7, 0.9), (end - 2, 1), (end, 0)], 0.026, 0.3)
+
+
+def make_story_soundtrack(path, duration, rangoli_map=(26.9, 1.3), card_at=5.8):
+    """15 s Instagram Story: rangoli sparkles, then the greeting-card cadence."""
+    m = Mix(duration)
+    T = np.arange(m.n) / SR
+    drone_and_pad(m, T, duration)
+    r0, rs = rangoli_map
+    # one rising sparkle per rangoli ring, timed to the drawing
+    for k, nm in enumerate(["D5", "E5", "F#5", "A5", "B5", "D6", "E6", "F#6", "A6"]):
+        tt = (27.3 + 0.75 * k - r0) / rs
+        m.add(bell(hz(nm), 2.5, ratio=2.0, idx=1.0, tau=0.9), tt, 0.06, -0.6 + 0.15 * k)
+    mel = [("A4", 0.4), ("B4", 1.4), ("D5", 2.4), ("E5", 3.2), ("F#5", 4.0), ("E5", 4.6), ("D5", 5.2)]
+    c = card_at
+    mel += [("F#5", c + 2.6), ("A5", c + 3.0), ("B5", c + 3.4), ("A5", c + 4.2), ("F#5", c + 4.6),
+            ("E5", c + 5.0), ("D5", c + 5.8)]
+    for i, (nm, tt) in enumerate(mel):
+        m.add(santoor(hz(nm), 3.0, seed=i), tt, 0.20, pan=0.15 * np.sin(i))
+        if tt > c:
+            m.add(santoor(hz(nm) / 2, 3.0, seed=i + 500), tt, 0.09, pan=-0.2)
+    for j, nm in enumerate(["D4", "F#4", "A4", "D5", "E5"]):
+        m.add(santoor(hz(nm), 4.0, seed=900 + j), c + 1.0 + j * 0.045, 0.12, -0.4 + 0.2 * j)
+    m.add(bell(hz("D6"), 5.0, tau=2.0), c + 1.4, 0.08, 0.0)
+    for j, nm in enumerate(["D3", "A3", "D4", "F#4", "A4", "D5"]):
+        m.add(santoor(hz(nm), 5.0, seed=950 + j), c + 6.6 + j * 0.06, 0.12, -0.5 + 0.2 * j)
+    m.add(bell(hz("A5"), 5.0, tau=2.2), c + 6.9, 0.06, 0.3)
+    # soft bayan pulse under the card
+    n = int(SR * 0.6)
+    t = np.arange(n) / SR
+    thump = np.sin(2 * np.pi * np.cumsum(70 + 60 * np.exp(-t / 0.05)) / SR) * np.exp(-t / 0.18)
+    tt, k = c + 1.0, 0
+    while tt < duration - 2:
+        if k % 4 in (0, 2):
+            m.add(thump, tt, 0.14)
+        tt += 0.8
+        k += 1
+    master(m, T, path, duration)
 
 
 if __name__ == "__main__":

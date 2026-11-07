@@ -26,3 +26,9 @@ CARD = {
     "subtitle": "May your light be bright, and your footprint light.",
     "wish": "WISHING YOU A BRIGHT, GREEN & PROSPEROUS DIWALI",
 }
+
+# 15-second Instagram Story greeting (vertical): a rangoli blooms around a diya,
+# then the greeting card appears.
+STORY_CAPTIONS = [
+    (0.5, 5.6, "This Diwali, let's light up lives — not the sky.", "quote"),
+]

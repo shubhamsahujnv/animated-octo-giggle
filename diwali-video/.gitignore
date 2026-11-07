@@ -1,4 +1,4 @@
 preview/
-render.log
-soundtrack.wav
+render*.log
+soundtrack*.wav
 __pycache__/
