@@ -4,119 +4,57 @@
 <meta charset="utf-8">
 <title>TGS Diwali Reel</title>
 <style>
-  @font-face { font-family: 'Space Grotesk'; font-weight: 500; src: url(../fonts/SpaceGrotesk-500.ttf); }
   @font-face { font-family: 'Space Grotesk'; font-weight: 700; src: url(../fonts/SpaceGrotesk-700.ttf); }
-  @font-face { font-family: 'DM Sans'; font-weight: 400; src: url(../fonts/DMSans-400.ttf); }
   @font-face { font-family: 'DM Sans'; font-weight: 500; src: url(../fonts/DMSans-500.ttf); }
-  @font-face { font-family: 'DM Sans'; font-weight: 700; src: url(../fonts/DMSans-700.ttf); }
-  @font-face { font-family: 'IBM Plex Mono'; font-weight: 500; src: url(../fonts/IBMPlexMono-500.ttf); }
   @font-face { font-family: 'IBM Plex Mono'; font-weight: 600; src: url(../fonts/IBMPlexMono-600.ttf); }
-
   /* thegreensolve.com tokens */
-  :root {
-    --tgs-deep: #02403D;
-    --tgs-night: #01302E;
-    --tgs-layer: #0A4E4A;
-    --tgs-layer-2: #155C57;
-    --tgs-lime: #E2FF4D;
-    --tgs-lime-soft: #F0FBCF;
-    --cream: #F5F5F0;
-    --paper: #FFFDF8;
-    --ink-on-dark: #F7F4EE;
-    --ink-muted-dark: #D8CAC3;
-    --ink-muted: #3E5250;
-  }
+  :root { --deep: #02403D; --night: #01302E; --lime: #E2FF4D; --cream: #F5F5F0; --ink-dark: #F7F4EE; --ink-muted: #3E5250; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--tgs-night); }
-  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: 'DM Sans', sans-serif; color: var(--tgs-deep); }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: 'DM Sans', sans-serif; }
   .abs { position: absolute; }
   .layer { position: absolute; inset: 0; }
-
-  #bgDark { background:
-      radial-gradient(ellipse 900px 1100px at 50% 46%, #0A4E4A 0%, #063f3c 38%, var(--tgs-night) 75%); }
+  #bgDark { background: radial-gradient(ellipse 900px 1100px at 50% 44%, #0A4E4A 0%, #063f3c 38%, var(--night) 75%); }
   #bgCream { background: var(--cream); }
-  #wipeEdge { left: 0; width: 1080px; height: 14px; background: var(--tgs-lime); }
-
+  #wipeEdge { left: 0; width: 1080px; height: 14px; background: var(--lime); }
   .pill { font-family: 'IBM Plex Mono', monospace; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-          background: var(--tgs-lime); color: var(--tgs-deep); border-radius: 999px; padding: 14px 30px; font-size: 28px; white-space: nowrap; }
-  .mono { font-family: 'IBM Plex Mono', monospace; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-  .display { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; }
+          background: var(--lime); color: var(--deep); border-radius: 999px; padding: 14px 30px; font-size: 28px; white-space: nowrap; }
+  .story { left: 0; width: 1080px; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+           letter-spacing: -0.02em; line-height: 1.04; font-size: 96px; color: var(--ink-dark); }
+  .story .hi { color: var(--lime); }
   .line { display: block; overflow: hidden; padding-bottom: 0.08em; }
-  .line > span { display: inline-block; will-change: transform; }
-
-  /* Diya */
-  .diya { position: absolute; width: 200px; height: 140px; transform-origin: 100px 70px; }
-  .diya .glow { position: absolute; left: -150px; top: -190px; width: 500px; height: 500px; border-radius: 50%;
-     background: radial-gradient(circle, rgba(255,214,120,0.55) 0%, rgba(226,255,77,0.28) 26%, rgba(226,255,77,0.08) 48%, rgba(226,255,77,0) 68%); }
-  .diya .flame { position: absolute; left: 76px; top: -34px; width: 48px; height: 96px; transform-origin: 24px 92px; }
-  .diya svg.bowl { position: absolute; left: 0; top: 0; width: 200px; height: 140px; overflow: visible; }
-
-  /* Cards: thegreensolve.com outline cards with hard shadow */
-  .card { position: absolute; width: 458px; height: 412px; background: var(--paper); border: 3px solid var(--tgs-deep); border-radius: 18px; padding: 34px 32px; }
-  .card.lime { background: var(--tgs-lime); }
-  .card .icon { width: 88px; height: 88px; }
-  .card .label { margin-top: 22px; font-size: 24px; color: var(--tgs-deep); }
-  .card .title { margin-top: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.06; letter-spacing: -0.015em; }
-  .card .body { margin-top: 14px; font-size: 27px; line-height: 1.3; color: var(--ink-muted); }
-  .card.lime .body { color: #24403e; }
-  .card .check { position: absolute; right: 26px; top: 26px; width: 64px; height: 64px; }
-
-  #rule { left: 64px; top: 548px; height: 10px; width: 952px; background: var(--tgs-deep); transform-origin: 0 50%; }
+  .line > span { display: inline-block; }
+  svg.full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; }
 </style>
 </head>
 <body>
 <div id="stage">
   <div class="layer" id="bgDark"></div>
+  <svg class="full" id="sky" viewBox="0 0 1080 1920"></svg>
   <div class="layer" id="particles"></div>
   <div class="layer" id="bgCream"></div>
   <div class="abs" id="wipeEdge"></div>
+  <svg class="full" id="art" viewBox="0 0 1080 1920"></svg>
 
-  <!-- Scene 1: hook -->
-  <div class="layer" id="s1">
-    <div class="abs pill" id="s1pill" style="left:540px; top:330px;">Happy Diwali · 2026</div>
-    <div id="heroDiyaWrap" class="abs" style="left:540px; top:900px;"></div>
-    <div class="abs display" id="s1text" style="left:0; width:1080px; top:1210px; text-align:center; font-size:112px; color:var(--ink-on-dark);">
-      <span class="line"><span id="s1l1">Light diyas,</span></span>
-      <span class="line"><span id="s1l2" style="color:var(--tgs-lime)">not emissions.</span></span>
-    </div>
-  </div>
+  <div class="abs pill" id="s1pill" style="left:540px; top:380px;">Happy Diwali · 2026</div>
+  <div class="abs story" id="t1" style="top:1250px;">
+    <span class="line"><span>Light diyas,</span></span><span class="line"><span class="hi">not emissions.</span></span></div>
+  <div class="abs story" id="t2" style="top:1220px;">
+    <span class="line"><span>Less smoke,</span></span><span class="line"><span class="hi">more sparkle.</span></span></div>
+  <div class="abs story" id="t3" style="top:1220px;">
+    <span class="line"><span>Celebrate bright,</span></span><span class="line"><span class="hi">breathe easy.</span></span></div>
+  <div class="abs story" id="t4" style="top:400px;">
+    <span class="line"><span>Small choices.</span></span><span class="line"><span class="hi">Smaller footprint.</span></span></div>
 
-  <!-- Scene 2/3: four connected actions -->
-  <div class="layer" id="s2">
-    <div class="abs mono" id="s2label" style="left:64px; top:236px; font-size:28px; color:var(--tgs-deep); display:flex; gap:16px; align-items:center;">
-      <span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--tgs-deep)"></span>A greener Diwali
-    </div>
-    <div class="abs display" style="left:64px; top:300px; width:960px; font-size:92px; color:var(--tgs-deep);">
-      <span class="line"><span id="s2l1">Four connected</span></span>
-      <span class="line"><span id="s2l2">actions for Diwali.</span></span>
-    </div>
-    <div class="abs" id="rule"></div>
-    <div id="cards"></div>
-  </div>
-
-  <!-- Scene 4: bridge -->
-  <div class="layer" id="s4">
-    <div class="abs display" style="left:0; width:1080px; top:540px; text-align:center; font-size:104px; color:var(--ink-on-dark);">
-      <span class="line"><span id="s4l1">Small choices.</span></span>
-      <span class="line"><span id="s4l2" style="color:var(--tgs-lime)">Smaller footprint.</span></span>
-    </div>
-    <div id="diyaRow"></div>
-    <div class="abs mono" id="s4cap" style="left:0; width:1080px; top:1200px; text-align:center; font-size:26px; color:var(--ink-muted-dark); letter-spacing:0.16em;">The TGS way, all year round</div>
-    <div class="abs mono" id="s4flow" style="left:0; width:1080px; top:1258px; text-align:center; font-size:36px; letter-spacing:0.06em;"></div>
-  </div>
-
-  <!-- Scene 5: outro -->
   <div class="layer" id="s5">
-    <svg id="rangoli" class="abs" style="left:180px; top:300px; width:720px; height:720px; overflow:visible" viewBox="-360 -360 720 720"></svg>
-    <img id="logo" class="abs" src="../assets/tgs-logo-teal.png" style="left:450px; top:592px; width:180px; height:135.5px;">
-    <div class="abs display" id="s5title" style="left:0; width:1080px; top:1080px; text-align:center; font-size:150px; color:var(--tgs-deep);">
-      <span class="line"><span id="s5l1">Happy Diwali</span></span>
-    </div>
-    <div class="abs" id="s5sub" style="left:0; width:1080px; top:1270px; text-align:center; font-size:42px; font-weight:500; color:var(--ink-muted);">from all of us at TheGreensolve</div>
-    <div class="abs pill" id="s5pill" style="left:540px; top:1370px; font-size:32px; padding:16px 34px;">thegreensolve.com</div>
+    <img id="logo" class="abs" src="../assets/tgs-logo-teal.png" style="left:440px; top:200px; width:200px; height:150.5px;">
+    <div class="abs story" id="t5" style="top:420px; font-size:140px; color:var(--deep);"><span class="line"><span>Happy Diwali</span></span></div>
+    <div class="abs" id="s5sub" style="left:0; width:1080px; top:600px; text-align:center; font-size:42px; font-weight:500; color:var(--ink-muted);">from all of us at TheGreensolve</div>
+    <div class="abs pill" id="s5pill" style="left:540px; top:690px; font-size:32px; padding:16px 34px;">thegreensolve.com</div>
   </div>
 </div>
 
+<script src="cartoons.js"></script>
 <script>
 const BEAT = 60 / 96; // 0.625s
 const DUR = 20.0;
@@ -124,292 +62,239 @@ const $ = id => document.getElementById(id);
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
 const prog = (t, a, d) => clamp((t - a) / d);
 const eOut = x => 1 - Math.pow(1 - x, 3);
-const eOutBack = x => { const c1 = 1.4, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
-const eInOut = x => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 const eIn = x => x * x * x;
-// deterministic RNG
+const eInOut = x => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eBack = x => { const c1 = 1.6, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const lerp = (a, b, p) => a + (b - a) * p;
 function rng(seed) { let s = seed >>> 0; return () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }; }
-
-// ---------- Diya factory ----------
-let gid = 0;
-function diyaMarkup() {
-  const id = 'd' + (gid++);
-  return `
-  <div class="glow"></div>
-  <svg class="bowl" viewBox="0 0 200 140">
-    <defs>
-      <linearGradient id="${id}b" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#D2774A"/><stop offset="1" stop-color="#8A3B1E"/>
-      </linearGradient>
-      <radialGradient id="${id}f" cx="0.5" cy="0.78" r="0.62">
-        <stop offset="0" stop-color="#FFFBEA"/><stop offset="0.35" stop-color="#FFE07A"/>
-        <stop offset="0.75" stop-color="#FFA537"/><stop offset="1" stop-color="#FF7A1F" stop-opacity="0.9"/>
-      </radialGradient>
-    </defs>
-    <path d="M6 56 C 30 128, 170 128, 194 56 C 160 70, 40 70, 6 56 Z" fill="url(#${id}b)"/>
-    <path d="M24 84 C 70 100, 130 100, 176 84" stroke="#F7F4EE" stroke-width="3" fill="none" stroke-dasharray="2 12" stroke-linecap="round" opacity="0.8"/>
-    <ellipse cx="100" cy="57" rx="94" ry="14" fill="#A9532C"/>
-    <ellipse cx="100" cy="57" rx="80" ry="9" fill="#4A2412"/>
-    <rect x="97" y="40" width="6" height="16" rx="3" fill="#3a2a20"/>
-  </svg>
-  <svg class="flame" viewBox="0 0 48 96">
-    <path d="M24 0 C 31 22, 47 46, 44 66 C 41 86, 34 94, 24 94 C 14 94, 7 86, 4 66 C 1 46, 17 22, 24 0 Z" fill="url(#${id}f)"/>
-    <path d="M24 46 C 28 58, 33 68, 31 78 C 29 87, 19 87, 17 78 C 15 68, 20 58, 24 46 Z" fill="#FFFDF3" opacity="0.9"/>
-  </svg>`;
+// a hop: returns {dy, squash} for a jump starting at t0 lasting d, height h
+function hop(t, t0, d, h) {
+  const pre = prog(t, t0 - 0.12, 0.12), air = prog(t, t0, d), land = prog(t, t0 + d, 0.22);
+  let dy = 0, sq = 1;
+  if (t < t0) sq = 1 - 0.14 * Math.sin(Math.PI * pre / 2) * (t > t0 - 0.12 ? 1 : 0);
+  else if (air < 1) { dy = -h * 4 * air * (1 - air); sq = 1 + 0.12 * Math.sin(Math.PI * air); }
+  else if (land < 1) sq = 1 - 0.16 * Math.sin(Math.PI * land);
+  return { dy, sq };
 }
-function makeDiya(parent, x, y, scale) {
-  const d = document.createElement('div');
-  d.className = 'diya';
-  d.innerHTML = diyaMarkup();
-  d.style.left = (x - 100) + 'px'; d.style.top = (y - 70) + 'px';
-  d.style.transform = `scale(${scale})`;
-  parent.appendChild(d);
-  return { el: d, glow: d.querySelector('.glow'), flame: d.querySelector('.flame'), scale };
-}
-// flame flicker, pure function of t
-function setFlame(dy, t, lit, seed) {
-  const f = 1 + 0.07 * Math.sin(t * 13.1 + seed) + 0.04 * Math.sin(t * 23.7 + seed * 2.3);
-  const sx = 1 - 0.05 * Math.sin(t * 17.3 + seed * 1.7);
-  const r = 3.2 * Math.sin(t * 7.9 + seed) + 1.5 * Math.sin(t * 19.1 + seed);
-  const L = eOutBack(clamp(lit));
-  dy.flame.style.transform = `rotate(${r * L}deg) scale(${sx * L}, ${f * L})`;
-  dy.flame.style.opacity = clamp(lit * 3);
-  const g = (0.85 + 0.15 * Math.sin(t * 11.3 + seed)) * clamp(lit * 1.4);
-  dy.glow.style.opacity = g;
-  dy.glow.style.transform = `scale(${0.6 + 0.4 * eOut(clamp(lit))})`;
+// on-beat bounce for dancing, phase-shifted per character
+function bounce(t, from, k = 0) {
+  if (t < from) return { dy: 0, sq: 1 };
+  const ph = ((t - from - k * 0.08) / BEAT) % 1;
+  return { dy: -38 * Math.sin(Math.PI * ph), sq: 1 + 0.08 * Math.cos(2 * Math.PI * ph) };
 }
 
-// ---------- Build ----------
-const hero = makeDiya($('heroDiyaWrap'), 0, 0, 2.3);
-
-// leaf particles for night scenes
+// ---------- build ----------
+const sky = $('sky'), art = $('art');
+cartoonDefs(art);
+// stars
+const stars = [];
+(function () { const r = rng(11); for (let i = 0; i < 70; i++) {
+  const c = document.createElementNS(SVGNS, 'circle');
+  c.setAttribute('cx', r() * 1080); c.setAttribute('cy', r() * 1500); c.setAttribute('r', 1.5 + r() * 2.5);
+  c.setAttribute('fill', r() > 0.75 ? '#E2FF4D' : '#F7F4EE'); sky.appendChild(c);
+  stars.push({ c, f: 1 + r() * 3, ph: r() * 6.28, a: 0.25 + r() * 0.5 });
+} })();
+// rising leaves and embers
 const parts = [];
-(function () {
-  const r = rng(7), host = $('particles');
-  for (let i = 0; i < 34; i++) {
-    const el = document.createElement('div');
-    el.className = 'abs';
-    const leaf = i % 3 !== 0;
-    const s = leaf ? 18 + r() * 26 : 5 + r() * 6;
-    el.style.width = s + 'px'; el.style.height = s + 'px';
+(function () { const r = rng(7), host = $('particles');
+  for (let i = 0; i < 30; i++) {
+    const el = document.createElement('div'); el.className = 'abs';
+    const leaf = i % 3 !== 0, s = leaf ? 18 + r() * 24 : 5 + r() * 6;
     el.innerHTML = leaf
-      ? `<svg viewBox="0 0 20 20" width="${s}" height="${s}"><path d="M2 18 C 2 8, 8 2, 18 2 C 18 12, 12 18, 2 18 Z" fill="#E2FF4D"/><path d="M3 17 L 15 5" stroke="#01302E" stroke-width="1" opacity="0.5"/></svg>`
+      ? `<svg viewBox="0 0 20 20" width="${s}" height="${s}"><path d="M2 18 C 2 8, 8 2, 18 2 C 18 12, 12 18, 2 18 Z" fill="#E2FF4D"/></svg>`
       : `<div style="width:${s}px;height:${s}px;border-radius:50%;background:#FFD66B;box-shadow:0 0 ${s * 2}px #FFC14A"></div>`;
     host.appendChild(el);
-    parts.push({ el, x: r() * 1080, y0: r() * 2100, v: 40 + r() * 70, sw: 10 + r() * 30, f: 0.4 + r() * 0.8, ph: r() * 6.28, rot: r() * 360, vr: (r() - 0.5) * 50, a: leaf ? 0.14 + r() * 0.2 : 0.35 + r() * 0.35 });
-  }
-})();
+    parts.push({ el, x: r() * 1080, y0: r() * 2100, v: 40 + r() * 70, sw: 10 + r() * 30, f: 0.4 + r() * 0.8, ph: r() * 6.28, rot: r() * 360, vr: (r() - 0.5) * 50, a: leaf ? 0.12 + r() * 0.16 : 0.3 + r() * 0.3 });
+  } })();
 
-// cards
-const ICONS = {
-  diya: `<svg viewBox="0 0 88 88" class="icon" fill="none" stroke="#02403D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-           <path d="M10 52 C 18 76, 70 76, 78 52 Z"/><path d="M44 18 C 50 28, 54 34, 52 40 C 50 47, 38 47, 36 40 C 34 34, 38 28, 44 18 Z"/></svg>`,
-  flower: `<svg viewBox="0 0 88 88" class="icon" fill="none" stroke="#02403D" stroke-width="5" stroke-linecap="round">
-           ${[0, 60, 120, 180, 240, 300].map(a => `<ellipse cx="44" cy="22" rx="10" ry="16" transform="rotate(${a} 44 44)"/>`).join('')}
-           <circle cx="44" cy="44" r="8" fill="#02403D"/></svg>`,
-  air: `<svg viewBox="0 0 88 88" class="icon" fill="none" stroke="#02403D" stroke-width="5" stroke-linecap="round">
-           <path d="M8 30 H 54 C 64 30, 66 16, 56 14 C 50 13, 47 18, 48 22"/><path d="M8 46 H 70 C 82 46, 82 64, 70 64 C 63 64, 61 58, 62 55"/><path d="M8 62 H 40"/></svg>`,
-  plant: `<svg viewBox="0 0 88 88" class="icon" fill="none" stroke="#02403D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-           <path d="M24 56 H 64 L 58 80 H 30 Z"/><path d="M44 56 V 30"/><path d="M44 38 C 44 26, 34 18, 20 18 C 20 32, 30 40, 44 38 Z"/><path d="M44 32 C 44 20, 54 12, 68 12 C 68 26, 58 34, 44 32 Z"/></svg>`
-};
-const CARDS = [
-  { n: '01', k: 'Light', title: 'Clay diyas, not plastic lights', body: 'Local, biodegradable, beautiful.', icon: 'diya' },
-  { n: '02', k: 'Decorate', title: 'Flower rangoli, natural colours', body: 'Nothing synthetic down the drain.', icon: 'flower', lime: true },
-  { n: '03', k: 'Celebrate', title: 'Skip the crackers', body: 'Keep the air clean for everyone.', icon: 'air' },
-  { n: '04', k: 'Gift', title: 'Gift a plant, not plastic', body: 'A present that keeps growing.', icon: 'plant' },
-];
-const CARD_POS = [[64, 610], [558, 610], [64, 1058], [558, 1058]];
-const CARD_T = [5.0, 6.25, 7.5, 8.75];
-const cardEls = CARDS.map((c, i) => {
-  const el = document.createElement('div');
-  el.className = 'card' + (c.lime ? ' lime' : '');
-  el.style.left = CARD_POS[i][0] + 'px'; el.style.top = CARD_POS[i][1] + 'px';
-  el.innerHTML = `${ICONS[c.icon]}
-    <div class="label mono">${c.n} · ${c.k}</div>
-    <div class="title">${c.title}</div>
-    <div class="body">${c.body}</div>
-    <svg class="check" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="${c.lime ? '#02403D' : '#E2FF4D'}" stroke="#02403D" stroke-width="3"/>
-      <path d="M19 33 L 28 42 L 46 23" fill="none" stroke="${c.lime ? '#E2FF4D' : '#02403D'}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg>`;
-  $('cards').appendChild(el);
-  return { el, check: el.querySelector('.check'), tick: el.querySelector('.check path') };
-});
-
-// diya row (scene 4)
-const rowDiyas = [];
-for (let i = 0; i < 8; i++) {
-  const x = 112 + i * (856 / 7);
-  rowDiyas.push(makeDiya($('diyaRow'), x, 1030, 0.62));
-}
-const FLOW = ['Measure', 'Compare', 'Reduce', 'Verify'];
-$('s4flow').innerHTML = FLOW.map((w, i) => `<span id="fw${i}">${w}</span>`).join('<span class="arrow"> → </span>');
-const ROW_T = i => 12.8125 + i * (BEAT / 2);
-const FLOW_T = k => 13.125 + k * BEAT;
-
-// rangoli (scene 5)
-(function () {
-  const svg = $('rangoli');
-  let h = '';
-  // outer dotted ring
-  h += `<circle class="rd" cx="0" cy="0" r="338" fill="none" stroke="#02403D" stroke-width="3" pathLength="1"/>`;
-  for (let i = 0; i < 24; i++) {
-    const a = i * 15 * Math.PI / 180;
-    h += `<circle class="rdot" cx="${Math.cos(a) * 338}" cy="${Math.sin(a) * 338}" r="9" fill="${i % 2 ? '#E2FF4D' : '#02403D'}" stroke="#02403D" stroke-width="3"/>`;
-  }
-  // outer petals
-  for (let i = 0; i < 16; i++) {
-    h += `<path class="rp" transform="rotate(${i * 22.5})" d="M0 -190 C 34 -230, 42 -280, 0 -318 C -42 -280, -34 -230, 0 -190 Z" fill="none" stroke="#02403D" stroke-width="4" pathLength="1"/>`;
-  }
-  // mid ring
-  h += `<circle class="rd" cx="0" cy="0" r="190" fill="none" stroke="#02403D" stroke-width="4" pathLength="1"/>`;
-  // inner lime petals
-  for (let i = 0; i < 8; i++) {
-    h += `<path class="rq" transform="rotate(${i * 45 + 22.5})" d="M0 -100 C 40 -120, 46 -160, 0 -182 C -46 -160, -40 -120, 0 -100 Z" fill="#E2FF4D" fill-opacity="0" stroke="#02403D" stroke-width="4" pathLength="1"/>`;
-  }
-  h += `<circle id="rcenter" cx="0" cy="0" r="100" fill="#FFFDF8" stroke="#02403D" stroke-width="4"/>`;
-  svg.innerHTML = h;
-})();
-const rds = [...document.querySelectorAll('#rangoli .rd')];
-const rps = [...document.querySelectorAll('#rangoli .rp')];
-const rqs = [...document.querySelectorAll('#rangoli .rq')];
-const rdots = [...document.querySelectorAll('#rangoli .rdot')];
-[...rds, ...rps, ...rqs].forEach(p => { p.style.strokeDasharray = '1 1'; });
+const toran = Toran(art);
+const shadowG = gEl(art, [0, 1, 2].map(() => `<ellipse rx="110" ry="16" fill="#012624" opacity="0.18"/>`).join(''));
+const shadows = [...shadowG.children];
+const sap = SaplingBuddy(art);
+const earth = EarthBuddy(art);
+const hero = DiyaBuddy(art);
+const chorus = [0, 1, 2, 3, 4].map(() => DiyaBuddy(art));
+const SMOG = [[-250, -170, 230], [230, -210, 250], [-270, 130, 210], [250, 150, 240], [10, -310, 210], [-20, 250, 200]];
+const smog = SMOG.map(([, , w]) => SmogCloud(art, w));
+const SPK = [[-300, -260, '#E2FF4D', 1.1], [310, -230, '#FFD66B', 0.9], [-330, 60, '#FFD66B', 0.8], [330, 80, '#E2FF4D', 1.2], [-120, -330, '#F7F4EE', 0.7], [150, -340, '#E2FF4D', 0.8], [0, 300, '#FFD66B', 0.9]];
+const sparks = SPK.map(([, , c]) => Sparkle(art, c));
+const plantSparks = [[-260, -420, '#E2FF4D'], [250, -470, '#FFD66B'], [-200, -150, '#FFD66B'], [230, -200, '#E2FF4D']].map(p => ({ p, el: Sparkle(art, p[2]) }));
+// marigold petal confetti for outro
+const petals = [];
+(function () { const r = rng(21); const g = gEl(art, '');
+  for (let i = 0; i < 26; i++) {
+    const col = ['#FF8A2A', '#FFB43C', '#E2FF4D', '#FFA537'][i % 4];
+    const e = document.createElementNS(SVGNS, 'ellipse');
+    e.setAttribute('rx', 8 + r() * 5); e.setAttribute('ry', 13 + r() * 7); e.setAttribute('fill', col);
+    e.setAttribute('stroke', '#012624'); e.setAttribute('stroke-width', 2.5); g.appendChild(e);
+    petals.push({ e, x: r() * 1080, d: r() * 1.4, v: 260 + r() * 220, sw: 20 + r() * 40, f: 1 + r() * 2, ph: r() * 6, rot: r() * 360, vr: (r() - 0.5) * 400 });
+  } })();
 
 // ---------- helpers ----------
-function lineIn(el, t, start, dur = 0.55) {
-  const p = eOut(prog(t, start, dur));
-  el.style.transform = `translateY(${(1 - p) * 105}%)`;
+function lines(id, t, starts, out, dur = 0.55) {
+  const el = $(id), ls = el.querySelectorAll('.line > span');
+  const o = out == null ? 0 : eIn(prog(t, out, 0.3));
+  ls.forEach((s, i) => { const p = eOut(prog(t, starts[i], dur)); s.style.transform = `translateY(${(1 - p) * 105}%)`; });
+  el.style.opacity = 1 - o;
+  el.style.transform = `translateY(${-o * 40}px)`;
+  el.style.visibility = t >= starts[0] && o < 1 ? 'visible' : 'hidden';
 }
-function lineOut(el, t, start, dur = 0.3) {
-  const p = eIn(prog(t, start, dur));
-  return p;
-}
-function show(el, v) { el.style.visibility = v ? 'visible' : 'hidden'; }
+const wave = (t, a = 1) => 40 + 30 * Math.sin(t * 9) * a;
+const hidden = h => h.g.setAttribute('opacity', 0);
 
 // ---------- render(t) ----------
 function render(t) {
-  // ----- background wipes -----
-  // cream windows: [3.75, 11.875] and [15.625, 20]
-  let clip = 'inset(100% 0 0 0)', edgeY = -100;
-  if (t >= 3.75 && t < 11.875) {
-    const p = eInOut(prog(t, 3.75, 0.4));
-    clip = `inset(${(1 - p) * 100}% 0 0 0)`; edgeY = p < 1 ? 1920 * (1 - p) - 7 : -100;
-  } else if (t >= 11.875 && t < 15.625) {
-    const p = eInOut(prog(t, 11.875, 0.4));
-    clip = `inset(0 0 ${p * 100}% 0)`; edgeY = p < 1 ? 1920 * (1 - p) - 7 : -100;
-  } else if (t >= 15.625) {
-    const p = eInOut(prog(t, 15.625, 0.4));
-    clip = `inset(${(1 - p) * 100}% 0 0 0)`; edgeY = p < 1 ? 1920 * (1 - p) - 7 : -100;
-  }
-  $('bgCream').style.clipPath = clip;
-  $('wipeEdge').style.top = edgeY + 'px';
+  // cream wipe for outro
+  const pw = eInOut(prog(t, 15.625, 0.4));
+  $('bgCream').style.clipPath = `inset(${(1 - pw) * 100}% 0 0 0)`;
+  $('wipeEdge').style.top = (pw > 0 && pw < 1 ? 1920 * (1 - pw) - 7 : -100) + 'px';
 
-  // ----- particles (night only) -----
-  const night = (t < 4.0) || (t >= 11.875 && t < 15.9);
-  const pa = t < 0.6 ? prog(t, 0, 0.6) : 1;
+  // sky + particles (night)
+  const night = t < 15.9;
+  stars.forEach(s => s.c.setAttribute('opacity', night ? s.a * (0.5 + 0.5 * Math.sin(t * s.f + s.ph)) * clamp(t / 0.8) : 0));
   parts.forEach(q => {
-    let y = ((q.y0 - q.v * t) % 2100 + 2100) % 2100 - 90;
-    const x = q.x + q.sw * Math.sin(t * q.f + q.ph);
+    const y = ((q.y0 - q.v * t) % 2100 + 2100) % 2100 - 90, x = q.x + q.sw * Math.sin(t * q.f + q.ph);
     q.el.style.transform = `translate(${x}px, ${y}px) rotate(${q.rot + q.vr * t}deg)`;
-    q.el.style.opacity = night ? q.a * pa : 0;
+    q.el.style.opacity = night ? q.a * clamp(t / 0.6) : 0;
   });
 
-  // ----- Scene 1 -----
-  const s1 = t < 4.0; show($('s1'), s1);
-  if (s1) {
-    const out = eIn(prog(t, 3.35, 0.4));
-    const diyaIn = eOut(prog(t, 0, 0.6));
-    hero.el.style.opacity = diyaIn * (1 - out);
-    hero.el.style.transform = `scale(${hero.scale}) translateY(${(1 - diyaIn) * 20 + out * -30}px)`;
-    setFlame(hero, t, prog(t, 0.625, 0.35), 1.3);
-    lineIn($('s1l1'), t, 1.25); lineIn($('s1l2'), t, 1.875);
-    $('s1text').style.opacity = 1 - out;
-    $('s1text').style.transform = `translateY(${-out * 40}px)`;
-    const pp = eOutBack(prog(t, 2.5, 0.45));
-    $('s1pill').style.transform = `translateX(-50%) scale(${pp})`;
-    $('s1pill').style.opacity = clamp(pp) * (1 - out);
-  }
+  // toran: drops in, lifts away before outro
+  const td = eBack(prog(t, 0.2, 0.7)) * (1 - eIn(prog(t, 15.2, 0.4)));
+  poseToran(toran, t, td, 1080, 95, 85);
+  toran.g.setAttribute('opacity', t < 15.7 ? 1 : 0);
 
-  // ----- Scene 2/3 -----
-  const s2 = t >= 3.75 && t < 12.1; show($('s2'), s2);
-  if (s2) {
-    const outH = eIn(prog(t, 11.55, 0.32));
-    const lp = eOut(prog(t, 4.0, 0.45));
-    $('s2label').style.opacity = lp * (1 - outH);
-    $('s2label').style.transform = `translateX(${(1 - lp) * -30}px)`;
-    lineIn($('s2l1'), t, 4.06); lineIn($('s2l2'), t, 4.375);
-    $('s2l1').parentElement.parentElement.style.opacity = 1 - outH;
-    $('s2l1').parentElement.parentElement.style.transform = `translateY(${-outH * 40}px)`;
-    $('rule').style.transform = `scaleX(${eInOut(prog(t, 4.375, 0.6)) * (1 - outH)})`;
-    cardEls.forEach((c, i) => {
-      const p = prog(t, CARD_T[i], 0.5);
-      const e = eOut(p);
-      const out = eIn(prog(t, 11.35 + i * 0.07, 0.3));
-      const sh = 10 * eOut(prog(t, CARD_T[i] + 0.15, 0.35));
-      c.el.style.opacity = clamp(p * 2.5) * (1 - out);
-      c.el.style.transform = `translate(${-sh / 2}px, ${(1 - e) * 80 - sh / 2 - out * 50}px)`;
-      c.el.style.boxShadow = `${sh}px ${sh}px 0 #02403D`;
-      const ck = prog(t, CARD_T[i] + BEAT, 0.35);
-      c.check.style.transform = `scale(${eOutBack(clamp(ck * 1.6))})`;
-      c.tick.style.strokeDasharray = '1 1';
-      c.tick.style.strokeDashoffset = 1 - eOut(prog(t, CARD_T[i] + BEAT + 0.1, 0.3));
-    });
-  }
+  // ----- hero diya: scene 1 -> sits beside earth in scene 2 -> outro -----
+  if (t < 9.0) {
+    let x = 540, y = 1120, s = 2.0;
+    const h1 = hop(t, 0.94, 0.32, 70);
+    // move to earth's side
+    const mv = eInOut(prog(t, 3.5, 0.7));
+    x = lerp(540, 220, mv); y = lerp(1120, 1110, mv) - Math.sin(Math.PI * mv) * 180; s = lerp(2.0, 0.85, mv);
+    const h2 = hop(t, 7.5, 0.3, 50);
+    const exit = eIn(prog(t, 8.4, 0.5));
+    x -= exit * 700;
+    const awake = prog(t, 0.65, 0.15);
+    const sleepy = t < 0.65 ? 1 : 0;
+    const blink = sleepy ? 1 : Math.max(1 - awake, blinkAt(t, 0.3));
+    const flare = 1 + 0.6 * Math.sin(Math.PI * prog(t, 5.5, 0.5)); // flame flares to blow smog away
+    poseDiya(hero, { x, y: y + h1.dy + h2.dy, s: s, t, seed: 1.3, lit: prog(t, 0.625, 0.35) * (t > 5.5 && t < 6 ? flare : 1),
+      blink, smile: t < 0.7 ? 0.1 : 1, squash: h1.sq * h2.sq,
+      waveR: t > 1.5 && t < 3.4 ? wave(t) : (t > 6.2 ? wave(t, 0.7) : 10), waveL: t > 6.2 ? 20 : 10,
+      opacity: clamp(t / 0.5) * (1 - exit) });
+  } else if (t >= 15.9) {
+    const p = eBack(prog(t, 15.9375, 0.5)), b = bounce(t, 16.875, 0);
+    poseDiya(hero, { x: 195, y: 1290 + (1 - p) * 300 + b.dy, s: 1.0 * clamp(p, 0, 1.2), t, seed: 1.3, lit: 1, blink: blinkAt(t, 0.3), smile: 1,
+      squash: b.sq, waveR: wave(t), waveL: 20, opacity: clamp(p * 3) });
+  } else hidden(hero);
 
-  // ----- Scene 4 -----
-  const s4 = t >= 11.875 && t < 15.95; show($('s4'), s4);
-  if (s4) {
-    const out = eIn(prog(t, 15.25, 0.35));
-    lineIn($('s4l1'), t, 12.1875); lineIn($('s4l2'), t, 12.5);
-    $('s4l1').parentElement.parentElement.style.opacity = 1 - out;
-    rowDiyas.forEach((d, i) => {
-      const a = eOut(prog(t, 12.25 + i * 0.05, 0.4));
-      d.el.style.opacity = a * (1 - out);
-      d.el.style.transform = `scale(${d.scale}) translateY(${(1 - a) * 30}px)`;
-      setFlame(d, t, prog(t, ROW_T(i), 0.3), i * 1.9 + 0.4);
-    });
-    const cap = eOut(prog(t, 12.8, 0.4));
-    $('s4cap').style.opacity = cap * (1 - out);
-    FLOW.forEach((w, k) => {
-      const on = eOut(prog(t, FLOW_T(k), 0.3));
-      const el = $('fw' + k);
-      // from muted (on dark) to lime
-      const c0 = [0x2A, 0x6F, 0x69], c1 = [0xE2, 0xFF, 0x4D];
-      const c = c0.map((v, j) => Math.round(v + (c1[j] - v) * on));
-      el.style.color = `rgb(${c.join(',')})`;
-    });
-    document.querySelectorAll('#s4flow .arrow').forEach((a, k) => {
-      const on = eOut(prog(t, FLOW_T(k + 1) - 0.15, 0.3));
-      a.style.color = on > 0.5 ? '#E2FF4D' : '#2A6F69';
-    });
-    $('s4flow').style.opacity = eOut(prog(t, 12.6, 0.4)) * (1 - out);
-  }
+  // ----- earth -----
+  if (t >= 3.8 && t < 9.0) {
+    const rise = eOut(prog(t, 3.9, 0.7));
+    const land = prog(t, 4.6, 0.25);
+    const happy = eOut(prog(t, 5.625, 0.4));
+    const cough = (k => Math.sin(Math.PI * clamp(k)) * Math.sin(k * 40))(prog(t, 4.7, 0.25)) + (k => Math.sin(Math.PI * clamp(k)) * Math.sin(k * 40))(prog(t, 5.05, 0.25));
+    const hp = hop(t, 5.9, 0.3, 60);
+    const exit = eIn(prog(t, 8.4, 0.5));
+    const bob = Math.sin(t * 3) * 8 * happy;
+    poseEarth(earth, { x: 540 + cough * 8 - exit * 1100, y: lerp(2300, 780, rise) + hp.dy + bob, s: 1.35, t,
+      blink: happy > 0.5 ? blinkAt(t, 1.1) : 0.55 * clamp(prog(t, 4.3, 0.2)) + (1 - clamp(prog(t, 4.3, 0.2))) * 0,
+      smile: lerp(-0.6, 1, happy), squash: (1 - 0.15 * Math.sin(Math.PI * land)) * hp.sq,
+      waveL: t > 6.3 ? wave(t + 0.5) : 0, waveR: 10, glow: happy * 0.9, miniLit: prog(t, 5.625, 0.3) });
+  } else if (t >= 15.9) {
+    const p = eBack(prog(t, 16.09, 0.5)), b = bounce(t, 16.875, 1);
+    poseEarth(earth, { x: 540, y: 1127 + (1 - p) * 400 + b.dy, s: 1.1 * clamp(p, 0, 1.2), t, blink: blinkAt(t, 1.1), smile: 1,
+      squash: b.sq, waveL: wave(t + 0.7), waveR: 10, glow: 0, miniLit: 1, opacity: clamp(p * 3) });
+  } else hidden(earth);
 
-  // ----- Scene 5 -----
-  const s5 = t >= 15.625; show($('s5'), s5);
+  // smog clouds around earth, blown away at 5.625
+  smog.forEach((c, i) => {
+    const [dx, dy] = SMOG[i];
+    const inn = eBack(prog(t, 4.0 + i * 0.07, 0.45));
+    const away = eIn(prog(t, 5.625 + i * 0.03, 0.55));
+    const drift = Math.sin(t * 1.3 + i) * 14;
+    const ex = 540 + dx + drift + Math.sign(dx || 1) * away * 900, ey = 780 + dy + Math.cos(t * 1.1 + i) * 10 - away * 200;
+    const sc = clamp(inn, 0, 1.3) * (1 + 0.08 * Math.sin(t * 6 + i) * prog(t, 4.7, 0.6) * (1 - away));
+    c.setAttribute('transform', `translate(${ex} ${ey}) scale(${sc})`);
+    c.setAttribute('opacity', t > 3.9 && t < 6.5 ? 0.97 * (1 - away * 0.6) : 0);
+  });
+  sparks.forEach((sp, i) => {
+    const [dx, dy, , sz] = SPK[i];
+    const p = eBack(prog(t, 5.75 + i * 0.08, 0.4));
+    const tw = 0.75 + 0.25 * Math.sin(t * 7 + i * 2);
+    const exit = eIn(prog(t, 8.3, 0.4));
+    sp.setAttribute('transform', `translate(${540 + dx - exit * 1100} ${780 + dy}) rotate(${t * 40 + i * 30}) scale(${clamp(p, 0, 1.3) * sz * tw})`);
+    sp.setAttribute('opacity', t > 5.7 && t < 9 ? 1 : 0);
+  });
+
+  // ----- sapling -----
+  if (t >= 8.7 && t < 13.3) {
+    const enter = eOut(prog(t, 8.75, 0.45));
+    const hp = hop(t, 8.85, 0.35, 120);
+    const land = prog(t, 9.2, 0.22);
+    const exit = eIn(prog(t, 12.8, 0.4));
+    const bloom = eBack(prog(t, 10.625, 0.5));
+    const sp = eBack(prog(t, 10.75, 0.5));
+    poseSapling(sap, { x: lerp(1500, 540, enter) + exit * 1100, y: 1130 + hp.dy, s: 1.45, t, blink: blinkAt(t, 2.2),
+      smile: lerp(0.2, 1, clamp(bloom)), squash: hp.sq * (1 - 0.14 * Math.sin(Math.PI * land)) * (1 + 0.06 * Math.sin(Math.PI * prog(t, 10.625, 0.3))),
+      grow: eInOut(prog(t, 9.375, 0.6)), leaf: eBack(prog(t, 9.9, 0.5)), bloom: clamp(bloom, 0, 1.25) });
+    plantSparks.forEach(({ p, el }, i) => {
+      const k = eBack(prog(t, 10.75 + i * 0.1, 0.4)), tw = 0.7 + 0.3 * Math.sin(t * 6 + i * 2);
+      el.setAttribute('transform', `translate(${540 + p[0] + exit * 1100} ${1130 + p[1]}) rotate(${t * 50 + i * 20}) scale(${clamp(k, 0, 1.3) * tw})`);
+      el.setAttribute('opacity', t > 10.7 ? 1 : 0);
+    });
+  } else if (t >= 15.9) {
+    const p = eBack(prog(t, 16.25, 0.5)), b = bounce(t, 16.875, 2);
+    poseSapling(sap, { x: 885, y: 1290 + (1 - p) * 300 + b.dy, s: 0.78 * clamp(p, 0, 1.2), t, blink: blinkAt(t, 2.2), smile: 1, squash: b.sq,
+      grow: 1, leaf: 1, bloom: 1, opacity: clamp(p * 3) });
+    plantSparks.forEach(({ el }) => el.setAttribute('opacity', 0));
+  } else { hidden(sap); plantSparks.forEach(({ el }) => el.setAttribute('opacity', 0)); }
+
+  // ----- diya chorus (scene 4) -----
+  chorus.forEach((c, i) => {
+    if (t < 13.0 || t > 15.7) return hidden(c);
+    const up = eBack(prog(t, 13.125 + i * BEAT / 4, 0.45));
+    const down = eIn(prog(t, 15.25 + i * 0.04, 0.35));
+    const b = bounce(t, 14.375, i % 2);
+    const lit = prog(t, 13.4375 + i * BEAT / 2, 0.3);
+    poseDiya(c, { x: 140 + i * 200, y: 1150 + (1 - clamp(up)) * 500 + down * 700 + b.dy * clamp(prog(t, 14.375, 0.3)), s: 0.72, t, seed: i * 1.9,
+      lit, blink: lit > 0 ? blinkAt(t, i * 0.7) : 1, smile: lit > 0 ? 1 : 0.1, squash: b.sq,
+      waveL: t > 14.375 ? 40 + 40 * Math.sin(t * 2 * Math.PI / BEAT + i) : 10, waveR: t > 14.375 ? 40 + 40 * Math.sin(t * 2 * Math.PI / BEAT + i + Math.PI) : 10 });
+  });
+
+  // ground shadows for outro trio
+  [[195, 1294, 1.0, 15.9375], [540, 1294, 1.3, 16.09], [885, 1294, 0.85, 16.25]].forEach(([x, y, w, t0], i) => {
+    const p = clamp(eOut(prog(t, t0 + 0.2, 0.3))), b = bounce(t, 16.875, i);
+    shadows[i].setAttribute('transform', `translate(${x} ${y}) scale(${w * p * (1 + b.dy / 200)} ${p})`);
+    shadows[i].setAttribute('opacity', t > 15.9 ? 1 : 0);
+  });
+
+  // petal confetti
+  petals.forEach(q => {
+    const tt = t - 16.25 - q.d;
+    if (tt < 0) return q.e.setAttribute('opacity', 0);
+    const y = -40 + q.v * tt, x = q.x + q.sw * Math.sin(tt * q.f + q.ph);
+    q.e.setAttribute('transform', `translate(${x} ${y}) rotate(${q.rot + q.vr * tt}) scale(1 ${0.4 + 0.6 * Math.abs(Math.sin(tt * 4 + q.ph))})`);
+    q.e.setAttribute('opacity', y < 1960 ? 0.85 : 0);
+  });
+
+  // ----- text -----
+  const pp = eBack(prog(t, 2.5, 0.45)), po = eIn(prog(t, 3.35, 0.3));
+  $('s1pill').style.transform = `translateX(-50%) scale(${pp})`;
+  $('s1pill').style.opacity = clamp(pp) * (1 - po);
+  lines('t1', t, [1.25, 1.875], 3.35);
+  lines('t2', t, [4.375, 5.625], 8.3);
+  lines('t3', t, [9.375, 10.0], 12.75);
+  lines('t4', t, [13.4375, 13.75], 15.2);
+
+  const s5 = t >= 15.625; $('s5').style.visibility = s5 ? 'visible' : 'hidden';
   if (s5) {
-    // rangoli draws itself
-    rds.forEach((p, i) => { p.style.strokeDashoffset = 1 - eInOut(prog(t, 15.8 + i * 0.15, 0.9)); });
-    rps.forEach((p, i) => { p.style.strokeDashoffset = 1 - eOut(prog(t, 16.0 + i * 0.045, 0.6)); });
-    rqs.forEach((p, i) => {
-      p.style.strokeDashoffset = 1 - eOut(prog(t, 16.1 + i * 0.06, 0.5));
-      p.style.fillOpacity = eOut(prog(t, 16.45 + i * 0.06, 0.4));
-    });
-    rdots.forEach((d, i) => {
-      const a = eOutBack(prog(t, 16.3 + i * 0.03, 0.35));
-      d.setAttribute('r', 9 * clamp(a, 0, 1.3));
-    });
-    $('rangoli').style.transform = `rotate(${(t - 15.625) * 3}deg)`;
-    const rc = eOutBack(prog(t, 16.15, 0.45));
-    $('rcenter').setAttribute('r', 100 * clamp(rc, 0, 1.2));
-    const lg = eOutBack(prog(t, 16.25, 0.5));
-    $('logo').style.opacity = clamp(lg * 2);
-    $('logo').style.transform = `scale(${lg})`;
-    lineIn($('s5l1'), t, 16.875, 0.6);
+    const lg = eBack(prog(t, 16.5625, 0.5));
+    $('logo').style.opacity = clamp(lg * 2); $('logo').style.transform = `scale(${lg})`;
+    lines('t5', t, [16.875], null, 0.6);
     const sb = eOut(prog(t, 17.5, 0.5));
     $('s5sub').style.opacity = sb; $('s5sub').style.transform = `translateY(${(1 - sb) * 24}px)`;
-    const pl = eOutBack(prog(t, 18.125, 0.45));
-    $('s5pill').style.opacity = clamp(pl * 2);
-    $('s5pill').style.transform = `translateX(-50%) scale(${pl})`;
+    const pl = eBack(prog(t, 18.125, 0.45));
+    $('s5pill').style.opacity = clamp(pl * 2); $('s5pill').style.transform = `translateX(-50%) scale(${pl})`;
   }
 }
 window.render = render;

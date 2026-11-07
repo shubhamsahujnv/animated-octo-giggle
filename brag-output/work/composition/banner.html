@@ -6,84 +6,56 @@
 <style>
   @font-face { font-family: 'Space Grotesk'; font-weight: 700; src: url(../fonts/SpaceGrotesk-700.ttf); }
   @font-face { font-family: 'DM Sans'; font-weight: 400; src: url(../fonts/DMSans-400.ttf); }
-  @font-face { font-family: 'DM Sans'; font-weight: 500; src: url(../fonts/DMSans-500.ttf); }
   @font-face { font-family: 'IBM Plex Mono'; font-weight: 600; src: url(../fonts/IBMPlexMono-600.ttf); }
-  :root { --deep: #02403D; --night: #01302E; --layer: #0A4E4A; --layer2: #155C57; --lime: #E2FF4D; --cream: #F5F5F0; --paper: #FFFDF8; --ink-dark: #F7F4EE; }
+  :root { --deep: #02403D; --lime: #E2FF4D; --cream: #F5F5F0; --ink-dark: #F7F4EE; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1200px; height: 628px; overflow: hidden; background: var(--cream); font-family: 'DM Sans', sans-serif; }
   .abs { position: absolute; }
-  #hero { left: 24px; top: 24px; width: 1152px; height: 466px; border-radius: 12px; overflow: hidden;
-          background: radial-gradient(ellipse 520px 440px at 78% 52%, #0A4E4A 0%, var(--deep) 62%); }
+  #hero { left: 24px; top: 24px; width: 1152px; height: 580px; border-radius: 12px; overflow: hidden;
+          background: radial-gradient(ellipse 560px 460px at 76% 62%, #0A4E4A 0%, var(--deep) 64%); }
   .pill { font-family: 'IBM Plex Mono', monospace; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
           background: var(--lime); color: var(--deep); border-radius: 999px; padding: 7px 16px; font-size: 13px; white-space: nowrap; display: inline-block; }
-  h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 74px; line-height: 1.0; letter-spacing: -0.02em; color: var(--ink-dark); }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 72px; line-height: 1.0; letter-spacing: -0.02em; color: var(--ink-dark); }
   h1 em { font-style: normal; color: var(--lime); }
   .sub { font-size: 19px; line-height: 1.45; color: #D8E3DF; }
   .rule { width: 4px; background: var(--lime); }
-  .strip { left: 24px; top: 510px; width: 1152px; height: 94px; border: 2px solid var(--deep); border-radius: 6px; display: flex; background: var(--paper); }
-  .cell { flex: 1; padding: 16px 20px; border-left: 2px solid var(--deep); display: flex; flex-direction: column; justify-content: center; gap: 6px; }
-  .cell:first-child { border-left: 0; }
-  .cell.lime { background: var(--lime); }
-  .cell .k { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep); }
-  .cell .v { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: var(--deep); letter-spacing: -0.01em; }
-  /* diya */
-  .diya { position: absolute; width: 200px; height: 140px; }
-  .diya .glow { position: absolute; left: -150px; top: -190px; width: 500px; height: 500px; border-radius: 50%;
-     background: radial-gradient(circle, rgba(255,214,120,0.6) 0%, rgba(226,255,77,0.3) 26%, rgba(226,255,77,0.08) 48%, rgba(226,255,77,0) 68%); }
-  .diya .flame { position: absolute; left: 76px; top: -34px; width: 48px; height: 96px; transform-origin: 24px 92px; transform: rotate(-2deg) scale(0.98, 1.04); }
-  .diya svg.bowl { position: absolute; left: 0; top: 0; width: 200px; height: 140px; overflow: visible; }
+  svg#art { position: absolute; left: 0; top: 0; width: 1152px; height: 580px; overflow: visible; }
 </style>
 </head>
 <body>
   <div id="hero" class="abs">
-    <svg class="abs" style="left:640px; top:-60px; width:560px; height:560px; overflow:visible; opacity:0.95" viewBox="-360 -360 720 720" id="rangoli"></svg>
-    <div class="abs" style="left:48px; top:44px;"><span class="pill">Happy Diwali · 2026</span></div>
-    <h1 class="abs" style="left:46px; top:96px; width:640px;">Light diyas,<br><em>not emissions.</em></h1>
-    <div class="abs" style="left:48px; top:280px; display:flex; gap:18px; width:560px;">
+    <svg id="art" viewBox="0 0 1152 580"></svg>
+    <div class="abs" style="left:48px; top:150px;"><span class="pill">Happy Diwali · 2026</span></div>
+    <h1 class="abs" style="left:46px; top:198px; width:600px;">Light diyas,<br><em>not emissions.</em></h1>
+    <div class="abs" style="left:48px; top:370px; display:flex; gap:18px; width:520px;">
       <div class="rule"></div>
-      <p class="sub">Wishing you a bright, clean and green Diwali.<br>Small choices make a smaller footprint.</p>
+      <p class="sub">Less smoke, more sparkle. Wishing you a<br>bright, clean and green Diwali.</p>
     </div>
-    <div class="abs" style="left:48px; top:386px; display:flex; align-items:center; gap:18px;">
+    <div class="abs" style="left:48px; top:470px; display:flex; align-items:center; gap:18px;">
       <img src="../assets/tgs-logo-cream.png" style="width:72px; height:54px;">
       <div style="width:1px; height:38px; background:#2A6F69"></div>
       <div style="font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:15px; letter-spacing:0.1em; color:var(--lime); text-transform:uppercase;">thegreensolve.com</div>
     </div>
-    <div id="diyaHost" class="abs" style="left:920px; top:260px;"></div>
   </div>
-  <div class="abs strip">
-    <div class="cell"><div class="k">01 · Light</div><div class="v">Clay diyas, not plastic</div></div>
-    <div class="cell lime"><div class="k">02 · Decorate</div><div class="v">Flower rangoli</div></div>
-    <div class="cell"><div class="k">03 · Celebrate</div><div class="v">Skip the crackers</div></div>
-    <div class="cell"><div class="k">04 · Gift</div><div class="v">Gift a plant</div></div>
-  </div>
+<script src="cartoons.js"></script>
 <script>
-  // rangoli, same geometry as the reel, in dark-mode strokes
-  (function () {
-    let h = `<circle cx="0" cy="0" r="338" fill="none" stroke="#2A6F69" stroke-width="3"/>`;
-    for (let i = 0; i < 24; i++) { const a = i * 15 * Math.PI / 180;
-      h += `<circle cx="${Math.cos(a) * 338}" cy="${Math.sin(a) * 338}" r="8" fill="${i % 2 ? '#E2FF4D' : '#155C57'}" stroke="#2A6F69" stroke-width="2"/>`; }
-    for (let i = 0; i < 16; i++) h += `<path transform="rotate(${i * 22.5})" d="M0 -190 C 34 -230, 42 -280, 0 -318 C -42 -280, -34 -230, 0 -190 Z" fill="none" stroke="#2A6F69" stroke-width="4"/>`;
-    h += `<circle cx="0" cy="0" r="190" fill="none" stroke="#2A6F69" stroke-width="4"/>`;
-    for (let i = 0; i < 8; i++) h += `<path transform="rotate(${i * 45 + 22.5})" d="M0 -100 C 40 -120, 46 -160, 0 -182 C -46 -160, -40 -120, 0 -100 Z" fill="#E2FF4D" fill-opacity="0.9" stroke="#02403D" stroke-width="4"/>`;
-    h += `<circle cx="0" cy="0" r="100" fill="#01302E" stroke="#2A6F69" stroke-width="4"/>`;
-    document.getElementById('rangoli').innerHTML = h;
-  })();
-  // diya at rangoli centre
-  const d = document.createElement('div');
-  d.className = 'diya';
-  d.style.left = '-100px'; d.style.top = '-70px'; d.style.transform = 'scale(0.82)';
-  d.innerHTML = `<div class="glow"></div>
-  <svg class="bowl" viewBox="0 0 200 140"><defs>
-    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D2774A"/><stop offset="1" stop-color="#8A3B1E"/></linearGradient>
-    <radialGradient id="f" cx="0.5" cy="0.78" r="0.62"><stop offset="0" stop-color="#FFFBEA"/><stop offset="0.35" stop-color="#FFE07A"/><stop offset="0.75" stop-color="#FFA537"/><stop offset="1" stop-color="#FF7A1F" stop-opacity="0.9"/></radialGradient></defs>
-    <path d="M6 56 C 30 128, 170 128, 194 56 C 160 70, 40 70, 6 56 Z" fill="url(#b)"/>
-    <path d="M24 84 C 70 100, 130 100, 176 84" stroke="#F7F4EE" stroke-width="3" fill="none" stroke-dasharray="2 12" stroke-linecap="round" opacity="0.8"/>
-    <ellipse cx="100" cy="57" rx="94" ry="14" fill="#A9532C"/><ellipse cx="100" cy="57" rx="80" ry="9" fill="#4A2412"/>
-    <rect x="97" y="40" width="6" height="16" rx="3" fill="#3a2a20"/></svg>
-  <svg class="flame" viewBox="0 0 48 96">
-    <path d="M24 0 C 31 22, 47 46, 44 66 C 41 86, 34 94, 24 94 C 14 94, 7 86, 4 66 C 1 46, 17 22, 24 0 Z" fill="url(#f)"/>
-    <path d="M24 46 C 28 58, 33 68, 31 78 C 29 87, 19 87, 17 78 C 15 68, 20 58, 24 46 Z" fill="#FFFDF3" opacity="0.9"/></svg>`;
-  document.getElementById('diyaHost').appendChild(d);
+  const art = document.getElementById('art');
+  cartoonDefs(art);
+  // stars
+  let s = 5; const r = () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296;
+  for (let i = 0; i < 40; i++) gEl(art, `<circle cx="${560 + r() * 590}" cy="${110 + r() * 300}" r="${1 + r() * 2}" fill="${r() > 0.7 ? '#E2FF4D' : '#F7F4EE'}" opacity="${0.3 + r() * 0.5}"/>`);
+  const tg = gEl(art, ''); tg.setAttribute('transform', 'scale(0.66)');
+  const toran = Toran(tg, 25);
+  poseToran(toran, 0.8, 1, 1152 / 0.66, 46, 60);
+  // ground shadows
+  [[690, 498, 0.85], [878, 498, 1.05], [1078, 498, 0.68]].forEach(([x, y, w]) =>
+    gEl(art, `<ellipse cx="${x}" cy="${y}" rx="${100 * w}" ry="12" fill="#000" opacity="0.22"/>`));
+  const t = 1.0;
+  poseEarth(EarthBuddy(art), { x: 878, y: 498 - 0.68 * 150, s: 0.68, t, smile: 1, waveL: -15, waveR: 38, glow: 0.8, miniLit: 1 });
+  poseDiya(DiyaBuddy(art), { x: 690, y: 496, s: 0.62, t, seed: 1.3, lit: 1, smile: 1, waveR: 60, waveL: 15 });
+  poseSapling(SaplingBuddy(art), { x: 1078, y: 496, s: 0.48, t, smile: 1 });
+  [[610, 190, '#E2FF4D', 0.5], [1100, 200, '#FFD66B', 0.45], [760, 250, '#FFD66B', 0.35], [1000, 150, '#E2FF4D', 0.4], [980, 300, '#F7F4EE', 0.3]]
+    .forEach(([x, y, c, k], i) => Sparkle(art, c).setAttribute('transform', `translate(${x} ${y}) rotate(${i * 20}) scale(${k})`));
   window.ready = Promise.all([document.fonts.ready, ...[...document.images].map(i => i.complete ? 1 : new Promise(r => { i.onload = r; i.onerror = r; }))]);
 </script>
 </body>
