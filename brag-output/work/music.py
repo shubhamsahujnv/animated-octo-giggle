@@ -137,46 +137,26 @@ for b, nt in mel:
 for b, nt in [(25, 'D3'), (27, 'B2'), (29, 'G2'), (31, 'D3')]:
     add(pluck(hz(nt), 2.2, 0.5), beat(b), 0.28, pan=0)
 
-# ---------- SFX (cartoon foley + bells in key, sitting under the music) ----------
-def boing(f, d=0.22):
-    t = tt(d); fr = f * (1 + 0.5 * (t / d)); ph = 2 * np.pi * np.cumsum(fr) / SR
-    return np.sin(ph) * np.exp(-t * 9) * (1 - np.exp(-t * 800)) * 0.6
-def pop(f, d=0.12):
-    t = tt(d); fr = f * (1.6 - 0.6 * np.exp(-t * 60)); ph = 2 * np.pi * np.cumsum(fr) / SR
-    return np.sin(ph) * np.exp(-t * 35) * (1 - np.exp(-t * 3000)) * 0.6
-def cough(d=0.16):
-    t = tt(d); n = lowpass(rng.standard_normal(len(t)), 900)
-    return n * np.exp(-t * 22) * (1 - np.exp(-t * 300)) * 0.5
-def thud(d=0.3):
-    t = tt(d); fr = 90 + 60 * np.exp(-t * 30); ph = 2 * np.pi * np.cumsum(fr) / SR
-    return np.sin(ph) * np.exp(-t * 14)
+# ---------- SFX (bells and shimmers in key, sitting under the music) ----------
 S16 = B / 4
 bells = [
-    (0.625, 'A5', 0.22),                                   # diya buddy lights up
-    (1.25, 'F#5', 0.10), (1.875, 'A5', 0.12), (2.5, 'D6', 0.09),
-    (5.625, 'D6', 0.09), (5.625 + S16, 'F#6', 0.08), (5.625 + 2 * S16, 'A6', 0.07), (5.625 + 3 * S16, 'D7', 0.05),  # sparkle
-    (10.625, 'D5', 0.12), (10.625, 'F#5', 0.10), (10.625, 'A5', 0.10), (10.625 + S16, 'D6', 0.08),            # marigold blooms
-    (16.5625, 'D5', 0.13), (16.5625, 'F#5', 0.10), (16.5625, 'A5', 0.10),                                       # logo
+    (0.625, 'A5', 0.22),                                              # diya ignites
+    (1.25, 'F#5', 0.10), (1.875, 'A5', 0.12), (2.5, 'D6', 0.09),        # hook lines, pill
+    (3.9, 'D5', 0.07), (3.9 + S16, 'F#5', 0.06), (3.9 + 2 * S16, 'A5', 0.06),   # globe draws on
+    (5.625, 'D6', 0.09), (5.625 + S16, 'F#6', 0.08), (5.625 + 2 * S16, 'A6', 0.07), (5.625 + 3 * S16, 'D7', 0.05),  # smoke clears
+    (10.625, 'D5', 0.12), (10.625, 'F#5', 0.10), (10.625, 'A5', 0.10), (10.625 + S16, 'D6', 0.08),            # marigolds bloom
+    (16.25, 'D5', 0.13), (16.25, 'F#5', 0.10), (16.25, 'A5', 0.10),    # logo
     (16.875, 'D6', 0.11), (18.125, 'A5', 0.08),
 ]
 for tm, nt, g in bells:
     add(bell(hz(nt)), tm, g, pan=(-0.2 if 'F' in nt else 0.15))
-for tm, nt, g in [(0.94, 'D5', 0.09), (5.9, 'A4', 0.10), (7.5, 'F#5', 0.06), (8.85, 'E5', 0.08),
-                  (15.9375, 'D5', 0.08), (16.09375, 'F#5', 0.08), (16.25, 'A5', 0.08)]:
-    add(boing(hz(nt)), tm, g, pan=0.1)
-for tm in [4.7, 4.82, 5.05, 5.17]:
-    add(cough(), tm, 0.07, pan=0.05)
-add(thud(), 9.2, 0.14); add(thud(), 4.6, 0.12)
-for i in range(6):
-    add(pop(hz(['D5', 'E5', 'F#5', 'A5', 'B5', 'D6'][i])), 4.0 + i * 0.07, 0.04, pan=-0.5 + i * 0.2)  # smog puffs in
 for i, nt in enumerate(['D5', 'E5', 'F#5', 'A5']):
-    add(pluck(hz(nt), 0.8), 9.375 + i * S16, 0.10, pan=0.3)   # stem grows
-add(pop(hz('B5')), 9.9, 0.07)                                  # leaves unfurl
-for i, nt in enumerate(['D5', 'E5', 'F#5', 'A5', 'B5']):
-    add(pop(hz(nt)), 13.125 + i * S16, 0.06, pan=-0.6 + i * 0.3)      # chorus pops up
-    add(bell(hz(nt), 1.6), 13.4375 + i * B / 2, 0.08, pan=-0.6 + i * 0.3)  # each diya lights
-for w in [3.5, 5.55, 8.4, 12.8, 15.2, 15.625]:
-    add(whoosh(0.55), w - 0.1, 0.05)
+    add(pluck(hz(nt), 0.8), 9.0 + i * S16, 0.09, pan=0.3)            # stem grows
+ring = ['D5', 'E5', 'F#5', 'A5', 'B5', 'D6', 'E6', 'F#6']
+for i, nt in enumerate(ring):
+    add(bell(hz(nt), 1.6), 13.4375 + i * S16, 0.07, pan=-0.7 + i * 0.2)   # ring of diyas lights
+for w in [3.45, 5.5, 8.35, 12.7, 15.1, 15.625]:
+    add(whoosh(0.55), w - 0.1, 0.04)
 
 # ---------- master ----------
 mix = np.stack([L, R])
