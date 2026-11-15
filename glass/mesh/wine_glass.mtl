@@ -1,0 +1,8 @@
+# Wine glass material (one texture set in Substance Painter)
+newmtl M_Glass
+Kd 0.95 0.97 0.98
+Ks 1.0 1.0 1.0
+Ns 900
+Ni 1.5
+d 0.15
+illum 7
