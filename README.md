@@ -8,5 +8,10 @@ First, I installed Cursor and Git on my system. After that, I logged in to Claud
 
 ###################################################################################
 
-**Signature:** Shubham Sahu  
+**Signature:**
+
+<img src="signature.jpg" alt="Signature of Shubham Sahu" width="250">
+
+Shubham Sahu
+
 **Date:** 17 November 2026
