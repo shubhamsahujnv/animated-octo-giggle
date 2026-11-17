@@ -7,5 +7,6 @@ First, I installed Cursor and Git on my system. After that, I logged in to Claud
 3.⁠ ⁠The main issue I faced was installing Git on Mac. During the installation, there were some setup and configuration issues in the terminal, which took some time to fix. After completing the installation and configuration properly, Git started working fine. Other than that, I did not face any major issues.
 
 ###################################################################################
+
 **Signature:** Shubham Sahu  
 **Date:** 17 November 2026
