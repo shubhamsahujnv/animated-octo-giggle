@@ -30,6 +30,19 @@ in hPanel File Manager.
 - **Net-Low and sign-in pages:** social tags no longer point at lovable.app.
 - `sitemap.xml` has `<lastmod>`; `llms.txt` no longer lists Net-Low; author photo 479 KB → 93 KB.
 
+## Round 2 (also live, 20 Nov 2026)
+
+- `/favicon.ico` added (it returned 404).
+- Each article has its own 1200×630 share image in `/og/<slug>.jpg`, drawn in the site's
+  own style (homepage hero green, lime chip, cream text, tgs logo) by `make_og.py`.
+  Used for og:image, twitter:image and the Article structured data.
+- Small text links have a transparent tap area at least 32 px tall
+  (`/assets/tgs-tap-targets.v1.css`, linked from every page). Nothing on the page moves.
+- Author photos and logos have `width`/`height` attributes.
+- `/blog/authors` has CollectionPage structured data.
+- Two short article descriptions were extended to 138–144 characters (meta tags only;
+  the subtitle on the page is unchanged).
+
 ## Important: the Lovable project
 
 The blog and Net-Low pages are built by the Lovable project "Project Navigator". If that project
@@ -42,6 +55,11 @@ make the same changes in the source:
 - Article JSON-LD: add `dateModified`
 - Author meta description: use the short versions in `patch.py` (`AUTHOR_DESC`)
 - FAQ list component: wrap each question in a heading (`level` prop, h2 on the FAQ page)
+- `Gh()` head helper: accept an `image` and use it for og:image and twitter:image; articles pass
+  `/og/<slug>.jpg` (also in the Article JSON-LD), and use the `DESC` overrides in `patch.py`
+- Avatar `<img>` tags: add `width`/`height`; `/blog/authors` head: add the CollectionPage JSON-LD
+- Add `<link rel="stylesheet" href="/assets/tgs-tap-targets.v1.css">` to the root head
+  (and keep `public/og/*.jpg`, `public/favicon.ico` and that CSS file in the project)
 
 The homepage (`index.html`), `.htaccess`, `404.html`, `sitemap.xml` and `llms.txt` are not built
 by Lovable.

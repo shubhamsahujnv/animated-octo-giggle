@@ -1,0 +1,17 @@
+/* Bigger tap areas for small text links (WCAG 2.5.8 target size, 24px minimum).
+   Each link gets a transparent overlay at least 32px tall, centred on the text.
+   The overlay is absolutely positioned, so nothing on the page moves or resizes.
+   :where() keeps the position rule at zero specificity, so any existing
+   positioning on a link still wins. Buttons are left alone: they already qualify. */
+:where(nav a, footer a, header a, p a, h2 a, .asof a, .footer-link, .text-sm a, a.underline):not([class*="btn"]) {
+  position: relative;
+}
+:where(nav a, footer a, header a, p a, h2 a, .asof a, .footer-link, .text-sm a, a.underline):not([class*="btn"])::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: max(100%, 32px);
+  transform: translateY(-50%);
+}
