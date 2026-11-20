@@ -4,7 +4,7 @@ meta_title: "Carbon Baseline 2026: Top 7 ISO 14064-1 Steps"
 meta_description: "A carbon baseline is your base-year emissions inventory across ISO 14064-1's 6 categories. Here are the top 7 steps manufacturers use to build one in 2026."
 suggested_url: "iso-14064-carbon-baseline-steps"
 tldr: "A carbon baseline is a documented base-year greenhouse gas inventory that every future reduction is measured against. Manufacturers build one in 7 steps: set boundaries, list sources by ISO 14064-1 category, pick a base year, collect activity data, apply factors and AR6 GWPs, assess uncertainty, and document everything for verification."
-word_count: 1779
+word_count: 1768
 article_type: "how-to-guide"
 keywords: ["carbon baseline", "iso 14064-1", "base year emissions", "iso 14064-1 vs ghg protocol", "iso 14064-1 categories", "carbon footprint calculator for manufacturing", "iso 14064 certification", "base year recalculation"]
 selected_keywords: ["carbon baseline", "iso 14064-1", "base year emissions", "iso 14064-1 vs ghg protocol"]
@@ -32,7 +32,7 @@ This guide covers what a baseline is, how ISO 14064-1 compares with the GHG Prot
 
 ## What does carbon baseline mean?
 
-A carbon baseline means your organisation's total greenhouse gas emissions in a chosen base year, calculated with documented boundaries, methods and emission factors. India's Carbon Credit Trading Scheme, for example, measures obligated plants against an FY 2023-24 baseline [1].
+A carbon baseline means your organisation's total greenhouse gas emissions in a chosen base year, calculated with documented boundaries, methods and emission factors. [India's Carbon Credit Trading Scheme, for example,](https://icapcarbonaction.com/en/news/india-notifies-emission-intensity-targets-nine-sectors-under-carbon-credit-trading-scheme) measures obligated plants against an FY 2023-24 baseline [[1]](https://icapcarbonaction.com/en/news/india-notifies-emission-intensity-targets-nine-sectors-under-carbon-credit-trading-scheme).
 
 A baseline has three parts:
 
@@ -53,7 +53,7 @@ ISO 14064-1:2018 and the GHG Protocol Corporate Standard measure the same emissi
 | Form | Accounting framework and guidance | International standard with formal requirements |
 | Verification | Assurance by choice or by programme rules | Designed to pair with ISO 14064-3 verification |
 
-The ISO 14064 series has 3 parts: part 1 covers organisation-level inventories, part 2 covers project-level reductions, and part 3 covers validation and verification of GHG statements [2]. Most manufacturers design one inventory that satisfies both frameworks, which also simplifies [reporting in India and the US](https://thegreensolve.com/blog/india-and-us-reporting-what-changes).
+[The ISO 14064 series has 3 parts](https://www.iso.org/news/ref2384.html): part 1 covers organisation-level inventories, part 2 covers project-level reductions, and part 3 covers validation and verification of GHG statements [[2]](https://www.iso.org/news/ref2384.html). Most manufacturers design one inventory that satisfies both frameworks, which also simplifies [reporting in India and the US](https://thegreensolve.com/blog/india-and-us-reporting-what-changes).
 
 ## What are the 7 steps to build an ISO 14064-1 carbon baseline?
 
@@ -77,7 +77,7 @@ Gather fuel invoices, meter readings, utility bills, refrigerant top-up logs, pr
 
 ### Step 5: Apply emission factors and AR6 GWPs
 
-Convert activity data into CO₂e using factors that match each country, year and fuel. The GHG Protocol recommends the latest IPCC values, AR6, for global warming potentials [3]. Record the source and version of every factor in the inventory itself, not in a separate note.
+Convert activity data into CO₂e using factors that match each country, year and fuel. [The GHG Protocol recommends the latest IPCC values](https://ghgprotocol.org/sites/default/files/2024-08/Global-Warming-Potential-Values%20%28August%202024%29.pdf), AR6, for global warming potentials [[3]](https://ghgprotocol.org/sites/default/files/2024-08/Global-Warming-Potential-Values%20%28August%202024%29.pdf). Record the source and version of every factor in the inventory itself, not in a separate note.
 
 ### Step 6: Assess data quality and uncertainty
 
@@ -85,7 +85,7 @@ Rate every major source as measured, calculated from records or estimated. Meter
 
 ### Step 7: Document everything and prepare for verification
 
-Write a GHG inventory report covering boundaries, base year, methods, factors, assumptions, exclusions and the recalculation policy. If you plan public claims, targets or credits, have it verified against ISO 14064-3 [2]. A clean evidence trail makes verification faster and cheaper.
+Write a GHG inventory report covering boundaries, base year, methods, factors, assumptions, exclusions and the recalculation policy. If you plan public claims, targets or credits, have it verified against ISO 14064-3 [[2]](https://www.iso.org/news/ref2384.html). A clean evidence trail makes verification faster and cheaper.
 
 ## What are the ISO 14064-1 categories?
 
@@ -104,7 +104,7 @@ The mapping is approximate, not one-to-one. Keep a crosswalk table in your inven
 
 ## How do you choose and recalculate base year emissions?
 
-Choose base year emissions from a recent, representative year, then recalculate them when significant structural or method changes occur. The SBTi's Corporate Net-Zero Standard V2.0 says companies shall recalculate their target base-year inventory in response to significant changes [4].
+Choose base year emissions from a recent, representative year, then recalculate them when significant structural or method changes occur. [The SBTi's Corporate Net-Zero Standard V2.0](https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf) says companies shall recalculate their target base-year inventory in response to significant changes [[4]](https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf).
 
 Common triggers for recalculation:
 
@@ -112,26 +112,26 @@ Common triggers for recalculation:
 - **Methodology changes**, such as switching from spend-based to supplier-specific data
 - **Discovered errors** that materially change the total
 
-How big is "significant"? The GHG Protocol is revising its Corporate Standard, and a working group's indicative poll showed majority support for a 5% significance threshold if one is set; that threshold is not yet adopted [5]. Until it is, define your own threshold, write it into your policy and apply it consistently.
+How big is "significant"? The GHG Protocol is revising its Corporate Standard, and [a working group's indicative poll](https://ghgprotocol.org/sites/default/files/2025-05/CS-group1-Meeting7-Minutes-20250513.pdf) showed majority support for a 5% significance threshold if one is set; that threshold is not yet adopted [[5]](https://ghgprotocol.org/sites/default/files/2025-05/CS-group1-Meeting7-Minutes-20250513.pdf). Until it is, define your own threshold, write it into your policy and apply it consistently.
 
 ## How do you calculate a carbon footprint for manufacturing?
 
-You calculate a manufacturing carbon footprint by multiplying each activity by its emission factor and adding the results by category. A plant using 2,000 MWh of US grid power emits about 747 tonnes of CO₂ location-based, at eGRID's 2022 average of 823.1 lb per MWh [6].
+You calculate a manufacturing carbon footprint by multiplying each activity by its emission factor and adding the results by category. A plant using 2,000 MWh of US grid power emits about 747 tonnes of CO₂ location-based, at [eGRID's 2022 average](https://www.epa.gov/system/files/documents/2024-01/egrid2022_summary_tables.pdf) of 823.1 lb per MWh [[6]](https://www.epa.gov/system/files/documents/2024-01/egrid2022_summary_tables.pdf).
 
 Here is a simplified example for one US plant:
 
 | Source | Activity | Emission factor | Emissions (t CO₂e) |
 |---|---|---|---|
-| Natural gas boilers | 20,000 MMBtu | 53.06 kg CO₂/MMBtu [7] | 1,061 |
-| Grid electricity | 2,000 MWh | 823.1 lb CO₂/MWh [6] | 747 |
-| Refrigerant leak (HFC-32) | 20 kg | GWP 771 [3] | 15 |
+| Natural gas boilers | 20,000 MMBtu | 53.06 kg CO₂/MMBtu [[7]](https://www.epa.gov/system/files/documents/2024-02/ghg-emission-factors-hub-2024.pdf) | 1,061 |
+| Grid electricity | 2,000 MWh | 823.1 lb CO₂/MWh [[6]](https://www.epa.gov/system/files/documents/2024-01/egrid2022_summary_tables.pdf) | 747 |
+| Refrigerant leak (HFC-32) | 20 kg | GWP 771 [[3]](https://ghgprotocol.org/sites/default/files/2024-08/Global-Warming-Potential-Values%20%28August%202024%29.pdf) | 15 |
 | **Total (partial)** | | | **1,823** |
 
 This covers only Scope 1 and 2 and CO₂ from combustion. A full baseline adds methane and nitrous oxide from combustion, process emissions, and the significant indirect categories, which for most manufacturers include purchased materials.
 
 ## What happens after your carbon baseline is built?
 
-After the baseline is built, it becomes the yardstick for 3 things: reduction targets, regulatory reporting and any carbon credit claims. In India, plants covered by the Carbon Credit Trading Scheme that beat their intensity targets earn tradable certificates, and those that miss must buy and surrender them [1].
+After the baseline is built, it becomes the yardstick for 3 things: reduction targets, regulatory reporting and any carbon credit claims. In India, plants covered by the Carbon Credit Trading Scheme that beat their intensity targets earn tradable certificates, and those that miss must buy and surrender them [[1]](https://icapcarbonaction.com/en/news/india-notifies-emission-intensity-targets-nine-sectors-under-carbon-credit-trading-scheme).
 
 Typical next steps:
 
@@ -150,7 +150,7 @@ The current edition is ISO 14064-1:2018. It replaced the 2006 edition and introd
 
 ### What is the difference between ISO 14064-1, 14064-2 and 14064-3?
 
-They cover 3 different jobs. ISO 14064-1 quantifies an organisation's inventory, ISO 14064-2 quantifies emission reductions or removals from a specific project, and ISO 14064-3 sets out how those statements are verified or validated [2]. A manufacturer seeking carbon credits for a project may need all 3.
+They cover 3 different jobs. ISO 14064-1 quantifies an organisation's inventory, ISO 14064-2 quantifies emission reductions or removals from a specific project, and ISO 14064-3 sets out how those statements are verified or validated [[2]](https://www.iso.org/news/ref2384.html). A manufacturer seeking carbon credits for a project may need all 3.
 
 ### Does ISO 14064-1 require Scope 3 emissions?
 
@@ -158,15 +158,25 @@ Not all of them. ISO 14064-1 requires you to define a process for deciding which
 
 ### Is India's CCTS baseline the same as an ISO 14064-1 baseline?
 
-No. India's Carbon Credit Trading Scheme sets targets as GHG emission intensity, meaning tonnes of CO₂e per unit of output, measured against FY 2023-24 [1]. An ISO 14064-1 baseline is usually an absolute total for the whole organisation. Many plants need both views, so keep production data alongside emissions.
+No. India's Carbon Credit Trading Scheme sets targets as GHG emission intensity, meaning tonnes of CO₂e per unit of output, measured against FY 2023-24 [[1]](https://icapcarbonaction.com/en/news/india-notifies-emission-intensity-targets-nine-sectors-under-carbon-credit-trading-scheme). An ISO 14064-1 baseline is usually an absolute total for the whole organisation. Many plants need both views, so keep production data alongside emissions.
 
 ### Which GWP values should a 2026 carbon baseline use?
 
-Use IPCC AR6 values unless a programme requires otherwise; the GHG Protocol recommends the latest set [3]. The change matters: HFC-134a is 1,530 under AR6 but 1,300 under AR5. Some programmes still use AR5, so check before you submit, and record which set you used.
+Use IPCC AR6 values unless a programme requires otherwise; the GHG Protocol recommends the latest set [[3]](https://ghgprotocol.org/sites/default/files/2024-08/Global-Warming-Potential-Values%20%28August%202024%29.pdf). The change matters: HFC-134a is 1,530 under AR6 but 1,300 under AR5. Some programmes still use AR5, so check before you submit, and record which set you used.
 
 ### Can I reuse a GHG Protocol inventory for ISO 14064-1?
 
 Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant indirect emissions have been considered. In practice you remap the 3 scopes into 6 categories, document how you judged significance, and add any indirect sources your Scope 3 screening had skipped.
+
+**Sources**
+
+1. [ICAP, India notifies emission intensity targets for nine sectors under the Carbon Credit Trading Scheme](https://icapcarbonaction.com/en/news/india-notifies-emission-intensity-targets-nine-sectors-under-carbon-credit-trading-scheme)
+2. [ISO, "Raising new ISO standards for saving the planet" (ISO 14064 series)](https://www.iso.org/news/ref2384.html)
+3. [GHG Protocol, Global Warming Potential Values (August 2024, IPCC AR6)](https://ghgprotocol.org/sites/default/files/2024-08/Global-Warming-Potential-Values%20%28August%202024%29.pdf)
+4. [SBTi, Corporate Net-Zero Standard V2.0 (June 2026)](https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-version-2.pdf)
+5. [GHG Protocol, Corporate Standard revision working group minutes (May 2025)](https://ghgprotocol.org/sites/default/files/2025-05/CS-group1-Meeting7-Minutes-20250513.pdf)
+6. [US EPA, eGRID2022 Summary Tables](https://www.epa.gov/system/files/documents/2024-01/egrid2022_summary_tables.pdf)
+7. [US EPA, GHG Emission Factors Hub (2024)](https://www.epa.gov/system/files/documents/2024-02/ghg-emission-factors-hub-2024.pdf)
 
 ---CITATIONS---
 [1] ICAP, India notifies emission intensity targets for nine sectors under the Carbon Credit Trading Scheme — https://icapcarbonaction.com/en/news/india-notifies-emission-intensity-targets-nine-sectors-under-carbon-credit-trading-scheme
@@ -280,7 +290,7 @@ Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant 
      "name": "What is the difference between ISO 14064-1, 14064-2 and 14064-3?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "They cover 3 different jobs. ISO 14064-1 quantifies an organisation's inventory, ISO 14064-2 quantifies emission reductions or removals from a specific project, and ISO 14064-3 sets out how those statements are verified or validated . A manufacturer seeking carbon credits for a project may need all 3."
+      "text": "They cover 3 different jobs. ISO 14064-1 quantifies an organisation's inventory, ISO 14064-2 quantifies emission reductions or removals from a specific project, and ISO 14064-3 sets out how those statements are verified or validated. A manufacturer seeking carbon credits for a project may need all 3."
      }
     },
     {
@@ -296,7 +306,7 @@ Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant 
      "name": "Is India's CCTS baseline the same as an ISO 14064-1 baseline?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No. India's Carbon Credit Trading Scheme sets targets as GHG emission intensity, meaning tonnes of CO₂e per unit of output, measured against FY 2023-24 . An ISO 14064-1 baseline is usually an absolute total for the whole organisation. Many plants need both views, so keep production data alongside emissions."
+      "text": "No. India's Carbon Credit Trading Scheme sets targets as GHG emission intensity, meaning tonnes of CO₂e per unit of output, measured against FY 2023-24. An ISO 14064-1 baseline is usually an absolute total for the whole organisation. Many plants need both views, so keep production data alongside emissions."
      }
     },
     {
@@ -304,7 +314,7 @@ Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant 
      "name": "Which GWP values should a 2026 carbon baseline use?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Use IPCC AR6 values unless a programme requires otherwise; the GHG Protocol recommends the latest set . The change matters: HFC-134a is 1,530 under AR6 but 1,300 under AR5. Some programmes still use AR5, so check before you submit, and record which set you used."
+      "text": "Use IPCC AR6 values unless a programme requires otherwise; the GHG Protocol recommends the latest set. The change matters: HFC-134a is 1,530 under AR6 but 1,300 under AR5. Some programmes still use AR5, so check before you submit, and record which set you used."
      }
     },
     {
@@ -372,7 +382,7 @@ Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant 
      "@type": "HowToStep",
      "position": 5,
      "name": "Apply emission factors and AR6 GWPs",
-     "text": "Convert activity data into CO₂e using factors that match each country, year and fuel. The GHG Protocol recommends the latest IPCC values, AR6, for global warming potentials . Record the source and version of every factor in the inventory itself, not in a separate note."
+     "text": "Convert activity data into CO₂e using factors that match each country, year and fuel. The GHG Protocol recommends the latest IPCC values, AR6, for global warming potentials. Record the source and version of every factor in the inventory itself, not in a separate note."
     },
     {
      "@type": "HowToStep",
@@ -384,7 +394,7 @@ Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant 
      "@type": "HowToStep",
      "position": 7,
      "name": "Document everything and prepare for verification",
-     "text": "Write a GHG inventory report covering boundaries, base year, methods, factors, assumptions, exclusions and the recalculation policy. If you plan public claims, targets or credits, have it verified against ISO 14064-3 . A clean evidence trail makes verification faster and cheaper."
+     "text": "Write a GHG inventory report covering boundaries, base year, methods, factors, assumptions, exclusions and the recalculation policy. If you plan public claims, targets or credits, have it verified against ISO 14064-3. A clean evidence trail makes verification faster and cheaper."
     }
    ]
   }
@@ -400,7 +410,7 @@ Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant 
  },
  {
   "question": "What is the difference between ISO 14064-1, 14064-2 and 14064-3?",
-  "answer": "They cover 3 different jobs. ISO 14064-1 quantifies an organisation's inventory, ISO 14064-2 quantifies emission reductions or removals from a specific project, and ISO 14064-3 sets out how those statements are verified or validated . A manufacturer seeking carbon credits for a project may need all 3."
+  "answer": "They cover 3 different jobs. ISO 14064-1 quantifies an organisation's inventory, ISO 14064-2 quantifies emission reductions or removals from a specific project, and ISO 14064-3 sets out how those statements are verified or validated. A manufacturer seeking carbon credits for a project may need all 3."
  },
  {
   "question": "Does ISO 14064-1 require Scope 3 emissions?",
@@ -408,11 +418,11 @@ Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant 
  },
  {
   "question": "Is India's CCTS baseline the same as an ISO 14064-1 baseline?",
-  "answer": "No. India's Carbon Credit Trading Scheme sets targets as GHG emission intensity, meaning tonnes of CO₂e per unit of output, measured against FY 2023-24 . An ISO 14064-1 baseline is usually an absolute total for the whole organisation. Many plants need both views, so keep production data alongside emissions."
+  "answer": "No. India's Carbon Credit Trading Scheme sets targets as GHG emission intensity, meaning tonnes of CO₂e per unit of output, measured against FY 2023-24. An ISO 14064-1 baseline is usually an absolute total for the whole organisation. Many plants need both views, so keep production data alongside emissions."
  },
  {
   "question": "Which GWP values should a 2026 carbon baseline use?",
-  "answer": "Use IPCC AR6 values unless a programme requires otherwise; the GHG Protocol recommends the latest set . The change matters: HFC-134a is 1,530 under AR6 but 1,300 under AR5. Some programmes still use AR5, so check before you submit, and record which set you used."
+  "answer": "Use IPCC AR6 values unless a programme requires otherwise; the GHG Protocol recommends the latest set. The change matters: HFC-134a is 1,530 under AR6 but 1,300 under AR5. Some programmes still use AR5, so check before you submit, and record which set you used."
  },
  {
   "question": "Can I reuse a GHG Protocol inventory for ISO 14064-1?",

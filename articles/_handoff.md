@@ -6,13 +6,22 @@ Generated 2026-11-20. Covers Phases 5–9 of `aeo-article`. The research and key
 
 | File | H1 | Words | H2s | Internal links | Citations |
 |---|---|---|---|---|---|
-| `carbon-accounting-software-signs.md` | Top 10 Signs Your Business Needs Carbon Accounting Software in 2026 | 1,978 | 7 | 7 | 13 |
-| `scope-1-2-3-emissions-examples.md` | Top 15 Scope 1, 2 and 3 Emissions Examples Every Business Should Know in 2026 | 1,864 | 7 | 6 | 8 |
-| `iso-14064-carbon-baseline-steps.md` | Top 7 Steps to Build an ISO 14064-1 Carbon Baseline for Manufacturers in 2026 | 1,779 | 7 | 6 | 7 |
-| `carbon-accounting-mistakes.md` | Top 9 Carbon Accounting Mistakes to Avoid in 2026 and How to Fix Them | 1,782 | 6 | 6 | 12 |
-| `decarbonisation-strategies-manufacturers.md` | Top 10 Decarbonisation Strategies Manufacturers Can Use to Cut Emissions in 2026 | 1,760 | 6 | 8 | 12 |
+| `carbon-accounting-software-signs.md` | Top 10 Signs Your Business Needs Carbon Accounting Software in 2026 | 1,960 | 7 | 7 | 13 |
+| `scope-1-2-3-emissions-examples.md` | Top 15 Scope 1, 2 and 3 Emissions Examples Every Business Should Know in 2026 | 1,845 | 7 | 6 | 8 |
+| `iso-14064-carbon-baseline-steps.md` | Top 7 Steps to Build an ISO 14064-1 Carbon Baseline for Manufacturers in 2026 | 1,768 | 7 | 6 | 7 |
+| `carbon-accounting-mistakes.md` | Top 9 Carbon Accounting Mistakes to Avoid in 2026 and How to Fix Them | 1,760 | 6 | 6 | 12 |
+| `decarbonisation-strategies-manufacturers.md` | Top 10 Decarbonisation Strategies Manufacturers Can Use to Cut Emissions in 2026 | 1,738 | 6 | 8 | 12 |
 
 Each file follows the skill's Phase 9 format: frontmatter, article, `---CITATIONS---`, `---SCHEMA---` (Organization, Article, FAQPage, BreadcrumbList, plus HowTo on the ISO article), and `---FAQ_JSON---`. The schema and FAQ JSON are generated from the visible text, so they match it word for word.
+
+## External links
+
+Every article links out to its authority sources in 3 ways:
+- **Descriptive links** on the first mention of each key source, 6–8 per article (for example, "CDP's latest analysis" or "The GHG Protocol's Scope 2 Guidance")
+- **Clickable citation markers:** each `[N]` links to its source
+- **A visible Sources list** at the end of each article
+
+The `---CITATIONS---` block is unchanged, for publishing tools. All external URLs were checked: most return 200/206. ghgprotocol.org's Scope 3 FAQ and two IEA pages return 403 only to automated clients, and the NSE-hosted SEBI circular timed out from this host, so open those in a browser.
 
 ## Automated quality checks (Phase 6): all pass
 
