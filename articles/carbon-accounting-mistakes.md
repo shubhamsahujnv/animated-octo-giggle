@@ -14,6 +14,9 @@ project_id: "n/a (no Unveilr project for this brand)"
 brand: "TheGreensolve (TGS)"
 author: "TGS Editorial"
 featured_image_url: ""
+featured_image_path: "images/carbon-accounting-mistakes.jpg"
+featured_image_alt: "Baseline Journal banner: Top 9 Carbon Accounting Mistakes to Avoid in 2026 and How to Fix Them"
+featured_image_size: "1200x630"
 generated_date: "2026-11-20"
 ---
 

@@ -105,14 +105,13 @@ With these added, every article reaches 8–10 internal links, inside the skill'
 
 Check that each inbound link is live after publishing.
 
-## Banner prompts (Phase 7)
+## Banners (Phase 7): done
 
-Not generated, because there's no Novita/Seedream key here. Use one per article: *"Flat, abstract illustration, no text, no people or landmarks, brand palette, white background,"* plus:
-1. **Software:** "a spreadsheet grid transforming into a clean dashboard with three stacked scope bars." Alt: "Spreadsheet turning into a carbon accounting dashboard"
-2. **Scopes:** "three concentric rings labelled by icons: factory chimney, power pylon, truck and shopping box." Alt: "Scope 1, 2 and 3 emission sources around a factory"
-3. **ISO baseline:** "a factory outline on a baseline chart with a flag at the base year and seven step markers." Alt: "Manufacturing plant on a carbon baseline timeline"
-4. **Mistakes:** "a magnifying glass over a ledger with three highlighted error marks." Alt: "Reviewing a GHG inventory for errors"
-5. **Decarbonisation:** "a factory with a heat pump, solar roof and a downward emissions arrow." Alt: "Factory adopting decarbonisation measures"
+All 5 banners are in `images/<slug>.jpg` (1200×630 JPEG). Each article's frontmatter now has `featured_image_path`, `featured_image_alt` and `featured_image_size`.
+
+- **Matched to the journal's existing template, not AI-generated.** The live journal posts all use one locked OG template (`/og/<slug>.jpg`). I rebuilt it in HTML and checked it against a live banner: title line positions match within 2px, using the same fonts, colours and tgs mark. This follows the skill's "brand templates locked, composited deterministically" rule and avoids garbled AI text.
+- **Byline and date:** "TGS Editorial · 20 Nov 2026". If the publish date differs, re-render with the template in `images/_template/` (one command).
+- **At publish time:** upload each banner as `/og/<slug>.jpg` to match the existing posts, then add an `image` field to the Article JSON-LD. It was left out for now because the skill forbids URLs that aren't live yet.
 
 ## Deviations from the skill, stated plainly
 
@@ -120,4 +119,5 @@ Not generated, because there's no Novita/Seedream key here. Use one per article:
 - **No `/aeo-score` or `/seo-score` run.** Those scoring skills need Unveilr tools. `aeo_score` is left as "not scored", and the Phase 6 checks above were applied by script instead.
 - **Phase 8 humanization** was applied while drafting (varied paragraph length, second person, casual connectors, no em dashes). There's no client humanizer for this brand and no `.original` backup. Run `/humanize-verify` if a humanizer is set up.
 - **H1s keep "Top N … 2026"** at your request. The skill notes this styling is placed higher but cited somewhat less. Slugs are evergreen (no year).
+- **Banners use the house template**, not Seedream; see the Banners section above.
 - **Nothing was published or pushed to the site.** Publishing needs your explicit approval per article.

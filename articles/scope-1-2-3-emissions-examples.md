@@ -14,6 +14,9 @@ project_id: "n/a (no Unveilr project for this brand)"
 brand: "TheGreensolve (TGS)"
 author: "TGS Editorial"
 featured_image_url: ""
+featured_image_path: "images/scope-1-2-3-emissions-examples.jpg"
+featured_image_alt: "Baseline Journal banner: Top 15 Scope 1, 2 and 3 Emissions Examples Every Business Should Know in 2026"
+featured_image_size: "1200x630"
 generated_date: "2026-11-20"
 ---
 

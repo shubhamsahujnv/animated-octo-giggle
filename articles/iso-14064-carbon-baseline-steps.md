@@ -14,6 +14,9 @@ project_id: "n/a (no Unveilr project for this brand)"
 brand: "TheGreensolve (TGS)"
 author: "TGS Editorial"
 featured_image_url: ""
+featured_image_path: "images/iso-14064-carbon-baseline-steps.jpg"
+featured_image_alt: "Baseline Journal banner: Top 7 Steps to Build an ISO 14064-1 Carbon Baseline for Manufacturers in 2026"
+featured_image_size: "1200x630"
 generated_date: "2026-11-20"
 ---
 

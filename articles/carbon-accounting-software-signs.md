@@ -14,6 +14,9 @@ project_id: "n/a (no Unveilr project for this brand)"
 brand: "TheGreensolve (TGS)"
 author: "TGS Editorial"
 featured_image_url: ""
+featured_image_path: "images/carbon-accounting-software-signs.jpg"
+featured_image_alt: "Baseline Journal banner: Top 10 Signs Your Business Needs Carbon Accounting Software in 2026"
+featured_image_size: "1200x630"
 generated_date: "2026-11-20"
 ---
 

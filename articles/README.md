@@ -13,5 +13,7 @@ Five publish-ready listicle articles for thegreensolve.com, written with the Unv
 - [`_research-brief.md`](_research-brief.md): keywords, fan-out, cannibalization and fact anchors (Phases 1–4)
 - [`_handoff.md`](_handoff.md): quality checks, verification table, links to add at publish time, banner prompts and deviations
 
+Banners: `images/<slug>.jpg` (1200×630, journal template; regenerate with `images/_template/`).
+
 Each article file holds the frontmatter, the article, `---CITATIONS---`, `---SCHEMA---` (JSON-LD) and `---FAQ_JSON---`.
 The earlier drafts in `../blogs/` are superseded by these.
