@@ -1,17 +1,17 @@
 ---
-title: "Scope 1, 2 and 3 Emissions Explained: 15 Real-World Examples"
-slug: scope-1-2-3-emissions-examples
-meta_description: "Confused by Scope 1, 2 and 3 emissions? This guide explains each scope in plain English, with 15 real-world examples, so you know exactly what to include in your carbon footprint."
-primary_keyword: scope 1 2 3 emissions examples
+title: "Top 15 Scope 1, 2 and 3 Emissions Examples Explained (2026 Guide)"
+slug: top-scope-1-2-3-emissions-examples-2026
+meta_description: "Confused by Scope 1, 2 and 3 emissions? This 2026 guide explains each scope in plain English, with the top 15 real-world examples, so you know exactly what to include in your carbon footprint."
+primary_keyword: top scope 1 2 3 emissions examples 2026
 secondary_keywords: [what are scope 3 emissions, scope 1 vs scope 2, GHG Protocol scopes, carbon footprint for business]
 cta_link: https://thegreensolve.com/carbon-accounting.php
 ---
 
-# Scope 1, 2 and 3 Emissions Explained: 15 Real-World Examples
+# Top 15 Scope 1, 2 and 3 Emissions Examples Explained (2026 Guide)
 
 If you've started measuring your company's carbon footprint, you've met the three "scopes." They come from the **Greenhouse Gas (GHG) Protocol**, the most widely used standard for corporate emissions accounting, and they sort every emission source by how directly your business controls it.
 
-Here's a plain-English breakdown with examples you'll recognise from your own operations.
+Here's a plain-English 2026 breakdown with the top examples you'll recognise from your own operations.
 
 ---
 
@@ -91,7 +91,7 @@ What happens to your products and packaging when customers throw them away.
 
 ---
 
-## Why getting the scopes right matters
+## Why getting the scopes right matters in 2026
 
 - **Credibility:** Misclassified or missing sources undermine your report with auditors and investors.
 - **No double counting:** Clear boundaries stop the same emission being counted twice.

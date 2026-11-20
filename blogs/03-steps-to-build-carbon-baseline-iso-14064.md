@@ -1,17 +1,17 @@
 ---
-title: "7 Steps to Build an ISO 14064-Aligned Carbon Baseline for Your Factory"
-slug: build-carbon-baseline-iso-14064-manufacturers
-meta_description: "A practical 7-step guide for manufacturers to build an ISO 14064-aligned greenhouse gas baseline covering Scope 1, 2 and 3 emissions, the foundation for net-zero targets and carbon credits."
-primary_keyword: carbon baseline for manufacturers
+title: "Top 7 Steps to Build an ISO 14064-Aligned Carbon Baseline for Your Factory in 2026"
+slug: top-steps-carbon-baseline-iso-14064-manufacturers-2026
+meta_description: "The top 7 steps, in a practical 2026 guide, for manufacturers to build an ISO 14064-aligned greenhouse gas baseline covering Scope 1, 2 and 3 emissions, the foundation for net-zero targets and carbon credits."
+primary_keyword: carbon baseline for manufacturers 2026
 secondary_keywords: [ISO 14064-1, GHG inventory, base year emissions, manufacturing carbon footprint, decarbonization]
 cta_link: https://thegreensolve.com/carbon-accounting.php
 ---
 
-# 7 Steps to Build an ISO 14064-Aligned Carbon Baseline for Your Factory
+# Top 7 Steps to Build an ISO 14064-Aligned Carbon Baseline for Your Factory in 2026
 
 Every credible climate plan starts with one thing: a **baseline**. It's the reference point you measure future reductions against. It's also the foundation for net-zero targets, customer reporting and any carbon credit project you might pursue.
 
-For manufacturers, building a baseline can feel overwhelming. You have multiple sites, energy-intensive processes and long supply chains. These seven steps make it manageable and keep it aligned with **ISO 14064-1**, the international standard for organisation-level greenhouse gas inventories.
+For manufacturers in 2026, building a baseline can feel overwhelming. You have multiple sites, energy-intensive processes and long supply chains. These top seven steps make it manageable and keep it aligned with **ISO 14064-1**, the international standard for organisation-level greenhouse gas inventories.
 
 ---
 
@@ -75,7 +75,7 @@ If you plan to make public claims, set targets or pursue carbon credits, conside
 
 ---
 
-## What your baseline unlocks
+## What your baseline unlocks in 2026
 
 Once your baseline is in place, you can:
 
