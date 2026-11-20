@@ -1,0 +1,80 @@
+# TheGreensolve (thegreensolve.com) — Apache / Hostinger configuration
+#
+# This folder is a fully static build. There is no Node.js process:
+#   /                     -> index.html, the Baseline carbon platform
+#   /blog, /blog/...      -> pre-rendered React pages (real HTML, good for search engines)
+#   /auth, /netlow/...    -> React app shells that boot in the browser and talk to Supabase
+#
+# URLs that don't exist return a real 404 (404.html). Before 20 Nov 2026 they
+# returned the homepage with status 200, which search engines treat as soft 404s.
+# The previous version of this file is saved as .htaccess.backup-2026-11-20.
+
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+# Serve /blog straight from /blog/index.html instead of bouncing to /blog/,
+# so the URL keeps matching the canonical link inside each page.
+DirectorySlash Off
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Bare domain over HTTPS, in a single redirect
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # One URL per page: /index.html -> /, /blog/index.html -> /blog, /blog/ -> /blog
+  RewriteCond %{THE_REQUEST} \s/+([^\s?]*?)/?index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [L,R=301]
+  RewriteCond %{REQUEST_URI} ^/(.+)/$
+  RewriteRule ^ /%1 [L,R=301]
+
+  # Server-only endpoints do not exist on static hosting: let them 404 honestly
+  RewriteRule ^api/ - [R=404,L]
+
+  # The sign-in and Net-Low app screens stay out of search results
+  RewriteRule ^(auth|netlow)(/|$) - [E=TGS_NOINDEX:1]
+
+  # Homepage
+  RewriteRule ^$ /index.html [L]
+
+  # Serve real files as they are
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # Pre-rendered page for this URL, e.g. /blog/faq -> /blog/faq/index.html
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+?)/?$ /$1/index.html [L]
+
+  # Other screens inside the Net-Low and sign-in apps are routed in the browser
+  RewriteRule ^netlow/ /netlow/index.html [L,E=TGS_NOINDEX:1]
+  RewriteRule ^auth/ /auth/index.html [L,E=TGS_NOINDEX:1]
+
+  # Everything else does not exist
+  RewriteRule ^ - [R=404,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # HTML is always revalidated; fingerprinted assets can be cached for a year
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpg|jpeg|svg|ico|webp)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header set X-Robots-Tag "noindex, nofollow" env=TGS_NOINDEX
+  Header set X-Robots-Tag "noindex, nofollow" env=REDIRECT_TGS_NOINDEX
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml application/xml
+</IfModule>
