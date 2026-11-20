@@ -119,7 +119,7 @@ Check that each inbound link is live after publishing.
 All 5 banners are in `images/<slug>.jpg` (1200×630 JPEG). Each article's frontmatter now has `featured_image_path`, `featured_image_alt` and `featured_image_size`.
 
 - **Matched to the journal's existing template, not AI-generated.** The live journal posts all use one locked OG template (`/og/<slug>.jpg`). I rebuilt it in HTML and checked it against a live banner: title line positions match within 2px, using the same fonts, colours and tgs mark. This follows the skill's "brand templates locked, composited deterministically" rule and avoids garbled AI text.
-- **Byline and date:** "TGS Editorial · 20 Nov 2026". If the publish date differs, re-render with the template in `images/_template/` (one command).
+- **Byline and date:** "Ankita Patwa · 20 Nov 2026". If the publish date differs, re-render with the template in `images/_template/` (one command).
 - **At publish time:** upload each banner as `/og/<slug>.jpg` to match the existing posts, then add an `image` field to the Article JSON-LD. It was left out for now because the skill forbids URLs that aren't live yet.
 
 ## Deviations from the skill, stated plainly
@@ -129,4 +129,22 @@ All 5 banners are in `images/<slug>.jpg` (1200×630 JPEG). Each article's frontm
 - **Phase 8 humanization** was applied while drafting (varied paragraph length, second person, casual connectors, no em dashes). There's no client humanizer for this brand and no `.original` backup. Run `/humanize-verify` if a humanizer is set up.
 - **H1s keep "Top N … 2026"** at your request. The skill notes this styling is placed higher but cited somewhat less. Slugs are evergreen (no year).
 - **Banners use the house template**, not Seedream; see the Banners section above.
-- **Nothing was published or pushed to the site.** Publishing needs your explicit approval per article.
+- **Published 20 Nov 2026 on request** (see *Publishing* below).
+
+## Publishing (done 20 Nov 2026, author Ankita Patwa)
+
+Live URLs:
+- https://thegreensolve.com/blog/carbon-accounting-software-signs
+- https://thegreensolve.com/blog/scope-1-2-3-emissions-examples
+- https://thegreensolve.com/blog/iso-14064-carbon-baseline-steps
+- https://thegreensolve.com/blog/carbon-accounting-mistakes
+- https://thegreensolve.com/blog/decarbonisation-strategies-manufacturers
+
+**How it was published.** thegreensolve.com is a static export of the Lovable "Project Navigator" app, hosted on Hostinger (`public_html`). The Lovable source is older than the live export: the live site has per-post OG images, "| TGS" titles and an enquiry popup that the source lacks. So nothing was rebuilt or redeployed. Instead, files were added over the Hostinger file API:
+- `blog/<slug>/index.html` ×5: built by `site-build/build_pages.py` from Ankita's live post as the template (same header, author box, FAQ, CTA and CSS), with a small inline style block for tables, lists and citation links. **The React hydration script is deliberately left out**: the bundled post list doesn't know these slugs, so hydration would replace the article with "not found". Navigation links still work as normal page loads.
+- `og/<slug>.jpg` ×5: the banners, used as `og:image`, like the existing posts
+- `sitemap.xml` and `llms.txt`: the 5 URLs added. The originals were backed up on the server as `sitemap.xml.backup-2026-11-20` and `llms.txt.backup-2026-11-20` (copies are also in `site-build/backups/`)
+
+**Not yet done (needs an app rebuild).** The blog index (`/blog`), Ankita's author page and the "Related journal" rail on older posts are rendered by React from the bundled post list. Hand-adding cards there would be wiped out by hydration. To list the new articles, add them to `src/content/posts.ts` in the app source, rebuild the static export, and redeploy. Keep these five static pages, or port their content.
+
+**Rollback:** delete `blog/<slug>/` and `og/<slug>.jpg` for the 5 slugs and restore the two `.backup-2026-11-20` files.

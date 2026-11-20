@@ -12,7 +12,8 @@ citations_count: 12
 aeo_score: "not scored (run /aeo-score)"
 project_id: "n/a (no Unveilr project for this brand)"
 brand: "TheGreensolve (TGS)"
-author: "TGS Editorial"
+author: "Ankita Patwa"
+author_role: "Founder, TheGreensolve"
 featured_image_url: ""
 featured_image_path: "images/carbon-accounting-mistakes.jpg"
 featured_image_alt: "Baseline Journal banner: Top 9 Carbon Accounting Mistakes to Avoid in 2026 and How to Fix Them"
@@ -202,7 +203,11 @@ Yes, as a target, if it is specific and backed by a plan. The EU offsetting ban 
    "@type": "Organization",
    "@id": "https://thegreensolve.com/#org",
    "name": "TheGreensolve",
-   "url": "https://thegreensolve.com/"
+   "url": "https://thegreensolve.com/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://thegreensolve.com/favicon.png"
+   }
   },
   {
    "@type": "Article",
@@ -213,12 +218,16 @@ Yes, as a target, if it is specific and backed by a plan. The EU offsetting ban 
    "dateModified": "2026-11-20",
    "inLanguage": "en-GB",
    "author": {
-    "@id": "https://thegreensolve.com/#org"
+    "@type": "Person",
+    "name": "Ankita Patwa",
+    "jobTitle": "Founder, TheGreensolve",
+    "url": "https://thegreensolve.com/blog/author/ankita-patwa"
    },
    "publisher": {
     "@id": "https://thegreensolve.com/#org"
    },
    "mainEntityOfPage": "https://thegreensolve.com/blog/carbon-accounting-mistakes",
+   "image": "https://thegreensolve.com/og/carbon-accounting-mistakes.jpg",
    "keywords": [
     "carbon accounting mistakes",
     "double counting scope 3 emissions",

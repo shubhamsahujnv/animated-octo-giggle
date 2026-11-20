@@ -12,7 +12,8 @@ citations_count: 13
 aeo_score: "not scored (run /aeo-score)"
 project_id: "n/a (no Unveilr project for this brand)"
 brand: "TheGreensolve (TGS)"
-author: "TGS Editorial"
+author: "Ankita Patwa"
+author_role: "Founder, TheGreensolve"
 featured_image_url: ""
 featured_image_path: "images/carbon-accounting-software-signs.jpg"
 featured_image_alt: "Baseline Journal banner: Top 10 Signs Your Business Needs Carbon Accounting Software in 2026"
@@ -213,7 +214,11 @@ At least once a year, because the EPA's GHGRP and California's SB 253 both run o
    "@type": "Organization",
    "@id": "https://thegreensolve.com/#org",
    "name": "TheGreensolve",
-   "url": "https://thegreensolve.com/"
+   "url": "https://thegreensolve.com/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://thegreensolve.com/favicon.png"
+   }
   },
   {
    "@type": "Article",
@@ -224,12 +229,16 @@ At least once a year, because the EPA's GHGRP and California's SB 253 both run o
    "dateModified": "2026-11-20",
    "inLanguage": "en-GB",
    "author": {
-    "@id": "https://thegreensolve.com/#org"
+    "@type": "Person",
+    "name": "Ankita Patwa",
+    "jobTitle": "Founder, TheGreensolve",
+    "url": "https://thegreensolve.com/blog/author/ankita-patwa"
    },
    "publisher": {
     "@id": "https://thegreensolve.com/#org"
    },
    "mainEntityOfPage": "https://thegreensolve.com/blog/carbon-accounting-software-signs",
+   "image": "https://thegreensolve.com/og/carbon-accounting-software-signs.jpg",
    "keywords": [
     "carbon accounting software",
     "carbon accounting spreadsheet",

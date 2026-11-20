@@ -12,7 +12,8 @@ citations_count: 8
 aeo_score: "not scored (run /aeo-score)"
 project_id: "n/a (no Unveilr project for this brand)"
 brand: "TheGreensolve (TGS)"
-author: "TGS Editorial"
+author: "Ankita Patwa"
+author_role: "Founder, TheGreensolve"
 featured_image_url: ""
 featured_image_path: "images/scope-1-2-3-emissions-examples.jpg"
 featured_image_alt: "Baseline Journal banner: Top 15 Scope 1, 2 and 3 Emissions Examples Every Business Should Know in 2026"
@@ -220,7 +221,11 @@ Water itself is not a greenhouse gas, but supplying and treating it uses energy.
    "@type": "Organization",
    "@id": "https://thegreensolve.com/#org",
    "name": "TheGreensolve",
-   "url": "https://thegreensolve.com/"
+   "url": "https://thegreensolve.com/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://thegreensolve.com/favicon.png"
+   }
   },
   {
    "@type": "Article",
@@ -231,12 +236,16 @@ Water itself is not a greenhouse gas, but supplying and treating it uses energy.
    "dateModified": "2026-11-20",
    "inLanguage": "en-GB",
    "author": {
-    "@id": "https://thegreensolve.com/#org"
+    "@type": "Person",
+    "name": "Ankita Patwa",
+    "jobTitle": "Founder, TheGreensolve",
+    "url": "https://thegreensolve.com/blog/author/ankita-patwa"
    },
    "publisher": {
     "@id": "https://thegreensolve.com/#org"
    },
    "mainEntityOfPage": "https://thegreensolve.com/blog/scope-1-2-3-emissions-examples",
+   "image": "https://thegreensolve.com/og/scope-1-2-3-emissions-examples.jpg",
    "keywords": [
     "scope 1 2 3 emissions examples",
     "scope 1 emissions examples",

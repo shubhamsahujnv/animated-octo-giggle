@@ -12,7 +12,8 @@ citations_count: 12
 aeo_score: "not scored (run /aeo-score)"
 project_id: "n/a (no Unveilr project for this brand)"
 brand: "TheGreensolve (TGS)"
-author: "TGS Editorial"
+author: "Ankita Patwa"
+author_role: "Founder, TheGreensolve"
 featured_image_url: ""
 featured_image_path: "images/decarbonisation-strategies-manufacturers.jpg"
 featured_image_alt: "Baseline Journal banner: Top 10 Decarbonisation Strategies Manufacturers Can Use to Cut Emissions in 2026"
@@ -198,7 +199,11 @@ No. Credits sit outside all 3 scopes: your inventory reports gross emissions fro
    "@type": "Organization",
    "@id": "https://thegreensolve.com/#org",
    "name": "TheGreensolve",
-   "url": "https://thegreensolve.com/"
+   "url": "https://thegreensolve.com/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://thegreensolve.com/favicon.png"
+   }
   },
   {
    "@type": "Article",
@@ -209,12 +214,16 @@ No. Credits sit outside all 3 scopes: your inventory reports gross emissions fro
    "dateModified": "2026-11-20",
    "inLanguage": "en-GB",
    "author": {
-    "@id": "https://thegreensolve.com/#org"
+    "@type": "Person",
+    "name": "Ankita Patwa",
+    "jobTitle": "Founder, TheGreensolve",
+    "url": "https://thegreensolve.com/blog/author/ankita-patwa"
    },
    "publisher": {
     "@id": "https://thegreensolve.com/#org"
    },
    "mainEntityOfPage": "https://thegreensolve.com/blog/decarbonisation-strategies-manufacturers",
+   "image": "https://thegreensolve.com/og/decarbonisation-strategies-manufacturers.jpg",
    "keywords": [
     "decarbonisation strategies",
     "decarbonization strategies",

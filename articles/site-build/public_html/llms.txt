@@ -1,0 +1,25 @@
+# TheGreensolve
+
+> TheGreensolve helps companies measure Scope 1, 2 and 3 emissions, organize supporting evidence, assess decarbonization projects and prepare inventories for expert review.
+
+## Main pages
+
+- [Baseline](https://thegreensolve.com/): Carbon intelligence platform for GHG inventory, baseline comparison, project screening, evidence collection and TGS review.
+- [The Baseline Journal](https://thegreensolve.com/blog): Practical carbon accounting, reporting and carbon-market guidance for small and mid-sized companies.
+
+## Journal articles
+
+- [Carbon credits are not just for big companies](https://thegreensolve.com/blog/carbon-credits-are-not-just-for-big-companies)
+- [The UN just opened a door for N2O projects](https://thegreensolve.com/blog/un-article-6-4-n2o-methodology)
+- [What a bank buying removals tells the rest of us](https://thegreensolve.com/blog/what-jpmorgan-buying-removals-tells-smes)
+- [Scope 3 for manufacturers without a data team](https://thegreensolve.com/blog/scope-3-for-manufacturers-without-a-data-team)
+- [Reporting in India and the US: what actually differs](https://thegreensolve.com/blog/india-and-us-reporting-what-changes)
+- [Top 10 Signs Your Business Needs Carbon Accounting Software in 2026](https://thegreensolve.com/blog/carbon-accounting-software-signs)
+- [Top 15 Scope 1, 2 and 3 Emissions Examples Every Business Should Know in 2026](https://thegreensolve.com/blog/scope-1-2-3-emissions-examples)
+- [Top 7 Steps to Build an ISO 14064-1 Carbon Baseline for Manufacturers in 2026](https://thegreensolve.com/blog/iso-14064-carbon-baseline-steps)
+- [Top 9 Carbon Accounting Mistakes to Avoid in 2026 and How to Fix Them](https://thegreensolve.com/blog/carbon-accounting-mistakes)
+- [Top 10 Decarbonisation Strategies Manufacturers Can Use to Cut Emissions in 2026](https://thegreensolve.com/blog/decarbonisation-strategies-manufacturers)
+
+## Contact
+
+- Email: info@thegreensolve.com

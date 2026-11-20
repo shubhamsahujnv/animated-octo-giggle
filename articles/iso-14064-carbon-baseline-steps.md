@@ -12,7 +12,8 @@ citations_count: 7
 aeo_score: "not scored (run /aeo-score)"
 project_id: "n/a (no Unveilr project for this brand)"
 brand: "TheGreensolve (TGS)"
-author: "TGS Editorial"
+author: "Ankita Patwa"
+author_role: "Founder, TheGreensolve"
 featured_image_url: ""
 featured_image_path: "images/iso-14064-carbon-baseline-steps.jpg"
 featured_image_alt: "Baseline Journal banner: Top 7 Steps to Build an ISO 14064-1 Carbon Baseline for Manufacturers in 2026"
@@ -196,7 +197,11 @@ Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant 
    "@type": "Organization",
    "@id": "https://thegreensolve.com/#org",
    "name": "TheGreensolve",
-   "url": "https://thegreensolve.com/"
+   "url": "https://thegreensolve.com/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://thegreensolve.com/favicon.png"
+   }
   },
   {
    "@type": "Article",
@@ -207,12 +212,16 @@ Usually yes. A GHG Protocol inventory can conform to ISO 14064-1 if significant 
    "dateModified": "2026-11-20",
    "inLanguage": "en-GB",
    "author": {
-    "@id": "https://thegreensolve.com/#org"
+    "@type": "Person",
+    "name": "Ankita Patwa",
+    "jobTitle": "Founder, TheGreensolve",
+    "url": "https://thegreensolve.com/blog/author/ankita-patwa"
    },
    "publisher": {
     "@id": "https://thegreensolve.com/#org"
    },
    "mainEntityOfPage": "https://thegreensolve.com/blog/iso-14064-carbon-baseline-steps",
+   "image": "https://thegreensolve.com/og/iso-14064-carbon-baseline-steps.jpg",
    "keywords": [
     "carbon baseline",
     "iso 14064-1",
