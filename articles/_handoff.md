@@ -145,6 +145,22 @@ Live URLs:
 - `og/<slug>.jpg` ×5: the banners, used as `og:image`, like the existing posts
 - `sitemap.xml` and `llms.txt`: the 5 URLs added. The originals were backed up on the server as `sitemap.xml.backup-2026-11-20` and `llms.txt.backup-2026-11-20` (copies are also in `site-build/backups/`)
 
-**Not yet done (needs an app rebuild).** The blog index (`/blog`), Ankita's author page and the "Related journal" rail on older posts are rendered by React from the bundled post list. Hand-adding cards there would be wiped out by hydration. To list the new articles, add them to `src/content/posts.ts` in the app source, rebuild the static export, and redeploy. Keep these five static pages, or port their content.
+**The listing (fixed 21 Nov 2026).** The five articles now appear on `/blog`, with their banner images, and on Ankita's author page.
 
-**Rollback:** delete `blog/<slug>/` and `og/<slug>.jpg` for the 5 slugs and restore the two `.backup-2026-11-20` files.
+The journal pages were rendered by React from a post list baked into the JavaScript bundle, which only knows the five original posts. Anything added to the HTML by hand was replaced as soon as that script ran, and in-site navigation re-rendered the old listing. Since the bundle cannot be rebuilt (the live site is newer than the Lovable source), the journal pages are now served as plain HTML with that script removed. The two things it actually did on these pages are reimplemented in a few lines of plain JavaScript, kept in `build_blog_pages.py`:
+- the topic filter (All / Carbon markets / Policy / Markets / Practice / Compliance)
+- the contributor form, which builds the mailto link from what you type
+
+Pages rebuilt (originals saved in `site-build/backups/live-2026-11-21/`):
+- `blog/index.html`: five new cards at the top of the grid, every card given its banner image, and Ankita's block updated from 1 to 6 articles
+- `blog/author/ankita-patwa/index.html`: six articles, thumbnail-left cards
+- `blog/authors/index.html`: Ankita's count 1 → 6
+- `blog/faq`, `blog/author/tgs-editorial` and the five original posts: unchanged content, script removed so navigation between journal pages is consistent
+
+Checked live: 9 grid cards, no broken images, the filter works, the contributor mailto works, clicking a card opens the article, and the Blog link inside an article returns to the full listing. No console errors.
+
+**Editorial choices worth a look.** The Featured slot still holds "Carbon credits are not just for big companies" rather than the newest article; say the word to feature a new one. Card images are the banners, which carry the article title, so the title appears both in the image and as the heading beneath it, as it would for any of the original posts.
+
+**If the site is ever rebuilt from source,** add the five posts to the real codebase's post list and these hand-built pages can be dropped. `site-build/build_pages.py` and `build_blog_pages.py` regenerate everything in the meantime.
+
+**Rollback:** delete `blog/<slug>/` and `og/<slug>.jpg` for the 5 slugs, restore the two `.backup-2026-11-20` files, and re-upload the ten pages in `site-build/backups/live-2026-11-21/` to their original paths.
